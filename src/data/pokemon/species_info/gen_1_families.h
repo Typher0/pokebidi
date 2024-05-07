@@ -6879,16 +6879,16 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .formChangeTable = sMachampFormChangeTable,
     },
 
-#if P_GIGANTAMAX_FORMS
+#if P_MEGA_EVOLUTIONS
     [SPECIES_MACHAMP_GIGANTAMAX] =
     {
-        .baseHP        = 90,
-        .baseAttack    = 130,
-        .baseDefense   = 80,
-        .baseSpeed     = 55,
+        .baseHP        = 100,
+        .baseAttack    = 170,
+        .baseDefense   = 105,
+        .baseSpeed     = 70,
         .baseSpAttack  = 65,
-        .baseSpDefense = 85,
-        .types = MON_TYPES(TYPE_FIGHTING),
+        .baseSpDefense = 95,
+        .types = MON_TYPES(TYPE_FIGHTING, TYPE_FIRE),
         .catchRate = 45,
         .expYield = MACHAMP_EXP_YIELD,
         .evYield_Attack = 3,
@@ -6898,7 +6898,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE),
-        .abilities = { ABILITY_GUTS, ABILITY_NO_GUARD, ABILITY_STEADFAST },
+        .abilities = { ABILITY_SCRAPPY, ABILITY_SCRAPPY, ABILITY_SCRAPPY },
         .bodyColor = BODY_COLOR_GRAY,
         .speciesName = _("Machamp"),
         .cryId = CRY_MACHAMP,
@@ -6929,13 +6929,13 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .iconSprite = gMonIcon_MachampGigantamax,
         .iconPalIndex = 0,
         FOOTPRINT(Machamp)
-        .isGigantamax = TRUE,
+        .isMegaEvolution = TRUE,
         .levelUpLearnset = sMachampLevelUpLearnset,
         .teachableLearnset = sMachampTeachableLearnset,
         .formSpeciesIdTable = sMachampFormSpeciesIdTable,
         .formChangeTable = sMachampFormChangeTable,
     },
-#endif //P_GIGANTAMAX_FORMS
+#endif //P_MEGA_EVOLUTIONS
 #endif //P_FAMILY_MACHOP
 
 #if P_FAMILY_BELLSPROUT
@@ -12044,7 +12044,11 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .baseSpeed     = 90,
         .baseSpAttack  = 100,
         .baseSpDefense = 120,
+    #if P_UPDATED_TYPES >= GEN_6
+        .types = MON_TYPES(TYPE_PSYCHIC, TYPE_FAIRY),
+    #else
         .types = MON_TYPES(TYPE_PSYCHIC),
+    #endif
         .catchRate = 45,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 161 : 136,
         .evYield_SpDefense = 2,
