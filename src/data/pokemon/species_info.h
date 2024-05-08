@@ -1979,60 +1979,6 @@ const struct SpeciesInfo gSpeciesInfo[] =
     },
 #endif //P_FAMILY_GOLTERRA
 
-    [SPECIES_ESOTEROWN] = //UNOWN EVOLUTION THAT CONNECTS IT TO ARCEUS (SIG. MOVE = ESOTERIC DESTRUCTION[EVOLUTION MOVE AT 60])
-    {                                                 
-        .baseHP        = 62,                          
-        .baseAttack    = 110,                          
-        .baseDefense   = 94,                          
-        .baseSpeed     = 114,                          
-        .baseSpAttack  = 73,                          
-        .baseSpDefense = 120,                          
-        .types = MON_TYPES(TYPE_PSYCHIC),       
-        .catchRate = 45,                             
-        .expYield = 178,                              
-        .evYield_Attack    = 2,                       
-        .evYield_SpAttack  = 1,
-	    .itemRare = ITEM_MIND_PLATE,
-        .genderRatio = MON_GENDERLESS,                
-        .eggCycles = 40,                              
-        .friendship = STANDARD_FRIENDSHIP,            
-        .growthRate = GROWTH_MEDIUM_FAST,             
-        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_UNDISCOVERED),          
-        .abilities = {ABILITY_LEVITATE, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_BLACK,                
-        .speciesName = _("Esoterown"),
-        .cryId = CRY_ESOTEROWN,
-        .natDexNum = NATIONAL_DEX_ESOTEROWN,
-        .categoryName = _("Symbol"),
-        .height = 0,
-        .weight = 0,
-        .description = COMPOUND_STRING(
-            "This is a newly discovered Pokémon.\n"
-            "It is currently under investigation.\n"
-            "No detailed information is available\n"
-            "at this time."),
-        .pokemonScale = 256,
-        .pokemonOffset = 0,
-        .trainerScale = 256,
-        .trainerOffset = 0,
-        .frontPic = gMonFrontPic_Esoterown,
-        .frontPicSize = MON_COORDS_SIZE(40, 40),
-        .frontPicYOffset = 13,
-        .frontAnimFrames = sAnims_Esoterown,
-        .frontAnimId = ANIM_V_JUMPS_H_JUMPS,
-        .backPic = gMonBackPic_Esoterown,
-        .backPicSize = MON_COORDS_SIZE(56, 40),
-        .backPicYOffset = 13,
-        .backAnimId = BACK_ANIM_DIP_RIGHT_SIDE,
-        .palette = gMonPalette_Esoterown,
-        .shinyPalette = gMonShinyPalette_Esoterown,
-        .iconSprite = gMonIcon_Esoterown,
-        .iconPalIndex = 4,
-        FOOTPRINT(Esoterown)
-        .levelUpLearnset = sEsoterownLevelUpLearnset,
-        .teachableLearnset = sEsoterownTeachableLearnset,                            
-    },
-
     [SPECIES_CACTURADO] = // CACTURNE EVOLUTION (SIGNATURE MOVE = MEXICAN STANDOFF [EVOLUTION MOVE AT 46])
     {
         .baseHP        = 90,
