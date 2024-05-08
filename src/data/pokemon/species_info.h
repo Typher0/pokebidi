@@ -1979,60 +1979,6 @@ const struct SpeciesInfo gSpeciesInfo[] =
     },
 #endif //P_FAMILY_GOLTERRA
 
-    [SPECIES_CACTURADO] = // CACTURNE EVOLUTION (SIGNATURE MOVE = MEXICAN STANDOFF [EVOLUTION MOVE AT 46])
-    {
-        .baseHP        = 90,
-        .baseAttack    = 115,
-        .baseDefense   = 75,
-        .baseSpeed     = 90,
-        .baseSpAttack  = 135,
-        .baseSpDefense = 75,
-        .types = MON_TYPES(TYPE_GRASS, TYPE_DARK),
-        .catchRate = 45,
-        .expYield = 260,
-        .evYield_Attack    = 1,
-	    .evYield_SpAttack  = 2,
-	    .itemRare = ITEM_STICKY_BARB,
-        .genderRatio = PERCENT_FEMALE(50),
-        .eggCycles = 20,
-        .friendship = 50,
-        .growthRate = GROWTH_MEDIUM_SLOW,
-        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_GRASS, EGG_GROUP_HUMAN_LIKE),
-        .abilities = {ABILITY_SAND_VEIL, ABILITY_ROUGH_SKIN, ABILITY_WATER_ABSORB},
-        .bodyColor = BODY_COLOR_GREEN,
-        .speciesName = _("Cacturado"),
-        .cryId = CRY_CACTURADO,
-        .natDexNum = NATIONAL_DEX_CACTURADO,
-        .categoryName = _("Scarecrow"),
-        .height = 0,
-        .weight = 0,
-        .description = COMPOUND_STRING(
-            "This is a newly discovered Pokémon.\n"
-            "It is currently under investigation.\n"
-            "No detailed information is available\n"
-            "at this time."),
-        .pokemonScale = 256,
-        .pokemonOffset = 0,
-        .trainerScale = 256,
-        .trainerOffset = 0,
-        .frontPic = gMonFrontPic_Cacturado,
-        .frontPicSize = MON_COORDS_SIZE(40, 40),
-        .frontPicYOffset = 13,
-        .frontAnimFrames = sAnims_Cacturado,
-        .frontAnimId = ANIM_V_JUMPS_H_JUMPS,
-        .backPic = gMonBackPic_Cacturado,
-        .backPicSize = MON_COORDS_SIZE(56, 40),
-        .backPicYOffset = 13,
-        .backAnimId = BACK_ANIM_DIP_RIGHT_SIDE,
-        .palette = gMonPalette_Cacturado,
-        .shinyPalette = gMonShinyPalette_Cacturado,
-        .iconSprite = gMonIcon_Cacturado,
-        .iconPalIndex = 4,
-        FOOTPRINT(Cacturado)
-        .levelUpLearnset = sCacturadoLevelUpLearnset,
-        .teachableLearnset = sCacturadoTeachableLearnset,
-},
-
 #if P_FAMILY_COBOE
     [SPECIES_COBOE] =
     {
