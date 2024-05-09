@@ -4213,11 +4213,11 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
     [SPECIES_ALCREMIE_GIGANTAMAX] =
     {
         .baseHP        = 65,
-        .baseAttack    = 60,
-        .baseDefense   = 75,
+        .baseAttack    = 40,
+        .baseDefense   = 115,
         .baseSpeed     = 64,
-        .baseSpAttack  = 110,
-        .baseSpDefense = 121,
+        .baseSpAttack  = 150,
+        .baseSpDefense = 151,
         .types = MON_TYPES(TYPE_FAIRY),
         .catchRate = 100,
         .expYield = 173,
@@ -4227,7 +4227,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FAIRY, EGG_GROUP_AMORPHOUS),
-        .abilities = { ABILITY_WELL_BAKED_BODY, ABILITY_SWEET_VEIL, ABILITY_AROMA_VEIL },
+        .abilities = { ABILITY_WELL_BAKED_BODY, ABILITY_WELL_BAKED_BODY, ABILITY_WELL_BAKED_BODY },
         .bodyColor = color
         .speciesName = _("Alcremie"),
         .cryId = CRY_ALCREMIE,
@@ -4432,7 +4432,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
     {
         .baseHP        = 70,
         .baseAttack    = 65,
-        .baseDefense   = 60,
+        .baseDefense   = 80,
         .baseSpeed     = 65,
         .baseSpAttack  = 125,
         .baseSpDefense = 90,
@@ -4761,7 +4761,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .baseAttack    = 95,
         .baseDefense   = 58,
         .baseSpeed     = 97,
-        .baseSpAttack  = 70,
+        .baseSpAttack  = 80,
         .baseSpDefense = 58,
         .types = MON_TYPES(TYPE_ELECTRIC, TYPE_DARK),
         .catchRate = 180,
@@ -4815,7 +4815,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .baseAttack    = 95,
         .baseDefense   = 58,
         .baseSpeed     = 97,
-        .baseSpAttack  = 70,
+        .baseSpAttack  = 80,
         .baseSpDefense = 58,
         .types = MON_TYPES(TYPE_ELECTRIC, TYPE_DARK),
         .catchRate = 180,
@@ -4883,7 +4883,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD, EGG_GROUP_MINERAL),
-        .abilities = { ABILITY_SHEER_FORCE, ABILITY_NONE, ABILITY_HEAVY_METAL },
+        .abilities = { ABILITY_SHEER_FORCE, ABILITY_LIGHTNING_ROD, ABILITY_HEAVY_METAL },
         .bodyColor = BODY_COLOR_YELLOW,
         .speciesName = _("Cufant"),
         .cryId = CRY_CUFANT,
@@ -4937,7 +4937,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD, EGG_GROUP_MINERAL),
-        .abilities = { ABILITY_SHEER_FORCE, ABILITY_NONE, ABILITY_HEAVY_METAL },
+        .abilities = { ABILITY_SHEER_FORCE, ABILITY_LIGHTNING_ROD, ABILITY_HEAVY_METAL },
         .bodyColor = BODY_COLOR_GREEN,
         .speciesName = _("Copperajah"),
         .cryId = CRY_COPPERAJAH,
@@ -4973,15 +4973,15 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .formChangeTable = sCopperajahFormChangeTable,
     },
 
-#if P_GIGANTAMAX_FORMS
+#if P_MEGA_EVOLUTIONS
     [SPECIES_COPPERAJAH_GIGANTAMAX] =
     {
         .baseHP        = 122,
-        .baseAttack    = 130,
-        .baseDefense   = 69,
+        .baseAttack    = 150,
+        .baseDefense   = 109,
         .baseSpeed     = 30,
         .baseSpAttack  = 80,
-        .baseSpDefense = 69,
+        .baseSpDefense = 109,
         .types = MON_TYPES(TYPE_STEEL),
         .catchRate = 90,
         .expYield = 175,
@@ -4992,7 +4992,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD, EGG_GROUP_MINERAL),
-        .abilities = { ABILITY_SHEER_FORCE, ABILITY_NONE, ABILITY_HEAVY_METAL },
+        .abilities = { ABILITY_LIGHTNING_ROD, ABILITY_LIGHTNING_ROD, ABILITY_LIGHTNING_ROD },
         .bodyColor = BODY_COLOR_GREEN,
         .speciesName = _("Copperajah"),
         .cryId = CRY_COPPERAJAH,
@@ -5023,13 +5023,13 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .iconSprite = gMonIcon_CopperajahGigantamax,
         .iconPalIndex = 0,
         FOOTPRINT(Copperajah)
-        .isGigantamax = TRUE,
+        .isMegaEvolution = TRUE,
         .levelUpLearnset = sCopperajahLevelUpLearnset,
         .teachableLearnset = sCopperajahTeachableLearnset,
         .formSpeciesIdTable = sCopperajahFormSpeciesIdTable,
         .formChangeTable = sCopperajahFormChangeTable,
     },
-#endif //P_GIGANTAMAX_FORMS
+#endif //P_MEGA_EVOLUTIONS
 #endif //P_FAMILY_CUFANT
 
 #if P_FAMILY_DRACOZOLT
@@ -6583,11 +6583,11 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
     [SPECIES_CALYREX_ICE_RIDER] =
     {
         .baseHP        = 100,
-        .baseAttack    = 165,
-        .baseDefense   = 150,
-        .baseSpeed     = 50,
-        .baseSpAttack  = 85,
-        .baseSpDefense = 130,
+        .baseAttack    = 150,
+        .baseDefense   = 130,
+        .baseSpeed     = 70,
+        .baseSpAttack  = 130,
+        .baseSpDefense = 90,
         .types = MON_TYPES(TYPE_PSYCHIC, TYPE_ICE),
         .catchRate = 3,
         .expYield = 340,
@@ -6638,11 +6638,11 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
     [SPECIES_CALYREX_SHADOW_RIDER] =
     {
         .baseHP        = 100,
-        .baseAttack    = 85,
-        .baseDefense   = 80,
-        .baseSpeed     = 150,
-        .baseSpAttack  = 165,
-        .baseSpDefense = 100,
+        .baseAttack    = 130,
+        .baseDefense   = 90,
+        .baseSpeed     = 70,
+        .baseSpAttack  = 150,
+        .baseSpDefense = 130,
         .types = MON_TYPES(TYPE_PSYCHIC, TYPE_GHOST),
         .catchRate = 3,
         .expYield = 340,
