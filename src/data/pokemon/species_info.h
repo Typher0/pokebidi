@@ -176,15 +176,15 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .cryId = CRY_HAMSNUG,
         .natDexNum = NATIONAL_DEX_HAMSNUG,
         .categoryName = _("Hampster"),
-        .height = 0,
-        .weight = 0,
+        .height = 3,
+        .weight = 59,
         .description = COMPOUND_STRING(
-            "This is a newly discovered Pokémon.\n"
-            "It is currently under investigation.\n"
-            "No detailed information is available\n"
-            "at this time."),
-        .pokemonScale = 256,
-        .pokemonOffset = 0,
+            "Its fur helps keep it warm in\n"
+            "frigid climates. Because it is so\n"
+            "soft and warm, they are often kept\n"
+            "as pets or used as makeshift hats."),
+        .pokemonScale = 432,
+        .pokemonOffset = 15,
         .trainerScale = 256,
         .trainerOffset = 0,
         .frontPic = gMonFrontPic_Hamsnug,
@@ -215,7 +215,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .types = MON_TYPES(TYPE_NORMAL, TYPE_ICE),
         .catchRate = 127,
         .expYield = 144,
-        .evYield_Attack    = 2,
+        .evYield_HP    = 2,
         .genderRatio = PERCENT_FEMALE(50),
         .eggCycles = 15,
         .friendship = STANDARD_FRIENDSHIP,
@@ -226,16 +226,16 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .speciesName = _("Snuggybara"),
         .cryId = CRY_SNUGGGYBARA,
         .natDexNum = NATIONAL_DEX_SNUGGYBARA,
-        .categoryName = _("Hampster"),
-        .height = 0,
-        .weight = 0,
+        .categoryName = _("Capybara"),
+        .height = 11,
+        .weight = 375,
         .description = COMPOUND_STRING(
-            "This is a newly discovered Pokémon.\n"
-            "It is currently under investigation.\n"
-            "No detailed information is available\n"
-            "at this time."),
-        .pokemonScale = 256,
-        .pokemonOffset = 0,
+            "It sheds its fur according to its\n"
+            "climate. It can stay warm in temps\n"
+            "as cold as -12ºF. Its teeth can chew\n"
+            "through solid rock."),
+        .pokemonScale = 320,
+        .pokemonOffset = 7,
         .trainerScale = 256,
         .trainerOffset = 0,
         .frontPic = gMonFrontPic_Snuggybara,
@@ -280,16 +280,16 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .speciesName = _("Cabob"),
         .cryId = CRY_CABOB,
         .natDexNum = NATIONAL_DEX_CABOB,
-        .categoryName = _("Cat"),
-        .height = 0,
-        .weight = 0,
+        .categoryName = _("Lynx"),
+        .height = 4,
+        .weight = 41,
         .description = COMPOUND_STRING(
-            "This is a newly discovered Pokémon.\n"
-            "It is currently under investigation.\n"
-            "No detailed information is available\n"
-            "at this time."),
-        .pokemonScale = 256,
-        .pokemonOffset = 0,
+            "Its developing fangs are created\n"
+            "by its frigid breath. It enjoys\n"
+            "skewering its food like a kebab\n"
+            "before eating."),
+        .pokemonScale = 491,
+        .pokemonOffset = 7,
         .trainerScale = 256,
         .trainerOffset = 0,
         .frontPic = gMonFrontPic_Cabob,
@@ -333,18 +333,18 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .speciesName = _("Lynxskew"),
         .cryId = CRY_LYNXSKEW,
         .natDexNum = NATIONAL_DEX_LYNXSKEW,
-        .categoryName = _("Cat"),
-        .height = 0,
-        .weight = 0,
+        .categoryName = _("Lynx"),
+        .height = 15,
+        .weight = 790,
         .description = COMPOUND_STRING(
-            "This is a newly discovered Pokémon.\n"
-            "It is currently under investigation.\n"
-            "No detailed information is available\n"
-            "at this time."),
-        .pokemonScale = 256,
-        .pokemonOffset = 0,
-        .trainerScale = 256,
-        .trainerOffset = 0,
+            "Its ferocious fangs are cold enough\n"
+            "to give humans frostbite on contact.\n"
+            "It has excellent night-vision, and\n"
+            "prefers this time for hunting."),
+        .pokemonScale = 259,
+        .pokemonOffset = 1,
+        .trainerScale = 296,
+        .trainerOffset = 1,
         .frontPic = gMonFrontPic_Lynxskew,
         .frontPicSize = MON_COORDS_SIZE(40, 40),
         .frontPicYOffset = 13,
@@ -387,16 +387,16 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .speciesName = _("Tenrock"),
         .cryId = CRY_TENROCK,
         .natDexNum = NATIONAL_DEX_TENROCK,
-        .categoryName = _("Anteater"),
-        .height = 0,
-        .weight = 0,
+        .categoryName = _("Pangolin"),
+        .height = 4,
+        .weight = 296,
         .description = COMPOUND_STRING(
-            "This is a newly discovered Pokémon.\n"
-            "It is currently under investigation.\n"
-            "No detailed information is available\n"
-            "at this time."),
-        .pokemonScale = 256,
-        .pokemonOffset = 0,
+            "Generations of moving slowly in\n"
+            "caves looking for ants to eat has\n"
+            "caused Tenrock to merge with its rocky\n"
+            "surroundings."),
+        .pokemonScale = 491,
+        .pokemonOffset = 15,
         .trainerScale = 256,
         .trainerOffset = 0,
         .frontPic = gMonFrontPic_Tenrock,
@@ -440,16 +440,16 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .speciesName = _("Shrewel"),
         .cryId = CRY_SHREWEL,
         .natDexNum = NATIONAL_DEX_SHREWEL,
-        .categoryName = _("Anteater"),
-        .height = 0,
-        .weight = 0,
+        .categoryName = _("Pangolin"),
+        .height = 10,
+        .weight = 510,
         .description = COMPOUND_STRING(
-            "This is a newly discovered Pokémon.\n"
-            "It is currently under investigation.\n"
-            "No detailed information is available\n"
-            "at this time."),
-        .pokemonScale = 256,
-        .pokemonOffset = 0,
+            "The jewels on its back reflect its\n"
+            "health. When they change to black,\n"
+            "it should be taken to a Pokémon\n"
+            "doctor immediately."),
+        .pokemonScale = 422,
+        .pokemonOffset = 12,
         .trainerScale = 256,
         .trainerOffset = 0,
         .frontPic = gMonFrontPic_Shrewel,
@@ -468,10 +468,10 @@ const struct SpeciesInfo gSpeciesInfo[] =
         FOOTPRINT(Shrewel)
         .levelUpLearnset = sShrewelLevelUpLearnset,
         .teachableLearnset = sShrewelTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 34, SPECIES_AARDVAROCK}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 34, SPECIES_PANGOLEM}),
 },
 
-    [SPECIES_AARDVAROCK] =
+    [SPECIES_PANGOLEM] =
     {
         .baseHP        = 89,
         .baseAttack    = 106,
@@ -490,37 +490,37 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MINERAL, EGG_GROUP_FIELD),
         .abilities = {ABILITY_SIMPLE, ABILITY_SAND_RUSH, ABILITY_SCRAPPY},
         .bodyColor = BODY_COLOR_BROWN,
-        .speciesName = _("Aardvarock"),
-        .cryId = CRY_AARDVAROCK,
-        .natDexNum = NATIONAL_DEX_AARDVAROCK,
-        .categoryName = _("Anteater"),
-        .height = 0,
-        .weight = 0,
+        .speciesName = _("Pangolem"),
+        .cryId = CRY_PANGOLEM,
+        .natDexNum = NATIONAL_DEX_PANGOLEM,
+        .categoryName = _("Pangolin"),
+        .height = 13,
+        .weight = 1055,
         .description = COMPOUND_STRING(
             "This is a newly discovered Pokémon.\n"
             "It is currently under investigation.\n"
             "No detailed information is available\n"
             "at this time."),
-        .pokemonScale = 256,
+        .pokemonScale = 267,
         .pokemonOffset = 0,
-        .trainerScale = 256,
+        .trainerScale = 286,
         .trainerOffset = 0,
-        .frontPic = gMonFrontPic_Aardvarock,
+        .frontPic = gMonFrontPic_Pangolem,
         .frontPicSize = MON_COORDS_SIZE(40, 40),
         .frontPicYOffset = 13,
-        .frontAnimFrames = sAnims_Aardvarock,
+        .frontAnimFrames = sAnims_Pangolem,
         .frontAnimId = ANIM_V_JUMPS_H_JUMPS,
-        .backPic = gMonBackPic_Aardvarock,
+        .backPic = gMonBackPic_Pangolem,
         .backPicSize = MON_COORDS_SIZE(56, 40),
         .backPicYOffset = 13,
         .backAnimId = BACK_ANIM_DIP_RIGHT_SIDE,
-        .palette = gMonPalette_Aardvarock,
-        .shinyPalette = gMonShinyPalette_Aardvarock,
-        .iconSprite = gMonIcon_Aardvarock,
+        .palette = gMonPalette_Pangolem,
+        .shinyPalette = gMonShinyPalette_Pangolem,
+        .iconSprite = gMonIcon_Pangolem,
         .iconPalIndex = 4,
-        FOOTPRINT(Aardvarock)
-        .levelUpLearnset = sAardvarockLevelUpLearnset,
-        .teachableLearnset = sAardvarockTeachableLearnset,
+        FOOTPRINT(Pangolem)
+        .levelUpLearnset = sPangolemLevelUpLearnset,
+        .teachableLearnset = sPangolemTeachableLearnset,
 },
 #endif //P_FAMILY_TENROCK
 
@@ -548,16 +548,16 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .speciesName = _("Psyynen"),
         .cryId = CRY_PSYYNEN,
         .natDexNum = NATIONAL_DEX_PSYYNEN,
-        .categoryName = _("Unknown"),
-        .height = 0,
-        .weight = 0,
+        .categoryName = _("Angora"),
+        .height = 9,
+        .weight = 408,
         .description = COMPOUND_STRING(
-            "This is a newly discovered Pokémon.\n"
-            "It is currently under investigation.\n"
-            "No detailed information is available\n"
-            "at this time."),
-        .pokemonScale = 256,
-        .pokemonOffset = 0,
+            "Its psychic powers exceed its\n"
+            "ability to control them. It will\n"
+            "unleash them if frightened or\n"
+            "threatened."),
+        .pokemonScale = 306,
+        .pokemonOffset = 1,
         .trainerScale = 256,
         .trainerOffset = 0,
         .frontPic = gMonFrontPic_Psyynen,
@@ -582,10 +582,10 @@ const struct SpeciesInfo gSpeciesInfo[] =
     [SPECIES_AANCHGORA] =
     {
         .baseHP        = 80,
-        .baseAttack    = 60,
+        .baseAttack    = 67,
         .baseDefense   = 95,
-        .baseSpeed     = 65,
-        .baseSpAttack  = 100,
+        .baseSpeed     = 45,
+        .baseSpAttack  = 113,
         .baseSpDefense = 135,
         .types = MON_TYPES(TYPE_PSYCHIC),
         .catchRate = 100,
@@ -602,14 +602,14 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .speciesName = _("Aanchgora"),
         .cryId = CRY_AANCHGORA,
         .natDexNum = NATIONAL_DEX_AANCHGORA,
-        .categoryName = _("Unknown"),
-        .height = 0,
-        .weight = 0,
+        .categoryName = _("Angora"),
+        .height = 12,
+        .weight = 907,
         .description = COMPOUND_STRING(
-            "This is a newly discovered Pokémon.\n"
-            "It is currently under investigation.\n"
-            "No detailed information is available\n"
-            "at this time."),
+            "In an attempt to control its immense\n"
+            "power, it rid its mind of thoughts.\n"
+            "When left unchecked, its psychic\n"
+            "power can level cities."),
         .pokemonScale = 256,
         .pokemonOffset = 0,
         .trainerScale = 256,
@@ -657,13 +657,13 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .cryId = CRY_CUPPY,
         .natDexNum = NATIONAL_DEX_CUPPY,
         .categoryName = _("Guppy"),
-        .height = 0,
-        .weight = 0,
+        .height = 2,
+        .weight = 1,
         .description = COMPOUND_STRING(
-            "This is a newly discovered Pokémon.\n"
-            "It is currently under investigation.\n"
-            "No detailed information is available\n"
-            "at this time."),
+            "This Pokémon is not very strong.\n"
+            "As such, it made itself useful\n"
+            "to humans as a teacup for\n"
+            "protection from predators."),
         .pokemonScale = 256,
         .pokemonOffset = 0,
         .trainerScale = 256,
@@ -709,14 +709,14 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .speciesName = _("Fettlekish"),
         .cryId = CRY_FETTLEKISH,
         .natDexNum = NATIONAL_DEX_FETTLEKISH,
-        .categoryName = _("Guppy"),
-        .height = 0,
-        .weight = 0,
+        .categoryName = _("Kettle Fish"),
+        .height = 6,
+        .weight = 104,
         .description = COMPOUND_STRING(
-            "This is a newly discovered Pokémon.\n"
-            "It is currently under investigation.\n"
-            "No detailed information is available\n"
-            "at this time."),
+            "The water it stores in its body can\n"
+            "reach temperatures of 220ºF.\n"
+            "As such, people will often use\n"
+            "it to boil their tea."),
         .pokemonScale = 256,
         .pokemonOffset = 0,
         .trainerScale = 256,
@@ -764,13 +764,13 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .cryId = CRY_NECTRI,
         .natDexNum = NATIONAL_DEX_NECTRI,
         .categoryName = _("Hummingbird"),
-        .height = 0,
-        .weight = 0,
+        .height = 1,
+        .weight = 1,
         .description = COMPOUND_STRING(
-            "This is a newly discovered Pokémon.\n"
-            "It is currently under investigation.\n"
-            "No detailed information is available\n"
-            "at this time."),
+            "This Pokémon is so small, you\n"
+            "might miss it! It loves\n"
+            "to drink the nectar from Bellossom's\n"
+            "flowers."),
         .pokemonScale = 256,
         .pokemonOffset = 0,
         .trainerScale = 256,
@@ -817,13 +817,13 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .cryId = CRY_HUMMISCUS,
         .natDexNum = NATIONAL_DEX_HUMMISCUS,
         .categoryName = _("Hummingbird"),
-        .height = 0,
-        .weight = 0,
+        .height = 2,
+        .weight = 1,
         .description = COMPOUND_STRING(
-            "This is a newly discovered Pokémon.\n"
-            "It is currently under investigation.\n"
-            "No detailed information is available\n"
-            "at this time."),
+            "Hummiscus fascinates researchers\n"
+            "with its ability to fly backward.\n"
+            "It uses this ability to evade\n"
+            "attacking predators."),
         .pokemonScale = 256,
         .pokemonOffset = 0,
         .trainerScale = 256,
@@ -870,13 +870,13 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .cryId = CRY_NECTRIARY,
         .natDexNum = NATIONAL_DEX_NECTRIARY,
         .categoryName = _("Hummingbird"),
-        .height = 0,
-        .weight = 0,
+        .height = 3,
+        .weight = 2,
         .description = COMPOUND_STRING(
-            "This is a newly discovered Pokémon.\n"
-            "It is currently under investigation.\n"
-            "No detailed information is available\n"
-            "at this time."),
+            "Nectriary beats its wings 4,000\n"
+            "times per minute.\n"
+            "If its wings stop beating, it\n"
+            "will die."),
         .pokemonScale = 256,
         .pokemonOffset = 0,
         .trainerScale = 256,
@@ -925,13 +925,13 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .cryId = CRY_CARDINITE,
         .natDexNum = NATIONAL_DEX_CARDINITE,
         .categoryName = _("Cardinal"),
-        .height = 0,
-        .weight = 0,
+        .height = 3,
+        .weight = 1,
         .description = COMPOUND_STRING(
-            "This is a newly discovered Pokémon.\n"
-            "It is currently under investigation.\n"
-            "No detailed information is available\n"
-            "at this time."),
+            "They arise early in the morning\n"
+            "to absorb sunlight during the day.\n"
+            "They can store the heat inside\n"
+            "to keep warm in frigid climates."),
         .pokemonScale = 256,
         .pokemonOffset = 0,
         .trainerScale = 256,
@@ -979,13 +979,13 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .cryId = CRY_CHARDINAL,
         .natDexNum = NATIONAL_DEX_CHARDINAL,
         .categoryName = _("Cardinal"),
-        .height = 0,
-        .weight = 0,
+        .height = 10,
+        .weight = 120,
         .description = COMPOUND_STRING(
-            "This is a newly discovered Pokémon.\n"
-            "It is currently under investigation.\n"
-            "No detailed information is available\n"
-            "at this time."),
+            "The excess solar heat in its body\n"
+            "is released as flames during the\n"
+            "day. Storing heat for too long will\n"
+            "cause internal burns."),
         .pokemonScale = 256,
         .pokemonOffset = 0,
         .trainerScale = 256,
@@ -1032,14 +1032,14 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .speciesName = _("Salaguade"),
         .cryId = CRY_SALAGUADE,
         .natDexNum = NATIONAL_DEX_SALAGUADE,
-        .categoryName = _("Iguana"),
-        .height = 0,
-        .weight = 0,
+        .categoryName = _("Salamander"),
+        .height = 2,
+        .weight = 8,
         .description = COMPOUND_STRING(
-            "This is a newly discovered Pokémon.\n"
-            "It is currently under investigation.\n"
-            "No detailed information is available\n"
-            "at this time."),
+            "Its sweat is toxic to humans.\n"
+            "When traveling in humid places,\n"
+            "people should check their clothing\n"
+            "because it loves to cling to clothes."),
         .pokemonScale = 256,
         .pokemonOffset = 0,
         .trainerScale = 256,
@@ -1086,13 +1086,13 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .cryId = CRY_IGUASH,
         .natDexNum = NATIONAL_DEX_IGUASH,
         .categoryName = _("Iguana"),
-        .height = 0,
-        .weight = 0,
+        .height = 21,
+        .weight = 90,
         .description = COMPOUND_STRING(
-            "This is a newly discovered Pokémon.\n"
-            "It is currently under investigation.\n"
-            "No detailed information is available\n"
-            "at this time."),
+            "Iguash can often be found\n"
+            "roughhousing in rivers.\n"
+            "They practice dragging\n"
+            "prey underwater."),
         .pokemonScale = 256,
         .pokemonOffset = 0,
         .trainerScale = 256,
@@ -1119,7 +1119,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
     [SPECIES_JUGGERCROC] =
     {
         .baseHP        = 100,
-	    .baseAttack    = 90,
+	.baseAttack    = 90,
         .baseDefense   = 75,
         .baseSpeed     = 105,
         .baseSpAttack  = 75,
@@ -1138,14 +1138,14 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .speciesName = _("Juggercroc"),
         .cryId = CRY_JUGGERCROC,
         .natDexNum = NATIONAL_DEX_JUGGERCROC,
-        .categoryName = _("Iguana"),
-        .height = 0,
-        .weight = 0,
+        .categoryName = _("Crocodile"),
+        .height = 48,
+        .weight = 9500,
         .description = COMPOUND_STRING(
-            "This is a newly discovered Pokémon.\n"
-            "It is currently under investigation.\n"
-            "No detailed information is available\n"
-            "at this time."),
+            "They are extremely territorial.\n"
+            "Their preferred method of attack\n"
+            "is a body check, but they also\n"
+            "drown their prey."),
         .pokemonScale = 256,
         .pokemonOffset = 0,
         .trainerScale = 256,
@@ -1192,9 +1192,9 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .speciesName = _("Arrowbin"),
         .cryId = CRY_ARROWBIN,
         .natDexNum = NATIONAL_DEX_ARROWBIN,
-        .categoryName = _("Turkey"),
-        .height = 0,
-        .weight = 0,
+        .categoryName = _("Ottawa"),
+        .height = 5,
+        .weight = 21,
         .description = COMPOUND_STRING(
             "This is a newly discovered Pokémon.\n"
             "It is currently under investigation.\n"
