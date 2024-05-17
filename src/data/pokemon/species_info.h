@@ -3844,6 +3844,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .abilities = {ABILITY_MUMMY, ABILITY_NONE},
         .bodyColor = BODY_COLOR_BLACK,
         .isLegendary = TRUE,
+	.allPerfectIVs = TRUE,
         .speciesName = _("Hathrostus"),
         .cryId = CRY_HATHROSTUS,
         .natDexNum = NATIONAL_DEX_HATHROSTUS,
@@ -3901,6 +3902,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .abilities = {ABILITY_MUMMY, ABILITY_NONE},
         .bodyColor = BODY_COLOR_BLUE,
         .isLegendary = TRUE,
+	.allPerfectIVs = TRUE,
         .speciesName = _("Babosiris"),
         .cryId = CRY_BABOSIRIS,
         .natDexNum = NATIONAL_DEX_BABOSIRIS,
@@ -3956,6 +3958,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .abilities = {ABILITY_LEVITATE, ABILITY_NONE},
         .bodyColor = BODY_COLOR_YELLOW,
         .isLegendary = TRUE,
+	.allPerfectIVs = TRUE,
         .speciesName = _("Hubriset"),
         .cryId = CRY_HUBRISET,
         .natDexNum = NATIONAL_DEX_HUBRISET,
@@ -3965,7 +3968,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .description = COMPOUND_STRING(
             "The patron god-king of the dead.\n"
             "Hubriset is an ambitious legendary\n"
-            "who sent its brother, Babosiris,\n"
+            "who sent its sibling, Babosiris,\n"
             "into the afterlife to depose him."),
         .pokemonScale = 256,
         .pokemonOffset = 0,
