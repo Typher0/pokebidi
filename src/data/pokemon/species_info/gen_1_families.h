@@ -13465,12 +13465,12 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 #if P_MEGA_EVOLUTIONS
     [SPECIES_LAPRAS_GIGANTAMAX] =
     {
-        .baseHP        = 180,
+        .baseHP        = 130,
         .baseAttack    = 85,
-        .baseDefense   = 80,
+        .baseDefense   = 90,
         .baseSpeed     = 60,
         .baseSpAttack  = 115,
-        .baseSpDefense = 115,
+        .baseSpDefense = 155,
         .types = MON_TYPES(TYPE_WATER, TYPE_SOUND),
         .catchRate = 45,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 187 : 219,
