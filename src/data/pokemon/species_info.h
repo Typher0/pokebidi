@@ -266,7 +266,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpeed     = 56,
         .baseSpAttack  = 50,
         .baseSpDefense = 40,
-        .types = MON_TYPES(TYPE_ICE, TYPE_ICE),
+        .types = MON_TYPES(TYPE_ICE),
         .catchRate = 255,
         .expYield = 54,
         .evYield_HP    = 1,
@@ -624,6 +624,166 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .teachableLearnset = sKakoneTeachableLearnset,
 },
 #endif //P_FAMILY_SKULLARVA
+
+#if P_FAMILY_TOTTER
+    [SPECIES_TOTTER] =
+    {
+        .baseHP        = 46,
+        .baseAttack    = 38,
+        .baseDefense   = 55,
+        .baseSpeed     = 84,
+        .baseSpAttack  = 55,
+        .baseSpDefense = 55,
+        .types = MON_TYPES(TYPE_WATER),
+        .catchRate = 255,
+        .expYield = 50,
+        .evYield_Speed    = 1,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_WATER_1, EGG_GROUP_FIELD),
+        .abilities = {ABILITY_SWIFT_SWIM, ABILITY_WATER_VEIL, ABILITY_TECHNICIAN},
+        .bodyColor = BODY_COLOR_BLUE,
+        .speciesName = _("Totter"),
+        .cryId = CRY_TOTTER,
+        .natDexNum = NATIONAL_DEX_TOTTER,
+        .categoryName = _("Otter"),
+        .height = 4,
+        .weight = 101,
+        .description = COMPOUND_STRING(
+            "Totter cannot walk very well.\n"
+            "Domesticated ones are taught\n"
+            "to walk, eat, and are even\n"
+            "potty trained by humans."),
+        .pokemonScale = 491,
+        .pokemonOffset = 15,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_Totter,
+        .frontPicSize = MON_COORDS_SIZE(40, 40),
+        .frontPicYOffset = 13,
+        .frontAnimFrames = sAnims_Totter,
+        .frontAnimId = ANIM_V_JUMPS_H_JUMPS,
+        .backPic = gMonBackPic_Totter,
+        .backPicSize = MON_COORDS_SIZE(56, 40),
+        .backPicYOffset = 13,
+        .backAnimId = BACK_ANIM_DIP_RIGHT_SIDE,
+        .palette = gMonPalette_Totter,
+        .shinyPalette = gMonShinyPalette_Totter,
+        .iconSprite = gMonIcon_Totter,
+        .iconPalIndex = 4,
+        FOOTPRINT(Totter)
+        .levelUpLearnset = sTotterLevelUpLearnset,
+        .teachableLearnset = sTotterTeachableLearnset,
+        .evolutions = EVOLUTION({EVO_LEVEL, 22, SPECIES_CASCOTTA}),
+},
+
+    [SPECIES_CASCOTTA] =
+    {
+        .baseHP        = 58,
+        .baseAttack    = 41,
+        .baseDefense   = 65,
+        .baseSpeed     = 94,
+        .baseSpAttack  = 75,
+        .baseSpDefense = 85,
+        .types = MON_TYPES(TYPE_WATER),
+        .catchRate = 180,
+        .expYield = 100,
+        .evYield_Speed    = 2,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_WATER_1, EGG_GROUP_FIELD),
+        .abilities = {ABILITY_SWIFT_SWIM, ABILITY_WATER_VEIL, ABILITY_TECHNICIAN},
+        .bodyColor = BODY_COLOR_BLUE,
+        .speciesName = _("Cascotta"),
+        .cryId = CRY_CASCOTTA,
+        .natDexNum = NATIONAL_DEX_CASCOTTA,
+        .categoryName = _("Otter"),
+        .height = 14,
+        .weight = 437,
+        .description = COMPOUND_STRING(
+            "Cascotta are very quick\n"
+            "swimmers. They can out-swim\n"
+            "a speedboat when going at\n"
+            "full speed."),
+        .pokemonScale = 491,
+        .pokemonOffset = 15,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_Cascotta,
+        .frontPicSize = MON_COORDS_SIZE(40, 40),
+        .frontPicYOffset = 13,
+        .frontAnimFrames = sAnims_Cascotta,
+        .frontAnimId = ANIM_V_JUMPS_H_JUMPS,
+        .backPic = gMonBackPic_Cascotta,
+        .backPicSize = MON_COORDS_SIZE(56, 40),
+        .backPicYOffset = 13,
+        .backAnimId = BACK_ANIM_DIP_RIGHT_SIDE,
+        .palette = gMonPalette_Cascotta,
+        .shinyPalette = gMonShinyPalette_Cascotta,
+        .iconSprite = gMonIcon_Cascotta,
+        .iconPalIndex = 4,
+        FOOTPRINT(Cascotta)
+        .levelUpLearnset = sCascottaLevelUpLearnset,
+        .teachableLearnset = sCascottaTeachableLearnset,
+        .evolutions = EVOLUTION({EVO_LEVEL_RAIN, 34, SPECIES_LUTRAJET}),
+},
+
+    [SPECIES_LUTRAJET] =
+    {
+        .baseHP        = 72,
+        .baseAttack    = 68,
+        .baseDefense   = 72,
+        .baseSpeed     = 113,
+        .baseSpAttack  = 96,
+        .baseSpDefense = 108,
+        .types = MON_TYPES(TYPE_WATER),
+        .catchRate = 90,
+        .expYield = 150,
+        .evYield_Speed    = 3,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_WATER_1, EGG_GROUP_FIELD),
+        .abilities = {ABILITY_SWIFT_SWIM, ABILITY_DRIZZLE, ABILITY_TECHNICIAN},
+        .bodyColor = BODY_COLOR_BLUE,
+        .speciesName = _("Lutrajet"),
+        .cryId = CRY_LUTRAJET,
+        .natDexNum = NATIONAL_DEX_LUTRAJET,
+        .categoryName = _("Otter"),
+        .height = 18,
+        .weight = 454,
+        .description = COMPOUND_STRING(
+            "Lutrajet\n"
+            "swimmers. They can out-swim\n"
+            "a speedboat when going at\n"
+            "full speed."),
+        .pokemonScale = 491,
+        .pokemonOffset = 15,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_Lutrajet,
+        .frontPicSize = MON_COORDS_SIZE(40, 40),
+        .frontPicYOffset = 13,
+        .frontAnimFrames = sAnims_Lutrajet,
+        .frontAnimId = ANIM_V_JUMPS_H_JUMPS,
+        .backPic = gMonBackPic_Lutrajet,
+        .backPicSize = MON_COORDS_SIZE(56, 40),
+        .backPicYOffset = 13,
+        .backAnimId = BACK_ANIM_DIP_RIGHT_SIDE,
+        .palette = gMonPalette_Lutrajet,
+        .shinyPalette = gMonShinyPalette_Lutrajet,
+        .iconSprite = gMonIcon_Lutrajet,
+        .iconPalIndex = 4,
+        FOOTPRINT(Lutrajet)
+        .levelUpLearnset = sLutrajetLevelUpLearnset,
+        .teachableLearnset = sLutrajetTeachableLearnset,
+},
+#endif //P_FAMILY_TOTTER
 
 #if P_FAMILY_TENROCK
     [SPECIES_TENROCK] =
@@ -3685,6 +3845,62 @@ const struct SpeciesInfo gSpeciesInfo[] =
 },
 #endif //P_FAMILY_NOBUNATA
 
+#if P_FAMILY_SOMBERO
+    [SPECIES_SOMBERO] =
+    {
+        .baseHP        = 67,
+        .baseAttack    = 80,
+        .baseDefense   = 60,
+        .baseSpeed     = 86,
+        .baseSpAttack  = 103,
+        .baseSpDefense = 130,
+        .types = MON_TYPES(TYPE_GHOST, TYPE_GROUND),
+        .catchRate = 70,
+        .expYield = 142,
+        .evYield_HP    = 2,
+        .itemCommon = ITEM_QUICK_CLAW,
+        .itemRare = ITEM_METRONOME,
+        .genderRatio = MON_MALE,
+        .eggCycles = 55,
+        .friendship = 15,
+        .growthRate = GROWTH_MEDIUM_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_AMORPHOUS, EGG_GROUP_HUMAN_LIKE),
+        .abilities = {ABILITY_QUICK_DRAW, ABILITY_GUNSLINGER, ABILITY_SHADOW_TAG}, //Powers up ballistic moves
+        .bodyColor = BODY_COLOR_BROWN,
+        .speciesName = _("Sombero"),
+        .cryId = CRY_SOMBERO,
+        .natDexNum = NATIONAL_DEX_SOMBERO,
+        .categoryName = _("Gunslinger"),
+        .height = 13,
+        .weight = 137,
+        .description = COMPOUND_STRING(
+            "An outlaw of the wild west lost\n"
+            "his standoff and became a Sombero.\n"
+            "Now, as a ghost, he practices his\n"
+            "shooting so he never loses again."),
+        .pokemonScale = 256,
+        .pokemonOffset = 0,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_Sombero,
+        .frontPicSize = MON_COORDS_SIZE(40, 40),
+        .frontPicYOffset = 13,
+        .frontAnimFrames = sAnims_Sombero,
+        .frontAnimId = ANIM_V_JUMPS_H_JUMPS,
+        .backPic = gMonBackPic_Sombero,
+        .backPicSize = MON_COORDS_SIZE(56, 40),
+        .backPicYOffset = 13,
+        .backAnimId = BACK_ANIM_DIP_RIGHT_SIDE,
+        .palette = gMonPalette_Sombero,
+        .shinyPalette = gMonShinyPalette_Sombero,
+        .iconSprite = gMonIcon_Sombero,
+        .iconPalIndex = 4,
+        FOOTPRINT(Sombero)
+        .levelUpLearnset = sSomberoLevelUpLearnset,
+        .teachableLearnset = sSomberoTeachableLearnset,
+},
+#endif //P_FAMILY_SOMBERO
+
 #if P_FAMILY_MINARAC
     [SPECIES_MINARAC] = //MINING TARANTULA WITH A BIG DRILL BUTT
     {
@@ -5044,7 +5260,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpeed     = 60,
         .baseSpAttack  = 61,
         .baseSpDefense = 60,
-        .types = MON_TYPES(TYPE_FIRE, TYPE_FIRE),
+        .types = MON_TYPES(TYPE_FIRE),
         .catchRate = 75,
         .expYield = 100,
         .evYield_Attack    = 1,
