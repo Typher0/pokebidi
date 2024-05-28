@@ -2822,10 +2822,10 @@ const struct SpeciesInfo gSpeciesInfo[] =
         FOOTPRINT(Fawnpire)
         .levelUpLearnset = sFawnpireLevelUpLearnset,
         .teachableLearnset = sFawnpireTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 28, SPECIES_LLAMCULA}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 28, SPECIES_ALPACULA}),
 },
 
-    [SPECIES_LLAMCULA] = // EVOLVE AT LEVEL 28
+    [SPECIES_ALPACULA] = // EVOLVE AT LEVEL 28
     {
         .baseHP        = 73,
         .baseAttack    = 95,
@@ -2844,9 +2844,9 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
         .abilities = {ABILITY_VAMPIRISM, ABILITY_RIVALRY, ABILITY_SWIFT_SWIM},
         .bodyColor = BODY_COLOR_BROWN,
-        .speciesName = _("Llamcula"),
-        .cryId = CRY_LLAMCULA,
-        .natDexNum = NATIONAL_DEX_LLAMCULA,
+        .speciesName = _("Alpacula"),
+        .cryId = CRY_ALPACULA,
+        .natDexNum = NATIONAL_DEX_ALPACULA,
         .categoryName = _("Water Deer"),
         .height = 18,
         .weight = 1704,
@@ -2859,22 +2859,22 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .pokemonOffset = 0,
         .trainerScale = 256,
         .trainerOffset = 0,
-        .frontPic = gMonFrontPic_Llamcula,
+        .frontPic = gMonFrontPic_Alpacula,
         .frontPicSize = MON_COORDS_SIZE(40, 40),
         .frontPicYOffset = 13,
-        .frontAnimFrames = sAnims_Llamcula,
+        .frontAnimFrames = sAnims_Alpacula,
         .frontAnimId = ANIM_V_JUMPS_H_JUMPS,
-        .backPic = gMonBackPic_Llamcula,
+        .backPic = gMonBackPic_Alpacula,
         .backPicSize = MON_COORDS_SIZE(56, 40),
         .backPicYOffset = 13,
         .backAnimId = BACK_ANIM_DIP_RIGHT_SIDE,
-        .palette = gMonPalette_Llamcula,
-        .shinyPalette = gMonShinyPalette_Llamcula,
-        .iconSprite = gMonIcon_Llamcula,
+        .palette = gMonPalette_Alpacula,
+        .shinyPalette = gMonShinyPalette_Alpacula,
+        .iconSprite = gMonIcon_Alpacula,
         .iconPalIndex = 4,
-        FOOTPRINT(Llamcula)
-        .levelUpLearnset = sLlamculaLevelUpLearnset,
-        .teachableLearnset = sLlamculaTeachableLearnset,
+        FOOTPRINT(Alpacula)
+        .levelUpLearnset = sAlpaculaLevelUpLearnset,
+        .teachableLearnset = sAlpaculaTeachableLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 36, SPECIES_MOOSEFERATU}),
 },
 
