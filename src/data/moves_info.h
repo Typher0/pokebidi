@@ -3479,6 +3479,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
         .makesContact = TRUE,
+        .bitingMove = TRUE,
         .ignoresKingsRock = (B_UPDATED_MOVE_FLAGS == GEN_3 || B_UPDATED_MOVE_FLAGS == GEN_4),
         .healingMove = B_HEAL_BLOCKING >= GEN_6,
         .contestEffect = CONTEST_EFFECT_STARTLE_PREV_MON,
@@ -20555,6 +20556,30 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .mirrorMoveBanned = TRUE,
         .parentalBondBanned = TRUE,
         .contestEffect = CONTEST_EFFECT_GREAT_APPEAL_BUT_NO_MORE_MOVES,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0}
+    },
+
+    [MOVE_CANNIBALIZE] =
+    {
+        .name = COMPOUND_STRING("Cannibalize"),
+        .description = COMPOUND_STRING(
+            "The user bites meat off the\n"
+            "foe, healing half the damage."),
+        .effect = EFFECT_ABSORB,
+        .power = 100,
+        .type = TYPE_DARK,
+        .accuracy = 100,
+        .pp = 5,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .bitingMove = TRUE,
+        .ignoresKingsRock = (B_UPDATED_MOVE_FLAGS == GEN_3 || B_UPDATED_MOVE_FLAGS == GEN_4),
+        .healingMove = B_HEAL_BLOCKING >= GEN_6,
+        .contestEffect = CONTEST_EFFECT_STARTLE_PREV_MON,
         .contestCategory = CONTEST_CATEGORY_TOUGH,
         .contestComboStarterId = 0,
         .contestComboMoves = {0}
