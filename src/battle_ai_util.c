@@ -446,6 +446,14 @@ bool32 IsDamageMoveUnusable(u32 move, u32 battlerAtk, u32 battlerDef)
     }
 
     return FALSE;
+    case EFFECT_POLTERGEIST:
+        if (AI_DATA->items[battlerDef] == ITEM_NONE)
+            return TRUE;
+        break;
+    case EFFECT_FIRST_TURN_ONLY:
+        if (!gDisableStructs[battlerAtk].isFirstTurn)
+            return TRUE;
+        break;
 }
 
 s32 AI_CalcDamage(u32 move, u32 battlerAtk, u32 battlerDef, u8 *typeEffectiveness, bool32 considerZPower, u32 weather)
