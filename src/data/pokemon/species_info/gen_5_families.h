@@ -9315,10 +9315,10 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
     [SPECIES_COBALION] =
     {
         .baseHP        = 91,
-        .baseAttack    = 90,
+        .baseAttack    = 110,
         .baseDefense   = 129,
         .baseSpeed     = 108,
-        .baseSpAttack  = 90,
+        .baseSpAttack  = 70,
         .baseSpDefense = 72,
         .types = MON_TYPES(TYPE_STEEL, TYPE_FIGHTING),
         .catchRate = 3,
@@ -9425,10 +9425,10 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
     [SPECIES_VIRIZION] =
     {
         .baseHP        = 91,
-        .baseAttack    = 90,
+        .baseAttack    = 110,
         .baseDefense   = 72,
         .baseSpeed     = 108,
-        .baseSpAttack  = 90,
+        .baseSpAttack  = 70,
         .baseSpDefense = 129,
         .types = MON_TYPES(TYPE_GRASS, TYPE_FIGHTING),
         .catchRate = 3,
@@ -10233,7 +10233,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .baseSpeed     = 90,
         .baseSpAttack  = 128,
         .baseSpDefense = 128,
-        .types = MON_TYPES(TYPE_NORMAL, TYPE_PSYCHIC),
+        .types = MON_TYPES(TYPE_SOUND, TYPE_PSYCHIC),
         .catchRate = 3,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_8) ? 300 : 270,
         .evYield_Speed = 1,
@@ -10294,7 +10294,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .baseSpeed     = 128,
         .baseSpAttack  = 77,
         .baseSpDefense = 77,
-        .types = MON_TYPES(TYPE_NORMAL, TYPE_FIGHTING),
+        .types = MON_TYPES(TYPE_SOUND, TYPE_FIGHTING),
         .catchRate = 3,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_8) ? 300 : 270,
         .evYield_Attack = 1,
