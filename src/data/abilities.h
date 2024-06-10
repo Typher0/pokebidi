@@ -2602,4 +2602,69 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .cantBeSwapped = TRUE,
         .cantBeTraced = TRUE,
     },
+
+    [ABILITY_COZY] =
+    {
+        .name = _("Cozy"),
+        .description = COMPOUND_STRING("Elemental protection."),
+        .aiRating = 7,
+        .breakable = TRUE,
+    },
+
+    [ABILITY_JESTER] =
+    {
+        .name = _("Jester"),
+        .description = COMPOUND_STRING("Raises Speed after missing."),
+        .aiRating = 3,
+    },
+
+    [ABILITY_MISTY_RIDER] =
+    {
+        .name = _("Misty Rider"),
+        .description = COMPOUND_STRING("Faster on misty terrain."),
+        .aiRating = 4,
+    },
+
+    [ABILITY_VAMPIRISM] =
+    {
+        .name = _("Vampirism"),
+        .description = COMPOUND_STRING("Biting moves drain HP."),
+        .aiRating = 6,
+    },
+
+    [ABILITY_SAPERA] =
+    {
+        .name = _("Sapera"),
+        .description = COMPOUND_STRING("Sound inflicts confusion."),
+        .aiRating = 2,
+        .breakable = TRUE,
+    },
+
+    [ABILITY_GUNSLINGER] =
+    {
+        .name = _("Gunslinger"),
+        .description = COMPOUND_STRING("Strengthens ballistic moves."),
+        .aiRating = 7,
+    },
+
+    [ABILITY_SLANDER] =
+    {
+        .name = _("Slander"),
+        .description = COMPOUND_STRING("Lowers the foe's Sp. Att."),
+        .aiRating = 7,
+    },
+
+    [ABILITY_NARCISSIST] =
+    {
+        .name = _("Narcissist"),
+        .description = COMPOUND_STRING("KOs raise Sp. Att."),
+        .aiRating = 7,
+    },
+
+    [ABILITY_ASTEROID_BELT] =
+    {
+        .name = _("Asteroid Belt"),
+        .description = COMPOUND_STRING("Hurts to touch."),
+        .aiRating = 6,
+    },
 };
