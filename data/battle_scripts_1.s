@@ -63,6 +63,25 @@ BattleScript_EffectShedTail::
 	moveendfrom MOVEEND_TARGET_VISIBLE
 	goto BattleScript_MoveSwitchOpenPartyScreen
 
+ BattleScript_EffectHaystack::
+	attackcanceler
+	attackstring
+ 	jumpifstatus2 BS_ATTACKER, STATUS2_SUBSTITUTE, BattleScript_AlreadyHasSubstitute
+	jumpifbattletype BATTLE_TYPE_ARENA, BattleScript_ButItFailed
+	ppreduce
+	waitstate
+	setsubstitute
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_SUBSTITUTE_FAILED, BattleScript_SubstituteString
+        orword gHitMarker, HITMARKER_PASSIVE_DAMAGE
+	attackanimation
+	waitanimation
+	healthbarupdate BS_ATTACKER
+	datahpupdate BS_ATTACKER
+ 	setstatchanger STAT_EVASION, 1, FALSE
+	printstring STRINGID_HAYSTACK
+	waitmessage B_WAIT_TIME_LONG
+ 	goto BattleScript_MoveEnd
+
 BattleScript_EffectPsychicNoise::
 	printstring STRINGID_PKMNPREVENTEDFROMHEALING
 	waitmessage B_WAIT_TIME_LONG
