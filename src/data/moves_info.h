@@ -20063,7 +20063,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .description = COMPOUND_STRING(
             "Creates a substitute\n"
             "and raises evasion."),
-        .effect = EFFECT_SUBSTITUTE,
+        .effect = EFFECT_HAYSTACK,
         .power = 0,
         .type = TYPE_GRASS,
         .accuracy = 0,
@@ -20076,11 +20076,6 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .ignoresProtect = TRUE,
         .mirrorMoveBanned = TRUE,
         .skyBattleBanned = TRUE,
-        .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_EVASION_UP,
-            .self = TRUE,
-            .chance = 100,
-        }),
         .contestEffect = CONTEST_EFFECT_AVOID_STARTLE_ONCE,
         .contestCategory = CONTEST_CATEGORY_SMART,
         .contestComboStarterId = 0,
