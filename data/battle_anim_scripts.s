@@ -875,6 +875,38 @@ gBattleAnims_Moves::
 	.4byte Move_PSYCHIC_NOISE
 	.4byte Move_UPPER_HAND
 	.4byte Move_MALIGNANT_CHAIN
+ @@@@@@@@@@@@ GEN 10 @@@@@@@@@@@@
+ 	.4byte Move_MEXICAN_STANDOFF
+   	.4byte Move_ROLL_AROUND
+     	.4byte Move_GRAVITATE
+       	.4byte Move_YODEL
+ 	.4byte Move_DISINFECTANT
+   	.4byte Move_THUNDER_CLAW
+ 	.4byte Move_RUSTY_JAW
+ 	.4byte Move_LULLABY
+ 	.4byte Move_HAYSTACK
+ 	.4byte Move_IRRADIATE
+ 	.4byte Move_NEUROTOXIN
+ 	.4byte Move_QUICK_SAND
+ 	.4byte Move_FLASH_STEP
+ 	.4byte Move_SPARKLING_RAMPAGE
+ 	.4byte Move_TWISTED_HASTE
+ 	.4byte Move_SPEED_ROOT
+ 	.4byte Move_CYCLONE_BOOST
+ 	.4byte Move_MIND_RACE
+ 	.4byte Move_ROCKET_RUSH
+ 	.4byte Move_BLISTER_BANE
+ 	.4byte Move_BUZZING_BUSTLE
+ 	.4byte Move_EN_GARDE
+ 	.4byte Move_SABER_THRUST
+ 	.4byte Move_VIBRANT_ARROW
+ 	.4byte Move_GAIA_HAMMER
+ 	.4byte Move_MOLTEN_HORNS
+ 	.4byte Move_FIELD_OF_REEDS
+ 	.4byte Move_POSSESSION
+ 	.4byte Move_STAMPEDE
+ 	.4byte Move_KAMIKAZE
+ 	.4byte Move_CANNIBALIZE
 @@@@ Z MOVES
 	.4byte Move_BREAKNECK_BLITZ
 	.4byte Move_ALL_OUT_PUMMELING
