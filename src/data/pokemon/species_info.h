@@ -308,7 +308,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         FOOTPRINT(Pingloo)
         .levelUpLearnset = sPinglooLevelUpLearnset,
         .teachableLearnset = sPinglooTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 31, SPECIES_PENGLACIER}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 24, SPECIES_PENGLACIER}),
 },
 
     [SPECIES_PENGLACIER] =
@@ -368,21 +368,21 @@ const struct SpeciesInfo gSpeciesInfo[] =
     [SPECIES_CABOB] =
     {
         .baseHP        = 40,
-        .baseAttack    = 55,
+        .baseAttack    = 56,
         .baseDefense   = 35,
-        .baseSpeed     = 56,
+        .baseSpeed     = 55,
         .baseSpAttack  = 30,
         .baseSpDefense = 30,
         .types = MON_TYPES(TYPE_ICE, TYPE_DARK),
         .catchRate = 255,
         .expYield = 54,
-        .evYield_Speed    = 1,
+        .evYield_Attack    = 1,
         .genderRatio = PERCENT_FEMALE(50),
         .eggCycles = 15,
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
-        .abilities = {ABILITY_RUN_AWAY, ABILITY_KEEN_EYE, ABILITY_SLUSH_RUSH},
+        .abilities = {ABILITY_RUN_AWAY, ABILITY_RIVALRY, ABILITY_SLUSH_RUSH},
         .bodyColor = BODY_COLOR_GRAY,
         .speciesName = _("Cabob"),
         .cryId = CRY_CABOB,
@@ -429,13 +429,13 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .types = MON_TYPES(TYPE_ICE, TYPE_DARK),
         .catchRate = 127,
         .expYield = 150,
-        .evYield_Speed    = 2,
+        .evYield_Attack    = 2,
         .genderRatio = PERCENT_FEMALE(50),
         .eggCycles = 15,
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
-        .abilities = {ABILITY_INTIMIDATE, ABILITY_KEEN_EYE, ABILITY_SLUSH_RUSH},
+        .abilities = {ABILITY_INTIMIDATE, ABILITY_RIVALRY, ABILITY_SLUSH_RUSH},
         .bodyColor = BODY_COLOR_GRAY,
         .speciesName = _("Lynxskew"),
         .cryId = CRY_LYNXSKEW,
@@ -470,6 +470,113 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .teachableLearnset = sLynxskewTeachableLearnset,
 },
 #endif //P_FAMILY_CABOB
+
+#if P_FAMILY_PUMACH
+    [SPECIES_PUMACH] =
+    {
+        .baseHP        = 46,
+        .baseAttack    = 45,
+        .baseDefense   = 30,
+        .baseSpeed     = 61,
+        .baseSpAttack  = 40,
+        .baseSpDefense = 55,
+        .types = MON_TYPES(TYPE_ELECTRIC),
+        .catchRate = 255,
+        .expYield = 46,
+        .evYield_Speed    = 1,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
+        .abilities = {ABILITY_STATIC, ABILITY_KEEN_EYE, ABILITY_SLANDER},
+        .bodyColor = BODY_COLOR_YELLOW,
+        .speciesName = _("Pumach"),
+        .cryId = CRY_PUMACH,
+        .natDexNum = NATIONAL_DEX_PUMACH,
+        .categoryName = _("Puma"),
+        .height = 6,
+        .weight = 53,
+        .description = COMPOUND_STRING(
+            "Its fur attracts static\n"
+            "electricity, so watch out\n"
+            "if you want to hug it! They are\n"
+            "friendly and are popular pets."),
+        .pokemonScale = 491,
+        .pokemonOffset = 7,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_Pumach,
+        .frontPicSize = MON_COORDS_SIZE(40, 40),
+        .frontPicYOffset = 13,
+        .frontAnimFrames = sAnims_Pumach,
+        .frontAnimId = ANIM_V_JUMPS_H_JUMPS,
+        .backPic = gMonBackPic_Pumach,
+        .backPicSize = MON_COORDS_SIZE(56, 40),
+        .backPicYOffset = 13,
+        .backAnimId = BACK_ANIM_DIP_RIGHT_SIDE,
+        .palette = gMonPalette_Pumach,
+        .shinyPalette = gMonShinyPalette_Pumach,
+        .iconSprite = gMonIcon_Pumach,
+        .iconPalIndex = 4,
+        FOOTPRINT(Pumach)
+        .levelUpLearnset = sPumachLevelUpLearnset,
+        .teachableLearnset = sPumachTeachableLearnset,
+        .evolutions = EVOLUTION({EVO_LEVEL, 28, SPECIES_JAGWIRE),
+},
+
+    [SPECIES_JAGWIRE] =
+    {
+        .baseHP        = 91,
+        .baseAttack    = 85,
+        .baseDefense   = 60,
+        .baseSpeed     = 110,
+        .baseSpAttack  = 80,
+        .baseSpDefense = 101,
+        .types = MON_TYPES(TYPE_ELECTRIC, TYPE_DARK),
+        .catchRate = 127,
+        .expYield = 162,
+        .evYield_Speed    = 2,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
+        .abilities = {ABILITY_STATIC, ABILITY_KEEN_EYE, ABILITY_SLANDER},
+        .bodyColor = BODY_COLOR_YELLOW,
+        .speciesName = _("Jagwire"),
+        .cryId = CRY_JAGWIRE,
+        .natDexNum = NATIONAL_DEX_JAGWIRE,
+        .categoryName = _("Jaguar"),
+        .height = 9,
+        .weight = 952,
+        .description = COMPOUND_STRING(
+            "Jagwire's legs are incredibly strong.\n"
+            "It can run at 60mph, and jump\n"
+            "12ft off the ground. When they jump,\n"
+            "it makes a sound like thunder."),
+        .pokemonScale = 259,
+        .pokemonOffset = 1,
+        .trainerScale = 296,
+        .trainerOffset = 1,
+        .frontPic = gMonFrontPic_Jagwire,
+        .frontPicSize = MON_COORDS_SIZE(40, 40),
+        .frontPicYOffset = 13,
+        .frontAnimFrames = sAnims_Jagwire,
+        .frontAnimId = ANIM_V_JUMPS_H_JUMPS,
+        .backPic = gMonBackPic_Jagwire,
+        .backPicSize = MON_COORDS_SIZE(56, 40),
+        .backPicYOffset = 13,
+        .backAnimId = BACK_ANIM_DIP_RIGHT_SIDE,
+        .palette = gMonPalette_Jagwire,
+        .shinyPalette = gMonShinyPalette_Jagwire,
+        .iconSprite = gMonIcon_Jagwire,
+        .iconPalIndex = 4,
+        FOOTPRINT(Jagwire)
+        .levelUpLearnset = sJagwireLevelUpLearnset,
+        .teachableLearnset = sJagwireTeachableLearnset,
+},
+#endif //P_FAMILY_PUMACH
 
 #if P_FAMILY_SKULLARVA
     [SPECIES_SKULLARVA] =
@@ -520,7 +627,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
 	FOOTPRINT(Skullarva)
         .levelUpLearnset = sSkullarvaLevelUpLearnset,
         .teachableLearnset = sSkullarvaTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 10, SPECIES_KAKONE}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 7, SPECIES_KAKONE}),
 },
 
     [SPECIES_KAKONE] =
@@ -571,7 +678,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
 	FOOTPRINT(Kakone)
         .levelUpLearnset = sKakoneLevelUpLearnset,
         .teachableLearnset = sKakoneTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 18, SPECIES_MORTASQUE}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 23, SPECIES_MORTASQUE}),
 },
 
     [SPECIES_MORTASQUE] =
@@ -749,7 +856,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_WATER_1, EGG_GROUP_FIELD),
-        .abilities = {ABILITY_SWIFT_SWIM, ABILITY_DRIZZLE, ABILITY_TECHNICIAN},
+        .abilities = {ABILITY_SWIFT_SWIM, ABILITY_WATER_VEIL, ABILITY_TECHNICIAN},
         .bodyColor = BODY_COLOR_BLUE,
         .speciesName = _("Lutrajet"),
         .cryId = CRY_LUTRAJET,
@@ -1532,7 +1639,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         FOOTPRINT(Icetope)
         .levelUpLearnset = sIcetopeLevelUpLearnset,
         .teachableLearnset = sIcetopeTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 33, SPECIES_CHILLNOBYL}),
+        .evolutions = EVOLUTION({EVO_ITEM, ITEM_ICE_STONE, SPECIES_CHILLNOBYL}),
     },
 
     [SPECIES_CHILLNOBYL] =
@@ -1908,7 +2015,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         FOOTPRINT(Cuppy)
         .levelUpLearnset = sCuppyLevelUpLearnset,
         .teachableLearnset = sCuppyTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 28, SPECIES_FETTLEKISH}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 20, SPECIES_FETTLEKISH}),
     },
 
     [SPECIES_FETTLEKISH] =
@@ -2068,7 +2175,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         FOOTPRINT(Hummiscus)
         .levelUpLearnset = sHummiscusLevelUpLearnset,
         .teachableLearnset = sHummiscusTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 33, SPECIES_NECTRIARY}),
+        .evolutions = EVOLUTION({EVO_ITEM, ITEM_SHINY_STONE, SPECIES_NECTRIARY}),
     },
 
     [SPECIES_NECTRIARY] =
