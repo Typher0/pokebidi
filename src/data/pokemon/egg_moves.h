@@ -5541,6 +5541,24 @@ const u16 gEggMoves[] = {
         MOVE_ICICLE_CRASH),
 #endif //P_FAMILY_CABOB
 
+#if P_FAMILY_PUMACH
+    egg_moves(PUMACH,
+        MOVE_ICE_FANG,
+        MOVE_FIRE_FANG,
+        MOVE_THUNDER_FANG,
+        MOVE_QUICK_ATTACK,
+        MOVE_HOWL,
+        MOVE_TAKE_DOWN,
+        MOVE_NIGHT_SLASH,
+        MOVE_SHOCK_WAVE,
+        MOVE_SWIFT,
+        MOVE_DOUBLE_KICK,
+        MOVE_SIGNAL_BEAM,
+        MOVE_HELPING_HAND,
+        MOVE_EERIE_IMPULSE,
+        MOVE_FAKE_TEARS),
+#endif //P_FAMILY_PUMACH
+
 #if P_FAMILY_TOTTER
     egg_moves(TOTTER,
         MOVE_FURY_SWIPES,
