@@ -791,6 +791,58 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .levelUpLearnset = sNoctowlLevelUpLearnset,
         .teachableLearnset = sNoctowlTeachableLearnset,
     },
+
+    [SPECIES_DOCTOWL] =
+    {
+        .baseHP        = 118,
+        .baseAttack    = 50,
+        .baseDefense   = 60,
+        .baseSpeed     = 75,
+        .baseSpAttack  = 112,
+        .baseSpDefense = 120,
+        .types = MON_TYPES(TYPE_NORMAL, TYPE_FLYING),
+        .catchRate = 45,
+        .expYield = 202,
+        .evYield_HP = 3,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 15,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FLYING),
+        .abilities = { ABILITY_INSOMNIA, ABILITY_KEEN_EYE, ABILITY_TINTED_LENS },
+        .bodyColor = BODY_COLOR_BROWN,
+        .speciesName = _("Doctowl"),
+        .cryId = CRY_DOCTOWL,
+        .natDexNum = NATIONAL_DEX_DOCTOWL,
+        .categoryName = _("Owl"),
+        .height = 20,
+        .weight = 468,
+        .description = COMPOUND_STRING(
+            "It unfailingly catches prey in darkness.\n"
+            "Noctowl owe their success to superior\n"
+            "vision that allows them to see in minimal\n"
+            "light, and to their supple and silent wings."),
+        .pokemonScale = 278,
+        .pokemonOffset = 3,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_Doctowl,
+        .frontPicSize = MON_COORDS_SIZE(40, 64),
+        .frontPicYOffset = 2,
+        .frontAnimFrames = sAnims_Doctowl,
+        .frontAnimId = ANIM_V_STRETCH,
+        .backPic = gMonBackPic_Doctowl,
+        .backPicSize = MON_COORDS_SIZE(48, 64),
+        .backPicYOffset = 3,
+        .backAnimId = BACK_ANIM_TRIANGLE_DOWN,
+        .palette = gMonPalette_Doctowl,
+        .shinyPalette = gMonShinyPalette_Doctowl,
+        .iconSprite = gMonIcon_Doctowl,
+        .iconPalIndex = 2,
+        FOOTPRINT(Doctowl)
+        .levelUpLearnset = sDoctowlLevelUpLearnset,
+        .teachableLearnset = sDoctowlTeachableLearnset,
+    },
 #endif //P_FAMILY_HOOTHOOT
 
 #if P_FAMILY_LEDYBA
