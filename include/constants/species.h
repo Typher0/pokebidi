@@ -1680,7 +1680,7 @@
 #define SPECIES_SCLICK                                  1573
 #define SPECIES_VECTRION                                1574
 #define SPECIES_FAWNPIRE                                1575
-#define SPECIES_LLAMCULA                                1576
+#define SPECIES_ALPACULA                                1576
 #define SPECIES_MOOSEFERATU                             1577
 #define SPECIES_PLATYPOW                                1578
 #define SPECIES_PLATYPUNCH                              1579
@@ -1729,22 +1729,26 @@
 #define SPECIES_SKARPIE                                 1622
 #define SPECIES_GNOWM                                   1623
 #define SPECIES_SNOWGRE                                 1624
-#define SPECIES_WISHP                                   1625
-#define SPECIES_IGFRIT                                  1626
-#define SPECIES_DJINNFERNO                              1627
-#define SPECIES_MOONIGHT                                1628
-#define SPECIES_JOUSTOCK                                1629
-#define SPECIES_CRUSABER                                1630
-#define SPECIES_CHELONITE                               1631
-#define SPECIES_GALAXAGOS                               1632
-#define SPECIES_CACTURADO                               1633
-#define SPECIES_ESOTEROWN                               1634
-#define SPECIES_SILVALLY_SOUND                          1635
-#define SPECIES_ARCEUS_SOUND                            1636
-#define SPECIES_HATHROSTUS                              1637
-#define SPECIES_BABOSIRIS                               1638
-#define SPECIES_HUBRISET                                1639
-#define SPECIES_WENDINGO                                1640
+#define SPECIES_BOAREALIS                               1625
+#define SPECIES_WISHP                                   1626
+#define SPECIES_IGFRIT                                  1627
+#define SPECIES_DJINNFERNO                              1628
+#define SPECIES_MOONIGHT                                1629
+#define SPECIES_JOUSTOCK                                1630
+#define SPECIES_CRUSABER                                1631
+#define SPECIES_CHELONITE                               1632
+#define SPECIES_GALAXAGOS                               1633
+#define SPECIES_TANUKOON                                1634
+#define SPECIES_LEUKOON                                 1635
+#define SPECIES_CACTURADO                               1636
+#define SPECIES_ESOTEROWN                               1637
+#define SPECIES_DOCTOWL                                 1638
+#define SPECIES_SILVALLY_SOUND                          1639
+#define SPECIES_ARCEUS_SOUND                            1640
+#define SPECIES_HATHROSTUS                              1641
+#define SPECIES_BABOSIRIS                               1642
+#define SPECIES_HUBRISET                                1643
+#define SPECIES_WENDINGO                                1644
 
 #define SPECIES_EGG SPECIES_WENDINGO + 1
 
