@@ -2230,4 +2230,24 @@ const struct BattleMoveEffect gBattleMoveEffects[NUM_BATTLE_MOVE_EFFECTS] =
         .battleTvScore = 0, // TODO: Assign points
         .encourageEncore = TRUE,
     },
+
+    [EFFECT_NEUROTOXIN] =
+    {
+        .battleScript = BattleScript_EffectHit,
+        .battleTvScore = 0, // TODO: Assign points
+    },
+
+    [EFFECT_INSECTICIDE] =
+    {
+        .battleScript = BattleScript_EffectHit,
+        .battleTvScore = 0, // TODO: Assign points
+    },
+
+    [EFFECT_FIELD_OF_REEDS] =
+    {
+        .battleScript = BattleScript_EffectProtect,
+        .battleTvScore = 5,
+        .encourageEncore = TRUE,
+        .usesProtectCounter = TRUE,
+    },
 };
