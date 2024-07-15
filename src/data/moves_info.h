@@ -20587,7 +20587,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .description = COMPOUND_STRING(
             "Super effective on Ghost-\n"
             "types. May cause paralysis."),
-        .effect = EFFECT_FREEZE_DRY,
+        .effect = EFFECT_EXORCISM,
         .power = 70,
         .type = TYPE_FAIRY,
         .accuracy = 100,
@@ -20597,6 +20597,30 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .category = DAMAGE_CATEGORY_SPECIAL,
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_PARALYZE,
+            .chance = 10,
+        }),
+        .contestEffect = CONTEST_EFFECT_STARTLE_MONS_SAME_TYPE_APPEAL,
+        .contestCategory = CONTEST_CATEGORY_SMART,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0}
+    },
+
+    [MOVE_INSECTICIDE] =
+    {
+        .name = COMPOUND_STRING("Exorcism"),
+        .description = COMPOUND_STRING(
+            "Super effective on Bug-\n"
+            "types. May cause poisoning."),
+        .effect = EFFECT_INSECTICIDE,
+        .power = 70,
+        .type = TYPE_POISON,
+        .accuracy = 100,
+        .pp = 20,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_POISON,
             .chance = 10,
         }),
         .contestEffect = CONTEST_EFFECT_STARTLE_MONS_SAME_TYPE_APPEAL,
