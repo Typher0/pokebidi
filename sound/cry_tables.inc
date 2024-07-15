@@ -2649,9 +2649,9 @@ gCryTable::
 .if P_FAMILY_HUBRISET == TRUE
 	cry Cry_Hubriset
 .endif @ P_FAMILY_HUBRISET
-.if P_FAMILY_WENDIGO == TRUE
-	cry Cry_Wendigo
-.endif @ P_FAMILY_WENDIGO
+.if P_FAMILY_WENDINGO == TRUE
+	cry Cry_Wendingo
+.endif @ P_FAMILY_WENDINGO
 
 	.align 2
 gCryTable_Reverse::
@@ -5304,6 +5304,6 @@ gCryTable_Reverse::
 .if P_FAMILY_HUBRISET == TRUE
 	cry_reverse Cry_Hubriset
 .endif @ P_FAMILY_HUBRISET
-.if P_FAMILY_WENDIGO == TRUE
-	cry_reverse Cry_Wendigo
-.endif @ P_FAMILY_WENDIGO
+.if P_FAMILY_WENDINGO == TRUE
+	cry_reverse Cry_Wendingo
+.endif @ P_FAMILY_WENDINGO
