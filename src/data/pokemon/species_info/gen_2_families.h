@@ -790,6 +790,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         FOOTPRINT(Noctowl)
         .levelUpLearnset = sNoctowlLevelUpLearnset,
         .teachableLearnset = sNoctowlTeachableLearnset,
+    	.evolutions = EVOLUTION({EVO_ITEM_NIGHT, ITEM_DUSK_STONE, SPECIES_DOCTOWL}),
     },
 
     [SPECIES_DOCTOWL] =
@@ -818,10 +819,10 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .height = 20,
         .weight = 468,
         .description = COMPOUND_STRING(
-            "It unfailingly catches prey in darkness.\n"
-            "Noctowl owe their success to superior\n"
-            "vision that allows them to see in minimal\n"
-            "light, and to their supple and silent wings."),
+            "Doctowl's intellect exceeds that of\n"
+            "most humans. However, it is often left\n"
+            "restrained by its carnal urges, so it still\n"
+            "acts like a wild beast despite its intellect."),
         .pokemonScale = 278,
         .pokemonOffset = 3,
         .trainerScale = 256,
