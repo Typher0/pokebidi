@@ -5686,6 +5686,60 @@ const struct SpeciesInfo gSpeciesInfo[] =
     },
 #endif //P_FAMILY_GNOWM
 
+#if P_FAMILY_BOAREALIS
+    [SPECIES_BOAREALIS] =
+    {
+        .baseHP        = 91,
+        .baseAttack    = 70,
+        .baseDefense   = 85,
+        .baseSpeed     = 94,
+        .baseSpAttack  = 104,
+        .baseSpDefense = 85,
+        .types = MON_TYPES(TYPE_FAIRY, TYPE_FIRE),
+        .catchRate = 45,
+        .expYield = 213,
+        .evYield_SpAttack    = 2,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 25,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MONSTER, EGG_GROUP_FIELD),
+        .abilities = {ABILITY_MAGNET_PULL, ABILITY_NONE, ABILITY_SLUSH_RUSH},
+        .bodyColor = BODY_COLOR_BLUE,
+        .speciesName = _("Boarealis"),
+        .cryId = CRY_BOAREALIS,
+        .natDexNum = NATIONAL_DEX_BOAREALIS,
+        .categoryName = _("Boarealis"),
+        .height = 17,
+        .weight = 1703,
+        .description = COMPOUND_STRING(
+            "A Pokémon that rushes across\n"
+            "the night sky during the winter.\n"
+            "Seeing one is believed to be a\n"
+            "sign of good luck."),
+        .pokemonScale = 256,
+        .pokemonOffset = 0,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_Boarealis,
+        .frontPicSize = MON_COORDS_SIZE(40, 40),
+        .frontPicYOffset = 13,
+        .frontAnimFrames = sAnims_Boarealis,
+        .frontAnimId = ANIM_V_JUMPS_H_JUMPS,
+        .backPic = gMonBackPic_Boarealis,
+        .backPicSize = MON_COORDS_SIZE(56, 40),
+        .backPicYOffset = 13,
+        .backAnimId = BACK_ANIM_DIP_RIGHT_SIDE,
+        .palette = gMonPalette_Boarealis,
+        .shinyPalette = gMonShinyPalette_Boarealis,
+        .iconSprite = gMonIcon_Boarealis,
+        .iconPalIndex = 4,
+        FOOTPRINT(Boarealis)
+        .levelUpLearnset = sBoarealisLevelUpLearnset,
+        .teachableLearnset = sBoarealisTeachableLearnset,
+    },
+#endif //P_FAMILY_BOAREALIS
+
 #if P_FAMILY_WISHP
     [SPECIES_WISHP] = //WISP THAT EVOLVES INTO A DJINN. PSEUDO LEGEND (SHOULD BE GOOD).
     {
@@ -5737,7 +5791,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         FOOTPRINT(Wishp)
         .levelUpLearnset = sWishpLevelUpLearnset,
         .teachableLearnset = sWishpTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 41, SPECIES_IGFRIT}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 30, SPECIES_IGFRIT}),
     },
 
     [SPECIES_IGFRIT] = // EVOLVE AT LEVEL 30
@@ -5790,7 +5844,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         FOOTPRINT(Igfrit)
         .levelUpLearnset = sIgfritLevelUpLearnset,
         .teachableLearnset = sIgfritTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 59, SPECIES_DJINNFERNO}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 50, SPECIES_DJINNFERNO}),
     },
 
     [SPECIES_DJINNFERNO] = // EVOLVE AT LEVEL 50
@@ -6114,6 +6168,113 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .teachableLearnset = sGalaxagosTeachableLearnset,
     },
 #endif //P_FAMILY_CHELONITE
+
+#if P_FAMILY_TANUKOON
+    [SPECIES_TANUKOON] =
+    {
+        .baseHP        = 63,
+        .baseAttack    = 48,
+        .baseDefense   = 56,
+        .baseSpeed     = 78,
+        .baseSpAttack  = 76,
+        .baseSpDefense = 63,
+        .types = MON_TYPES(TYPE_FAIRY),
+        .catchRate = 165,
+        .expYield = 123,
+        .evYield_SpAttack    = 1,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 30,
+        .friendship = 35,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FAIRY, EGG_GROUP_FIELD),
+        .abilities = {ABILITY_MAGIC_BOUNCE, ABILITY_FOREWARN, ABILITY_HOSPITALITY},
+        .bodyColor = BODY_COLOR_WHITE,
+        .speciesName = _("Tanukoon"),
+        .cryId = CRY_TANUKOON,
+        .natDexNum = NATIONAL_DEX_TANUKOON,
+        .categoryName = _("Tanukoon"),
+        .height = 6,
+        .weight = 290,
+        .description = COMPOUND_STRING(
+            "Tanukoon will approach people\n"
+            "and Pokémon alike, seeking to play\n"
+            "various games. However, they\n"
+            "hate to be captured."),
+        .pokemonScale = 256,
+        .pokemonOffset = 0,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_Tanukoon,
+        .frontPicSize = MON_COORDS_SIZE(40, 40),
+        .frontPicYOffset = 13,
+        .frontAnimFrames = sAnims_Tanukoon,
+        .frontAnimId = ANIM_V_JUMPS_H_JUMPS,
+        .backPic = gMonBackPic_Tanukoon,
+        .backPicSize = MON_COORDS_SIZE(56, 40),
+        .backPicYOffset = 13,
+        .backAnimId = BACK_ANIM_DIP_RIGHT_SIDE,
+        .palette = gMonPalette_Tanukoon,
+        .shinyPalette = gMonShinyPalette_Tanukoon,
+        .iconSprite = gMonIcon_Tanukoon,
+        .iconPalIndex = 4,
+        FOOTPRINT(Tanukoon)
+        .levelUpLearnset = sTanukoonLevelUpLearnset,
+        .teachableLearnset = sTanukoonTeachableLearnset,
+        .evolutions = EVOLUTION({EVO_FRIENDSHIP_NIGHT, 0, SPECIES_LEUKOON}),
+    },
+
+    [SPECIES_LEUKOON] =
+    {
+        .baseHP        = 93,
+        .baseAttack    = 48,
+        .baseDefense   = 96,
+        .baseSpeed     = 98,
+        .baseSpAttack  = 126,
+        .baseSpDefense = 93,
+        .types = MON_TYPES(TYPE_FAIRY),
+        .catchRate = 45,
+        .expYield = 243,
+        .evYield_SpAttack    = 2,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 30,
+        .friendship = 35,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FAIRY, EGG_GROUP_FIELD),
+        .abilities = {ABILITY_MAGIC_BOUNCE, ABILITY_PRESSURE, ABILITY_HOSPITALITY},
+        .bodyColor = BODY_COLOR_WHITE,
+        .speciesName = _("Leukoon"),
+        .cryId = CRY_LEUKOON,
+        .natDexNum = NATIONAL_DEX_LEUKOON,
+        .categoryName = _("Leukoon"),
+        .height = 15,
+        .weight = 2290,
+        .description = COMPOUND_STRING(
+            "Leukoon's mouth functions\n"
+            "like a black hole. It likes to\n"
+            "eat wandering spirits, which has\n"
+            "made them into popular pets."),
+        .pokemonScale = 256,
+        .pokemonOffset = 0,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_Leukoon,
+        .frontPicSize = MON_COORDS_SIZE(40, 40),
+        .frontPicYOffset = 13,
+        .frontAnimFrames = sAnims_Leukoon,
+        .frontAnimId = ANIM_V_JUMPS_H_JUMPS,
+        .backPic = gMonBackPic_Leukoon,
+        .backPicSize = MON_COORDS_SIZE(56, 40),
+        .backPicYOffset = 13,
+        .backAnimId = BACK_ANIM_DIP_RIGHT_SIDE,
+        .palette = gMonPalette_Leukoon,
+        .shinyPalette = gMonShinyPalette_Leukoon,
+        .iconSprite = gMonIcon_Leukoon,
+        .iconPalIndex = 4,
+        FOOTPRINT(Leukoon)
+        .levelUpLearnset = sLeukoonLevelUpLearnset,
+        .teachableLearnset = sLeukoonTeachableLearnset,
+    },
+#endif //P_FAMILY_TANUKOON
 
 #if P_FAMILY_HATHROSTUS
     [SPECIES_HATHROSTUS] = //BAT LEGENDARY BASED OFF OF HATHOR (SIGN. MOVE FIELD OF REEDS)
