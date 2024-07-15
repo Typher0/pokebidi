@@ -6734,11 +6734,11 @@ Cry_Hubriset::
 	.incbin "sound/direct_sound_samples/cries/hubriset.bin"
 .endif @ P_FAMILY_HUBRISET
 
-.if P_FAMILY_WENDIGO == TRUE
+.if P_FAMILY_WENDINGO == TRUE
 	.align 2
-Cry_Wendigo::
-	.incbin "sound/direct_sound_samples/cries/wendigo.bin"
-.endif @ P_FAMILY_WENDIGO
+Cry_Wendingo::
+	.incbin "sound/direct_sound_samples/cries/wendingo.bin"
+.endif @ P_FAMILY_WENDINGO
 
 	.align 2
 DirectSoundWaveData_register_noise::
