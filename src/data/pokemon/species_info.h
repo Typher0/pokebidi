@@ -1558,8 +1558,8 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .cryId = CRY_SIMAYAN,
         .natDexNum = NATIONAL_DEX_SIMAYAN,
         .categoryName = _("Mayan"),
-        .height = 10,
-        .weight = 318,
+        .height = 15,
+        .weight = 460,
         .description = COMPOUND_STRING(
             "Chimpoca are energetic\n"
             "and mischievous. They\n"
@@ -2849,7 +2849,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .natDexNum = NATIONAL_DEX_VECTRION,
         .categoryName = _("CPU Mouse"),
         .height = 11,
-        .weight = 0,
+        .weight = 300,
         .description = COMPOUND_STRING(
             "Vectrion is only capable of moving\n"
             "in a straight line.\n"
@@ -4408,8 +4408,8 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .cryId = CRY_ANKILLOSAUR,
         .natDexNum = NATIONAL_DEX_ANKILLOSAUR,
         .categoryName = _("Ankylo"),
-        .height = 10,
-        .weight = 1023,
+        .height = 14,
+        .weight = 1610,
         .description = COMPOUND_STRING(
             "An ancient Pokémon revived\n"
             "from a fossil.\n"
@@ -4568,8 +4568,8 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .cryId = CRY_ORNITHAUR,
         .natDexNum = NATIONAL_DEX_ORNITHAUR,
         .categoryName = _("Dilophsaurus"),
-        .height = 14,
-        .weight = 648,
+        .height = 18,
+        .weight = 963,
         .description = COMPOUND_STRING(
             "An ancient Pokémon revived\n"
             "from a fossil. It uses the\n"
@@ -5982,7 +5982,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .natDexNum = NATIONAL_DEX_JOUSTOCK,
         .categoryName = _("Crusader"),
         .height = 18,
-        .weight = 85,
+        .weight = 850,
         .description = COMPOUND_STRING(
             "The executioner for the Order\n"
             "of the Moose, Joustock is\n"
