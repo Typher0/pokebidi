@@ -625,7 +625,9 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .iconSprite = gMonIcon_Skullarva,
         .iconPalIndex = 3,
 	FOOTPRINT(Skullarva)
+	.tmIlliterate = TRUE,
         .levelUpLearnset = sSkullarvaLevelUpLearnset,
+        .teachableLearnset = sSkullarvaTeachableLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 7, SPECIES_KAKONE}),
 },
 
@@ -2012,6 +2014,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .iconSprite = gMonIcon_Cuppy,
         .iconPalIndex = 2,
         FOOTPRINT(Cuppy)
+	.tmIlliterate = TRUE,
         .levelUpLearnset = sCuppyLevelUpLearnset,
         .teachableLearnset = sCuppyTeachableLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 20, SPECIES_FETTLEKISH}),
