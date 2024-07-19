@@ -1625,7 +1625,6 @@ const u16 gPokedexOrder_Weight[] =
     NATIONAL_DEX_MEOWSTIC,//_MALE,
     //NATIONAL_DEX_MEOWSTIC_FEMALE,
     NATIONAL_DEX_CHEWTLE,
-    NATIONAL_DEX_JOUSTOCK,
     // 19.0 lbs / 8.6 kg
     NATIONAL_DEX_GLOOM,
     // 19.2 lbs / 8.7 kg
@@ -2209,6 +2208,7 @@ const u16 gPokedexOrder_Weight[] =
     NATIONAL_DEX_VAROOM,
     NATIONAL_DEX_GREAVARD,
     NATIONAL_DEX_IRON_VALIANT,
+    NATIONAL_DEX_ESOTEROWN,
     // 77.8 lbs / 35.3 kg
     NATIONAL_DEX_CLAWITZER,
     // 78.3 lbs / 35.5 kg
@@ -2673,6 +2673,7 @@ const u16 gPokedexOrder_Weight[] =
     //NATIONAL_DEX_TAUROS_PALDEAN_BLAZE_BREED,
     NATIONAL_DEX_NOIVERN,
     NATIONAL_DEX_ARMAROUGE,
+    NATIONAL_DEX_JOUSTOCK,
     // 187.8 lbs / 85.2 kg
     NATIONAL_DEX_DODRIO,
     // 188.5 lbs / 85.5 kg
