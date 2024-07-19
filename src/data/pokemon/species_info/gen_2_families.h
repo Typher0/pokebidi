@@ -839,7 +839,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .palette = gMonPalette_Doctowl,
         .shinyPalette = gMonShinyPalette_Doctowl,
         .iconSprite = gMonIcon_Doctowl,
-        .iconPalIndex = 2,
+        .iconPalIndex = 5,
         FOOTPRINT(Doctowl)
         .levelUpLearnset = sDoctowlLevelUpLearnset,
         .teachableLearnset = sDoctowlTeachableLearnset,
@@ -3066,8 +3066,8 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .cryId = CRY_ESOTEROWN,
         .natDexNum = NATIONAL_DEX_ESOTEROWN,
         .categoryName = _("Symbol"),
-        .height = 0,
-        .weight = 0,
+        .height = 15,
+        .weight = 350,
         .description = COMPOUND_STRING(
             "This is a newly discovered Pokémon.\n"
             "It is currently under investigation.\n"
@@ -3089,7 +3089,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .palette = gMonPalette_Esoterown,
         .shinyPalette = gMonShinyPalette_Esoterown,
         .iconSprite = gMonIcon_Esoterown,
-        .iconPalIndex = 4,
+        .iconPalIndex = 0,
         FOOTPRINT(Esoterown)
         .levelUpLearnset = sEsoterownLevelUpLearnset,
         .teachableLearnset = sEsoterownTeachableLearnset,                            
