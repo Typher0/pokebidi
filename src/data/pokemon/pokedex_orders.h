@@ -2025,7 +2025,6 @@ const u16 gPokedexOrder_Weight[] =
     //NATIONAL_DEX_LYCANROC_MIDNIGHT,
     //NATIONAL_DEX_LYCANROC_DUSK,
     NATIONAL_DEX_PHEROMOSA,
-    NATIONAL_DEX_ESOTEROWN,
     // 55.6 lbs / 25.2 kg
     NATIONAL_DEX_AMAURA,
     // 55.8 lbs / 25.3 kg
