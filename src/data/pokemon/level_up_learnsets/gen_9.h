@@ -22839,7 +22839,7 @@ static const struct LevelUpMove sShrewelLevelUpLearnset[] = {
 };
 
 static const struct LevelUpMove sPangolemLevelUpLearnset[] = {
-    LEVEL_UP_MOVE( 1, MOVE_IRON_DEFENSE),
+    LEVEL_UP_MOVE( 1, MOVE_RAPID_SPIN),
     LEVEL_UP_MOVE( 1, MOVE_SHARPEN),
     LEVEL_UP_MOVE( 1, MOVE_TICKLE),
     LEVEL_UP_MOVE( 1, MOVE_ROCK_POLISH),
