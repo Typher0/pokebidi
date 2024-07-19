@@ -5736,8 +5736,8 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .cryId = CRY_CACTURADO,
         .natDexNum = NATIONAL_DEX_CACTURADO,
         .categoryName = _("Scarecrow"),
-        .height = 0,
-        .weight = 0,
+        .height = 17,
+        .weight = 952,
         .description = COMPOUND_STRING(
             "This is a newly discovered Pokémon.\n"
             "It is currently under investigation.\n"
@@ -5759,7 +5759,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .palette = gMonPalette_Cacturado,
         .shinyPalette = gMonShinyPalette_Cacturado,
         .iconSprite = gMonIcon_Cacturado,
-        .iconPalIndex = 4,
+        .iconPalIndex = 1,
         FOOTPRINT(Cacturado)
         .levelUpLearnset = sCacturadoLevelUpLearnset,
         .teachableLearnset = sCacturadoTeachableLearnset,
