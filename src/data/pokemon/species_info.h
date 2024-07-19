@@ -626,7 +626,6 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .iconPalIndex = 3,
 	FOOTPRINT(Skullarva)
         .levelUpLearnset = sSkullarvaLevelUpLearnset,
-        .teachableLearnset = sSkullarvaTeachableLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 7, SPECIES_KAKONE}),
 },
 
