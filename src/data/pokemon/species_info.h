@@ -997,7 +997,8 @@ const struct SpeciesInfo gSpeciesInfo[] =
         FOOTPRINT(Shrewel)
         .levelUpLearnset = sShrewelLevelUpLearnset,
         .teachableLearnset = sShrewelTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 34, SPECIES_PANGOLEM}),
+        .evolutions = EVOLUTION({EVO_TRADE, 0, SPECIES_PANGOLEM},
+				{EVO_ITEM, ITEM_LINKING_CORD, SPECIES_PANGOLEM}),
 },
 
     [SPECIES_PANGOLEM] =
@@ -2031,7 +2032,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .types = MON_TYPES(TYPE_WATER, TYPE_FIRE),
         .catchRate = 45,
         .expYield = 189,
-        .evYield_SpAttack    = 1,
+        .evYield_SpAttack    = 2,
         .genderRatio = PERCENT_FEMALE(50),
         .eggCycles = 5,
         .friendship = STANDARD_FRIENDSHIP,
