@@ -22677,7 +22677,7 @@ static const struct LevelUpMove sPumachLevelUpLearnset[] = {
     LEVEL_UP_END
 };
 
-static const struct LevelUpMove sLynxskewLevelUpLearnset[] = {
+static const struct LevelUpMove sJagwireLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_LEER),
     LEVEL_UP_MOVE( 1, MOVE_TWISTED_HASTE),
     LEVEL_UP_MOVE( 1, MOVE_SNATCH),
