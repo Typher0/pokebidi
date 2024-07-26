@@ -22899,8 +22899,6 @@ static const struct LevelUpMove sIgnoiseLevelUpLearnset[] = {
 static const struct LevelUpMove sMoltortoiseLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 0, MOVE_STONE_EDGE),
     LEVEL_UP_MOVE( 1, MOVE_STONE_EDGE),
-    LEVEL_UP_MOVE( 1, MOVE_FIRE_PUNCH),
-    LEVEL_UP_MOVE( 1, MOVE_THUNDER_PUNCH),
     LEVEL_UP_MOVE( 1, MOVE_DRAGON_DANCE),
     LEVEL_UP_MOVE( 1, MOVE_FIRE_FANG),
     LEVEL_UP_MOVE( 1, MOVE_BARRAGE),
@@ -23658,7 +23656,6 @@ static const struct LevelUpMove sPlatypowLevelUpLearnset[] = {
 static const struct LevelUpMove sPlatypunchLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 0, MOVE_SKY_UPPERCUT),
     LEVEL_UP_MOVE( 1, MOVE_SKY_UPPERCUT),
-    LEVEL_UP_MOVE( 1, MOVE_FOCUS_PUNCH),
     LEVEL_UP_MOVE( 1, MOVE_POUND),
     LEVEL_UP_MOVE( 1, MOVE_LEER),
     LEVEL_UP_MOVE( 1, MOVE_POISON_STING),
