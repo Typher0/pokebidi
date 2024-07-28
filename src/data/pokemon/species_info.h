@@ -5682,7 +5682,6 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .frontPicYOffset = 13,
         .frontAnimFrames = sAnims_Gnowm,
         .frontAnimId = ANIM_TUMBLING_FRONT_FLIP_TWICE,
-	.frontAnimDelay = 40,
         .backPic = gMonBackPic_Gnowm,
         .backPicSize = MON_COORDS_SIZE(56, 40),
         .backPicYOffset = 13,
