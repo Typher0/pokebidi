@@ -1170,7 +1170,7 @@ static void RemoveObjectEventInternal(struct ObjectEvent *objectEvent)
     {
         u32 paletteNum = gSprites[objectEvent->spriteId].oam.paletteNum;
         u16 tileStart;
-    if (OW_GFX_COMPRESS)
+        if (OW_GFX_COMPRESS)
             tileStart = gSprites[objectEvent->spriteId].sheetTileStart;
         DestroySprite(&gSprites[objectEvent->spriteId]);
         FieldEffectFreePaletteIfUnused(paletteNum);
@@ -1211,7 +1211,7 @@ static u8 TrySetupObjectEventSprite(const struct ObjectEventTemplate *objectEven
     if (objectEvent->movementType == MOVEMENT_TYPE_INVISIBLE)
         objectEvent->invisible = TRUE;
 
-        if (OW_GFX_COMPRESS)
+    if (OW_GFX_COMPRESS)
         spriteTemplate->tileTag = LoadSheetGraphicsInfo(graphicsInfo, objectEvent->graphicsId, NULL);
 
     if (objectEvent->graphicsId >= OBJ_EVENT_GFX_MON_BASE + SPECIES_SHINY_TAG)
