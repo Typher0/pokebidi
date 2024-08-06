@@ -2743,15 +2743,6 @@ const u8 gMonFootprint_QuestionMark[] = INCBIN_U8("graphics/pokemon/question_mar
     const u32 gShinyOverworldPalette_Noctowl[] = INCBIN_U32("graphics/pokemon/noctowl/overworld_shiny.gbapal.lz");
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS
-
-    const u32 gMonFrontPic_Doctowl[] = INCBIN_U32("graphics/pokemon/doctowl/front.4bpp.lz");
-    const u32 gMonPalette_Doctowl[] = INCBIN_U32("graphics/pokemon/doctowl/normal.gbapal.lz");
-    const u32 gMonBackPic_Doctowl[] = INCBIN_U32("graphics/pokemon/doctowl/back.4bpp.lz");
-    const u32 gMonShinyPalette_Doctowl[] = INCBIN_U32("graphics/pokemon/doctowl/shiny.gbapal.lz");
-    const u8 gMonIcon_Doctowl[] = INCBIN_U8("graphics/pokemon/doctowl/icon.4bpp");
-#if P_FOOTPRINTS
-    // const u8 gMonFootprint_Doctowl[] = INCBIN_U8("graphics/pokemon/doctowl/footprint.1bpp");
-#endif //P_FOOTPRINTS
 #endif //P_FAMILY_HOOTHOOT
 
 #if P_FAMILY_LEDYBA
@@ -3273,6 +3264,7 @@ const u8 gMonFootprint_QuestionMark[] = INCBIN_U8("graphics/pokemon/question_mar
     const u32 gMonFrontPic_UnownQuestionMark[] = INCBIN_U32("graphics/pokemon/unown/question_mark/front.4bpp.lz");
     const u32 gMonBackPic_UnownQuestionMark[] = INCBIN_U32("graphics/pokemon/unown/question_mark/back.4bpp.lz");
     const u8 gMonIcon_UnownQuestionMark[] = INCBIN_U8("graphics/pokemon/unown/question_mark/icon.4bpp");
+
 #if OW_POKEMON_OBJECT_EVENTS
     const u32 gObjectEventPic_UnownA[] = INCBIN_COMP("graphics/pokemon/unown/overworld.4bpp");
     const u32 gObjectEventPic_UnownB[] = INCBIN_COMP("graphics/pokemon/unown/b/overworld.4bpp");
@@ -3307,15 +3299,6 @@ const u8 gMonFootprint_QuestionMark[] = INCBIN_U8("graphics/pokemon/question_mar
     const u32 gShinyOverworldPalette_Unown[] = INCBIN_U32("graphics/pokemon/unown/overworld_shiny.gbapal.lz");
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS
-
-    const u32 gMonFrontPic_Esoterown[] = INCBIN_U32("graphics/pokemon/esoterown/front.4bpp.lz");
-    const u32 gMonPalette_Esoterown[] = INCBIN_U32("graphics/pokemon/esoterown/normal.gbapal.lz");
-    const u32 gMonBackPic_Esoterown[] = INCBIN_U32("graphics/pokemon/esoterown/back.4bpp.lz");
-    const u32 gMonShinyPalette_Esoterown[] = INCBIN_U32("graphics/pokemon/esoterown/shiny.gbapal.lz");
-    const u8 gMonIcon_Esoterown[] = INCBIN_U8("graphics/pokemon/esoterown/icon.4bpp");
-#if P_FOOTPRINTS
-    // const u8 gMonFootprint_Esoterown[] = INCBIN_U8("graphics/pokemon/esoterown/footprint.1bpp");
-#endif //P_FOOTPRINTS
 #endif //P_FAMILY_UNOWN
 
 #if P_FAMILY_WOBBUFFET
