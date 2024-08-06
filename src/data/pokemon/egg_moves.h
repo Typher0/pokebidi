@@ -5483,6 +5483,7 @@ static const u16 sFrigibaxEggMoveLearnset[] = {
     MOVE_FREEZE_DRY,
     MOVE_ICICLE_SPEAR,
     MOVE_UNAVAILABLE,
+};
 #endif //P_FAMILY_FRIGIBAX
 
 #if P_FAMILY_HAMSNUG
@@ -6171,7 +6172,4 @@ static const u16 sFrigibaxEggMoveLearnset[] = {
         MOVE_WHIRLPOOL,
         MOVE_REFLECT_TYPE),
 #endif //P_FAMILY_CHELONITE
-
-    EGG_MOVES_TERMINATOR
-};
 
