@@ -11568,7 +11568,7 @@ static u32 ChangeStatBuffs(s8 statValue, u32 statId, u32 flags, const u8 *BS_ptr
             gBattlescriptCurrInstr = BattleScript_ButItFailed;
             return STAT_CHANGE_DIDNT_WORK;
         }
- else if ((battlerHoldEffect == HOLD_EFFECT_CLEAR_AMULET || CanAbilityPreventStatLoss(battlerAbility))
+         else if ((battlerHoldEffect == HOLD_EFFECT_CLEAR_AMULET || CanAbilityPreventStatLoss(battlerAbility))
               && (!affectsUser || mirrorArmored) && !certain && gCurrentMove != MOVE_CURSE)
         {
             if (flags == STAT_CHANGE_ALLOW_PTR)
@@ -11581,7 +11581,7 @@ static u32 ChangeStatBuffs(s8 statValue, u32 statId, u32 flags, const u8 *BS_ptr
                 {
                     BattleScriptPush(BS_ptr);
                     gBattleScripting.battler = battler;
-                    if (battlerHoldEffect == HOLD_EFFECT_CLEAR_AMULET)
+                    if (battlerHoldEffect == HOLD_EFFECT_)
                     {
                         gLastUsedItem = gBattleMons[battler].item;
                         gBattlescriptCurrInstr = BattleScript_ItemNoStatLoss;
