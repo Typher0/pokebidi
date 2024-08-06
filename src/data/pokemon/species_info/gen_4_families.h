@@ -539,7 +539,11 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FLYING),
-        .abilities = { ABILITY_KEEN_EYE, ABILITY_RECKLESS, ABILITY_ANGER_POINT },
+    #if P_UPDATED_ABILITIES >= GEN_6
+        .abilities = { ABILITY_KEEN_EYE, ABILITY_NONE, ABILITY_RECKLESS },
+    #else
+        .abilities = { ABILITY_KEEN_EYE, ABILITY_NONE, ABILITY_NONE },
+    #endif
         .bodyColor = BODY_COLOR_BROWN,
         .speciesName = _("Starly"),
         .cryId = CRY_STARLY,
@@ -5598,12 +5602,12 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
 
 #define ARCEUS_SPECIES_INFO(type, typeName)                             \
     {                                                                   \
-        .baseHP        = 150,                                           \
-        .baseAttack    = 150,                                           \
-        .baseDefense   = 150,                                           \
-        .baseSpeed     = 150,                                           \
-        .baseSpAttack  = 150,                                           \
-        .baseSpDefense = 150,                                           \
+        .baseHP        = 120,                                           \
+        .baseAttack    = 120,                                           \
+        .baseDefense   = 120,                                           \
+        .baseSpeed     = 120,                                           \
+        .baseSpAttack  = 120,                                           \
+        .baseSpDefense = 120,                                           \
         .types = MON_TYPES(type),                                       \
         .catchRate = 3,                                                 \
         .expYield = ARCEUS_EXP_YIELD,                                   \
@@ -5637,35 +5641,43 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .backAnimId = BACK_ANIM_GROW_STUTTER,                           \
         .palette = gMonPalette_Arceus ##typeName,                       \
         .shinyPalette = gMonShinyPalette_Arceus ##typeName,             \
-        .iconSprite = gMonIcon_Arceus,                                  \
-        .iconPalIndex = 1,                                              \
-        FOOTPRINT(Arceus)                                               \
+        ARCEUS_ICON(typeName, iconPal)                                      \
+        FOOTPRINT(Arceus)                                                   \
+        OVERWORLD(                                                          \
+            sPicTable_Arceus ##typeName,                                    \
+            SIZE_64x64,                                                     \
+            SHADOW_SIZE_M,                                                  \
+            TRACKS_FOOT,                                                    \
+            gOverworldPalette_Arceus ##typeName,                            \
+            gShinyOverworldPalette_Arceus ##typeName                        \
+        )                                                                   \                                             \
         .levelUpLearnset = sArceusLevelUpLearnset,                      \
         .teachableLearnset = sArceusTeachableLearnset,                  \
         .formSpeciesIdTable = sArceusFormSpeciesIdTable,                \
         .formChangeTable = sArceusFormChangeTable,                      \
         .isMythical = TRUE,                                             \
+        .isFrontierBanned = TRUE,                                       \
     }
 
-    [SPECIES_ARCEUS_NORMAL]   = ARCEUS_SPECIES_INFO(TYPE_NORMAL,   Normal),
-    [SPECIES_ARCEUS_FIGHTING] = ARCEUS_SPECIES_INFO(TYPE_FIGHTING, Fighting),
-    [SPECIES_ARCEUS_FLYING]   = ARCEUS_SPECIES_INFO(TYPE_FLYING,   Flying),
-    [SPECIES_ARCEUS_POISON]   = ARCEUS_SPECIES_INFO(TYPE_POISON,   Poison),
-    [SPECIES_ARCEUS_GROUND]   = ARCEUS_SPECIES_INFO(TYPE_GROUND,   Ground),
-    [SPECIES_ARCEUS_ROCK]     = ARCEUS_SPECIES_INFO(TYPE_ROCK,     Rock),
-    [SPECIES_ARCEUS_BUG]      = ARCEUS_SPECIES_INFO(TYPE_BUG,      Bug),
-    [SPECIES_ARCEUS_GHOST]    = ARCEUS_SPECIES_INFO(TYPE_GHOST,    Ghost),
-    [SPECIES_ARCEUS_STEEL]    = ARCEUS_SPECIES_INFO(TYPE_STEEL,    Steel),
-    [SPECIES_ARCEUS_FIRE]     = ARCEUS_SPECIES_INFO(TYPE_FIRE,     Fire),
-    [SPECIES_ARCEUS_WATER]    = ARCEUS_SPECIES_INFO(TYPE_WATER,    Water),
-    [SPECIES_ARCEUS_GRASS]    = ARCEUS_SPECIES_INFO(TYPE_GRASS,    Grass),
-    [SPECIES_ARCEUS_ELECTRIC] = ARCEUS_SPECIES_INFO(TYPE_ELECTRIC, Electric),
-    [SPECIES_ARCEUS_PSYCHIC]  = ARCEUS_SPECIES_INFO(TYPE_PSYCHIC,  Psychic),
-    [SPECIES_ARCEUS_ICE]      = ARCEUS_SPECIES_INFO(TYPE_ICE,      Ice),
-    [SPECIES_ARCEUS_DRAGON]   = ARCEUS_SPECIES_INFO(TYPE_DRAGON,   Dragon),
-    [SPECIES_ARCEUS_DARK]     = ARCEUS_SPECIES_INFO(TYPE_DARK,     Dark),
-    [SPECIES_ARCEUS_FAIRY]    = ARCEUS_SPECIES_INFO(TYPE_FAIRY,    Fairy),
-    [SPECIES_ARCEUS_SOUND]    = ARCEUS_SPECIES_INFO(TYPE_SOUND,    Sound),
+    [SPECIES_ARCEUS_NORMAL]   = ARCEUS_SPECIES_INFO(TYPE_NORMAL,   Normal,    1),
+    [SPECIES_ARCEUS_FIGHTING] = ARCEUS_SPECIES_INFO(TYPE_FIGHTING, Fighting,  1),
+    [SPECIES_ARCEUS_FLYING]   = ARCEUS_SPECIES_INFO(TYPE_FLYING,   Flying,    2),
+    [SPECIES_ARCEUS_POISON]   = ARCEUS_SPECIES_INFO(TYPE_POISON,   Poison,    2),
+    [SPECIES_ARCEUS_GROUND]   = ARCEUS_SPECIES_INFO(TYPE_GROUND,   Ground,    1),
+    [SPECIES_ARCEUS_ROCK]     = ARCEUS_SPECIES_INFO(TYPE_ROCK,     Rock,      2),
+    [SPECIES_ARCEUS_BUG]      = ARCEUS_SPECIES_INFO(TYPE_BUG,      Bug,       1),
+    [SPECIES_ARCEUS_GHOST]    = ARCEUS_SPECIES_INFO(TYPE_GHOST,    Ghost,     2),
+    [SPECIES_ARCEUS_STEEL]    = ARCEUS_SPECIES_INFO(TYPE_STEEL,    Steel,     0),
+    [SPECIES_ARCEUS_FIRE]     = ARCEUS_SPECIES_INFO(TYPE_FIRE,     Fire,      0),
+    [SPECIES_ARCEUS_WATER]    = ARCEUS_SPECIES_INFO(TYPE_WATER,    Water,     0),
+    [SPECIES_ARCEUS_GRASS]    = ARCEUS_SPECIES_INFO(TYPE_GRASS,    Grass,     1),
+    [SPECIES_ARCEUS_ELECTRIC] = ARCEUS_SPECIES_INFO(TYPE_ELECTRIC, Electric,  3),
+    [SPECIES_ARCEUS_PSYCHIC]  = ARCEUS_SPECIES_INFO(TYPE_PSYCHIC,  Psychic,   1),
+    [SPECIES_ARCEUS_ICE]      = ARCEUS_SPECIES_INFO(TYPE_ICE,      Ice,       0),
+    [SPECIES_ARCEUS_DRAGON]   = ARCEUS_SPECIES_INFO(TYPE_DRAGON,   Dragon,    0),
+    [SPECIES_ARCEUS_DARK]     = ARCEUS_SPECIES_INFO(TYPE_DARK,     Dark,      0),
+    [SPECIES_ARCEUS_FAIRY]    = ARCEUS_SPECIES_INFO(TYPE_FAIRY,    Fairy,     0),
+    [SPECIES_ARCEUS_SOUND]    = ARCEUS_SPECIES_INFO(TYPE_SOUND,    Sound,     0),
 #endif //P_FAMILY_ARCEUS
 
 #ifdef __INTELLISENSE__
