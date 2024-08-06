@@ -5477,11 +5477,12 @@ const u16 gEggMoves[] = {
 #endif //P_FAMILY_TATSUGIRI
 
 #if P_FAMILY_FRIGIBAX
-    egg_moves(FRIGIBAX,
-        MOVE_AQUA_TAIL,
-        MOVE_DRAGON_RUSH,
-        MOVE_FREEZE_DRY,
-        MOVE_ICICLE_SPEAR),
+static const u16 sFrigibaxEggMoveLearnset[] = {
+    MOVE_AQUA_TAIL,
+    MOVE_DRAGON_RUSH,
+    MOVE_FREEZE_DRY,
+    MOVE_ICICLE_SPEAR,
+    MOVE_UNAVAILABLE,
 #endif //P_FAMILY_FRIGIBAX
 
 #if P_FAMILY_HAMSNUG
