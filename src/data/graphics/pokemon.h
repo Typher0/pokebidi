@@ -10843,7 +10843,7 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
     const u32 gObjectEventPic_DialgaOrigin[] = INCBIN_COMP("graphics/pokemon/dialga/origin/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
     const u32 gOverworldPalette_DialgaOrigin[] = INCBIN_U32("graphics/pokemon/dialga/origin/overworld_normal.gbapal.lz");
-    // const u32 gShinyOverworldPalette_DialgaOrigin[] = INCBIN_U32("graphics/pokemon/dialga/origin/overworld_shiny.gbapal.lz");
+    const u32 gShinyOverworldPalette_DialgaOrigin[] = INCBIN_U32("graphics/pokemon/dialga/origin/overworld_shiny.gbapal.lz");
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS
 #endif //P_FAMILY_DIALGA
@@ -10874,7 +10874,7 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
     const u32 gObjectEventPic_PalkiaOrigin[] = INCBIN_COMP("graphics/pokemon/palkia/origin/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
     const u32 gOverworldPalette_PalkiaOrigin[] = INCBIN_U32("graphics/pokemon/palkia/origin/overworld_normal.gbapal.lz");
-    // const u32 gShinyOverworldPalette_PalkiaOrigin[] = INCBIN_U32("graphics/pokemon/palkia/origin/overworld_shiny.gbapal.lz");
+    const u32 gShinyOverworldPalette_PalkiaOrigin[] = INCBIN_U32("graphics/pokemon/palkia/origin/overworld_shiny.gbapal.lz");
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS
 #endif //P_FAMILY_PALKIA
@@ -14189,7 +14189,7 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
     const u32 gObjectEventPic_EnamorusIncarnate[] = INCBIN_COMP("graphics/pokemon/enamorus/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
     const u32 gOverworldPalette_EnamorusIncarnate[] = INCBIN_U32("graphics/pokemon/enamorus/overworld_normal.gbapal.lz");
-    // const u32 gShinyOverworldPalette_EnamorusIncarnate[] = INCBIN_U32("graphics/pokemon/enamorus/overworld_shiny.gbapal.lz");
+    const u32 gShinyOverworldPalette_EnamorusIncarnate[] = INCBIN_U32("graphics/pokemon/enamorus/overworld_shiny.gbapal.lz");
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS
 
@@ -14202,7 +14202,7 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
     const u32 gObjectEventPic_EnamorusTherian[] = INCBIN_COMP("graphics/pokemon/enamorus/therian/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
     const u32 gOverworldPalette_EnamorusTherian[] = INCBIN_U32("graphics/pokemon/enamorus/therian/overworld_normal.gbapal.lz");
-    // const u32 gShinyOverworldPalette_EnamorusTherian[] = INCBIN_U32("graphics/pokemon/enamorus/therian/overworld_shiny.gbapal.lz");
+    const u32 gShinyOverworldPalette_EnamorusTherian[] = INCBIN_U32("graphics/pokemon/enamorus/therian/overworld_shiny.gbapal.lz");
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS
 #endif //P_FAMILY_ENAMORUS
@@ -15948,10 +15948,10 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
     const u32 gMonShinyPalette_XerneasActive[] = INCBIN_U32("graphics/pokemon/xerneas/active/shiny.gbapal.lz");
     const u8 gMonIcon_XerneasActive[] = INCBIN_U8("graphics/pokemon/xerneas/active/icon.4bpp");
 #if OW_POKEMON_OBJECT_EVENTS
-    // const u32 gObjectEventPic_XerneasActive[] = INCBIN_COMP("graphics/pokemon/xerneas/active/overworld.4bpp");
+    const u32 gObjectEventPic_XerneasActive[] = INCBIN_COMP("graphics/pokemon/xerneas/active/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
-    // const u32 gOverworldPalette_XerneasActive[] = INCBIN_U32("graphics/pokemon/xerneas/active/overworld_normal.gbapal.lz");
-    // const u32 gShinyOverworldPalette_XerneasActive[] = INCBIN_U32("graphics/pokemon/xerneas/active/overworld_shiny.gbapal.lz");
+    //const u32 gOverworldPalette_XerneasActive[] = INCBIN_U32("graphics/pokemon/xerneas/active/overworld_normal.gbapal.lz");
+    //const u32 gShinyOverworldPalette_XerneasActive[] = INCBIN_U32("graphics/pokemon/xerneas/active/overworld_shiny.gbapal.lz");
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS
 #endif //P_FAMILY_XERNEAS
