@@ -3120,10 +3120,6 @@ u8 FldEff_NPCFlyOut(void)
         u8 spriteId;
     struct Sprite *sprite;
 
-    LoadFieldEffectPalette(FLDEFFOBJ_BIRD);
-    spriteId = CreateSprite(gFieldEffectObjectTemplatePointers[FLDEFFOBJ_BIRD], 0x78, 0, 1);
-    sprite = &gSprites[spriteId];
-    
     sprite->oam.paletteNum = LoadPlayerObjectEventPalette(gSaveBlock2Ptr->playerGender);
     sprite->oam.priority = 1;
     sprite->callback = SpriteCB_NPCFlyOut;
