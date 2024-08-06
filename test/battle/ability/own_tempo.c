@@ -8,8 +8,8 @@ SINGLE_BATTLE_TEST("Own Tempo prevents Intimidate but no other stat down changes
         ASSUME(gMovesInfo[MOVE_CONFUSE_RAY].effect == EFFECT_CONFUSE);
         PLAYER(SPECIES_EKANS) { Ability(ABILITY_INTIMIDATE); };
         OPPONENT(SPECIES_SLOWPOKE) { Ability(ABILITY_OWN_TEMPO); };
+    } WHEN {
         TURN { MOVE(player, MOVE_SCARY_FACE); }
-
     } SCENE {
         ABILITY_POPUP(player, ABILITY_INTIMIDATE);
         ABILITY_POPUP(opponent, ABILITY_OWN_TEMPO);
