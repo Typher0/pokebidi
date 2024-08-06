@@ -66,8 +66,8 @@ struct BackupMapLayout
 struct ObjectEventTemplate
 {
     /*0x00*/ u8 localId;
-    /*0x01*/ u8 kind; // Always OBJ_KIND_NORMAL in Emerald.
-    /*0x02*/ u16 graphicsId;
+    /*0x01*/ u16 graphicsId;
+    /*0x03*/ u8 kind; // Always OBJ_KIND_NORMAL in Emerald.
     /*0x04*/ s16 x;
     /*0x06*/ s16 y;
     /*0x08*/ u8 elevation;
@@ -194,8 +194,9 @@ struct ObjectEvent
              u32 disableJumpLandingGroundEffect:1;
              u32 fixedPriority:1;
              u32 hideReflection:1;
-             //u32 padding:4;
-    /*0x04*/ u16 graphicsId;
+             u32 shiny:1; // OW mon shininess
+             u32 padding:3;
+    /*0x04*/ u16 graphicsId; // 11 bits for species; high 5 bits for form
     /*0x06*/ u8 movementType;
     /*0x07*/ u8 trainerType;
     /*0x08*/ u8 localId;
