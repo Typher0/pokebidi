@@ -2736,6 +2736,13 @@ const u8 gMonFootprint_QuestionMark[] = INCBIN_U8("graphics/pokemon/question_mar
 #if P_FOOTPRINTS
     const u8 gMonFootprint_Noctowl[] = INCBIN_U8("graphics/pokemon/noctowl/footprint.1bpp");
 #endif //P_FOOTPRINTS
+#if OW_POKEMON_OBJECT_EVENTS
+    const u32 gObjectEventPic_Noctowl[] = INCBIN_COMP("graphics/pokemon/noctowl/overworld.4bpp");
+#if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
+    const u32 gOverworldPalette_Noctowl[] = INCBIN_U32("graphics/pokemon/noctowl/overworld_normal.gbapal.lz");
+    const u32 gShinyOverworldPalette_Noctowl[] = INCBIN_U32("graphics/pokemon/noctowl/overworld_shiny.gbapal.lz");
+#endif //OW_PKMN_OBJECTS_SHARE_PALETTES
+#endif //OW_POKEMON_OBJECT_EVENTS
 
     const u32 gMonFrontPic_Doctowl[] = INCBIN_U32("graphics/pokemon/doctowl/front.4bpp.lz");
     const u32 gMonPalette_Doctowl[] = INCBIN_U32("graphics/pokemon/doctowl/normal.gbapal.lz");
@@ -3266,6 +3273,40 @@ const u8 gMonFootprint_QuestionMark[] = INCBIN_U8("graphics/pokemon/question_mar
     const u32 gMonFrontPic_UnownQuestionMark[] = INCBIN_U32("graphics/pokemon/unown/question_mark/front.4bpp.lz");
     const u32 gMonBackPic_UnownQuestionMark[] = INCBIN_U32("graphics/pokemon/unown/question_mark/back.4bpp.lz");
     const u8 gMonIcon_UnownQuestionMark[] = INCBIN_U8("graphics/pokemon/unown/question_mark/icon.4bpp");
+#if OW_POKEMON_OBJECT_EVENTS
+    const u32 gObjectEventPic_UnownA[] = INCBIN_COMP("graphics/pokemon/unown/overworld.4bpp");
+    const u32 gObjectEventPic_UnownB[] = INCBIN_COMP("graphics/pokemon/unown/b/overworld.4bpp");
+    const u32 gObjectEventPic_UnownC[] = INCBIN_COMP("graphics/pokemon/unown/c/overworld.4bpp");
+    const u32 gObjectEventPic_UnownD[] = INCBIN_COMP("graphics/pokemon/unown/d/overworld.4bpp");
+    const u32 gObjectEventPic_UnownE[] = INCBIN_COMP("graphics/pokemon/unown/e/overworld.4bpp");
+    const u32 gObjectEventPic_UnownF[] = INCBIN_COMP("graphics/pokemon/unown/f/overworld.4bpp");
+    const u32 gObjectEventPic_UnownG[] = INCBIN_COMP("graphics/pokemon/unown/g/overworld.4bpp");
+    const u32 gObjectEventPic_UnownH[] = INCBIN_COMP("graphics/pokemon/unown/h/overworld.4bpp");
+    const u32 gObjectEventPic_UnownI[] = INCBIN_COMP("graphics/pokemon/unown/i/overworld.4bpp");
+    const u32 gObjectEventPic_UnownJ[] = INCBIN_COMP("graphics/pokemon/unown/j/overworld.4bpp");
+    const u32 gObjectEventPic_UnownK[] = INCBIN_COMP("graphics/pokemon/unown/k/overworld.4bpp");
+    const u32 gObjectEventPic_UnownL[] = INCBIN_COMP("graphics/pokemon/unown/l/overworld.4bpp");
+    const u32 gObjectEventPic_UnownM[] = INCBIN_COMP("graphics/pokemon/unown/m/overworld.4bpp");
+    const u32 gObjectEventPic_UnownN[] = INCBIN_COMP("graphics/pokemon/unown/n/overworld.4bpp");
+    const u32 gObjectEventPic_UnownO[] = INCBIN_COMP("graphics/pokemon/unown/o/overworld.4bpp");
+    const u32 gObjectEventPic_UnownP[] = INCBIN_COMP("graphics/pokemon/unown/p/overworld.4bpp");
+    const u32 gObjectEventPic_UnownQ[] = INCBIN_COMP("graphics/pokemon/unown/q/overworld.4bpp");
+    const u32 gObjectEventPic_UnownR[] = INCBIN_COMP("graphics/pokemon/unown/r/overworld.4bpp");
+    const u32 gObjectEventPic_UnownS[] = INCBIN_COMP("graphics/pokemon/unown/s/overworld.4bpp");
+    const u32 gObjectEventPic_UnownT[] = INCBIN_COMP("graphics/pokemon/unown/t/overworld.4bpp");
+    const u32 gObjectEventPic_UnownU[] = INCBIN_COMP("graphics/pokemon/unown/u/overworld.4bpp");
+    const u32 gObjectEventPic_UnownV[] = INCBIN_COMP("graphics/pokemon/unown/v/overworld.4bpp");
+    const u32 gObjectEventPic_UnownW[] = INCBIN_COMP("graphics/pokemon/unown/w/overworld.4bpp");
+    const u32 gObjectEventPic_UnownX[] = INCBIN_COMP("graphics/pokemon/unown/x/overworld.4bpp");
+    const u32 gObjectEventPic_UnownY[] = INCBIN_COMP("graphics/pokemon/unown/y/overworld.4bpp");
+    const u32 gObjectEventPic_UnownZ[] = INCBIN_COMP("graphics/pokemon/unown/z/overworld.4bpp");
+    const u32 gObjectEventPic_UnownExclamationMark[] = INCBIN_COMP("graphics/pokemon/unown/exclamation_mark/overworld.4bpp");
+    const u32 gObjectEventPic_UnownQuestionMark[] = INCBIN_COMP("graphics/pokemon/unown/question_mark/overworld.4bpp");
+#if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
+    const u32 gOverworldPalette_Unown[] = INCBIN_U32("graphics/pokemon/unown/overworld_normal.gbapal.lz");
+    const u32 gShinyOverworldPalette_Unown[] = INCBIN_U32("graphics/pokemon/unown/overworld_shiny.gbapal.lz");
+#endif //OW_PKMN_OBJECTS_SHARE_PALETTES
+#endif //OW_POKEMON_OBJECT_EVENTS
 
     const u32 gMonFrontPic_Esoterown[] = INCBIN_U32("graphics/pokemon/esoterown/front.4bpp.lz");
     const u32 gMonPalette_Esoterown[] = INCBIN_U32("graphics/pokemon/esoterown/normal.gbapal.lz");
