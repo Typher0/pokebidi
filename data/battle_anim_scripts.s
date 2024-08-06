@@ -19,8 +19,6 @@ gMovesWithQuietBGM::
 	.2byte MOVE_SING, MOVE_PERISH_SONG, MOVE_GRASS_WHISTLE, 0xFFFF
 
 	.align 2
-
-
 gBattleAnims_StatusConditions::
 	.4byte Status_Poison                    @ B_ANIM_STATUS_PSN
 	.4byte Status_Confusion                 @ B_ANIM_STATUS_CONFUSION
