@@ -2231,23 +2231,40 @@ const struct BattleMoveEffect gBattleMoveEffects[NUM_BATTLE_MOVE_EFFECTS] =
         .encourageEncore = TRUE,
     },
 
-    [EFFECT_NEUROTOXIN] =
+    [EFFECT_SPICY_EXTRACT] =
     {
-        .battleScript = BattleScript_EffectHit,
+        .battleScript = BattleScript_EffectSpicyExtract,
         .battleTvScore = 0, // TODO: Assign points
-    },
-
-    [EFFECT_INSECTICIDE] =
-    {
-        .battleScript = BattleScript_EffectHit,
-        .battleTvScore = 0, // TODO: Assign points
-    },
-
-    [EFFECT_FIELD_OF_REEDS] =
-    {
-        .battleScript = BattleScript_EffectProtect,
-        .battleTvScore = 5,
         .encourageEncore = TRUE,
-        .usesProtectCounter = TRUE,
+    },
+
+    [EFFECT_TERA_BLAST] =
+    {
+        .battleScript = BattleScript_EffectPhotonGeyser,
+        .battleTvScore = 0, // TODO: Assign points
+    },
+
+    [EFFECT_TERA_STARSTORM] =
+    {
+        .battleScript = BattleScript_EffectPhotonGeyser,
+        .battleTvScore = 0, // TODO: Assign points
+    },
+
+    [EFFECT_DRAGON_DARTS] =
+    {
+        .battleScript = BattleScript_EffectHit,
+        .battleTvScore = 0, // TODO: Assign points
+    },
+
+    [EFFECT_GUARDIAN_OF_ALOLA] =
+    {
+        .battleScript = BattleScript_DamageToQuarterTargetHP,
+        .battleTvScore = 0, // TODO: Assign points
+    },
+
+    [EFFECT_SHELL_SIDE_ARM] =
+    {
+        .battleScript = BattleScript_EffectHit,
+        .battleTvScore = 0, // TODO: Assign points
     },
 };
