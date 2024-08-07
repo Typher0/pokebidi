@@ -615,7 +615,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FLYING),
     #if P_UPDATED_ABILITIES >= GEN_6
-        .abilities = { ABILITY_KEEN_EYE, ABILITY_NONE, ABILITY_RECKLESS },
+        .abilities = { ABILITY_KEEN_EYE, ABILITY_RECKLESS, ABILITY_ANGER_POINT },
     #else
         .abilities = { ABILITY_KEEN_EYE, ABILITY_NONE, ABILITY_NONE },
     #endif
@@ -6377,12 +6377,12 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
 
 #define ARCEUS_SPECIES_INFO(type, typeName, iconPal)                        \
     {                                                                       \
-        .baseHP        = 120,                                               \
-        .baseAttack    = 120,                                               \
-        .baseDefense   = 120,                                               \
-        .baseSpeed     = 120,                                               \
-        .baseSpAttack  = 120,                                               \
-        .baseSpDefense = 120,                                               \
+        .baseHP        = 150,                                               \
+        .baseAttack    = 150,                                               \
+        .baseDefense   = 150,                                               \
+        .baseSpeed     = 150,                                               \
+        .baseSpAttack  = 150,                                               \
+        .baseSpDefense = 150,                                               \
         .types = MON_TYPES(type),                                           \
         .catchRate = 3,                                                     \
         .expYield = ARCEUS_EXP_YIELD,                                       \
@@ -6452,6 +6452,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
     [SPECIES_ARCEUS_DRAGON]   = ARCEUS_SPECIES_INFO(TYPE_DRAGON,   Dragon,   0),
     [SPECIES_ARCEUS_DARK]     = ARCEUS_SPECIES_INFO(TYPE_DARK,     Dark,     0),
     [SPECIES_ARCEUS_FAIRY]    = ARCEUS_SPECIES_INFO(TYPE_FAIRY,    Fairy,    0),
+    [SPECIES_ARCEUS_SOUND]    = ARCEUS_SPECIES_INFOR(TYPE_SOUND,   Sound,    0),
 #endif //P_FAMILY_ARCEUS
 
 #ifdef __INTELLISENSE__
