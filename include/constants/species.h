@@ -1750,7 +1750,7 @@
 #define SPECIES_HUBRISET                                1643
 #define SPECIES_WENDINGO                                1644
 
-#define SPECIES_EGG (SPECIES_MIMIKYU_TOTEM_BUSTED + 1)
+#define SPECIES_EGG (SPECIES_WENDINGO + 1)
 
 #define NUM_SPECIES SPECIES_EGG
 
