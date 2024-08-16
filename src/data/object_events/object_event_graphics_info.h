@@ -8703,9 +8703,9 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SchoolkidF = {
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 
-const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SchoolkidM = {
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SchoolkidM1 = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_SCHOOLKID_M,
+    .paletteTag = OBJ_EVENT_PAL_TAG_SCHOOLKID_M_1,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 512,
     .width = 32,
@@ -8717,7 +8717,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SchoolkidM = {
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
     .anims = sAnimTable_DS,
-    .images = sPicTable_,
+    .images = sPicTable_SchoolkidM1,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 
