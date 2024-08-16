@@ -1262,7 +1262,7 @@ static const union AnimCmd sAnim_DSGoFastestEast[] =
     ANIMCMD_JUMP(0),
 };
 
-static const union sAnimCmd sAnim_DSSpecial2GoFastSouth[] =
+static const union AnimCmd sAnim_DSSpecial2GoFastSouth[] =
 {
     ANIMCMD_FRAME(16, 8),
     ANIMCMD_FRAME(17, 8),
