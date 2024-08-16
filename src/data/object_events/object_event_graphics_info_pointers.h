@@ -447,7 +447,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RichBoy2;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RichMan;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Roughneck1;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Roughneck2;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Roughenck2Fight;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Roughneck2Fight;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Roxanne1;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RoxieGuitar;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Roxie;
@@ -1001,7 +1001,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_SAGE] =                     &gObjectEventGraphicsInfo_Sage,
     [OBJ_EVENT_GFX_SAILOR_1] =                 &gObjectEventGraphicsInfo_Sailor1,
     [OBJ_EVENT_GFX_SCHOOLKID_F] =              &gObjectEventGraphicsInfo_SchoolkidF,
-    [OBJ_EVENT_GFX_SCHOOLKID_M] =              &gObjectEventGraphicsInfo_SchoolkidM,
+    [OBJ_EVENT_GFX_SCHOOLKID_M_1] =            &gObjectEventGraphicsInfo_SchoolkidM1,
     [OBJ_EVENT_GFX_SCIENTIST_F] =              &gObjectEventGraphicsInfo_ScientistF,
     [OBJ_EVENT_GFX_SCIENTIST_M_1] =            &gObjectEventGraphicsInfo_ScientistM1,
     [OBJ_EVENT_GFX_SCIENTIST_M_2] =            &gObjectEventGraphicsInfo_ScientistM2,
