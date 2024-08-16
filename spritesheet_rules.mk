@@ -1080,7 +1080,7 @@ $(OBJEVENTGFXDIR)/people/ds/sailor_1.4bpp: %.4bpp: %.png
 $(OBJEVENTGFXDIR)/people/ds/schoolkid_f.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
-$(OBJEVENTGFXDIR)/people/ds/schoolkid_m.4bpp: %.4bpp: %.png
+$(OBJEVENTGFXDIR)/people/ds/schoolkid_m_1.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
 $(OBJEVENTGFXDIR)/people/ds/scientist_f.4bpp: %.4bpp: %.png
