@@ -6509,7 +6509,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Gentleman3 = {
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Ghethis = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_,
+    .paletteTag = OBJ_EVENT_PAL_TAG_GHETHIS,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 512,
     .width = 32,
@@ -7474,7 +7474,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_N = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_N,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_N,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -8561,7 +8561,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SageBronius = {
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SageGiallo = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_SageGiallo,
+    .paletteTag = OBJ_EVENT_PAL_TAG_SAGE_GIALLO,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 512,
     .width = 32,
@@ -8987,7 +8987,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Smasher = {
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
     .anims = sAnimTable_DS,
-    .images = sPicTable_512,
+    .images = sPicTable_Smasher,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 
