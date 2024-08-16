@@ -3139,8 +3139,8 @@ u8 FldEff_RayquazaSpotlight(void)
 
 u8 FldEff_NPCFlyOut(void)
 {
-        u8 spriteId = Sprite;
-    struct Sprite *sprite = spriteId;
+        u8 spriteId;
+    struct Sprite *sprite;
 
     sprite->oam.paletteNum = LoadPlayerObjectEventPalette(gSaveBlock2Ptr->playerGender);
     sprite->oam.priority = 1;
