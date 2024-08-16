@@ -1520,6 +1520,7 @@ void RemoveObjectEventByLocalIdAndMap(u8 localId, u8 mapNum, u8 mapGroup)
 
 static void RemoveObjectEventInternal(struct ObjectEvent *objectEvent)
 {
+    u8 paletteNum;
     
     struct SpriteFrameImage image;
     image.size = GetObjectEventGraphicsInfo(objectEvent->graphicsId)->size;
@@ -3025,11 +3026,11 @@ void LoadPlayerObjectReflectionPalette(u16 tag, u8 slot)
     u8 i;
 
     PatchObjectPalette(tag, slot);
-    for (i = 0; [i].tag != OBJ_EVENT_PAL_TAG_NONE; i++)
+    for (i = 0; sPlayerReflectionPaletteSets[i].tag != OBJ_EVENT_PAL_TAG_NONE; i++)
     {
         if (sPlayerReflectionPaletteSets[i].tag == tag)
         {
-            PatchObjectPalette(sPlayerReflectionPaletteSets[i].data[], [slot]);
+            PatchObjectPalette(sPlayerReflectionPaletteSets[i].data[sCurrentReflectionType], gReflectionEffectPaletteMap[slot]);
             return;
         }
     }
@@ -3039,12 +3040,13 @@ void LoadSpecialObjectReflectionPalette(u16 tag, u8 slot)
 {
     u8 i;
 
+    sCurrentSpecialObjectPaletteTag = tag;
     PatchObjectPalette(tag, slot);
-    for (i = 0; LoadSpecialObjectReflectionPalette[i].tag != OBJ_EVENT_PAL_TAG_NONE; i++)
+    for (i = 0; sSpecialObjectReflectionPaletteSets[i].tag != OBJ_EVENT_PAL_TAG_NONE; i++)
     {
         if (sSpecialObjectReflectionPaletteSets[i].tag == tag)
         {
-            PatchObjectPalette(sSpecialObjectReflectionPaletteSets[i].data[], [slot]);
+            PatchObjectPalette(sSpecialObjectReflectionPaletteSets[i].data[sCurrentReflectionType], gReflectionEffectPaletteMap[slot]);
             return;
         }
     }
