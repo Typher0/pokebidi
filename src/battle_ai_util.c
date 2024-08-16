@@ -503,14 +503,6 @@ bool32 IsDamageMoveUnusable(u32 move, u32 battlerAtk, u32 battlerDef)
     }
 
     return FALSE;
-    case EFFECT_POLTERGEIST:
-        if (AI_DATA->items[battlerDef] == ITEM_NONE)
-            return TRUE;
-        break;
-    case EFFECT_FIRST_TURN_ONLY:
-        if (!gDisableStructs[battlerAtk].isFirstTurn)
-            return TRUE;
-        break;
 }
 
 static inline s32 GetDamageByRollType(s32 dmg, enum DamageRollType rollType)
