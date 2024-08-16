@@ -23838,7 +23838,7 @@ static const struct LevelUpMove sMineracLevelUpLearnset[] = {
     LEVEL_UP_END
 };
 
-static const struct LevelUpMove sTarentulaLevelUpLearnset[] = {
+static const struct LevelUpMove sTarenchulaLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_HORN_ATTACK),
     LEVEL_UP_MOVE( 1, MOVE_BUZZING_BUSTLE),
     LEVEL_UP_MOVE( 1, MOVE_SAND_TOMB),
