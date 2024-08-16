@@ -3142,12 +3142,11 @@ u8 FldEff_NPCFlyOut(void)
         u8 spriteId;
     struct Sprite *sprite;
 
-    sprite->oam.paletteNum = LoadPlayerObjectEventPalette(gSaveBlock2Ptr->playerGender);
     sprite->oam.priority = 1;
     sprite->callback = SpriteCB_NPCFlyOut;
     sprite->data[1] = gFieldEffectArguments[0];
     PlaySE(SE_M_FLY);
-    return spriteId;
+    return;
 }
 
 static void SpriteCB_NPCFlyOut(struct Sprite *sprite)
