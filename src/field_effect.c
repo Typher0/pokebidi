@@ -3146,7 +3146,7 @@ u8 FldEff_NPCFlyOut(void)
     sprite->callback = SpriteCB_NPCFlyOut;
     sprite->data[1] = gFieldEffectArguments[0];
     PlaySE(SE_M_FLY);
-    return;
+    return spriteId;
 }
 
 static void SpriteCB_NPCFlyOut(struct Sprite *sprite)
