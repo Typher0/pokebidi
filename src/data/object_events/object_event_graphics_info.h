@@ -5465,7 +5465,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Channeller = {
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Cheren1 = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_CHEREN1,
+    .paletteTag = OBJ_EVENT_PAL_TAG_CHEREN_1,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 512,
     .width = 32,
@@ -5838,24 +5838,6 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CooltrainerM4 = {
     .subspriteTables = sOamTables_32x32,
     .anims = sAnimTable_DS,
     .images = sPicTable_CooltrainerM4,
-    .affineAnims = gDummySpriteAffineAnimTable,
-};
-
-const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Cowgirl = {
-    .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_COWGIRL,
-    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
-    .size = 512,
-    .width = 32,
-    .height = 32,
-    .paletteSlot = PALSLOT_NPC_1,
-    .inanimate = FALSE,
-    .compressed = FALSE,
-    .tracks = TRACKS_FOOT,
-    .oam = &gObjectEventBaseOam_32x32,
-    .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
-    .images = sPicTable_Cowgirl,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 
