@@ -9695,7 +9695,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Worker2 = {
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Worker3 = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_WORKER3,
+    .paletteTag = OBJ_EVENT_PAL_TAG_WORKER_3,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 512,
     .width = 32,
