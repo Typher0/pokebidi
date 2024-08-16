@@ -10307,10 +10307,6 @@ static inline void MulByTypeEffectiveness(uq4_12_t *modifier, u32 move, u32 move
         mod = UQ_4_12(1.0);
     if (gMovesInfo[move].effect == EFFECT_SUPER_EFFECTIVE_ON_ARG && defType == gMovesInfo[move].argument)
         mod = UQ_4_12(2.0);
-    if (gMovesInfo[move].effect == EFFECT_EXORCISM && defType == TYPE_GHOST)
-        mod = UQ_4_12(2.0);
-    if (gMovesInfo[move].effect == EFFECT_INSECTICIDE && defType == TYPE_BUG)
-        mod = UQ_4_12(2.0);
     if (moveType == TYPE_GROUND && defType == TYPE_FLYING && IsBattlerGrounded(battlerDef) && mod == UQ_4_12(0.0))
         mod = UQ_4_12(1.0);
     if (moveType == TYPE_STELLAR && GetActiveGimmick(battlerDef) == GIMMICK_TERA)
