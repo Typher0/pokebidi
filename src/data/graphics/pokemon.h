@@ -22066,7 +22066,7 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #if P_FOOTPRINTS
     // const u8 gMonFootprint_Penglacier[] = INCBIN_U8("graphics/pokemon/penglacier/footprint.1bpp");
 #endif //P_FOOTPRINTS
-#endig //P_FAMILY_PINGLOO
+#endif //P_FAMILY_PINGLOO
 
 #if P_FAMILY_CABOB
     const u32 gMonFrontPic_Cabob[] = INCBIN_U32("graphics/pokemon/cabob/front.4bpp.lz");
@@ -22106,7 +22106,7 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #if P_FOOTPRINTS
     // const u8 gMonFootprint_Jagwire[] = INCBIN_U8("graphics/pokemon/jagwire/footprint.1bpp");
 #endif //P_FOOTPRINTS
-#endig //P_FAMILY_PUMACH
+#endif //P_FAMILY_PUMACH
 
 #if P_FAMILY_SKULLARVA
     const u32 gMonFrontPic_Skullarva[] = INCBIN_U32("graphics/pokemon/skullarva/front.4bpp.lz");
@@ -22136,7 +22136,7 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #if P_FOOTPRINTS
     // const u8 gMonFootprint_Mortasque[] = INCBIN_U8("graphics/pokemon/mortasque/footprint.1bpp");
 #endif //P_FOOTPRINTS
-#endig //P_FAMILY_SKULLARVA
+#endif //P_FAMILY_SKULLARVA
 
 #if P_FAMILY_TOTTER
     const u32 gMonFrontPic_Totter[] = INCBIN_U32("graphics/pokemon/totter/front.4bpp.lz");
@@ -22165,7 +22165,7 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #if P_FOOTPRINTS
     // const u8 gMonFootprint_Lutrajet[] = INCBIN_U8("graphics/pokemon/lutrajet/footprint.1bpp");
 #endif //P_FOOTPRINTS
-#endig //P_FAMILY_TOTTER
+#endif //P_FAMILY_TOTTER
 
 #if P_FAMILY_TENROCK
     const u32 gMonFrontPic_Tenrock[] = INCBIN_U32("graphics/pokemon/tenrock/front.4bpp.lz");
@@ -22223,7 +22223,7 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #if P_FOOTPRINTS
     // const u8 gMonFootprint_Moltortoise[] = INCBIN_U8("graphics/pokemon/moltortoise/footprint.1bpp");
 #endif //P_FOOTPRINTS
-#endig //P_FAMILY_SHELFUR
+#endif //P_FAMILY_SHELFUR
 
 #if P_FAMILY_CHIHAHA
     const u32 gMonFrontPic_Chihaha[] = INCBIN_U32("graphics/pokemon/chihaha/front.4bpp.lz");
@@ -22243,7 +22243,7 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #if P_FOOTPRINTS
     // const u8 gMonFootprint_Howlequin[] = INCBIN_U8("graphics/pokemon/howlequin/footprint.1bpp");
 #endif //P_FOOTPRINTS
-#endig //P_FAMILY_CHIHAHA
+#endif //P_FAMILY_CHIHAHA
 
 #if P_FAMILY_PALLECTRON
     const u32 gMonFrontPic_Pallectron[] = INCBIN_U32("graphics/pokemon/pallectron/front.4bpp.lz");
@@ -22272,7 +22272,7 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #if P_FOOTPRINTS
     // const u8 gMonFootprint_Electrioceros[] = INCBIN_U8("graphics/pokemon/electrioceros/footprint.1bpp");
 #endif //P_FOOTPRINTS
-#endig //P_FAMILY_PALLECTRON
+#endif //P_FAMILY_PALLECTRON
 
 #if P_FAMILY_CHIMPOCA
     const u32 gMonFrontPic_Chimpoca[] = INCBIN_U32("graphics/pokemon/chimpoca/front.4bpp.lz");
