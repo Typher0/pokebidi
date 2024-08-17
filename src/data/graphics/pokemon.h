@@ -22117,7 +22117,6 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #if P_FOOTPRINTS
     // const u8 gMonFootprint_Skullarva[] = INCBIN_U8("graphics/pokemon/skullarva/footprint.1bpp");
 #endif //P_FOOTPRINTS
-#endif //OW_POKEMON_OBJECT_EVENTS
 
     const u32 gMonFrontPic_Kakone[] = INCBIN_U32("graphics/pokemon/kakone/front.4bpp.lz");
     const u32 gMonPalette_Kakone[] = INCBIN_U32("graphics/pokemon/kakone/normal.gbapal.lz");
@@ -22283,7 +22282,6 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #if P_FOOTPRINTS
     // const u8 gMonFootprint_Chimpoca[] = INCBIN_U8("graphics/pokemon/chimpoca/footprint.1bpp");
 #endif //P_FOOTPRINTS
-#endif //OW_POKEMON_OBJECT_EVENTS
 
     const u32 gMonFrontPic_Simayan[] = INCBIN_U32("graphics/pokemon/simayan/front.4bpp.lz");
     const u32 gMonPalette_Simayan[] = INCBIN_U32("graphics/pokemon/simayan/normal.gbapal.lz");
@@ -22652,7 +22650,6 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #if P_FOOTPRINTS
     // const u8 gMonFootprint_Golterra[] = INCBIN_U8("graphics/pokemon/golterra/footprint.1bpp");
 #endif //P_FOOTPRINTS
-#endif //OW_POKEMON_OBJECT_EVENTS
 
     const u32 gMonFrontPic_Gaiolem[] = INCBIN_U32("graphics/pokemon/gaiolem/anim_front.4bpp.lz");
     const u32 gMonPalette_Gaiolem[] = INCBIN_U32("graphics/pokemon/gaiolem/normal.gbapal.lz");
