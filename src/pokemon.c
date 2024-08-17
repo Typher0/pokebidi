@@ -108,10 +108,10 @@ static const struct CombinedMove sCombinedMoves[2] =
 // NOTE: The order of the elements in the array below is irrelevant.
 // To reorder the pokedex, see the values in include/constants/pokedex.h.
 
-#define HOENN_TO_NATIONAL(name)     [HOENN_TO_NATIONAL(##name - 1] = NATIONAL_DEX_##name
+#define HOENN_TO_NATIONAL(name)     [HOENN_TO_NATIONAL_##name - 1] = NATIONAL_DEX_##name
 
 // Assigns all Hoenn Dex Indexes to a National Dex Index
-static const u16 sHoennToNationalOrder[HOENN_TO_NATIONAL(COUNT - 1] =
+static const u16 sHoennToNationalOrder[HOENN_DEX_COUNT - 1] =
 {
     HOENN_TO_NATIONAL(CHIKORITA),
     HOENN_TO_NATIONAL(BAYLEEF),
