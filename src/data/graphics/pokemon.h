@@ -4640,13 +4640,6 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #if P_FOOTPRINTS
     // const u8 gMonFootprint_Doctowl[] = INCBIN_U8("graphics/pokemon/doctowl/footprint.1bpp");
 #endif //P_FOOTPRINTS
-#if OW_POKEMON_OBJECT_EVENTS
-    const u32 gObjectEventPic_Doctowl[] = INCBIN_COMP("graphics/pokemon/doctowl/overworld.4bpp");
-#if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
-    const u32 gOverworldPalette_Doctowl[] = INCBIN_U32("graphics/pokemon/doctowl/overworld_normal.gbapal.lz");
-    const u32 gShinyOverworldPalette_Doctowl[] = INCBIN_U32("graphics/pokemon/doctowl/overworld_shiny.gbapal.lz");
-#endif //OW_PKMN_OBJECTS_SHARE_PALETTES
-#endif //OW_POKEMON_OBJECT_EVENTS
 #endif //P_FAMILY_HOOTHOOT
 
 #if P_FAMILY_LEDYBA
@@ -5471,11 +5464,6 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #if P_FOOTPRINTS
     // const u8 gMonFootprint_Esoterown[] = INCBIN_U8("graphics/pokemon/esoterown/footprint.1bpp");
 #endif //P_FOOTPRINTS
-#if OW_POKEMON_OBJECT_EVENTS
-    const u32 gObjectEventPic_Esoterown[] = INCBIN_COMP("graphics/pokemon/esoterown/overworld.4bpp");
-#if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
-    const u32 gOverworldPalette_Esoterown[] = INCBIN_U32("graphics/pokemon/esoterown/overworld_normal.gbapal.lz");
-    const u32 gShinyOverworldPalette_Esoterown[] = INCBIN_U32("graphics/pokemon/esoterown/overworld_shiny.gbapal.lz");
 #endif //P_FAMILY_UNOWN
 
 #if P_FAMILY_WOBBUFFET
@@ -8242,13 +8230,6 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #if P_FOOTPRINTS
     // const u8 gMonFootprint_Cacturado[] = INCBIN_U8("graphics/pokemon/cacturado/footprint.1bpp");
 #endif //P_FOOTPRINTS
-#if OW_POKEMON_OBJECT_EVENTS
-    const u32 gObjectEventPic_Cacturado[] = INCBIN_COMP("graphics/pokemon/cacturado/overworld.4bpp");
-#if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
-    const u32 gOverworldPalette_Cacturado[] = INCBIN_U32("graphics/pokemon/cacturado/overworld_normal.gbapal.lz");
-    const u32 gShinyOverworldPalette_Cacturado[] = INCBIN_U32("graphics/pokemon/cacturado/overworld_shiny.gbapal.lz");
-#endif //OW_PKMN_OBJECTS_SHARE_PALETTES
-#endif //OW_POKEMON_OBJECT_EVENTS
 #endif //P_FAMILY_CACNEA
 
 #if P_FAMILY_SWABLU
