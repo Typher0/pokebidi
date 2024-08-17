@@ -1522,7 +1522,7 @@ static u32 ShowDisguiseFieldEffect(u8 fldEff, u8 templateIdx)
     if (spriteId != MAX_SPRITES)
     {
         struct Sprite *sprite = &gSprites[spriteId];
-        UpdateSpritePaletteByTemplate(gFieldEffectObjectTemplatePointers[FldEff], sprite);
+        UpdateSpritePaletteByTemplate(gFieldEffectObjectTemplatePointers[fldEff], sprite);
         sprite->coordOffsetEnabled ++;
         sprite->sFldEff = fldEff;
         sprite->sLocalId = gFieldEffectArguments[0];
