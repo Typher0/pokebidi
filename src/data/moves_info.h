@@ -222,7 +222,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .makesContact = TRUE,
         .punchingMove = TRUE,
         .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffects = MOVE_EFFECT_FROSTBITE
+            .moveEffect = MOVE_EFFECT_FROSTBITE,
             .chance = 30,
         }),
         .contestEffect = CONTEST_EFFECT_BETTER_IF_SAME_TYPE,
@@ -10319,7 +10319,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .category = DAMAGE_CATEGORY_SPECIAL,
         .ballisticMove = TRUE,
         .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_ATTACK_ACCURACY_UP,
+            .moveEffect = EFFECT_ATTACK_ACCURACY_UP,
             .self = TRUE,
             .chance = 10,
         }),
@@ -15109,7 +15109,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .description = COMPOUND_STRING(
             "The user and ally hold hands\n"
             "increasing psychic power."),
-        .effect = EFFECT_SP_ATTACK_UP_2,
+        .effect = EFFECT_SP_ATK_PLUS_1,
         .power = 0,
         .type = TYPE_PSYCHIC,
         .accuracy = 0,
@@ -19226,8 +19226,6 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .pp = 10,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
-        .category = DAMAGE_CATEGORY_PHYSICAL,
-        .argument = HOLD_EFFECT_TERA_SHARD, //ADD EFFECT FOR THIS
         .category = DAMAGE_CATEGORY_SPECIAL,
         .forcePressure = TRUE,
         .additionalEffects = ADDITIONAL_EFFECTS({
@@ -19371,8 +19369,6 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_STATUS,
-        .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_SWAGGER,
         .magicCoatAffected = TRUE,
         .metronomeBanned = TRUE,
         .battleAnimScript = Move_SPICY_EXTRACT,
