@@ -22296,7 +22296,7 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //P_FAMILY_CHIMPOCA
 
 #if P_FAMILY_ICETOPE
-    const u32 gMonFrontPic_Icetope[] = INCBIN_U32("graphics/pokemon/icetope/amim_front.4bpp.lz");
+    const u32 gMonFrontPic_Icetope[] = INCBIN_U32("graphics/pokemon/icetope/anim_front.4bpp.lz");
     const u32 gMonPalette_Icetope[] = INCBIN_U32("graphics/pokemon/icetope/normal.gbapal.lz");
     const u32 gMonBackPic_Icetope[] = INCBIN_U32("graphics/pokemon/icetope/back.4bpp.lz");
     const u32 gMonShinyPalette_Icetope[] = INCBIN_U32("graphics/pokemon/icetope/shiny.gbapal.lz");
