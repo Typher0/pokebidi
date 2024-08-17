@@ -23213,7 +23213,7 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //P_FAMILY_BABOSIRIS
 
 #if P_FAMILY_HUBRISET
-    const u32 gMonFrontPic_Hubriset[] = INCBIN_U32("graphics/pokemon/anim_hubriset/front.4bpp.lz");
+    const u32 gMonFrontPic_Hubriset[] = INCBIN_U32("graphics/pokemon/hubriset/anim_front.4bpp.lz");
     const u32 gMonPalette_Hubriset[] = INCBIN_U32("graphics/pokemon/hubriset/normal.gbapal.lz");
     const u32 gMonBackPic_Hubriset[] = INCBIN_U32("graphics/pokemon/hubriset/back.4bpp.lz");
     const u32 gMonShinyPalette_Hubriset[] = INCBIN_U32("graphics/pokemon/hubriset/shiny.gbapal.lz");
