@@ -957,7 +957,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .shinyPalette = gMonShinyPalette_Doctowl,
         .iconSprite = gMonIcon_Doctowl,
         .iconPalIndex = 5,
-        FOOTPRINT(Doctowl)
+        FOOTPRINT(Noctowl)
         .levelUpLearnset = sDoctowlLevelUpLearnset,
         .teachableLearnset = sDoctowlTeachableLearnset,
     },
