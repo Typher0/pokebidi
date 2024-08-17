@@ -22826,5 +22826,4 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .argument = MAX_EFFECT_BYPASS_PROTECT, //EFFECT TODO
         .battleAnimScript = Move_G_MAX_RAPID_FLOW,
     },
-
 };
