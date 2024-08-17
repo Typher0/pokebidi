@@ -15109,7 +15109,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .description = COMPOUND_STRING(
             "The user and ally hold hands\n"
             "increasing psychic power."),
-        .effect = EFFECT_SP_ATK_PLUS_1,
+        .effect = EFFECT_ATTACK_UP_2,
         .power = 0,
         .type = TYPE_PSYCHIC,
         .accuracy = 0,
