@@ -3447,7 +3447,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .teachableLearnset = sUnownTeachableLearnset,                                                   \
         .tmIlliterate = TRUE,                                                                           \
         .formSpeciesIdTable = sUnownFormSpeciesIdTable,                                                 \
-        .evolution = EVOLUTION({EVO_MAPSEC, MAPSEC_MT_PYRE, SPECIES_ESOTEROWN})                         \
+        .evolutions = EVOLUTION({EVO_MAPSEC, MAPSEC_MT_PYRE, SPECIES_ESOTEROWN})                         \
     }
 
     [SPECIES_UNOWN]       = UNOWN_MISC_INFO(A,               FALSE, 24, 40, 24, 48,  8 ),
