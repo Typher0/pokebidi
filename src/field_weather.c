@@ -20,6 +20,13 @@
 
 #define DROUGHT_COLOR_INDEX(color) ((((color) >> 1) & 0xF) | (((color) >> 2) & 0xF0) | (((color) >> 3) & 0xF00))
 
+enum
+{
+    COLOR_MAP_NONE,
+    COLOR_MAP_DARK_CONTRAST,
+    COLOR_MAP_CONTRAST,
+};
+
 struct RGBColor
 {
     u16 r:5;
@@ -273,10 +280,6 @@ static void BuildColorMaps(void)
     u16 colorMapIndex;
     u16 baseBrightness;
     s16 diff;
-    u8 i;
-
-    for (i = 0; i <= 12; i++)
-        sBasePaletteColorMapTypes[i] = COLOR_MAP_NORMAL;
 
     sPaletteColorMapTypes = sBasePaletteColorMapTypes;
     for (i = 0; i < 2; i++)
