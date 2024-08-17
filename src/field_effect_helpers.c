@@ -275,7 +275,7 @@ extern const struct SpriteTemplate *const gFieldEffectObjectTemplatePointers[];
 
 u8 CreateWarpArrowSprite(void)
 {
-    LoadFieldEffectPalette(FLDEFFOBJ_ARROW, FALSE);
+    LoadFieldEffectPalette(FLDEFFOBJ_ARROW);
     u8 spriteId = CreateSpriteAtEnd(gFieldEffectObjectTemplatePointers[FLDEFFOBJ_ARROW], 0, 0, 82);
     if (spriteId != MAX_SPRITES)
     {
@@ -1522,7 +1522,7 @@ static u32 ShowDisguiseFieldEffect(u8 fldEff, u8 templateIdx)
     if (spriteId != MAX_SPRITES)
     {
         struct Sprite *sprite = &gSprites[spriteId];
-        UpdateSpritePaletteByTemplate(gFieldEffectObjectTemplatePointers[fldEffObj], sprite);
+        UpdateSpritePaletteByTemplate(gFieldEffectObjectTemplatePointers[FLDEFFOBJ], sprite);
         sprite->coordOffsetEnabled ++;
         sprite->sFldEff = fldEff;
         sprite->sLocalId = gFieldEffectArguments[0];
