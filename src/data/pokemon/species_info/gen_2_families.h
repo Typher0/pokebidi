@@ -2942,7 +2942,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .teachableLearnset = sWooperTeachableLearnset,
         .eggMoveLearnset = sWooperEggMoveLearnset,
         .formSpeciesIdTable = sWooperFormSpeciesIdTable,
-        .evolutions = EVOLUTION({EVO_LEVEL, 20, SPECIES_QUAGSIRE}
+        .evolutions = EVOLUTION({EVO_LEVEL, 20, SPECIES_QUAGSIRE},
                                 {EVO_ITEM, ITEM_PEAT_BLOCK, SPECIES_CLODSIRE}),
     },
 
@@ -3064,7 +3064,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .teachableLearnset = sWooperPaldeanTeachableLearnset,
         .eggMoveLearnset = sWooperPaldeanEggMoveLearnset,
         .formSpeciesIdTable = sWooperFormSpeciesIdTable,
-        .evolutions = EVOLUTION({EVO_LEVEL, 20, SPECIES_CLODSIRE}
+        .evolutions = EVOLUTION({EVO_LEVEL, 20, SPECIES_CLODSIRE},
                                 {EVO_ITEM, ITEM_WATER_STONE, SPECIES_QUAGSIRE}),
     },
 
@@ -3498,7 +3498,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .eggCycles = 40,                              
         .friendship = STANDARD_FRIENDSHIP,            
         .growthRate = GROWTH_MEDIUM_FAST,             
-        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_UNDISCOVERED),          
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),          
         .abilities = {ABILITY_LEVITATE, ABILITY_NONE},
         .bodyColor = BODY_COLOR_BLACK,                
         .speciesName = _("Esoterown"),
@@ -3519,7 +3519,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .frontPic = gMonFrontPic_Esoterown,
         .frontPicSize = MON_COORDS_SIZE(40, 40),
         .frontPicYOffset = 13,
-        .frontAnimFrames = sAnims_Esoterown,
+        .frontAnimFrames = sAnims_Esoterown_1,
         .frontAnimId = ANIM_V_JUMPS_H_JUMPS,
         .backPic = gMonBackPic_Esoterown,
         .backPicSize = MON_COORDS_SIZE(56, 40),
@@ -3529,7 +3529,6 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .shinyPalette = gMonShinyPalette_Esoterown,
         .iconSprite = gMonIcon_Esoterown,
         .iconPalIndex = 0,
-        FOOTPRINT(Esoterown)
         .levelUpLearnset = sEsoterownLevelUpLearnset,
         .teachableLearnset = sEsoterownTeachableLearnset,                            
     },
@@ -4835,7 +4834,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .eggMoveLearnset = sSneaselEggMoveLearnset,
         .formSpeciesIdTable = sSneaselFormSpeciesIdTable,
         .evolutions = EVOLUTION({EVO_ITEM_HOLD_NIGHT, ITEM_RAZOR_CLAW, SPECIES_WEAVILE},
-                                {EVO_ITEM_NIGHT, ITEM_RAZOR_CLAW, SPECIES_WEAVILE}
+                                {EVO_ITEM_NIGHT, ITEM_RAZOR_CLAW, SPECIES_WEAVILE},
                                 {EVO_ITEM_HOLD_DAY, ITEM_RAZOR_CLAW, SPECIES_SNEASLER},
                                 {EVO_ITEM_DAY, ITEM_RAZOR_CLAW, SPECIES_SNEASLER}),
     },
@@ -4976,7 +4975,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .teachableLearnset = sSneaselHisuianTeachableLearnset,
         .formSpeciesIdTable = sSneaselFormSpeciesIdTable,
         .evolutions = EVOLUTION({EVO_ITEM_HOLD_DAY, ITEM_RAZOR_CLAW, SPECIES_SNEASLER},
-                                {EVO_ITEM_DAY, ITEM_RAZOR_CLAW, SPECIES_SNEASLER}
+                                {EVO_ITEM_DAY, ITEM_RAZOR_CLAW, SPECIES_SNEASLER},
                                 {EVO_ITEM_HOLD_NIGHT, ITEM_RAZOR_CLAW, SPECIES_WEAVILE},
                                 {EVO_ITEM_NIGHT, ITEM_RAZOR_CLAW, SPECIES_WEAVILE}),
     },
