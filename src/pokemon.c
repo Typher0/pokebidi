@@ -5118,10 +5118,10 @@ u16 NationalToHoennOrder(u16 nationalNum)
 
     hoennNum = 0;
 
-    while (hoennNum < (HOENN_TO_NATIONAL(COUNT - 1) && sHoennToNationalOrder[hoennNum] != nationalNum)
+    while (hoennNum < (HOENN_DEX_COUNT - 1) && sHoennToNationalOrder[hoennNum] != nationalNum)
         hoennNum++;
 
-    if (hoennNum >= HOENN_TO_NATIONAL(COUNT - 1)
+    if (hoennNum >= HOENN_DEX_COUNT - 1)
         return 0;
 
     return hoennNum + 1;
