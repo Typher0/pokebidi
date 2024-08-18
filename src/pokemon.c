@@ -5145,7 +5145,7 @@ u16 SpeciesToHoennPokedexNum(u16 species)
 
 u16 HoennToNationalOrder(u16 hoennNum)
 {
-    if (!hoennNum || hoennNum >= HOENN_TO_NATIONAL(COUNT)
+    if (!hoennNum || hoennNum >= HOENN_DEX_COUNT)
         return 0;
 
     return sHoennToNationalOrder[hoennNum - 1];
@@ -5876,7 +5876,7 @@ u16 SpeciesToPokedexNum(u16 species)
     else
     {
         species = SpeciesToHoennPokedexNum(species);
-        if (species <= HOENN_TO_NATIONAL(COUNT)
+        if (species <= HOENN_DEX_COUNT)
             return species;
         return 0xFFFF;
     }
@@ -5884,7 +5884,7 @@ u16 SpeciesToPokedexNum(u16 species)
 
 bool32 IsSpeciesInHoennDex(u16 species)
 {
-    if (SpeciesToHoennPokedexNum(species) > HOENN_TO_NATIONAL(COUNT)
+    if (SpeciesToHoennPokedexNum(species) > HOENN_DEX_COUNT)
         return FALSE;
     else
         return TRUE;
