@@ -1045,7 +1045,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .levelUpLearnset = sLinooneLevelUpLearnset,
         .teachableLearnset = sLinooneTeachableLearnset,
         .formSpeciesIdTable = sLinooneFormSpeciesIdTable,
-        .evolution = EVOLUTION({EVO_LEVEL_NIGHT, 35, SPECIES_OBSTAGOON}),
+        .evolutions = EVOLUTION({EVO_LEVEL_NIGHT, 35, SPECIES_OBSTAGOON}),
     },
 
 #if P_GALARIAN_FORMS
@@ -6516,7 +6516,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         )
         .levelUpLearnset = sCacturneLevelUpLearnset,
         .teachableLearnset = sCacturneTeachableLearnset,
-        .evolution = EVOLUTION({EVO_MOVE, MOVE_MEXICAN_STANDOFF, SPECIES_CACTURADO}),
+        .evolutions = EVOLUTION({EVO_MOVE, MOVE_MEXICAN_STANDOFF, SPECIES_CACTURADO}),
     },
 
 #if P_GEN_9_CROSS_EVOS
@@ -6569,7 +6569,6 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .shinyPalette = gMonShinyPalette_Cacturado,
         .iconSprite = gMonIcon_Cacturado,
         .iconPalIndex = 1,
-        FOOTPRINT(Cacturado)
         .levelUpLearnset = sCacturadoLevelUpLearnset,
         .teachableLearnset = sCacturadoTeachableLearnset,
 },
