@@ -2463,11 +2463,7 @@ static const union AnimCmd sAnim_Noctowl_1[] =
     ANIMCMD_END,
 };
 
-static const union AnimCmd sAnim_Doctowl_1[] =
-{
-    ANIMCMD_FRAME(0, 1),
-    ANIMCMD_END,
-}
+PLACEHOLDER_ANIM_SINGLE_FRAME(Doctowl);
 #endif //P_FAMILY_HOOTHOOT
 
 #if P_FAMILY_LEDYBA
@@ -2902,11 +2898,7 @@ static const union AnimCmd sAnim_Mismagius_1[] =
 #if P_FAMILY_UNOWN
 PLACEHOLDER_ANIM_SINGLE_FRAME(Unown);
 
-static const union AnimCmd sAnim_Esoterown_1[] =
-{
-    ANIMCMD_FRAME(0, 1),
-    ANIMCMD_END,
-}
+PLACEHOLDER_ANIM_SINGLE_FRAME(Esoterown);
 #endif //P_FAMILY_UNOWN
 
 #if P_FAMILY_WOBBUFFET
@@ -4453,11 +4445,7 @@ static const union AnimCmd sAnim_Cacturne_1[] =
     ANIMCMD_END,
 };
 
-static const union AnimCmd sAnim_Cacturado_1[] =
-{
-    ANIMCMD_FRAME(0, 1),
-    ANIMCMD_END,
-}
+PLACEHOLDER_ANIM_SINGLE_FRAME(Cacturado);
 #endif //P_FAMILY_CACNEA
 
 #if P_FAMILY_SWABLU
