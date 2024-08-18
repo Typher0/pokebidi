@@ -1845,7 +1845,7 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         .eggMoveLearnset = sRockruffEggMoveLearnset,
         .formSpeciesIdTable = sRockruffFormSpeciesIdTable,
         .evolutions = EVOLUTION({EVO_LEVEL_DAY, 30, SPECIES_LYCANROC_MIDDAY},
-                                {EVO_LEVEL_NIGHT, 30, SPECIES_LYCANROC_MIDNIGHT}),
+                                {EVO_LEVEL_NIGHT, 30, SPECIES_LYCANROC_MIDNIGHT},
                                 {EVO_LEVEL_DUSK, 30, SPECIES_LYCANROC_DUSK}),
     },
 
@@ -1906,7 +1906,7 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         .eggMoveLearnset = sRockruffEggMoveLearnset,
         .formSpeciesIdTable = sRockruffFormSpeciesIdTable,
         .evolutions = EVOLUTION({EVO_LEVEL_DAY, 30, SPECIES_LYCANROC_MIDDAY},
-                                {EVO_LEVEL_NIGHT, 30, SPECIES_LYCANROC_MIDNIGHT}),
+                                {EVO_LEVEL_NIGHT, 30, SPECIES_LYCANROC_MIDNIGHT},
                                 {EVO_LEVEL_DUSK, 30, SPECIES_LYCANROC_DUSK}),
     },
 
