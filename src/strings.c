@@ -258,27 +258,27 @@ const u8 gText_ThePC[] = _("the PC");
 
 const u8 *const gBagMenu_ReturnToStrings[] =
 {
-    [ItemMENULOCATION_FIELD]               = gText_TheField,
-    [ItemMENULOCATION_Battle]              = gText_TheBattle,
-    [ItemMENULOCATION_PARTY]               = gText_ThePokemonList,
-    [ItemMENULOCATION_SHOP]                = gText_TheShop,
-    [ItemMENULOCATION_Berry_TREE]          = gText_TheField,
-    [ItemMENULOCATION_Berry_BLENDER_CRUSH] = gText_TheField,
-    [ItemMENULOCATION_ItemPC]              = gText_ThePC,
-    [ItemMENULOCATION_FAVOR_LADY]          = gText_TheField,
-    [ItemMENULOCATION_QUIZ_LADY]           = gText_TheField,
-    [ItemMENULOCATION_APPRENTICE]          = gText_TheField,
-    [ItemMENULOCATION_WALLY]               = gText_TheBattle,
-    [ItemMENULOCATION_PCBox]               = gText_ThePC,
-    [ItemMENULOCATION_Berry_TREE_MULCH]    = gText_TheField,
+    [ITEMMENULOCATION_FIELD]               = gText_TheField,
+    [ITEMMENULOCATION_BATTLE]              = gText_TheBattle,
+    [ITEMMENULOCATION_PARTY]               = gText_ThePokemonList,
+    [ITEMMENULOCATION_SHOP]                = gText_TheShop,
+    [ITEMMENULOCATION_BERRY_TREE]          = gText_TheField,
+    [ITEMMENULOCATION_BERRY_BLENDER_CRUSH] = gText_TheField,
+    [ITEMMENULOCATION_ITEMPC]              = gText_ThePC,
+    [ITEMMENULOCATION_FAVOR_LADY]          = gText_TheField,
+    [ITEMMENULOCATION_QUIZ_LADY]           = gText_TheField,
+    [ITEMMENULOCATION_APPRENTICE]          = gText_TheField,
+    [ITEMMENULOCATION_WALLY]               = gText_TheBattle,
+    [ITEMMENULOCATION_PCBOX]               = gText_ThePC,
+    [ITEMMENULOCATION_BERRY_TREE_MULCH]    = gText_TheField,
 };
 
 const u8 *const gPyramidBagMenu_ReturnToStrings[] =
 {
-    [PyramidBag_LOC_FIELD]       = gText_TheField,
-    [PyramidBag_LOC_Battle]      = gText_TheBattle,
-    [PyramidBag_LOC_PARTY]       = gText_ThePokemonList,
-    [PyramidBag_LOC_CHOOSE_Toss] = gText_TheField
+    [PYRAMIDBAG_LOC_FIELD]       = gText_TheField,
+    [PYRAMIDBAG_LOC_BATTLE]      = gText_TheBattle,
+    [PYRAMIDBAG_LOC_PARTY]       = gText_ThePokemonList,
+    [PYRAMIDBAG_LOC_CHOOSE_TOSS] = gText_TheField
 };
 
 const u8 gText_ReturnToVar1[] = _("Return to\n{STR_VAR_1}.");
@@ -294,7 +294,7 @@ const u8 *const gPocketNamesStringsTable[] =
     [BALLS_POCKET] = gText_PokeBallsPocket,
     [TMHM_POCKET]  = gText_TMHMPocket,
     [BERRIES_POCKET] = gText_BerriesPocket,
-    [KEYItems_POCKET] = gText_KeyItemsPocket
+    [KEYITEMS_POCKET] = gText_KeyItemsPocket
 };
 
 const u8 gText_NumberItem_TMBerry[] = _("{NO}{STR_VAR_1}{CLEAR 0x07}{STR_VAR_2}");
@@ -411,7 +411,7 @@ const u8 gText_PkmnNeedsToReplaceMove[] = _("{STR_VAR_1} wants to learn the\nmov
 const u8 gText_StopLearningMove2[] = _("Stop trying to teach\n{STR_VAR_2}?");
 const u8 gText_MoveNotLearned[] = _("{STR_VAR_1} did not learn the\nmove {STR_VAR_2}.{PAUSE_UNTIL_PRESS}");
 const u8 gText_WhichMoveToForget[] = _("Which move should be forgotten?{PAUSE_UNTIL_PRESS}");
-const u8 gText_12PoofForgotMove[] = _("1, {PAUSE 15}2, and{PAUSE 15}… {PAUSE 15}… {PAUSE 15}… {PAUSE 15}{PLAY_SE SE_Ball_BOUNCE_1}Poof!\p{STR_VAR_1} forgot how to\nuse {STR_VAR_2}.\pAnd…{PAUSE_UNTIL_PRESS}");
+const u8 gText_12PoofForgotMove[] = _("1, {PAUSE 15}2, and{PAUSE 15}… {PAUSE 15}… {PAUSE 15}… {PAUSE 15}{PLAY_SE SE_BALL_BOUNCE_1}Poof!\p{STR_VAR_1} forgot how to\nuse {STR_VAR_2}.\pAnd…{PAUSE_UNTIL_PRESS}");
 const u8 gText_PkmnAlreadyKnows[] = _("{STR_VAR_1} already knows\n{STR_VAR_2}.{PAUSE_UNTIL_PRESS}");
 const u8 gText_PkmnHPRestoredByVar2[] = _("{STR_VAR_1}'s HP was restored\nby {STR_VAR_2} point(s).{PAUSE_UNTIL_PRESS}");
 const u8 gText_PkmnCuredOfPoison[] = _("{STR_VAR_1} was cured of its\npoisoning.{PAUSE_UNTIL_PRESS}");
