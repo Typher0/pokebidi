@@ -6175,7 +6175,7 @@ Cry_Hamsnug::
 
 	.align 2
 Cry_Snuggybara::
-	.incbin "sound/direct_sound_samples/cries/Snuggybara.bin"
+	.incbin "sound/direct_sound_samples/cries/snuggybara.bin"
 .endif @ P_FAMILY_HAMSNUG
 
 .if P_FAMILY_PINGLOO == TRUE
