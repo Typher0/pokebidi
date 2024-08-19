@@ -1875,23 +1875,6 @@ static void UpdateGrassFieldEffectSubpriority(struct Sprite *sprite, u8 elevatio
     }
 }
 
-static void LoadFieldEffectPalette_(u8 fieldEffect, bool8 updateGammaType)
-{
-    const struct SpriteTemplate *spriteTemplate;
-
-    spriteTemplate = gFieldEffectObjectTemplatePointers[fieldEffect];
-    if (spriteTemplate->paletteTag != 0xffff)
-    {
-        LoadObjectEventPalette(spriteTemplate->paletteTag);
-        if (updateGammaType)
-            UpdatePaletteGammaType(IndexOfSpritePaletteTag(spriteTemplate->paletteTag), GAMMA_NORMAL);
-    }
-}
-
-void LoadFieldEffectPalette(u8 fieldEffect)
-{
-    LoadFieldEffectPalette_(fieldEffect, TRUE);
-}
 
 // Unused, duplicates of data in event_object_movement.c
 static const s8 sFigure8XOffsets[FIGURE_8_LENGTH] = {
