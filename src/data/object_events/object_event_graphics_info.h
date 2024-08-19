@@ -4797,6 +4797,24 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Artist3 = {
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_AromaLady = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_AROMA_LADY,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 512,
+    .width = 32,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_1,
+    .inanimate = FALSE,
+    .compressed = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_32x32,
+    .subspriteTables = sOamTables_32x32,
+    .anims = sAnimTable_DS,
+    .images = sPicTable_AromaLady,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BackpackerF = {
     .tileTag = TAG_NONE,
     .paletteTag = OBJ_EVENT_PAL_TAG_BACKPACKER_F,
@@ -5301,7 +5319,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Burgh = {
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 
-const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BURGLAR = {
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Burglar = {
     .tileTag = TAG_NONE,
     .paletteTag = OBJ_EVENT_PAL_TAG_BURGLAR,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
