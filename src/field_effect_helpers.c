@@ -15,9 +15,8 @@
 #include "constants/field_effects.h"
 #include "constants/rgb.h"
 #include "constants/songs.h"
-#include "constants/rgb.h"
 
-#define OBJ_EVENT_PAL_TAG_NONE 0x12FF // duplicate of define in event_object_movement.c
+#define OBJ_EVENT_PAL_TAG_NONE 0x11FF // duplicate of define in event_object_movement.c
 #define PAL_TAG_REFLECTION_OFFSET 0x2000 // reflection tag value is paletteTag + 0x2000
 #define PAL_RAW_REFLECTION_OFFSET 0x4000 // raw reflection tag is paletteNum + 0x4000
 #define HIGH_BRIDGE_PAL_TAG 0x4010
@@ -91,8 +90,6 @@ static s16 GetReflectionVerticalOffset(struct ObjectEvent *objectEvent)
     return GetObjectEventGraphicsInfo(objectEvent->graphicsId)->height - 2;
 }
 
-#define OBJ_EVENT_PAL_TAG_BRIDGE_REFLECTION 0x1102
-
 static void LoadObjectReflectionPalette(struct ObjectEvent *objectEvent, struct Sprite *reflectionSprite)
 {
     u8 bridgeType;
@@ -105,8 +102,6 @@ static void LoadObjectReflectionPalette(struct ObjectEvent *objectEvent, struct 
     if ((bridgeType = MetatileBehavior_GetBridgeType(objectEvent->previousMetatileBehavior))
         || (bridgeType = MetatileBehavior_GetBridgeType(objectEvent->currentMetatileBehavior)))
     {
-        // When walking on a bridge high above water (Route 120), the reflection is a solid dark blue color.
-        // This is so the sprite blends in with the dark water metatile underneath the bridge.
         reflectionSprite->sReflectionVerticalOffset = bridgeReflectionVerticalOffsets[bridgeType - 1];
         LoadObjectHighBridgeReflectionPalette(objectEvent, reflectionSprite);
     }
@@ -275,7 +270,6 @@ extern const struct SpriteTemplate *const gFieldEffectObjectTemplatePointers[];
 
 u8 CreateWarpArrowSprite(void)
 {
-    LoadFieldEffectPalette(FLDEFFOBJ_ARROW);
     u8 spriteId = CreateSpriteAtEnd(gFieldEffectObjectTemplatePointers[FLDEFFOBJ_ARROW], 0, 0, 82);
     if (spriteId != MAX_SPRITES)
     {
@@ -596,7 +590,6 @@ u32 FldEff_JumpLongGrass(void)
     u8 spriteId;
 
     SetSpritePosToOffsetMapCoords((s16 *)&gFieldEffectArguments[0], (s16 *)&gFieldEffectArguments[1], 8, 8);
-    LoadFieldEffectPalette(FLDEFFOBJ_SURF_BLOB);
     spriteId = CreateSpriteAtEnd(gFieldEffectObjectTemplatePointers[FLDEFFOBJ_JUMP_LONG_GRASS], gFieldEffectArguments[0], gFieldEffectArguments[1], 0);
     if (spriteId != MAX_SPRITES)
     {
@@ -1872,7 +1865,6 @@ static void UpdateGrassFieldEffectSubpriority(struct Sprite *sprite, u8 elevatio
         }
     }
 }
-
 
 // Unused, duplicates of data in event_object_movement.c
 static const s8 sFigure8XOffsets[FIGURE_8_LENGTH] = {
