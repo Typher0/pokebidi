@@ -4666,7 +4666,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Accordianist = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Accordianist,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -4684,7 +4684,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Actor = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Actor,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -4702,7 +4702,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Alder = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DSSpecial3,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Alder,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -4720,7 +4720,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Anthea1 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Anthea1,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -4738,7 +4738,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Anthea2 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Anthea2,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -4756,7 +4756,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Artist1 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Artist1,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -4774,7 +4774,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Artist2 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Artist2,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -4792,7 +4792,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Artist3 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Artist3,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -4810,7 +4810,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_AromaLady = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_AromaLady,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -4828,7 +4828,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BackpackerF = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_BackpackerF,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -4846,7 +4846,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BackpackerM = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_BackpackerM,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -4864,7 +4864,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Baker = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Baker,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -4882,7 +4882,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Battlegirl1 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Battlegirl1,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -4900,7 +4900,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Battlegirl2 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Battlegirl2,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -4918,7 +4918,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Beauty1 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Beauty1,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -4936,7 +4936,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Beauty2 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Beauty2,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -4954,7 +4954,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Beauty3 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Beauty3,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -4972,7 +4972,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Beauty4 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Beauty4,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -4990,7 +4990,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Benga = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Benga,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -5008,7 +5008,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Bianca1 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DSSpecial4,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Bianca1,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -5026,7 +5026,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Bianca2 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DSSpecial4,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Bianca2,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -5044,7 +5044,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Biker1 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Biker1,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -5062,7 +5062,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Biker2 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Biker2,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -5080,7 +5080,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BirdkeeperF1 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_BirdkeeperF1,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -5098,7 +5098,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BirdkeeperF2 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_BirdkeeperF2,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -5116,7 +5116,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BirdkeeperM = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_BirdkeeperM,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -5134,7 +5134,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Blackbelt1 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Blackbelt1,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -5152,7 +5152,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Blackbelt2 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Blackbelt2,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -5170,7 +5170,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Blackbelt3 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Blackbelt3,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -5188,7 +5188,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Blaine = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Blaine,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -5206,7 +5206,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Boarder = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Boarder,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -5224,7 +5224,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Boy = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Boy,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -5242,7 +5242,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Brawly1 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Brawly1,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -5260,7 +5260,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Brock = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Brock,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -5278,7 +5278,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Brycen = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Brycen,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -5296,7 +5296,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BugCatcher1 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_BugCatcher1,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -5314,7 +5314,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Burgh = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Burgh,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -5332,7 +5332,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Burglar = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Burglar,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -5350,7 +5350,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BWMom = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_BWMom,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -5368,7 +5368,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BW2Mom = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_BW2Mom,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -5386,7 +5386,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Caitlin = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Caitlin,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -5404,7 +5404,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Cameraman1 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Cameraman1,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -5422,7 +5422,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Camper1 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Camper1,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -5440,7 +5440,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Captain = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Captain,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -5458,7 +5458,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Cedric = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Cedric,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -5476,7 +5476,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Channeller = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Channeller,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -5494,7 +5494,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Cheren1 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DSSpecial4,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Cheren1,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -5512,7 +5512,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Cheren2 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DSSpecial4,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Cheren2,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -5530,7 +5530,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Chili = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Chili,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -5548,7 +5548,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Cilan = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DSSpecial4,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Cilan,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -5566,7 +5566,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Clay = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Clay,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -5584,7 +5584,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ClerkF = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_ClerkF,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -5602,7 +5602,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ClerkM1 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_ClerkM1,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -5620,7 +5620,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ClerkM2 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_ClerkM2,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -5638,7 +5638,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Clown = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Clown,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -5656,7 +5656,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Collector = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Collector,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -5674,7 +5674,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Colress = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DSSpecial7,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Colress,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -5692,7 +5692,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Concordia1 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Concordia1,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -5710,7 +5710,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Concordia2 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Concordia2,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -5728,7 +5728,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CooltrainerF1 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_CooltrainerF1,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -5746,7 +5746,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CooltrainerF2 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_CooltrainerF2,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -5764,7 +5764,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CooltrainerF3 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_CooltrainerF3,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -5782,7 +5782,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CooltrainerF4 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_CooltrainerF4,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -5800,7 +5800,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CooltrainerM1 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_CooltrainerM1,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -5818,7 +5818,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CooltrainerM2 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_CooltrainerM2,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -5836,7 +5836,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CooltrainerM3 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_CooltrainerM3,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -5854,7 +5854,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CooltrainerM4 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_CooltrainerM4,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -5872,7 +5872,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Cowgirl = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Cowgirl,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -5890,7 +5890,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Cress = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Cress,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -5908,7 +5908,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Curtis1 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Curtis1,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -5926,7 +5926,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Curtis2 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Curtis2,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -5944,7 +5944,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CyclistF1 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_CyclistF1,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -5962,7 +5962,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CyclistF2 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_CyclistF2,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -5980,7 +5980,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CyclistM1 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_CyclistM1,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -5998,7 +5998,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CyclistM2 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_CyclistM2,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -6016,7 +6016,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Dancer = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Dancer,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -6034,7 +6034,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Depotagent = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Depotagent,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -6052,7 +6052,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Doctor = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Doctor,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -6070,7 +6070,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Dragontamer = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Dragontamer,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -6088,7 +6088,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Drayden = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Drayden,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -6106,7 +6106,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Elder = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Elder,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -6124,7 +6124,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Elesa1 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Elesa1,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -6142,7 +6142,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Elesa2 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DSSpecial7,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Elesa2,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -6160,7 +6160,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Emmet = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Emmet,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -6178,7 +6178,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Erica = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Erica,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -6196,7 +6196,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Ethan = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Ethan,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -6214,7 +6214,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ExecutiveF = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_ExecutiveF,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -6232,7 +6232,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ExecutiveM1 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_ExecutiveM1,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -6250,7 +6250,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ExecutiveM2 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_ExecutiveM2,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -6268,7 +6268,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ExecutiveM3 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_ExecutiveM3,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -6286,7 +6286,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_FatMan1 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_FatMan1,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -6304,7 +6304,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_FatMan2 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_FatMan2,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -6322,7 +6322,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_FatMan3 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_FatMan3,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -6340,7 +6340,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Fennel = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Fennel,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -6358,7 +6358,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Firebreather = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Firebreather,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -6376,7 +6376,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Fisherman1 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Fisherman1,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -6394,7 +6394,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Fisherman2 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Fisherman2,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -6412,7 +6412,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Flannery1 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Flannery1,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -6430,7 +6430,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Flautist = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Flautist,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -6448,7 +6448,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Gambler = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Gambler,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -6466,7 +6466,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Gentleman1 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Gentleman1,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -6484,7 +6484,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Gentleman2 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Gentleman2,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -6502,7 +6502,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Gentleman3 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Gentleman3,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -6520,7 +6520,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Ghethis = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DSSpecial4,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Ghethis,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -6538,7 +6538,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Giovanni = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Giovanni,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -6556,7 +6556,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Grimsley = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Grimsley,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -6574,7 +6574,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_GuideF = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_GuideF,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -6592,7 +6592,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_GuideM = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_GuideM,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -6610,7 +6610,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Guitarist1 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Guitarist1,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -6628,7 +6628,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Guitarist2 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Guitarist2,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -6646,7 +6646,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Guitarist3 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Guitarist3,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -6664,7 +6664,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_GuitaristF1 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_GuitaristF1,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -6682,7 +6682,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_GuitaristF2 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_GuitaristF2,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -6700,7 +6700,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Guzma = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Guzma,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -6718,7 +6718,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_GymGuide = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_GymGuide,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -6736,7 +6736,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Harlequin = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Harlequin,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -6754,7 +6754,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Harmonica = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Harmonica,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -6772,7 +6772,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Hiker1 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Hiker1,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -6790,7 +6790,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Hiker2 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Hiker2,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -6808,7 +6808,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Hoopster = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Hoopster,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -6826,7 +6826,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Hugh = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DSSpecial7,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Hugh,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -6844,7 +6844,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Idol = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Idol,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -6862,7 +6862,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Infielder = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Infielder,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -6880,7 +6880,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Ingo = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Ingo,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -6898,7 +6898,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Iris1 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Iris1,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -6916,7 +6916,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Iris2 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Iris2,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -6934,7 +6934,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Janitor = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Janitor,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -6952,7 +6952,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Jogger1 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Jogger1,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -6970,7 +6970,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Jogger2 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Jogger2,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -6988,7 +6988,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Jogger3 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Jogger3,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -7006,7 +7006,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Juggler = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Juggler,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -7024,7 +7024,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Keytaurist = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Keytaurist,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -7042,7 +7042,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_KimonoGirl = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_KimonoGirl,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -7060,7 +7060,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Koga = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Koga,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -7078,7 +7078,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Lady1 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Lady1,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -7096,7 +7096,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Lady2 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Lady2,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -7114,7 +7114,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Lass1 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Lass1,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -7132,7 +7132,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Lass2 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Lass2,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -7150,7 +7150,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Lass3 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Lass3,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -7168,7 +7168,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Leonora1 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Leonora1,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -7186,7 +7186,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Leonora2 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Leonora2,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -7204,7 +7204,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Linebacker = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Linebacker,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -7222,7 +7222,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Liza1 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Liza1,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -7240,7 +7240,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LtSurge = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_LtSurge,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -7258,7 +7258,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Lyra = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Lyra,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -7276,7 +7276,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Maid1 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Maid1,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -7294,7 +7294,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Maid2 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Maid2,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -7312,7 +7312,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Man6 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Man6,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -7330,7 +7330,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Man7 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Man7,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -7348,7 +7348,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Man8 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Man8,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -7366,7 +7366,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MarlinSwim = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_MarlinSwim,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -7384,7 +7384,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Marlin = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Marlin,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -7402,7 +7402,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Marshall = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DSSpecial3,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Marshall,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -7420,7 +7420,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MedalGuy = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_MedalGuy,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -7438,7 +7438,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Medium = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Medium,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -7456,7 +7456,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Misty = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Misty,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -7492,7 +7492,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_NeoGhethisCane = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DSSpecial5,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_NeoGhethisCane,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -7510,7 +7510,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_NeoGhethis = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_NeoGhethis,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -7528,7 +7528,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_NeoPlasmaF = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_NeoPlasmaF,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -7546,7 +7546,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_NeoPlasmaM = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_NeoPlasmaM,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -7564,7 +7564,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_NeoZinzolin = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_NeoZinzolin,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -7582,7 +7582,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_NinjaBoy1 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_NinjaBoy1,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -7600,7 +7600,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Norman1 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Norman1,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -7618,7 +7618,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Nurse1 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Nurse1,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -7636,7 +7636,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_NurseJoy = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DSSpecial2,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_NurseJoy,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -7654,7 +7654,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_NurseryAide = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_NurseryAide,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -7672,7 +7672,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_OldWoman1 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_OldWoman1,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -7690,7 +7690,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ParasolLady1 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_ParasolLady1,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -7708,7 +7708,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ParasolLady2 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_ParasolLady2,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -7726,7 +7726,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Picnicker1 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Picnicker1,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -7744,7 +7744,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Piers = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Piers,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -7762,7 +7762,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Pilot = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Pilot,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -7780,7 +7780,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PokefanF1 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_PokefanF1,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -7798,7 +7798,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PokefanF2 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_PokefanF2,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -7816,7 +7816,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PokefanM1 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_PokefanM1,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -7834,7 +7834,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PokefanM2 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_PokefanM2,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -7852,7 +7852,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Pokekid = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Pokekid,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -7870,7 +7870,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Pokemaniac = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Pokemaniac,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -7888,7 +7888,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Pokemart = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Pokemart,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -7906,7 +7906,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PokemonBreederF1 =
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_PokemonBreederF1,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -7924,7 +7924,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PokemonBreederF2 =
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_PokemonBreederF2,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -7942,7 +7942,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PokemonBreederM1 =
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_PokemonBreederM1,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -7960,7 +7960,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PokemonBreederM2 =
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_PokemonBreederM2,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -7978,7 +7978,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PokemonRangerF1 = 
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_PokemonRangerF1,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -7996,7 +7996,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PokemonRangerF2 = 
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_PokemonRangerF2,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -8014,7 +8014,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PokemonRangerM1 = 
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_PokemonRangerM1,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -8032,7 +8032,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PokemonRangerM2 = 
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_PokemonRangerM2,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -8050,7 +8050,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Policeman1 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Policeman1,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -8068,7 +8068,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Policeman2 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Policeman2,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -8086,7 +8086,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Postman = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Postman,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -8104,7 +8104,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PreschoolerF = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_PreschoolerF,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -8122,7 +8122,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PreschoolerM = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_PreschoolerM,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -8140,7 +8140,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ProfessorJuniper =
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_ProfessorJuniper,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -8158,7 +8158,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ProfessorOak = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_ProfessorOak,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -8176,7 +8176,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PsychicF1 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_PsychicF1,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -8194,7 +8194,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PsychicF2 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_PsychicF2,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -8212,7 +8212,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PsychicM1 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_PsychicM1,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -8230,7 +8230,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PsychicM2 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_PsychicM2,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -8248,7 +8248,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Rancher = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Rancher,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -8266,7 +8266,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Receptionist1 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Receptionist1,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -8284,7 +8284,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Receptionist2 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Receptionist2,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -8302,7 +8302,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Receptionist3 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Receptionist3,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -8320,7 +8320,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Receptionist4 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Receptionist4,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -8338,7 +8338,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Reporter = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Reporter,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -8356,7 +8356,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RichBoy1 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_RichBoy1,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -8374,7 +8374,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RichBoy2 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_RichBoy2,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -8392,7 +8392,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RichMan = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_RichMan,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -8410,7 +8410,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Roughneck1 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Roughneck1,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -8428,7 +8428,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Roughneck2 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Roughneck2,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -8446,7 +8446,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Roughneck2Fight = 
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Roughneck2Fight,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -8464,7 +8464,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Roxanne1 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Roxanne1,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -8482,7 +8482,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RoxieGuitar = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_RoxieGuitar,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -8500,7 +8500,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Roxie = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Roxie,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -8518,7 +8518,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RuinManiac = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_RuinManiac,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -8536,7 +8536,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Sabrina = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Sabrina,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -8554,7 +8554,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SageBronius = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_SageBronius,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -8572,7 +8572,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SageGiallo = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_SageGiallo,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -8590,7 +8590,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SageGorm = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_SageGorm,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -8608,7 +8608,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SageRood = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_SageRood,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -8626,7 +8626,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SageRyoku = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_SageRyoku,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -8644,7 +8644,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SageZinzolin = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_SageZinzolin,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -8662,7 +8662,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Sage = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Sage,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -8680,7 +8680,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Sailor1 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Sailor1,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -8698,7 +8698,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SchoolkidF = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_SchoolkidF,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -8716,7 +8716,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SchoolkidM1 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_SchoolkidM1,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -8734,7 +8734,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ScientistF = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_ScientistF,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -8752,7 +8752,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ScientistM1 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_ScientistM1,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -8770,7 +8770,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ScientistM2 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_ScientistM2,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -8788,7 +8788,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ScientistM3 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_ScientistM3,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -8806,7 +8806,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ShadowTriad = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DSSpecial3,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_ShadowTriad,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -8824,7 +8824,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ShadyGuy = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_ShadyGuy,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -8842,7 +8842,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Shauntal = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Shauntal,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -8860,7 +8860,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Silver = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Silver,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -8878,7 +8878,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Singer = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Singer,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -8896,7 +8896,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SkierF1 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_SkierF1,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -8914,7 +8914,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SkierF2 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_SkierF2,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -8932,7 +8932,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SkierM = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_SkierM,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -8950,7 +8950,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Skyla = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Skyla,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -8968,7 +8968,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Smasher = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Smasher,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -8986,7 +8986,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Socialite1 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Socialite1,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -9004,7 +9004,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Socialite2 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Socialite2,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -9022,7 +9022,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Striker = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Striker,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -9040,7 +9040,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Supernerd = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Supernerd,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -9058,7 +9058,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SwimmerF1 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_SwimmerF1,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -9076,7 +9076,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SwimmerF2 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_SwimmerF2,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -9094,7 +9094,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SwimmerF3 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_SwimmerF3,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -9112,7 +9112,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SwimmerM1 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_SwimmerM1,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -9130,7 +9130,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SwimmerM2 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_SwimmerM2,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -9148,7 +9148,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SwimmerM3 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_SwimmerM3,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -9166,7 +9166,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Tate1 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Tate1,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -9184,7 +9184,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Teacher = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Teacher,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -9202,7 +9202,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_TeamPlasmaF = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_TeamPlasmaF,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -9220,7 +9220,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_TeamPlasmaM = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_TeamPlasmaM,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -9238,7 +9238,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_TeamRocketF = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_TeamRocketF,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -9256,7 +9256,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_TeamRocketM = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_TeamRocketM,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -9274,7 +9274,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Trumpeter = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Trumpeter,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -9292,7 +9292,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_TuberF1 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_TuberF1,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -9310,7 +9310,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_TuberM1 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_TuberM1,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -9328,7 +9328,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Twins1 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Twins1,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -9346,7 +9346,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Twins2 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Twins2,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -9364,7 +9364,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Twins3 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Twins3,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -9382,7 +9382,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Ultima = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Ultima,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -9400,7 +9400,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_VetranF = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_VetranF,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -9418,7 +9418,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_VetranM1 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_VetranM1,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -9436,7 +9436,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_VetranM2 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_VetranM2,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -9454,7 +9454,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Waiter1 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Waiter1,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -9472,7 +9472,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Waiter2 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Waiter2,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -9490,7 +9490,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Waitress1 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Waitress1,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -9508,7 +9508,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Waitress2 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Waitress2,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -9526,7 +9526,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Wallace1 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Wallace1,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -9544,7 +9544,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Wattson1 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Wattson1,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -9562,7 +9562,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Winona1 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Winona1,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -9580,7 +9580,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Woman6 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Woman6,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -9598,7 +9598,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Woman7 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Woman7,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -9616,7 +9616,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Woman8 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Woman8,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -9634,7 +9634,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Woman9 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Woman9,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -9652,7 +9652,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Woman10 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Woman10,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -9670,7 +9670,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Woman11 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Woman11,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -9688,7 +9688,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Worker1 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Worker1,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -9706,7 +9706,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Worker2 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Worker2,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -9724,7 +9724,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Worker3 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Worker3,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -9742,7 +9742,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Yancy1 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Yancy1,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -9760,7 +9760,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Yancy2 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Yancy2,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -9778,7 +9778,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Youngster1 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Youngster1,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -9796,7 +9796,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Youngster2 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Youngster2,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -9814,7 +9814,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Youngster3 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_DS,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Youngster3,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
