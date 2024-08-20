@@ -2968,15 +2968,6 @@ static void CursorCb_Summary(u8 taskId)
     Task_ClosePartyMenu(taskId);
 }
 
-void ChangePokemonNickname(void);
-static void CursorCb_Nickname(u8 taskId)
-{
-     PlaySE(SE_SELECT);
-     gSpecialVar_0x8004 = gPartyMenu.slotId;
-     sPartyMenuInternal->exitCallback = ChangePokemonNickname;
-     Task_ClosePartyMenu(taskId);
- }
-    
 static void CB2_ShowPokemonSummaryScreen(void)
 {
     if (gPartyMenu.menuType == PARTY_MENU_TYPE_IN_BATTLE)
