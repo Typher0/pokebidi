@@ -3460,7 +3460,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .iconSprite = gMonIcon_ToxtricityGigantamax,
         .iconPalIndex = 0,
         FOOTPRINT(Toxtricity)
-        .isMegaEvolution = TRUE,
+        .isGigantamax = TRUE,
         .levelUpLearnset = sToxtricityLowKeyLevelUpLearnset,
         .teachableLearnset = sToxtricityLowKeyTeachableLearnset,
         .formSpeciesIdTable = sToxtricityFormSpeciesIdTable,
