@@ -21,7 +21,7 @@
   ],
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_ALDER",
+      "graphics_id": "OBJ_EVENT_GFX_AROMA_LADY",
       "x": 16,
       "y": 10,
       "elevation": 3,
@@ -34,7 +34,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_ACTOR",
+      "graphics_id": "OBJ_EVENT_GFX_BIANCA_1",
       "x": 12,
       "y": 13,
       "elevation": 3,
@@ -60,7 +60,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_BW2_MOM",
+      "graphics_id": "OBJ_EVENT_GFX_BW_MOM",
       "x": 5,
       "y": 8,
       "elevation": 3,
