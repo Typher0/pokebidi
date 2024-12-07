@@ -6442,6 +6442,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .isMythical = TRUE,                                                         \
         .isFrontierBanned = TRUE,                                                   \
         .perfectIVCount = LEGENDARY_PERFECT_IV_COUNT, \
+    }
 
     [SPECIES_ARCEUS_NORMAL]   = ARCEUS_SPECIES_INFO(TYPE_NORMAL,   Normal,   1),
     [SPECIES_ARCEUS_FIGHTING] = ARCEUS_SPECIES_INFO(TYPE_FIGHTING, Fighting, 1),
