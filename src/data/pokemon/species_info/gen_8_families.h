@@ -187,8 +187,8 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .formChangeTable = sRillaboomFormChangeTable,
     },
 
-#if P_MEGA_EVOLUTIONS
-    [SPECIES_RILLABOOM_GIGANTAMAX] =
+#if P_GIGANTAMAX_FORMS
+    [SPECIES_RILLABOOM_GMAX] =
     {
         .baseHP        = 100,
         .baseAttack    = 155,
@@ -429,8 +429,8 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .formChangeTable = sCinderaceFormChangeTable,
     },
 
-#if P_MEGA_EVOLUTIONS
-    [SPECIES_CINDERACE_GIGANTAMAX] =
+#if P_GIGANTAMAX_FORMS
+    [SPECIES_CINDERACE_GMAX] =
     {
         .baseHP        = 83,
         .baseAttack    = 146,
@@ -673,7 +673,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .formChangeTable = sInteleonFormChangeTable,
     },
 
-#if P_MEGA_EVOLUTION
+#if P_GIGANTAMAX_FORMS
     [SPECIES_INTELEON_GIGANTAMAX] =
     {
         .baseHP        = 70,
@@ -1043,8 +1043,8 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .formChangeTable = sCorviknightFormChangeTable,
     },
 
-#if P_MEGA_EVOLUTION
-    [SPECIES_CORVIKNIGHT_GIGANTAMAX] =
+#if P_GIGANTAMAX_FORMS
+    [SPECIES_CORVIKNIGHT_GMAX] =
     {
         .baseHP        = 98,
         .baseAttack    = 107,
@@ -1290,8 +1290,8 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .formChangeTable = sOrbeetleFormChangeTable,
     },
 
-#if P_MEGA_EVOLUTIONS
-    [SPECIES_ORBEETLE_GIGANTAMAX] =
+#if P_GIGANTAMAX_FORMS
+    [SPECIES_ORBEETLE_GMAX] =
     {
         .baseHP        = 60,
         .baseAttack    = 15,
@@ -1844,8 +1844,8 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .formChangeTable = sDrednawFormChangeTable,
     },
 
-#if P_MEGA_EVOLUTIONS
-    [SPECIES_DREDNAW_GIGANTAMAX] =
+#if P_GIGANTAMAX_FORMS
+    [SPECIES_DREDNAW_GMAX] =
     {
         .baseHP        = 90,
         .baseAttack    = 125,
@@ -2211,8 +2211,8 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .formChangeTable = sCoalossalFormChangeTable,
     },
 
-#if P_MEGA_EVOLUTIONS
-    [SPECIES_COALOSSAL_GIGANTAMAX] =
+#if P_GIGANTAMAX_FORMS
+    [SPECIES_COALOSSAL_GMAX] =
     {
         .baseHP        = 110,
         .baseAttack    = 105,
@@ -2819,8 +2819,8 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .formChangeTable = sSandacondaFormChangeTable,
     },
 
-#if P_MEGA_EVOLUTIONS
-    [SPECIES_SANDACONDA_GIGANTAMAX] =
+#if P_GIGANTAMAX_FORMS
+    [SPECIES_SANDACONDA_GMAX] =
     {
         .baseHP        = 72,
         .baseAttack    = 147,
@@ -3301,8 +3301,8 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .formChangeTable = sToxtricityAmpedFormChangeTable,
     },
 
-#if P_MEGA_EVOLUTIONS
-    [SPECIES_TOXTRICITY_AMPED_GIGANTAMAX] =
+#if P_GIGANTAMAX_FORMS
+    [SPECIES_TOXTRICITY_AMPED_GMAX] =
     {
         .baseHP        = 75,
         .baseAttack    = 98,
@@ -3415,8 +3415,8 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .formChangeTable = sToxtricityAmpedFormChangeTable,
     },
 
-#if P_MEGA_EVOLUTIONS
-    [SPECIES_TOXTRICITY_LOW_KEY_GIGANTAMAX] =
+#if P_GIGANTAMAX_FORMS
+    [SPECIES_TOXTRICITY_LOW_KEY_GMAX] =
     {
         .baseHP        = 75,
         .baseAttack    = 98,
@@ -3593,8 +3593,8 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .formChangeTable = sCentiskorchFormChangeTable,
     },
 
-#if P_MEGA_EVOLUTIONS
-    [SPECIES_CENTISKORCH_GIGANTAMAX] =
+#if P_GIGANTAMAX_FORMS
+    [SPECIES_CENTISKORCH_GMAX] =
     {
         .baseHP        = 100,
         .baseAttack    = 155,
@@ -4208,8 +4208,8 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .formChangeTable = sHattereneFormChangeTable,
     },
 
-#if P_MEGA_EVOLUTIONS
-    [SPECIES_HATTERENE_GIGANTAMAX] =
+#if P_GIGANTAMAX_FORMS
+    [SPECIES_HATTERENE_GMAX] =
     {
         .baseHP        = 57,
         .baseAttack    = 80,
@@ -4451,8 +4451,8 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .formChangeTable = sGrimmsnarlFormChangeTable,
     },
 
-#if P_MEGA_EVOLUTIONS
-    [SPECIES_GRIMMSNARL_GIGANTAMAX] =
+#if P_GIGANTAMAX_FORMS
+    [SPECIES_GRIMMSNARL_GMAX] =
     {
         .baseHP        = 95,
         .baseAttack    = 150,
@@ -4704,8 +4704,8 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
     [SPECIES_ALCREMIE_RIBBON_RUBY_SWIRL]        = ALCREMIE_REGULAR_SPECIES_INFO(Ribbon,     RubySwirl,    BODY_COLOR_YELLOW),
     [SPECIES_ALCREMIE_RIBBON_CARAMEL_SWIRL]     = ALCREMIE_REGULAR_SPECIES_INFO(Ribbon,     CaramelSwirl, BODY_COLOR_BROWN),
     [SPECIES_ALCREMIE_RIBBON_RAINBOW_SWIRL]     = ALCREMIE_REGULAR_SPECIES_INFO(Ribbon,     RainbowSwirl, BODY_COLOR_YELLOW),
-#if P_MEGA_EVOLUTIONS
-    [SPECIES_ALCREMIE_GIGANTAMAX] =
+#if P_GIGANTAMAX_FORMS
+    [SPECIES_ALCREMIE_GMAX] =
     {
         ALCREMIE_MISC_INFO(BODY_COLOR_YELLOW),
         .speciesName = _("Alcremie"),
@@ -5549,8 +5549,8 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .formChangeTable = sCopperajahFormChangeTable,
     },
 
-#if P_MEGA_EVOLUTIONS
-    [SPECIES_COPPERAJAH_GIGANTAMAX] =
+#if P_GIGANTAMAX_FORMS
+    [SPECIES_COPPERAJAH_GMAX] =
     {
         .baseHP        = 122,
         .baseAttack    = 150,
