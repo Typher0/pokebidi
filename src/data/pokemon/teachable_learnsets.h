@@ -1042,8 +1042,8 @@ static const u16 sRaticateTeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 
-#if P_ALOLA_FORMS
-static const u16 sRattataALOLATeachableLearnset[] = {
+#if P_ALOLAN_FORMS
+static const u16 sRattataAlolanTeachableLearnset[] = {
     MOVE_ATTRACT,
     MOVE_BLIZZARD,
     MOVE_DARK_PULSE,
@@ -1082,7 +1082,7 @@ static const u16 sRattataALOLATeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 
-static const u16 sRaticateALOLATeachableLearnset[] = {
+static const u16 sRaticateAlolanTeachableLearnset[] = {
     MOVE_ATTRACT,
     MOVE_BLIZZARD,
     MOVE_BULK_UP,
@@ -1128,7 +1128,7 @@ static const u16 sRaticateALOLATeachableLearnset[] = {
     MOVE_SWORDS_DANCE,
     MOVE_UNAVAILABLE,
 };
-#endif //P_ALOLA_FORMS
+#endif //P_ALOLAN_FORMS
 #endif //P_FAMILY_RATTATA
 
 #if P_FAMILY_SPEAROW
@@ -1460,8 +1460,8 @@ static const u16 sRaichuTeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 
-#if P_ALOLA_FORMS
-static const u16 sRaichuALOLATeachableLearnset[] = {
+#if P_ALOLAN_FORMS
+static const u16 sRaichuAlolanTeachableLearnset[] = {
     MOVE_ALLY_SWITCH,
     MOVE_ATTRACT,
     MOVE_BRICK_BREAK,
@@ -1515,7 +1515,7 @@ static const u16 sRaichuALOLATeachableLearnset[] = {
     MOVE_THUNDER_WAVE,
     MOVE_UNAVAILABLE,
 };
-#endif //P_ALOLA_FORMS
+#endif //P_ALOLAN_FORMS
 #endif //P_FAMILY_PIKACHU
 
 #if P_FAMILY_SANDSHREW
@@ -1644,8 +1644,8 @@ static const u16 sSandslashTeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 
-#if P_ALOLA_FORMS
-static const u16 sSandshrewALOLATeachableLearnset[] = {
+#if P_ALOLAN_FORMS
+static const u16 sSandshrewAlolanTeachableLearnset[] = {
     MOVE_AERIAL_ACE,
     MOVE_ATTRACT,
     MOVE_AVALANCHE,
@@ -1703,7 +1703,7 @@ static const u16 sSandshrewALOLATeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 
-static const u16 sSandslashALOLATeachableLearnset[] = {
+static const u16 sSandslashAlolanTeachableLearnset[] = {
     MOVE_AERIAL_ACE,
     MOVE_ATTRACT,
     MOVE_AVALANCHE,
@@ -1765,7 +1765,7 @@ static const u16 sSandslashALOLATeachableLearnset[] = {
     MOVE_SWORDS_DANCE,
     MOVE_UNAVAILABLE,
 };
-#endif //P_ALOLA_FORMS
+#endif //P_ALOLAN_FORMS
 #endif //P_FAMILY_SANDSHREW
 
 #if P_FAMILY_NIDORAN
@@ -2442,8 +2442,8 @@ static const u16 sNinetalesTeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 
-#if P_ALOLA_FORMS
-static const u16 sVulpixALOLATeachableLearnset[] = {
+#if P_ALOLAN_FORMS
+static const u16 sVulpixAlolanTeachableLearnset[] = {
     MOVE_ATTRACT,
     MOVE_BLIZZARD,
     MOVE_CAPTIVATE,
@@ -2482,7 +2482,7 @@ static const u16 sVulpixALOLATeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 
-static const u16 sNinetalesALOLATeachableLearnset[] = {
+static const u16 sNinetalesAlolanTeachableLearnset[] = {
     MOVE_ATTRACT,
     MOVE_AVALANCHE,
     MOVE_BLIZZARD,
@@ -2527,7 +2527,7 @@ static const u16 sNinetalesALOLATeachableLearnset[] = {
     MOVE_SWIFT,
     MOVE_UNAVAILABLE,
 };
-#endif //P_ALOLA_FORMS
+#endif //P_ALOLAN_FORMS
 #endif //P_FAMILY_VULPIX
 
 #if P_FAMILY_JIGGLYPUFF
@@ -3314,8 +3314,8 @@ static const u16 sDugtrioTeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 
-#if P_ALOLA_FORMS
-static const u16 sDiglettALOLATeachableLearnset[] = {
+#if P_ALOLAN_FORMS
+static const u16 sDiglettAlolanTeachableLearnset[] = {
     MOVE_AERIAL_ACE,
     MOVE_ALLY_SWITCH,
     MOVE_ATTRACT,
@@ -3355,7 +3355,7 @@ static const u16 sDiglettALOLATeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 
-static const u16 sDugtrioALOLATeachableLearnset[] = {
+static const u16 sDugtrioAlolanTeachableLearnset[] = {
     MOVE_AERIAL_ACE,
     MOVE_ALLY_SWITCH,
     MOVE_ATTRACT,
@@ -3398,7 +3398,7 @@ static const u16 sDugtrioALOLATeachableLearnset[] = {
     MOVE_SWORDS_DANCE,
     MOVE_UNAVAILABLE,
 };
-#endif //P_ALOLA_FORMS
+#endif //P_ALOLAN_FORMS
 #endif //P_FAMILY_DIGLETT
 
 #if P_FAMILY_MEOWTH
@@ -3522,8 +3522,8 @@ static const u16 sPersianTeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 
-#if P_ALOLA_FORMS
-static const u16 sMeowthALOLATeachableLearnset[] = {
+#if P_ALOLAN_FORMS
+static const u16 sMeowthAlolanTeachableLearnset[] = {
     MOVE_AERIAL_ACE,
     MOVE_ATTRACT,
     MOVE_CAPTIVATE,
@@ -3577,7 +3577,7 @@ static const u16 sMeowthALOLATeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 
-static const u16 sPersianALOLATeachableLearnset[] = {
+static const u16 sPersianAlolanTeachableLearnset[] = {
     MOVE_AERIAL_ACE,
     MOVE_ATTRACT,
     MOVE_CAPTIVATE,
@@ -3633,10 +3633,10 @@ static const u16 sPersianALOLATeachableLearnset[] = {
     MOVE_THUNDER_WAVE,
     MOVE_UNAVAILABLE,
 };
-#endif //P_ALOLA_FORMS
+#endif //P_ALOLAN_FORMS
 
-#if P_GALAR_FORMS
-static const u16 sMeowthGALARTeachableLearnset[] = {
+#if P_GALARIAN_FORMS
+static const u16 sMeowthGalarianTeachableLearnset[] = {
     MOVE_AERIAL_ACE,
     MOVE_ATTRACT,
     MOVE_BRICK_BREAK,
@@ -3731,7 +3731,7 @@ static const u16 sPerrserkerTeachableLearnset[] = {
     MOVE_SWORDS_DANCE,
     MOVE_UNAVAILABLE,
 };
-#endif //P_GALAR_FORMS
+#endif //P_GALARIAN_FORMS
 #endif //P_FAMILY_MEOWTH
 
 #if P_FAMILY_PSYDUCK
@@ -4162,8 +4162,8 @@ static const u16 sArcanineTeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 
-#if P_HISUI_FORMS
-static const u16 sGrowlitheHISUITeachableLearnset[] = {
+#if P_HISUIAN_FORMS
+static const u16 sGrowlitheHisuianTeachableLearnset[] = {
     MOVE_AERIAL_ACE,
     MOVE_DIG,
     MOVE_ENDURE,
@@ -4196,7 +4196,7 @@ static const u16 sGrowlitheHISUITeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 
-static const u16 sArcanineHISUITeachableLearnset[] = {
+static const u16 sArcanineHisuianTeachableLearnset[] = {
     MOVE_AERIAL_ACE,
     MOVE_BULLDOZE,
     MOVE_DIG,
@@ -4234,7 +4234,7 @@ static const u16 sArcanineHISUITeachableLearnset[] = {
     MOVE_SWIFT,
     MOVE_UNAVAILABLE,
 };
-#endif //P_HISUI_FORMS
+#endif //P_HISUIAN_FORMS
 #endif //P_FAMILY_GROWLITHE
 
 #if P_FAMILY_POLIWAG
@@ -5236,8 +5236,8 @@ static const u16 sGolemTeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 
-#if P_ALOLA_FORMS
-static const u16 sGeodudeALOLATeachableLearnset[] = {
+#if P_ALOLAN_FORMS
+static const u16 sGeodudeAlolanTeachableLearnset[] = {
     MOVE_ATTRACT,
     MOVE_BRICK_BREAK,
     MOVE_BULLDOZE,
@@ -5291,7 +5291,7 @@ static const u16 sGeodudeALOLATeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 
-static const u16 sGravelerALOLATeachableLearnset[] = {
+static const u16 sGravelerAlolanTeachableLearnset[] = {
     MOVE_ALLY_SWITCH,
     MOVE_ATTRACT,
     MOVE_BRICK_BREAK,
@@ -5349,7 +5349,7 @@ static const u16 sGravelerALOLATeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 
-static const u16 sGolemALOLATeachableLearnset[] = {
+static const u16 sGolemAlolanTeachableLearnset[] = {
     MOVE_ALLY_SWITCH,
     MOVE_ATTRACT,
     MOVE_BRICK_BREAK,
@@ -5410,7 +5410,7 @@ static const u16 sGolemALOLATeachableLearnset[] = {
     MOVE_THUNDER_WAVE,
     MOVE_UNAVAILABLE,
 };
-#endif //P_ALOLA_FORMS
+#endif //P_ALOLAN_FORMS
 #endif //P_FAMILY_GEODUDE
 
 #if P_FAMILY_PONYTA
@@ -5488,8 +5488,8 @@ static const u16 sRapidashTeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 
-#if P_GALAR_FORMS
-static const u16 sPonytaGALARTeachableLearnset[] = {
+#if P_GALARIAN_FORMS
+static const u16 sPonytaGalarianTeachableLearnset[] = {
     MOVE_ALLY_SWITCH,
     MOVE_ATTRACT,
     MOVE_CALM_MIND,
@@ -5513,7 +5513,7 @@ static const u16 sPonytaGALARTeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 
-static const u16 sRapidashGALARTeachableLearnset[] = {
+static const u16 sRapidashGalarianTeachableLearnset[] = {
     MOVE_ALLY_SWITCH,
     MOVE_ATTRACT,
     MOVE_CALM_MIND,
@@ -5543,7 +5543,7 @@ static const u16 sRapidashGALARTeachableLearnset[] = {
     MOVE_SWORDS_DANCE,
     MOVE_UNAVAILABLE,
 };
-#endif //P_GALAR_FORMS
+#endif //P_GALARIAN_FORMS
 #endif //P_FAMILY_PONYTA
 
 #if P_FAMILY_SLOWPOKE
@@ -5780,8 +5780,8 @@ static const u16 sSlowkingTeachableLearnset[] = {
 };
 #endif //P_GEN_2_CROSS_EVOS
 
-#if P_GALAR_FORMS
-static const u16 sSlowpokeGALARTeachableLearnset[] = {
+#if P_GALARIAN_FORMS
+static const u16 sSlowpokeGalarianTeachableLearnset[] = {
     MOVE_ATTRACT,
     MOVE_AVALANCHE,
     MOVE_BLIZZARD,
@@ -5830,7 +5830,7 @@ static const u16 sSlowpokeGALARTeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 
-static const u16 sSlowbroGALARTeachableLearnset[] = {
+static const u16 sSlowbroGalarianTeachableLearnset[] = {
     MOVE_ATTRACT,
     MOVE_AVALANCHE,
     MOVE_BLIZZARD,
@@ -5896,7 +5896,7 @@ static const u16 sSlowbroGALARTeachableLearnset[] = {
 };
 
 #if P_GEN_2_CROSS_EVOS
-static const u16 sSlowkingGALARTeachableLearnset[] = {
+static const u16 sSlowkingGalarianTeachableLearnset[] = {
     MOVE_ATTRACT,
     MOVE_AVALANCHE,
     MOVE_BLIZZARD,
@@ -5967,7 +5967,7 @@ static const u16 sSlowkingGALARTeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 #endif //P_GEN_2_CROSS_EVOS
-#endif //P_GALAR_FORMS
+#endif //P_GALARIAN_FORMS
 #endif //P_FAMILY_SLOWPOKE
 
 #if P_FAMILY_MAGNEMITE
@@ -6149,8 +6149,8 @@ static const u16 sFarfetchdTeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 
-#if P_GALAR_FORMS
-static const u16 sFarfetchdGALARTeachableLearnset[] = {
+#if P_GALARIAN_FORMS
+static const u16 sFarfetchdGalarianTeachableLearnset[] = {
     MOVE_ATTRACT,
     MOVE_BRICK_BREAK,
     MOVE_ENDURE,
@@ -6205,7 +6205,7 @@ static const u16 sSirfetchdTeachableLearnset[] = {
     MOVE_SWORDS_DANCE,
     MOVE_UNAVAILABLE,
 };
-#endif //P_GALAR_FORMS
+#endif //P_GALARIAN_FORMS
 #endif //P_FAMILY_FARFETCHD
 
 #if P_FAMILY_DODUO
@@ -6489,8 +6489,8 @@ static const u16 sMukTeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 
-#if P_ALOLA_FORMS
-static const u16 sGrimerALOLATeachableLearnset[] = {
+#if P_ALOLAN_FORMS
+static const u16 sGrimerAlolanTeachableLearnset[] = {
     MOVE_ATTRACT,
     MOVE_BRICK_BREAK,
     MOVE_DARK_PULSE,
@@ -6551,7 +6551,7 @@ static const u16 sGrimerALOLATeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 
-static const u16 sMukALOLATeachableLearnset[] = {
+static const u16 sMukAlolanTeachableLearnset[] = {
     MOVE_ATTRACT,
     MOVE_BRICK_BREAK,
     MOVE_DARK_PULSE,
@@ -6613,7 +6613,7 @@ static const u16 sMukALOLATeachableLearnset[] = {
     MOVE_THUNDER_PUNCH,
     MOVE_UNAVAILABLE,
 };
-#endif //P_ALOLA_FORMS
+#endif //P_ALOLAN_FORMS
 #endif //P_FAMILY_GRIMER
 
 #if P_FAMILY_SHELLDER
@@ -7318,8 +7318,8 @@ static const u16 sElectrodeTeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 
-#if P_HISUI_FORMS
-static const u16 sVoltorbHISUITeachableLearnset[] = {
+#if P_HISUIAN_FORMS
+static const u16 sVoltorbHisuianTeachableLearnset[] = {
     MOVE_BULLET_SEED,
     MOVE_CHARGE_BEAM,
     MOVE_ELECTRO_BALL,
@@ -7353,7 +7353,7 @@ static const u16 sVoltorbHISUITeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 
-static const u16 sElectrodeHISUITeachableLearnset[] = {
+static const u16 sElectrodeHisuianTeachableLearnset[] = {
     MOVE_BULLET_SEED,
     MOVE_CHARGE_BEAM,
     MOVE_ELECTRO_BALL,
@@ -7388,7 +7388,7 @@ static const u16 sElectrodeHISUITeachableLearnset[] = {
     MOVE_THUNDER_WAVE,
     MOVE_UNAVAILABLE,
 };
-#endif //P_HISUI_FORMS
+#endif //P_HISUIAN_FORMS
 #endif //P_FAMILY_VOLTORB
 
 #if P_FAMILY_EXEGGCUTE
@@ -7488,8 +7488,8 @@ static const u16 sExeggutorTeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 
-#if P_ALOLA_FORMS
-static const u16 sExeggutorALOLATeachableLearnset[] = {
+#if P_ALOLAN_FORMS
+static const u16 sExeggutorAlolanTeachableLearnset[] = {
     MOVE_ATTRACT,
     MOVE_BRICK_BREAK,
     MOVE_BULLDOZE,
@@ -7541,7 +7541,7 @@ static const u16 sExeggutorALOLATeachableLearnset[] = {
     MOVE_SWORDS_DANCE,
     MOVE_UNAVAILABLE,
 };
-#endif //P_ALOLA_FORMS
+#endif //P_ALOLAN_FORMS
 #endif //P_FAMILY_EXEGGCUTE
 
 #if P_FAMILY_CUBONE
@@ -7670,8 +7670,8 @@ static const u16 sMarowakTeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 
-#if P_ALOLA_FORMS
-static const u16 sMarowakALOLATeachableLearnset[] = {
+#if P_ALOLAN_FORMS
+static const u16 sMarowakAlolanTeachableLearnset[] = {
     MOVE_AERIAL_ACE,
     MOVE_ALLY_SWITCH,
     MOVE_ATTRACT,
@@ -7736,7 +7736,7 @@ static const u16 sMarowakALOLATeachableLearnset[] = {
     MOVE_THUNDER_PUNCH,
     MOVE_UNAVAILABLE,
 };
-#endif //P_ALOLA_FORMS
+#endif //P_ALOLAN_FORMS
 #endif //P_FAMILY_CUBONE
 
 #if P_FAMILY_HITMONS
@@ -8202,8 +8202,8 @@ static const u16 sWeezingTeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 
-#if P_GALAR_FORMS
-static const u16 sWeezingGALARTeachableLearnset[] = {
+#if P_GALARIAN_FORMS
+static const u16 sWeezingGalarianTeachableLearnset[] = {
     MOVE_ATTRACT,
     MOVE_DARK_PULSE,
     MOVE_DAZZLING_GLEAM,
@@ -8241,7 +8241,7 @@ static const u16 sWeezingGALARTeachableLearnset[] = {
     MOVE_SNORE,
     MOVE_UNAVAILABLE,
 };
-#endif //P_GALAR_FORMS
+#endif //P_GALARIAN_FORMS
 #endif //P_FAMILY_KOFFING
 
 #if P_FAMILY_RHYHORN
@@ -9312,8 +9312,8 @@ static const u16 sMrMimeTeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 
-#if P_GALAR_FORMS
-static const u16 sMrMimeGALARTeachableLearnset[] = {
+#if P_GALARIAN_FORMS
+static const u16 sMrMimeGalarianTeachableLearnset[] = {
     MOVE_ALLY_SWITCH,
     MOVE_ATTRACT,
     MOVE_AVALANCHE,
@@ -9420,7 +9420,7 @@ static const u16 sMrRimeTeachableLearnset[] = {
     MOVE_THUNDER_WAVE,
     MOVE_UNAVAILABLE,
 };
-#endif //P_GALAR_FORMS
+#endif //P_GALARIAN_FORMS
 #endif //P_FAMILY_MR_MIME
 
 #if P_FAMILY_SCYTHER
@@ -11422,8 +11422,8 @@ static const u16 sArticunoTeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 
-#if P_GALAR_FORMS
-static const u16 sArticunoGALARTeachableLearnset[] = {
+#if P_GALARIAN_FORMS
+static const u16 sArticunoGalarianTeachableLearnset[] = {
     MOVE_ALLY_SWITCH,
     MOVE_CALM_MIND,
     MOVE_DOUBLE_TEAM,
@@ -11455,7 +11455,7 @@ static const u16 sArticunoGALARTeachableLearnset[] = {
     MOVE_SWIFT,
     MOVE_UNAVAILABLE,
 };
-#endif //P_GALAR_FORMS
+#endif //P_GALARIAN_FORMS
 #endif //P_FAMILY_ARTICUNO
 
 #if P_FAMILY_ZAPDOS
@@ -11505,8 +11505,8 @@ static const u16 sZapdosTeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 
-#if P_GALAR_FORMS
-static const u16 sZapdosGALARTeachableLearnset[] = {
+#if P_GALARIAN_FORMS
+static const u16 sZapdosGalarianTeachableLearnset[] = {
     MOVE_ACROBATICS,
     MOVE_AERIAL_ACE,
     MOVE_BRICK_BREAK,
@@ -11543,7 +11543,7 @@ static const u16 sZapdosGALARTeachableLearnset[] = {
     MOVE_SWIFT,
     MOVE_UNAVAILABLE,
 };
-#endif //P_GALAR_FORMS
+#endif //P_GALARIAN_FORMS
 #endif //P_FAMILY_ZAPDOS
 
 #if P_FAMILY_MOLTRES
@@ -11590,8 +11590,8 @@ static const u16 sMoltresTeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 
-#if P_GALAR_FORMS
-static const u16 sMoltresGALARTeachableLearnset[] = {
+#if P_GALARIAN_FORMS
+static const u16 sMoltresGalarianTeachableLearnset[] = {
     MOVE_ACROBATICS,
     MOVE_AERIAL_ACE,
     MOVE_DARK_PULSE,
@@ -11621,7 +11621,7 @@ static const u16 sMoltresGALARTeachableLearnset[] = {
     MOVE_SWIFT,
     MOVE_UNAVAILABLE,
 };
-#endif //P_GALAR_FORMS
+#endif //P_GALARIAN_FORMS
 #endif //P_FAMILY_MOLTRES
 
 #if P_FAMILY_DRATINI
@@ -12189,8 +12189,8 @@ static const u16 sTyphlosionTeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 
-#if P_HISUI_FORMS
-static const u16 sTyphlosionHISUITeachableLearnset[] = {
+#if P_HISUIAN_FORMS
+static const u16 sTyphlosionHisuianTeachableLearnset[] = {
     MOVE_AERIAL_ACE,
     MOVE_BRICK_BREAK,
     MOVE_BULLDOZE,
@@ -12233,7 +12233,7 @@ static const u16 sTyphlosionHISUITeachableLearnset[] = {
     MOVE_THUNDER_PUNCH,
     MOVE_UNAVAILABLE,
 };
-#endif //P_HISUI_FORMS
+#endif //P_HISUIAN_FORMS
 #endif //P_FAMILY_CYNDAQUIL
 
 #if P_FAMILY_TOTODILE
@@ -15387,8 +15387,8 @@ static const u16 sQwilfishTeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 
-#if P_HISUI_FORMS
-static const u16 sQwilfishHISUITeachableLearnset[] = {
+#if P_HISUIAN_FORMS
+static const u16 sQwilfishHisuianTeachableLearnset[] = {
     MOVE_BLIZZARD,
     MOVE_BRINE,
     MOVE_DARK_PULSE,
@@ -15458,7 +15458,7 @@ static const u16 sOverqwilTeachableLearnset[] = {
     MOVE_SWORDS_DANCE,
     MOVE_UNAVAILABLE,
 };
-#endif //P_HISUI_FORMS
+#endif //P_HISUIAN_FORMS
 #endif //P_FAMILY_QWILFISH
 
 #if P_FAMILY_SHUCKLE
@@ -15721,8 +15721,8 @@ static const u16 sWeavileTeachableLearnset[] = {
 };
 #endif //P_GEN_4_CROSS_EVOS
 
-#if P_HISUI_FORMS
-static const u16 sSneaselHISUITeachableLearnset[] = {
+#if P_HISUIAN_FORMS
+static const u16 sSneaselHisuianTeachableLearnset[] = {
     MOVE_AERIAL_ACE,
     MOVE_BRICK_BREAK,
     MOVE_BULK_UP,
@@ -15820,7 +15820,7 @@ static const u16 sSneaslerTeachableLearnset[] = {
     MOVE_SWORDS_DANCE,
     MOVE_UNAVAILABLE,
 };
-#endif //P_HISUI_FORMS
+#endif //P_HISUIAN_FORMS
 #endif //P_FAMILY_SNEASEL
 
 #if P_FAMILY_TEDDIURSA
@@ -16354,8 +16354,8 @@ static const u16 sCorsolaTeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 
-#if P_GALAR_FORMS
-static const u16 sCorsolaGALARTeachableLearnset[] = {
+#if P_GALARIAN_FORMS
+static const u16 sCorsolaGalarianTeachableLearnset[] = {
     MOVE_ATTRACT,
     MOVE_BLIZZARD,
     MOVE_BRINE,
@@ -16444,7 +16444,7 @@ static const u16 sCursolaTeachableLearnset[] = {
     MOVE_SNORE,
     MOVE_UNAVAILABLE,
 };
-#endif //P_GALAR_FORMS
+#endif //P_GALARIAN_FORMS
 #endif //P_FAMILY_CORSOLA
 
 #if P_FAMILY_REMORAID
@@ -18411,8 +18411,8 @@ static const u16 sLinooneTeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 
-#if P_GALAR_FORMS
-static const u16 sZigzagoonGALARTeachableLearnset[] = {
+#if P_GALARIAN_FORMS
+static const u16 sZigzagoonGalarianTeachableLearnset[] = {
     MOVE_ATTRACT,
     MOVE_BLIZZARD,
     MOVE_DIG,
@@ -18452,7 +18452,7 @@ static const u16 sZigzagoonGALARTeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 
-static const u16 sLinooneGALARTeachableLearnset[] = {
+static const u16 sLinooneGalarianTeachableLearnset[] = {
     MOVE_ATTRACT,
     MOVE_BLIZZARD,
     MOVE_DIG,
@@ -18549,7 +18549,7 @@ static const u16 sObstagoonTeachableLearnset[] = {
     MOVE_THUNDER_WAVE,
     MOVE_UNAVAILABLE,
 };
-#endif //P_GALAR_FORMS
+#endif //P_GALARIAN_FORMS
 #endif //P_FAMILY_ZIGZAGOON
 
 #if P_FAMILY_WURMPLE
@@ -30579,8 +30579,8 @@ static const u16 sSamurottTeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 
-#if P_HISUI_FORMS
-static const u16 sSamurottHISUITeachableLearnset[] = {
+#if P_HISUIAN_FORMS
+static const u16 sSamurottHisuianTeachableLearnset[] = {
     MOVE_AERIAL_ACE,
     MOVE_AVALANCHE,
     MOVE_BLIZZARD,
@@ -30623,7 +30623,7 @@ static const u16 sSamurottHISUITeachableLearnset[] = {
     MOVE_SWORDS_DANCE,
     MOVE_UNAVAILABLE,
 };
-#endif //P_HISUI_FORMS
+#endif //P_HISUIAN_FORMS
 #endif //P_FAMILY_OSHAWOTT
 
 #if P_FAMILY_PATRAT
@@ -32613,8 +32613,8 @@ static const u16 sLilligantTeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 
-#if P_HISUI_FORMS
-static const u16 sLilligantHISUITeachableLearnset[] = {
+#if P_HISUIAN_FORMS
+static const u16 sLilligantHisuianTeachableLearnset[] = {
     MOVE_ACROBATICS,
     MOVE_AERIAL_ACE,
     MOVE_BRICK_BREAK,
@@ -32647,7 +32647,7 @@ static const u16 sLilligantHISUITeachableLearnset[] = {
     MOVE_SWORDS_DANCE,
     MOVE_UNAVAILABLE,
 };
-#endif //P_HISUI_FORMS
+#endif //P_HISUIAN_FORMS
 #endif //P_FAMILY_PETILIL
 
 #if P_FAMILY_BASCULIN
@@ -32687,7 +32687,7 @@ static const u16 sBasculinTeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 
-#if P_HISUI_FORMS
+#if P_HISUIAN_FORMS
 static const u16 sBasculinWhiteStripedTeachableLearnset[] = {
     MOVE_BLIZZARD,
     MOVE_ENDURE,
@@ -32734,7 +32734,7 @@ static const u16 sBasculegionTeachableLearnset[] = {
     MOVE_SWIFT,
     MOVE_UNAVAILABLE,
 };
-#endif //P_HISUI_FORMS
+#endif //P_HISUIAN_FORMS
 #endif //P_FAMILY_BASCULIN
 
 #if P_FAMILY_SANDILE
@@ -33026,8 +33026,8 @@ static const u16 sDarmanitanTeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 
-#if P_GALAR_FORMS
-static const u16 sDarumakaGALARTeachableLearnset[] = {
+#if P_GALARIAN_FORMS
+static const u16 sDarumakaGalarianTeachableLearnset[] = {
     MOVE_ATTRACT,
     MOVE_AVALANCHE,
     MOVE_BLIZZARD,
@@ -33069,7 +33069,7 @@ static const u16 sDarumakaGALARTeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 
-static const u16 sDarmanitanGALARTeachableLearnset[] = {
+static const u16 sDarmanitanGalarianTeachableLearnset[] = {
     MOVE_ATTRACT,
     MOVE_AVALANCHE,
     MOVE_BLIZZARD,
@@ -33120,7 +33120,7 @@ static const u16 sDarmanitanGALARTeachableLearnset[] = {
     MOVE_SNORE,
     MOVE_UNAVAILABLE,
 };
-#endif //P_GALAR_FORMS
+#endif //P_GALARIAN_FORMS
 #endif //P_FAMILY_DARUMAKA
 
 #if P_FAMILY_MARACTUS
@@ -33520,8 +33520,8 @@ static const u16 sCofagrigusTeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 
-#if P_GALAR_FORMS
-static const u16 sYamaskGALARTeachableLearnset[] = {
+#if P_GALARIAN_FORMS
+static const u16 sYamaskGalarianTeachableLearnset[] = {
     MOVE_ALLY_SWITCH,
     MOVE_ATTRACT,
     MOVE_CALM_MIND,
@@ -33595,7 +33595,7 @@ static const u16 sRunerigusTeachableLearnset[] = {
     MOVE_SNORE,
     MOVE_UNAVAILABLE,
 };
-#endif //P_GALAR_FORMS
+#endif //P_GALARIAN_FORMS
 #endif //P_FAMILY_YAMASK
 
 #if P_FAMILY_TIRTOUGA
@@ -33978,8 +33978,8 @@ static const u16 sZoroarkTeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 
-#if P_HISUI_FORMS
-static const u16 sZoruaHISUITeachableLearnset[] = {
+#if P_HISUIAN_FORMS
+static const u16 sZoruaHisuianTeachableLearnset[] = {
     MOVE_AERIAL_ACE,
     MOVE_CALM_MIND,
     MOVE_DARK_PULSE,
@@ -34014,7 +34014,7 @@ static const u16 sZoruaHISUITeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 
-static const u16 sZoroarkHISUITeachableLearnset[] = {
+static const u16 sZoroarkHisuianTeachableLearnset[] = {
     MOVE_AERIAL_ACE,
     MOVE_BRICK_BREAK,
     MOVE_CALM_MIND,
@@ -34059,7 +34059,7 @@ static const u16 sZoroarkHISUITeachableLearnset[] = {
     MOVE_SWORDS_DANCE,
     MOVE_UNAVAILABLE,
 };
-#endif //P_HISUI_FORMS
+#endif //P_HISUIAN_FORMS
 #endif //P_FAMILY_ZORUA
 
 #if P_FAMILY_MINCCINO
@@ -36134,8 +36134,8 @@ static const u16 sStunfiskTeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 
-#if P_GALAR_FORMS
-static const u16 sStunfiskGALARTeachableLearnset[] = {
+#if P_GALARIAN_FORMS
+static const u16 sStunfiskGalarianTeachableLearnset[] = {
     MOVE_ATTRACT,
     MOVE_BULLDOZE,
     MOVE_DIG,
@@ -36167,7 +36167,7 @@ static const u16 sStunfiskGALARTeachableLearnset[] = {
     MOVE_THUNDER_WAVE,
     MOVE_UNAVAILABLE,
 };
-#endif //P_GALAR_FORMS
+#endif //P_GALARIAN_FORMS
 #endif //P_FAMILY_STUNFISK
 
 #if P_FAMILY_MIENFOO
@@ -36771,8 +36771,8 @@ static const u16 sBraviaryTeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 
-#if P_HISUI_FORMS
-static const u16 sBraviaryHISUITeachableLearnset[] = {
+#if P_HISUIAN_FORMS
+static const u16 sBraviaryHisuianTeachableLearnset[] = {
     MOVE_ACROBATICS,
     MOVE_AERIAL_ACE,
     MOVE_BULK_UP,
@@ -36810,7 +36810,7 @@ static const u16 sBraviaryHISUITeachableLearnset[] = {
     MOVE_SWIFT,
     MOVE_UNAVAILABLE,
 };
-#endif //P_HISUI_FORMS
+#endif //P_HISUIAN_FORMS
 #endif //P_FAMILY_RUFFLET
 
 #if P_FAMILY_VULLABY
@@ -40669,8 +40669,8 @@ static const u16 sGoodraTeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 
-#if P_HISUI_FORMS
-static const u16 sSliggooHISUITeachableLearnset[] = {
+#if P_HISUIAN_FORMS
+static const u16 sSliggooHisuianTeachableLearnset[] = {
     MOVE_BLIZZARD,
     MOVE_DRAGON_PULSE,
     MOVE_ENDURE,
@@ -40699,7 +40699,7 @@ static const u16 sSliggooHISUITeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 
-static const u16 sGoodraHISUITeachableLearnset[] = {
+static const u16 sGoodraHisuianTeachableLearnset[] = {
     MOVE_BLIZZARD,
     MOVE_BULLDOZE,
     MOVE_DRAGON_CLAW,
@@ -40739,7 +40739,7 @@ static const u16 sGoodraHISUITeachableLearnset[] = {
     MOVE_THUNDER_PUNCH,
     MOVE_UNAVAILABLE,
 };
-#endif //P_HISUI_FORMS
+#endif //P_HISUIAN_FORMS
 #endif //P_FAMILY_GOOMY
 
 #if P_FAMILY_KLEFKI
@@ -41084,8 +41084,8 @@ static const u16 sAvaluggTeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 
-#if P_HISUI_FORMS
-static const u16 sAvaluggHISUITeachableLearnset[] = {
+#if P_HISUIAN_FORMS
+static const u16 sAvaluggHisuianTeachableLearnset[] = {
     MOVE_AVALANCHE,
     MOVE_BLIZZARD,
     MOVE_BULLDOZE,
@@ -41117,7 +41117,7 @@ static const u16 sAvaluggHISUITeachableLearnset[] = {
     MOVE_SLEEP_TALK,
     MOVE_UNAVAILABLE,
 };
-#endif //P_HISUI_FORMS
+#endif //P_HISUIAN_FORMS
 #endif //P_FAMILY_BERGMITE
 
 #if P_FAMILY_NOIBAT
@@ -41715,8 +41715,8 @@ static const u16 sDecidueyeTeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 
-#if P_HISUI_FORMS
-static const u16 sDecidueyeHISUITeachableLearnset[] = {
+#if P_HISUIAN_FORMS
+static const u16 sDecidueyeHisuianTeachableLearnset[] = {
     MOVE_AERIAL_ACE,
     MOVE_BRICK_BREAK,
     MOVE_BULK_UP,
@@ -41756,7 +41756,7 @@ static const u16 sDecidueyeHISUITeachableLearnset[] = {
     MOVE_SWORDS_DANCE,
     MOVE_UNAVAILABLE,
 };
-#endif //P_HISUI_FORMS
+#endif //P_HISUIAN_FORMS
 #endif //P_FAMILY_ROWLET
 
 #if P_FAMILY_LITTEN
