@@ -1192,8 +1192,8 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .formChangeTable = sButterfreeFormChangeTable,
     },
 
-#if P_MEGA_EVOLUTIONS
-    [SPECIES_BUTTERFREE_GIGANTAMAX] =
+#if P_GIGANTAMAX_FORMS
+    [SPECIES_BUTTERFREE_GMAX] =
     {
         .baseHP        = 60,
         .baseAttack    = 25,
@@ -7761,8 +7761,8 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .formChangeTable = sMachampFormChangeTable,
     },
 
-#if P_MEGA_EVOLUTIONS
-    [SPECIES_MACHAMP_GIGANTAMAX] =
+#if P_GIGANTAMAX_FORMS
+    [SPECIES_MACHAMP_GMAX] =
     {
         .baseHP        = 100,
         .baseAttack    = 170,
@@ -11107,8 +11107,8 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .formChangeTable = sKinglerFormChangeTable,
     },
 
-#if P_MEGA_EVOLUTIONS
-    [SPECIES_KINGLER_GIGANTAMAX] =
+#if P_GIGANTAMAX_FORMS
+    [SPECIES_KINGLER_GMAX] =
     {
         .baseHP        = 55,
         .baseAttack    = 170,
@@ -13677,7 +13677,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .teachableLearnset = sMimeJrTeachableLearnset,
         .eggMoveLearnset = sMimeJrEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_MOVE, MOVE_MIMIC, SPECIES_MR_MIME},
-                                {EVO_ITEM, ITEM_ICE_STONE, SPECIES_MR_MIME_GALARIAN}),
+                                {EVO_NONE, 0, SPECIES_MR_MIME_GALAR}),
     },
 #endif //P_GEN_4_CROSS_EVOS
 
@@ -15319,8 +15319,8 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .formChangeTable = sLaprasFormChangeTable,
     },
 
-#if P_MEGA_EVOLUTIONS
-    [SPECIES_LAPRAS_GIGANTAMAX] =
+#if P_GIGANTAMAX_FORMS
+    [SPECIES_LAPRAS_GMAX] =
     {
         .baseHP        = 130,
         .baseAttack    = 85,
@@ -16865,8 +16865,8 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .formChangeTable = sSnorlaxFormChangeTable,
     },
 
-#if P_MEGA_EVOLUTIONS
-    [SPECIES_SNORLAX_GIGANTAMAX] =
+#if P_GIGANTAMAX_FORMS
+    [SPECIES_SNORLAX_GMAX] =
     {
         .baseHP        = 200,
         .baseAttack    = 140,
