@@ -1227,7 +1227,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .formChangeTable = sButterfreeFormChangeTable,
     },
 
-#if P_GIGANTAMAX_FORMS
+#if P_MEGA_EVOLUTIONS
     [SPECIES_BUTTERFREE_GMAX] =
     {
         .baseHP        = 60,
@@ -7989,7 +7989,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .formChangeTable = sMachampFormChangeTable,
     },
 
-#if P_GIGANTAMAX_FORMS
+#if P_MEGA_EVOLUTIONS
     [SPECIES_MACHAMP_GMAX] =
     {
         .baseHP        = 100,
@@ -11418,7 +11418,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .formChangeTable = sKinglerFormChangeTable,
     },
 
-#if P_GIGANTAMAX_FORMS
+#if P_MEGA_EVOLUTIONS
     [SPECIES_KINGLER_GMAX] =
     {
         .baseHP        = 55,
@@ -15777,7 +15777,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .formChangeTable = sLaprasFormChangeTable,
     },
 
-#if P_GIGANTAMAX_FORMS
+#if P_MEGA_EVOLUTIONS
     [SPECIES_LAPRAS_GMAX] =
     {
         .baseHP        = 130,
@@ -17357,7 +17357,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .formChangeTable = sSnorlaxFormChangeTable,
     },
 
-#if P_GIGANTAMAX_FORMS
+#if P_MEGA_EVOLUTIONS
     [SPECIES_SNORLAX_GMAX] =
     {
         .baseHP        = 200,
