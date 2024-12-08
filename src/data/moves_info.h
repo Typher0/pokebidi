@@ -20678,7 +20678,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_ESOTERIC_DESTRUCTION] =
     {
-        .name = HANDLE_EXPANDED_MOVE_NAME("EsotricDeath", "Esoteric Destruction"),
+        .name = COMPOUND_STRING("Esoteric Destruction"),
         .description = COMPOUND_STRING(
             "The type varies with the\n"
             "kind of Plate held."),
@@ -20701,7 +20701,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_MEXICAN_STANDOFF] =
     {
-        .name = HANDLE_EXPANDED_MOVE_NAME("Mex Standoff", "Mexican Standoff"),
+        .name = COMPOUND_STRING("Mexican Standoff"),
         .description = COMPOUND_STRING(
             "A first turn standoff that\n"
             "causes flinching or paralysis."),
@@ -21040,7 +21040,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_SPARKLING_RAMPAGE] =
     {
-        .name = HANDLE_EXPANDED_MOVE_NAME("SparklngRage", "Sparkling Rampage"),
+        .name = COMPOUND_STRING("Sparkling Rampage"),
         .description = COMPOUND_STRING(
             "An extremely fast attack\n"
             "that always strikes first."),
@@ -21060,7 +21060,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_TWISTED_HASTE] =
     {
-        .name = HANDLE_EXPANDED_MOVE_NAME("TwistedHaste", "Twisted Haste"),
+        .name = COMPOUND_STRING("Twisted Haste"),
         .description = COMPOUND_STRING(
             "An extremely fast attack\n"
             "that always strikes first."),
@@ -21101,7 +21101,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_CYCLONE_BOOST] =
     {
-        .name = HANDLE_EXPANDED_MOVE_NAME("CycloneBoost", "Cyclone Boost"),
+        .name = COMPOUND_STRING("Cyclone Boost"),
         .description = COMPOUND_STRING(
             "An extremely fast attack\n"
             "that always strikes first."),
@@ -21183,7 +21183,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_BUZZING_BUSTLE] =
     {
-        .name = HANDLE_EXPANDED_MOVE_NAME("BuzzngBustle", "Buzzing Bustle"),
+        .name = COMPOUND_STRING("Buzzing Bustle"),
         .description = COMPOUND_STRING(
             "An extremely fast attack\n"
             "that always strikes first."),
@@ -21252,7 +21252,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_VIBRANT_ARROW] =
     {
-        .name = HANDLE_EXPANDED_MOVE_NAME("VibrantArrow", "Vibrant Arrow"),
+        .name = COMPOUND_STRING("Vibrant Arrow"),
         .description = sStormThrowDescription,
         .effect = EFFECT_HIT,
         .power = 70,
@@ -21325,7 +21325,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_FIELD_OF_REEDS] =
     {
-        .name = HANDLE_EXPANDED_MOVE_NAME("FieldOfReeds", "Field of Reeds"),
+        .name = COMPOUND_STRING("Field of Reeds"),
         .description = COMPOUND_STRING(
             "Evades attack and heals user.\n"
             "Can't be used in succession."),
@@ -21495,7 +21495,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
     // Z-Moves
     [MOVE_BREAKNECK_BLITZ] =
     {
-        .name = HANDLE_EXPANDED_MOVE_NAME("MalignntChan", "Malignant Chain"),
+        .name = COMPOUND_STRING("Malignant Chain"),
         .description = sNullDescription,
         .effect = EFFECT_HIT,
         .power = 1,
