@@ -10149,7 +10149,7 @@ static const u16 sTaurosTeachableLearnset[] = {
 };
 
 #if P_PALDEAN_FORMS
-static const u16 sTaurosPaldeaCombatBreedTeachableLearnset[] = {
+static const u16 sTaurosPaldeaCombatTeachableLearnset[] = {
     MOVE_BULK_UP,
     MOVE_BULLDOZE,
     MOVE_DIG,
@@ -10182,7 +10182,7 @@ static const u16 sTaurosPaldeaCombatBreedTeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 
-static const u16 sTaurosPaldeaBlazeBreedTeachableLearnset[] = {
+static const u16 sTaurosPaldeaBlazeTeachableLearnset[] = {
     MOVE_BULK_UP,
     MOVE_BULLDOZE,
     MOVE_DIG,
@@ -10218,7 +10218,7 @@ static const u16 sTaurosPaldeaBlazeBreedTeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 
-static const u16 sTaurosPaldeaAquaBreedTeachableLearnset[] = {
+static const u16 sTaurosPaldeaAquaTeachableLearnset[] = {
     MOVE_BULK_UP,
     MOVE_BULLDOZE,
     MOVE_DIG,
@@ -33508,7 +33508,6 @@ static const u16 sCofagrigusTeachableLearnset[] = {
 
 #if P_GALARIAN_FORMS
 static const u16 sYamaskGalarTeachableLearnset[] = {
-    MOVE_ALLY_SWITCH,
     MOVE_ATTRACT,
     MOVE_CALM_MIND,
     MOVE_DARK_PULSE,
@@ -48471,7 +48470,6 @@ static const u16 sCalyrexTeachableLearnset[] = {
 
 #if P_FUSION_FORMS
 static const u16 sCalyrexIceTeachableLearnset[] = {
-    MOVE_AVALANCHE,
     MOVE_BLIZZARD,
     MOVE_BULLDOZE,
     MOVE_BULLET_SEED,
@@ -48521,7 +48519,6 @@ static const u16 sCalyrexIceTeachableLearnset[] = {
 };
 
 static const u16 sCalyrexShadowTeachableLearnset[] = {
-    MOVE_BULLDOZE,
     MOVE_BULLET_SEED,
     MOVE_CALM_MIND,
     MOVE_DARK_PULSE,
