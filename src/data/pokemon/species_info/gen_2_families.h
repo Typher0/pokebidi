@@ -3626,6 +3626,61 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
     [SPECIES_UNOWN_Z]           = UNOWN_MISC_INFO(Z,           TRUE,  24, 32, 32, 48, 10 ),
     [SPECIES_UNOWN_EXCLAMATION] = UNOWN_MISC_INFO(Exclamation, FALSE, 24, 40, 24, 56,  6 ),
     [SPECIES_UNOWN_QUESTION]    = UNOWN_MISC_INFO(Question,    TRUE,  24, 40, 32, 56,  6 ),
+
+#if P_GEN_9_CROSS_EVOS
+    [SPECIES_ESOTEROWN] = //UNOWN EVOLUTION THAT CONNECTS IT TO ARCEUS (SIG. MOVE = ESOTERIC DESTRUCTION[EVOLUTION MOVE AT 60])
+    {                                                 
+        .baseHP        = 62,                          
+        .baseAttack    = 110,                          
+        .baseDefense   = 94,                          
+        .baseSpeed     = 114,                          
+        .baseSpAttack  = 73,                          
+        .baseSpDefense = 120,                          
+        .types = MON_TYPES(TYPE_PSYCHIC),       
+        .catchRate = 45,                             
+        .expYield = 178,                              
+        .evYield_Attack    = 2,                       
+        .evYield_SpAttack  = 1,
+	    .itemRare = ITEM_MIND_PLATE,
+        .genderRatio = MON_GENDERLESS,                
+        .eggCycles = 40,                              
+        .friendship = STANDARD_FRIENDSHIP,            
+        .growthRate = GROWTH_MEDIUM_FAST,             
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),          
+        .abilities = {ABILITY_LEVITATE, ABILITY_NONE},
+        .bodyColor = BODY_COLOR_BLACK,                
+        .speciesName = _("Esoterown"),
+        .cryId = CRY_ESOTEROWN,
+        .natDexNum = NATIONAL_DEX_ESOTEROWN,
+        .categoryName = _("Symbol"),
+        .height = 15,
+        .weight = 350,
+        .description = COMPOUND_STRING(
+            "This is a newly discovered Pokémon.\n"
+            "It is currently under investigation.\n"
+            "No detailed information is available\n"
+            "at this time."),
+        .pokemonScale = 256,
+        .pokemonOffset = 0,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_Esoterown,
+        .frontPicSize = MON_COORDS_SIZE(40, 40),
+        .frontPicYOffset = 13,
+        .frontAnimFrames = sAnims_Esoterown,
+        .frontAnimId = ANIM_V_JUMPS_H_JUMPS,
+        .backPic = gMonBackPic_Esoterown,
+        .backPicSize = MON_COORDS_SIZE(56, 40),
+        .backPicYOffset = 13,
+        .backAnimId = BACK_ANIM_DIP_RIGHT_SIDE,
+        .palette = gMonPalette_Esoterown,
+        .shinyPalette = gMonShinyPalette_Esoterown,
+        .iconSprite = gMonIcon_Esoterown,
+        .iconPalIndex = 0,
+        .levelUpLearnset = sEsoterownLevelUpLearnset,
+        .teachableLearnset = sEsoterownTeachableLearnset,                            
+    },
+#endif //GEN_9_CROSS_EVOS
 #endif //P_FAMILY_UNOWN
 
 #if P_FAMILY_WOBBUFFET
