@@ -21345,7 +21345,6 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .contestCategory = CONTEST_CATEGORY_CUTE,
         .contestComboStarterId = 0,
         .contestComboMoves = {COMBO_STARTER_HARDEN},
-        .battleAnimScript = Move_PROTECT,
     },
 
     [MOVE_POSSESSION] =
