@@ -536,9 +536,10 @@
 #define OBJ_EVENT_GFX_VAR_E  (OBJ_EVENT_GFX_VARS + 0xE)
 #define OBJ_EVENT_GFX_VAR_F  (OBJ_EVENT_GFX_VARS + 0xF)
 
-#define OBJ_EVENT_GFX_MON_BASE  0x778 // 800
-#define OBJ_EVENT_GFX_SPECIES_BITS 12 // This will need to be updated when NUM_SPECIES is > ~3.5k
-#define OBJ_EVENT_GFX_SPECIES_MASK ((1 << OBJ_EVENT_GFX_SPECIES_BITS) - 1)
+#define OBJ_EVENT_MON               (1u << 15)
+#define OBJ_EVENT_MON_SHINY         (1u << 14)
+#define OBJ_EVENT_MON_FEMALE        (1u << 13)
+#define OBJ_EVENT_MON_SPECIES_MASK  (~(7u << 13))
 
 // Used to call a specific species' follower graphics. Useful for static encounters.
 #define OBJ_EVENT_GFX_SPECIES(name)       (SPECIES_##name + OBJ_EVENT_GFX_MON_BASE)
