@@ -3,7 +3,7 @@
 #include "event_data.h"
 #include "event_object_movement.h"
 #include "fieldmap.h"
-#include "field_weather.h"
+#include "rotating_gate.h"
 #include "sound.h"
 #include "sprite.h"
 #include "constants/songs.h"
