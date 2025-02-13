@@ -21,6 +21,7 @@
 #include "list_menu.h"
 #include "overworld.h"
 #include "item.h"
+#include "regions.h"
 #include "constants/form_change_types.h"
 #include "constants/items.h"
 #include "constants/hold_effects.h"
@@ -244,7 +245,7 @@ static void TransferEggMoves(void)
     }
 }
 
-static void StorePokemonInDaycare(struct Pokemon *mon, struct DaycareMon *daycareMon)
+void StorePokemonInDaycare(struct Pokemon *mon, struct DaycareMon *daycareMon)
 {
     if (MonHasMail(mon))
     {
@@ -1062,6 +1063,9 @@ static void _GiveEggFromDaycare(struct DayCare *daycare)
     u16 species;
     u8 parentSlots[DAYCARE_MON_COUNT] = {0};
     bool8 isEgg;
+
+    if (GetDaycareCompatibilityScore(daycare) == PARENTS_INCOMPATIBLE)
+        return;
 
     species = DetermineEggSpeciesAndParentSlots(daycare, parentSlots);
     if (P_INCENSE_BREEDING < GEN_9)
