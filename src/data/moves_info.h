@@ -440,6 +440,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .instructBanned = TRUE,
         .slicingMove = TRUE,
         .windMove = B_EXTRAPOLATED_MOVE_FLAGS,
+        .argument.twoTurnAttack = { .stringId =  STRINGID_PKMNWHIPPEDWHIRLWIND },
         .contestEffect = CONTEST_EFFECT_AFFECTED_BY_PREV_APPEAL,
         .contestCategory = CONTEST_CATEGORY_COOL,
         .contestComboStarterId = 0,
@@ -11271,8 +11272,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
-        .argument = HOLD_EFFECT_PLATE,
-        .ignoresTargetDefenseEvasionStages = TRUE,
+        .argument = { .holdEffect = HOLD_EFFECT_PLATE },
         .contestEffect = CONTEST_EFFECT_SCRAMBLE_NEXT_TURN_ORDER,
         .contestCategory = CONTEST_CATEGORY_SMART,
         .contestComboStarterId = 0,
@@ -15086,10 +15086,10 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Celebrate"),
         .description = COMPOUND_STRING(
-            "Heals teammates by making\n"
-            "them happy but mocks foes."),
-        .effect = EFFECT_HIT_ENEMY_HEAL_ALLY,
-        .power = 90,
+            "Congratulates you on your\n"
+            "special day."),
+        .effect = EFFECT_CELEBRATE,
+        .power = 0,
         .type = TYPE_NORMAL,
         .accuracy = 100,
         .pp = 15,
@@ -15109,8 +15109,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .name = COMPOUND_STRING("Hold Hands"),
         .description = COMPOUND_STRING(
             "The user and ally hold hands\n"
-            "increasing psychic power."),
-        .effect = EFFECT_ATTACK_UP_2,
+            "making them happy."),
+        .effect = EFFECT_HOLD_HANDS,
         .power = 0,
         .type = TYPE_PSYCHIC,
         .accuracy = 0,
@@ -18043,7 +18043,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
         .makesContact = TRUE,
-        .argument = ARG_TRY_REMOVE_TERRAIN_HIT,
+        .argument = { .moveProperty = ARG_TRY_REMOVE_TERRAIN_FAIL }, // Remove a field terrain if there is one and hit, otherwise fail.
         .skyBattleBanned = TRUE,
         .contestEffect = CONTEST_EFFECT_WORSEN_CONDITION_OF_PREV_MONS,
         .contestCategory = CONTEST_CATEGORY_TOUGH,
