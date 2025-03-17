@@ -400,21 +400,21 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PokefanM2;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Pokekid;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Pokemaniac;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Pokemart;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PokemonBreederF1;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PokemonBreederF2;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PokemonBreederM1;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PokemonBreederM2;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PokemonRangerF1;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PokemonRangerF2;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PokemonRangerM1;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PokemonRangerM2;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BreederF1;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BreederF2;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BreederM1;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BreederM2;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RangerF1;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RangerF2;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RangerM1;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RangerM2;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Policeman1;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Policeman2;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Postman;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PreschoolerF;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PreschoolerM;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ProfessorJuniper;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ProfessorOak;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Juniper;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Oak;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PsychicF1;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PsychicF2;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PsychicM1;
@@ -918,21 +918,21 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_POKEKID] =                  &gObjectEventGraphicsInfo_Pokekid,
     [OBJ_EVENT_GFX_POKEMANIAC] =               &gObjectEventGraphicsInfo_Pokemaniac,
     [OBJ_EVENT_GFX_POKEMART] =                 &gObjectEventGraphicsInfo_Pokemart,
-    [OBJ_EVENT_GFX_POKEMON_BREEDER_F_1] =      &gObjectEventGraphicsInfo_PokemonBreederF1,
-    [OBJ_EVENT_GFX_POKEMON_BREEDER_F_2] =      &gObjectEventGraphicsInfo_PokemonBreederF2,
-    [OBJ_EVENT_GFX_POKEMON_BREEDER_M_1] =      &gObjectEventGraphicsInfo_PokemonBreederM1,
-    [OBJ_EVENT_GFX_POKEMON_BREEDER_M_2] =      &gObjectEventGraphicsInfo_PokemonBreederM2,
-    [OBJ_EVENT_GFX_POKEMON_RANGER_F_1] =       &gObjectEventGraphicsInfo_PokemonRangerF1,
-    [OBJ_EVENT_GFX_POKEMON_RANGER_F_2] =       &gObjectEventGraphicsInfo_PokemonRangerF2,
-    [OBJ_EVENT_GFX_POKEMON_RANGER_M_1] =       &gObjectEventGraphicsInfo_PokemonRangerM1,
-    [OBJ_EVENT_GFX_POKEMON_RANGER_M_2] =       &gObjectEventGraphicsInfo_PokemonRangerM2,
+    [OBJ_EVENT_GFX_BREEDER_F_1] =              &gObjectEventGraphicsInfo_BreederF1,
+    [OBJ_EVENT_GFX_BREEDER_F_2] =              &gObjectEventGraphicsInfo_BreederF2,
+    [OBJ_EVENT_GFX_BREEDER_M_1] =              &gObjectEventGraphicsInfo_BreederM1,
+    [OBJ_EVENT_GFX_BREEDER_M_2] =              &gObjectEventGraphicsInfo_BreederM2,
+    [OBJ_EVENT_GFX_RANGER_F_1] =               &gObjectEventGraphicsInfo_RangerF1,
+    [OBJ_EVENT_GFX_RANGER_F_2] =               &gObjectEventGraphicsInfo_RangerF2,
+    [OBJ_EVENT_GFX_RANGER_M_1] =               &gObjectEventGraphicsInfo_RangerM1,
+    [OBJ_EVENT_GFX_RANGER_M_2] =               &gObjectEventGraphicsInfo_RangerM2,
     [OBJ_EVENT_GFX_POLICEMAN_1] =              &gObjectEventGraphicsInfo_Policeman1,
     [OBJ_EVENT_GFX_POLICEMAN_2] =              &gObjectEventGraphicsInfo_Policeman2,
     [OBJ_EVENT_GFX_POSTMAN] =                  &gObjectEventGraphicsInfo_Postman,
     [OBJ_EVENT_GFX_PRESCHOOLER_F] =            &gObjectEventGraphicsInfo_PreschoolerF,
     [OBJ_EVENT_GFX_PRESCHOOLER_M] =            &gObjectEventGraphicsInfo_PreschoolerM,
-    [OBJ_EVENT_GFX_PROFESSOR_JUNIPER] =        &gObjectEventGraphicsInfo_ProfessorJuniper,
-    [OBJ_EVENT_GFX_PROFESSOR_OAK] =            &gObjectEventGraphicsInfo_ProfessorOak,
+    [OBJ_EVENT_GFX_JUNIPER] =                  &gObjectEventGraphicsInfo_Juniper,
+    [OBJ_EVENT_GFX_OAK] =                      &gObjectEventGraphicsInfo_Oak,
     [OBJ_EVENT_GFX_PSYCHIC_F_1] =              &gObjectEventGraphicsInfo_PsychicF1,
     [OBJ_EVENT_GFX_PSYCHIC_F_2] =              &gObjectEventGraphicsInfo_PsychicF2,
     [OBJ_EVENT_GFX_PSYCHIC_M_1] =              &gObjectEventGraphicsInfo_PsychicM1,

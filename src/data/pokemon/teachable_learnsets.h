@@ -27027,6 +27027,7 @@ static const u16 sBurmyTeachableLearnset[] = {
 };
 
 static const u16 sWormadamPlantTeachableLearnset[] = {
+    MOVE_ALLY_SWITCH,
     MOVE_ATTRACT,
     MOVE_BULLET_SEED,
     MOVE_CAPTIVATE,

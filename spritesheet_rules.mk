@@ -894,28 +894,28 @@ $(OBJEVENTGFXDIR)/people/ds/pokemaniac.4bpp: %.4bpp: %.png
 $(OBJEVENTGFXDIR)/people/ds/pokemart.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
-$(OBJEVENTGFXDIR)/people/ds/pokemon_breeder_f_1.4bpp: %.4bpp: %.png
+$(OBJEVENTGFXDIR)/people/ds/breeder_f_1.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
-$(OBJEVENTGFXDIR)/people/ds/pokemon_breeder_f_2.4bpp: %.4bpp: %.png
+$(OBJEVENTGFXDIR)/people/ds/breeder_f_2.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
-$(OBJEVENTGFXDIR)/people/ds/pokemon_breeder_m_1.4bpp: %.4bpp: %.png
+$(OBJEVENTGFXDIR)/people/ds/breeder_m_1.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
-$(OBJEVENTGFXDIR)/people/ds/pokemon_breeder_m_2.4bpp: %.4bpp: %.png
+$(OBJEVENTGFXDIR)/people/ds/breeder_m_2.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
-$(OBJEVENTGFXDIR)/people/ds/pokemon_ranger_f_1.4bpp: %.4bpp: %.png
+$(OBJEVENTGFXDIR)/people/ds/ranger_f_1.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
-$(OBJEVENTGFXDIR)/people/ds/pokemon_ranger_f_2.4bpp: %.4bpp: %.png
+$(OBJEVENTGFXDIR)/people/ds/ranger_f_2.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
-$(OBJEVENTGFXDIR)/people/ds/pokemon_ranger_m_1.4bpp: %.4bpp: %.png
+$(OBJEVENTGFXDIR)/people/ds/ranger_m_1.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
-$(OBJEVENTGFXDIR)/people/ds/pokemon_ranger_m_2.4bpp: %.4bpp: %.png
+$(OBJEVENTGFXDIR)/people/ds/ranger_m_2.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
 $(OBJEVENTGFXDIR)/people/ds/policeman_1.4bpp: %.4bpp: %.png
