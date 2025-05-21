@@ -15,7 +15,7 @@
   "connections": 0,
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_BW2_MOM",
+      "graphics_id": "OBJ_EVENT_GFX_MOM",
       "x": 2,
       "y": 6,
       "elevation": 3,
@@ -54,7 +54,7 @@
       "flag": "FLAG_HIDE_LITTLEROOT_TOWN_PLAYERS_HOUSE_VIGOROTH_1"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_11",
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
       "x": 2,
       "y": 7,
       "elevation": 3,
@@ -67,7 +67,7 @@
       "flag": "FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_RIVAL_MOM"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_N",
+      "graphics_id": "OBJ_EVENT_GFX_NORMAN",
       "x": 5,
       "y": 6,
       "elevation": 3,
@@ -80,7 +80,7 @@
       "flag": "FLAG_HIDE_PLAYERS_HOUSE_DAD"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_NINJA_BOY_1",
+      "graphics_id": "OBJ_EVENT_GFX_NINJA_BOY",
       "x": 1,
       "y": 5,
       "elevation": 3,
