@@ -485,7 +485,6 @@ gCryTable::
 .if P_FAMILY_HOOTHOOT == TRUE
 	cry Cry_Hoothoot
 	cry Cry_Noctowl
-	cry Cry_Doctowl
 .endif @ P_FAMILY_HOOTHOOT
 .if P_FAMILY_LEDYBA == TRUE
 	cry Cry_Ledyba
@@ -565,7 +564,6 @@ gCryTable::
 .endif @ P_FAMILY_MISDREAVUS
 .if P_FAMILY_UNOWN == TRUE
 	cry Cry_Unown
-	cry Cry_Esoterown
 .endif @ P_FAMILY_UNOWN
 .if P_FAMILY_WOBBUFFET == TRUE
 .if P_GEN_3_CROSS_EVOS == TRUE
@@ -916,7 +914,6 @@ gCryTable::
 .if P_FAMILY_CACNEA == TRUE
 	cry Cry_Cacnea
 	cry Cry_Cacturne
-	cry Cry_Cacturado
 .endif @ P_FAMILY_CACNEA
 .if P_FAMILY_SWABLU == TRUE
 	cry Cry_Swablu
@@ -2428,230 +2425,230 @@ gCryTable::
 	cry Cry_Pecharunt
 .endif @ P_FAMILY_PECHARUNT
 .if P_FAMILY_HAMSNUG == TRUE
-	cry Cry_Hamsnug
-	cry Cry_Snuggybara
+    cry Cry_Hamsnug
+    cry Cry_Snuggybara
 .endif @ P_FAMILY_HAMSNUG
 .if P_FAMILY_PINGLOO == TRUE
-	cry Cry_Pingloo
-	cry Cry_Penglacier
+    cry Cry_Pingloo
+    cry Cry_Penglacier
 .endif @ P_FAMILY_PINGLOO
 .if P_FAMILY_CABOB == TRUE
-	cry Cry_Cabob
-	cry Cry_Lynxskew
+    cry Cry_Cabob
+    cry Cry_Lynxskew
 .endif @ P_FAMILY_CABOB
 .if P_FAMILY_PUMACH == TRUE
-	cry Cry_Pumach
-	cry Cry_Jagwire
+    cry Cry_Pumach
+    cry Cry_Jagwire
 .endif @ P_FAMILY_PUMACH
 .if P_FAMILY_SKULLARVA == TRUE
-	cry Cry_Skullarva
-	cry Cry_Kakone
-	cry Cry_Mortasque
+    cry Cry_Skullarva
+    cry Cry_Kakone
+    cry Cry_Mortasque
 .endif @ P_FAMILY_SKULLARVA
 .if P_FAMILY_TOTTER == TRUE
-	cry Cry_Totter
-	cry Cry_Cascotta
-	cry Cry_Lutrajet
+    cry Cry_Totter
+    cry Cry_Cascotta
+    cry Cry_Lutrajet
 .endif @ P_FAMILY_TOTTER
 .if P_FAMILY_TENROCK == TRUE
-	cry Cry_Tenrock
-	cry Cry_Shrewel
-	cry Cry_Pangolem
+    cry Cry_Tenrock
+    cry Cry_Shrewel
+    cry Cry_Pangolem
 .endif @ P_FAMILY_TENROCK
 .if P_FAMILY_SHELFUR == TRUE
-	cry Cry_Shelfur
-	cry Cry_Ignoise
-	cry Cry_Moltortoise
+    cry Cry_Shelfur
+    cry Cry_Ignoise
+    cry Cry_Moltortoise
 .endif @ P_FAMILY_SHELFUR
 .if P_FAMILY_CHIHAHA == TRUE
-	cry Cry_Chihaha
-	cry Cry_Howlequin
+    cry Cry_Chihaha
+    cry Cry_Howlequin
 .endif @ P_FAMILY_CHIHAHA
 .if P_FAMILY_PALLECTRON == TRUE
-	cry Cry_Pallectron
-	cry Cry_Callummotor
-	cry Cry_Electrioceros
+    cry Cry_Pallectron
+    cry Cry_Callummotor
+    cry Cry_Electrioceros
 .endif @ P_FAMILY_PALLECTRON
 .if P_FAMILY_CHIMPOCA == TRUE
-	cry Cry_Chimpoca
-	cry Cry_Simayan
+    cry Cry_Chimpoca
+    cry Cry_Simayan
 .endif @ P_FAMILY_CHIMPOCA
 .if P_FAMILY_ICETOPE == TRUE
-	cry Cry_Icetope
-	cry Cry_Chillnobyl
+    cry Cry_Icetope
+    cry Cry_Chillnobyl
 .endif @ P_FAMILY_ICETOPE
 .if P_FAMILY_MAGROPLEX == TRUE
-	cry Cry_Magroplex
+    cry Cry_Magroplex
 .endif @ P_FAMILY_MAGROPLEX
 .if P_FAMILY_PSYYNEN == TRUE
-	cry Cry_Psyynen
-	cry Cry_Aanchgora
+    cry Cry_Psyynen
+    cry Cry_Aanchgora
 .endif @ P_FAMILY_PSYYNEN
 .if P_FAMILY_FOLTERGEIST == TRUE
-	cry Cry_Foltergeist
-	cry Cry_Fantasmare
+    cry Cry_Foltergeist
+    cry Cry_Fantasmare
 .endif @ P_FAMILY_FOLTERGEIST
 .if P_FAMILY_CUPPY == TRUE
-	cry Cry_Cuppy
-	cry Cry_Fettlekish
+    cry Cry_Cuppy
+    cry Cry_Fettlekish
 .endif @ P_FAMILY_CUPPY
 .if P_FAMILY_NECTI == TRUE
-	cry Cry_Nectri
-	cry Cry_Hummiscus
-	cry Cry_Nectriary
+    cry Cry_Nectri
+    cry Cry_Hummiscus
+    cry Cry_Nectriary
 .endif @ P_FAMILY_NECTI
 .if P_FAMILY_CARDINITE == TRUE
-	cry Cry_Cardinite
-	cry Cry_Chardinal
+    cry Cry_Cardinite
+    cry Cry_Chardinal
 .endif @ P_FAMILY_CARDINITE
 .if P_FAMILY_SALAGUADE == TRUE
-	cry Cry_Salaguade
-	cry Cry_Iguash
-	cry Cry_Juggercroc
+    cry Cry_Salaguade
+    cry Cry_Iguash
+    cry Cry_Juggercroc
 .endif @ P_FAMILY_SALAGUADE
 .if P_FAMILY_ARROWBIN == TRUE
-	cry Cry_Arrowbin
-	cry Cry_Hawtchet
-	cry Cry_Chiefturk
+    cry Cry_Arrowbin
+    cry Cry_Hawtchet
+    cry Cry_Chiefturk
 .endif @ P_FAMILY_ARROWBIN
 .if P_FAMILY_NEUREKA == TRUE
-	cry Cry_Neureka
-	cry Cry_Edisynapse
+    cry Cry_Neureka
+    cry Cry_Edisynapse
 .endif @ P_FAMILY_NEUREKA
 .if P_FAMILY_SCLICK == TRUE
-	cry Cry_Sclick
-	cry Cry_Vectrion
+    cry Cry_Sclick
+    cry Cry_Vectrion
 .endif @ P_FAMILY_SCLICK
 .if P_FAMILY_FAWNPIRE == TRUE
-	cry Cry_Fawnpire
-	cry Cry_Alpacula
-	cry Cry_Mooseferatu
+    cry Cry_Fawnpire
+    cry Cry_Alpacula
+    cry Cry_Mooseferatu
 .endif @ P_FAMILY_FAWNPIRE
 .if P_FAMILY_PLATYPOW == TRUE
-	cry Cry_Platypow
-	cry Cry_Platypunch
+    cry Cry_Platypow
+    cry Cry_Platypunch
 .endif @ P_FAMILY_PLATYPOW
 .if P_FAMILY_SILKINDER == TRUE
-	cry Cry_Silkinder
-	cry Cry_Sensilk
+    cry Cry_Silkinder
+    cry Cry_Sensilk
 .endif @ P_FAMILY_SILKINDER
 .if P_FAMILY_DALTOM == TRUE
-	cry Cry_Daltom
-	cry Cry_Oppenhion
+    cry Cry_Daltom
+    cry Cry_Oppenhion
 .endif @ P_FAMILY_DALTOM
 .if P_FAMILY_GOLTERRA == TRUE
-	cry Cry_Golterra
-	cry Cry_Gaiolem
+    cry Cry_Golterra
+    cry Cry_Gaiolem
 .endif @ P_FAMILY_GOLTERRA
 .if P_FAMILY_RELLADUNE == TRUE
-	cry Cry_Relladune
-	cry Cry_Camorella
+    cry Cry_Relladune
+    cry Cry_Camorella
 .endif @ P_FAMILY_RELLADUNE
 .if P_FAMILY_COBOE == TRUE
-	cry Cry_Coboe
-	cry Cry_Pungriyadh
+    cry Cry_Coboe
+    cry Cry_Pungriyadh
 .endif @ P_FAMILY_COBOE
 .if P_FAMILY_SEDIRROT == TRUE
-	cry Cry_Sedirrot
-	cry Cry_Condesa
+    cry Cry_Sedirrot
+    cry Cry_Condesa
 .endif @ P_FAMILY_SEDIRROT
 .if P_FAMILY_NOBUNATA == TRUE
-	cry Cry_Nobunata
+    cry Cry_Nobunata
 .endif @ P_FAMILY_NOBUNATA
 .if P_FAMILY_SOMBERO == TRUE
-	cry Cry_Sombero
+    cry Cry_Sombero
 .endif @ P_FAMILY_SOMBERO
 .if P_FAMILY_MINARAC == TRUE
-	cry Cry_Minarac
-	cry Cry_Tarenchula
+    cry Cry_Minarac
+    cry Cry_Tarenchula
 .endif @ P_FAMILY_MINARAC
 .if P_FAMILY_CARBITE == TRUE
-	cry Cry_Carbite
-	cry Cry_Pressaur
-	cry Cry_Diamaw
+    cry Cry_Carbite
+    cry Cry_Pressaur
+    cry Cry_Diamaw
 .endif @ P_FAMILY_CARBITE
 .if P_FAMILY_GILLA == TRUE
-	cry Cry_Gilla
-	cry Cry_Anodontor
-	cry Cry_Ankillosaur
+    cry Cry_Gilla
+    cry Cry_Anodontor
+    cry Cry_Ankillosaur
 .endif @ P_FAMILY_GILLA
 .if P_FAMILY_BAZILISK == TRUE
-	cry Cry_Bazilisk
-	cry Cry_Ornithaur
-	cry Cry_Dilophlora
+    cry Cry_Bazilisk
+    cry Cry_Ornithaur
+    cry Cry_Dilophlora
 .endif @ P_FAMILY_BAZILISK
 .if P_FAMILY_SQUIBBLE == TRUE
-	cry Cry_Squibble
-	cry Cry_Squingo
+    cry Cry_Squibble
+    cry Cry_Squingo
 .endif @ P_FAMILY_SQUIBBLE
 .if P_FAMILY_DRAKNARR == TRUE
-	cry Cry_Draknarr
-	cry Cry_Ragnarow
+    cry Cry_Draknarr
+    cry Cry_Ragnarow
 .endif @ P_FAMILY_DRAKNARR
 .if P_FAMILY_MANDALLOY == TRUE
-	cry Cry_Mandalloy
+    cry Cry_Mandalloy
 .endif @ P_FAMILY_MANDALLOY
 .if P_FAMILY_PHLASK == TRUE
-	cry Cry_Phlask
-	cry Cry_Noxighast
-	cry Cry_Fumighast
+    cry Cry_Phlask
+    cry Cry_Noxighast
+    cry Cry_Fumighast
 .endif @ P_FAMILY_PHLASK
 .if P_FAMILY_PINECALF == TRUE
-	cry Cry_Pinecalf
-	cry Cry_Trunkonifr
+    cry Cry_Pinecalf
+    cry Cry_Trunkonifr
 .endif @ P_FAMILY_PINECALF
 .if P_FAMILY_MASKREEP == TRUE
-	cry Cry_Maskreep
-	cry Cry_Phantiki
+    cry Cry_Maskreep
+    cry Cry_Phantiki
 .endif @ P_FAMILY_MASKREEP
 .if P_FAMILY_TAOMARIN == TRUE
-	cry Cry_Taomarin
-	cry Cry_Orangutao
+    cry Cry_Taomarin
+    cry Cry_Orangutao
 .endif @ P_FAMILY_TAOMARIN
 .if P_FAMILY_COALT == TRUE
-	cry Cry_Coalt
-	cry Cry_Arieskorch
+    cry Cry_Coalt
+    cry Cry_Arieskorch
 .endif @ P_FAMILY_COALT
 .if P_FAMILY_BLUFFIN == TRUE
-	cry Cry_Bluffin
-	cry Cry_Skarpie
+    cry Cry_Bluffin
+    cry Cry_Skarpie
 .endif @ P_FAMILY_BLUFFIN
 .if P_FAMILY_GNOWM == TRUE
-	cry Cry_Gnowm
-	cry Cry_Snowgre
+    cry Cry_Gnowm
+    cry Cry_Snowgre
 .endif @ P_FAMILY_GNOWM
 .if P_FAMILY_BOAREALIS == TRUE
-	cry Cry_Boarealis
+    cry Cry_Boarealis
 .endif @ P_FAMILY_BOAREALIS
 .if P_FAMILY_WISHP == TRUE
-	cry Cry_Wishp
-	cry Cry_Igfrit
-	cry Cry_Djinnferno
+    cry Cry_Wishp
+    cry Cry_Igfrit
+    cry Cry_Djinnferno
 .endif @ P_FAMILY_WISHP
 .if P_FAMILY_MOONIGHT == TRUE
-	cry Cry_Moonight
-	cry Cry_Joustock
-	cry Cry_Crusaber
+    cry Cry_Moonight
+    cry Cry_Joustock
+    cry Cry_Crusaber
 .endif @ P_FAMILY_MOONIGHT
 .if P_FAMILY_CHELONITE == TRUE
-	cry Cry_Chelonite
-	cry Cry_Galaxagos
+    cry Cry_Chelonite
+    cry Cry_Galaxagos
 .endif @ P_FAMILY_CHELONITE
 .if P_FAMILY_TANUKOON == TRUE
-	cry Cry_Tanukoon
-	cry Cry_Leukoon
+    cry Cry_Tanukoon
+    cry Cry_Leukoon
 .endif @ P_FAMILY_TANUKOON
 .if P_FAMILY_HATHROSTUS == TRUE
-	cry Cry_Hathrostus
+    cry Cry_Hathrostus
 .endif @ P_FAMILY_HATHROSTUS
 .if P_FAMILY_BABOSIRIS == TRUE
-	cry Cry_Babosiris
+    cry Cry_Babosiris
 .endif @ P_FAMILY_BABOSIRIS
 .if P_FAMILY_HUBRISET == TRUE
-	cry Cry_Hubriset
+    cry Cry_Hubriset
 .endif @ P_FAMILY_HUBRISET
 .if P_FAMILY_WENDINGO == TRUE
-	cry Cry_Wendingo
+    cry Cry_Wendingo
 .endif @ P_FAMILY_WENDINGO
 .endif @ P_CRIES_ENABLED
 
@@ -3142,7 +3139,6 @@ gCryTable_Reverse::
 .if P_FAMILY_HOOTHOOT == TRUE
 	cry_reverse Cry_Hoothoot
 	cry_reverse Cry_Noctowl
-	cry_reverse Cry_Doctowl
 .endif @ P_FAMILY_HOOTHOOT
 .if P_FAMILY_LEDYBA == TRUE
 	cry_reverse Cry_Ledyba
@@ -3222,7 +3218,6 @@ gCryTable_Reverse::
 .endif @ P_FAMILY_MISDREAVUS
 .if P_FAMILY_UNOWN == TRUE
 	cry_reverse Cry_Unown
-	cry_reverse Cry_Esoterown
 .endif @ P_FAMILY_UNOWN
 .if P_FAMILY_WOBBUFFET == TRUE
 .if P_GEN_3_CROSS_EVOS == TRUE
@@ -3573,7 +3568,6 @@ gCryTable_Reverse::
 .if P_FAMILY_CACNEA == TRUE
 	cry_reverse Cry_Cacnea
 	cry_reverse Cry_Cacturne
-	cry_reverse Cry_Cacturado
 .endif @ P_FAMILY_CACNEA
 .if P_FAMILY_SWABLU == TRUE
 	cry_reverse Cry_Swablu
@@ -5085,229 +5079,229 @@ gCryTable_Reverse::
 	cry_reverse Cry_Pecharunt
 .endif @ P_FAMILY_PECHARUNT
 .if P_FAMILY_HAMSNUG == TRUE
-	cry_reverse Cry_Hamsnug
-	cry_reverse Cry_Snuggybara
+    cry_reverse Cry_Hamsnug
+    cry_reverse Cry_Snuggybara
 .endif @ P_FAMILY_HAMSNUG
 .if P_FAMILY_PINGLOO == TRUE
-	cry_reverse Cry_Pingloo
-	cry_reverse Cry_Penglacier
+    cry_reverse Cry_Pingloo
+    cry_reverse Cry_Penglacier
 .endif @ P_FAMILY_PINGLOO
 .if P_FAMILY_CABOB == TRUE
-	cry_reverse Cry_Cabob
-	cry_reverse Cry_Lynxskew
+    cry_reverse Cry_Cabob
+    cry_reverse Cry_Lynxskew
 .endif @ P_FAMILY_CABOB
 .if P_FAMILY_PUMACH == TRUE
-	cry_reverse Cry_Pumach
-	cry_reverse Cry_Jagwire
+    cry_reverse Cry_Pumach
+    cry_reverse Cry_Jagwire
 .endif @ P_FAMILY_PUMACH
 .if P_FAMILY_SKULLARVA == TRUE
-	cry_reverse Cry_Skullarva
-	cry_reverse Cry_Kakone
-	cry_reverse Cry_Mortasque
+    cry_reverse Cry_Skullarva
+    cry_reverse Cry_Kakone
+    cry_reverse Cry_Mortasque
 .endif @ P_FAMILY_SKULLARVA
 .if P_FAMILY_TOTTER == TRUE
-	cry_reverse Cry_Totter
-	cry_reverse Cry_Cascotta
-	cry_reverse Cry_Lutrajet
+    cry_reverse Cry_Totter
+    cry_reverse Cry_Cascotta
+    cry_reverse Cry_Lutrajet
 .endif @ P_FAMILY_TOTTER
 .if P_FAMILY_TENROCK == TRUE
-	cry_reverse Cry_Tenrock
-	cry_reverse Cry_Shrewel
-	cry_reverse Cry_Pangolem
+    cry_reverse Cry_Tenrock
+    cry_reverse Cry_Shrewel
+    cry_reverse Cry_Pangolem
 .endif @ P_FAMILY_TENROCK
 .if P_FAMILY_SHELFUR == TRUE
-	cry_reverse Cry_Shelfur
-	cry_reverse Cry_Ignoise
-	cry_reverse Cry_Moltortoise
+    cry_reverse Cry_Shelfur
+    cry_reverse Cry_Ignoise
+    cry_reverse Cry_Moltortoise
 .endif @ P_FAMILY_SHELFUR
 .if P_FAMILY_CHIHAHA == TRUE
-	cry_reverse Cry_Chihaha
-	cry_reverse Cry_Howlequin
+    cry_reverse Cry_Chihaha
+    cry_reverse Cry_Howlequin
 .endif @ P_FAMILY_CHIHAHA
 .if P_FAMILY_PALLECTRON == TRUE
-	cry_reverse Cry_Pallectron
-	cry_reverse Cry_Callummotor
-	cry_reverse Cry_Electrioceros
+    cry_reverse Cry_Pallectron
+    cry_reverse Cry_Callummotor
+    cry_reverse Cry_Electrioceros
 .endif @ P_FAMILY_PALLECTRON
 .if P_FAMILY_CHIMPOCA == TRUE
-	cry_reverse Cry_Chimpoca
-	cry_reverse Cry_Simayan
+    cry_reverse Cry_Chimpoca
+    cry_reverse Cry_Simayan
 .endif @ P_FAMILY_CHIMPOCA
 .if P_FAMILY_ICETOPE == TRUE
-	cry_reverse Cry_Icetope
-	cry_reverse Cry_Chillnobyl
+    cry_reverse Cry_Icetope
+    cry_reverse Cry_Chillnobyl
 .endif @ P_FAMILY_ICETOPE
 .if P_FAMILY_MAGROPLEX == TRUE
-	cry_reverse Cry_Magroplex
+    cry_reverse Cry_Magroplex
 .endif @ P_FAMILY_MAGROPLEX
 .if P_FAMILY_PSYYNEN == TRUE
-	cry_reverse Cry_Psyynen
-	cry_reverse Cry_Aanchgora
+    cry_reverse Cry_Psyynen
+    cry_reverse Cry_Aanchgora
 .endif @ P_FAMILY_PSYYNEN
 .if P_FAMILY_FOLTERGEIST == TRUE
-	cry_reverse Cry_Foltergeist
-	cry_reverse Cry_Fantasmare
+    cry_reverse Cry_Foltergeist
+    cry_reverse Cry_Fantasmare
 .endif @ P_FAMILY_FOLTERGEIST
 .if P_FAMILY_CUPPY == TRUE
-	cry_reverse Cry_Cuppy
-	cry_reverse Cry_Fettlekish
+    cry_reverse Cry_Cuppy
+    cry_reverse Cry_Fettlekish
 .endif @ P_FAMILY_CUPPY
 .if P_FAMILY_NECTI == TRUE
-	cry_reverse Cry_Nectri
-	cry_reverse Cry_Hummiscus
-	cry_reverse Cry_Nectriary
+    cry_reverse Cry_Nectri
+    cry_reverse Cry_Hummiscus
+    cry_reverse Cry_Nectriary
 .endif @ P_FAMILY_NECTI
 .if P_FAMILY_CARDINITE == TRUE
-	cry_reverse Cry_Cardinite
-	cry_reverse Cry_Chardinal
+    cry_reverse Cry_Cardinite
+    cry_reverse Cry_Chardinal
 .endif @ P_FAMILY_CARDINITE
 .if P_FAMILY_SALAGUADE == TRUE
-	cry_reverse Cry_Salaguade
-	cry_reverse Cry_Iguash
-	cry_reverse Cry_Juggercroc
+    cry_reverse Cry_Salaguade
+    cry_reverse Cry_Iguash
+    cry_reverse Cry_Juggercroc
 .endif @ P_FAMILY_SALAGUADE
 .if P_FAMILY_ARROWBIN == TRUE
-	cry_reverse Cry_Arrowbin
-	cry_reverse Cry_Hawtchet
-	cry_reverse Cry_Chiefturk
+    cry_reverse Cry_Arrowbin
+    cry_reverse Cry_Hawtchet
+    cry_reverse Cry_Chiefturk
 .endif @ P_FAMILY_ARROWBIN
 .if P_FAMILY_NEUREKA == TRUE
-	cry_reverse Cry_Neureka
-	cry_reverse Cry_Edisynapse
+    cry_reverse Cry_Neureka
+    cry_reverse Cry_Edisynapse
 .endif @ P_FAMILY_NEUREKA
 .if P_FAMILY_SCLICK == TRUE
-	cry_reverse Cry_Sclick
-	cry_reverse Cry_Vectrion
+    cry_reverse Cry_Sclick
+    cry_reverse Cry_Vectrion
 .endif @ P_FAMILY_SCLICK
 .if P_FAMILY_FAWNPIRE == TRUE
-	cry_reverse Cry_Fawnpire
-	cry_reverse Cry_Alpacula
-	cry_reverse Cry_Mooseferatu
+    cry_reverse Cry_Fawnpire
+    cry_reverse Cry_Alpacula
+    cry_reverse Cry_Mooseferatu
 .endif @ P_FAMILY_FAWNPIRE
 .if P_FAMILY_PLATYPOW == TRUE
-	cry_reverse Cry_Platypow
-	cry_reverse Cry_Platypunch
+    cry_reverse Cry_Platypow
+    cry_reverse Cry_Platypunch
 .endif @ P_FAMILY_PLATYPOW
 .if P_FAMILY_SILKINDER == TRUE
-	cry_reverse Cry_Silkinder
-	cry_reverse Cry_Sensilk
+    cry_reverse Cry_Silkinder
+    cry_reverse Cry_Sensilk
 .endif @ P_FAMILY_SILKINDER
 .if P_FAMILY_DALTOM == TRUE
-	cry_reverse Cry_Daltom
-	cry_reverse Cry_Oppenhion
+    cry_reverse Cry_Daltom
+    cry_reverse Cry_Oppenhion
 .endif @ P_FAMILY_DALTOM
 .if P_FAMILY_GOLTERRA == TRUE
-	cry_reverse Cry_Golterra
-	cry_reverse Cry_Gaiolem
+    cry_reverse Cry_Golterra
+    cry_reverse Cry_Gaiolem
 .endif @ P_FAMILY_GOLTERRA
 .if P_FAMILY_RELLADUNE == TRUE
-	cry_reverse Cry_Relladune
-	cry_reverse Cry_Camorella
+    cry_reverse Cry_Relladune
+    cry_reverse Cry_Camorella
 .endif @ P_FAMILY_RELLADUNE
 .if P_FAMILY_COBOE == TRUE
-	cry_reverse Cry_Coboe
-	cry_reverse Cry_Pungriyadh
+    cry_reverse Cry_Coboe
+    cry_reverse Cry_Pungriyadh
 .endif @ P_FAMILY_COBOE
 .if P_FAMILY_SEDIRROT == TRUE
-	cry_reverse Cry_Sedirrot
-	cry_reverse Cry_Condesa
+    cry_reverse Cry_Sedirrot
+    cry_reverse Cry_Condesa
 .endif @ P_FAMILY_SEDIRROT
 .if P_FAMILY_NOBUNATA == TRUE
-	cry_reverse Cry_Nobunata
+    cry_reverse Cry_Nobunata
 .endif @ P_FAMILY_NOBUNATA
 .if P_FAMILY_SOMBERO == TRUE
-	cry_reverse Cry_Sombero
+    cry_reverse Cry_Sombero
 .endif @ P_FAMILY_SOMBERO
 .if P_FAMILY_MINARAC == TRUE
-	cry_reverse Cry_Minarac
-	cry_reverse Cry_Tarenchula
+    cry_reverse Cry_Minarac
+    cry_reverse Cry_Tarenchula
 .endif @ P_FAMILY_MINARAC
 .if P_FAMILY_CARBITE == TRUE
-	cry_reverse Cry_Carbite
-	cry_reverse Cry_Pressaur
-	cry_reverse Cry_Diamaw
+    cry_reverse Cry_Carbite
+    cry_reverse Cry_Pressaur
+    cry_reverse Cry_Diamaw
 .endif @ P_FAMILY_CARBITE
 .if P_FAMILY_GILLA == TRUE
-	cry_reverse Cry_Gilla
-	cry_reverse Cry_Anodontor
-	cry_reverse Cry_Ankillosaur
+    cry_reverse Cry_Gilla
+    cry_reverse Cry_Anodontor
+    cry_reverse Cry_Ankillosaur
 .endif @ P_FAMILY_GILLA
 .if P_FAMILY_BAZILISK == TRUE
-	cry_reverse Cry_Bazilisk
-	cry_reverse Cry_Ornithaur
-	cry_reverse Cry_Dilophlora
+    cry_reverse Cry_Bazilisk
+    cry_reverse Cry_Ornithaur
+    cry_reverse Cry_Dilophlora
 .endif @ P_FAMILY_BAZILISK
 .if P_FAMILY_SQUIBBLE == TRUE
-	cry_reverse Cry_Squibble
-	cry_reverse Cry_Squingo
+    cry_reverse Cry_Squibble
+    cry_reverse Cry_Squingo
 .endif @ P_FAMILY_SQUIBBLE
 .if P_FAMILY_DRAKNARR == TRUE
-	cry_reverse Cry_Draknarr
-	cry_reverse Cry_Ragnarow
+    cry_reverse Cry_Draknarr
+    cry_reverse Cry_Ragnarow
 .endif @ P_FAMILY_DRAKNARR
 .if P_FAMILY_MANDALLOY == TRUE
-	cry_reverse Cry_Mandalloy
+    cry_reverse Cry_Mandalloy
 .endif @ P_FAMILY_MANDALLOY
 .if P_FAMILY_PHLASK == TRUE
-	cry_reverse Cry_Phlask
-	cry_reverse Cry_Noxighast
-	cry_reverse Cry_Fumighast
+    cry_reverse Cry_Phlask
+    cry_reverse Cry_Noxighast
+    cry_reverse Cry_Fumighast
 .endif @ P_FAMILY_PHLASK
 .if P_FAMILY_PINECALF == TRUE
-	cry_reverse Cry_Pinecalf
-	cry_reverse Cry_Trunkonifr
+    cry_reverse Cry_Pinecalf
+    cry_reverse Cry_Trunkonifr
 .endif @ P_FAMILY_PINECALF
 .if P_FAMILY_MASKREEP == TRUE
-	cry_reverse Cry_Maskreep
-	cry_reverse Cry_Phantiki
+    cry_reverse Cry_Maskreep
+    cry_reverse Cry_Phantiki
 .endif @ P_FAMILY_MASKREEP
 .if P_FAMILY_TAOMARIN == TRUE
-	cry_reverse Cry_Taomarin
-	cry_reverse Cry_Orangutao
+    cry_reverse Cry_Taomarin
+    cry_reverse Cry_Orangutao
 .endif @ P_FAMILY_TAOMARIN
 .if P_FAMILY_COALT == TRUE
-	cry_reverse Cry_Coalt
-	cry_reverse Cry_Arieskorch
+    cry_reverse Cry_Coalt
+    cry_reverse Cry_Arieskorch
 .endif @ P_FAMILY_COALT
 .if P_FAMILY_BLUFFIN == TRUE
-	cry_reverse Cry_Bluffin
-	cry_reverse Cry_Skarpie
+    cry_reverse Cry_Bluffin
+    cry_reverse Cry_Skarpie
 .endif @ P_FAMILY_BLUFFIN
 .if P_FAMILY_GNOWM == TRUE
-	cry_reverse Cry_Gnowm
-	cry_reverse Cry_Snowgre
+    cry_reverse Cry_Gnowm
+    cry_reverse Cry_Snowgre
 .endif @ P_FAMILY_GNOWM
 .if P_FAMILY_BOAREALIS == TRUE
-	cry_reverse Cry_Boarealis
+    cry_reverse Cry_Boarealis
 .endif @ P_FAMILY_BOAREALIS
 .if P_FAMILY_WISHP == TRUE
-	cry_reverse Cry_Wishp
-	cry_reverse Cry_Igfrit
-	cry_reverse Cry_Djinnferno
+    cry_reverse Cry_Wishp
+    cry_reverse Cry_Igfrit
+    cry_reverse Cry_Djinnferno
 .endif @ P_FAMILY_WISHP
 .if P_FAMILY_MOONIGHT == TRUE
-	cry_reverse Cry_Moonight
-	cry_reverse Cry_Joustock
-	cry_reverse Cry_Crusaber
+    cry_reverse Cry_Moonight
+    cry_reverse Cry_Joustock
+    cry_reverse Cry_Crusaber
 .endif @ P_FAMILY_MOONIGHT
 .if P_FAMILY_CHELONITE == TRUE
-	cry_reverse Cry_Chelonite
-	cry_reverse Cry_Galaxagos
+    cry_reverse Cry_Chelonite
+    cry_reverse Cry_Galaxagos
 .endif @ P_FAMILY_CHELONITE
 .if P_FAMILY_TANUKOON == TRUE
-	cry_reverse Cry_Tanukoon
-	cry_reverse Cry_Leukoon
+    cry_reverse Cry_Tanukoon
+    cry_reverse Cry_Leukoon
 .endif @ P_FAMILY_TANUKOON
 .if P_FAMILY_HATHROSTUS == TRUE
-	cry_reverse Cry_Hathrostus
+    cry_reverse Cry_Hathrostus
 .endif @ P_FAMILY_HATHROSTUS
 .if P_FAMILY_BABOSIRIS == TRUE
-	cry_reverse Cry_Babosiris
+    cry_reverse Cry_Babosiris
 .endif @ P_FAMILY_BABOSIRIS
 .if P_FAMILY_HUBRISET == TRUE
-	cry_reverse Cry_Hubriset
+    cry_reverse Cry_Hubriset
 .endif @ P_FAMILY_HUBRISET
 .if P_FAMILY_WENDINGO == TRUE
-	cry_reverse Cry_Wendingo
+    cry_reverse Cry_Wendingo
 .endif @ P_FAMILY_WENDINGO
 .endif @ P_CRIES_ENABLED

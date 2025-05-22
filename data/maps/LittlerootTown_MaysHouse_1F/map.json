@@ -12,10 +12,10 @@
   "allow_running": false,
   "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": 0,
+  "connections": null,
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_BW2_MOM",
+      "graphics_id": "OBJ_EVENT_GFX_MOM",
       "x": 8,
       "y": 6,
       "elevation": 3,
@@ -54,7 +54,7 @@
       "flag": "FLAG_HIDE_LITTLEROOT_TOWN_PLAYERS_HOUSE_VIGOROTH_2"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_11",
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_4",
       "x": 8,
       "y": 7,
       "elevation": 3,
@@ -67,7 +67,7 @@
       "flag": "FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_RIVAL_MOM"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MAN_7",
+      "graphics_id": "OBJ_EVENT_GFX_NORMAN",
       "x": 5,
       "y": 6,
       "elevation": 3,
@@ -80,7 +80,7 @@
       "flag": "FLAG_HIDE_PLAYERS_HOUSE_DAD"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_NINJA_BOY_1",
+      "graphics_id": "OBJ_EVENT_GFX_NINJA_BOY",
       "x": 9,
       "y": 5,
       "elevation": 3,
@@ -167,7 +167,5 @@
       "script": "LittlerootTown_MaysHouse_1F_EventScript_MeetRival2"
     }
   ],
-  "bg_events": [
-
-  ]
+  "bg_events": []
 }

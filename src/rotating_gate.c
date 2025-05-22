@@ -248,6 +248,7 @@ static const struct OamData sOamData_RotatingGateLarge =
     .size = SPRITE_SIZE(64x64),
     .tileNum = 0,
     .priority = 2,
+    .paletteNum = 2,
     .affineParam = 0,
 };
 
@@ -264,6 +265,7 @@ static const struct OamData sOamData_RotatingGateRegular =
     .size = SPRITE_SIZE(32x32),
     .tileNum = 0,
     .priority = 2,
+    .paletteNum = 2,
     .affineParam = 0,
 };
 
@@ -750,7 +752,6 @@ static u8 RotatingGate_CreateGate(u8 gateId, s16 deltaX, s16 deltaY)
     UpdateSpritePaletteByTemplate(&template, sprite);
     sprite->data[0] = gateId;
     sprite->coordOffsetEnabled = 1;
-    sprite->oam.paletteNum = IndexOfSpritePaletteTag(template.paletteTag);
 
     GetMapCoordsFromSpritePos(x + deltaX, y + deltaY, &sprite->x, &sprite->y);
     RotatingGate_HideGatesOutsideViewport(sprite);

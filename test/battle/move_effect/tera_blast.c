@@ -44,6 +44,7 @@ SINGLE_BATTLE_TEST("Tera Blast has correct effectiveness for every Tera Type")
     PARAMETRIZE { species = SPECIES_SNEASEL;   type = TYPE_FIGHTING; }
     PARAMETRIZE { species = SPECIES_SNEASEL;   type = TYPE_STEEL;    }
     PARAMETRIZE { species = SPECIES_ABRA;      type = TYPE_DARK;     }
+    PARAMETRIZE { species = SPECIES_ABRA;      type = TYPE_SOUND;     }
 
     GIVEN {
         ASSUME(gSpeciesInfo[SPECIES_CHIKORITA].types[0] == TYPE_GRASS);

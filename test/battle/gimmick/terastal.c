@@ -849,6 +849,7 @@ SINGLE_BATTLE_TEST("(TERA) All type indicators function correctly")
     PARAMETRIZE { type = TYPE_DRAGON; }
     PARAMETRIZE { type = TYPE_DARK; }
     PARAMETRIZE { type = TYPE_FAIRY; }
+    PARAMETRIZE { type = TYPE_SOUND; }
     PARAMETRIZE { type = TYPE_STELLAR; }
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET) { TeraType(type); }
@@ -881,6 +882,7 @@ SINGLE_BATTLE_TEST("(TERA) All type indicators function correctly - Opponent")
     PARAMETRIZE { type = TYPE_DRAGON; }
     PARAMETRIZE { type = TYPE_DARK; }
     PARAMETRIZE { type = TYPE_FAIRY; }
+    PARAMETRIZE { type = TYPE_SOUND; }
     PARAMETRIZE { type = TYPE_STELLAR; }
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);

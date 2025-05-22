@@ -51,84 +51,14 @@
     F(STEEL_WING) \
     F(SKILL_SWAP) \
     F(SNATCH) \
-    F(OVERHEAT) \
-    F(ROOST) \
-    F(FOCUS_BLAST) \
-    F(ENERGY_BALL) \
-    F(FALSE_SWIPE) \
-    F(BRINE) \
-    F(FLING) \
-    F(CHARGE_BEAM) \
-    F(ENDURE) \
-    F(DRAGON_PULSE) \
-    F(DRAIN_PUNCH) \
-    F(WILL_O_WISP) \
-    F(SILVER_WIND) \
-    F(EMBARGO) \
-    F(EXPLOSION) \
-    F(SHADOW_CLAW) \
-    F(PAYBACK) \
-    F(RECYCLE) \
-    F(GIGA_IMPACT) \
-    F(ROCK_POLISH) \
-    F(FLASH) \
-    F(STONE_EDGE) \
-    F(AVALANCHE) \
-    F(THUNDER_WAVE) \
-    F(GYRO_BALL) \
-    F(SWORDS_DANCE) \
-    F(STEALTH_ROCK) \
-    F(PSYCH_UP) \
-    F(CAPTIVATE) \
-    F(DARK_PULSE) \
-    F(ROCK_SLIDE) \
-    F(X_SCISSOR) \
-    F(SLEEP_TALK) \
-    F(NATURAL_GIFT) \
-    F(POISON_JAB) \
-    F(DREAM_EATER) \
-    F(GRASS_KNOT) \
-    F(SWAGGER) \
-    F(PLUCK) \
-    F(U_TURN) \
-    F(SUBSTITUTE) \
-    F(FLASH_CANNON) \
-    F(TRICK_ROOM) \
-    F(VOLT_SWITCH) \
-    F(VENOSHOCK) \
-    F(SNARL) \
-    F(INCINERATE) \
-    F(RETALIATE) \
-    F(POWER_UP_PUNCH) \
-    F(DAZZLING_GLEAM) \
-    F(ALLY_SWITCH) \
-    F(HONE_CLAWS) \
-    F(ACROBATICS) \
-    F(PSYSHOCK) \
-    F(DRAGON_TAIL) \
-    F(SCALD) \
-    F(STRUGGLE_BUG) \
-    F(LOW_SWEEP) \
-    F(BULLDOZE) \
-    F(FROST_BREATH) \
-    F(QUASH) \
-    F(WORK_UP) \
-    F(ELECTRO_BALL) \
-    F(FLAME_CHARGE) \
-    F(TRAILBLAZE) \
-    F(WHIRLPOOL) \
-    F(SPIKES) \
-    F(TOXIC_SPIKES) \
-    F(THROAT_CHOP) \
-    F(ROUND) \
-    F(TERA_BLAST) \
+    F(OVERHEAT)
 
 #define FOREACH_HM(F) \
     F(CUT) \
     F(FLY) \
     F(SURF) \
     F(STRENGTH) \
-    F(ROCK_CLIMB) \
+    F(FLASH) \
     F(ROCK_SMASH) \
     F(WATERFALL) \
     F(DIVE)
