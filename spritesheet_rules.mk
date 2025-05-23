@@ -933,10 +933,10 @@ $(OBJEVENTGFXDIR)/people/ds/preschooler_f.4bpp: %.4bpp: %.png
 $(OBJEVENTGFXDIR)/people/ds/preschooler_m.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
-$(OBJEVENTGFXDIR)/people/ds/professor_juniper.4bpp: %.4bpp: %.png
+$(OBJEVENTGFXDIR)/people/ds/juniper.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
-$(OBJEVENTGFXDIR)/people/ds/professor_oak.4bpp: %.4bpp: %.png
+$(OBJEVENTGFXDIR)/people/ds/oak.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
 $(OBJEVENTGFXDIR)/people/ds/psychic_f_1.4bpp: %.4bpp: %.png
