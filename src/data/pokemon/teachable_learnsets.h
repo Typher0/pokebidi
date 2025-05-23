@@ -37371,7 +37371,7 @@ static const u16 sChihahaTeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 
-static const u16 sHowlequinnTeachableLearnset[] = {
+static const u16 sHowlequinTeachableLearnset[] = {
     MOVE_ROAR,
     MOVE_TOXIC,
     MOVE_BULLET_SEED,
@@ -39277,7 +39277,7 @@ static const u16 sPlatypowTeachableLearnset[] = {
     MOVE_DEFENSE_CURL,
     MOVE_DISINFECTANT,
     MOVE_DOUBLE_EDGE,
-    MOVE_DYANMIC_PUNCH,
+    MOVE_DYNAMIC_PUNCH,
     MOVE_ENDEAVOR,
     MOVE_FIRE_PUNCH,
     MOVE_FLIP_TURN,
@@ -39371,7 +39371,7 @@ static const u16 sPlatypunchTeachableLearnset[] = {
     MOVE_DEFENSE_CURL,
     MOVE_DISINFECTANT,
     MOVE_DOUBLE_EDGE,
-    MOVE_DYANMIC_PUNCH,
+    MOVE_DYNAMIC_PUNCH,
     MOVE_ENDEAVOR,
     MOVE_FIRE_PUNCH,
     MOVE_FLIP_TURN,
@@ -40348,7 +40348,7 @@ static const u16 sSomberoTeachableLearnset[] = {
 #endif //P_FAMILY_SOMBERO
 
 #if P_FAMILY_MINARAC
-static const u16 sTarenchulaTeachableLearnset[] = {
+static const u16 sMinaracTeachableLearnset[] = {
     MOVE_TAUNT,
     MOVE_PROTECT,
     MOVE_DIG,
@@ -41858,7 +41858,7 @@ static const u16 sPhlaskTeachableLearnset[] = {
     MOVE_NIGHTMARE,
     MOVE_PAIN_SPLIT,
     MOVE_POLTERGEIST,
-    MOVE_POSSESION,
+    MOVE_POSSESSION,
     MOVE_ROLE_PLAY,
     MOVE_SHADOW_SNEAK,
     MOVE_SIGNAL_BEAM,
@@ -41955,7 +41955,7 @@ static const u16 sNoxighastTeachableLearnset[] = {
     MOVE_NIGHTMARE,
     MOVE_PAIN_SPLIT,
     MOVE_POLTERGEIST,
-    MOVE_POSSESION,
+    MOVE_POSSESSION,
     MOVE_ROLE_PLAY,
     MOVE_SHADOW_SNEAK,
     MOVE_SIGNAL_BEAM,
@@ -42055,7 +42055,7 @@ static const u16 sFumighastTeachableLearnset[] = {
     MOVE_NIGHTMARE,
     MOVE_PAIN_SPLIT,
     MOVE_POLTERGEIST,
-    MOVE_POSSESION,
+    MOVE_POSSESSION,
     MOVE_ROLE_PLAY,
     MOVE_SHADOW_SNEAK,
     MOVE_SIGNAL_BEAM,
@@ -42229,3 +42229,167 @@ static const u16 sTrunkonifrTeachableLearnset[] = {
 };
 #endif //P_FAMILY_PINECALF
 
+#if P_FAMILY_FOLTERGEIST
+static const u16 sFoltergeistTeachableLearnset[] = {
+    MOVE_HIDDEN_POWER,
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sFantasmareTeachableLearnset[] = {
+    MOVE_HIDDEN_POWER,
+    MOVE_UNAVAILABLE,
+};
+#endif //P_FAMILY_FOLTERGEIST
+
+#if P_FAMILY_MASKREEP
+static const u16 sMaskreepTeachableLearnset[] = {
+    MOVE_HIDDEN_POWER,
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sPhantikiTeachableLearnset[] = {
+    MOVE_HIDDEN_POWER,
+    MOVE_UNAVAILABLE,
+};
+#endif //P_FAMILY_MASKREEP
+
+#if P_FAMILY_TAOMARIN
+static const u16 sTaomarinTeachableLearnset[] = {
+    MOVE_HIDDEN_POWER,
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sOrangutaoTeachableLearnset[] = {
+    MOVE_HIDDEN_POWER,
+    MOVE_UNAVAILABLE,
+};
+#endif //P_FAMILY_TAOMARIN
+
+#if P_FAMILY_COALT
+static const u16 sCoaltTeachableLearnset[] = {
+    MOVE_HIDDEN_POWER,
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sArieskorchTeachableLearnset[] = {
+    MOVE_HIDDEN_POWER,
+    MOVE_UNAVAILABLE,
+};
+#endif //P_FAMILY_COALT
+
+#if P_FAMILY_BLUFFIN
+static const u16 sBluffinTeachableLearnset[] = {
+    MOVE_HIDDEN_POWER,
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sSkarpieTeachableLearnset[] = {
+    MOVE_HIDDEN_POWER,
+    MOVE_UNAVAILABLE,
+};
+#endif //P_FAMILY_BLUFFIN
+
+#if P_FAMILY_GNOWM
+static const u16 sGnowmTeachableLearnset[] = {
+    MOVE_HIDDEN_POWER,
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sSnowgreTeachableLearnset[] = {
+    MOVE_HIDDEN_POWER,
+    MOVE_UNAVAILABLE,
+};
+#endif //P_FAMILY_GNOWM
+
+#if P_FAMILY_BOAREALIS
+static const u16 sBoarealisTeachableLearnset[] = {
+    MOVE_HIDDEN_POWER,
+    MOVE_UNAVAILABLE,
+};
+#endif //P_FAMILY_BOAREALIS
+
+#if P_FAMILY_WISHP
+static const u16 sWishpTeachableLearnset[] = {
+    MOVE_HIDDEN_POWER,
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sIgfritTeachableLearnset[] = {
+    MOVE_HIDDEN_POWER,
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sDjinnfernoTeachableLearnset[] = {
+    MOVE_HIDDEN_POWER,
+    MOVE_UNAVAILABLE,
+};
+#endif //P_FAMILY_WISHP
+
+#if P_FAMILY_MOONIGHT
+static const u16 sMoonightTeachableLearnset[] = {
+    MOVE_HIDDEN_POWER,
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sJoustockTeachableLearnset[] = {
+    MOVE_HIDDEN_POWER,
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sCrusaberTeachableLearnset[] = {
+    MOVE_HIDDEN_POWER,
+    MOVE_UNAVAILABLE,
+};
+#endif //P_FAMILY_MOONIGHT
+
+#if P_FAMILY_CHELONITE
+static const u16 sCheloniteTeachableLearnset[] = {
+    MOVE_HIDDEN_POWER,
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sGalaxagosTeachableLearnset[] = {
+    MOVE_HIDDEN_POWER,
+    MOVE_UNAVAILABLE,
+};
+#endif //P_FAMILY_CHELONITE
+
+#if P_FAMILY_TANUKOON
+static const u16 sTanukoonTeachableLearnset[] = {
+    MOVE_HIDDEN_POWER,
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sLeukoonTeachableLearnset[] = {
+    MOVE_HIDDEN_POWER,
+    MOVE_UNAVAILABLE,
+};
+#endif //P_FAMILY_TANUKOON
+
+#if P_FAMILY_HATHROSTUS
+static const u16 sHathrostusTeachableLearnset[] = {
+    MOVE_HIDDEN_POWER,
+    MOVE_UNAVAILABLE,
+};
+#endif //P_FAMILY_HATHROSTUS
+
+#if P_FAMILY_BABOSIRIS
+static const u16 sBabosirisTeachableLearnset[] = {
+    MOVE_HIDDEN_POWER,
+    MOVE_UNAVAILABLE,
+};
+#endif //P_FAMILY_BABOSIRIS
+
+#if P_FAMILY_HUBRISET
+static const u16 sHubrisetTeachableLearnset[] = {
+    MOVE_HIDDEN_POWER,
+    MOVE_UNAVAILABLE,
+};
+#endif //P_FAMILY_HUBRISET
+
+#if P_FAMILY_WENDINGO
+static const u16 sWendingoTeachableLearnset[] = {
+    MOVE_HIDDEN_POWER,
+    MOVE_UNAVAILABLE,
+};
+#endif //P_FAMILY_WENDINGO

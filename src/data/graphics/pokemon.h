@@ -27553,13 +27553,13 @@ const u8 gMonIcon_Cacturado[] = INCBIN_U8("graphics/pokemon/cacturado/icon.4bpp"
 #endif //P_FAMILY_GILLA
 
 #if P_FAMILY_BAZILISK
-    const u32 gMonFrontPic_Bazilisk[] = INCBIN_U32("graphics/pokemon/ornithaur/front.4bpp.lz");
-    const u32 gMonPalette_Bazilisk[] = INCBIN_U32("graphics/pokemon/ornithaur/normal.gbapal.lz");
-    const u32 gMonBackPic_Bazilisk[] = INCBIN_U32("graphics/pokemon/ornithaur/back.4bpp.lz");
-    const u32 gMonShinyPalette_Bazilisk[] = INCBIN_U32("graphics/pokemon/ornithaur/shiny.gbapal.lz");
-    const u8 gMonIcon_Bazilisk[] = INCBIN_U8("graphics/pokemon/ornithaur/icon.4bpp");
+    const u32 gMonFrontPic_Bazilisk[] = INCBIN_U32("graphics/pokemon/bazilisk/front.4bpp.lz");
+    const u32 gMonPalette_Bazilisk[] = INCBIN_U32("graphics/pokemon/bazilisk/normal.gbapal.lz");
+    const u32 gMonBackPic_Bazilisk[] = INCBIN_U32("graphics/pokemon/bazilisk/back.4bpp.lz");
+    const u32 gMonShinyPalette_Bazilisk[] = INCBIN_U32("graphics/pokemon/bazilisk/shiny.gbapal.lz");
+    const u8 gMonIcon_Bazilisk[] = INCBIN_U8("graphics/pokemon/bazilisk/icon.4bpp");
 #if P_FOOTPRINTS
-    // const u8 gMonFootprint_Bazilisk[] = INCBIN_U8("graphics/pokemon/ornithaur/footprint.1bpp");
+    // const u8 gMonFootprint_Bazilisk[] = INCBIN_U8("graphics/pokemon/bazilisk/footprint.1bpp");
 #endif //P_FOOTPRINTS
 
     const u32 gMonFrontPic_Ornithaur[] = INCBIN_U32("graphics/pokemon/ornithaur/front.4bpp.lz");

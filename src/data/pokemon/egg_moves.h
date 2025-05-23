@@ -6904,7 +6904,7 @@ static const u16 sBaziliskEggMoveLearnset[] = {
 };
 #endif //P_FAMILY_BAZILISK
 
-#if P_FAMILY_SQUBBLE
+#if P_FAMILY_SQUIBBLE
 static const u16 sSquibbleEggMoveLearnset[] = {
     MOVE_AURORA_BEAM,
     MOVE_MIRROR_COAT,

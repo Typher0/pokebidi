@@ -1526,6 +1526,11 @@ Cry_Hoothoot::
 	.align 2
 Cry_Noctowl::
 	.incbin "sound/direct_sound_samples/cries/noctowl.bin"
+.if P_GEN_9_CROSS_EVOS == TRUE
+    .align 2
+Cry_Doctowl::
+    .incbin "sound/direct_sound_samples/cries/doctowl.bin"
+.endif @ P_GEN_9_CROSS_EVOS
 .endif @ P_FAMILY_HOOTHOOT
 
 .if P_FAMILY_LEDYBA == TRUE
@@ -1717,6 +1722,11 @@ Cry_Mismagius::
 	.align 2
 Cry_Unown::
 	.incbin "sound/direct_sound_samples/cries/unown.bin"
+.if P_GEN_9_CROSS_EVOS == TRUE
+    .align 2
+Cry_Esoterown::
+    .incbin "sound/direct_sound_samples/cries/esoterown.bin"
+.endif @ P_GEN_9_CROSS_EVOS
 .endif @ P_FAMILY_UNOWN
 
 .if P_FAMILY_WOBBUFFET == TRUE
@@ -2525,6 +2535,11 @@ Cry_Cacnea::
 	.align 2
 Cry_Cacturne::
 	.incbin "sound/direct_sound_samples/cries/cacturne.bin"
+.if P_GEN_9_CROSS_EVOS == TRUE
+    .align 2
+Cry_Cacturado::
+    .incbin "sound/direct_sound_samples/cries/cacturado.bin"
+.endif @ P_GEN_9_CROSS_EVOS
 .endif @ P_FAMILY_CACNEA
 
 .if P_FAMILY_SWABLU == TRUE

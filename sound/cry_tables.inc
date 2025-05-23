@@ -485,6 +485,9 @@ gCryTable::
 .if P_FAMILY_HOOTHOOT == TRUE
 	cry Cry_Hoothoot
 	cry Cry_Noctowl
+.if P_GEN_9_CROSS_EVOS == TRUE
+    cry Cry_Doctowl
+.endif @ P_GEN_9_CROSS_EVOS
 .endif @ P_FAMILY_HOOTHOOT
 .if P_FAMILY_LEDYBA == TRUE
 	cry Cry_Ledyba
@@ -564,6 +567,9 @@ gCryTable::
 .endif @ P_FAMILY_MISDREAVUS
 .if P_FAMILY_UNOWN == TRUE
 	cry Cry_Unown
+.if P_GEN_9_CROSS_EVOS == TRUE
+    cry Cry_Esoterown
+.endif @ P_GEN_9_CROSS_EVOS
 .endif @ P_FAMILY_UNOWN
 .if P_FAMILY_WOBBUFFET == TRUE
 .if P_GEN_3_CROSS_EVOS == TRUE
@@ -914,6 +920,9 @@ gCryTable::
 .if P_FAMILY_CACNEA == TRUE
 	cry Cry_Cacnea
 	cry Cry_Cacturne
+ .if P_GEN_9_CROSS_EVOS == TRUE
+    cry Cry_Cacturado
+.endif @ P_GEN_9_CROSS_EVOS
 .endif @ P_FAMILY_CACNEA
 .if P_FAMILY_SWABLU == TRUE
 	cry Cry_Swablu
@@ -3139,6 +3148,9 @@ gCryTable_Reverse::
 .if P_FAMILY_HOOTHOOT == TRUE
 	cry_reverse Cry_Hoothoot
 	cry_reverse Cry_Noctowl
+ .if P_GEN_9_CROSS_EVOS == TRUE
+    cry_reverse Cry_Doctowl
+.endif @ P_GEN_9_CROSS_EVOS
 .endif @ P_FAMILY_HOOTHOOT
 .if P_FAMILY_LEDYBA == TRUE
 	cry_reverse Cry_Ledyba
@@ -3218,6 +3230,9 @@ gCryTable_Reverse::
 .endif @ P_FAMILY_MISDREAVUS
 .if P_FAMILY_UNOWN == TRUE
 	cry_reverse Cry_Unown
+.if P_GEN_9_CROSS_EVOS == TRUE
+    cry_reverse Cry_Esoterown
+.endif @ P_GEN_9_CROSS_EVOS
 .endif @ P_FAMILY_UNOWN
 .if P_FAMILY_WOBBUFFET == TRUE
 .if P_GEN_3_CROSS_EVOS == TRUE
@@ -3568,6 +3583,9 @@ gCryTable_Reverse::
 .if P_FAMILY_CACNEA == TRUE
 	cry_reverse Cry_Cacnea
 	cry_reverse Cry_Cacturne
+  .if P_GEN_9_CROSS_EVOS == TRUE
+    cry_reverse Cry_Cacturado
+.endif @ P_GEN_9_CROSS_EVOS
 .endif @ P_FAMILY_CACNEA
 .if P_FAMILY_SWABLU == TRUE
 	cry_reverse Cry_Swablu
