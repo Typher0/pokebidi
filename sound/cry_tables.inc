@@ -2501,11 +2501,11 @@ gCryTable::
     cry Cry_Cuppy
     cry Cry_Fettlekish
 .endif @ P_FAMILY_CUPPY
-.if P_FAMILY_NECTI == TRUE
+.if P_FAMILY_NECTRI == TRUE
     cry Cry_Nectri
     cry Cry_Hummiscus
     cry Cry_Nectriary
-.endif @ P_FAMILY_NECTI
+.endif @ P_FAMILY_NECTRI
 .if P_FAMILY_CARDINITE == TRUE
     cry Cry_Cardinite
     cry Cry_Chardinal
