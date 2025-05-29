@@ -24,16 +24,35 @@ static const u8 sBattleAnimBgCnts[] = {REG_OFFSET_BG0CNT, REG_OFFSET_BG1CNT, REG
 
 static const TaskFunc sBattleIntroSlideFuncs[] =
 {
-    [BATTLE_ENVIRONMENT_GRASS]      = BattleIntroSlide1,
-    [BATTLE_ENVIRONMENT_LONG_GRASS] = BattleIntroSlide1,
-    [BATTLE_ENVIRONMENT_SAND]       = BattleIntroSlide2,
-    [BATTLE_ENVIRONMENT_UNDERWATER] = BattleIntroSlide2,
-    [BATTLE_ENVIRONMENT_WATER]      = BattleIntroSlide2,
-    [BATTLE_ENVIRONMENT_POND]       = BattleIntroSlide1,
-    [BATTLE_ENVIRONMENT_MOUNTAIN]   = BattleIntroSlide1,
-    [BATTLE_ENVIRONMENT_CAVE]       = BattleIntroSlide1,
-    [BATTLE_ENVIRONMENT_BUILDING]   = BattleIntroSlide3,
-    [BATTLE_ENVIRONMENT_PLAIN]      = BattleIntroSlide3,
+    [BATTLE_ENVIRONMENT_ARENA]              = BattleIntroSlide3,
+    [BATTLE_ENVIRONMENT_AUTUMN_FOREST]      = BattleIntroSlide1,
+    [BATTLE_ENVIRONMENT_BEACH]              = BattleIntroSlide2,
+    [BATTLE_ENVIRONMENT_BRIDGE]             = BattleIntroSlide3,
+    [BATTLE_ENVIRONMENT_CAVE]               = BattleIntroSlide1,
+    [BATTLE_ENVIRONMENT_CAVE_DARK]          = BattleIntroSlide1,
+    [BATTLE_ENVIRONMENT_CAVE_MAGMA]         = BattleIntroSlide1,
+    [BATTLE_ENVIRONMENT_CAVE_SNOW]          = BattleIntroSlide1,
+    [BATTLE_ENVIRONMENT_CITY]               = BattleIntroSlide3,
+    [BATTLE_ENVIRONMENT_CRAG]               = BattleIntroSlide1,
+    [BATTLE_ENVIRONMENT_DESERT]             = BattleIntroSlide2,
+    [BATTLE_ENVIRONMENT_GYM]                = BattleIntroSlide3,
+    [BATTLE_ENVIRONMENT_INDOOR]             = BattleIntroSlide3,
+    [BATTLE_ENVIRONMENT_LAB]                = BattleIntroSlide3,
+    [BATTLE_ENVIRONMENT_MOUNTAIN]           = BattleIntroSlide2,
+    [BATTLE_ENVIRONMENT_MOUNTAIN_SNOW]      = BattleIntroSlide2,
+    [BATTLE_ENVIRONMENT_ROCKY]              = BattleIntroSlide2,
+    [BATTLE_ENVIRONMENT_ROUTE]              = BattleIntroSlide1,
+    [BATTLE_ENVIRONMENT_SAFARI]             = BattleIntroSlide1,
+    [BATTLE_ENVIRONMENT_SEA]                = BattleIntroSlide2,
+    [BATTLE_ENVIRONMENT_SNOW]               = BattleIntroSlide1,
+    [BATTLE_ENVIRONMENT_SWAMP]              = BattleIntroSlide2,
+    [BATTLE_ENVIRONMENT_UNDERWATER]         = BattleIntroSlide2,
+    [BATTLE_ENVIRONMENT_VOLCANO]            = BattleIntroSlide2,
+    [BATTLE_ENVIRONMENT_MOOSE]              = BattleIntroSlide3,
+    [BATTLE_ENVIRONMENT_THOMAS]             = BattleIntroSlide3,
+    [BATTLE_ENVIRONMENT_TINKER]             = BattleIntroSlide3,
+    [BATTLE_ENVIRONMENT_TOBIAS]             = BattleIntroSlide3,
+    [BATTLE_ENVIRONMENT_GWEN]               = BattleIntroSlide3,
 };
 
 void SetAnimBgAttribute(u8 bgId, u8 attributeId, u8 value)
@@ -244,7 +263,7 @@ static void BattleIntroSlide1(u8 taskId)
         }
         else
         {
-            if (gTasks[taskId].tEnvironment == BATTLE_ENVIRONMENT_LONG_GRASS)
+            if (gTasks[taskId].tEnvironment == BATTLE_ENVIRONMENT_ROUTE)
             {
                 if (gBattle_BG1_Y != (u16)(-80))
                     gBattle_BG1_Y -= 2;
@@ -294,8 +313,8 @@ static void BattleIntroSlide2(u8 taskId)
 
     switch (gTasks[taskId].tEnvironment)
     {
-    case BATTLE_ENVIRONMENT_SAND:
-    case BATTLE_ENVIRONMENT_WATER:
+    case BATTLE_ENVIRONMENT_DESERT:
+    case BATTLE_ENVIRONMENT_SEA:
         gBattle_BG1_X += 8;
         break;
     case BATTLE_ENVIRONMENT_UNDERWATER:
@@ -303,7 +322,7 @@ static void BattleIntroSlide2(u8 taskId)
         break;
     }
 
-    if (gTasks[taskId].tEnvironment == BATTLE_ENVIRONMENT_WATER)
+    if (gTasks[taskId].tEnvironment == BATTLE_ENVIRONMENT_SEA)
     {
         gBattle_BG1_Y = Cos2(gTasks[taskId].data[6]) / 512 - 8;
         if (gTasks[taskId].data[6] < 180)

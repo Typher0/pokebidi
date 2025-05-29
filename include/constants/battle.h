@@ -482,31 +482,37 @@ enum MoveEffects
 #define MOVE_EFFECT_CONTINUE            0x8000
 
 // Battle environment defines for gBattleEnvironment.
-#define BATTLE_ENVIRONMENT_GRASS            0
-#define BATTLE_ENVIRONMENT_LONG_GRASS       1
-#define BATTLE_ENVIRONMENT_SAND             2
-#define BATTLE_ENVIRONMENT_UNDERWATER       3
-#define BATTLE_ENVIRONMENT_WATER            4
-#define BATTLE_ENVIRONMENT_POND             5
-#define BATTLE_ENVIRONMENT_MOUNTAIN         6
-#define BATTLE_ENVIRONMENT_CAVE             7
-#define BATTLE_ENVIRONMENT_BUILDING         8
-#define BATTLE_ENVIRONMENT_PLAIN            9
-// New battle environments are used for Secret Power but not fully implemented.
-#define BATTLE_ENVIRONMENT_SOARING          10
-#define BATTLE_ENVIRONMENT_SKY_PILLAR       11
-#define BATTLE_ENVIRONMENT_BURIAL_GROUND    12
-#define BATTLE_ENVIRONMENT_PUDDLE           13
-#define BATTLE_ENVIRONMENT_MARSH            14
-#define BATTLE_ENVIRONMENT_SWAMP            15
-#define BATTLE_ENVIRONMENT_SNOW             16
-#define BATTLE_ENVIRONMENT_ICE              17
-#define BATTLE_ENVIRONMENT_VOLCANO          18
-#define BATTLE_ENVIRONMENT_DISTORTION_WORLD 19
-#define BATTLE_ENVIRONMENT_SPACE            20
-#define BATTLE_ENVIRONMENT_ULTRA_SPACE      21
+#define BATTLE_ENVIRONMENT_ARENA            0
+#define BATTLE_ENVIRONMENT_AUTUMN_FOREST    1
+#define BATTLE_ENVIRONMENT_BEACH            2
+#define BATTLE_ENVIRONMENT_BRIDGE           3
+#define BATTLE_ENVIRONMENT_CAVE             4
+#define BATTLE_ENVIRONMENT_CAVE_DARK        5
+#define BATTLE_ENVIRONMENT_CAVE_MAGMA       6
+#define BATTLE_ENVIRONMENT_CAVE_SNOW        7
+#define BATTLE_ENVIRONMENT_CITY             8
+#define BATTLE_ENVIRONMENT_CRAG             9
+#define BATTLE_ENVIRONMENT_DESERT           10
+#define BATTLE_ENVIRONMENT_GYM              11
+#define BATTLE_ENVIRONMENT_INDOOR           12
+#define BATTLE_ENVIRONMENT_LAB              13
+#define BATTLE_ENVIRONMENT_MOUNTAIN         14
+#define BATTLE_ENVIRONMENT_MOUNTAIN_SNOW    15
+#define BATTLE_ENVIRONMENT_ROCKY            16
+#define BATTLE_ENVIRONMENT_ROUTE            17
+#define BATTLE_ENVIRONMENT_SAFARI           18
+#define BATTLE_ENVIRONMENT_SEA              19
+#define BATTLE_ENVIRONMENT_SNOW             20
+#define BATTLE_ENVIRONMENT_SWAMP            21
+#define BATTLE_ENVIRONMENT_UNDERWATER       22
+#define BATTLE_ENVIRONMENT_VOLCANO          23
+#define BATTLE_ENVIRONMENT_MOOSE            24
+#define BATTLE_ENVIRONMENT_THOMAS           25
+#define BATTLE_ENVIRONMENT_TINKER           26
+#define BATTLE_ENVIRONMENT_TOBIAS           27
+#define BATTLE_ENVIRONMENT_GWEN             28
 
-#define BATTLE_ENVIRONMENT_COUNT            22
+#define BATTLE_ENVIRONMENT_COUNT            29
 
 #define B_WAIT_TIME_LONG        (B_WAIT_TIME_MULTIPLIER * 4)
 #define B_WAIT_TIME_MED         (B_WAIT_TIME_MULTIPLIER * 3)

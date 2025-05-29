@@ -27509,43 +27509,35 @@ gBattleAnimMove_SecretPower::
 	jumpargeq 0, STATUS_FIELD_ELECTRIC_TERRAIN, gBattleAnimMove_ThunderShock
 	jumpargeq 0, STATUS_FIELD_PSYCHIC_TERRAIN,  gBattleAnimMove_Confusion
 	createvisualtask AnimTask_GetBattleEnvironment, 5
-	jumpargeq 0, BATTLE_ENVIRONMENT_GRASS,          gBattleAnimMove_NeedleArm
-	jumpargeq 0, BATTLE_ENVIRONMENT_LONG_GRASS,     gBattleAnimMove_MagicalLeaf
-	jumpargeq 0, BATTLE_ENVIRONMENT_SAND,           gBattleAnimMove_MudShot
-	jumpargeq 0, BATTLE_ENVIRONMENT_UNDERWATER,     gBattleAnimMove_Waterfall
-	jumpargeq 0, BATTLE_ENVIRONMENT_WATER,          gBattleAnimMove_Surf
-	jumpargeq 0, BATTLE_ENVIRONMENT_POND,           gBattleAnimMove_BubbleBeam
-	jumpargeq 0, BATTLE_ENVIRONMENT_MOUNTAIN,       gBattleAnimMove_RockThrow
-	jumpargeq 0, BATTLE_ENVIRONMENT_CAVE,           gBattleAnimMove_Bite
-	jumpargeq 0, BATTLE_ENVIRONMENT_BUILDING,       gBattleAnimMove_Strength
-	jumpargeq 0, BATTLE_ENVIRONMENT_SOARING,        gBattleAnimMove_Gust
-	jumpargeq 0, BATTLE_ENVIRONMENT_SKY_PILLAR,     gBattleAnimMove_Gust
-	jumpargeq 0, BATTLE_ENVIRONMENT_BURIAL_GROUND,  gBattleAnimMove_ShadowSneak
-	jumpargeq 0, BATTLE_ENVIRONMENT_PUDDLE,         gBattleAnimMove_MudShot
-	jumpargeq 0, BATTLE_ENVIRONMENT_MARSH,          gBattleAnimMove_MudShot
-	jumpargeq 0, BATTLE_ENVIRONMENT_SWAMP,          gBattleAnimMove_MudShot
-	jumpargeq 0, BATTLE_ENVIRONMENT_ICE,            gBattleAnimMove_IceShard
-	jumpargeq 0, BATTLE_ENVIRONMENT_VOLCANO,        gBattleAnimMove_Incinerate
-	jumpargeq 0, BATTLE_ENVIRONMENT_DISTORTION_WORLD, gBattleAnimMove_Pound
-	jumpargeq 0, BATTLE_ENVIRONMENT_SPACE,          gBattleAnimMove_Swift
-	jumpargeq 0, BATTLE_ENVIRONMENT_ULTRA_SPACE,    gBattleAnimMove_Psywave
-.if B_SECRET_POWER_ANIMATION >= GEN_7
+	jumpargeq 0, BATTLE_ENVIRONMENT_ARENA,          gBattleAnimMove_NeedleArm
+	jumpargeq 0, BATTLE_ENVIRONMENT_AUTUMN_FOREST,  gBattleAnimMove_MagicalLeaf
+	jumpargeq 0, BATTLE_ENVIRONMENT_BEACH,          gBattleAnimMove_MudShot
+	jumpargeq 0, BATTLE_ENVIRONMENT_BRIDGE,         gBattleAnimMove_Waterfall
+	jumpargeq 0, BATTLE_ENVIRONMENT_CAVE,           gBattleAnimMove_Surf
+	jumpargeq 0, BATTLE_ENVIRONMENT_CAVE_DARK,      gBattleAnimMove_BubbleBeam
+	jumpargeq 0, BATTLE_ENVIRONMENT_CAVE_MAGMA,     gBattleAnimMove_RockThrow
+	jumpargeq 0, BATTLE_ENVIRONMENT_CAVE_SNOW,      gBattleAnimMove_Bite
+	jumpargeq 0, BATTLE_ENVIRONMENT_CITY,           gBattleAnimMove_Strength
+	jumpargeq 0, BATTLE_ENVIRONMENT_CRAG,           gBattleAnimMove_Gust
+	jumpargeq 0, BATTLE_ENVIRONMENT_DESERT,         gBattleAnimMove_Gust
+	jumpargeq 0, BATTLE_ENVIRONMENT_GYM,            gBattleAnimMove_ShadowSneak
+	jumpargeq 0, BATTLE_ENVIRONMENT_INDOOR,         gBattleAnimMove_MudShot
+	jumpargeq 0, BATTLE_ENVIRONMENT_LAB,            gBattleAnimMove_MudShot
+	jumpargeq 0, BATTLE_ENVIRONMENT_MOUNTAIN,       gBattleAnimMove_MudShot
+	jumpargeq 0, BATTLE_ENVIRONMENT_MOUNTAIN_SNOW,  gBattleAnimMove_IceShard
+	jumpargeq 0, BATTLE_ENVIRONMENT_ROCKY,          gBattleAnimMove_Incinerate
+	jumpargeq 0, BATTLE_ENVIRONMENT_ROUTE,          gBattleAnimMove_Pound
+	jumpargeq 0, BATTLE_ENVIRONMENT_SAFARI,         gBattleAnimMove_Swift
+	jumpargeq 0, BATTLE_ENVIRONMENT_SEA,            gBattleAnimMove_Psywave
 	jumpargeq 0, BATTLE_ENVIRONMENT_SNOW,           gBattleAnimMove_IceShard
-	jumpargeq 0, BATTLE_ENVIRONMENT_BUILDING,       gBattleAnimMove_SpitUp
-	goto gBattleAnimMove_SpitUp
-.elseif B_SECRET_POWER_ANIMATION >= GEN_6
-	jumpargeq 0, BATTLE_ENVIRONMENT_SNOW,           gBattleAnimMove_Avalanche
-	jumpargeq 0, BATTLE_ENVIRONMENT_BUILDING,       gBattleAnimMove_BodySlam
-	goto gBattleAnimMove_BodySlam
-.elseif B_SECRET_POWER_ANIMATION >= GEN_4
-	jumpargeq 0, BATTLE_ENVIRONMENT_SNOW,           gBattleAnimMove_Avalanche
-	jumpargeq 0, BATTLE_ENVIRONMENT_BUILDING,       gBattleAnimMove_BodySlam
-	goto gBattleAnimMove_MudSlap
-.else
-	jumpargeq 0, BATTLE_ENVIRONMENT_SNOW,           gBattleAnimMove_Avalanche
-	jumpargeq 0, BATTLE_ENVIRONMENT_BUILDING,       gBattleAnimMove_Strength
-	goto gBattleAnimMove_Slam
-.endif
+	jumpargeq 0, BATTLE_ENVIRONMENT_SWAMP,          gBattleAnimMove_MudShot
+	jumpargeq 0, BATTLE_ENVIRONMENT_UNDERWATER,     gBattleAnimMove_Avalanche
+	jumpargeq 0, BATTLE_ENVIRONMENT_VOLCANO,        gBattleAnimMove_BodySlam
+	jumpargeq 0, BATTLE_ENVIRONMENT_MOOSE,          gBattleAnimMove_Avalanche
+	jumpargeq 0, BATTLE_ENVIRONMENT_THOMAS,         gBattleAnimMove_BodySlam
+	jumpargeq 0, BATTLE_ENVIRONMENT_TINKER,         gBattleAnimMove_Avalanche
+	jumpargeq 0, BATTLE_ENVIRONMENT_TOBIAS,         gBattleAnimMove_Strength
+    jumpargeq 0, BATTLE_ENVIRONMENT_GWEN,           gBattleAnimMove_Strength
 
 gBattleAnimMove_Twister::
 	loadspritegfx ANIM_TAG_LEAF
