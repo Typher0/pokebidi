@@ -872,7 +872,6 @@ void HandleAction_ActionFinished(void)
     }
 }
 
-
 // code
 
 ARM_FUNC NOINLINE static uq4_12_t PercentToUQ4_12(u32 percent)
