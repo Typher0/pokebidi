@@ -389,28 +389,60 @@ const u8 gBattleBackgroundTerrainNames[][26] =
 {
     [BATTLE_ENVIRONMENT_ARENA]            = _("NORMAL - ARENA           "),
     [BATTLE_ENVIRONMENT_AUTUMN_FOREST]    = _("NORMAL - AUTUMN FOREST   "),
+    [BATTLE_ENVIRONMENT_AUTUMN_FOREST_E]  = _("NORMAL - AUTUMN FOREST E "),
+    [BATTLE_ENVIRONMENT_AUTUMN_FOREST_N]  = _("NORMAL - AUTUMN FOREST N "),
     [BATTLE_ENVIRONMENT_BEACH]            = _("NORMAL - BEACH           "),
+    [BATTLE_ENVIRONMENT_BEACH_E]          = _("NORMAL - BEACH E         "),
+    [BATTLE_ENVIRONMENT_BEACH_N]          = _("NORMAL - BEACH N         "),
     [BATTLE_ENVIRONMENT_BRIDGE]           = _("NORMAL - BRIDGE          "),
+    [BATTLE_ENVIRONMENT_BRIDGE_E]         = _("NORMAL - BRIDGE E        "),
+    [BATTLE_ENVIRONMENT_BRIDGE_N]         = _("NORMAL - BRIDGE N        "),
     [BATTLE_ENVIRONMENT_CAVE]             = _("NORMAL - CAVE            "),
     [BATTLE_ENVIRONMENT_CAVE_DARK]        = _("NORMAL - CAVE DARK       "),
     [BATTLE_ENVIRONMENT_CAVE_MAGMA]       = _("NORMAL - CAVE MAGMA      "),
     [BATTLE_ENVIRONMENT_CAVE_SNOW]        = _("NORMAL - CAVE SNOW       "),
     [BATTLE_ENVIRONMENT_CITY]             = _("NORMAL - CITY            "),
+    [BATTLE_ENVIRONMENT_CITY_E]           = _("NORMAL - CITY E          "),
+    [BATTLE_ENVIRONMENT_CITY_N]           = _("NORMAL - CITY N          "),
     [BATTLE_ENVIRONMENT_CRAG]             = _("NORMAL - CRAG            "),
+    [BATTLE_ENVIRONMENT_CRAG_E]           = _("NORMAL - CRAG E          "),
+    [BATTLE_ENVIRONMENT_CRAG_N]           = _("NORMAL - CRAG N          "),
     [BATTLE_ENVIRONMENT_DESERT]           = _("NORMAL - DESERT          "),
+    [BATTLE_ENVIRONMENT_DESERT_E]         = _("NORMAL - DESERT E        "),
+    [BATTLE_ENVIRONMENT_DESERT_N]         = _("NORMAL - DESERT N        "),
     [BATTLE_ENVIRONMENT_GYM]              = _("NORMAL - GYM             "),
     [BATTLE_ENVIRONMENT_INDOOR]           = _("NORMAL - INDOOR          "),
     [BATTLE_ENVIRONMENT_LAB]              = _("NORMAL - LAB             "),
     [BATTLE_ENVIRONMENT_MOUNTAIN]         = _("NORMAL - MOUNTAIN        "),
+    [BATTLE_ENVIRONMENT_MOUNTAIN_E]       = _("NORMAL - MOUNTAIN E      "),
+    [BATTLE_ENVIRONMENT_MOUNTAIN_N]       = _("NORMAL - MOUNTAIN N      "),
     [BATTLE_ENVIRONMENT_MOUNTAIN_SNOW]    = _("NORMAL - MOUNTAIN SNOW   "),
+    [BATTLE_ENVIRONMENT_MOUNTAIN_SNOW_E]  = _("NORMAL - MOUNTAIN SNOW E "),
+    [BATTLE_ENVIRONMENT_MOUNTAIN_SNOW_N]  = _("NORMAL - MOUNTAIN SNOW N "),
     [BATTLE_ENVIRONMENT_ROCKY]            = _("NORMAL - ROCKY           "),
+    [BATTLE_ENVIRONMENT_ROCKY_E]          = _("NORMAL - ROCKY E         "),
+    [BATTLE_ENVIRONMENT_ROCKY_N]          = _("NORMAL - ROCKY N         "),
     [BATTLE_ENVIRONMENT_ROUTE]            = _("NORMAL - ROUTE           "),
+    [BATTLE_ENVIRONMENT_ROUTE_E]          = _("NORMAL - ROUTE E         "),
+    [BATTLE_ENVIRONMENT_ROUTE_N]          = _("NORMAL - ROUTE N         "),
     [BATTLE_ENVIRONMENT_SAFARI]           = _("NORMAL - SAFARI          "),
+    [BATTLE_ENVIRONMENT_SAFARI_E]         = _("NORMAL - SAFARI E        "),
+    [BATTLE_ENVIRONMENT_SAFARI_N]         = _("NORMAL - SAFARI N        "),
     [BATTLE_ENVIRONMENT_SEA]              = _("NORMAL - SEA             "),
+    [BATTLE_ENVIRONMENT_SEA_E]            = _("NORMAL - SEA E           "),
+    [BATTLE_ENVIRONMENT_SEA_N]            = _("NORMAL - SEA N           "),
     [BATTLE_ENVIRONMENT_SNOW]             = _("NORMAL - SNOW            "),
+    [BATTLE_ENVIRONMENT_SNOW_E]           = _("NORMAL - SNOW E          "),
+    [BATTLE_ENVIRONMENT_SNOW_N]           = _("NORMAL - SNOW N          "),
     [BATTLE_ENVIRONMENT_SWAMP]            = _("NORMAL - SWAMP           "),
+    [BATTLE_ENVIRONMENT_SWAMP_E]          = _("NORMAL - SWAMP E         "),
+    [BATTLE_ENVIRONMENT_SWAMP_N]          = _("NORMAL - SWAMP N         "),
     [BATTLE_ENVIRONMENT_UNDERWATER]       = _("NORMAL - UNDERWATER      "),
+    [BATTLE_ENVIRONMENT_UNDERWATER_E]     = _("NORMAL - UNDERWATER E    "),
+    [BATTLE_ENVIRONMENT_UNDERWATER_N]     = _("NORMAL - UNDERWATER N    "),
     [BATTLE_ENVIRONMENT_VOLCANO]          = _("NORMAL - VOLCANO         "),
+    [BATTLE_ENVIRONMENT_VOLCANO_E]        = _("NORMAL - VOLCANO E       "),
+    [BATTLE_ENVIRONMENT_VOLCANO_N]        = _("NORMAL - VOLCANO N       "),
     [BATTLE_ENVIRONMENT_MOOSE]            = _("NORMAL - MOOSE           "),
     [BATTLE_ENVIRONMENT_THOMAS]           = _("NORMAL - THOMAS          "),
     [BATTLE_ENVIRONMENT_TINKER]           = _("NORMAL - TINKER          "),
@@ -958,14 +990,14 @@ static void LoadBattleBg(u8 battleBgType, u8 battleEnvironment)
         LoadCompressedPalette(gBattleEnvironmentPalette_Gym, 0x20, 0x60);
         break;
     case MAP_BATTLE_SCENE_MAGMA:
-        LZDecompressVram(gBattleEnvironmentTiles_Arena, (void*)(BG_CHAR_ADDR(2)));
-        LZDecompressVram(gBattleEnvironmentTilemap_Arena, (void*)(BG_SCREEN_ADDR(26)));
-        LoadCompressedPalette(gBattleEnvironmentPalette_Arena, 0x20, 0x60);
+        LZDecompressVram(gBattleEnvironmentTiles_Indoor, (void*)(BG_CHAR_ADDR(2)));
+        LZDecompressVram(gBattleEnvironmentTilemap_Indoor, (void*)(BG_SCREEN_ADDR(26)));
+        LoadCompressedPalette(gBattleEnvironmentPalette_Indoor, 0x20, 0x60);
         break;
     case MAP_BATTLE_SCENE_AQUA:
-        LZDecompressVram(gBattleEnvironmentTiles_Arena, (void*)(BG_CHAR_ADDR(2)));
-        LZDecompressVram(gBattleEnvironmentTilemap_Arena, (void*)(BG_SCREEN_ADDR(26)));
-        LoadCompressedPalette(gBattleEnvironmentPalette_Arena, 0x20, 0x60);
+        LZDecompressVram(gBattleEnvironmentTiles_Indoor, (void*)(BG_CHAR_ADDR(2)));
+        LZDecompressVram(gBattleEnvironmentTilemap_Indoor, (void*)(BG_SCREEN_ADDR(26)));
+        LoadCompressedPalette(gBattleEnvironmentPalette_Indoor, 0x20, 0x60);
         break;
     case MAP_BATTLE_SCENE_SIDNEY:
         LZDecompressVram(gBattleEnvironmentTiles_Moose, (void*)(BG_CHAR_ADDR(2)));
@@ -988,9 +1020,9 @@ static void LoadBattleBg(u8 battleBgType, u8 battleEnvironment)
         LoadCompressedPalette(gBattleEnvironmentPalette_Tobias, 0x20, 0x60);
         break;
     case MAP_BATTLE_SCENE_FRONTIER:
-        LZDecompressVram(gBattleEnvironmentTiles_Arena, (void*)(BG_CHAR_ADDR(2)));
-        LZDecompressVram(gBattleEnvironmentTilemap_Arena, (void*)(BG_SCREEN_ADDR(26)));
-        LoadCompressedPalette(gBattleEnvironmentPalette_Arena, 0x20, 0x60);
+        LZDecompressVram(gBattleEnvironmentTiles_Indoor, (void*)(BG_CHAR_ADDR(2)));
+        LZDecompressVram(gBattleEnvironmentTilemap_Indoor, (void*)(BG_SCREEN_ADDR(26)));
+        LoadCompressedPalette(gBattleEnvironmentPalette_Indoor, 0x20, 0x60);
         break;
     case MAP_BATTLE_SCENE_LEADER:
         LZDecompressVram(gBattleEnvironmentTiles_Gym, (void*)(BG_CHAR_ADDR(2)));

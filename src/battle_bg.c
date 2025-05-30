@@ -626,11 +626,39 @@ const struct BattleBackground sBattleEnvironmentTable[] =
         .palette = gBattleEnvironmentPalette_AutumnForest,
     },
     
+    [BATTLE_ENVIRONMENT_AUTUMN_FOREST_E] =
+    {
+        .tileset = gBattleEnvironmentTiles_AutumnForestE,
+        .tilemap = gBattleEnvironmentTilemap_AutumnForestE,
+        .palette = gBattleEnvironmentPalette_AutumnForestE,
+    },
+    
+    [BATTLE_ENVIRONMENT_AUTUMN_FOREST_N] =
+    {
+        .tileset = gBattleEnvironmentTiles_AutumnForestN,
+        .tilemap = gBattleEnvironmentTilemap_AutumnForestN,
+        .palette = gBattleEnvironmentPalette_AutumnForestN,
+    },
+    
     [BATTLE_ENVIRONMENT_BEACH] =
     {
         .tileset = gBattleEnvironmentTiles_Beach,
         .tilemap = gBattleEnvironmentTilemap_Beach,
         .palette = gBattleEnvironmentPalette_Beach,
+    },
+    
+    [BATTLE_ENVIRONMENT_BEACH_E] =
+    {
+        .tileset = gBattleEnvironmentTiles_BeachE,
+        .tilemap = gBattleEnvironmentTilemap_BeachE,
+        .palette = gBattleEnvironmentPalette_BeachE,
+    },
+    
+    [BATTLE_ENVIRONMENT_BEACH_N] =
+    {
+        .tileset = gBattleEnvironmentTiles_BeachN,
+        .tilemap = gBattleEnvironmentTilemap_BeachN,
+        .palette = gBattleEnvironmentPalette_BeachN,
     },
 
     [BATTLE_ENVIRONMENT_BRIDGE] =
@@ -638,6 +666,20 @@ const struct BattleBackground sBattleEnvironmentTable[] =
         .tileset = gBattleEnvironmentTiles_Bridge,
         .tilemap = gBattleEnvironmentTilemap_Bridge,
         .palette = gBattleEnvironmentPalette_Bridge,
+    },
+    
+    [BATTLE_ENVIRONMENT_BRIDGE_E] =
+    {
+        .tileset = gBattleEnvironmentTiles_BridgeE,
+        .tilemap = gBattleEnvironmentTilemap_BridgeE,
+        .palette = gBattleEnvironmentPalette_BridgeE,
+    },
+    
+    [BATTLE_ENVIRONMENT_BRIDGE_N] =
+    {
+        .tileset = gBattleEnvironmentTiles_BridgeN,
+        .tilemap = gBattleEnvironmentTilemap_BridgeN,
+        .palette = gBattleEnvironmentPalette_BridgeN,
     },
 
     [BATTLE_ENVIRONMENT_CAVE] =
@@ -674,6 +716,20 @@ const struct BattleBackground sBattleEnvironmentTable[] =
         .tilemap = gBattleEnvironmentTilemap_City,
         .palette = gBattleEnvironmentPalette_City,
     },
+    
+    [BATTLE_ENVIRONMENT_CITY_E] =
+    {
+        .tileset = gBattleEnvironmentTiles_CityE,
+        .tilemap = gBattleEnvironmentTilemap_CityE,
+        .palette = gBattleEnvironmentPalette_CityE,
+    },
+    
+    [BATTLE_ENVIRONMENT_CITY_N] =
+    {
+        .tileset = gBattleEnvironmentTiles_CityN,
+        .tilemap = gBattleEnvironmentTilemap_CityN,
+        .palette = gBattleEnvironmentPalette_CityN,
+    },
 
     [BATTLE_ENVIRONMENT_CRAG] =
     {
@@ -681,12 +737,40 @@ const struct BattleBackground sBattleEnvironmentTable[] =
         .tilemap = gBattleEnvironmentTilemap_Crag,
         .palette = gBattleEnvironmentPalette_Crag,
     },
+    
+    [BATTLE_ENVIRONMENT_CRAG_E] =
+    {
+        .tileset = gBattleEnvironmentTiles_CragE,
+        .tilemap = gBattleEnvironmentTilemap_CragE,
+        .palette = gBattleEnvironmentPalette_CragE,
+    },
+    
+    [BATTLE_ENVIRONMENT_CRAG_N] =
+    {
+        .tileset = gBattleEnvironmentTiles_CragN,
+        .tilemap = gBattleEnvironmentTilemap_CragN,
+        .palette = gBattleEnvironmentPalette_CragN,
+    },
 
     [BATTLE_ENVIRONMENT_DESERT] =
     {
         .tileset = gBattleEnvironmentTiles_Desert,
         .tilemap = gBattleEnvironmentTilemap_Desert,
         .palette = gBattleEnvironmentPalette_Desert,
+    },
+    
+    [BATTLE_ENVIRONMENT_DESERT_E] =
+    {
+        .tileset = gBattleEnvironmentTiles_DesertE,
+        .tilemap = gBattleEnvironmentTilemap_DesertE,
+        .palette = gBattleEnvironmentPalette_DesertE,
+    },
+    
+    [BATTLE_ENVIRONMENT_DESERT_N] =
+    {
+        .tileset = gBattleEnvironmentTiles_DesertN,
+        .tilemap = gBattleEnvironmentTilemap_DesertN,
+        .palette = gBattleEnvironmentPalette_DesertN,
     },
 
     [BATTLE_ENVIRONMENT_GYM] =
@@ -716,12 +800,40 @@ const struct BattleBackground sBattleEnvironmentTable[] =
         .tilemap = gBattleEnvironmentTilemap_Mountain,
         .palette = gBattleEnvironmentPalette_Mountain,
     },
+    
+    [BATTLE_ENVIRONMENT_MOUNTAIN_E] =
+    {
+        .tileset = gBattleEnvironmentTiles_MountainE,
+        .tilemap = gBattleEnvironmentTilemap_MountainE,
+        .palette = gBattleEnvironmentPalette_MountainE,
+    },
+    
+    [BATTLE_ENVIRONMENT_MOUNTAIN_N] =
+    {
+        .tileset = gBattleEnvironmentTiles_MountainN,
+        .tilemap = gBattleEnvironmentTilemap_MountainN,
+        .palette = gBattleEnvironmentPalette_MountainN,
+    },
 
     [BATTLE_ENVIRONMENT_MOUNTAIN_SNOW] =
     {
         .tileset = gBattleEnvironmentTiles_MountainSnow,
         .tilemap = gBattleEnvironmentTilemap_MountainSnow,
         .palette = gBattleEnvironmentPalette_MountainSnow,
+    },
+    
+    [BATTLE_ENVIRONMENT_MOUNTAIN_SNOW_E] =
+    {
+        .tileset = gBattleEnvironmentTiles_MountainSnowE,
+        .tilemap = gBattleEnvironmentTilemap_MountainSnowE,
+        .palette = gBattleEnvironmentPalette_MountainSnowE,
+    },
+    
+    [BATTLE_ENVIRONMENT_MOUNTAIN_SNOW_N] =
+    {
+        .tileset = gBattleEnvironmentTiles_MountainSnowN,
+        .tilemap = gBattleEnvironmentTilemap_MountainSnowN,
+        .palette = gBattleEnvironmentPalette_MountainSnowN,
     },
 
     [BATTLE_ENVIRONMENT_ROCKY] =
@@ -730,12 +842,40 @@ const struct BattleBackground sBattleEnvironmentTable[] =
         .tilemap = gBattleEnvironmentTilemap_Rocky,
         .palette = gBattleEnvironmentPalette_Rocky,
     },
+    
+    [BATTLE_ENVIRONMENT_ROCKY_E] =
+    {
+        .tileset = gBattleEnvironmentTiles_RockyE,
+        .tilemap = gBattleEnvironmentTilemap_RockyE,
+        .palette = gBattleEnvironmentPalette_RockyE,
+    },
+    
+    [BATTLE_ENVIRONMENT_ROCKY_N] =
+    {
+        .tileset = gBattleEnvironmentTiles_RockyN,
+        .tilemap = gBattleEnvironmentTilemap_RockyN,
+        .palette = gBattleEnvironmentPalette_RockyN,
+    },
 
     [BATTLE_ENVIRONMENT_ROUTE] =
     {
         .tileset = gBattleEnvironmentTiles_Route,
         .tilemap = gBattleEnvironmentTilemap_Route,
         .palette = gBattleEnvironmentPalette_Route,
+    },
+    
+    [BATTLE_ENVIRONMENT_ROUTE_E] =
+    {
+        .tileset = gBattleEnvironmentTiles_RouteE,
+        .tilemap = gBattleEnvironmentTilemap_RouteE,
+        .palette = gBattleEnvironmentPalette_RouteE,
+    },
+    
+    [BATTLE_ENVIRONMENT_ROUTE_N] =
+    {
+        .tileset = gBattleEnvironmentTiles_RouteN,
+        .tilemap = gBattleEnvironmentTilemap_RouteN,
+        .palette = gBattleEnvironmentPalette_RouteN,
     },
 
     [BATTLE_ENVIRONMENT_SAFARI] =
@@ -744,12 +884,40 @@ const struct BattleBackground sBattleEnvironmentTable[] =
         .tilemap = gBattleEnvironmentTilemap_Safari,
         .palette = gBattleEnvironmentPalette_Safari,
     },
+    
+    [BATTLE_ENVIRONMENT_SAFARI_E] =
+    {
+        .tileset = gBattleEnvironmentTiles_SafariE,
+        .tilemap = gBattleEnvironmentTilemap_SafariE,
+        .palette = gBattleEnvironmentPalette_SafariE,
+    },
+    
+    [BATTLE_ENVIRONMENT_SAFARI_N] =
+    {
+        .tileset = gBattleEnvironmentTiles_SafariN,
+        .tilemap = gBattleEnvironmentTilemap_SafariN,
+        .palette = gBattleEnvironmentPalette_SafariN,
+    },
 
     [BATTLE_ENVIRONMENT_SEA] =
     {
         .tileset = gBattleEnvironmentTiles_Sea,
         .tilemap = gBattleEnvironmentTilemap_Sea,
         .palette = gBattleEnvironmentPalette_Sea,
+    },
+    
+    [BATTLE_ENVIRONMENT_SEA_E] =
+    {
+        .tileset = gBattleEnvironmentTiles_SeaE,
+        .tilemap = gBattleEnvironmentTilemap_SeaE,
+        .palette = gBattleEnvironmentPalette_SeaE,
+    },
+    
+    [BATTLE_ENVIRONMENT_SEA_N] =
+    {
+        .tileset = gBattleEnvironmentTiles_SeaN,
+        .tilemap = gBattleEnvironmentTilemap_SeaN,
+        .palette = gBattleEnvironmentPalette_SeaN,
     },
 
     [BATTLE_ENVIRONMENT_SNOW] =
@@ -758,12 +926,40 @@ const struct BattleBackground sBattleEnvironmentTable[] =
         .tilemap = gBattleEnvironmentTilemap_Snow,
         .palette = gBattleEnvironmentPalette_Snow,
     },
-
+    
+    [BATTLE_ENVIRONMENT_SNOW_E] =
+    {
+        .tileset = gBattleEnvironmentTiles_SnowE,
+        .tilemap = gBattleEnvironmentTilemap_SnowE,
+        .palette = gBattleEnvironmentPalette_SnowE,
+    },
+    
+    [BATTLE_ENVIRONMENT_SNOW_N] =
+    {
+        .tileset = gBattleEnvironmentTiles_SnowN,
+        .tilemap = gBattleEnvironmentTilemap_SnowN,
+        .palette = gBattleEnvironmentPalette_SnowN,
+    },
+    
     [BATTLE_ENVIRONMENT_SWAMP] =
     {
         .tileset = gBattleEnvironmentTiles_Swamp,
         .tilemap = gBattleEnvironmentTilemap_Swamp,
         .palette = gBattleEnvironmentPalette_Swamp,
+    },
+    
+    [BATTLE_ENVIRONMENT_SWAMP_E] =
+    {
+        .tileset = gBattleEnvironmentTiles_SwampE,
+        .tilemap = gBattleEnvironmentTilemap_SwampE,
+        .palette = gBattleEnvironmentPalette_SwampE,
+    },
+    
+    [BATTLE_ENVIRONMENT_SWAMP_N] =
+    {
+        .tileset = gBattleEnvironmentTiles_SwampN,
+        .tilemap = gBattleEnvironmentTilemap_SwampN,
+        .palette = gBattleEnvironmentPalette_SwampN,
     },
 
     [BATTLE_ENVIRONMENT_UNDERWATER] =
@@ -772,12 +968,40 @@ const struct BattleBackground sBattleEnvironmentTable[] =
         .tilemap = gBattleEnvironmentTilemap_Underwater,
         .palette = gBattleEnvironmentPalette_Underwater,
     },
-
+    
+    [BATTLE_ENVIRONMENT_UNDERWATER_E] =
+    {
+        .tileset = gBattleEnvironmentTiles_UnderwaterE,
+        .tilemap = gBattleEnvironmentTilemap_UnderwaterE,
+        .palette = gBattleEnvironmentPalette_UnderwaterE,
+    },
+    
+    [BATTLE_ENVIRONMENT_UNDERWATER_N] =
+    {
+        .tileset = gBattleEnvironmentTiles_UnderwaterN,
+        .tilemap = gBattleEnvironmentTilemap_UnderwaterN,
+        .palette = gBattleEnvironmentPalette_UnderwaterN,
+    },
+    
     [BATTLE_ENVIRONMENT_VOLCANO] =
     {
         .tileset = gBattleEnvironmentTiles_Volcano,
         .tilemap = gBattleEnvironmentTilemap_Volcano,
         .palette = gBattleEnvironmentPalette_Volcano,
+    },
+    
+    [BATTLE_ENVIRONMENT_VOLCANO_E] =
+    {
+        .tileset = gBattleEnvironmentTiles_VolcanoE,
+        .tilemap = gBattleEnvironmentTilemap_VolcanoE,
+        .palette = gBattleEnvironmentPalette_VolcanoE,
+    },
+    
+    [BATTLE_ENVIRONMENT_VOLCANO_N] =
+    {
+        .tileset = gBattleEnvironmentTiles_VolcanoN,
+        .tilemap = gBattleEnvironmentTilemap_VolcanoN,
+        .palette = gBattleEnvironmentPalette_VolcanoN,
     },
 
     [BATTLE_ENVIRONMENT_MOOSE] =
