@@ -26,12 +26,17 @@ const u8 gNotDoneYetDescription[] = _(
 static const u8 sNullDescription[] = _("");
 
 static const u8 sMegaDrainDescription[] = _(
-    "An attack that absorbs\n"
-    "half the damage inflicted.");
+    "Powerful, but leaves the\n"
+    "user immobile the next turn.");
 
 static const u8 sHyperBeamDescription[] = _(
-    "Powerful, but can't be\n"
-    "used in the next turn.");
+    "Powerful, but leaves the\n"
+    "user immobile the next turn.");
+#else
+static const u8 sHyperBeamDescription[] = _(
+    "Leaves the user immobile\n"
+    "if target is not KO'd.");
+#endif
 
 static const u8 sRevengeDescription[] = _(
     "An attack that gains power\n"
@@ -435,9 +440,9 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Razor Wind"),
         .description = COMPOUND_STRING(
-            "A powerful slice of wind\n"
-            "with a high-crit ratio."),
-        .effect = EFFECT_HIT,
+            "A 2-turn move with a high\n"
+            "critical-hit ratio."),
+        .effect = EFFECT_TWO_TURNS_ATTACK,
         .power = 80,
         .type = TYPE_FLYING,
         .accuracy = 100,
@@ -1032,8 +1037,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .effect = EFFECT_HIT,
         .power = 90,
         .type = TYPE_NORMAL,
-        .accuracy = 90,
-        .recoil = 25,
+        .accuracy = 85,
         .pp = 20,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
@@ -1622,8 +1626,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         #else
             "storm that may freeze it."),
         #endif
-        .effect = B_BLIZZARD_HAIL >= GEN_4 ? EFFECT_BLIZZARD : EFFECT_HIT,
-        .power = 120,
+        .effect = EFFECT_HIT,
+        .power = B_UPDATED_MOVE_DATA >= GEN_6 ? 110 : 120,
         .type = TYPE_ICE,
         .accuracy = 70,
         .pp = 5,
@@ -2323,8 +2327,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .description = COMPOUND_STRING(
             "A lightning attack that may\n"
             "cause paralysis."),
-        .effect = EFFECT_THUNDER,
-        .power = 120,
+        .effect = EFFECT_HIT,
+        .power = B_UPDATED_MOVE_DATA >= GEN_6 ? 110 : 120,
         .type = TYPE_ELECTRIC,
         .accuracy = 70,
         .pp = 10,
@@ -13453,12 +13457,11 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .description = COMPOUND_STRING(
             "An electrical tackle that\n"
             "also hurts the user."),
-        .effect = EFFECT_HIT,
-        .power = 120,
+        .effect = EFFECT_RECOIL,
+        .power = 90,
         .type = TYPE_ELECTRIC,
         .accuracy = 100,
-        .recoil = 33,
-        .pp = 10,
+        .pp = 15,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
