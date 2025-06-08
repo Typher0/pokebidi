@@ -4239,6 +4239,10 @@
       {
         "Level": 1,
         "Move": "MOVE_HIDDEN_POWER"
+      },
+      {
+        "Level": 60,
+        "Move": "MOVE_ESOTERIC_DESTRUCTION"
       }
     ],
     "PreEvoMoves": [],
