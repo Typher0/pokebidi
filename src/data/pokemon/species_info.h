@@ -959,7 +959,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         FOOTPRINT(Cascotta)
         .levelUpLearnset = sCascottaLevelUpLearnset,
         .teachableLearnset = sCascottaTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL_RAIN, 34, SPECIES_LUTRAJET}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 34, SPECIES_LUTRAJET, CONDITIONS({IF_WEATHER, WEATHER_RAIN})}),
 },
 
     [SPECIES_LUTRAJET] =
@@ -3896,7 +3896,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .levelUpLearnset = sRelladuneLevelUpLearnset,
         .teachableLearnset = sRelladuneTeachableLearnset,
         .eggMoveLearnset = sRelladuneEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_MOVE, MOVE_HEAD_SMASH, SPECIES_CAMORELLA}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 0, SPECIES_CAMORELLA, CONDITIONS({IF_KNOWS_MOVE, MOVE_HEAD_SMASH})}),
     },
 
     [SPECIES_CAMORELLA] =
@@ -4513,7 +4513,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         FOOTPRINT(Pressaur)
         .levelUpLearnset = sPressaurLevelUpLearnset,
         .teachableLearnset = sPressaurTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_MAPSEC, MAPSEC_MT_CHIMNEY, SPECIES_DIAMAW}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 0, SPECIES_DIAMAW, CONDITIONS({IF_IN_MAPSEC, MAPSEC_MT_PYRE})}),     
     },
 
     [SPECIES_DIAMAW] =
@@ -5234,8 +5234,8 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .levelUpLearnset = sPhlaskLevelUpLearnset,
         .teachableLearnset = sPhlaskTeachableLearnset,
         .eggMoveLearnset = sPhlaskEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL_MALE, 28, SPECIES_NOXIGHAST},
-                                {EVO_LEVEL_FEMALE, 28, SPECIES_NOXIGHAST_FEMALE}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 28, SPECIES_NOXIGHAST, CONDITIONS({IF_GENDER, MON_MALE})},
+                                {EVO_LEVEL, 28, SPECIES_NOXIGHAST, CONDITIONS({IF_GENDER, MON_MALE})}),
     },
 
     [SPECIES_NOXIGHAST] = // EVOLVE AT LEVEL 28
@@ -5640,7 +5640,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         FOOTPRINT(Maskreep)
         .levelUpLearnset = sMaskreepLevelUpLearnset,
         .teachableLearnset = sMaskreepTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_MOVE, MOVE_PARTING_SHOT, SPECIES_PHANTIKI}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 0, SPECIES_PHANTIKI, CONDITIONS({IF_KNOWS_MOVE, MOVE_PARTING_SHOT})}),
     },
 
     [SPECIES_PHANTIKI] = // EVOLVE AFTER LEARNING PARTING SHOT AT LEVEL 36
@@ -6711,7 +6711,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .levelUpLearnset = sTanukoonLevelUpLearnset,
         .teachableLearnset = sTanukoonTeachableLearnset,
         .eggMoveLearnset = sTanukoonTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_FRIENDSHIP_NIGHT, 0, SPECIES_LEUKOON}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 0, SPECIES_LEUKOON, CONDITIONS({IF_MIN_FRIENDSHIP, FRIENDSHIP_EVO_THRESHOLD}, {IF_TIME, TIME_NIGHT})}),
     },
 
     [SPECIES_LEUKOON] =

@@ -89888,7 +89888,7 @@
     ]
   },
   
-  "LYNXKEW": {
+  "LYNXSKEW": {
     "LevelMoves": [
       {
         "Level": 0,
@@ -90061,7 +90061,7 @@
         "MOVE_SUPER_FANG",
         "MOVE_SWIFT",
         "MOVE_TWISTED_HASTE",
-        "MOVE_ZEN_HEADBUTT",
+        "MOVE_ZEN_HEADBUTT"
     ]
   },
   
@@ -90200,7 +90200,7 @@
         "MOVE_TRICK",
         "MOVE_TWISTED_HASTE",
         "MOVE_UPROAR",
-        "MOVE_ZEN_HEADBUTT",
+        "MOVE_ZEN_HEADBUTT"
     ]
   },
   
@@ -90883,7 +90883,7 @@
       {
         "Level": 50,
         "Move": "MOVE_CRUNCH"
-      }
+      },
       {
         "Level": 54,
         "Move": "MOVE_HYDRO_PUMP"
@@ -92341,7 +92341,7 @@
         "MOVE_SWIFT",
         "MOVE_TERRAIN_PULSE",
         "MOVE_UPROAR",
-        "MOVE_WONDER_ROOM",
+        "MOVE_WONDER_ROOM"
     ]
   },
 
@@ -100300,7 +100300,7 @@
         "MOVE_STOMPING_TANTRUM",
         "MOVE_SWIFT",
         "MOVE_UPROAR",
-        "MOVE_ZEN_HEADBUTT",
+        "MOVE_ZEN_HEADBUTT"
     ]
   },
 

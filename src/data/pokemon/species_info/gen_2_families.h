@@ -1018,7 +1018,8 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         )
         .levelUpLearnset = sNoctowlLevelUpLearnset,
         .teachableLearnset = sNoctowlTeachableLearnset,
-    	.evolutions = EVOLUTION({EVO_ITEM_NIGHT, ITEM_DUSK_STONE, SPECIES_DOCTOWL}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 0, SPECIES_DOCTOWL, CONDITIONS({IF_TIME, TIME_NIGHT}, {IF_HOLD_ITEM, ITEM_DUSK_STONE})},
+                                {EVO_ITEM, ITEM_DUSK_STONE, SPECIES_DOCTOWL, CONDITIONS({IF_TIME, TIME_NIGHT})}),
     },
 
     [SPECIES_DOCTOWL] =
@@ -4020,7 +4021,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .teachableLearnset = sUnownTeachableLearnset,                                                   \
         .tmIlliterate = TRUE,                                                                           \
         .formSpeciesIdTable = sUnownFormSpeciesIdTable,                                                 \
-        .evolutions = EVOLUTION({EVO_MAPSEC, MAPSEC_MT_PYRE, SPECIES_ESOTEROWN})                         \
+        .evolutions = EVOLUTION({EVO_LEVEL, 0, SPECIES_ESOTEROWN, CONDITIONS({IF_IN_MAPSEC, MAPSEC_MT_PYRE})}),                    \
     }
 
     [SPECIES_UNOWN]             = UNOWN_MISC_INFO(A,           FALSE, 24, 40, 24, 48,  8 ),
@@ -5162,7 +5163,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .teachableLearnset = sQwilfishTeachableLearnset,
         .eggMoveLearnset = sQwilfishEggMoveLearnset,
         .formSpeciesIdTable = sQwilfishFormSpeciesIdTable,
-        .evolutions = EVOLUTION({EVO_MOVE, MOVE_BARB_BARRAGE, SPECIES_OVERQWIL}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 0, SPECIES_OVERQWIL, CONDITIONS({IF_KNOWS_MOVE, MOVE_BARB_BARRAGE})}),
     },
 
 #if P_HISUIAN_FORMS

@@ -21145,11 +21145,14 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .power = 100,
         .type = TYPE_NORMAL,
         .accuracy = 0,
-        .recoil = 33,
         .pp = 10,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_RECOIL_HP_25,
+            .self = TRUE,
+        }),
         .argument = { .holdEffect = HOLD_EFFECT_PLATE },
         .ignoresTargetDefenseEvasionStages = TRUE,
         .contestEffect = CONTEST_EFFECT_SCRAMBLE_NEXT_TURN_ORDER,
@@ -21345,6 +21348,10 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         {
             .moveEffect = MOVE_EFFECT_FLINCH,
             .chance = 30,
+        },
+        {
+            .moveEffect = MOVE_EFFECT_RECOIL_HP_25,
+            .self = TRUE,
         }),
         .contestEffect = CONTEST_EFFECT_STARTLE_PREV_MON,
         .contestCategory = CONTEST_CATEGORY_SMART,
@@ -21774,6 +21781,10 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_BURN,
             .chance = 10,
+        },
+        {
+            .moveEffect = MOVE_EFFECT_RECOIL_HP_25,
+            .self = TRUE,
         }),
         .contestEffect = CONTEST_EFFECT_HIGHLY_APPEALING,
         .contestCategory = CONTEST_CATEGORY_TOUGH,
