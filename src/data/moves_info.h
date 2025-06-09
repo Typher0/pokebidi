@@ -21153,6 +21153,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             .moveEffect = MOVE_EFFECT_RECOIL_HP_25,
             .self = TRUE,
         }),
+        .battleAnimScript = gBattleAnimMove_EsotericDestruction,
         .argument = { .holdEffect = HOLD_EFFECT_PLATE },
         .ignoresTargetDefenseEvasionStages = TRUE,
         .contestEffect = CONTEST_EFFECT_SCRAMBLE_NEXT_TURN_ORDER,

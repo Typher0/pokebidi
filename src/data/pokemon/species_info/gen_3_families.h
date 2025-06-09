@@ -7689,10 +7689,10 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .height = 17,
         .weight = 952,
         .description = COMPOUND_STRING(
-            "This is a newly discovered Pokémon.\n"
-            "It is currently under investigation.\n"
-            "No detailed information is available\n"
-            "at this time."),
+            "After learning to shoot its needles\n"
+            "like a gun, Cacturne evolved into Cacturado.\n"
+            "It takes pleasure in the suffering of others.\n"
+            "Being alone at night near one is dangerous."),
         .pokemonScale = 256,
         .pokemonOffset = 0,
         .trainerScale = 256,
