@@ -6207,7 +6207,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Elisa = {
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
     .anims = sAnimTable_Standard,
-    .images = sPicTable_Elesa,
+    .images = sPicTable_Elisa,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 

@@ -21137,7 +21137,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
 
     [MOVE_ESOTERIC_DESTRUCTION] =
     {
-        .name = COMPOUND_STRING("Esoteric Destruction"),
+        .name = COMPOUND_STRING("EsotericDestruction"),
         .description = COMPOUND_STRING(
             "The type varies with the\n"
             "kind of Plate held."),
@@ -21185,6 +21185,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             .moveEffect = MOVE_EFFECT_FLINCH,
             .chance = 100,
         }),
+        .battleAnimScript = gBattleAnimMove_MexicanStandoff,
         .contestEffect = CONTEST_EFFECT_BADLY_STARTLE_FRONT_MON,
         .contestCategory = CONTEST_CATEGORY_COOL,
         .contestComboStarterId = 0,

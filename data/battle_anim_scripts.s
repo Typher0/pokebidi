@@ -18288,6 +18288,7 @@ gBattleAnimMove_EsotericDestruction::
    loadspritegfx ANIM_TAG_GREEN_SPIKE
    loadspritegfx ANIM_TAG_GUST
    loadspritegfx ANIM_TAG_ORBS
+   loadspritegfx ANIM_TAG_ELECTRICITY
    createsprite gSimplePaletteBlendSpriteTemplate, ANIM_ATTACKER, 2, F_PAL_BG, 4, 0, 16, RGB_BLACK
    waitforvisualfinish
    delay 10
@@ -18303,6 +18304,7 @@ gBattleAnimMove_EsotericDestruction::
    call HyperBeamOrbs
    call HyperBeamOrbs
    call HyperBeamOrbs
+   waitforvisualfinish
    createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_GUST, 0, 14, 14, 0
    createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_HANDS_AND_FEET, 0, 10, 10, 0
    monbg ANIM_TARGET
@@ -18310,7 +18312,7 @@ gBattleAnimMove_EsotericDestruction::
    waitforvisualfinish
    createvisualtask AnimTask_ShakeMon, 2, ANIM_TARGET, 0, 3, 83, 1
    createsprite gJudgmentBlackChargeTemplate, ANIM_TARGET, 1, 1, ANIM_TARGET
-   playsewithpan SE_M_PSYBEAM, SOUND_PAN_TARGET
+   playsewithpan SE_M_SUPERSONIC, SOUND_PAN_TARGET
    call JudgmentInwardSpikes
    delay 5
    call JudgmentInwardSpikes2
@@ -18348,7 +18350,63 @@ gBattleAnimMove_EsotericDestruction::
    createvisualtask AnimTask_BlendBattleAnimPal, 10, 1, 1, 15, 0, 32767
    waitforvisualfinish
    clearmonbg ANIM_TARGET
-   return
+   end
+
+gBattleAnimMove_MexicanStandoff::
+    loadspritegfx ANIM_TAG_NEEDLE
+    loadspritegfx ANIM_TAG_IMPACT
+    monbg ANIM_TARGET
+    splitbgprio ANIM_TARGET
+    setalpha 12, 8
+    playsewithpan SE_M_JUMP_KICK, SOUND_PAN_ATTACKER
+    createsprite gPinMissileSpriteTemplate, ANIM_ATTACKER, 2, 20, -8, -8, -8, 20, -32
+    delay 15
+    createsprite gPinMissileSpriteTemplate, ANIM_ATTACKER, 2, 20, -8, 8, 8, 20, -40
+    delay 4
+    playsewithpan SE_M_HORN_ATTACK, SOUND_PAN_TARGET
+    createsprite gBasicHitSplatSpriteTemplate, ANIM_ATTACKER, 3, -8, -8, ANIM_TARGET, 2
+    createvisualtask AnimTask_ShakeMon2, 2, ANIM_TARGET, 3, 0, 2, 1
+    delay 9
+    createsprite gPinMissileSpriteTemplate, ANIM_ATTACKER, 2, 20, -8, 0, 0, 20, -32
+    delay 4
+    playsewithpan SE_M_HORN_ATTACK, SOUND_PAN_TARGET
+    createsprite gBasicHitSplatSpriteTemplate, ANIM_ATTACKER, 3, 8, 8, ANIM_TARGET, 2
+    createvisualtask AnimTask_ShakeMon2, 2, ANIM_TARGET, 3, 0, 2, 1
+    delay 14
+    playsewithpan SE_M_HORN_ATTACK, SOUND_PAN_TARGET
+    createsprite gBasicHitSplatSpriteTemplate, ANIM_ATTACKER, 3, 0, 0, ANIM_TARGET, 2
+    createvisualtask AnimTask_ShakeMon2, 2, ANIM_TARGET, 3, 0, 2, 1
+    waitforvisualfinish
+    clearmonbg ANIM_TARGET
+    blendoff
+    endgBattleAnimMove_PinMissile::
+loadspritegfx ANIM_TAG_NEEDLE
+loadspritegfx ANIM_TAG_IMPACT
+monbg ANIM_TARGET
+splitbgprio ANIM_TARGET
+setalpha 12, 8
+playsewithpan SE_M_JUMP_KICK, SOUND_PAN_ATTACKER
+createsprite gPinMissileSpriteTemplate, ANIM_ATTACKER, 2, 20, -8, -8, -8, 20, -32
+delay 15
+createsprite gPinMissileSpriteTemplate, ANIM_ATTACKER, 2, 20, -8, 8, 8, 20, -40
+delay 4
+playsewithpan SE_M_HORN_ATTACK, SOUND_PAN_TARGET
+createsprite gBasicHitSplatSpriteTemplate, ANIM_ATTACKER, 3, -8, -8, ANIM_TARGET, 2
+createvisualtask AnimTask_ShakeMon2, 2, ANIM_TARGET, 3, 0, 2, 1
+delay 9
+createsprite gPinMissileSpriteTemplate, ANIM_ATTACKER, 2, 20, -8, 0, 0, 20, -32
+delay 4
+playsewithpan SE_M_HORN_ATTACK, SOUND_PAN_TARGET
+createsprite gBasicHitSplatSpriteTemplate, ANIM_ATTACKER, 3, 8, 8, ANIM_TARGET, 2
+createvisualtask AnimTask_ShakeMon2, 2, ANIM_TARGET, 3, 0, 2, 1
+delay 14
+playsewithpan SE_M_HORN_ATTACK, SOUND_PAN_TARGET
+createsprite gBasicHitSplatSpriteTemplate, ANIM_ATTACKER, 3, 0, 0, ANIM_TARGET, 2
+createvisualtask AnimTask_ShakeMon2, 2, ANIM_TARGET, 3, 0, 2, 1
+waitforvisualfinish
+clearmonbg ANIM_TARGET
+blendoff
+end
 	end @to do
 
 @@@@@@@@@@@@@@@@@@@@@@@ GEN 1-3 @@@@@@@@@@@@@@@@@@@@@@@
