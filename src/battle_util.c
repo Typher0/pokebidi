@@ -902,7 +902,7 @@ void HandleAction_ActionFinished(void)
 
                 // We recalculate order only for action of the same priority. If any action other than switch/move has been taken, they should
                 // have been executed before. The only recalculation needed is for moves/switch. Mega evolution is handled in src/battle_main.c/TryChangeOrder
-                if((gActionsByTurnOrder[i] == B_ACTION_USE_MOVE && gActionsByTurnOrder[j] == B_ACTION_USE_MOVE))
+                if ((gActionsByTurnOrder[i] == B_ACTION_USE_MOVE && gActionsByTurnOrder[j] == B_ACTION_USE_MOVE))
                 {
                     if (GetWhichBattlerFaster(battler1, battler2, FALSE) == -1)
                         SwapTurnOrder(i, j);
@@ -3505,7 +3505,11 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                 u32 diagonalBattler = BATTLE_OPPOSITE(battler);
                 if (IsDoubleBattle())
                     diagonalBattler = BATTLE_PARTNER(diagonalBattler);
-                if (IsBattlerAlive(diagonalBattler)
+
+                // Imposter only activates when the battler first switches in
+                if (gDisableStructs[battler].isFirstTurn == 2
+                    && !gDisableStructs[battler].overwrittenAbility
+                    && IsBattlerAlive(diagonalBattler)
                     && !(gBattleMons[diagonalBattler].status2 & (STATUS2_TRANSFORMED | STATUS2_SUBSTITUTE))
                     && !(gBattleMons[battler].status2 & STATUS2_TRANSFORMED)
                     && gBattleStruct->illusion[diagonalBattler].state != ILLUSION_ON
