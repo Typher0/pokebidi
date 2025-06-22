@@ -2470,7 +2470,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_ASTEROID_BELT] =
     {
         .name = _("Asteroid Belt"),
-        .description = COMPOUND_STRING("Hurts to touch."),
+        .description = COMPOUND_STRING("Hurts to touch and Levitates."),
         .aiRating = 6,
     },
 };
