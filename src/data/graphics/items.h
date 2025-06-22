@@ -1747,6 +1747,8 @@ const u16 gItemIconPalette_SteelTMHM[] = INCBIN_U16("graphics/items/icon_palette
 
 const u16 gItemIconPalette_FairyTMHM[] = INCBIN_U16("graphics/items/icon_palettes/fairy_tm_hm.gbapal");
 
+const u16 gItemIconPalette_SoundTMHM[] = INCBIN_U16("graphics/items/icon_palettes/sound_tm_hm.gbapal");
+
 // Charms
 
 const u32 gItemIcon_OvalCharm[] = INCBIN_U32("graphics/items/icons/oval_charm.4bpp.lz");
@@ -2027,6 +2029,7 @@ const u16 gItemIconPalette_DarkTeraShard[] = INCBIN_U16("graphics/items/icon_pal
 const u16 gItemIconPalette_DragonTeraShard[] = INCBIN_U16("graphics/items/icon_palettes/dragon_tera_shard.gbapal");
 const u16 gItemIconPalette_SteelTeraShard[] = INCBIN_U16("graphics/items/icon_palettes/steel_tera_shard.gbapal");
 const u16 gItemIconPalette_FairyTeraShard[] = INCBIN_U16("graphics/items/icon_palettes/fairy_tera_shard.gbapal");
+const u16 gItemIconPalette_SoundTeraShard[] = INCBIN_U16("graphics/items/icon_palettes/sound_tera_shard.gbapal");
 
 const u32 gItemIcon_StellarTeraShard[] = INCBIN_U32("graphics/items/icons/stellar_tera_shard.4bpp.lz");
 const u16 gItemIconPalette_StellarTeraShard[] = INCBIN_U16("graphics/items/icon_palettes/stellar_tera_shard.gbapal");

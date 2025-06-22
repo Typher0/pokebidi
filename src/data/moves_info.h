@@ -26,8 +26,8 @@ const u8 gNotDoneYetDescription[] = _(
 static const u8 sNullDescription[] = _("");
 
 static const u8 sMegaDrainDescription[] = _(
-    "Powerful, but leaves the\n"
-    "user immobile the next turn.");
+    "An attack that absorbs half\n"
+    "the damage inflicted.");
 
 #if B_SKIP_RECHARGE != GEN_1
 static const u8 sHyperBeamDescription[] = _(

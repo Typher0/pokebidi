@@ -1613,6 +1613,7 @@ extern const u16 gItemIconPalette_DragonTMHM[];
 extern const u16 gItemIconPalette_DarkTMHM[];
 extern const u16 gItemIconPalette_SteelTMHM[];
 extern const u16 gItemIconPalette_FairyTMHM[];
+extern const u16 gItemIconPalette_SoundTMHM[];
 // Charms
 extern const u32 gItemIcon_OvalCharm[];
 extern const u16 gItemIconPalette_OvalCharm[];
@@ -1803,6 +1804,7 @@ extern const u16 gItemIconPalette_DarkTeraShard[];
 extern const u16 gItemIconPalette_DragonTeraShard[];
 extern const u16 gItemIconPalette_SteelTeraShard[];
 extern const u16 gItemIconPalette_FairyTeraShard[];
+extern const u16 gItemIconPalette_SoundTeraShard[];
 
 extern const u32 gItemIcon_StellarTeraShard[];
 extern const u16 gItemIconPalette_StellarTeraShard[];
