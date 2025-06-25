@@ -884,6 +884,7 @@ extern const u8 gBattleAnimMove_Kamikaze[];
 extern const u8 gBattleAnimMove_Cannibalize[];
 extern const u8 gBattleAnimMove_Exorcism[];
 extern const u8 gBattleAnimMove_Insecticide[];
+extern const u8 gBattleAnimMove_DracoDrive[];
 extern const u8 gBattleAnimMove_BreakneckBlitz[];
 extern const u8 gBattleAnimMove_AllOutPummeling[];
 extern const u8 gBattleAnimMove_SupersonicSkystrike[];
