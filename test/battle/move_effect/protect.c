@@ -13,6 +13,7 @@ ASSUMPTIONS
     ASSUME(GetMoveEffect(MOVE_CRAFTY_SHIELD) == EFFECT_PROTECT);
     ASSUME(GetMoveEffect(MOVE_BANEFUL_BUNKER) == EFFECT_PROTECT);
     ASSUME(GetMoveEffect(MOVE_BURNING_BULWARK) == EFFECT_PROTECT);
+    ASSUME(GetMoveEffect(MOVE_FIELD_OF_REEDS) == EFFECT_PROTECT);
     ASSUME(GetMoveCategory(MOVE_SCRATCH) == DAMAGE_CATEGORY_PHYSICAL);
     ASSUME(MoveMakesContact(MOVE_SCRATCH));
     ASSUME(GetMoveCategory(MOVE_LEER) == DAMAGE_CATEGORY_STATUS);
@@ -20,7 +21,7 @@ ASSUMPTIONS
     ASSUME(!(MoveMakesContact(MOVE_WATER_GUN)));
 }
 
-SINGLE_BATTLE_TEST("Protect: Protect, Detect, Spiky Shield, Baneful Bunker and Burning Bulwark protect from all moves")
+SINGLE_BATTLE_TEST("Protect: Protect, Detect, Spiky Shield, Baneful Bunker, Burning Bulwark, and Field of Reeds protect from all moves")
 {
     u32 j;
     static const u16 protectMoves[] = {
@@ -29,6 +30,7 @@ SINGLE_BATTLE_TEST("Protect: Protect, Detect, Spiky Shield, Baneful Bunker and B
         MOVE_SPIKY_SHIELD,
         MOVE_BANEFUL_BUNKER,
         MOVE_BURNING_BULWARK,
+        MOVE_FIELD_OF_REEDS,
     };
     u16 protectMove = MOVE_NONE;
     u16 usedMove = MOVE_NONE;

@@ -6466,6 +6466,17 @@ static void Cmd_moveend(void)
                         effect = 1;
                     }
                     break;
+                case PROTECT_FIELD_OF_REEDS:
+                    if (!IsProtectivePadsProtected(gBattlerAttacker, GetBattlerHoldEffect(gBattlerAttacker, TRUE)))
+                    {
+                        gProtectStructs[gBattlerAttacker].touchedProtectLike = FALSE;
+                        gBattleScripting.moveEffect = MOVE_EFFECT_GRASSY_TERRAIN;
+                        PREPARE_MOVE_BUFFER(gBattleTextBuff1, MOVE_FIELD_OF_REEDS);
+                        BattleScriptPushCursor();
+                        gBattlescriptCurrInstr = BattleScript_FieldOfReedsEffect;
+                        effect = 1;
+                    }
+                    break;
                 default:
                     break;
                 }

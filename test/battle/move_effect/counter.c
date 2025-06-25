@@ -11,6 +11,7 @@ SINGLE_BATTLE_TEST("Counter is not affected by Protect effects")
     PARAMETRIZE { move = MOVE_KINGS_SHIELD; }
     PARAMETRIZE { move = MOVE_SILK_TRAP; }
     PARAMETRIZE { move = MOVE_OBSTRUCT; }
+    PARAMETRIZE { move = MOVE_FIELD_OF_REEDS; }
 
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);

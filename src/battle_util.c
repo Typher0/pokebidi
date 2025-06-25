@@ -4187,6 +4187,20 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                     effect++;
                 }
                 break;
+            case ABILITY_VAMPIRISM:
+                if (!(gBattleStruct->moveResultFlags[gBattlerTarget] & MOVE_RESULT_NO_EFFECT)
+                 && !IsBattlerAtMaxHp(battler)
+                 && !(gStatuses3[battler] & STATUS3_HEAL_BLOCK))
+                if (IsBitingMove(move))
+                {
+                    BattleScriptPushCursorAndCallback(BattleScript_IceBodyHeal);
+                    gBattleStruct->moveDamage[battler] = GetNonDynamaxMaxHP(battler) / 16;
+                    if (gBattleStruct->moveDamage[battler] == 0)
+                        gBattleStruct->moveDamage[battler] = 1;
+                    gBattleStruct->moveDamage[battler] *= -1;
+                    effect++;
+                }
+                break;
             case ABILITY_HYDRATION:
                 if (IsBattlerWeatherAffected(battler, B_WEATHER_RAIN)
                  && gBattleMons[battler].status1 & STATUS1_ANY)
@@ -5010,8 +5024,9 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                 effect++;
             }
             break;
-	case ABILITY_SAPERA:
-            if (IsSoundMove(move))
+        case ABILITY_SAPERA:
+            if (!(gBattleStruct->moveResultFlags[gBattlerTarget] & MOVE_RESULT_NO_EFFECT)
+             && (IsSoundMove(move))
              && CanBeConfused(gBattlerTarget))
             {
                 gBattleScripting.moveEffect = MOVE_EFFECT_CONFUSION;
@@ -5019,6 +5034,7 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                 BattleScriptPushCursor();
                 gBattlescriptCurrInstr = BattleScript_AbilityStatusEffect;
                 effect++;
+            }
             break;
         }
         break;
@@ -7774,6 +7790,8 @@ bool32 IsBattlerProtected(u32 battlerAtk, u32 battlerDef, u32 move)
         isProtected = TRUE;
     else if (gProtectStructs[battlerDef].protected == PROTECT_BURNING_BULWARK)
         isProtected = TRUE;
+    else if (gProtectStructs[battlerDef].protected == PROTECT_FIELD_OF_REEDS)
+        isProtected = TRUE;
     else if (gProtectStructs[battlerDef].protected == PROTECT_OBSTRUCT && !IsBattleMoveStatus(move))
         isProtected = TRUE;
     else if (gProtectStructs[battlerDef].protected == PROTECT_SILK_TRAP && !IsBattleMoveStatus(move))
@@ -7807,6 +7825,7 @@ u32 GetProtectType(enum ProtectMethod method)
     case PROTECT_OBSTRUCT:
     case PROTECT_SILK_TRAP:
     case PROTECT_MAX_GUARD:
+    case PROTECT_FIELD_OF_REEDS:
         return PROTECT_TYPE_SINGLE;
     case PROTECT_WIDE_GUARD:
     case PROTECT_QUICK_GUARD:
@@ -8465,19 +8484,6 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageCalculationData *
         if (IsBitingMove(move))
            modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
         break;
-    case ABILITY_VAMPIRISM:
-        if (IsBitingMove(move))
-            && !IsBattlerAtMaxHp(battler)
-            && !(gStatuses3[battler] & STATUS3_HEAL_BLOCK))
-              {
-               BattleScriptPushCursorAndCallback(BattleScript_IceBodyHeal);
-               gBattleStruct->moveDamage[battler] = GetNonDynamaxMaxHP(battler) / 16;
-                 if (gBattleStruct->moveDamage[battler] == 0)
-                     gBattleStruct->moveDamage[battler] = 1;
-                     gBattleStruct->moveDamage[battler] *= -1;
-                 effect++;
-                }
-                break;
     case ABILITY_MEGA_LAUNCHER:
         if (IsPulseMove(move))
            modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
@@ -9211,7 +9217,6 @@ static inline uq4_12_t GetZMaxMoveAgainstProtectionModifier(struct DamageCalcula
      && protected != PROTECT_QUICK_GUARD
      && protected != PROTECT_CRAFTY_SHIELD
      && protected != PROTECT_MAT_BLOCK
-     && protected != PROTECT_FIELD_OF_REEDS
      && protected != PROTECT_MAX_GUARD)
         return UQ_4_12(0.25);
     return UQ_4_12(1.0);

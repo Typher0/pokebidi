@@ -101,27 +101,7 @@
     F(RETALIATE) \
     F(POWER_UP_PUNCH) \
     F(DAZZLING_GLEAM) \
-    F(ALLY_SWITCH) \
-    F(HONE_CLAWS) \
-    F(ACROBATICS) \
-    F(PSYSHOCK) \
-    F(DRAGON_TAIL) \
-    F(SCALD) \
-    F(STRUGGLE_BUG) \
-    F(LOW_SWEEP) \
-    F(BULLDOZE) \
-    F(FROST_BREATH) \
-    F(QUASH) \
-    F(WORK_UP) \
-    F(ELECTRO_BALL) \
-    F(FLAME_CHARGE) \
-    F(TRAILBLAZE) \
-    F(WHIRLPOOL) \
-    F(SPIKES) \
-    F(TOXIC_SPIKES) \
-    F(THROAT_CHOP) \
-    F(ROUND) \
-    F(TERA_BLAST)
+    F(ALLY_SWITCH)
 
 #define FOREACH_HM(F) \
     F(CUT) \

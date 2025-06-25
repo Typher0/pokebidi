@@ -8451,6 +8451,13 @@ BattleScript_BanefulBunkerEffect::
 	setmoveresultflags MOVE_RESULT_MISSED
 	return
 
+BattleScript_FieldOfReedsEffect::
+    orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_PASSIVE_DAMAGE
+    clearmoveresultflags MOVE_RESULT_NO_EFFECT
+    seteffectsecondary
+    setmoveresultflags MOVE_RESULT_MISSED
+    return
+
 BattleScript_CuteCharmActivates::
 	call BattleScript_AbilityPopUp
 	status2animation BS_ATTACKER, STATUS2_INFATUATION

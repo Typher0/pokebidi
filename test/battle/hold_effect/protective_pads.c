@@ -84,6 +84,7 @@ SINGLE_BATTLE_TEST("Protective Pads protects from Protect's secondary effects")
     PARAMETRIZE { move = MOVE_KINGS_SHIELD; }
     PARAMETRIZE { move = MOVE_SILK_TRAP; }
     PARAMETRIZE { move = MOVE_OBSTRUCT; }
+    PARAMETRIZE { move = MOVE_FIELD_OF_REEDS; }
 
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_PROTECTIVE_PADS); }
