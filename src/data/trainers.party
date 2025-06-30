@@ -283,7 +283,7 @@ Varoom
 Level: 30
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Porygon 2
+Porygon2
 Level: 30
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -369,7 +369,7 @@ Music: Aqua
 Double Battle: Yes
 AI: Check Bad Move
 
-Lynxkew
+Lynxskew
 Level: 26
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -459,7 +459,7 @@ Music: Aqua
 Double Battle: No
 AI: Check Bad Move
 
-Lynxkew
+Lynxskew
 Level: 30
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -567,7 +567,7 @@ Squibble
 Level: 28
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
-Lynxkew
+Lynxskew
 Level: 28
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
@@ -624,7 +624,7 @@ Items: Super Potion / Super Potion
 Double Battle: No
 AI: Basic Trainer
 
-Lynskew
+Lynxskew
 Level: 41
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
@@ -1336,7 +1336,7 @@ Items: Hyper Potion
 Double Battle: No
 AI: Basic Trainer
 
-Woolo @ Sitrus Berry
+Wooloo @ Sitrus Berry
 Level: 26
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Rollout
@@ -2544,7 +2544,7 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 - Fury Swipes
 - Feint Attack
 
-Punriyadh
+Pungriyadh
 Level: 44
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 - Poison Tail
@@ -2812,7 +2812,7 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Sqibble
+Squibble
 Level: 24
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
@@ -3422,7 +3422,7 @@ Music: Aqua
 Double Battle: No
 AI: Check Bad Move
 
-Lynxkew
+Lynxskew
 Level: 31
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -4008,7 +4008,7 @@ Music: Suspicious
 Double Battle: No
 AI: Check Bad Move
 
-Pinecoe
+Pineco
 Level: 27
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -4054,7 +4054,7 @@ Skorupi
 Level: 31
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
-Minerac
+Minarac
 Level: 31
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
@@ -7165,7 +7165,7 @@ Music: Female
 Double Battle: No
 AI: Check Bad Move
 
-Callumotor
+Callummotor
 Level: 28
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
@@ -7178,7 +7178,7 @@ Music: Female
 Double Battle: No
 AI: Check Bad Move
 
-Callumotor
+Callummotor
 Level: 31
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
@@ -7191,7 +7191,7 @@ Music: Female
 Double Battle: No
 AI: Check Bad Move
 
-Callumotor
+Callummotor
 Level: 34
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
@@ -7204,7 +7204,7 @@ Music: Female
 Double Battle: No
 AI: Check Bad Move
 
-Callumotor
+Callummotor
 Level: 37
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
@@ -17050,7 +17050,7 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Jagiwre
+Jagwire
 Level: 39
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
