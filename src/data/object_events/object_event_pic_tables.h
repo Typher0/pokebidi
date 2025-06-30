@@ -1950,7 +1950,20 @@ static const struct SpriteFrameImage sPicTable_Nurse1[] = {
 };
 
 static const struct SpriteFrameImage sPicTable_NurseJoy[] = {
-    overworld_ascending_frames(gObjectEventPic_NurseJoy, 4, 4),
+    overworld_frame(gObjectEventPic_NurseJoy, 4, 4, 0),
+    overworld_frame(gObjectEventPic_NurseJoy, 4, 4, 1),
+    overworld_frame(gObjectEventPic_NurseJoy, 4, 4, 2),
+    overworld_frame(gObjectEventPic_NurseJoy, 4, 4, 0),
+    overworld_frame(gObjectEventPic_NurseJoy, 4, 4, 0),
+    overworld_frame(gObjectEventPic_NurseJoy, 4, 4, 1),
+    overworld_frame(gObjectEventPic_NurseJoy, 4, 4, 1),
+    overworld_frame(gObjectEventPic_NurseJoy, 4, 4, 2),
+    overworld_frame(gObjectEventPic_NurseJoy, 4, 4, 2),
+    overworld_frame(gObjectEventPic_NurseJoy, 4, 4, 3),
+};
+
+static const struct SpriteFrameImage sPicTable_NurseJoyWalk[] = {
+    overworld_ascending_frames(gObjectEventPic_NurseJoyWalk, 4, 4),
 };
 
 static const struct SpriteFrameImage sPicTable_NurseryAide[] = {

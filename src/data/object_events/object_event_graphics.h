@@ -531,6 +531,7 @@ const u32 gObjectEventPic_NinjaBoy1[] = INCBIN_U32("graphics/object_events/pics/
 const u32 gObjectEventPic_Norman1[] = INCBIN_U32("graphics/object_events/pics/people/ds/norman_1.4bpp");
 const u32 gObjectEventPic_Nurse1[] = INCBIN_U32("graphics/object_events/pics/people/ds/nurse_1.4bpp");
 const u32 gObjectEventPic_NurseJoy[] = INCBIN_U32("graphics/object_events/pics/people/ds/nurse_joy.4bpp");
+const u32 gObjectEventPic_NurseJoyWalk[] = INCBIN_U32("graphics/object_events/pics/people/ds/nurse_joy_walk.4bpp");
 const u32 gObjectEventPic_NurseryAide[] = INCBIN_U32("graphics/object_events/pics/people/ds/nursery_aide.4bpp");
 const u32 gObjectEventPic_OldWoman1[] = INCBIN_U32("graphics/object_events/pics/people/ds/old_woman_1.4bpp");
 const u32 gObjectEventPic_ParasolLady1[] = INCBIN_U32("graphics/object_events/pics/people/ds/parasol_lady_1.4bpp");

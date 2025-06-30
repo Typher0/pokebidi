@@ -851,6 +851,9 @@ $(OBJEVENTGFXDIR)/people/ds/nurse_1.4bpp: %.4bpp: %.png
 
 $(OBJEVENTGFXDIR)/people/ds/nurse_joy.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
+	
+$(OBJEVENTGFXDIR)/people/ds/nurse_joy_walk.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
 
 $(OBJEVENTGFXDIR)/people/ds/nursery_aide.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4

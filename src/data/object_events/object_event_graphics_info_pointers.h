@@ -386,6 +386,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_NinjaBoy1;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Norman1;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Nurse1;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_NurseJoy;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_NurseJoyWalk;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_NurseryAide;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_OldWoman1;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ParasolLady1;
@@ -905,6 +906,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_NORMAN_1] =                 &gObjectEventGraphicsInfo_Norman1,
     [OBJ_EVENT_GFX_NURSE_1] =                  &gObjectEventGraphicsInfo_Nurse1,
     [OBJ_EVENT_GFX_NURSE_JOY] =                &gObjectEventGraphicsInfo_NurseJoy,
+    [OBJ_EVENT_GFX_NURSE_JOY_WALK]             &gObjectEventGraphicsInfo_NurseJoyWalk,
     [OBJ_EVENT_GFX_NURSERY_AIDE] =             &gObjectEventGraphicsInfo_NurseryAide,
     [OBJ_EVENT_GFX_OLD_WOMAN_1] =              &gObjectEventGraphicsInfo_OldWoman1,
     [OBJ_EVENT_GFX_PARASOL_LADY_1] =           &gObjectEventGraphicsInfo_ParasolLady1,
