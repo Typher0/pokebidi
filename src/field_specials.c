@@ -573,15 +573,15 @@ void SpawnLinkPartnerObjectEvent(void)
                 break;
             case VERSION_EMERALD:
                 if (gLinkPlayers[i].gender == 0)
-                    linkSpriteId = OBJ_EVENT_GFX_RIVAL_BRENDAN_NORMAL;
+                    linkSpriteId = OBJ_EVENT_GFX_RIVAL_LUCAS_NORMAL;
                 else
-                    linkSpriteId = OBJ_EVENT_GFX_RIVAL_MAY_NORMAL;
+                    linkSpriteId = OBJ_EVENT_GFX_RIVAL_DAWN_NORMAL;
                 break;
             default:
                 if (gLinkPlayers[i].gender == 0)
-                    linkSpriteId = OBJ_EVENT_GFX_RIVAL_BRENDAN_NORMAL;
+                    linkSpriteId = OBJ_EVENT_GFX_RIVAL_LUCAS_NORMAL;
                 else
-                    linkSpriteId = OBJ_EVENT_GFX_RIVAL_MAY_NORMAL;
+                    linkSpriteId = OBJ_EVENT_GFX_RIVAL_DAWN_NORMAL;
                 break;
             }
             SpawnSpecialObjectEventParameterized(linkSpriteId, movementTypes[j], LOCALID_BERRY_BLENDER_PLAYER_END - i, coordOffsets[j][0] + x + MAP_OFFSET, coordOffsets[j][1] + y + MAP_OFFSET, 0);
@@ -600,8 +600,8 @@ static void LoadLinkPartnerObjectEventSpritePalette(u16 graphicsId, u8 localEven
     adjustedPaletteNum = paletteNum + 6;
     if (graphicsId == OBJ_EVENT_GFX_LINK_RS_BRENDAN ||
         graphicsId == OBJ_EVENT_GFX_LINK_RS_MAY ||
-        graphicsId == OBJ_EVENT_GFX_RIVAL_BRENDAN_NORMAL ||
-        graphicsId == OBJ_EVENT_GFX_RIVAL_MAY_NORMAL)
+        graphicsId == OBJ_EVENT_GFX_RIVAL_LUCAS_NORMAL ||
+        graphicsId == OBJ_EVENT_GFX_RIVAL_DAWN_NORMAL)
     {
         u8 obj = GetObjectEventIdByLocalIdAndMap(localEventId, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup);
         if (obj != OBJECT_EVENTS_COUNT)
@@ -618,11 +618,11 @@ static void LoadLinkPartnerObjectEventSpritePalette(u16 graphicsId, u8 localEven
             case OBJ_EVENT_GFX_LINK_RS_MAY:
                 LoadPalette(gObjectEventPal_RubySapphireMay, OBJ_PLTT_ID(adjustedPaletteNum), PLTT_SIZE_4BPP);
                 break;
-            case OBJ_EVENT_GFX_RIVAL_BRENDAN_NORMAL:
-                LoadPalette(gObjectEventPal_Brendan, OBJ_PLTT_ID(adjustedPaletteNum), PLTT_SIZE_4BPP);
+            case OBJ_EVENT_GFX_RIVAL_LUCAS_NORMAL:
+                LoadPalette(gObjectEventPal_Lucas, OBJ_PLTT_ID(adjustedPaletteNum), PLTT_SIZE_4BPP);
                 break;
-            case OBJ_EVENT_GFX_RIVAL_MAY_NORMAL:
-                LoadPalette(gObjectEventPal_May, OBJ_PLTT_ID(adjustedPaletteNum), PLTT_SIZE_4BPP);
+            case OBJ_EVENT_GFX_RIVAL_DAWN_NORMAL:
+                LoadPalette(gObjectEventPal_Dawn, OBJ_PLTT_ID(adjustedPaletteNum), PLTT_SIZE_4BPP);
                 break;
             }
         }
@@ -2808,9 +2808,9 @@ void SetBattleTowerLinkPlayerGfx(void)
     for (i = 0; i < 2; i++)
     {
         if (gLinkPlayers[i].gender == MALE)
-            VarSet(VAR_OBJ_GFX_ID_F - i, OBJ_EVENT_GFX_BRENDAN_NORMAL);
+            VarSet(VAR_OBJ_GFX_ID_F - i, OBJ_EVENT_GFX_LUCAS_NORMAL);
         else
-            VarSet(VAR_OBJ_GFX_ID_F - i, OBJ_EVENT_GFX_RIVAL_MAY_NORMAL);
+            VarSet(VAR_OBJ_GFX_ID_F - i, OBJ_EVENT_GFX_RIVAL_DAWN_NORMAL);
     }
 }
 

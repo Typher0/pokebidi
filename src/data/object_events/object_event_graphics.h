@@ -650,6 +650,30 @@ const u32 gObjectEventPic_Youngster1[] = INCBIN_U32("graphics/object_events/pics
 const u32 gObjectEventPic_Youngster2[] = INCBIN_U32("graphics/object_events/pics/people/ds/youngster_2.4bpp");
 const u32 gObjectEventPic_Youngster3[] = INCBIN_U32("graphics/object_events/pics/people/ds/youngster_3.4bpp");
 
+const u32 gObjectEventPic_DawnNormalRunning[] = INCBIN_U32("graphics/object_events/pics/people/dawn/walking.4bpp", "graphics/object_events/pics/people/dawn/running.4bpp");
+const u16 gObjectEventPal_Dawn[] = INCBIN_U16("graphics/object_events/palettes/dawn.gbapal");
+const u32 gObjectEventPic_DawnFieldMove[] = INCBIN_U32("graphics/object_events/pics/people/dawn/field_move.4bpp");
+const u32 gObjectEventPic_DawnSurfing[] = INCBIN_U32("graphics/object_events/pics/people/dawn/surfing.4bpp");
+const u32 gObjectEventPic_DawnMachBike[] = INCBIN_U32("graphics/object_events/pics/people/dawn/mach_bike.4bpp");
+const u32 gObjectEventPic_DawnAcroBike[] = INCBIN_U32("graphics/object_events/pics/people/dawn/acro_bike.4bpp");
+const u32 gObjectEventPic_DawnFishing[] = INCBIN_U32("graphics/object_events/pics/people/dawn/fishing.4bpp");
+const u32 gObjectEventPic_DawnWatering[] = INCBIN_U32("graphics/object_events/pics/people/dawn/watering.4bpp");
+const u32 gObjectEventPic_DawnDecorating[] = INCBIN_U32("graphics/object_events/pics/people/dawn/decorating.4bpp");
+const u32 gObjectEventPic_DawnUnderwater[] = INCBIN_U32("graphics/object_events/pics/people/dawn/underwater.4bpp");
+
+const u16 gObjectEventPal_DawnLucasUnderwater[] = INCBIN_U16("graphics/object_events/palettes/dawn_lucas_underwater.gbapal");
+
+const u32 gObjectEventPic_LucasNormalRunning[] = INCBIN_U32("graphics/object_events/pics/people/lucas/walking.4bpp", "graphics/object_events/pics/people/lucas/running.4bpp");
+const u16 gObjectEventPal_Lucas[] = INCBIN_U16("graphics/object_events/palettes/lucas.gbapal");
+const u32 gObjectEventPic_LucasFieldMove[] = INCBIN_U32("graphics/object_events/pics/people/lucas/field_move.4bpp");
+const u32 gObjectEventPic_LucasSurfing[] = INCBIN_U32("graphics/object_events/pics/people/lucas/surfing.4bpp");
+const u32 gObjectEventPic_LucasMachBike[] = INCBIN_U32("graphics/object_events/pics/people/lucas/mach_bike.4bpp");
+const u32 gObjectEventPic_LucasAcroBike[] = INCBIN_U32("graphics/object_events/pics/people/lucas/acro_bike.4bpp");
+const u32 gObjectEventPic_LucasFishing[] = INCBIN_U32("graphics/object_events/pics/people/lucas/fishing.4bpp");
+const u32 gObjectEventPic_LucasWatering[] = INCBIN_U32("graphics/object_events/pics/people/lucas/watering.4bpp");
+const u32 gObjectEventPic_LucasDecorating[] = INCBIN_U32("graphics/object_events/pics/people/lucas/decorating.4bpp");
+const u32 gObjectEventPic_LucasUnderwater[] = INCBIN_U32("graphics/object_events/pics/people/lucas/underwater.4bpp");
+
 const u16 gObjectEventPaletteLight[] = INCBIN_U16("graphics/object_events/palettes/light.gbapal");
 const u16 gObjectEventPaletteLight2[] = INCBIN_U16("graphics/object_events/palettes/light2.gbapal");
 const u16 gObjectEventPal_Substitute[] = INCBIN_U16("graphics/object_events/pics/pokemon_old/substitute.gbapal");
