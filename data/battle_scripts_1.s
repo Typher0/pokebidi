@@ -7688,6 +7688,57 @@ BattleScript_IntimidateInReverse::
 	call BattleScript_TryIntimidateHoldEffects
 	goto BattleScript_IntimidateLoopIncrement
 
+BattleScript_SlanderActivates::
+     savetarget
+.if B_ABILITY_POP_UP == TRUE
+    showabilitypopup BS_ATTACKER
+    pause B_WAIT_TIME_LONG
+    destroyabilitypopup
+.endif
+    waitmessage B_WAIT_TIME_LONG
+    setbyte gBattlerTarget, 0
+BattleScript_SlanderLoop:
+    jumpifbyteequal gBattlerTarget, gBattlerAttacker, BattleScript_SlanderLoopIncrement
+    jumpiftargetally BattleScript_SlanderLoopIncrement
+    jumpifabsent BS_TARGET, BattleScript_SlanderLoopIncrement
+    jumpifstatus2 BS_TARGET, STATUS2_SUBSTITUTE, BattleScript_SlanderLoopIncrement
+BattleScript_SlanderEffect:
+    copybyte sBATTLER, gBattlerAttacker
+    setstatchanger STAT_SPATK, 1, TRUE
+    statbuffchange STAT_CHANGE_NOT_PROTECT_AFFECTED | STAT_CHANGE_ALLOW_PTR, BattleScript_SlanderLoopIncrement
+    setgraphicalstatchangevalues
+    jumpifability BS_TARGET, ABILITY_CONTRARY, BattleScript_SlanderContrary
+    jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_DECREASE, BattleScript_SlanderWontDecrease
+    playanimation BS_TARGET, B_ANIM_STATS_CHANGE, sB_ANIM_ARG1
+    printfromtable gStatDownStringIds
+BattleScript_SlanderEffect_WaitString:
+    waitmessage B_WAIT_TIME_LONG
+    copybyte sBATTLER, gBattlerTarget
+    call BattleScript_TryIntimidateHoldEffects
+BattleScript_SlanderLoopIncrement:
+    addbyte gBattlerTarget, 1
+    jumpifbytenotequal gBattlerTarget, gBattlersCount, BattleScript_SlanderLoop
+    copybyte sBATTLER, gBattlerAttacker
+    destroyabilitypopup
+    restoretarget
+    pause B_WAIT_TIME_MED
+    tryintimidateejectpack
+    end3
+
+BattleScript_SlanderWontDecrease:
+    printstring STRINGID_STATSWONTDECREASE
+    goto BattleScript_SlanderEffect_WaitString
+
+BattleScript_SlanderContrary:
+    call BattleScript_AbilityPopUpTarget
+    jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_INCREASE, BattleScript_SlanderContrary_WontIncrease
+    playanimation BS_TARGET, B_ANIM_STATS_CHANGE, sB_ANIM_ARG1
+    printfromtable gStatUpStringIds
+    goto BattleScript_SlanderEffect_WaitString
+BattleScript_SlanderContrary_WontIncrease:
+    printstring STRINGID_TARGETSTATWONTGOHIGHER
+    goto BattleScript_SlanderEffect_WaitString
+
 BattleScript_SupersweetSyrupActivates::
  	savetarget
 .if B_ABILITY_POP_UP == TRUE
