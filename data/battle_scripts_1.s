@@ -7060,10 +7060,13 @@ BattleScript_PowderMoveNoEffect::
 	pause B_WAIT_TIME_SHORT
 	jumpiftype BS_TARGET, TYPE_GRASS, BattleScript_PowderMoveNoEffectPrint
 	jumpifability BS_TARGET, ABILITY_OVERCOAT, BattleScript_PowderMoveNoEffectOvercoat
+    jumpifability BS_TARGET, ABILITY_COZY, BattleScript_PowderMoveNoEffectCozy
 	printstring STRINGID_SAFETYGOGGLESPROTECTED
 	goto BattleScript_PowderMoveNoEffectWaitMsg
 BattleScript_PowderMoveNoEffectOvercoat:
 	call BattleScript_AbilityPopUp
+BattleScript_PowderMoveNoEffectCozy:
+    call BattleScript_AbilityPopUp
 BattleScript_PowderMoveNoEffectPrint:
 	printstring STRINGID_ITDOESNTAFFECT
 BattleScript_PowderMoveNoEffectWaitMsg:
@@ -7518,6 +7521,16 @@ BattleScript_AbilityHpHeal:
 BattleScript_RainDishActivates::
 	call BattleScript_AbilityHpHeal
 	end3
+
+BattleScript_VampirismActivates::
+    call BattleScript_AbilityPopUp
+    absorbhealthbarupdate BS_ATTACKER
+    datahpupdate BS_ATTACKER
+    printfromtable gAbsorbDrainStringIds
+    waitmessage B_WAIT_TIME_LONG
+    tryfaintmon BS_ATTACKER
+    orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE
+    return
 
 BattleScript_CheekPouchActivates::
 	copybyte sSAVED_BATTLER, gBattlerAttacker

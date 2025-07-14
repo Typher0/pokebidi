@@ -161,6 +161,20 @@ SINGLE_BATTLE_TEST("Powder fails if the target has Overcoat")
     }
 }
 
+SINGLE_BATTLE_TEST("Powder fails if the target has Cozy")
+{
+    GIVEN {
+        PLAYER(SPECIES_FORRETRESS) { Ability(ABILITY_COZY); }
+        OPPONENT(SPECIES_VIVILLON);
+    } WHEN {
+        TURN { MOVE(opponent, MOVE_POWDER); MOVE(player, MOVE_EMBER); }
+    } SCENE {
+        NOT ANIMATION(ANIM_TYPE_MOVE, MOVE_POWDER, opponent);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_EMBER, player);
+        HP_BAR(opponent);
+    }
+}
+
 DOUBLE_BATTLE_TEST("Powder still blocks the target's Fire type moves even if it was given Grass type")
 {
     GIVEN {
@@ -201,6 +215,28 @@ DOUBLE_BATTLE_TEST("Powder still blocks the target's Fire type moves even if it 
         }
     } THEN {
         EXPECT_EQ(playerLeft->ability, ABILITY_OVERCOAT);
+    }
+}
+
+DOUBLE_BATTLE_TEST("Powder still blocks the target's Fire type moves even if it was given Cozy")
+{
+    GIVEN {
+        ASSUME(GetMoveEffect(MOVE_DOODLE) == EFFECT_DOODLE);
+        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_FORRETRESS) { Ability(ABILITY_COZY); }
+        OPPONENT(SPECIES_VIVILLON);
+    } WHEN {
+        TURN { MOVE(opponentRight, MOVE_POWDER, target: playerLeft); MOVE(playerRight, MOVE_DOODLE, target: opponentLeft); MOVE(playerLeft, MOVE_EMBER, target: opponentRight); }
+    } SCENE {
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_POWDER, opponentRight);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_DOODLE, playerRight);
+        NONE_OF {
+            ANIMATION(ANIM_TYPE_MOVE, MOVE_EMBER, playerLeft);
+            HP_BAR(opponentLeft);
+        }
+    } THEN {
+        EXPECT_EQ(playerLeft->ability, ABILITY_COZY);
     }
 }
 
