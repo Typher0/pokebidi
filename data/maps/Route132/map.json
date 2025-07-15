@@ -26,7 +26,7 @@
   ],
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_SWIMMER_M",
+      "graphics_id": "OBJ_EVENT_GFX_SWIMMER_M_3",
       "x": 40,
       "y": 13,
       "elevation": 1,
@@ -39,7 +39,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SWIMMER_F",
+      "graphics_id": "OBJ_EVENT_GFX_SWIMMER_F_2",
       "x": 10,
       "y": 6,
       "elevation": 1,
