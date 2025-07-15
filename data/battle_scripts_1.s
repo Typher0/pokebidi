@@ -6913,7 +6913,7 @@ BattleScript_CottonDownActivates::
 	swapattackerwithtarget
 	setbyte gBattlerTarget, 0
 BattleScript_CottonDownLoop:
-	jumpiffainted BS_TARGET, TRUE, BattleScript_CottonDownLoopIncrement
+	jumpifabsent BS_TARGET, BattleScript_CottonDownLoopIncrement
 	setstatchanger STAT_SPEED, 1, TRUE
 	jumpifbyteequal gBattlerTarget, gEffectBattler, BattleScript_CottonDownLoopIncrement
 	statbuffchange STAT_CHANGE_NOT_PROTECT_AFFECTED | STAT_CHANGE_ALLOW_PTR, BattleScript_CottonDownLoopIncrement
@@ -7060,10 +7060,13 @@ BattleScript_PowderMoveNoEffect::
 	pause B_WAIT_TIME_SHORT
 	jumpiftype BS_TARGET, TYPE_GRASS, BattleScript_PowderMoveNoEffectPrint
 	jumpifability BS_TARGET, ABILITY_OVERCOAT, BattleScript_PowderMoveNoEffectOvercoat
+    jumpifability BS_TARGET, ABILITY_COZY, BattleScript_PowderMoveNoEffectCozy
 	printstring STRINGID_SAFETYGOGGLESPROTECTED
 	goto BattleScript_PowderMoveNoEffectWaitMsg
 BattleScript_PowderMoveNoEffectOvercoat:
 	call BattleScript_AbilityPopUp
+BattleScript_PowderMoveNoEffectCozy:
+    call BattleScript_AbilityPopUp
 BattleScript_PowderMoveNoEffectPrint:
 	printstring STRINGID_ITDOESNTAFFECT
 BattleScript_PowderMoveNoEffectWaitMsg:
@@ -7518,6 +7521,16 @@ BattleScript_AbilityHpHeal:
 BattleScript_RainDishActivates::
 	call BattleScript_AbilityHpHeal
 	end3
+
+BattleScript_VampirismActivates::
+    call BattleScript_AbilityPopUp
+    absorbhealthbarupdate BS_ATTACKER
+    datahpupdate BS_ATTACKER
+    printfromtable gAbsorbDrainStringIds
+    waitmessage B_WAIT_TIME_LONG
+    tryfaintmon BS_ATTACKER
+    orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE
+    return
 
 BattleScript_CheekPouchActivates::
 	copybyte sSAVED_BATTLER, gBattlerAttacker
