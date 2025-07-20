@@ -21,6 +21,7 @@ static const u16 sMoveItemTable[][18] =
     { TYPE_DRAGON,   MOVE_DRAGON_BREATH,   ITEM_DRAGON_FANG },
     { TYPE_DARK,     MOVE_BITE,            ITEM_BLACK_GLASSES },
     { TYPE_FAIRY,    MOVE_DISARMING_VOICE, ITEM_FAIRY_FEATHER },
+    { TYPE_SOUND,    MOVE_ECHOED_VOICE,    ITEM_MP3_PLAYER },
 };
 
 SINGLE_BATTLE_TEST("Type-enhancing items increase the base power of moves by 20%", s16 damage)

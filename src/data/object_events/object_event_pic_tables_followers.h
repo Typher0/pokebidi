@@ -3685,6 +3685,9 @@ static const struct SpriteFrameImage sPicTable_ArceusDark[] = {
 static const struct SpriteFrameImage sPicTable_ArceusFairy[] = {
     overworld_ascending_frames(gObjectEventPic_ArceusFairy, 8, 8),
 };
+static const struct SpriteFrameImage sPicTable_ArceusSound[] = {
+    overworld_ascending_frames(gObjectEventPic_ArceusSound, 8, 8),
+};
 #endif //P_FAMILY_ARCEUS
 
 #if P_FAMILY_VICTINI

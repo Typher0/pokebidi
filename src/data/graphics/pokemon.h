@@ -15831,6 +15831,9 @@ const u8 gMonIcon_Cacturado[] = INCBIN_U8("graphics/pokemon/cacturado/icon.4bpp"
     const u16 gMonPalette_ArceusFairy[] = INCBIN_U16("graphics/pokemon/arceus/fairy/normal.gbapal");
     const u16 gMonShinyPalette_ArceusFairy[] = INCBIN_U16("graphics/pokemon/arceus/fairy/shiny.gbapal");
 
+    const u16 gMonPalette_ArceusSound[] = INCBIN_U16("graphics/pokemon/arceus/sound/normal.gbapal");
+    const u16 gMonShinyPalette_ArceusSound[] = INCBIN_U16("graphics/pokemon/arceus/sound/shiny.gbapal");
+
 #if P_ARCEUS_UNIQUE_FORM_ICONS >= GEN_9
     const u8 gMonIcon_ArceusFighting[] = INCBIN_U8("graphics/pokemon/arceus/fighting/icon.4bpp");
     const u8 gMonIcon_ArceusFlying[] = INCBIN_U8("graphics/pokemon/arceus/flying/icon.4bpp");
@@ -21856,6 +21859,9 @@ const u8 gMonIcon_Cacturado[] = INCBIN_U8("graphics/pokemon/cacturado/icon.4bpp"
 
     const u16 gMonPalette_SilvallyFairy[] = INCBIN_U16("graphics/pokemon/silvally/fairy/normal.gbapal");
     const u16 gMonShinyPalette_SilvallyFairy[] = INCBIN_U16("graphics/pokemon/silvally/fairy/shiny.gbapal");
+
+    const u16 gMonPalette_SilvallySound[] = INCBIN_U16("graphics/pokemon/silvally/sound/normal.gbapal");
+    const u16 gMonShinyPalette_SilvallySound[] = INCBIN_U16("graphics/pokemon/silvally/sound/shiny.gbapal");
 #endif //P_FAMILY_TYPE_NULL
 
 #if P_FAMILY_MINIOR

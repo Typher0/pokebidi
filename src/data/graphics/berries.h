@@ -73,6 +73,7 @@ const u32 gBerryPic_Jaboca[] = INCBIN_U32("graphics/berries/jaboca.4bpp.lz");
 const u32 gBerryPic_Rowap[] = INCBIN_U32("graphics/berries/rowap.4bpp.lz");
 const u32 gBerryPic_Kee[] = INCBIN_U32("graphics/berries/kee.4bpp.lz");
 const u32 gBerryPic_Maranga[] = INCBIN_U32("graphics/berries/maranga.4bpp.lz");
+const u32 gBerryPic_Niniku[] = INCBIN_U32("graphics/berries/niniku.4bpp.lz");
 
 const u16 gBerryPalette_Cheri[] = INCBIN_U16("graphics/berries/cheri.gbapal");
 const u16 gBerryPalette_Chesto[] = INCBIN_U16("graphics/berries/chesto.gbapal");
@@ -141,3 +142,4 @@ const u16 gBerryPalette_Jaboca[] = INCBIN_U16("graphics/berries/jaboca.gbapal");
 const u16 gBerryPalette_Rowap[] = INCBIN_U16("graphics/berries/rowap.gbapal");
 const u16 gBerryPalette_Kee[] = INCBIN_U16("graphics/berries/kee.gbapal");
 const u16 gBerryPalette_Maranga[] = INCBIN_U16("graphics/berries/maranga.gbapal");
+const u16 gBerryPalette_Niniku[] = INCBIN_U16("graphics/berries/niniku.gbapal");

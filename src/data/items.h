@@ -4775,6 +4775,25 @@ const struct Item gItemsInfo[] =
         .iconPic = gItemIcon_PixiePlate,
         .iconPalette = gItemIconPalette_PixiePlate,
     },
+    
+    [ITEM_SONAR_PLATE] =
+    {
+        .name = _("Sonar Plate"),
+        .price = 1000,
+        .holdEffect = HOLD_EFFECT_PLATE,
+        .holdEffectParam = 20,
+        .description = COMPOUND_STRING(
+            "A tablet that ups\n"
+            "the power of\n"
+            "Sound-type moves."),
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .secondaryId = TYPE_SOUND,
+        .flingPower = 90,
+        .iconPic = gItemIcon_SonarPlate,
+        .iconPalette = gItemIconPalette_SonarPlate,
+    },
 
 // Drives
 
@@ -5190,6 +5209,26 @@ const struct Item gItemsInfo[] =
         .flingPower = 50,
         .iconPic = gItemIcon_FairyMemory,
         .iconPalette = gItemIconPalette_FairyMemory,
+    },
+    
+    [ITEM_SOUND_MEMORY] =
+    {
+        .name = _("Sound Memory"),
+        .pluralName = _("Sound Memories"),
+        .price = 1000,
+        .holdEffect = HOLD_EFFECT_MEMORY,
+        .holdEffectParam = 0,
+        .description = COMPOUND_STRING(
+            "A disc with Sound\n"
+            "type data. It swaps\n"
+            "Silvally's type."),
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .secondaryId = TYPE_SOUND,
+        .flingPower = 50,
+        .iconPic = gItemIcon_SoundMemory,
+        .iconPalette = gItemIconPalette_SoundMemory,
     },
 
     [ITEM_RUSTED_SWORD] =
@@ -6374,6 +6413,24 @@ const struct Item gItemsInfo[] =
         .iconPic = gItemIcon_FairyGem,
         .iconPalette = gItemIconPalette_FairyGem,
     },
+    
+    [ITEM_SOUND_GEM] =
+    {
+        .name = _("Sound Gem"),
+        .price = (I_PRICE >= GEN_9) ? 15000 : ((I_PRICE >= GEN_7) ? 4000 : 200),
+        .holdEffect = HOLD_EFFECT_GEMS,
+        .holdEffectParam = GEM_BOOST_PARAM,
+        .description = COMPOUND_STRING(
+            "Increases the\n"
+            "power of Sound\n"
+            "Type moves."),
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .secondaryId = TYPE_SOUND,
+        .iconPic = gItemIcon_SoundGem,
+        .iconPalette = gItemIconPalette_SoundGem,
+    },
 
 // Z-Crystals
 
@@ -6681,6 +6738,23 @@ const struct Item gItemsInfo[] =
         .secondaryId = TYPE_FAIRY,
         .iconPic = gItemIcon_FairiumZ,
         .iconPalette = gItemIconPalette_FairiumZ,
+    },
+    
+    [ITEM_SOUNDIUM_Z] =
+    {
+        .name = _("Soundium Z"),
+        .price = 0,
+        .holdEffect = HOLD_EFFECT_Z_CRYSTAL,
+        .description = COMPOUND_STRING(
+            "Upgrade Sound-\n"
+            "type moves into\n"
+            "Z-Moves."),
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .secondaryId = TYPE_SOUND,
+        .iconPic = gItemIcon_SoundiumZ,
+        .iconPalette = gItemIconPalette_SoundiumZ,
     },
 
     [ITEM_PIKANIUM_Z] =
@@ -7879,6 +7953,26 @@ const struct Item gItemsInfo[] =
         .flingPower = 30,
         .iconPic = gItemIcon_MetalCoat,
         .iconPalette = gItemIconPalette_MetalCoat,
+    },
+    
+    [ITEM_MP3_PLAYER] =
+    {
+        .name = _("MP3 Player"),
+        .price = (I_PRICE >= GEN_9) ? 3000 : ((I_PRICE >= GEN_7) ? 2000 : 100),
+        .holdEffect = HOLD_EFFECT_TYPE_POWER,
+        .holdEffectParam = TYPE_BOOST_PARAM,
+        .description = COMPOUND_STRING(
+            "A hold item that\n"
+            "raises the power of\n"
+            "Sound-type moves."),
+        .pocket = POCKET_ITEMS,
+        .type = EVO_HELD_ITEM_TYPE,
+        .fieldUseFunc = EVO_HELD_ITEM_FIELD_FUNC,
+        .effect = gItemEffect_EvoItem,
+        .secondaryId = TYPE_SOUND,
+        .flingPower = 30,
+        .iconPic = gItemIcon_Mp3Player,
+        .iconPalette = gItemIconPalette_Mp3Player,
     },
 
 // Choice Items
@@ -10420,6 +10514,25 @@ const struct Item gItemsInfo[] =
         .flingPower = 10,
         .iconPic = gItemIcon_MarangaBerry,
         .iconPalette = gItemIconPalette_MarangaBerry,
+    },
+    
+    [ITEM_NINIKU_BERRY] =
+    {
+        .name = _("Niniku Berry"),
+        .pluralName = _("Niniku Berries"),
+        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
+        .holdEffect = HOLD_EFFECT_RESIST_BERRY,
+        .holdEffectParam = TYPE_FAIRY,
+        .description = COMPOUND_STRING(
+            "A hold item that\n"
+            "weakens a Sound\n"
+            "move if weak to it."),
+        .pocket = POCKET_BERRIES,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 10,
+        .iconPic = gItemIcon_NinikuBerry,
+        .iconPalette = gItemIconPalette_NinikuBerry,
     },
 
     [ITEM_ENIGMA_BERRY_E_READER] =
