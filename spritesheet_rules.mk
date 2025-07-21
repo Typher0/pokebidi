@@ -5099,6 +5099,9 @@ $(POKEMONGFXDIR)/arceus/dark/overworld.4bpp: %.4bpp: %.png
 
 $(POKEMONGFXDIR)/arceus/fairy/overworld.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 8 -mheight 8
+	
+$(POKEMONGFXDIR)/arceus/sound/overworld.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 8 -mheight 8
 
 $(POKEMONGFXDIR)/basculin/blue_striped/overworld.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
