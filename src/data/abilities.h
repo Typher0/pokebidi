@@ -2434,8 +2434,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_VAMPIRISM] =
     {
         .name = _("Vampirism"),
-        .description = COMPOUND_STRING("Biting moves drain HP."),
-        .aiRating = 6,
+        .description = COMPOUND_STRING("Bites higher 2nd effects odds."),
+        .aiRating = 8,
     },
 
     [ABILITY_SAPERA] =

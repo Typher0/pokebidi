@@ -11101,6 +11101,7 @@ bool32 AreBattlersOfSameGender(u32 battler1, u32 battler2)
 u32 CalcSecondaryEffectChance(u32 battler, u32 battlerAbility, const struct AdditionalEffect *additionalEffect)
 {
     bool8 hasSereneGrace = (battlerAbility == ABILITY_SERENE_GRACE);
+    bool8 hasVampirism = (battlerAbility == ABILITY_VAMPIRISM);
     bool8 hasRainbow = (gSideStatuses[GetBattlerSide(battler)] & SIDE_STATUS_RAINBOW) != 0;
     u16 secondaryEffectChance = additionalEffect->chance;
 
@@ -11109,6 +11110,10 @@ u32 CalcSecondaryEffectChance(u32 battler, u32 battlerAbility, const struct Addi
 
     if (hasSereneGrace)
         secondaryEffectChance *= 2;
+    if (hasVampirism && additionalEffect->moveEffect != MOVE_EFFECT_FLINCH) 
+        secondaryEffectChance *= 3;
+    if (hasVampirism && additionalEffect->moveEffect != MOVE_EFFECT_DEF_MINUS_1)
+        secondaryEffectChance *= 3;
     if (hasRainbow && additionalEffect->moveEffect != MOVE_EFFECT_SECRET_POWER)
         secondaryEffectChance *= 2;
 
