@@ -989,7 +989,7 @@ static void UpdateBattleBg(u8 taskId, bool8 increment)
     {
         if (increment)
         {
-            if (data->battleTerrain == BATTLE_ENVIRONMENT_ARENA)
+            if (data->battleTerrain == BATTLE_ENVIRONMENT_ROUTE)
                 data->battleBgType += 1;
             else
                 data->battleTerrain += 1;
