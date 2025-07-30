@@ -698,6 +698,8 @@ u8 BattleSetup_GetEnvironmentId(void)
         return BATTLE_ENVIRONMENT_CAVE;
     case MAP_TYPE_INDOOR:
     case MAP_TYPE_SECRET_BASE:
+        if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_RUSTBORO_CITY_GYM) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_RUSTBORO_CITY_GYM))
+            return BATTLE_ENVIRONMENT_GYM;
         return BATTLE_ENVIRONMENT_INDOOR;
     case MAP_TYPE_UNDERWATER:
         if (gTimeOfDay == TIME_MORNING)

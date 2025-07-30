@@ -15852,6 +15852,7 @@ const u8 gMonIcon_Cacturado[] = INCBIN_U8("graphics/pokemon/cacturado/icon.4bpp"
     const u8 gMonIcon_ArceusDragon[] = INCBIN_U8("graphics/pokemon/arceus/dragon/icon.4bpp");
     const u8 gMonIcon_ArceusDark[] = INCBIN_U8("graphics/pokemon/arceus/dark/icon.4bpp");
     const u8 gMonIcon_ArceusFairy[] = INCBIN_U8("graphics/pokemon/arceus/fairy/icon.4bpp");
+    const u8 gMonIcon_ArceusSound[] = INCBIN_U8("graphics/pokemon/arceus/sound/icon.4bpp");
 #endif //P_ARCEUS_UNIQUE_FORM_ICONS
 #if OW_POKEMON_OBJECT_EVENTS
     const u32 gObjectEventPic_ArceusNormal[] = INCBIN_COMP("graphics/pokemon/arceus/overworld.4bpp");
