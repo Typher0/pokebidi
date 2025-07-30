@@ -700,7 +700,36 @@ u8 BattleSetup_GetEnvironmentId(void)
     case MAP_TYPE_SECRET_BASE:
         if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_RUSTBORO_CITY_GYM) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_RUSTBORO_CITY_GYM))
             return BATTLE_ENVIRONMENT_GYM;
-        return BATTLE_ENVIRONMENT_INDOOR;
+        if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_DEWFORD_TOWN_GYM) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_DEWFORD_TOWN_GYM))
+            return BATTLE_ENVIRONMENT_GYM;
+        if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_MAUVILLE_CITY_GYM) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_MAUVILLE_CITY_GYM))
+            return BATTLE_ENVIRONMENT_GYM;
+        if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_LAVARIDGE_TOWN_GYM_1F) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_LAVARIDGE_TOWN_GYM_1F))
+            return BATTLE_ENVIRONMENT_GYM;
+        if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_LAVARIDGE_TOWN_GYM_B1F) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_LAVARIDGE_TOWN_GYM_B1F))
+            return BATTLE_ENVIRONMENT_GYM;
+        if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_PETALBURG_CITY_GYM) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_PETALBURG_CITY_GYM))
+            return BATTLE_ENVIRONMENT_GYM;
+        if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_FORTREE_CITY_GYM) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_FORTREE_CITY_GYM))
+            return BATTLE_ENVIRONMENT_GYM;
+        if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_MOSSDEEP_CITY_GYM) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_MOSSDEEP_CITY_GYM))
+            return BATTLE_ENVIRONMENT_GYM;
+        if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_SOOTOPOLIS_CITY_GYM_1F) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_SOOTOPOLIS_CITY_GYM_1F))
+            return BATTLE_ENVIRONMENT_GYM;
+        if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_SOOTOPOLIS_CITY_GYM_B1F) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_SOOTOPOLIS_CITY_GYM_B1F))
+            return BATTLE_ENVIRONMENT_GYM;
+        if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_EVER_GRANDE_CITY_SIDNEYS_ROOM) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_EVER_GRANDE_CITY_SIDNEYS_ROOM))
+            return BATTLE_ENVIRONMENT_THOMAS;
+        if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_EVER_GRANDE_CITY_PHOEBES_ROOM) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_EVER_GRANDE_CITY_PHOEBES_ROOM))
+            return BATTLE_ENVIRONMENT_TOBIAS;
+        if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_EVER_GRANDE_CITY_GLACIAS_ROOM) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_EVER_GRANDE_CITY_GLACIAS_ROOM))
+            return BATTLE_ENVIRONMENT_TINKER;
+        if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_EVER_GRANDE_CITY_DRAKES_ROOM) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_EVER_GRANDE_CITY_DRAKES_ROOM))
+            return BATTLE_ENVIRONMENT_MOOSE;
+        if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_EVER_GRANDE_CITY_CHAMPIONS_ROOM) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_EVER_GRANDE_CITY_CHAMPIONS_ROOM))
+            return BATTLE_ENVIRONMENT_GWEN;
+        else
+            return BATTLE_ENVIRONMENT_INDOOR;
     case MAP_TYPE_UNDERWATER:
         if (gTimeOfDay == TIME_MORNING)
             return BATTLE_ENVIRONMENT_UNDERWATER;
