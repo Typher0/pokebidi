@@ -989,7 +989,7 @@ static void UpdateBattleBg(u8 taskId, bool8 increment)
     {
         if (increment)
         {
-            if (data->battleTerrain == BATTLE_ENVIRONMENT_ROUTE)
+            if (data->battleTerrain == BATTLE_ENVIRONMENT_ARENA)
                 data->battleBgType += 1;
             else
                 data->battleTerrain += 1;
@@ -1190,7 +1190,7 @@ void CB2_Pokemon_Sprite_Visualizer(void)
 
             FillBgTilemapBufferRect(0, 0, 0, 0, 32, 20, 15);
             InitBgsFromTemplates(0, sBgTemplates, ARRAY_COUNT(sBgTemplates));
-            LoadBattleBg(0, BATTLE_ENVIRONMENT_ROUTE);
+            LoadBattleBg(0, BATTLE_ENVIRONMENT_ARENA);
 
             gMain.state++;
             break;
