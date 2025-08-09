@@ -2420,7 +2420,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_JESTER] =
     {
         .name = _("Jester"),
-        .description = COMPOUND_STRING("Immune to supereffective."),
+        .description = COMPOUND_STRING("No “Supereffective” hits."),
         .aiRating = 3,
     },
 
