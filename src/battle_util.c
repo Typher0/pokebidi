@@ -9872,6 +9872,21 @@ static inline uq4_12_t CalcTypeEffectivenessMultiplierInternal(u32 move, u32 mov
             RecordAbilityBattle(battlerDef, gBattleMons[battlerDef].ability);
         }
     }
+    
+    if (((defAbility == ABILITY_JESTER && modifier > UQ_4_12(1.0))
+        || (defAbility == ABILITY_TELEPATHY && battlerDef == BATTLE_PARTNER(battlerAtk)))
+        && GetMovePower(move) != 0)
+    {
+        modifier = UQ_4_12(0.0);
+        if (recordAbilities)
+        {
+            gLastUsedAbility = gBattleMons[battlerDef].ability;
+            gBattleStruct->moveResultFlags[battlerDef] |= MOVE_RESULT_MISSED;
+            gLastLandedMoves[battlerDef] = 0;
+            gBattleStruct->missStringId[battlerDef] = B_MSG_AVOIDED_DMG;
+            RecordAbilityBattle(battlerDef, gBattleMons[battlerDef].ability);
+        }
+    }
 
     if (recordAbilities)
         TryInitializeFirstSTABMoveTrainerSlide(battlerDef, battlerAtk, moveType);
@@ -9910,6 +9925,8 @@ uq4_12_t CalcPartyMonTypeEffectivenessMultiplier(u16 move, u16 speciesDef, u16 a
             modifier = UQ_4_12(0.0);
         if (abilityDef == ABILITY_WONDER_GUARD && modifier <= UQ_4_12(1.0) && GetMovePower(move) != 0)
             modifier = UQ_4_12(0.0);
+        if (abilityDef == ABILITY_JESTER && modifier > UQ_4_12(1.0) && GetMovePower(move) != 0)
+            modifier = UQ_4_12(0.0);
     }
 
     return modifier;
@@ -9945,6 +9962,7 @@ uq4_12_t GetOverworldTypeEffectiveness(struct Pokemon *mon, u8 moveType)
             MulByTypeEffectiveness(&modifier, MOVE_POUND, moveType, 0, 0, type2, 0, FALSE);
 
         if ((modifier <= UQ_4_12(1.0)  &&  abilityDef == ABILITY_WONDER_GUARD)
+         || (modifier > UQ_4_12(1.0)   &&  abilityDef == ABILITY_JESTER)
          || (moveType == TYPE_FIRE     &&  abilityDef == ABILITY_FLASH_FIRE)
          || (moveType == TYPE_GRASS    &&  abilityDef == ABILITY_SAP_SIPPER)
          || (moveType == TYPE_GROUND   && (abilityDef == ABILITY_LEVITATE
