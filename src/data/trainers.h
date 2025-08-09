@@ -12418,14 +12418,14 @@ F_TRAINER_FEMALE |
 #line 5033
             .iv = TRAINER_PARTY_IVS(20, 24, 18, 12, 4, 12),
 #line 5032
-            .ability = ABILITY_MOXIE,
+            .ability = ABILITY_SHED_SKIN,
 #line 5031
             .lvl = 14,
             .nature = NATURE_HARDY,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 5034
-                MOVE_PAYBACK,
+                MOVE_BEAT_UP,
                 MOVE_LOW_KICK,
                 MOVE_SAND_ATTACK,
                 MOVE_BULK_UP,
@@ -12451,7 +12451,7 @@ F_TRAINER_FEMALE |
             },
             {
 #line 5047
-            .species = SPECIES_GURDURR,
+            .species = SPECIES_TIMBURR,
 #line 5047
             .gender = TRAINER_MON_MALE,
 #line 5047
@@ -12480,7 +12480,7 @@ F_TRAINER_FEMALE |
 #line 5056
             .heldItem = ITEM_SITRUS_BERRY,
 #line 5060
-            .ev = TRAINER_PARTY_EVS(60, 35, 30, 40, 50, 40),
+            .ev = TRAINER_PARTY_EVS(10, 5, 0, 4, 5, 4),
 #line 5059
             .iv = TRAINER_PARTY_IVS(24, 24, 24, 24, 24, 24),
 #line 5058
@@ -13835,7 +13835,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 5634
-            .species = SPECIES_BUDEW,
+            .species = SPECIES_HAMSNUG,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 5636
             .iv = TRAINER_PARTY_IVS(1, 1, 1, 1, 1, 1),

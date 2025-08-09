@@ -2316,7 +2316,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
 
     [MOVE_THUNDER_WAVE] =
     {
-        .name = COMPOUND_STRING(" Wave"),
+        .name = COMPOUND_STRING("Thunder Wave"),
         .description = COMPOUND_STRING(
             "A weak jolt of electricity\n"
             "that paralyzes the foe."),
@@ -21387,9 +21387,9 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Haystack"),
         .description = COMPOUND_STRING(
-            "Creates a substitute\n"
-            "and raises evasion."),
-        .effect = EFFECT_SUBSTITUTE,
+            "Raises evasion by\n"
+            "two stages."),
+        .effect = EFFECT_MINIMIZE,
         .power = 0,
         .type = TYPE_GRASS,
         .accuracy = 0,
@@ -21402,10 +21402,6 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .ignoresProtect = TRUE,
         .mirrorMoveBanned = TRUE,
         .skyBattleBanned = TRUE,
-        .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = EFFECT_EVASION_UP,
-            .self = TRUE,
-        }),
         .battleAnimScript = gBattleAnimMove_Haystack,
         .contestEffect = CONTEST_EFFECT_AVOID_STARTLE_ONCE,
         .contestCategory = CONTEST_CATEGORY_SMART,
@@ -21700,7 +21696,6 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_ATK_PLUS_1,
             .self = TRUE,
-            .chance = 100,
         }),
         .battleAnimScript = gBattleAnimMove_EnGarde,
         .contestEffect = CONTEST_EFFECT_MAKE_FOLLOWING_MONS_NERVOUS,
