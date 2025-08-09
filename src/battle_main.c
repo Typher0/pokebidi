@@ -6019,6 +6019,16 @@ u32 GetDynamicMoveType(struct Pokemon *mon, u32 move, u32 battler, enum MonState
             gBattleStruct->ateBoost[battler] = TRUE;
         return ateType;
     }
+    else if (moveType == TYPE_SOUND
+          && ability != ABILITY_NORMALIZE
+          && gimmick != GIMMICK_DYNAMAX
+          && gimmick != GIMMICK_Z_MOVE)
+    {
+        u32 ateType = TrySetAteType(move, battler, ability);
+        if (ateType != TYPE_NONE && state == MON_IN_BATTLE)
+            gBattleStruct->ateBoost[battler] = TRUE;
+        return ateType;
+    }
     else if (moveEffect != EFFECT_CHANGE_TYPE_ON_ITEM
           && moveEffect != EFFECT_TERRAIN_PULSE
           && moveEffect != EFFECT_NATURAL_GIFT
