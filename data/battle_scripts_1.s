@@ -8492,11 +8492,15 @@ BattleScript_BanefulBunkerEffect::
 	return
 
 BattleScript_FieldOfReedsEffect::
-    orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_PASSIVE_DAMAGE
-    clearmoveresultflags MOVE_RESULT_NO_EFFECT
-    seteffectsecondary
-    setmoveresultflags MOVE_RESULT_MISSED
-    return
+	orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_PASSIVE_DAMAGE
+	clearmoveresultflags MOVE_RESULT_NO_EFFECT
+	seteffectsecondary
+	setmoveresultflags MOVE_RESULT_MISSED
+	printstring STRINGID_TERRAINBECOMESGRASSY
+	waitmessage B_WAIT_TIME_LONG
+	playanimation BS_SCRIPTING, B_ANIM_RESTORE_BG
+	call BattleScript_ActivateTerrainEffects
+	return
 
 BattleScript_CuteCharmActivates::
 	call BattleScript_AbilityPopUp
