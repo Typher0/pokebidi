@@ -21813,8 +21813,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Field of Reeds"),
         .description = COMPOUND_STRING(
-            "Evades attack and heals user.\n"
-            "Can't be used in succession."),
+            "Protects user and sets Grassy\n"
+            "Terrain on contact."),
         .effect = EFFECT_PROTECT,
         .power = 0,
         .type = TYPE_FAIRY,
@@ -21823,10 +21823,12 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .target = MOVE_TARGET_USER,
         .priority = B_UPDATED_MOVE_DATA >= GEN_5 ? 4 : 3,
         .category = DAMAGE_CATEGORY_STATUS,
+        .argument = { .protectMethod = PROTECT_FIELD_OF_REEDS },
         .zMove = { .effect = Z_EFFECT_RESET_STATS },
         .metronomeBanned = TRUE,
         .copycatBanned = TRUE,
         .assistBanned = TRUE,
+        .battleAnimScript = gBattleAnimMove_Protect,
         .contestEffect = CONTEST_EFFECT_AVOID_STARTLE,
         .contestCategory = CONTEST_CATEGORY_CUTE,
         .contestComboStarterId = 0,
