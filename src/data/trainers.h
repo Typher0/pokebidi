@@ -12760,7 +12760,7 @@ F_TRAINER_FEMALE |
 #line 5177
             .friendship = 255,
 #line 5178
-            .nature = NATURE_ADAMANT,
+            .nature = NATURE_MODEST,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 5179
@@ -13035,16 +13035,16 @@ F_TRAINER_FEMALE |
             },
             {
 #line 5298
-            .species = SPECIES_CONDESA,
+            .species = SPECIES_CHARIZARD,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 5298
             .heldItem = ITEM_HEAVY_DUTY_BOOTS,
 #line 5302
-            .ev = TRAINER_PARTY_EVS(152, 0, 152, 0, 0, 30),
+            .ev = TRAINER_PARTY_EVS(152, 0, 0, 0, 152, 30),
 #line 5301
             .iv = TRAINER_PARTY_IVS(26, 26, 26, 26, 26, 26),
 #line 5300
-            .ability = ABILITY_REGENERATOR,
+            .ability = ABILITY_BLAZE,
 #line 5299
             .lvl = 34,
 #line 5303
@@ -13052,14 +13052,14 @@ F_TRAINER_FEMALE |
 #line 5304
             .friendship = 225,
 #line 5305
-            .nature = NATURE_ADAMANT,
+            .nature = NATURE_MODEST,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 5306
-                MOVE_STEALTH_ROCK,
-                MOVE_U_TURN,
+                MOVE_FIRE_BLAST,
+                MOVE_AIR_SLASH,
                 MOVE_EARTHQUAKE,
-                MOVE_AERIAL_ACE,
+                MOVE_DRAGON_PULSE,
             },
             },
             {

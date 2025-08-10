@@ -5175,7 +5175,7 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 EVs: 150 SpA / 130 Spe
 Ball: Cherish Ball
 Happiness: 255
-Nature: Adamant
+Nature: Modest
 - Overheat
 - Sunny Day
 - Scald
@@ -5295,18 +5295,18 @@ Nature: Timid
 - Giga Drain
 - Baton Pass
 
-Condesa @ Heavy Duty Boots
+Charizard @ Heavy Duty Boots
 Level: 34
-Ability: Regenerator
+Ability: Blaze
 IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
-EVs: 152 HP / 152 Def / 30 SpD
+EVs: 152 HP / 152 SpA / 30 SpD
 Ball: Heavy Ball
 Happiness: 225
-Nature: Adamant
-- Stealth Rock
-- U Turn
+Nature: Modest
+- Fire Blast
+- Air Slash
 - Earthquake
-- Aerial Ace
+- Dragon Pulse
 
 Condesa @ Heavy Duty Boots
 Level: 35
