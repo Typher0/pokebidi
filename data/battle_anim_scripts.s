@@ -18897,12 +18897,6 @@ gBattleAnimMove_MindRace::
 	monbg ANIM_DEF_PARTNER
 	call SetPsychicBackground
 	setalpha 8, 8
-	monbg ANIM_ATK_PARTNER
-	setalpha 12, 8
-	createvisualtask AnimTask_TranslateMonEllipticalRespectSide, 2, ANIM_ATTACKER, 24, 6, 1, 5
-	createvisualtask AnimTask_TraceMonBlended, 2, 0, 4, 7, 3
-	playsewithpan SE_M_JUMP_KICK, SOUND_PAN_ATTACKER
-	delay 4
 	createvisualtask AnimTask_ShakeMon2, 2, ANIM_ATTACKER, 1, 0, 10, 1
 	createvisualtask AnimTask_BlendColorCycle, 2, F_PAL_ATTACKER, 0, 2, 0, 8, RGB_WHITE
 	waitforvisualfinish
@@ -18910,13 +18904,12 @@ gBattleAnimMove_MindRace::
 	createvisualtask AnimTask_ShakeMon, 2, ANIM_TARGET, 3, 0, 15, 1
 	createvisualtask AnimTask_ScaleMonAndRestore, 5, -4, -4, 15, ANIM_TARGET, 1
 	waitforvisualfinish
+	createvisualtask AnimTask_ExtremeSpeedImpact, 2
+	delay 2
 	clearmonbg ANIM_DEF_PARTNER
 	blendoff
 	delay 1
 	call UnsetPsychicBg
-	clearmonbg ANIM_ATK_PARTNER
-	blendoff
-	waitforvisualfinish
 	end
 
 gBattleAnimMove_RocketRush::
