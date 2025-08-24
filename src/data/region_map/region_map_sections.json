@@ -674,11 +674,7 @@
     },
     {
       "id": "MAPSEC_INSIDE_OF_TRUCK",
-      "name": "Moving Truck",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
+      "name": "INSIDE OF TRUCK"
     },
     {
       "id": "MAPSEC_SKY_PILLAR",
@@ -690,18 +686,11 @@
     },
     {
       "id": "MAPSEC_SECRET_BASE",
-      "name": "Secret Base",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
+      "name": "SECRET BASE"
     },
     {
       "id": "MAPSEC_DYNAMIC",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
+      "name": ""
     },
     {
       "id": "MAPSEC_PALLET_TOWN",
@@ -794,18 +783,12 @@
     {
       "id": "MAPSEC_ROUTE_4_POKECENTER",
       "name": "ROUTE 4",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
+      "name_clone": true
     },
     {
       "id": "MAPSEC_ROUTE_10_POKECENTER",
       "name": "ROUTE 10",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
+      "name_clone": true
     },
     {
       "id": "MAPSEC_ROUTE_1",
@@ -1042,10 +1025,7 @@
     {
       "id": "MAPSEC_UNDERGROUND_PATH_2",
       "name": "UNDERGROUND PATH",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
+      "name_clone": true
     },
     {
       "id": "MAPSEC_DIGLETTS_CAVE",
@@ -1058,10 +1038,7 @@
     {
       "id": "MAPSEC_KANTO_VICTORY_ROAD",
       "name": "VICTORY ROAD",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
+      "name_clone": true
     },
     {
       "id": "MAPSEC_ROCKET_HIDEOUT",
@@ -1090,10 +1067,7 @@
     {
       "id": "MAPSEC_KANTO_SAFARI_ZONE",
       "name": "SAFARI ZONE",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
+      "name_clone": true
     },
     {
       "id": "MAPSEC_POKEMON_LEAGUE",
@@ -1434,10 +1408,7 @@
     {
       "id": "MAPSEC_TRAINER_TOWER_2",
       "name": "TRAINER TOWER",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
+      "name_clone": true
     },
     {
       "id": "MAPSEC_DOTTED_HOLE",
@@ -1601,19 +1572,11 @@
     },
     {
       "id": "MAPSEC_BIRTH_ISLAND",
-      "name": "Birth Island",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
+      "name": "BIRTH ISLAND"
     },
     {
       "id": "MAPSEC_FARAWAY_ISLAND",
-      "name": "Faraway Island",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
+      "name": "FARAWAY ISLAND"
     },
     {
       "id": "MAPSEC_ARTISAN_CAVE",
@@ -1625,27 +1588,15 @@
     },
     {
       "id": "MAPSEC_MARINE_CAVE",
-      "name": "Marine Cave",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
+      "name": "MARINE CAVE"
     },
     {
       "id": "MAPSEC_UNDERWATER_MARINE_CAVE",
-      "name": "Underwater",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
+      "name": "UNDERWATER"
     },
     {
       "id": "MAPSEC_TERRA_CAVE",
-      "name": "Terra Cave",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
+      "name": "TERRA CAVE"
     },
     {
       "id": "MAPSEC_UNDERWATER_105",
@@ -1689,11 +1640,7 @@
     },
     {
       "id": "MAPSEC_NAVEL_ROCK",
-      "name": "Navel Rock",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
+      "name": "NAVEL ROCK"
     },
     {
       "id": "MAPSEC_TRAINER_HILL",
