@@ -1076,10 +1076,7 @@ const u16 gItemIconPalette_SteeliumZ[] = INCBIN_U16("graphics/items/icon_palette
 const u32 gItemIcon_FairiumZ[] = INCBIN_U32("graphics/items/icons/fairium_z.4bpp.lz");
 const u16 gItemIconPalette_FairiumZ[] = INCBIN_U16("graphics/items/icon_palettes/fairium_z.gbapal");
 
-const u32 gItemIcon_SoundiumZ[] = INCBIN_U32("graphics/items/icons/soundium_z.4bpp.lz");
-const u16 gItemIconPalette_SoundiumZ[] = INCBIN_U16("graphics/items/icon_palettes/soundium_z.gbapal");
-
-const u32 gItemIcon_PikaniumZ[] = INCBIN_U32("graphics/items/icons/pikanium_z.4bpp.lz");
+const u32 gItemIcon_PikaniumZ[] = INCBIN_U32("graphics/items/icons/pikanium_z.4bpp.smol");
 const u16 gItemIconPalette_PikaniumZ[] = INCBIN_U16("graphics/items/icon_palettes/pikanium_z.gbapal");
 
 const u32 gItemIcon_EeviumZ[] = INCBIN_U32("graphics/items/icons/eevium_z.4bpp.lz");
