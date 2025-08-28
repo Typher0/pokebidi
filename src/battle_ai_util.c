@@ -4737,8 +4737,7 @@ bool32 ShouldTriggerAbility(u32 battler, u32 ability)
             return (BattlerStatCanRise(battler, ability, STAT_ATK) && HasMoveWithCategory(battler, DAMAGE_CATEGORY_PHYSICAL));
 
         case ABILITY_COMPETITIVE:
-     	case ABILITY_NARCISSIST:
-            return (BattlerStatCanRise(battler, ability, STAT_SPATK) && HasMoveWithCategory(battler, DAMAGE_CATEGORY_SPECIAL));
+            return (BattlerStatCanRise(battlerDef, ability, STAT_SPATK) && HasMoveWithCategory(battlerDef, DAMAGE_CATEGORY_SPECIAL));
 
         case ABILITY_CONTRARY:
             return TRUE;
