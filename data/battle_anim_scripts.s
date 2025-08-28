@@ -18281,7 +18281,6 @@ gBattleAnimMove_Psyblade::
 gBattleAnimMove_MatchaGotcha::
 gBattleAnimMove_MightyCleave::
 gBattleAnimMove_SupercellSlam::
-
 	loadspritegfx ANIM_TAG_IMPACT
 	loadspritegfx ANIM_TAG_SPARK_2
 	delay 0
