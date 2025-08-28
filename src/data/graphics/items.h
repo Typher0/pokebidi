@@ -806,11 +806,8 @@ const u16 gItemIconPalette_SteelMemory[] = INCBIN_U16("graphics/items/icon_palet
 const u32 gItemIcon_FairyMemory[] = INCBIN_U32("graphics/items/icons/fairy_memory.4bpp.lz");
 const u16 gItemIconPalette_FairyMemory[] = INCBIN_U16("graphics/items/icon_palettes/fairy_memory.gbapal");
 
-const u32 gItemIcon_SoundMemory[] = INCBIN_U32("graphics/items/icons/sound_memory.4bpp.lz");
-const u16 gItemIconPalette_SoundMemory[] = INCBIN_U16("graphics/items/icon_palettes/sound_memory.gbapal");
-
-const u32 gItemIcon_RustedSword[] = INCBIN_U32("graphics/items/icons/rusted_sword.4bpp.lz");
-const u32 gItemIcon_RustedShield[] = INCBIN_U32("graphics/items/icons/rusted_shield.4bpp.lz");
+const u32 gItemIcon_RustedSword[] = INCBIN_U32("graphics/items/icons/rusted_sword.4bpp.smol");
+const u32 gItemIcon_RustedShield[] = INCBIN_U32("graphics/items/icons/rusted_shield.4bpp.smol");
 const u16 gItemIconPalette_RustedWeapons[] = INCBIN_U16("graphics/items/icon_palettes/rusted_weapons.gbapal");
 
 // Colored Orbs
