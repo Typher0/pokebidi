@@ -612,433 +612,71 @@ const struct WindowTemplate *const gBattleWindowTemplates[] =
 
 const struct BattleBackground sBattleEnvironmentTable[] =
 {
-    [BATTLE_ENVIRONMENT_ARENA] =
+    int i;
+    for (i = 0; i < NELEMS(sMapBattleSceneMapping); i++)
     {
-        .tileset = gBattleEnvironmentTiles_Arena,
-        .tilemap = gBattleEnvironmentTilemap_Arena,
-        .palette = gBattleEnvironmentPalette_Arena,
-    },
-    
-    [BATTLE_ENVIRONMENT_AUTUMN_FOREST] =
-    {
-        .tileset = gBattleEnvironmentTiles_AutumnForest,
-        .tilemap = gBattleEnvironmentTilemap_AutumnForest,
-        .palette = gBattleEnvironmentPalette_AutumnForest,
-    },
-    
-    [BATTLE_ENVIRONMENT_AUTUMN_FOREST_E] =
-    {
-        .tileset = gBattleEnvironmentTiles_AutumnForestE,
-        .tilemap = gBattleEnvironmentTilemap_AutumnForestE,
-        .palette = gBattleEnvironmentPalette_AutumnForestE,
-    },
-    
-    [BATTLE_ENVIRONMENT_AUTUMN_FOREST_N] =
-    {
-        .tileset = gBattleEnvironmentTiles_AutumnForestN,
-        .tilemap = gBattleEnvironmentTilemap_AutumnForestN,
-        .palette = gBattleEnvironmentPalette_AutumnForestN,
-    },
-    
-    [BATTLE_ENVIRONMENT_BEACH] =
-    {
-        .tileset = gBattleEnvironmentTiles_Beach,
-        .tilemap = gBattleEnvironmentTilemap_Beach,
-        .palette = gBattleEnvironmentPalette_Beach,
-    },
-    
-    [BATTLE_ENVIRONMENT_BEACH_E] =
-    {
-        .tileset = gBattleEnvironmentTiles_BeachE,
-        .tilemap = gBattleEnvironmentTilemap_BeachE,
-        .palette = gBattleEnvironmentPalette_BeachE,
-    },
-    
-    [BATTLE_ENVIRONMENT_BEACH_N] =
-    {
-        .tileset = gBattleEnvironmentTiles_BeachN,
-        .tilemap = gBattleEnvironmentTilemap_BeachN,
-        .palette = gBattleEnvironmentPalette_BeachN,
-    },
+        if (mapBattleScene == sMapBattleSceneMapping[i].mapScene)
+            return sMapBattleSceneMapping[i].battleEnvironment;
+    }
+    return BATTLE_ENVIRONMENT_PLAIN;
+}
 
-    [BATTLE_ENVIRONMENT_BRIDGE] =
-    {
-        .tileset = gBattleEnvironmentTiles_Bridge,
-        .tilemap = gBattleEnvironmentTilemap_Bridge,
-        .palette = gBattleEnvironmentPalette_Bridge,
-    },
-    
-    [BATTLE_ENVIRONMENT_BRIDGE_E] =
-    {
-        .tileset = gBattleEnvironmentTiles_BridgeE,
-        .tilemap = gBattleEnvironmentTilemap_BridgeE,
-        .palette = gBattleEnvironmentPalette_BridgeE,
-    },
-    
-    [BATTLE_ENVIRONMENT_BRIDGE_N] =
-    {
-        .tileset = gBattleEnvironmentTiles_BridgeN,
-        .tilemap = gBattleEnvironmentTilemap_BridgeN,
-        .palette = gBattleEnvironmentPalette_BridgeN,
-    },
+// Loads the initial battle terrain.
+static void LoadBattleEnvironmentGfx(u16 terrain)
+{
+    if (terrain >= NELEMS(gBattleEnvironmentInfo))
+        terrain = BATTLE_ENVIRONMENT_PLAIN;  // If higher than the number of entries in gBattleEnvironmentInfo, use the default.
+    // Copy to bg3
+    DecompressDataWithHeaderVram(gBattleEnvironmentInfo[terrain].background.tileset, (void *)(BG_CHAR_ADDR(2)));
+    DecompressDataWithHeaderVram(gBattleEnvironmentInfo[terrain].background.tilemap, (void *)(BG_SCREEN_ADDR(26)));
+    LoadPalette(gBattleEnvironmentInfo[terrain].background.palette, BG_PLTT_ID(2), 3 * PLTT_SIZE_4BPP);
+}
 
-    [BATTLE_ENVIRONMENT_CAVE] =
-    {
-        .tileset = gBattleEnvironmentTiles_Cave,
-        .tilemap = gBattleEnvironmentTilemap_Cave,
-        .palette = gBattleEnvironmentPalette_Cave,
-    },
-    
-    [BATTLE_ENVIRONMENT_CAVE_DARK] =
-    {
-        .tileset = gBattleEnvironmentTiles_CaveDark,
-        .tilemap = gBattleEnvironmentTilemap_CaveDark,
-        .palette = gBattleEnvironmentPalette_CaveDark,
-    },
-    
-    [BATTLE_ENVIRONMENT_CAVE_MAGMA] =
-    {
-        .tileset = gBattleEnvironmentTiles_CaveMagma,
-        .tilemap = gBattleEnvironmentTilemap_CaveMagma,
-        .palette = gBattleEnvironmentPalette_CaveMagma,
-    },
-    
-    [BATTLE_ENVIRONMENT_CAVE_SNOW] =
-    {
-        .tileset = gBattleEnvironmentTiles_CaveSnow,
-        .tilemap = gBattleEnvironmentTilemap_CaveSnow,
-        .palette = gBattleEnvironmentPalette_CaveSnow,
-    },
-    
-    [BATTLE_ENVIRONMENT_CITY] =
-    {
-        .tileset = gBattleEnvironmentTiles_City,
-        .tilemap = gBattleEnvironmentTilemap_City,
-        .palette = gBattleEnvironmentPalette_City,
-    },
-    
-    [BATTLE_ENVIRONMENT_CITY_E] =
-    {
-        .tileset = gBattleEnvironmentTiles_CityE,
-        .tilemap = gBattleEnvironmentTilemap_CityE,
-        .palette = gBattleEnvironmentPalette_CityE,
-    },
-    
-    [BATTLE_ENVIRONMENT_CITY_N] =
-    {
-        .tileset = gBattleEnvironmentTiles_CityN,
-        .tilemap = gBattleEnvironmentTilemap_CityN,
-        .palette = gBattleEnvironmentPalette_CityN,
-    },
+// Loads the entry associated with the battle terrain.
+// This can be the grass moving on the screen at the start of a wild encounter in tall grass.
+static void LoadBattleEnvironmentEntryGfx(u16 terrain)
+{
+    if (terrain >= NELEMS(gBattleEnvironmentInfo))
+        terrain = BATTLE_ENVIRONMENT_PLAIN;
+    // Copy to bg1
+    DecompressDataWithHeaderVram(gBattleEnvironmentInfo[terrain].background.entryTileset, (void *)BG_CHAR_ADDR(1));
+    DecompressDataWithHeaderVram(gBattleEnvironmentInfo[terrain].background.entryTilemap, (void *)BG_SCREEN_ADDR(28));
+}
 
-    [BATTLE_ENVIRONMENT_CRAG] =
-    {
-        .tileset = gBattleEnvironmentTiles_Crag,
-        .tilemap = gBattleEnvironmentTilemap_Crag,
-        .palette = gBattleEnvironmentPalette_Crag,
-    },
-    
-    [BATTLE_ENVIRONMENT_CRAG_E] =
-    {
-        .tileset = gBattleEnvironmentTiles_CragE,
-        .tilemap = gBattleEnvironmentTilemap_CragE,
-        .palette = gBattleEnvironmentPalette_CragE,
-    },
-    
-    [BATTLE_ENVIRONMENT_CRAG_N] =
-    {
-        .tileset = gBattleEnvironmentTiles_CragN,
-        .tilemap = gBattleEnvironmentTilemap_CragN,
-        .palette = gBattleEnvironmentPalette_CragN,
-    },
+static u8 GetBattleEnvironmentOverride(void)
+{
+    u8 battleScene = GetCurrentMapBattleScene();
 
-    [BATTLE_ENVIRONMENT_DESERT] =
+    if (gBattleTypeFlags & (BATTLE_TYPE_FRONTIER | BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED_LINK | BATTLE_TYPE_EREADER_TRAINER))
+        return BATTLE_ENVIRONMENT_FRONTIER;
+    else if (gBattleTypeFlags & BATTLE_TYPE_LEGENDARY)
     {
-        .tileset = gBattleEnvironmentTiles_Desert,
-        .tilemap = gBattleEnvironmentTilemap_Desert,
-        .palette = gBattleEnvironmentPalette_Desert,
-    },
-    
-    [BATTLE_ENVIRONMENT_DESERT_E] =
+        switch (GetMonData(&gEnemyParty[0], MON_DATA_SPECIES, NULL))
+        {
+        case SPECIES_GROUDON:
+            return BATTLE_ENVIRONMENT_GROUDON;
+        case SPECIES_KYOGRE:
+            return BATTLE_ENVIRONMENT_KYOGRE;
+        case SPECIES_RAYQUAZA:
+            return BATTLE_ENVIRONMENT_RAYQUAZA;
+        default:
+            return gBattleEnvironment;
+        }
+    }
+    else if (gBattleTypeFlags & BATTLE_TYPE_TRAINER)
     {
-        .tileset = gBattleEnvironmentTiles_DesertE,
-        .tilemap = gBattleEnvironmentTilemap_DesertE,
-        .palette = gBattleEnvironmentPalette_DesertE,
-    },
-    
-    [BATTLE_ENVIRONMENT_DESERT_N] =
-    {
-        .tileset = gBattleEnvironmentTiles_DesertN,
-        .tilemap = gBattleEnvironmentTilemap_DesertN,
-        .palette = gBattleEnvironmentPalette_DesertN,
-    },
+        u32 trainerClass = GetTrainerClassFromId(TRAINER_BATTLE_PARAM.opponentA);
+        if (trainerClass == TRAINER_CLASS_LEADER)
+            return BATTLE_ENVIRONMENT_LEADER;
+        else if (trainerClass == TRAINER_CLASS_CHAMPION)
+            return BATTLE_ENVIRONMENT_CHAMPION;
+    }
 
-    [BATTLE_ENVIRONMENT_GYM] =
-    {
-        .tileset = gBattleEnvironmentTiles_Gym,
-        .tilemap = gBattleEnvironmentTilemap_Gym,
-        .palette = gBattleEnvironmentPalette_Gym,
-    },
-    
-    [BATTLE_ENVIRONMENT_INDOOR] =
-    {
-        .tileset = gBattleEnvironmentTiles_Indoor,
-        .tilemap = gBattleEnvironmentTilemap_Indoor,
-        .palette = gBattleEnvironmentPalette_Indoor,
-    },
-    
-    [BATTLE_ENVIRONMENT_LAB] =
-    {
-        .tileset = gBattleEnvironmentTiles_Lab,
-        .tilemap = gBattleEnvironmentTilemap_Lab,
-        .palette = gBattleEnvironmentPalette_Lab,
-    },
-    
-    [BATTLE_ENVIRONMENT_MOUNTAIN] =
-    {
-        .tileset = gBattleEnvironmentTiles_Mountain,
-        .tilemap = gBattleEnvironmentTilemap_Mountain,
-        .palette = gBattleEnvironmentPalette_Mountain,
-    },
-    
-    [BATTLE_ENVIRONMENT_MOUNTAIN_E] =
-    {
-        .tileset = gBattleEnvironmentTiles_MountainE,
-        .tilemap = gBattleEnvironmentTilemap_MountainE,
-        .palette = gBattleEnvironmentPalette_MountainE,
-    },
-    
-    [BATTLE_ENVIRONMENT_MOUNTAIN_N] =
-    {
-        .tileset = gBattleEnvironmentTiles_MountainN,
-        .tilemap = gBattleEnvironmentTilemap_MountainN,
-        .palette = gBattleEnvironmentPalette_MountainN,
-    },
+    if (battleScene == MAP_BATTLE_SCENE_NORMAL)
+        return gBattleEnvironment;
 
-    [BATTLE_ENVIRONMENT_MOUNTAIN_SNOW] =
-    {
-        .tileset = gBattleEnvironmentTiles_MountainSnow,
-        .tilemap = gBattleEnvironmentTilemap_MountainSnow,
-        .palette = gBattleEnvironmentPalette_MountainSnow,
-    },
-    
-    [BATTLE_ENVIRONMENT_MOUNTAIN_SNOW_E] =
-    {
-        .tileset = gBattleEnvironmentTiles_MountainSnowE,
-        .tilemap = gBattleEnvironmentTilemap_MountainSnowE,
-        .palette = gBattleEnvironmentPalette_MountainSnowE,
-    },
-    
-    [BATTLE_ENVIRONMENT_MOUNTAIN_SNOW_N] =
-    {
-        .tileset = gBattleEnvironmentTiles_MountainSnowN,
-        .tilemap = gBattleEnvironmentTilemap_MountainSnowN,
-        .palette = gBattleEnvironmentPalette_MountainSnowN,
-    },
-
-    [BATTLE_ENVIRONMENT_ROCKY] =
-    {
-        .tileset = gBattleEnvironmentTiles_Rocky,
-        .tilemap = gBattleEnvironmentTilemap_Rocky,
-        .palette = gBattleEnvironmentPalette_Rocky,
-    },
-    
-    [BATTLE_ENVIRONMENT_ROCKY_E] =
-    {
-        .tileset = gBattleEnvironmentTiles_RockyE,
-        .tilemap = gBattleEnvironmentTilemap_RockyE,
-        .palette = gBattleEnvironmentPalette_RockyE,
-    },
-    
-    [BATTLE_ENVIRONMENT_ROCKY_N] =
-    {
-        .tileset = gBattleEnvironmentTiles_RockyN,
-        .tilemap = gBattleEnvironmentTilemap_RockyN,
-        .palette = gBattleEnvironmentPalette_RockyN,
-    },
-
-    [BATTLE_ENVIRONMENT_ROUTE] =
-    {
-        .tileset = gBattleEnvironmentTiles_Route,
-        .tilemap = gBattleEnvironmentTilemap_Route,
-        .palette = gBattleEnvironmentPalette_Route,
-    },
-    
-    [BATTLE_ENVIRONMENT_ROUTE_E] =
-    {
-        .tileset = gBattleEnvironmentTiles_RouteE,
-        .tilemap = gBattleEnvironmentTilemap_RouteE,
-        .palette = gBattleEnvironmentPalette_RouteE,
-    },
-    
-    [BATTLE_ENVIRONMENT_ROUTE_N] =
-    {
-        .tileset = gBattleEnvironmentTiles_RouteN,
-        .tilemap = gBattleEnvironmentTilemap_RouteN,
-        .palette = gBattleEnvironmentPalette_RouteN,
-    },
-
-    [BATTLE_ENVIRONMENT_SAFARI] =
-    {
-        .tileset = gBattleEnvironmentTiles_Safari,
-        .tilemap = gBattleEnvironmentTilemap_Safari,
-        .palette = gBattleEnvironmentPalette_Safari,
-    },
-    
-    [BATTLE_ENVIRONMENT_SAFARI_E] =
-    {
-        .tileset = gBattleEnvironmentTiles_SafariE,
-        .tilemap = gBattleEnvironmentTilemap_SafariE,
-        .palette = gBattleEnvironmentPalette_SafariE,
-    },
-    
-    [BATTLE_ENVIRONMENT_SAFARI_N] =
-    {
-        .tileset = gBattleEnvironmentTiles_SafariN,
-        .tilemap = gBattleEnvironmentTilemap_SafariN,
-        .palette = gBattleEnvironmentPalette_SafariN,
-    },
-
-    [BATTLE_ENVIRONMENT_SEA] =
-    {
-        .tileset = gBattleEnvironmentTiles_Sea,
-        .tilemap = gBattleEnvironmentTilemap_Sea,
-        .palette = gBattleEnvironmentPalette_Sea,
-    },
-    
-    [BATTLE_ENVIRONMENT_SEA_E] =
-    {
-        .tileset = gBattleEnvironmentTiles_SeaE,
-        .tilemap = gBattleEnvironmentTilemap_SeaE,
-        .palette = gBattleEnvironmentPalette_SeaE,
-    },
-    
-    [BATTLE_ENVIRONMENT_SEA_N] =
-    {
-        .tileset = gBattleEnvironmentTiles_SeaN,
-        .tilemap = gBattleEnvironmentTilemap_SeaN,
-        .palette = gBattleEnvironmentPalette_SeaN,
-    },
-
-    [BATTLE_ENVIRONMENT_SNOW] =
-    {
-        .tileset = gBattleEnvironmentTiles_Snow,
-        .tilemap = gBattleEnvironmentTilemap_Snow,
-        .palette = gBattleEnvironmentPalette_Snow,
-    },
-    
-    [BATTLE_ENVIRONMENT_SNOW_E] =
-    {
-        .tileset = gBattleEnvironmentTiles_SnowE,
-        .tilemap = gBattleEnvironmentTilemap_SnowE,
-        .palette = gBattleEnvironmentPalette_SnowE,
-    },
-    
-    [BATTLE_ENVIRONMENT_SNOW_N] =
-    {
-        .tileset = gBattleEnvironmentTiles_SnowN,
-        .tilemap = gBattleEnvironmentTilemap_SnowN,
-        .palette = gBattleEnvironmentPalette_SnowN,
-    },
-    
-    [BATTLE_ENVIRONMENT_SWAMP] =
-    {
-        .tileset = gBattleEnvironmentTiles_Swamp,
-        .tilemap = gBattleEnvironmentTilemap_Swamp,
-        .palette = gBattleEnvironmentPalette_Swamp,
-    },
-    
-    [BATTLE_ENVIRONMENT_SWAMP_E] =
-    {
-        .tileset = gBattleEnvironmentTiles_SwampE,
-        .tilemap = gBattleEnvironmentTilemap_SwampE,
-        .palette = gBattleEnvironmentPalette_SwampE,
-    },
-    
-    [BATTLE_ENVIRONMENT_SWAMP_N] =
-    {
-        .tileset = gBattleEnvironmentTiles_SwampN,
-        .tilemap = gBattleEnvironmentTilemap_SwampN,
-        .palette = gBattleEnvironmentPalette_SwampN,
-    },
-
-    [BATTLE_ENVIRONMENT_UNDERWATER] =
-    {
-        .tileset = gBattleEnvironmentTiles_Underwater,
-        .tilemap = gBattleEnvironmentTilemap_Underwater,
-        .palette = gBattleEnvironmentPalette_Underwater,
-    },
-    
-    [BATTLE_ENVIRONMENT_UNDERWATER_E] =
-    {
-        .tileset = gBattleEnvironmentTiles_UnderwaterE,
-        .tilemap = gBattleEnvironmentTilemap_UnderwaterE,
-        .palette = gBattleEnvironmentPalette_UnderwaterE,
-    },
-    
-    [BATTLE_ENVIRONMENT_UNDERWATER_N] =
-    {
-        .tileset = gBattleEnvironmentTiles_UnderwaterN,
-        .tilemap = gBattleEnvironmentTilemap_UnderwaterN,
-        .palette = gBattleEnvironmentPalette_UnderwaterN,
-    },
-    
-    [BATTLE_ENVIRONMENT_VOLCANO] =
-    {
-        .tileset = gBattleEnvironmentTiles_Volcano,
-        .tilemap = gBattleEnvironmentTilemap_Volcano,
-        .palette = gBattleEnvironmentPalette_Volcano,
-    },
-    
-    [BATTLE_ENVIRONMENT_VOLCANO_E] =
-    {
-        .tileset = gBattleEnvironmentTiles_VolcanoE,
-        .tilemap = gBattleEnvironmentTilemap_VolcanoE,
-        .palette = gBattleEnvironmentPalette_VolcanoE,
-    },
-    
-    [BATTLE_ENVIRONMENT_VOLCANO_N] =
-    {
-        .tileset = gBattleEnvironmentTiles_VolcanoN,
-        .tilemap = gBattleEnvironmentTilemap_VolcanoN,
-        .palette = gBattleEnvironmentPalette_VolcanoN,
-    },
-
-    [BATTLE_ENVIRONMENT_MOOSE] =
-    {
-        .tileset = gBattleEnvironmentTiles_Moose,
-        .tilemap = gBattleEnvironmentTilemap_Moose,
-        .palette = gBattleEnvironmentPalette_Moose,
-    },
-    
-    [BATTLE_ENVIRONMENT_THOMAS] =
-    {
-        .tileset = gBattleEnvironmentTiles_Thomas,
-        .tilemap = gBattleEnvironmentTilemap_Thomas,
-        .palette = gBattleEnvironmentPalette_Thomas,
-    },
-    
-    [BATTLE_ENVIRONMENT_TINKER] =
-    {
-        .tileset = gBattleEnvironmentTiles_Tinker,
-        .tilemap = gBattleEnvironmentTilemap_Tinker,
-        .palette = gBattleEnvironmentPalette_Tinker,
-    },
-    
-    [BATTLE_ENVIRONMENT_TOBIAS] =
-    {
-        .tileset = gBattleEnvironmentTiles_Tobias,
-        .tilemap = gBattleEnvironmentTilemap_Tobias,
-        .palette = gBattleEnvironmentPalette_Tobias,
-    },
-    
-    [BATTLE_ENVIRONMENT_GWEN] =
-    {
-        .tileset = gBattleEnvironmentTiles_Gwen,
-        .tilemap = gBattleEnvironmentTilemap_Gwen,
-        .palette = gBattleEnvironmentPalette_Gwen,
-    },
-};
+    return GetBattleEnvironmentByMapScene(battleScene);
+}
 
 void BattleInitBgsAndWindows(void)
 {
@@ -1089,29 +727,7 @@ void LoadBattleMenuWindowGfx(void)
 
 void DrawMainBattleBackground(void)
 {
-    if (gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_FRONTIER | BATTLE_TYPE_EREADER_TRAINER | BATTLE_TYPE_RECORDED_LINK))
-    {
-        LZDecompressVram(gBattleEnvironmentTiles_Arena, (void *)(BG_CHAR_ADDR(2)));
-        LZDecompressVram(gBattleEnvironmentTilemap_Arena, (void *)(BG_SCREEN_ADDR(26)));
-        LoadPalette(gBattleEnvironmentPalette_Arena, BG_PLTT_ID(2), 3 * PLTT_SIZE_4BPP);
-    }
-    else
-    {
-        if (gBattleTypeFlags & BATTLE_TYPE_TRAINER)
-        {
-            u32 trainerClass = GetTrainerClassFromId(TRAINER_BATTLE_PARAM.opponentA);
-        }
-
-        switch (GetCurrentMapBattleScene())
-        {
-        default:
-        case MAP_BATTLE_SCENE_NORMAL:
-            LZDecompressVram(sBattleEnvironmentTable[gBattleEnvironment].tileset, (void *)(BG_CHAR_ADDR(2)));
-            LZDecompressVram(sBattleEnvironmentTable[gBattleEnvironment].tilemap, (void *)(BG_SCREEN_ADDR(26)));
-            LoadPalette(sBattleEnvironmentTable[gBattleEnvironment].palette, BG_PLTT_ID(2), 3 * PLTT_SIZE_4BPP);
-            break;
-        }
-    }
+    LoadBattleEnvironmentGfx(GetBattleEnvironmentOverride());
 }
 
 void LoadBattleTextboxAndBackground(void)
@@ -1405,8 +1021,7 @@ void DrawBattleEntryBackground(void)
     {
         if (!(gBattleTypeFlags & BATTLE_TYPE_INGAME_PARTNER) || gPartnerTrainerId > TRAINER_PARTNER(PARTNER_NONE))
         {
-            LZDecompressVram(gBattleEnvironmentTiles_Arena, (void *)(BG_CHAR_ADDR(1)));
-            LZDecompressVram(gBattleEnvironmentTilemap_Arena, (void *)(BG_SCREEN_ADDR(28)));
+            LoadBattleEnvironmentEntryGfx(BATTLE_ENVIRONMENT_BUILDING);
         }
         else
         {
@@ -1422,10 +1037,45 @@ void DrawBattleEntryBackground(void)
     }
     else
     {
+            else if (gBattleTypeFlags & BATTLE_TYPE_LEGENDARY)
+    {
+        switch (GetMonData(&gEnemyParty[0], MON_DATA_SPECIES, NULL))
+        {
+        case SPECIES_GROUDON:
+            LoadBattleEnvironmentEntryGfx(BATTLE_ENVIRONMENT_CAVE);
+            break;
+        case SPECIES_KYOGRE:
+            LoadBattleEnvironmentEntryGfx(BATTLE_ENVIRONMENT_UNDERWATER);
+            break;
+        case SPECIES_RAYQUAZA:
+            LoadBattleEnvironmentEntryGfx(BATTLE_ENVIRONMENT_RAYQUAZA);
+            break;
+        default:
+            DecompressDataWithHeaderVram(gBattleEnvironmentInfo[gBattleEnvironment].background.entryTileset, (void *)(BG_CHAR_ADDR(1)));
+            DecompressDataWithHeaderVram(gBattleEnvironmentInfo[gBattleEnvironment].background.entryTilemap, (void *)(BG_SCREEN_ADDR(28)));
+            break;
+        }
+    }
+    else
+    {
+        if (gBattleTypeFlags & BATTLE_TYPE_TRAINER)
+        {
+            enum TrainerClassID trainerClass = GetTrainerClassFromId(TRAINER_BATTLE_PARAM.opponentA);
+            if (trainerClass == TRAINER_CLASS_LEADER)
+            {
+                LoadBattleEnvironmentEntryGfx(BATTLE_ENVIRONMENT_BUILDING);
+                return;
+            }
+            else if (trainerClass == TRAINER_CLASS_CHAMPION)
+            {
+                LoadBattleEnvironmentEntryGfx(BATTLE_ENVIRONMENT_BUILDING);
+                return;
+            }
+        }
+
         if (GetCurrentMapBattleScene() == MAP_BATTLE_SCENE_NORMAL)
         {
-            LZDecompressVram(sBattleEnvironmentTable[gBattleEnvironment].entryTileset, (void *)(BG_CHAR_ADDR(1)));
-            LZDecompressVram(sBattleEnvironmentTable[gBattleEnvironment].entryTilemap, (void *)(BG_SCREEN_ADDR(28)));
+            LoadBattleEnvironmentEntryGfx(gBattleEnvironment);
         }
         else
         {
@@ -1452,67 +1102,13 @@ bool8 LoadChosenBattleElement(u8 caseId)
         LoadPalette(gBattleTextboxPalette, BG_PLTT_ID(0), 2 * PLTT_SIZE_4BPP);
         break;
     case 3:
-        if (gBattleTypeFlags & (BATTLE_TYPE_FRONTIER | BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED_LINK | BATTLE_TYPE_EREADER_TRAINER))
-        {
-            LZDecompressVram(gBattleEnvironmentTiles_Arena, (void *)(BG_CHAR_ADDR(2)));
-        }
-        else
-        {
-            if (gBattleTypeFlags & BATTLE_TYPE_TRAINER)
-            {
-                u32 trainerClass = GetTrainerClassFromId(TRAINER_BATTLE_PARAM.opponentA);
-            }
-
-            switch (GetCurrentMapBattleScene())
-            {
-            default:
-            case MAP_BATTLE_SCENE_NORMAL:
-                LZDecompressVram(sBattleEnvironmentTable[gBattleEnvironment].tileset, (void *)(BG_CHAR_ADDR(2)));
-                break;
-            }
-        }
+        DecompressDataWithHeaderVram(gBattleEnvironmentInfo[GetBattleEnvironmentOverride()].background.tileset, (void *)(BG_CHAR_ADDR(2)));
         break;
     case 4:
-        if (gBattleTypeFlags & (BATTLE_TYPE_FRONTIER | BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED_LINK | BATTLE_TYPE_EREADER_TRAINER))
-        {
-            LoadPalette(gBattleEnvironmentPalette_Arena, BG_PLTT_ID(2), 3 * PLTT_SIZE_4BPP);
-        }
-        else
-        {
-            if (gBattleTypeFlags & BATTLE_TYPE_TRAINER)
-            {
-                u32 trainerClass = GetTrainerClassFromId(TRAINER_BATTLE_PARAM.opponentA);
-            }
-
-            switch (GetCurrentMapBattleScene())
-            {
-            default:
-            case MAP_BATTLE_SCENE_NORMAL:
-                LZDecompressVram(sBattleEnvironmentTable[gBattleEnvironment].tilemap, (void *)(BG_SCREEN_ADDR(26)));
-                break;
-            }
-        }
+        DecompressDataWithHeaderVram(gBattleEnvironmentInfo[GetBattleEnvironmentOverride()].background.tilemap, (void *)(BG_SCREEN_ADDR(26)));
         break;
     case 5:
-        if (gBattleTypeFlags & (BATTLE_TYPE_FRONTIER | BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED_LINK | BATTLE_TYPE_EREADER_TRAINER))
-        {
-            LoadPalette(gBattleEnvironmentPalette_Arena, BG_PLTT_ID(2), 3 * PLTT_SIZE_4BPP);
-        }
-        else
-        {
-            if (gBattleTypeFlags & BATTLE_TYPE_TRAINER)
-            {
-                u32 trainerClass = GetTrainerClassFromId(TRAINER_BATTLE_PARAM.opponentA);
-            }
-
-            switch (GetCurrentMapBattleScene())
-            {
-            default:
-            case MAP_BATTLE_SCENE_NORMAL:
-                LoadPalette(sBattleEnvironmentTable[gBattleEnvironment].palette, BG_PLTT_ID(2), 3 * PLTT_SIZE_4BPP);
-                break;
-            }
-        }
+        LoadPalette(gBattleEnvironmentInfo[GetBattleEnvironmentOverride()].background.palette, BG_PLTT_ID(2), 3 * PLTT_SIZE_4BPP);
         break;
     case 6:
         LoadBattleMenuWindowGfx();
