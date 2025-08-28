@@ -1079,8 +1079,7 @@ void DrawBattleEntryBackground(void)
         }
         else
         {
-            LZDecompressVram(gBattleEnvironmentTiles_Indoor, (void *)(BG_CHAR_ADDR(1)));
-            LZDecompressVram(gBattleEnvironmentTilemap_Indoor, (void *)(BG_SCREEN_ADDR(28)));
+            LoadBattleEnvironmentEntryGfx(gBattleEnvironment);
         }
     }
 }
