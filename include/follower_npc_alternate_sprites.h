@@ -14,19 +14,19 @@
 static const struct FollowerNPCSpriteGraphics gFollowerNPCAlternateSprites[] =
 {
     {
-        .normalId = OBJ_EVENT_GFX_RIVAL_MAY_NORMAL,
-        .machBikeId = OBJ_EVENT_GFX_RIVAL_MAY_MACH_BIKE,
-        .acroBikeId = OBJ_EVENT_GFX_RIVAL_MAY_ACRO_BIKE,
-        .surfId = OBJ_EVENT_GFX_RIVAL_MAY_SURFING,
-        .underwaterId = OBJ_EVENT_GFX_MAY_UNDERWATER,
+        .normalId = OBJ_EVENT_GFX_RIVAL_DAWN_NORMAL,
+        .machBikeId = OBJ_EVENT_GFX_RIVAL_DAWN_MACH_BIKE,
+        .acroBikeId = OBJ_EVENT_GFX_RIVAL_DAWN_ACRO_BIKE,
+        .surfId = OBJ_EVENT_GFX_RIVAL_DAWN_SURFING,
+        .underwaterId = OBJ_EVENT_GFX_DAWN_UNDERWATER,
         .hasRunningFrames = TRUE,
     },
     {
-        .normalId = OBJ_EVENT_GFX_RIVAL_BRENDAN_NORMAL,
-        .machBikeId = OBJ_EVENT_GFX_RIVAL_BRENDAN_MACH_BIKE,
-        .acroBikeId = OBJ_EVENT_GFX_RIVAL_BRENDAN_ACRO_BIKE,
-        .surfId = OBJ_EVENT_GFX_RIVAL_BRENDAN_SURFING,
-        .underwaterId = OBJ_EVENT_GFX_BRENDAN_UNDERWATER,
+        .normalId = OBJ_EVENT_GFX_RIVAL_LUCAS_NORMAL,
+        .machBikeId = OBJ_EVENT_GFX_RIVAL_LUCAS_MACH_BIKE,
+        .acroBikeId = OBJ_EVENT_GFX_RIVAL_LUCAS_ACRO_BIKE,
+        .surfId = OBJ_EVENT_GFX_RIVAL_LUCAS_SURFING,
+        .underwaterId = OBJ_EVENT_GFX_LUCAS_UNDERWATER,
         .hasRunningFrames = TRUE,
     },
 

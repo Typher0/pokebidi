@@ -806,6 +806,9 @@ const u16 gItemIconPalette_SteelMemory[] = INCBIN_U16("graphics/items/icon_palet
 const u32 gItemIcon_FairyMemory[] = INCBIN_U32("graphics/items/icons/fairy_memory.4bpp.smol");
 const u16 gItemIconPalette_FairyMemory[] = INCBIN_U16("graphics/items/icon_palettes/fairy_memory.gbapal");
 
+const u32 gItemIcon_SoundMemory[] = INCBIN_U32("graphics/items/icons/sound_memory.4bpp.smol");
+const u16 gItemIconPalette_SoundMemory[] = INCBIN_U16("graphics/items/icon_palettes/sound_memory.gbapal");
+
 const u32 gItemIcon_RustedSword[] = INCBIN_U32("graphics/items/icons/rusted_sword.4bpp.smol");
 const u32 gItemIcon_RustedShield[] = INCBIN_U32("graphics/items/icons/rusted_shield.4bpp.smol");
 const u16 gItemIconPalette_RustedWeapons[] = INCBIN_U16("graphics/items/icon_palettes/rusted_weapons.gbapal");
@@ -1075,6 +1078,9 @@ const u16 gItemIconPalette_SteeliumZ[] = INCBIN_U16("graphics/items/icon_palette
 
 const u32 gItemIcon_FairiumZ[] = INCBIN_U32("graphics/items/icons/fairium_z.4bpp.smol");
 const u16 gItemIconPalette_FairiumZ[] = INCBIN_U16("graphics/items/icon_palettes/fairium_z.gbapal");
+
+const u32 gItemIcon_SoundiumZ[] = INCBIN_U32("graphics/items/icons/soundium_z.4bpp.smol");
+const u16 gItemIconPalette_SoundiumZ[] = INCBIN_U16("graphics/items/icon_palettes/soundium_z.gbapal");
 
 const u32 gItemIcon_PikaniumZ[] = INCBIN_U32("graphics/items/icons/pikanium_z.4bpp.smol");
 const u16 gItemIconPalette_PikaniumZ[] = INCBIN_U16("graphics/items/icon_palettes/pikanium_z.gbapal");

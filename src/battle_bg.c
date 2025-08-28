@@ -621,7 +621,7 @@ static u8 GetBattleEnvironmentByMapScene(u8 mapBattleScene)
         if (mapBattleScene == sMapBattleSceneMapping[i].mapScene)
             return sMapBattleSceneMapping[i].battleEnvironment;
     }
-    return BATTLE_ENVIRONMENT_PLAIN;
+    return BATTLE_ENVIRONMENT_ROUTE;
 }
 
 // Loads the initial battle terrain.
@@ -640,7 +640,7 @@ static void LoadBattleEnvironmentGfx(u16 terrain)
 static void LoadBattleEnvironmentEntryGfx(u16 terrain)
 {
     if (terrain >= NELEMS(gBattleEnvironmentInfo))
-        terrain = BATTLE_ENVIRONMENT_PLAIN;
+        terrain = BATTLE_ENVIRONMENT_ROUTE;
     // Copy to bg1
     DecompressDataWithHeaderVram(gBattleEnvironmentInfo[terrain].background.entryTileset, (void *)BG_CHAR_ADDR(1));
     DecompressDataWithHeaderVram(gBattleEnvironmentInfo[terrain].background.entryTilemap, (void *)BG_SCREEN_ADDR(28));
@@ -651,17 +651,11 @@ static u8 GetBattleEnvironmentOverride(void)
     u8 battleScene = GetCurrentMapBattleScene();
 
     if (gBattleTypeFlags & (BATTLE_TYPE_FRONTIER | BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED_LINK | BATTLE_TYPE_EREADER_TRAINER))
-        return BATTLE_ENVIRONMENT_FRONTIER;
+        return BATTLE_ENVIRONMENT_ARENA;
     else if (gBattleTypeFlags & BATTLE_TYPE_LEGENDARY)
     {
         switch (GetMonData(&gEnemyParty[0], MON_DATA_SPECIES, NULL))
         {
-        case SPECIES_GROUDON:
-            return BATTLE_ENVIRONMENT_GROUDON;
-        case SPECIES_KYOGRE:
-            return BATTLE_ENVIRONMENT_KYOGRE;
-        case SPECIES_RAYQUAZA:
-            return BATTLE_ENVIRONMENT_RAYQUAZA;
         default:
             return gBattleEnvironment;
         }
@@ -670,9 +664,9 @@ static u8 GetBattleEnvironmentOverride(void)
     {
         u32 trainerClass = GetTrainerClassFromId(TRAINER_BATTLE_PARAM.opponentA);
         if (trainerClass == TRAINER_CLASS_LEADER)
-            return BATTLE_ENVIRONMENT_LEADER;
+            return BATTLE_ENVIRONMENT_GYM;
         else if (trainerClass == TRAINER_CLASS_CHAMPION)
-            return BATTLE_ENVIRONMENT_CHAMPION;
+            return BATTLE_ENVIRONMENT_GWEN;
     }
 
     if (battleScene == MAP_BATTLE_SCENE_NORMAL)
