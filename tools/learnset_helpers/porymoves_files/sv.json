@@ -30097,14 +30097,14 @@
       "MOVE_CURSE"
     ],
     "EggMoves": [
-        "MOVE_ACID",
-        "MOVE_BELCH",
-        "MOVE_BLOCK",
-        "MOVE_COUNTER",
-        "MOVE_DISABLE",
-        "MOVE_FELL_STINGER",
-        "MOVE_SWITCHEROO",
-        "MOVE_TEETER_DANCE"
+      "MOVE_ACID",
+      "MOVE_BELCH",
+      "MOVE_BLOCK",
+      "MOVE_COUNTER",
+      "MOVE_DISABLE",
+      "MOVE_FELL_STINGER",
+      "MOVE_SWITCHEROO",
+      "MOVE_TEETER_DANCE"
     ],
     "TutorMoves": []
   },
