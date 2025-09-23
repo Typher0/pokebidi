@@ -12482,12 +12482,6 @@ static void Cmd_trysetfutureattack(void)
 
 static void Cmd_trydobeatup(void)
 {
-#if B_BEAT_UP >= GEN_5
-    CMD_ARGS();
-
-    gBattleStruct->beatUpSlot++;
-    gBattlescriptCurrInstr = cmd->nextInstr;
-#else
     CMD_ARGS(const u8 *endInstr, const u8 *failInstr);
     struct Pokemon *party = GetBattlerParty(gBattlerAttacker);
 
@@ -12532,7 +12526,6 @@ static void Cmd_trydobeatup(void)
             gBattlescriptCurrInstr = cmd->failInstr;
         }
     }
-#endif
 }
 
 static void Cmd_setsemiinvulnerablebit(void)
@@ -12779,10 +12772,9 @@ static void Cmd_trysethelpinghand(void)
 
     if (IsDoubleBattle()
         && !(gAbsentBattlerFlags & (1u << gBattlerTarget))
-        && !gProtectStructs[gBattlerAttacker].helpingHand
-        && !gProtectStructs[gBattlerTarget].helpingHand)
+        && gCurrentTurnActionNumber < GetBattlerTurnOrderNum(gBattlerTarget))
     {
-        gProtectStructs[gBattlerTarget].helpingHand = TRUE;
+        gProtectStructs[gBattlerTarget].helpingHand++;
         gBattlescriptCurrInstr = cmd->nextInstr;
     }
     else
@@ -13963,7 +13955,11 @@ static void Cmd_handleballthrow(void)
             {
                 odds = Sqrt(Sqrt(16711680 / odds));
                 odds = 1048560 / odds;
-                for (shakes = 0; shakes < maxShakes && Random() < odds; shakes++);
+                for (shakes = 0; shakes < maxShakes; shakes++)
+                {
+                    if (RandomUniform(RNG_BALLTHROW_SHAKE, 0, MAX_u16) >= odds)
+                        break;
+                }
             }
 
             BtlController_EmitBallThrowAnim(gBattlerAttacker, B_COMM_TO_CONTROLLER, shakes);
@@ -14765,8 +14761,7 @@ static bool32 CriticalCapture(u32 odds)
         odds = (odds * (100 + B_CATCHING_CHARM_BOOST)) / 100;
 
     odds /= 6;
-
-    if ((Random() % 255) < odds)
+    if (RandomUniform(RNG_BALLTHROW_CRITICAL, 0, MAX_u8) < odds)
         return TRUE;
 
     return FALSE;
