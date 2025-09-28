@@ -5023,7 +5023,7 @@ const struct Item gItemsInfo[] =
     
     [ITEM_SONAR_PLATE] =
     {
-        .name = _("Sonar Plate"),
+        .name = ITEM_NAME("Sonar Plate"),
         .price = 1000,
         .holdEffect = HOLD_EFFECT_PLATE,
         .holdEffectParam = 20,
@@ -5032,6 +5032,7 @@ const struct Item gItemsInfo[] =
             "the power of\n"
             "Sound-type moves."),
         .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_PLATE,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .secondaryId = TYPE_SOUND,
@@ -5479,8 +5480,8 @@ const struct Item gItemsInfo[] =
     
     [ITEM_SOUND_MEMORY] =
     {
-        .name = _("Sound Memory"),
-        .pluralName = _("Sound Memories"),
+        .name = ITEM_NAME("Sound Memory"),
+        .pluralName = ITEM_PLURAL_NAME("Sound Memories"),
         .price = 1000,
         .holdEffect = HOLD_EFFECT_MEMORY,
         .holdEffectParam = 0,
@@ -5489,6 +5490,7 @@ const struct Item gItemsInfo[] =
             "type data. It swaps\n"
             "Silvally's type."),
         .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_MEMORY,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .secondaryId = TYPE_SOUND,
@@ -6751,7 +6753,7 @@ const struct Item gItemsInfo[] =
     
     [ITEM_SOUND_GEM] =
     {
-        .name = _("Sound Gem"),
+        .name = ITEM_NAME("Sound Gem"),
         .price = (I_PRICE >= GEN_9) ? 15000 : ((I_PRICE >= GEN_7) ? 4000 : 200),
         .holdEffect = HOLD_EFFECT_GEMS,
         .holdEffectParam = GEM_BOOST_PARAM,
@@ -6760,6 +6762,7 @@ const struct Item gItemsInfo[] =
             "power of Sound\n"
             "Type moves."),
         .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_GEM,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .secondaryId = TYPE_SOUND,
@@ -7095,7 +7098,7 @@ const struct Item gItemsInfo[] =
     
     [ITEM_SOUNDIUM_Z] =
     {
-        .name = _("Soundium Z"),
+        .name = ITEM_NAME("Soundium Z"),
         .price = 0,
         .holdEffect = HOLD_EFFECT_Z_CRYSTAL,
         .description = COMPOUND_STRING(
@@ -7103,6 +7106,7 @@ const struct Item gItemsInfo[] =
             "type moves into\n"
             "Z-Moves."),
         .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_Z_CRYSTAL,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .secondaryId = TYPE_SOUND,
@@ -8377,7 +8381,7 @@ const struct Item gItemsInfo[] =
     
     [ITEM_MP3_PLAYER] =
     {
-        .name = _("MP3 Player"),
+        .name = ITEM_NAME("MP3 Player"),
         .price = (I_PRICE >= GEN_9) ? 3000 : ((I_PRICE >= GEN_7) ? 2000 : 100),
         .holdEffect = HOLD_EFFECT_TYPE_POWER,
         .holdEffectParam = TYPE_BOOST_PARAM,
@@ -8386,6 +8390,7 @@ const struct Item gItemsInfo[] =
             "raises the power of\n"
             "Sound-type moves."),
         .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_TYPE_BOOST_HELD_ITEM,
         .type = EVO_HELD_ITEM_TYPE,
         .fieldUseFunc = EVO_HELD_ITEM_FIELD_FUNC,
         .effect = gItemEffect_EvoItem,
@@ -11010,8 +11015,8 @@ const struct Item gItemsInfo[] =
     
     [ITEM_NINIKU_BERRY] =
     {
-        .name = _("Niniku Berry"),
-        .pluralName = _("Niniku Berries"),
+        .name = ITEM_NAME("Niniku Berry"),
+        .pluralName = ITEM_PLURAL_NAME("Niniku Berries"),
         .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
         .holdEffect = HOLD_EFFECT_RESIST_BERRY,
         .holdEffectParam = TYPE_FAIRY,
@@ -14182,10 +14187,11 @@ const struct Item gItemsInfo[] =
     
     [ITEM_SOUND_TERA_SHARD] =
     {
-        .name = _("Sound Tera Shard"),
+        .name = ITEM_NAME("Sound Tera Shard"),
         .price = 0,
         .description = sTeraShardDesc,
         .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_TERA_SHARD,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .iconPic = gItemIcon_TeraShard,

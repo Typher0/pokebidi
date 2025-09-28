@@ -247,8 +247,8 @@ const u32 gBattleEnvironmentTilemap_Gwen[] = INCBIN_U32("graphics/battle_environ
 {                                                               \
     .tileset = gBattleEnvironmentTiles_##background,            \
     .tilemap = gBattleEnvironmentTilemap_##background,          \
-    .entryTileset = gBattleEnvironmentAnimTiles_##background,   \
-    .entryTilemap = gBattleEnvironmentAnimTilemap_##background, \
+    .entryTileset = gBattleEnvironmentTiles_##background,   \
+    .entryTilemap = gBattleEnvironmentTilemap_##background, \
     .palette = gBattleEnvironmentPalette_##background,          \
 }
 
@@ -265,7 +265,7 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
     
     [BATTLE_ENVIRONMENT_AUTUMN_FOREST] =
     {
-        .naturePower = MOVE_ENERGY_BALL
+        .naturePower = MOVE_ENERGY_BALL,
         .secretPowerEffect = MOVE_EFFECT_ATK_MINUS_1,
         .camouflageType = TYPE_GRASS,
         .background = ENVIRONMENT_BACKGROUND(AutumnForest),
@@ -747,4 +747,6 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
 static const struct {
     u8 mapScene;
     u8 battleEnvironment;
+} sMapBattleSceneMapping[] = {
+    {MAP_BATTLE_SCENE_GYM,      BATTLE_ENVIRONMENT_GYM},
 };

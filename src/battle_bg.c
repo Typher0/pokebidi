@@ -628,7 +628,7 @@ static u8 GetBattleEnvironmentByMapScene(u8 mapBattleScene)
 static void LoadBattleEnvironmentGfx(u16 terrain)
 {
     if (terrain >= NELEMS(gBattleEnvironmentInfo))
-        terrain = BATTLE_ENVIRONMENT_PLAIN;  // If higher than the number of entries in gBattleEnvironmentInfo, use the default.
+        terrain = BATTLE_ENVIRONMENT_ROUTE;  // If higher than the number of entries in gBattleEnvironmentInfo, use the default.
     // Copy to bg3
     DecompressDataWithHeaderVram(gBattleEnvironmentInfo[terrain].background.tileset, (void *)(BG_CHAR_ADDR(2)));
     DecompressDataWithHeaderVram(gBattleEnvironmentInfo[terrain].background.tilemap, (void *)(BG_SCREEN_ADDR(26)));
@@ -1018,7 +1018,7 @@ void DrawBattleEntryBackground(void)
     {
         if (!(gBattleTypeFlags & BATTLE_TYPE_INGAME_PARTNER) || gPartnerTrainerId > TRAINER_PARTNER(PARTNER_NONE))
         {
-            LoadBattleEnvironmentEntryGfx(BATTLE_ENVIRONMENT_BUILDING);
+            LoadBattleEnvironmentEntryGfx(BATTLE_ENVIRONMENT_INDOOR);
         }
         else
         {
@@ -1032,9 +1032,6 @@ void DrawBattleEntryBackground(void)
             CopyBgTilemapBufferToVram(2);
         }
     }
-    else
-    {
-            else if (gBattleTypeFlags & BATTLE_TYPE_LEGENDARY)
     {
         switch (GetMonData(&gEnemyParty[0], MON_DATA_SPECIES, NULL))
         {
@@ -1045,7 +1042,7 @@ void DrawBattleEntryBackground(void)
             LoadBattleEnvironmentEntryGfx(BATTLE_ENVIRONMENT_UNDERWATER);
             break;
         case SPECIES_RAYQUAZA:
-            LoadBattleEnvironmentEntryGfx(BATTLE_ENVIRONMENT_RAYQUAZA);
+            LoadBattleEnvironmentEntryGfx(BATTLE_ENVIRONMENT_ARENA);
             break;
         default:
             DecompressDataWithHeaderVram(gBattleEnvironmentInfo[gBattleEnvironment].background.entryTileset, (void *)(BG_CHAR_ADDR(1)));
@@ -1053,19 +1050,18 @@ void DrawBattleEntryBackground(void)
             break;
         }
     }
-    else
     {
         if (gBattleTypeFlags & BATTLE_TYPE_TRAINER)
         {
             enum TrainerClassID trainerClass = GetTrainerClassFromId(TRAINER_BATTLE_PARAM.opponentA);
             if (trainerClass == TRAINER_CLASS_LEADER)
             {
-                LoadBattleEnvironmentEntryGfx(BATTLE_ENVIRONMENT_BUILDING);
+                LoadBattleEnvironmentEntryGfx(BATTLE_ENVIRONMENT_INDOOR);
                 return;
             }
             else if (trainerClass == TRAINER_CLASS_CHAMPION)
             {
-                LoadBattleEnvironmentEntryGfx(BATTLE_ENVIRONMENT_BUILDING);
+                LoadBattleEnvironmentEntryGfx(BATTLE_ENVIRONMENT_INDOOR);
                 return;
             }
         }

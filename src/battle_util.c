@@ -4277,7 +4277,7 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
             case ABILITY_VAMPIRISM:
                 if (IsBitingMove(move) && !(gBattleStruct->moveResultFlags[gBattlerAttacker] & MOVE_RESULT_NO_EFFECT)
                  && !IsBattlerAtMaxHp(battler)
-                 && !(gStatuses3[battler] & STATUS3_HEAL_BLOCK))
+                 && !gBattleMons[battler].volatiles.healBlock)
                 {
                     BattleScriptPushCursorAndCallback(BattleScript_VampirismActivates);
                     gBattleStruct->moveDamage[battler] = GetNonDynamaxMaxHP(battler) / 16;
@@ -8549,14 +8549,14 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageContext *ctx)
         if (moveType == TYPE_FIRE)
         {
             modifier = uq4_12_multiply(modifier, UQ_4_12(0.5));
-            if (damageCalcData->updateFlags)
-                RecordAbilityBattle(battlerDef, defAbility);
+            if (ctx->updateFlags)
+                RecordAbilityBattle(battlerDef, ctx->abilityDef);
         }
         if (moveType == TYPE_ICE)
         {
             modifier = uq4_12_multiply(modifier, UQ_4_12(0.5));
-            if (damageCalcData->updateFlags)
-                RecordAbilityBattle(battlerDef, defAbility);
+            if (ctx->updateFlags)
+                RecordAbilityBattle(battlerDef, ctx->abilityDef);
         }
         break;
     case ABILITY_DRY_SKIN:
@@ -9837,18 +9837,18 @@ static inline uq4_12_t CalcTypeEffectivenessMultiplierInternal(struct DamageCont
         }
     }
     
-    if (((defAbility == ABILITY_JESTER && modifier > UQ_4_12(1.0))
-        || (defAbility == ABILITY_TELEPATHY && battlerDef == BATTLE_PARTNER(battlerAtk)))
-        && GetMovePower(move) != 0)
+    if (((ctx->abilityDef == ABILITY_JESTER && modifier > UQ_4_12(1.0))
+         || (ctx->abilityDef == ABILITY_TELEPATHY && ctx->battlerDef == BATTLE_PARTNER(ctx->battlerAtk)))
+        && GetMovePower(ctx->move) != 0)
     {
         modifier = UQ_4_12(0.0);
-        if (recordAbilities)
+        if (ctx->updateFlags)
         {
-            gLastUsedAbility = gBattleMons[battlerDef].ability;
-            gBattleStruct->moveResultFlags[battlerDef] |= MOVE_RESULT_MISSED;
-            gLastLandedMoves[battlerDef] = 0;
-            gBattleStruct->missStringId[battlerDef] = B_MSG_AVOIDED_DMG;
-            RecordAbilityBattle(battlerDef, gBattleMons[battlerDef].ability);
+            gLastUsedAbility = gBattleMons[ctx->battlerDef].ability;
+            gBattleStruct->moveResultFlags[ctx->battlerDef] |= MOVE_RESULT_MISSED;
+            gLastLandedMoves[ctx->battlerDef] = 0;
+            gBattleStruct->missStringId[ctx->battlerDef] = B_MSG_AVOIDED_DMG;
+            RecordAbilityBattle(ctx->battlerDef, gBattleMons[ctx->battlerDef].ability);
         }
     }
 

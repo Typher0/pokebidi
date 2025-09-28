@@ -7467,24 +7467,18 @@ BattleScript_IntimidateInReverse::
 	goto BattleScript_IntimidateLoopIncrement
 
 BattleScript_SlanderActivates::
-     savetarget
-.if B_ABILITY_POP_UP == TRUE
-    showabilitypopup BS_ATTACKER
-    pause B_WAIT_TIME_LONG
-    destroyabilitypopup
-.endif
-    waitmessage B_WAIT_TIME_LONG
+    savetarget
+    call BattleScript_AbilityPopUp
     setbyte gBattlerTarget, 0
 BattleScript_SlanderLoop:
     jumpifbyteequal gBattlerTarget, gBattlerAttacker, BattleScript_SlanderLoopIncrement
     jumpiftargetally BattleScript_SlanderLoopIncrement
     jumpifabsent BS_TARGET, BattleScript_SlanderLoopIncrement
-    jumpifstatus2 BS_TARGET, STATUS2_SUBSTITUTE, BattleScript_SlanderLoopIncrement
+    jumpifvolatile BS_TARGET, VOLATILE_SUBSTITUTE, BattleScript_SlanderLoopIncrement
 BattleScript_SlanderEffect:
     copybyte sBATTLER, gBattlerAttacker
     setstatchanger STAT_SPATK, 1, TRUE
-    statbuffchange STAT_CHANGE_NOT_PROTECT_AFFECTED | STAT_CHANGE_ALLOW_PTR, BattleScript_SlanderLoopIncrement
-    setgraphicalstatchangevalues
+    statbuffchange BS_TARGET, STAT_CHANGE_NOT_PROTECT_AFFECTED | STAT_CHANGE_ALLOW_PTR, BattleScript_SlanderLoopIncrement
     jumpifability BS_TARGET, ABILITY_CONTRARY, BattleScript_SlanderContrary
     jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_DECREASE, BattleScript_SlanderWontDecrease
     playanimation BS_TARGET, B_ANIM_STATS_CHANGE, sB_ANIM_ARG1
@@ -7500,7 +7494,6 @@ BattleScript_SlanderLoopIncrement:
     destroyabilitypopup
     restoretarget
     pause B_WAIT_TIME_MED
-    tryintimidateejectpack
     end3
 
 BattleScript_SlanderWontDecrease:
@@ -8268,9 +8261,8 @@ BattleScript_BanefulBunkerEffect::
 	return
 
 BattleScript_FieldOfReedsEffect::
-	orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_PASSIVE_DAMAGE
+	orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_PASSIVE_HP_UPDATE
 	clearmoveresultflags MOVE_RESULT_NO_EFFECT
-	seteffectsecondary
 	setmoveresultflags MOVE_RESULT_MISSED
 	printstring STRINGID_TERRAINBECOMESGRASSY
 	waitmessage B_WAIT_TIME_LONG

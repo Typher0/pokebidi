@@ -6055,7 +6055,7 @@ u32 GetDynamicMoveType(struct Pokemon *mon, u32 move, u32 battler, enum MonState
     {
         u32 ateType = TrySetAteType(move, battler, ability);
         if (ateType != TYPE_NONE && state == MON_IN_BATTLE)
-            gBattleStruct->ateBoost[battler] = TRUE;
+            gBattleStruct->battlerState[battler].ateBoost = TRUE;
         return ateType;
     }
     else if (moveEffect != EFFECT_CHANGE_TYPE_ON_ITEM
