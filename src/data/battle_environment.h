@@ -705,9 +705,9 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
     
     [BATTLE_ENVIRONMENT_MOOSE] =
     {
-        .naturePower = MOVE_FLARE_BLITZ,
+        .naturePower = MOVE_DRACO_METEOR,
         .secretPowerEffect = MOVE_EFFECT_DEF_MINUS_1,
-        .camouflageType = TYPE_FIRE,
+        .camouflageType = TYPE_DRAGON,
         .background = ENVIRONMENT_BACKGROUND(Moose),
     },
     
@@ -748,5 +748,10 @@ static const struct {
     u8 mapScene;
     u8 battleEnvironment;
 } sMapBattleSceneMapping[] = {
-    {MAP_BATTLE_SCENE_GYM,      BATTLE_ENVIRONMENT_GYM},
+    {MAP_BATTLE_SCENE_GYM,           BATTLE_ENVIRONMENT_GYM},
+    {MAP_BATTLE_SCENE_SIDNEY,        BATTLE_ENVIRONMENT_THOMAS},
+    {MAP_BATTLE_SCENE_PHOEBE,        BATTLE_ENVIRONMENT_TOBIAS},
+    {MAP_BATTLE_SCENE_GLACIA,        BATTLE_ENVIRONMENT_TINKER},
+    {MAP_BATTLE_SCENE_DRAKE,         BATTLE_ENVIRONMENT_MOOSE},
+    {MAP_BATTLE_SCENE_FRONTIER,      BATTLE_ENVIRONMENT_ARENA},
 };

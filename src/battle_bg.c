@@ -1018,7 +1018,7 @@ void DrawBattleEntryBackground(void)
     {
         if (!(gBattleTypeFlags & BATTLE_TYPE_INGAME_PARTNER) || gPartnerTrainerId > TRAINER_PARTNER(PARTNER_NONE))
         {
-            LoadBattleEnvironmentEntryGfx(BATTLE_ENVIRONMENT_INDOOR);
+            LoadBattleEnvironmentEntryGfx(BATTLE_ENVIRONMENT_ARENA);
         }
         else
         {
@@ -1056,12 +1056,12 @@ void DrawBattleEntryBackground(void)
             enum TrainerClassID trainerClass = GetTrainerClassFromId(TRAINER_BATTLE_PARAM.opponentA);
             if (trainerClass == TRAINER_CLASS_LEADER)
             {
-                LoadBattleEnvironmentEntryGfx(BATTLE_ENVIRONMENT_INDOOR);
+                LoadBattleEnvironmentEntryGfx(BATTLE_ENVIRONMENT_GYM);
                 return;
             }
             else if (trainerClass == TRAINER_CLASS_CHAMPION)
             {
-                LoadBattleEnvironmentEntryGfx(BATTLE_ENVIRONMENT_INDOOR);
+                LoadBattleEnvironmentEntryGfx(BATTLE_ENVIRONMENT_GWEN);
                 return;
             }
         }
