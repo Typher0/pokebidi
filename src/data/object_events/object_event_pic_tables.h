@@ -2559,3 +2559,39 @@ static const struct SpriteFrameImage sPicTable_LucasWatering[] = {
 static const struct SpriteFrameImage sPicTable_LucasDecorating[] = {
     obj_frame_tiles(gObjectEventPic_LucasDecorating),
 };
+
+static const struct SpriteFrameImage sPicTable_Adhira[] = {
+    overworld_ascending_frames(gObjectEventPic_Adhira, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_Ahab[] = {
+    overworld_ascending_frames(gObjectEventPic_Ahab, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_Carly[] = {
+    overworld_ascending_frames(gObjectEventPic_Carly, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_Israel[] = {
+    overworld_ascending_frames(gObjectEventPic_Israel, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_Jelissa[] = {
+    overworld_ascending_frames(gObjectEventPic_Jelissa, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_Josh[] = {
+    overworld_ascending_frames(gObjectEventPic_Josh, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_Otnar[] = {
+    overworld_ascending_frames(gObjectEventPic_Otnar, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_Peter[] = {
+    overworld_ascending_frames(gObjectEventPic_Peter, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_Toxianna[] = {
+    overworld_ascending_frames(gObjectEventPic_Toxianna, 4, 4),
+};

@@ -534,6 +534,15 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RivalLucasA
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RivalLucasSurfing;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RivalLucasFieldMove;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LinkLucas;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Adhira;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Ahab;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Carly;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Israel;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Jelissa;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Josh;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Otnar;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Peter;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Toxianna;
 // Begin pokemon event objects
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PokeBall;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Follower;
@@ -1084,6 +1093,15 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_RIVAL_LUCAS_SURFING] =      &gObjectEventGraphicsInfo_RivalLucasSurfing,
     [OBJ_EVENT_GFX_RIVAL_LUCAS_FIELD_MOVE] =   &gObjectEventGraphicsInfo_RivalLucasFieldMove,
     [OBJ_EVENT_GFX_LINK_LUCAS] =               &gObjectEventGraphicsInfo_LinkLucas,
+    [OBJ_EVENT_GFX_ADHIRA] =                   &gObjectEventGraphicsInfo_Adhira,
+    [OBJ_EVENT_GFX_AHAB] =                     &gObjectEventGraphicsInfo_Ahab,
+    [OBJ_EVENT_GFX_CARLY] =                    &gObjectEventGraphicsInfo_Carly,
+    [OBJ_EVENT_GFX_ISRAEL] =                   &gObjectEventGraphicsInfo_Israel,
+    [OBJ_EVENT_GFX_JELISSA] =                  &gObjectEventGraphicsInfo_Jelissa,
+    [OBJ_EVENT_GFX_JOSH] =                     &gObjectEventGraphicsInfo_Josh,
+    [OBJ_EVENT_GFX_OTNAR] =                    &gObjectEventGraphicsInfo_Otnar,
+    [OBJ_EVENT_GFX_PETER] =                    &gObjectEventGraphicsInfo_Peter,
+    [OBJ_EVENT_GFX_TOXIANNA] =                 &gObjectEventGraphicsInfo_Toxianna,
     [OBJ_EVENT_GFX_POKE_BALL] =                &gObjectEventGraphicsInfo_PokeBall,
     [OBJ_EVENT_GFX_OW_MON] =                   &gObjectEventGraphicsInfo_Follower,
     [OBJ_EVENT_GFX_LIGHT_SPRITE] =             &gObjectEventGraphicsInfo_BallLight,

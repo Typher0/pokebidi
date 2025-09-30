@@ -10719,7 +10719,12 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .category = DAMAGE_CATEGORY_SPECIAL,
         .ballisticMove = TRUE,
         .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = EFFECT_ATTACK_ACCURACY_UP,
+            .moveEffect = MOVE_EFFECT_ATK_PLUS_1,
+            .self = TRUE,
+            .chance = 10,
+        },
+        {
+            .moveEffect = MOVE_EFFECT_ACC_PLUS_1,
             .self = TRUE,
             .chance = 10,
         }),

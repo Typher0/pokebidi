@@ -540,15 +540,24 @@
 #define OBJ_EVENT_GFX_RIVAL_BRENDAN_SURFING      533
 #define OBJ_EVENT_GFX_RIVAL_BRENDAN_FIELD_MOVE   534
 #define OBJ_EVENT_GFX_LINK_BRENDAN               535
-#define OBJ_EVENT_GFX_POKE_BALL                  536
-#define OBJ_EVENT_GFX_OW_MON                     537
-#define OBJ_EVENT_GFX_LIGHT_SPRITE               538
+#define OBJ_EVENT_GFX_ADHIRA                     536
+#define OBJ_EVENT_GFX_AHAB                       537
+#define OBJ_EVENT_GFX_CARLY                      538
+#define OBJ_EVENT_GFX_ISRAEL                     539
+#define OBJ_EVENT_GFX_JELISSA                    540
+#define OBJ_EVENT_GFX_JOSH                       541
+#define OBJ_EVENT_GFX_OTNAR                      542
+#define OBJ_EVENT_GFX_PETER                      543
+#define OBJ_EVENT_GFX_TOXIANNA                   544
+#define OBJ_EVENT_GFX_POKE_BALL                  545
+#define OBJ_EVENT_GFX_OW_MON                     546
+#define OBJ_EVENT_GFX_LIGHT_SPRITE               547
 
 
 // NOTE: The maximum amount of object events has been expanded from 255 to 65535.
 // Since dynamic graphics ids still require at least 16 free values, the actual limit
 // is 65519, but even considering follower Pokémon, this should be more than enough :)
-#define NUM_OBJ_EVENT_GFX                        539
+#define NUM_OBJ_EVENT_GFX                        548
 
 
 // These are dynamic object gfx ids.
@@ -679,8 +688,17 @@
 #define OBJ_EVENT_PAL_TAG_RS_MAY                  0x1123
 #define OBJ_EVENT_PAL_TAG_DAWN                    0x1124
 #define OBJ_EVENT_PAL_TAG_LUCAS                   0x1125
-#define OBJ_EVENT_PAL_TAG_DAWN_LUCAS_UNDERWATER   0x1126
-#define OBJ_EVENT_PAL_TAG_DYNAMIC                 0x1127
+#define OBJ_EVENT_PAL_TAG_ADHIRA                  0X1126
+#define OBJ_EVENT_PAL_TAG_AHAB                    0X1127
+#define OBJ_EVENT_PAL_TAG_CARLY                   0X1128
+#define OBJ_EVENT_PAL_TAG_ISRAEL                  0X1129
+#define OBJ_EVENT_PAL_TAG_JELISSA                 0X112A
+#define OBJ_EVENT_PAL_TAG_JOSH                    0X112B
+#define OBJ_EVENT_PAL_TAG_OTNAR                   0X112C
+#define OBJ_EVENT_PAL_TAG_PETER                   0X112D
+#define OBJ_EVENT_PAL_TAG_TOXIANNA                0X112E
+#define OBJ_EVENT_PAL_TAG_DAWN_LUCAS_UNDERWATER   0x112F
+#define OBJ_EVENT_PAL_TAG_DYNAMIC                 0x1130
 
 #if OW_FOLLOWERS_POKEBALLS
 // Vanilla

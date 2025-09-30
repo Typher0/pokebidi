@@ -216,7 +216,7 @@ BattleScript_EffectDoodle_AfterCopy:
 	printstring STRINGID_PKMNCOPIEDFOE
 	waitmessage B_WAIT_TIME_LONG
 	switchinabilities BS_ATTACKER
-	jumpifbyte CMP_NOT_EQUAL, gBattleCommunication, 0x0, BattleScript_MoveEnd
+	jumpifbyte CMP_NOT_EQUAL, gBattleCommunication, 0x0, BattleScript_EffectDoodleMoveEnd
 	addbyte gBattleCommunication, 1
 	jumpifnoally BS_ATTACKER, BattleScript_EffectDoodleMoveEnd
 	setallytonextattacker BattleScript_EffectDoodle_CopyAbility
@@ -402,7 +402,9 @@ BattleScript_MoveEffectSaltCure::
 BattleScript_SaltCureExtraDamage::
 	playanimation BS_ATTACKER, B_ANIM_SALT_CURE_DAMAGE, NULL
 	waitanimation
-	call BattleScript_HurtTarget_NoString
+	orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_PASSIVE_HP_UPDATE
+	healthbarupdate BS_ATTACKER
+	datahpupdate BS_ATTACKER
 	printstring STRINGID_TARGETISHURTBYSALTCURE
 	waitmessage B_WAIT_TIME_LONG
 	tryfaintmon BS_ATTACKER
@@ -790,13 +792,13 @@ BattleScript_FlingLightBall:
 	goto BattleScript_FlingEnd
 BattleScript_FlingMentalHerb:
 	curecertainstatuses
-	savetarget
+	saveattacker
 	copybyte gBattlerAttacker, gBattlerTarget
 	playanimation BS_ATTACKER, B_ANIM_HELD_ITEM_EFFECT, NULL
 	printfromtable gMentalHerbCureStringIds
 	waitmessage B_WAIT_TIME_LONG
 	updatestatusicon BS_ATTACKER
-	restoretarget
+	restoreattacker
 	goto BattleScript_FlingEnd
 BattleScript_FlingPoisonBarb:
 	seteffectsecondary BS_ATTACKER, BS_TARGET, MOVE_EFFECT_POISON
@@ -1475,14 +1477,17 @@ BattleScript_EffectFlowerShield::
 	ppreduce
 	savetarget
 	selectfirstvalidtarget
-BattleScript_FlowerShieldIsAnyGrass:
+BattleScript_FlowerShieldIsAnyValidTarget:
+	jumpifvolatile BS_TARGET, VOLATILE_SEMI_INVULNERABLE, BattleScript_FlowerShieldCheckNextTarget
 	jumpiftype BS_TARGET, TYPE_GRASS, BattleScript_FlowerShieldLoopStart
-	jumpifnexttargetvalid BattleScript_FlowerShieldIsAnyGrass
+BattleScript_FlowerShieldCheckNextTarget:
+	jumpifnexttargetvalid BattleScript_FlowerShieldIsAnyValidTarget
 	goto BattleScript_RestoreTargetButItFailed
 BattleScript_FlowerShieldLoopStart:
 	selectfirstvalidtarget
 BattleScript_FlowerShieldLoop:
 	movevaluescleanup
+	jumpifvolatile BS_TARGET, VOLATILE_SEMI_INVULNERABLE, BattleScript_FlowerShieldMoveTargetEnd
 	jumpiftype BS_TARGET, TYPE_GRASS, BattleScript_FlowerShieldLoop2
 	goto BattleScript_FlowerShieldMoveTargetEnd
 BattleScript_FlowerShieldLoop2:
@@ -1503,6 +1508,7 @@ BattleScript_FlowerShieldMoveTargetEnd:
 	moveendto MOVEEND_NEXT_TARGET
 	jumpifnexttargetvalid BattleScript_FlowerShieldLoop
 	restoretarget
+	moveendfrom MOVEEND_ITEM_EFFECTS_ATTACKER
 	end
 
 BattleScript_EffectRototiller::
@@ -1578,7 +1584,6 @@ BattleScript_EffectAfterYou::
 	goto BattleScript_MoveEnd
 
 BattleScript_MoveEffectFlameBurst::
-	tryfaintmon BS_TARGET
 	printstring STRINGID_BURSTINGFLAMESHIT
 	waitmessage B_WAIT_TIME_LONG
 	orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_PASSIVE_HP_UPDATE
@@ -3215,7 +3220,6 @@ BattleScript_EffectOHKO::
 	attackcanceler
 	attackstring
 	ppreduce
-	accuracycheck BattleScript_ButItFailed, ACC_CURR_MOVE
 	typecalc
 	jumpifmovehadnoeffect BattleScript_HitFromAtkAnimation
 	tryKO BattleScript_KOFail
@@ -4286,15 +4290,6 @@ BattleScript_DoEffectTeleport::
 BattleScript_EffectBeatUp::
 	attackcanceler
 	accuracycheck BattleScript_PrintMoveMissed, ACC_CURR_MOVE
-.if B_BEAT_UP >= GEN_5
-	attackstring
-	ppreduce
-	critcalc
-	damagecalc
-	adjustdamage
-	trydobeatup
-	goto BattleScript_HitFromAtkAnimation
-.else
 	attackstring
 	pause B_WAIT_TIME_SHORT
 	ppreduce
@@ -4324,7 +4319,6 @@ BattleScript_BeatUpAttack::
 	goto BattleScript_BeatUpLoop
 BattleScript_BeatUpEnd::
 	end
-.endif
 
 BattleScript_EffectDefenseCurl::
 	attackcanceler
@@ -7473,24 +7467,18 @@ BattleScript_IntimidateInReverse::
 	goto BattleScript_IntimidateLoopIncrement
 
 BattleScript_SlanderActivates::
-     savetarget
-.if B_ABILITY_POP_UP == TRUE
-    showabilitypopup BS_ATTACKER
-    pause B_WAIT_TIME_LONG
-    destroyabilitypopup
-.endif
-    waitmessage B_WAIT_TIME_LONG
+    savetarget
+    call BattleScript_AbilityPopUp
     setbyte gBattlerTarget, 0
 BattleScript_SlanderLoop:
     jumpifbyteequal gBattlerTarget, gBattlerAttacker, BattleScript_SlanderLoopIncrement
     jumpiftargetally BattleScript_SlanderLoopIncrement
     jumpifabsent BS_TARGET, BattleScript_SlanderLoopIncrement
-    jumpifstatus2 BS_TARGET, STATUS2_SUBSTITUTE, BattleScript_SlanderLoopIncrement
+    jumpifvolatile BS_TARGET, VOLATILE_SUBSTITUTE, BattleScript_SlanderLoopIncrement
 BattleScript_SlanderEffect:
     copybyte sBATTLER, gBattlerAttacker
     setstatchanger STAT_SPATK, 1, TRUE
-    statbuffchange STAT_CHANGE_NOT_PROTECT_AFFECTED | STAT_CHANGE_ALLOW_PTR, BattleScript_SlanderLoopIncrement
-    setgraphicalstatchangevalues
+    statbuffchange BS_TARGET, STAT_CHANGE_NOT_PROTECT_AFFECTED | STAT_CHANGE_ALLOW_PTR, BattleScript_SlanderLoopIncrement
     jumpifability BS_TARGET, ABILITY_CONTRARY, BattleScript_SlanderContrary
     jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_DECREASE, BattleScript_SlanderWontDecrease
     playanimation BS_TARGET, B_ANIM_STATS_CHANGE, sB_ANIM_ARG1
@@ -7506,7 +7494,6 @@ BattleScript_SlanderLoopIncrement:
     destroyabilitypopup
     restoretarget
     pause B_WAIT_TIME_MED
-    tryintimidateejectpack
     end3
 
 BattleScript_SlanderWontDecrease:
@@ -8274,9 +8261,8 @@ BattleScript_BanefulBunkerEffect::
 	return
 
 BattleScript_FieldOfReedsEffect::
-	orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_PASSIVE_DAMAGE
+	orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_PASSIVE_HP_UPDATE
 	clearmoveresultflags MOVE_RESULT_NO_EFFECT
-	seteffectsecondary
 	setmoveresultflags MOVE_RESULT_MISSED
 	printstring STRINGID_TERRAINBECOMESGRASSY
 	waitmessage B_WAIT_TIME_LONG
@@ -8592,15 +8578,15 @@ BattleScript_ItemHealHP_RemoveItemEnd2_Anim:
 	end2
 
 BattleScript_BerryPPHealRet::
-	jumpifability BS_ATTACKER, ABILITY_RIPEN, BattleScript_BerryPPHeal_AbilityPopup
+	jumpifability BS_SCRIPTING, ABILITY_RIPEN, BattleScript_BerryPPHeal_AbilityPopup
 	goto BattleScript_BerryPPHeal_Anim
 BattleScript_BerryPPHeal_AbilityPopup:
-	call BattleScript_AbilityPopUp
+	call BattleScript_AbilityPopUpScripting
 BattleScript_BerryPPHeal_Anim:
-	playanimation BS_ATTACKER, B_ANIM_HELD_ITEM_EFFECT
+	playanimation BS_SCRIPTING, B_ANIM_HELD_ITEM_EFFECT
 	printstring STRINGID_PKMNSITEMRESTOREDPP
 	waitmessage B_WAIT_TIME_LONG
-	removeitem BS_ATTACKER
+	removeitem BS_SCRIPTING
 	return
 
 BattleScript_BerryPPHealEnd2::
