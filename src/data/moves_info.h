@@ -9087,7 +9087,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "slightly hurts the user."),
         #endif
         .effect = EFFECT_RECOIL,
-        .power = 150,
+        .power = 120,
         .type = TYPE_ELECTRIC,
         .accuracy = 100,
         .pp = 15,
