@@ -835,7 +835,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_BW_MOM] =                   &gObjectEventGraphicsInfo_BWMom,
     [OBJ_EVENT_GFX_BW2_MOM] =                  &gObjectEventGraphicsInfo_BW2Mom,
     [OBJ_EVENT_GFX_CAITLIN] =                  &gObjectEventGraphicsInfo_Caitlin,
-    [OBJ_EVENT_GFX_CAMERAMAN_1] =              &gObjectEventGraphicsInfo_Cameraman,
+    [OBJ_EVENT_GFX_CAMERAMAN_1] =              &gObjectEventGraphicsInfo_Cameraman1,
     [OBJ_EVENT_GFX_CAMPER_1] =                 &gObjectEventGraphicsInfo_Camper1,
     [OBJ_EVENT_GFX_CAPTAIN] =                  &gObjectEventGraphicsInfo_Captain,
     [OBJ_EVENT_GFX_CEDRIC] =                   &gObjectEventGraphicsInfo_Cedric,
