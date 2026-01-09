@@ -294,16 +294,17 @@
 #define MUS_ROUTE120                361 // MUS_DOORO_X3         // Also used in Routes 121, 124, 125, 126, 127 and 128.
 #define MUS_PETALBURG               362 // MUS_MACHI_S2         // Also used in Mr. Briney's House and Pretty Petal Flower Shop.
 #define MUS_OLDALE                  363 // MUS_MACHI_S4         // Also used in Lavaridge Town.
-#define MUS_GYM                     364 // MUS_GIM
-#define MUS_SURF                    365 // MUS_NAMINORI
-#define MUS_PETALBURG_WOODS         366 // MUS_DAN01            // Also used in Artisan Cave, Fiery Path, Granite Cave, Jagged Pass, Marine Cave, Rusturf Tunnel, Scorched Slab and Terra Cave.
-#define MUS_LEVEL_UP                367 // MUS_FANFA1
-#define MUS_HEAL                    368 // MUS_ME_ASA
-#define MUS_OBTAIN_BADGE            369 // MUS_ME_BACHI
-#define MUS_OBTAIN_ITEM             370 // MUS_FANFA4
-#define MUS_EVOLVED                 371 // MUS_FANFA5           // Also used in egg hatching, trades and upon catching.
-#define MUS_OBTAIN_TMHM             372 // MUS_ME_WAZA
-#define MUS_LILYCOVE_MUSEUM         373 // MUS_BIJYUTU          // Also used in the Battle Frontier's Ranking Hall.
+#define MUS_GYM_BATTLE              364 // MUS_GYM_B
+#define MUS_GYM                     365 // MUS_GIM
+#define MUS_SURF                    366 // MUS_NAMINORI
+#define MUS_PETALBURG_WOODS         367 // MUS_DAN01            // Also used in Artisan Cave, Fiery Path, Granite Cave, Jagged Pass, Marine Cave, Rusturf Tunnel, Scorched Slab and Terra Cave.
+#define MUS_LEVEL_UP                368 // MUS_FANFA1
+#define MUS_HEAL                    369 // MUS_ME_ASA
+#define MUS_OBTAIN_BADGE            370 // MUS_ME_BACHI
+#define MUS_OBTAIN_ITEM             371 // MUS_FANFA4
+#define MUS_EVOLVED                 372 // MUS_FANFA5           // Also used in egg hatching, trades and upon catching.
+#define MUS_OBTAIN_TMHM             373 // MUS_ME_WAZA
+#define MUS_LILYCOVE_MUSEUM         374 // MUS_BIJYUTU          // Also used in the Battle Frontier's Ranking Hall.
 #define MUS_ROUTE122                374 // MUS_DOORO_X4         // Also used in Route 123 and Birch's intro speech.
 #define MUS_OCEANIC_MUSEUM          375 // MUS_FUNE_KAN
 #define MUS_EVOLUTION_INTRO         376 // MUS_ME_SHINKA        // Also used in egg hatching.

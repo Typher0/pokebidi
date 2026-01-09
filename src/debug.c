@@ -3408,6 +3408,7 @@ static void DebugAction_DestroyFollowerNPC(u8 taskId)
     X(MUS_ROUTE120)                 \
     X(MUS_PETALBURG)                \
     X(MUS_OLDALE)                   \
+    X(MUS_GYM_BATTLE)               \
     X(MUS_GYM)                      \
     X(MUS_SURF)                     \
     X(MUS_PETALBURG_WOODS)          \

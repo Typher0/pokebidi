@@ -7017,4 +7017,61 @@ const struct SpeciesInfo gSpeciesInfo[] =
    },
 #endif //P_FAMILY_WENDINGO
 
+#if P_FAMILY_ROYGIBIV
+    [SPECIES_ROYGIBIV] =
+    {
+        .baseHP        = 135,
+        .baseAttack    = 30,
+        .baseDefense   = 115,
+        .baseSpeed     = 105,
+        .baseSpAttack  = 165,
+        .baseSpDefense = 130,
+        .types = MON_TYPES(TYPE_FAIRY, TYPE_DRAGON),
+        .catchRate = 3,
+        .expYield = 311,
+        .evYield_HP    = 3,
+        .genderRatio = PERCENT_GENDERLESS,
+        .eggCycles = 100,
+        .friendship = 0,
+        .growthRate = GROWTH_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
+        .abilities = {ABILITY_PROTEAN, ABILITY_NONE, ABILITY_NONE},
+        .bodyColor = BODY_COLOR_WHITE,
+        .isLegendary = TRUE,
+        .perfectIVCount = LEGENDARY_PERFECT_IV_COUNT,
+        .speciesName = _("Roygibiv"),
+        .cryId = CRY_ROYGIBIV,
+        .natDexNum = NATIONAL_DEX_ROYGIBIV,
+        .categoryName = _("Color"),
+        .height = 76,
+        .weight = 1348,
+        .description = COMPOUND_STRING(
+            "It is said that at the creation of the universe,\n"
+            "Roygibiv created light. Scientists have theorized\n"
+            "that it may be capable of altering how light hits\n"
+            "its body to change its appearance."),
+        .pokemonScale = 256,
+        .pokemonOffset = 0,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_Roygibiv,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 4,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        .frontAnimId = ANIM_GROW_STUTTER_SLOW,
+        .backPic = gMonBackPic_Roygibiv,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 0,
+        .backAnimId = BACK_ANIM_GROW,
+        .palette = gMonPalette_Roygibiv,
+        .shinyPalette = gMonShinyPalette_Roygibiv,
+        .iconSprite = gMonIcon_Roygibiv,
+        .iconPalIndex = 0,
+        SHADOW(5, 11, SHADOW_SIZE_M)
+        FOOTPRINT(Roygibiv)
+        .levelUpLearnset = sRoygibivLevelUpLearnset,
+        .teachableLearnset = sRoygibivTeachableLearnset,
+   },
+#endif //P_FAMILY_ROYGIBIV
+
 };

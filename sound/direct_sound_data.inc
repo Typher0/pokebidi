@@ -6743,6 +6743,12 @@ Cry_Hubriset::
 Cry_Wendingo::
     .incbin "sound/direct_sound_samples/cries/wendingo.bin"
 .endif @ P_FAMILY_WENDINGO
+
+.if P_FAMILY_ROYGIBIV == TRUE
+    .align 2
+Cry_Roygibiv::
+    .incbin "sound/direct_sound_samples/cries/roygibiv.bin"
+.endif @ P_FAMILY_ROYGIBIV
 .endif @ P_CRIES_ENABLED
 
 	.align 2

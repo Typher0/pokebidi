@@ -1766,6 +1766,7 @@
 #define SPECIES_BABOSIRIS                               1646
 #define SPECIES_HUBRISET                                1647
 #define SPECIES_WENDINGO                                1648
+#define SPECIES_ROYGIBIV                                1649
 
 #define SPECIES_EGG                                     (SPECIES_WENDINGO + 1)
 

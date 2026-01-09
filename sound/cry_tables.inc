@@ -2659,6 +2659,9 @@ gCryTable::
 .if P_FAMILY_WENDINGO == TRUE
     cry Cry_Wendingo
 .endif @ P_FAMILY_WENDINGO
+.if P_FAMILY_ROYGIBIV == TRUE
+    cry Cry_Roygibiv
+.endif @ P_FAMILY_ROYGIBIV
 .endif @ P_CRIES_ENABLED
 
 	.align 2
@@ -5322,4 +5325,7 @@ gCryTable_Reverse::
 .if P_FAMILY_WENDINGO == TRUE
     cry_reverse Cry_Wendingo
 .endif @ P_FAMILY_WENDINGO
+.if P_FAMILY_ROYGIBIV == TRUE
+    cry_reverse Cry_Roygibiv
+.endif @ P_FAMILY_ROYGIBIV
 .endif @ P_CRIES_ENABLED
