@@ -1984,7 +1984,7 @@
 #define SPECIES_HELIOLISK_ILATIA                        1863
 #define SPECIES_TORKOAL_ILATIA                          1864
 
-#define SPECIES_EGG                                     (SPECIES_TORKOAL_ILATIA + 1)
+#define SPECIES_EGG                                     (SPECIES_ROYGIBIV + 1)
 
 #define NUM_SPECIES SPECIES_EGG
 
