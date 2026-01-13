@@ -1768,7 +1768,7 @@
 #define SPECIES_WENDINGO                                1648
 #define SPECIES_ROYGIBIV                                1649
 
-#define SPECIES_EGG                                     (SPECIES_WENDINGO + 1)
+#define SPECIES_EGG                                     (SPECIES_ROYGIBIV + 1)
 
 #define NUM_SPECIES SPECIES_EGG
 
