@@ -27953,6 +27953,17 @@ const u8 gMonIcon_Cacturado[] = INCBIN_U8("graphics/pokemon/cacturado/icon.4bpp"
 #endif //P_FOOTPRINTS
 #endif //P_FAMILY_WENDINGO
 
+#if P_FAMILY_ROYGIVIV
+    const u32 gMonFrontPic_Roygibiv[] = INCBIN_U32("graphics/pokemon/roygibiv/front.4bpp.smol");
+    const u16 gMonPalette_Roygibiv[] = INCBIN_U16("graphics/pokemon/roygibiv/normal.gbapal");
+    const u32 gMonBackPic_Roygibiv[] = INCBIN_U32("graphics/pokemon/roygibiv/back.4bpp.smol");
+    const u16 gMonShinyPalette_Roygibiv[] = INCBIN_U16("graphics/pokemon/roygibiv/shiny.gbapal");
+    const u8 gMonIcon_Roygibiv[] = INCBIN_U8("graphics/pokemon/roygibiv/icon.4bpp");
+#if P_FOOTPRINTS
+    // const u8 gMonFootprint_Roygibiv[] = INCBIN_U8("graphics/pokemon/roygibiv/footprint.1bpp");
+#endif //P_FOOTPRINTS
+#endif //P_FAMILY_ROYGIBIV
+
     const u32 gMonFrontPic_Egg[] = INCBIN_U32("graphics/pokemon/egg/anim_front.4bpp.smol");
     const u16 gMonPalette_Egg[] = INCBIN_U16("graphics/pokemon/egg/normal.gbapal");
     const u8 gMonIcon_Egg[] = INCBIN_U8("graphics/pokemon/egg/icon.4bpp");
