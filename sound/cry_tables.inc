@@ -863,13 +863,28 @@ gCryTable::
 .endif @ P_FAMILY_ELECTRIKE
 .if P_FAMILY_PLUSLE == TRUE
 	cry Cry_Plusle
+.if P_GEN_9_CROSS_EVOS == TRUE
+    cry Cry_Multisle
+.endif @ P_GEN_9_CROSS_EVOS
 .endif @ P_FAMILY_PLUSLE
 .if P_FAMILY_MINUN == TRUE
 	cry Cry_Minun
+.if P_GEN_9_CROSS_EVOS == TRUE
+    cry Cry_Divisun
+.endif @ P_GEN_9_CROSS_EVOS
 .endif @ P_FAMILY_MINUN
 .if P_FAMILY_VOLBEAT_ILLUMISE == TRUE
+.if P_GEN_9_CROSS_EVOS == TRUE
+    cry Cry_Lampae
+.endif @ P_GEN_9_CROSS_EVOS
 	cry Cry_Volbeat
+.if P_GEN_9_CROSS_EVOS == TRUE
+    cry Cry_Coleoply
+.endif @ P_GEN_9_CROSS_EVOS
 	cry Cry_Illumise
+.if P_GEN_9_CROSS_EVOS == TRUE
+    cry Cry_Photale
+.endif @ P_GEN_9_CROSS_EVOS
 .endif @ P_FAMILY_VOLBEAT_ILLUMISE
 .if P_FAMILY_ROSELIA == TRUE
 .if P_GEN_4_CROSS_EVOS == TRUE
@@ -2662,6 +2677,277 @@ gCryTable::
 .if P_FAMILY_ROYGIBIV == TRUE
     cry Cry_Roygibiv
 .endif @ P_FAMILY_ROYGIBIV
+.if P_FAMILY_STELEAF == TRUE
+    cry Cry_Steleaf
+    cry Cry_Treasol
+    cry Cry_Kamairest
+.endif @ P_FAMILY_STELEAF
+.if P_FAMILY_SERPARK == TRUE
+    cry Cry_Serpark
+    cry Cry_Aspyre
+    cry Cry_Bruciaena
+.endif @ P_FAMILY_SERPARK
+.if P_FAMILY_TITAL == TRUE
+    cry Cry_Tital
+    cry Cry_Naparsea
+    cry Cry_Dahoon
+.endif @ P_FAMILY_TITAL
+.if P_FAMILY_JAEWING == TRUE
+    cry Cry_Jaewing
+    cry Cry_Misjae
+    cry Cry_Fojae
+.endif @ P_FAMILY_JAEWING
+.if P_FAMILY_KITTUSK == TRUE
+    cry Cry_Kittusk
+    cry Cry_Felign
+.endif @ P_FAMILY_KITTUSK
+.if P_FAMILY_PUPVY == TRUE
+    cry Cry_Pupvy
+    cry Cry_Hedog
+.endif @ P_FAMILY_PUPVY
+.if P_FAMILY_DRAED == TRUE
+    cry Cry_Draed
+    cry Cry_Dartlet
+    cry Cry_Ichar
+.endif @ P_FAMILY_DRAED
+.if P_FAMILY_LARVIRE == TRUE
+    cry Cry_Larvire
+    cry Cry_Pupame
+    cry Cry_Magmant
+.endif @ P_FAMILY_LARVIRE
+.if P_FAMILY_RACTRIC == TRUE
+    cry Cry_Ractric
+    cry Cry_Eleccoon
+    cry Cry_Cooven
+.endif @ P_FAMILY_RACTRIC
+.if P_FAMILY_THEIWN == TRUE
+    cry Cry_Theiwn
+    cry Cry_Mornja
+    cry Cry_Sunobi
+.endif @ P_FAMILY_THEIWN
+.if P_FAMILY_ENJEL == TRUE
+    cry Cry_Enjel
+    cry Cry_Cheruel
+    cry Cry_Serane
+    cry Cry_Daiell
+.endif @ P_FAMILY_ENJEL
+.if P_FAMILY_GEQ == TRUE
+    cry Cry_Geq
+    cry Cry_Gecho
+.endif @ P_FAMILY_GEQ
+.if P_FAMILY_SCECHINUS == TRUE
+    cry Cry_Scechinus
+    cry Cry_Salterix
+    cry Cry_Salipotyph
+.endif @ P_FAMILY_SCECHINUS
+.if P_FAMILY_SALLET == TRUE
+    cry Cry_Sallet
+    cry Cry_Xiphife
+    cry Cry_Gillier
+.endif @ P_FAMILY_SALLET
+.if P_FAMILY_FLOXIE == TRUE
+    cry Cry_Floxie
+    cry Cry_Pethic
+.endif @ P_FAMILY_FLOXIE
+.if P_FAMILY_LYCXY == TRUE
+    cry Cry_Lycxy
+.endif @ P_FAMILY_LYCXY
+.if P_FAMILY_MESWIF == TRUE
+    cry Cry_Meswif
+.endif @ P_FAMILY_MESWIF
+.if P_FAMILY_CLAYR == TRUE
+    cry Cry_Clayr
+.endif @ P_FAMILY_CLAYR
+.if P_FAMILY_VENODEER == TRUE
+    cry Cry_Venodeer
+    cry Cry_Munjinide
+.endif @ P_FAMILY_VENODEER
+.if P_FAMILY_DISGAL == TRUE
+    cry Cry_Disgal
+    cry Cry_Jaskal
+.endif @ P_FAMILY_DISGAL
+.if P_FAMILY_OUROGET == TRUE
+    cry Cry_Ouroget
+.endif @ P_FAMILY_OUROGET
+.if P_FAMILY_SALAIRIE == TRUE
+    cry Cry_Salairie
+    cry Cry_Faegon
+    cry Cry_Faeke
+.endif @ P_FAMILY_SALAIRIE
+.if P_FAMILY_SPOOSO == TRUE
+    cry Cry_Spooso
+    cry Cry_Arcter
+.endif @ P_FAMILY_SPOOSO
+.if P_FAMILY_SOLFAE == TRUE
+    cry Cry_Solfae
+    cry Cry_Faelar
+.endif @ P_FAMILY_SOLFAE
+.if P_FAMILY_STONNY == TRUE
+    cry Cry_Stonny
+    cry Cry_Rokhare
+    cry Cry_Bunnulder
+.endif @ P_FAMILY_STONNY
+.if P_FAMILY_THOLE == TRUE
+    cry Cry_THOLE
+    cry Cry_Badgerose
+.endif @ P_FAMILY_THOLE
+.if P_FAMILY_BATGEM == TRUE
+    cry Cry_Batgem
+    cry Cry_Vamprism
+.endif @ P_FAMILY_BATGEM
+.if P_FAMILY_MARRENGE == TRUE
+    cry Cry_Marrenge
+    cry Cry_Vulcass
+    cry Cry_Ossifly
+.endif @ P_FAMILY_MARRENGE
+.if P_FAMILY_HORTERN == TRUE
+    cry Cry_Hortern
+    cry Cry_Triceram
+.endif @ P_FAMILY_HORTERN
+.if P_FAMILY_SABONE == TRUE
+    cry Cry_Sabone
+    cry Cry_Smiloton
+.endif @ P_FAMILY_SABONE
+.if P_FAMILY_NARFLOE == TRUE
+    cry Cry_Narfloe
+.endif @ P_FAMILY_NARFLOE
+.if P_FAMILY_WATTLANTA == TRUE
+    cry Cry_Wattlanta
+.endif @ P_FAMILY_WATTLANTA
+.if P_FAMILY_TORRPHIN == TRUE
+    cry Cry_Torrphin
+.endif @ P_FAMILY_TORRPHIN
+.if P_FAMILY_SPRIORY == TRUE
+    cry Cry_Spriory
+    cry Cry_Paxtie
+    cry Cry_Steori
+.endif @ P_FAMILY_SPRIORY
+.if P_FAMILY_SLOMOUS == TRUE
+    cry Cry_Slomous
+    cry Cry_Killoris
+.endif @ P_FAMILY_SLOMOUS
+.if P_FAMILY_MELKADY == TRUE
+    cry Cry_Melkady
+.endif @ P_FAMILY_MELKADY
+.if P_FAMILY_KITALIS == TRUE
+    cry Cry_Kitalis
+    cry Cry_Digitox
+.endif @ P_FAMILY_KITALIS
+.if P_FAMILY_POLYFERN == TRUE
+    cry Cry_Polyfern
+    cry Cry_Sworitum
+.endif @ P_FAMILY_POLYFERN
+.if P_FAMILY_RIDEQUIN == TRUE
+    cry Cry_Ridequin
+    cry Cry_Equrior
+    cry Cry_Stalliot
+.endif @ P_FAMILY_RIDEQUIN
+.if P_FAMILY_CASTA == TRUE
+    cry Cry_Casta
+    cry Cry_Coccoodle
+    cry Cry_Bughetti
+.endif @ P_FAMILY_CASTA
+.if P_FAMILY_DIOD == TRUE
+    cry Cry_Diod
+    cry Cry_Toock
+    cry Cry_Kronstruc
+.endif @ P_FAMILY_DIOD
+.if P_FAMILY_COYPADE == TRUE
+    cry Cry_Coypade
+    cry Cry_Nutrig
+.endif @ P_FAMILY_COYPADE
+.if P_FAMILY_FUGIO == TRUE
+    cry Cry_Fugio
+    cry Cry_Weldius
+    cry Cry_Sworge
+.endif @ P_FAMILY_FUGIO
+.if P_FAMILY_GRADET == TRUE
+    cry Cry_Gradet
+    cry Cry_Soldrit
+    cry Cry_Fanturion
+.endif @ P_FAMILY_GRADET
+.if P_FAMILY_FLUSIC == TRUE
+    cry Cry_Flusic
+    cry Cry_Neheed
+    cry Cry_Shakuchi
+    cry Cry_Breaute
+    cry Cry_Bansurus
+    cry Cry_Rechord
+.endif @ P_FAMILY_FLUSIC
+.if P_FAMILY_SALAMAGE == TRUE
+    cry Cry_Salamage
+    cry Cry_Mutazard
+    cry Cry_Alcheroc
+.endif @ P_FAMILY_SALAMAGE
+.if P_FAMILY_FLORISION == TRUE
+    cry Cry_Florision
+    cry Cry_Visiquet
+.endif @ P_FAMILY_FLORISION
+.if P_FAMILY_MINELLY == TRUE
+    cry Cry_Minelly
+    cry Cry_Meduartz
+.endif @ P_FAMILY_MINELLY
+.if P_FAMILY_COASTAWL == TRUE
+    cry Cry_Coastawl
+    cry Cry_Hydrawl
+    cry Cry_Pompawl
+.endif @ P_FAMILY_COASTAWL
+.if P_FAMILY_OSTEAM == TRUE
+    cry Cry_Osteam
+    cry Cry_BEAVOIL
+.endif @ P_FAMILY_OSTEAM
+.if P_FAMILY_CATTARM == TRUE
+    cry Cry_Cattarm
+    cry Cry_Tempuma
+    cry Cry_Daygar
+    cry Cry_Cougrost
+.endif @ P_FAMILY_CATTARM
+.if P_FAMILY_TOAMBINA == TRUE
+    cry Cry_Toambina
+    cry Cry_Pachelly
+.endif @ P_FAMILY_TOAMBINA
+.if P_FAMILY_PUPIZARD == TRUE
+    cry Cry_Pupizard
+    cry Cry_Kungodo
+    cry Cry_Sensagon
+.endif @ P_FAMILY_PUPIZARD
+.if P_FAMILY_SACYRM == TRUE
+    cry Cry_Sacyrm
+    cry Cry_Vescon
+.endif @ P_FAMILY_SACYRM
+.if P_FAMILY_LORDRA == TRUE
+    cry Cry_Lordra
+    cry Cry_Yvearl
+    cry Cry_Caesern
+.endif @ P_FAMILY_LORDRA
+.if P_FAMILY_GHIATMO == TRUE
+    cry Cry_Ghiatmo
+.endif @ P_FAMILY_GHIATMO
+.if P_FAMILY_SAXIFROST == TRUE
+    cry Cry_Saxifrost
+.endif @ P_FAMILY_SAXIFROST
+.if P_FAMILY_CHAMICE == TRUE
+    cry Cry_Chamice
+    cry Cry_Antelowp
+    cry Cry_Alpois
+.endif @ P_FAMILY_CHAMICE
+.if P_FAMILY_SNOWPUP == TRUE
+    cry Cry_Snowpup
+    cry Cry_Howinter
+    cry Cry_Wolfreeze
+.endif @ P_FAMILY_SNOWPUP
+.if P_FAMILY_STACODE == TRUE
+    cry Cry_Stacode
+.endif @ P_FAMILY_STACODE
+.if P_FAMILY_JUNPEAO == TRUE
+    cry Cry_Junpeao
+.endif @ P_FAMILY_JUNPEAO
+.if P_FAMILY_MINOCTUA == TRUE
+    cry Cry_Minoctua
+.endif @ P_FAMILY_MINOCTUA
+.if P_FAMILY_JUPITOS == TRUE
+    cry Cry_Jupitos
+.endif @ P_FAMILY_JUPITOS
 .endif @ P_CRIES_ENABLED
 
 	.align 2
@@ -3529,13 +3815,28 @@ gCryTable_Reverse::
 .endif @ P_FAMILY_ELECTRIKE
 .if P_FAMILY_PLUSLE == TRUE
 	cry_reverse Cry_Plusle
+.if P_GEN_9_CROSS_EVOS == TRUE
+    cry_reverse Cry_Multisle
+.endif @ P_GEN_9_CROSS_EVOS
 .endif @ P_FAMILY_PLUSLE
 .if P_FAMILY_MINUN == TRUE
 	cry_reverse Cry_Minun
+.if P_GEN_9_CROSS_EVOS == TRUE
+    cry_reverse Cry_Divisun
+.endif @ P_GEN_9_CROSS_EVOS
 .endif @ P_FAMILY_MINUN
 .if P_FAMILY_VOLBEAT_ILLUMISE == TRUE
+.if P_GEN_9_CROSS_EVOS == TRUE
+    cry_reverse Cry_Lampae
+.endif @ P_GEN_9_CROSS_EVOS
 	cry_reverse Cry_Volbeat
+.if P_GEN_9_CROSS_EVOS == TRUE
+    cry_reverse Cry_Coleoply
+.endif @ P_GEN_9_CROSS_EVOS
 	cry_reverse Cry_Illumise
+ .if P_GEN_9_CROSS_EVOS == TRUE
+    cry_reverse Cry_Photale
+.endif @ P_GEN_9_CROSS_EVOS
 .endif @ P_FAMILY_VOLBEAT_ILLUMISE
 .if P_FAMILY_ROSELIA == TRUE
 .if P_GEN_4_CROSS_EVOS == TRUE
@@ -5328,4 +5629,275 @@ gCryTable_Reverse::
 .if P_FAMILY_ROYGIBIV == TRUE
     cry_reverse Cry_Roygibiv
 .endif @ P_FAMILY_ROYGIBIV
+.if P_FAMILY_STELEAF == TRUE
+    cry_reverse Cry_Steleaf
+    cry_reverse Cry_Treasol
+    cry_reverse Cry_Kamairest
+.endif @ P_FAMILY_STELEAF
+.if P_FAMILY_SERPARK == TRUE
+    cry_reverse Cry_Serpark
+    cry_reverse Cry_Aspyre
+    cry_reverse Cry_Bruciaena
+.endif @ P_FAMILY_SERPARK
+.if P_FAMILY_TITAL == TRUE
+    cry_reverse Cry_Tital
+    cry_reverse Cry_Naparsea
+    cry_reverse Cry_Dahoon
+.endif @ P_FAMILY_TITAL
+.if P_FAMILY_JAEWING == TRUE
+    cry_reverse Cry_Jaewing
+    cry_reverse Cry_Misjae
+    cry_reverse Cry_Fojae
+.endif @ P_FAMILY_JAEWING
+.if P_FAMILY_KITTUSK == TRUE
+    cry_reverse Cry_Kittusk
+    cry_reverse Cry_Felign
+.endif @ P_FAMILY_KITTUSK
+.if P_FAMILY_PUPVY == TRUE
+    cry_reverse Cry_Pupvy
+    cry_reverse Cry_Hedog
+.endif @ P_FAMILY_PUPVY
+.if P_FAMILY_DRAED == TRUE
+    cry_reverse Cry_Draed
+    cry_reverse Cry_Dartlet
+    cry_reverse Cry_Ichar
+.endif @ P_FAMILY_DRAED
+.if P_FAMILY_LARVIRE == TRUE
+    cry_reverse Cry_Larvire
+    cry_reverse Cry_Pupame
+    cry_reverse Cry_Magmant
+.endif @ P_FAMILY_LARVIRE
+.if P_FAMILY_RACTRIC == TRUE
+    cry_reverse Cry_Ractric
+    cry_reverse Cry_Eleccoon
+    cry_reverse Cry_Cooven
+.endif @ P_FAMILY_RACTRIC
+.if P_FAMILY_THEIWN == TRUE
+    cry_reverse Cry_Theiwn
+    cry_reverse Cry_Mornja
+    cry_reverse Cry_Sunobi
+.endif @ P_FAMILY_THEIWN
+.if P_FAMILY_ENJEL == TRUE
+    cry_reverse Cry_Enjel
+    cry_reverse Cry_Cheruel
+    cry_reverse Cry_Serane
+    cry_reverse Cry_Daiell
+.endif @ P_FAMILY_ENJEL
+.if P_FAMILY_GEQ == TRUE
+    cry_reverse Cry_Geq
+    cry_reverse Cry_Gecho
+.endif @ P_FAMILY_GEQ
+.if P_FAMILY_SCECHINUS == TRUE
+    cry_reverse Cry_Scechinus
+    cry_reverse Cry_Salterix
+    cry_reverse Cry_Salipotyph
+.endif @ P_FAMILY_SCECHINUS
+.if P_FAMILY_SALLET == TRUE
+    cry_reverse Cry_Sallet
+    cry_reverse Cry_Xiphife
+    cry_reverse Cry_Gillier
+.endif @ P_FAMILY_SALLET
+.if P_FAMILY_FLOXIE == TRUE
+    cry_reverse Cry_Floxie
+    cry_reverse Cry_Pethic
+.endif @ P_FAMILY_FLOXIE
+.if P_FAMILY_LYCXY == TRUE
+    cry_reverse Cry_Lycxy
+.endif @ P_FAMILY_LYCXY
+.if P_FAMILY_MESWIF == TRUE
+    cry_reverse Cry_Meswif
+.endif @ P_FAMILY_MESWIF
+.if P_FAMILY_CLAYR == TRUE
+    cry_reverse Cry_Clayr
+.endif @ P_FAMILY_CLAYR
+.if P_FAMILY_VENODEER == TRUE
+    cry_reverse Cry_Venodeer
+    cry_reverse Cry_Munjinide
+.endif @ P_FAMILY_VENODEER
+.if P_FAMILY_DISGAL == TRUE
+    cry_reverse Cry_Disgal
+    cry_reverse Cry_Jaskal
+.endif @ P_FAMILY_DISGAL
+.if P_FAMILY_OUROGET == TRUE
+    cry_reverse Cry_Ouroget
+.endif @ P_FAMILY_OUROGET
+.if P_FAMILY_SALAIRIE == TRUE
+    cry_reverse Cry_Salairie
+    cry_reverse Cry_Faegon
+    cry_reverse Cry_Faeke
+.endif @ P_FAMILY_SALAIRIE
+.if P_FAMILY_SPOOSO == TRUE
+    cry_reverse Cry_Spooso
+    cry_reverse Cry_Arcter
+.endif @ P_FAMILY_SPOOSO
+.if P_FAMILY_SOLFAE == TRUE
+    cry_reverse Cry_Solfae
+    cry_reverse Cry_Faelar
+.endif @ P_FAMILY_SOLFAE
+.if P_FAMILY_STONNY == TRUE
+    cry_reverse Cry_Stonny
+    cry_reverse Cry_Rokhare
+    cry_reverse Cry_Bunnulder
+.endif @ P_FAMILY_STONNY
+.if P_FAMILY_THOLE == TRUE
+    cry_reverse Cry_THOLE
+    cry_reverse Cry_Badgerose
+.endif @ P_FAMILY_THOLE
+.if P_FAMILY_BATGEM == TRUE
+    cry_reverse Cry_Batgem
+    cry_reverse Cry_Vamprism
+.endif @ P_FAMILY_BATGEM
+.if P_FAMILY_MARRENGE == TRUE
+    cry_reverse Cry_Marrenge
+    cry_reverse Cry_Vulcass
+    cry_reverse Cry_Ossifly
+.endif @ P_FAMILY_MARRENGE
+.if P_FAMILY_HORTERN == TRUE
+    cry_reverse Cry_Hortern
+    cry_reverse Cry_Triceram
+.endif @ P_FAMILY_HORTERN
+.if P_FAMILY_SABONE == TRUE
+    cry_reverse Cry_Sabone
+    cry_reverse Cry_Smiloton
+.endif @ P_FAMILY_SABONE
+.if P_FAMILY_NARFLOE == TRUE
+    cry_reverse Cry_Narfloe
+.endif @ P_FAMILY_NARFLOE
+.if P_FAMILY_WATTLANTA == TRUE
+    cry_reverse Cry_Wattlanta
+.endif @ P_FAMILY_WATTLANTA
+.if P_FAMILY_TORRPHIN == TRUE
+    cry_reverse Cry_Torrphin
+.endif @ P_FAMILY_TORRPHIN
+.if P_FAMILY_SPRIORY == TRUE
+    cry_reverse Cry_Spriory
+    cry_reverse Cry_Paxtie
+    cry_reverse Cry_Steori
+.endif @ P_FAMILY_SPRIORY
+.if P_FAMILY_SLOMOUS == TRUE
+    cry_reverse Cry_Slomous
+    cry_reverse Cry_Killoris
+.endif @ P_FAMILY_SLOMOUS
+.if P_FAMILY_MELKADY == TRUE
+    cry_reverse Cry_Melkady
+.endif @ P_FAMILY_MELKADY
+.if P_FAMILY_KITALIS == TRUE
+    cry_reverse Cry_Kitalis
+    cry_reverse Cry_Digitox
+.endif @ P_FAMILY_KITALIS
+.if P_FAMILY_POLYFERN == TRUE
+    cry_reverse Cry_Polyfern
+    cry_reverse Cry_Sworitum
+.endif @ P_FAMILY_POLYFERN
+.if P_FAMILY_RIDEQUIN == TRUE
+    cry_reverse Cry_Ridequin
+    cry_reverse Cry_Equrior
+    cry_reverse Cry_Stalliot
+.endif @ P_FAMILY_RIDEQUIN
+.if P_FAMILY_CASTA == TRUE
+    cry_reverse Cry_Casta
+    cry_reverse Cry_Coccoodle
+    cry_reverse Cry_Bughetti
+.endif @ P_FAMILY_CASTA
+.if P_FAMILY_DIOD == TRUE
+    cry_reverse Cry_Diod
+    cry_reverse Cry_Toock
+    cry_reverse Cry_Kronstruc
+.endif @ P_FAMILY_DIOD
+.if P_FAMILY_COYPADE == TRUE
+    cry_reverse Cry_Coypade
+    cry_reverse Cry_Nutrig
+.endif @ P_FAMILY_COYPADE
+.if P_FAMILY_FUGIO == TRUE
+    cry_reverse Cry_Fugio
+    cry_reverse Cry_Weldius
+    cry_reverse Cry_Sworge
+.endif @ P_FAMILY_FUGIO
+.if P_FAMILY_GRADET == TRUE
+    cry_reverse Cry_Gradet
+    cry_reverse Cry_Soldrit
+    cry_reverse Cry_Fanturion
+.endif @ P_FAMILY_GRADET
+.if P_FAMILY_FLUSIC == TRUE
+    cry_reverse Cry_Flusic
+    cry_reverse Cry_Neheed
+    cry_reverse Cry_Shakuchi
+    cry_reverse Cry_Breaute
+    cry_reverse Cry_Bansurus
+    cry_reverse Cry_Rechord
+.endif @ P_FAMILY_FLUSIC
+.if P_FAMILY_SALAMAGE == TRUE
+    cry_reverse Cry_Salamage
+    cry_reverse Cry_Mutazard
+    cry_reverse Cry_Alcheroc
+.endif @ P_FAMILY_SALAMAGE
+.if P_FAMILY_FLORISION == TRUE
+    cry_reverse Cry_Florision
+    cry_reverse Cry_Visiquet
+.endif @ P_FAMILY_FLORISION
+.if P_FAMILY_MINELLY == TRUE
+    cry_reverse Cry_Minelly
+    cry_reverse Cry_Meduartz
+.endif @ P_FAMILY_MINELLY
+.if P_FAMILY_COASTAWL == TRUE
+    cry_reverse Cry_Coastawl
+    cry_reverse Cry_Hydrawl
+    cry_reverse Cry_Pompawl
+.endif @ P_FAMILY_COASTAWL
+.if P_FAMILY_OSTEAM == TRUE
+    cry_reverse Cry_Osteam
+    cry_reverse Cry_BEAVOIL
+.endif @ P_FAMILY_OSTEAM
+.if P_FAMILY_CATTARM == TRUE
+    cry_reverse Cry_Cattarm
+    cry_reverse Cry_Tempuma
+    cry_reverse Cry_Daygar
+    cry_reverse Cry_Cougrost
+.endif @ P_FAMILY_CATTARM
+.if P_FAMILY_TOAMBINA == TRUE
+    cry_reverse Cry_Toambina
+    cry_reverse Cry_Pachelly
+.endif @ P_FAMILY_TOAMBINA
+.if P_FAMILY_PUPIZARD == TRUE
+    cry_reverse Cry_Pupizard
+    cry_reverse Cry_Kungodo
+    cry_reverse Cry_Sensagon
+.endif @ P_FAMILY_PUPIZARD
+.if P_FAMILY_SACYRM == TRUE
+    cry_reverse Cry_Sacyrm
+    cry_reverse Cry_Vescon
+.endif @ P_FAMILY_SACYRM
+.if P_FAMILY_LORDRA == TRUE
+    cry_reverse Cry_Lordra
+    cry_reverse Cry_Yvearl
+    cry_reverse Cry_Caesern
+.endif @ P_FAMILY_LORDRA
+.if P_FAMILY_GHIATMO == TRUE
+    cry_reverse Cry_Ghiatmo
+.endif @ P_FAMILY_GHIATMO
+.if P_FAMILY_SAXIFROST == TRUE
+    cry_reverse Cry_Saxifrost
+.endif @ P_FAMILY_SAXIFROST
+.if P_FAMILY_CHAMICE == TRUE
+    cry_reverse Cry_Chamice
+    cry_reverse Cry_Antelowp
+    cry_reverse Cry_Alpois
+.endif @ P_FAMILY_CHAMICE
+.if P_FAMILY_SNOWPUP == TRUE
+    cry_reverse Cry_Snowpup
+    cry_reverse Cry_Howinter
+    cry_reverse Cry_Wolfreeze
+.endif @ P_FAMILY_SNOWPUP
+.if P_FAMILY_STACODE == TRUE
+    cry_reverse Cry_Stacode
+.endif @ P_FAMILY_STACODE
+.if P_FAMILY_JUNPEAO == TRUE
+    cry_reverse Cry_Junpeao
+.endif @ P_FAMILY_JUNPEAO
+.if P_FAMILY_MINOCTUA == TRUE
+    cry_reverse Cry_Minoctua
+.endif @ P_FAMILY_MINOCTUA
+.if P_FAMILY_JUPITOS == TRUE
+    cry_reverse Cry_Jupitos
+.endif @ P_FAMILY_JUPITOS
 .endif @ P_CRIES_ENABLED
