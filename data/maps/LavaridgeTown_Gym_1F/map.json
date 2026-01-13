@@ -15,7 +15,7 @@
   "connections": null,
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_FLANNERY",
+      "graphics_id": "OBJ_EVENT_GFX_FLANNERY_1",
       "x": 13,
       "y": 9,
       "elevation": 3,
@@ -84,7 +84,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MAN_2",
+      "graphics_id": "OBJ_EVENT_GFX_GYM_GUIDE",
       "x": 12,
       "y": 16,
       "elevation": 3,

@@ -852,6 +852,7 @@ const u16 gPokedexOrder_Alphabetical[] =
     NATIONAL_DEX_ROSERADE,
     NATIONAL_DEX_ROTOM,
     NATIONAL_DEX_ROWLET,
+    NATIONAL_DEX_ROYGIBIV,
     NATIONAL_DEX_RUFFLET,
     NATIONAL_DEX_RUNERIGUS,
 
@@ -2886,6 +2887,8 @@ const u16 gPokedexOrder_Weight[] =
     NATIONAL_DEX_SLAKING,
     // 292.1 lbs / 132.5 kg
     NATIONAL_DEX_CLOYSTER,
+    // 297.0 lbs / 134.6 kg
+    NATIONAL_DEX_ROYGIBIV,
     // 297.6 lbs / 135.0 kg
     NATIONAL_DEX_JELLICENT,
     NATIONAL_DEX_BEWEAR,
@@ -4693,6 +4696,8 @@ const u16 gPokedexOrder_Height[] =
     //NATIONAL_DEX_DIALGA_ORIGIN,
     // 24'07" / 7.5m
     //NATIONAL_DEX_NECROZMA_ULTRA,
+    // 24'10" / 7.6m
+    //NATIONAL_DEX_ROYGIBIV,
     // 26'11" / 8.2m
     //NATIONAL_DEX_WISHIWASHI_SCHOOL,
     // 28'10" / 8.8m

@@ -1286,6 +1286,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     {
         .name = _("Bulletproof"),
         .description = COMPOUND_STRING("Avoids some projectiles."),
+        .breakable = TRUE,
         .aiRating = 7,
     },
 
@@ -2420,7 +2421,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_JESTER] =
     {
         .name = _("Jester"),
-        .description = COMPOUND_STRING("Raises Speed after missing."),
+        .description = COMPOUND_STRING("No “Supereffective” hits."),
         .aiRating = 3,
     },
 
@@ -2434,8 +2435,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_VAMPIRISM] =
     {
         .name = _("Vampirism"),
-        .description = COMPOUND_STRING("Biting moves drain HP."),
-        .aiRating = 6,
+        .description = COMPOUND_STRING("Bites higher 2nd effects odds."),
+        .aiRating = 8,
     },
 
     [ABILITY_SAPERA] =
@@ -2470,7 +2471,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_ASTEROID_BELT] =
     {
         .name = _("Asteroid Belt"),
-        .description = COMPOUND_STRING("Hurts to touch."),
+        .description = COMPOUND_STRING("Hurts to touch and Levitates."),
         .aiRating = 6,
     },
 };

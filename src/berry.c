@@ -1593,6 +1593,29 @@ const struct Berry gBerries[] =
         .weedsBonus = 0,
         .pestsBonus = 2,
     },
+    
+    [ITEM_NINIKU_BERRY - FIRST_BERRY_INDEX] =
+    {
+        .name = _("Niniku"),
+        .firmness = BERRY_FIRMNESS_HARD,
+        .color = BERRY_COLOR_BLUE,
+        .size = 35,
+        .maxYield = YIELD_RATE(5, 5, 20, 10),
+        .minYield = YIELD_RATE(2, 1, 3, 2),
+        .description1 = COMPOUND_STRING("In nature, they grow in wide rings"),
+        .description2 = COMPOUND_STRING("for reasons that are still unknown."),
+        .growthDuration = GROWTH_DURATION(84, 72, 108, 48, 32, 48),
+        .spicy = 0,
+        .dry = 0,
+        .sweet = 25,
+        .bitter = 10,
+        .sour = 0,
+        .smoothness = 35,
+        .drainRate = 6,
+        .waterBonus = 10,
+        .weedsBonus = 1,
+        .pestsBonus = 4,
+    },
 
     [ITEM_ENIGMA_BERRY_E_READER - FIRST_BERRY_INDEX] =
     {
@@ -1686,6 +1709,7 @@ const struct BerryCrushBerryData gBerryCrush_BerryData[] = {
     [ITEM_ROWAP_BERRY - FIRST_BERRY_INDEX]           = {.difficulty = 130, .powder = 250},
     [ITEM_KEE_BERRY - FIRST_BERRY_INDEX]             = {.difficulty = 160, .powder = 500},
     [ITEM_MARANGA_BERRY - FIRST_BERRY_INDEX]         = {.difficulty = 160, .powder = 500},
+    [ITEM_NINIKU_BERRY - FIRST_BERRY_INDEX]          = {.difficulty =  50, .powder =  50},
     [ITEM_ENIGMA_BERRY_E_READER - FIRST_BERRY_INDEX] = {.difficulty = 150, .powder = 200}
 };
 

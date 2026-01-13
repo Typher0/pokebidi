@@ -1,7 +1,8 @@
 #ifndef GUARD_CONSTANTS_CRIES_H
 #define GUARD_CONSTANTS_CRIES_H
 
-enum {
+enum PokemonCry
+{
     CRY_NONE,
 #if P_FAMILY_BULBASAUR
     CRY_BULBASAUR,
@@ -2661,6 +2662,9 @@ enum {
 #if P_FAMILY_WENDINGO
     CRY_WENDINGO,
 #endif //P_FAMILY_WENDINGO
+#if P_FAMILY_ROYGIBIV
+    CRY_ROYGIBIV,
+#endif //P_FAMILY_ROYGIBIV
     CRY_COUNT,
 };
 

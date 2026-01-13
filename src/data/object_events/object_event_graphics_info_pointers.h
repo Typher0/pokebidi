@@ -386,6 +386,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_NinjaBoy1;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Norman1;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Nurse1;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_NurseJoy;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_NurseJoyWalk;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_NurseryAide;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_OldWoman1;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ParasolLady1;
@@ -503,6 +504,45 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Yancy2;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Youngster1;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Youngster2;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Youngster3;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_DawnNormal;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_DawnMachBike;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_DawnSurfing;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_DawnFieldMove;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_DawnAcroBike;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_DawnUnderwater;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_DawnFishing;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_DawnWatering;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_DawnDecorating;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LucasNormal;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LucasMachBike;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LucasSurfing;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LucasFieldMove;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LucasAcroBike;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LucasUnderwater;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LucasFishing;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LucasWatering;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LucasDecorating;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RivalDawnNormal;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RivalDawnMachBike;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RivalDawnAcroBike;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RivalDawnSurfing;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RivalDawnFieldMove;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LinkDawn;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RivalLucasNormal;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RivalLucasMachBike;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RivalLucasAcroBike;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RivalLucasSurfing;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RivalLucasFieldMove;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LinkLucas;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Adhira;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Ahab;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Carly;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Israel;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Jelissa;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Josh;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Otnar;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Peter;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Toxianna;
 // Begin pokemon event objects
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PokeBall;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Follower;
@@ -795,7 +835,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_BW_MOM] =                   &gObjectEventGraphicsInfo_BWMom,
     [OBJ_EVENT_GFX_BW2_MOM] =                  &gObjectEventGraphicsInfo_BW2Mom,
     [OBJ_EVENT_GFX_CAITLIN] =                  &gObjectEventGraphicsInfo_Caitlin,
-    [OBJ_EVENT_GFX_CAMERAMAN_1] =              &gObjectEventGraphicsInfo_Cameraman,
+    [OBJ_EVENT_GFX_CAMERAMAN_1] =              &gObjectEventGraphicsInfo_Cameraman1,
     [OBJ_EVENT_GFX_CAMPER_1] =                 &gObjectEventGraphicsInfo_Camper1,
     [OBJ_EVENT_GFX_CAPTAIN] =                  &gObjectEventGraphicsInfo_Captain,
     [OBJ_EVENT_GFX_CEDRIC] =                   &gObjectEventGraphicsInfo_Cedric,
@@ -905,6 +945,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_NORMAN_1] =                 &gObjectEventGraphicsInfo_Norman1,
     [OBJ_EVENT_GFX_NURSE_1] =                  &gObjectEventGraphicsInfo_Nurse1,
     [OBJ_EVENT_GFX_NURSE_JOY] =                &gObjectEventGraphicsInfo_NurseJoy,
+    [OBJ_EVENT_GFX_NURSE_JOY_WALK]             &gObjectEventGraphicsInfo_NurseJoyWalk,
     [OBJ_EVENT_GFX_NURSERY_AIDE] =             &gObjectEventGraphicsInfo_NurseryAide,
     [OBJ_EVENT_GFX_OLD_WOMAN_1] =              &gObjectEventGraphicsInfo_OldWoman1,
     [OBJ_EVENT_GFX_PARASOL_LADY_1] =           &gObjectEventGraphicsInfo_ParasolLady1,
@@ -1022,6 +1063,45 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_YOUNGSTER_1] =              &gObjectEventGraphicsInfo_Youngster1,
     [OBJ_EVENT_GFX_YOUNGSTER_2] =              &gObjectEventGraphicsInfo_Youngster2,
     [OBJ_EVENT_GFX_YOUNGSTER_3] =              &gObjectEventGraphicsInfo_Youngster3,
+    [OBJ_EVENT_GFX_DAWN_NORMAL] =              &gObjectEventGraphicsInfo_DawnNormal,
+    [OBJ_EVENT_GFX_DAWN_MACH_BIKE] =           &gObjectEventGraphicsInfo_DawnMachBike,
+    [OBJ_EVENT_GFX_DAWN_SURFING] =             &gObjectEventGraphicsInfo_DawnSurfing,
+    [OBJ_EVENT_GFX_DAWN_FIELD_MOVE] =          &gObjectEventGraphicsInfo_DawnFieldMove,
+    [OBJ_EVENT_GFX_DAWN_ACRO_BIKE] =           &gObjectEventGraphicsInfo_DawnAcroBike,
+    [OBJ_EVENT_GFX_DAWN_UNDERWATER] =          &gObjectEventGraphicsInfo_DawnUnderwater,
+    [OBJ_EVENT_GFX_DAWN_FISHING] =             &gObjectEventGraphicsInfo_DawnFishing,
+    [OBJ_EVENT_GFX_DAWN_WATERING] =            &gObjectEventGraphicsInfo_DawnWatering,
+    [OBJ_EVENT_GFX_DAWN_DECORATING] =          &gObjectEventGraphicsInfo_DawnDecorating,
+    [OBJ_EVENT_GFX_LUCAS_NORMAL] =             &gObjectEventGraphicsInfo_LucasNormal,
+    [OBJ_EVENT_GFX_LUCAS_MACH_BIKE] =          &gObjectEventGraphicsInfo_LucasMachBike,
+    [OBJ_EVENT_GFX_LUCAS_SURFING] =            &gObjectEventGraphicsInfo_LucasSurfing,
+    [OBJ_EVENT_GFX_LUCAS_FIELD_MOVE] =         &gObjectEventGraphicsInfo_LucasFieldMove,
+    [OBJ_EVENT_GFX_LUCAS_ACRO_BIKE] =          &gObjectEventGraphicsInfo_LucasAcroBike,
+    [OBJ_EVENT_GFX_LUCAS_UNDERWATER] =         &gObjectEventGraphicsInfo_LucasUnderwater,
+    [OBJ_EVENT_GFX_LUCAS_FISHING] =            &gObjectEventGraphicsInfo_LucasFishing,
+    [OBJ_EVENT_GFX_LUCAS_WATERING] =           &gObjectEventGraphicsInfo_LucasWatering,
+    [OBJ_EVENT_GFX_LUCAS_DECORATING] =         &gObjectEventGraphicsInfo_LucasDecorating,
+    [OBJ_EVENT_GFX_RIVAL_DAWN_NORMAL] =        &gObjectEventGraphicsInfo_RivalDawnNormal,
+    [OBJ_EVENT_GFX_RIVAL_DAWN_MACH_BIKE] =     &gObjectEventGraphicsInfo_RivalDawnMachBike,
+    [OBJ_EVENT_GFX_RIVAL_DAWN_ACRO_BIKE] =     &gObjectEventGraphicsInfo_RivalDawnAcroBike,
+    [OBJ_EVENT_GFX_RIVAL_DAWN_SURFING] =       &gObjectEventGraphicsInfo_RivalDawnSurfing,
+    [OBJ_EVENT_GFX_RIVAL_DAWN_FIELD_MOVE] =    &gObjectEventGraphicsInfo_RivalDawnFieldMove,
+    [OBJ_EVENT_GFX_LINK_DAWN] =                &gObjectEventGraphicsInfo_LinkDawn,
+    [OBJ_EVENT_GFX_RIVAL_LUCAS_NORMAL] =       &gObjectEventGraphicsInfo_RivalLucasNormal,
+    [OBJ_EVENT_GFX_RIVAL_LUCAS_MACH_BIKE] =    &gObjectEventGraphicsInfo_RivalLucasMachBike,
+    [OBJ_EVENT_GFX_RIVAL_LUCAS_ACRO_BIKE] =    &gObjectEventGraphicsInfo_RivalLucasAcroBike,
+    [OBJ_EVENT_GFX_RIVAL_LUCAS_SURFING] =      &gObjectEventGraphicsInfo_RivalLucasSurfing,
+    [OBJ_EVENT_GFX_RIVAL_LUCAS_FIELD_MOVE] =   &gObjectEventGraphicsInfo_RivalLucasFieldMove,
+    [OBJ_EVENT_GFX_LINK_LUCAS] =               &gObjectEventGraphicsInfo_LinkLucas,
+    [OBJ_EVENT_GFX_ADHIRA] =                   &gObjectEventGraphicsInfo_Adhira,
+    [OBJ_EVENT_GFX_AHAB] =                     &gObjectEventGraphicsInfo_Ahab,
+    [OBJ_EVENT_GFX_CARLY] =                    &gObjectEventGraphicsInfo_Carly,
+    [OBJ_EVENT_GFX_ISRAEL] =                   &gObjectEventGraphicsInfo_Israel,
+    [OBJ_EVENT_GFX_JELISSA] =                  &gObjectEventGraphicsInfo_Jelissa,
+    [OBJ_EVENT_GFX_JOSH] =                     &gObjectEventGraphicsInfo_Josh,
+    [OBJ_EVENT_GFX_OTNAR] =                    &gObjectEventGraphicsInfo_Otnar,
+    [OBJ_EVENT_GFX_PETER] =                    &gObjectEventGraphicsInfo_Peter,
+    [OBJ_EVENT_GFX_TOXIANNA] =                 &gObjectEventGraphicsInfo_Toxianna,
     [OBJ_EVENT_GFX_POKE_BALL] =                &gObjectEventGraphicsInfo_PokeBall,
     [OBJ_EVENT_GFX_OW_MON] =                   &gObjectEventGraphicsInfo_Follower,
     [OBJ_EVENT_GFX_LIGHT_SPRITE] =             &gObjectEventGraphicsInfo_BallLight,

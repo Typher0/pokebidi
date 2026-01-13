@@ -294,16 +294,17 @@
 #define MUS_ROUTE120                361 // MUS_DOORO_X3         // Also used in Routes 121, 124, 125, 126, 127 and 128.
 #define MUS_PETALBURG               362 // MUS_MACHI_S2         // Also used in Mr. Briney's House and Pretty Petal Flower Shop.
 #define MUS_OLDALE                  363 // MUS_MACHI_S4         // Also used in Lavaridge Town.
-#define MUS_GYM                     364 // MUS_GIM
-#define MUS_SURF                    365 // MUS_NAMINORI
-#define MUS_PETALBURG_WOODS         366 // MUS_DAN01            // Also used in Artisan Cave, Fiery Path, Granite Cave, Jagged Pass, Marine Cave, Rusturf Tunnel, Scorched Slab and Terra Cave.
-#define MUS_LEVEL_UP                367 // MUS_FANFA1
-#define MUS_HEAL                    368 // MUS_ME_ASA
-#define MUS_OBTAIN_BADGE            369 // MUS_ME_BACHI
-#define MUS_OBTAIN_ITEM             370 // MUS_FANFA4
-#define MUS_EVOLVED                 371 // MUS_FANFA5           // Also used in egg hatching, trades and upon catching.
-#define MUS_OBTAIN_TMHM             372 // MUS_ME_WAZA
-#define MUS_LILYCOVE_MUSEUM         373 // MUS_BIJYUTU          // Also used in the Battle Frontier's Ranking Hall.
+#define MUS_GYM_BATTLE              364 // MUS_GYM_B
+#define MUS_GYM                     365 // MUS_GIM
+#define MUS_SURF                    366 // MUS_NAMINORI
+#define MUS_PETALBURG_WOODS         367 // MUS_DAN01            // Also used in Artisan Cave, Fiery Path, Granite Cave, Jagged Pass, Marine Cave, Rusturf Tunnel, Scorched Slab and Terra Cave.
+#define MUS_LEVEL_UP                368 // MUS_FANFA1
+#define MUS_HEAL                    369 // MUS_ME_ASA
+#define MUS_OBTAIN_BADGE            370 // MUS_ME_BACHI
+#define MUS_OBTAIN_ITEM             371 // MUS_FANFA4
+#define MUS_EVOLVED                 372 // MUS_FANFA5           // Also used in egg hatching, trades and upon catching.
+#define MUS_OBTAIN_TMHM             373 // MUS_ME_WAZA
+#define MUS_LILYCOVE_MUSEUM         374 // MUS_BIJYUTU          // Also used in the Battle Frontier's Ranking Hall.
 #define MUS_ROUTE122                374 // MUS_DOORO_X4         // Also used in Route 123 and Birch's intro speech.
 #define MUS_OCEANIC_MUSEUM          375 // MUS_FUNE_KAN
 #define MUS_EVOLUTION_INTRO         376 // MUS_ME_SHINKA        // Also used in egg hatching.
@@ -494,57 +495,57 @@
 
 // These PH_* constants are phoneme sounds used by the "bard" NPC (see src/bard_music.c and src/mauville_old_man.c).
 // Each comes in a triplet of PH_*_BLEND, PH_*_HELD, and PH_*_SOLO, and the name of each triplet incorporates the English phonetic sound it represents.
-#define PH_TRAP_BLEND               559
-#define PH_TRAP_HELD                560
-#define PH_TRAP_SOLO                561
-#define PH_FACE_BLEND               562
-#define PH_FACE_HELD                563
-#define PH_FACE_SOLO                564
-#define PH_CLOTH_BLEND              565
-#define PH_CLOTH_HELD               566
-#define PH_CLOTH_SOLO               567
-#define PH_DRESS_BLEND              568
-#define PH_DRESS_HELD               569
-#define PH_DRESS_SOLO               570
-#define PH_FLEECE_BLEND             571
-#define PH_FLEECE_HELD              572
-#define PH_FLEECE_SOLO              573
-#define PH_KIT_BLEND                574
-#define PH_KIT_HELD                 575
-#define PH_KIT_SOLO                 576
-#define PH_PRICE_BLEND              577
-#define PH_PRICE_HELD               578
-#define PH_PRICE_SOLO               579
-#define PH_LOT_BLEND                580
-#define PH_LOT_HELD                 581
-#define PH_LOT_SOLO                 582
-#define PH_GOAT_BLEND               583
-#define PH_GOAT_HELD                584
-#define PH_GOAT_SOLO                585
-#define PH_THOUGHT_BLEND            586
-#define PH_THOUGHT_HELD             587
-#define PH_THOUGHT_SOLO             588
-#define PH_CHOICE_BLEND             589
-#define PH_CHOICE_HELD              590
-#define PH_CHOICE_SOLO              591
-#define PH_MOUTH_BLEND              592
-#define PH_MOUTH_HELD               593
-#define PH_MOUTH_SOLO               594
-#define PH_FOOT_BLEND               595
-#define PH_FOOT_HELD                596
-#define PH_FOOT_SOLO                597
-#define PH_GOOSE_BLEND              598
-#define PH_GOOSE_HELD               599
-#define PH_GOOSE_SOLO               600
-#define PH_STRUT_BLEND              601
-#define PH_STRUT_HELD               602
-#define PH_STRUT_SOLO               603
-#define PH_CURE_BLEND               604
-#define PH_CURE_HELD                605
-#define PH_CURE_SOLO                606
-#define PH_NURSE_BLEND              607
-#define PH_NURSE_HELD               608
-#define PH_NURSE_SOLO               609
+#define PH_TRAP_BLEND               562
+#define PH_TRAP_HELD                563
+#define PH_TRAP_SOLO                564
+#define PH_FACE_BLEND               565
+#define PH_FACE_HELD                566
+#define PH_FACE_SOLO                567
+#define PH_CLOTH_BLEND              568
+#define PH_CLOTH_HELD               569
+#define PH_CLOTH_SOLO               570
+#define PH_DRESS_BLEND              571
+#define PH_DRESS_HELD               572
+#define PH_DRESS_SOLO               573
+#define PH_FLEECE_BLEND             574
+#define PH_FLEECE_HELD              575
+#define PH_FLEECE_SOLO              576
+#define PH_KIT_BLEND                577
+#define PH_KIT_HELD                 578
+#define PH_KIT_SOLO                 579
+#define PH_PRICE_BLEND              580
+#define PH_PRICE_HELD               581
+#define PH_PRICE_SOLO               582
+#define PH_LOT_BLEND                583
+#define PH_LOT_HELD                 584
+#define PH_LOT_SOLO                 585
+#define PH_GOAT_BLEND               586
+#define PH_GOAT_HELD                587
+#define PH_GOAT_SOLO                588
+#define PH_THOUGHT_BLEND            589
+#define PH_THOUGHT_HELD             590
+#define PH_THOUGHT_SOLO             591
+#define PH_CHOICE_BLEND             592
+#define PH_CHOICE_HELD              593
+#define PH_CHOICE_SOLO              594
+#define PH_MOUTH_BLEND              595
+#define PH_MOUTH_HELD               596
+#define PH_MOUTH_SOLO               597
+#define PH_FOOT_BLEND               598
+#define PH_FOOT_HELD                599
+#define PH_FOOT_SOLO                600
+#define PH_GOOSE_BLEND              601
+#define PH_GOOSE_HELD               602
+#define PH_GOOSE_SOLO               603
+#define PH_STRUT_BLEND              604
+#define PH_STRUT_HELD               605
+#define PH_STRUT_SOLO               606
+#define PH_CURE_BLEND               607
+#define PH_CURE_HELD                608
+#define PH_CURE_SOLO                609
+#define PH_NURSE_BLEND              610
+#define PH_NURSE_HELD               611
+#define PH_NURSE_SOLO               612
 
 #define MUS_ROUTE118                0x7FFF  // Map is split into 2 music sections. controlled by GetCurrLocationDefaultMusic().
 

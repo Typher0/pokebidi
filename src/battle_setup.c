@@ -14,6 +14,7 @@
 #include "fieldmap.h"
 #include "follower_npc.h"
 #include "random.h"
+#include "rtc.h"
 #include "starter_choose.h"
 #include "script_pokemon_util.h"
 #include "palette.h"
@@ -48,7 +49,6 @@
 #include "constants/game_stat.h"
 #include "constants/items.h"
 #include "constants/songs.h"
-#include "constants/map_types.h"
 #include "constants/trainers.h"
 #include "constants/trainer_hill.h"
 #include "constants/weather.h"
@@ -337,7 +337,7 @@ static void DoStandardWildBattle(bool32 isDouble)
     }
     else if (isDouble)
         gBattleTypeFlags |= BATTLE_TYPE_DOUBLE;
-    if (InBattlePyramid())
+    if (CurrentBattlePyramidLocation() != PYRAMID_LOCATION_NONE)
     {
         VarSet(VAR_TEMP_E, 0);
         gBattleTypeFlags |= BATTLE_TYPE_PYRAMID;
@@ -356,7 +356,7 @@ void DoStandardWildBattle_Debug(void)
     StopPlayerAvatar();
     gMain.savedCallback = CB2_EndWildBattle;
     gBattleTypeFlags = 0;
-    if (InBattlePyramid())
+    if (CurrentBattlePyramidLocation() != PYRAMID_LOCATION_NONE)
     {
         VarSet(VAR_TEMP_PLAYING_PYRAMID_MUSIC, 0);
         gBattleTypeFlags |= BATTLE_TYPE_PYRAMID;
@@ -416,7 +416,7 @@ static void DoTrainerBattle(void)
 
 static void DoBattlePyramidTrainerHillBattle(void)
 {
-    if (InBattlePyramid())
+    if (CurrentBattlePyramidLocation() != PYRAMID_LOCATION_NONE)
         CreateBattleStartTask(GetSpecialBattleTransition(B_TRANSITION_GROUP_B_PYRAMID), 0);
     else
         CreateBattleStartTask(GetSpecialBattleTransition(B_TRANSITION_GROUP_TRAINER_HILL), 0);
@@ -591,7 +591,7 @@ static void CB2_EndWildBattle(void)
             HealPlayerParty();
     }
 
-    if (IsPlayerDefeated(gBattleOutcome) == TRUE && !InBattlePyramid() && !InBattlePike())
+    if (IsPlayerDefeated(gBattleOutcome) == TRUE && CurrentBattlePyramidLocation() == PYRAMID_LOCATION_NONE && !InBattlePike())
     {
         SetMainCallback2(CB2_WhiteOut);
     }
@@ -610,7 +610,7 @@ static void CB2_EndScriptedWildBattle(void)
 
     if (IsPlayerDefeated(gBattleOutcome) == TRUE)
     {
-        if (InBattlePyramid())
+        if (CurrentBattlePyramidLocation() != PYRAMID_LOCATION_NONE)
             SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
         else
             SetMainCallback2(CB2_WhiteOut);
@@ -622,7 +622,7 @@ static void CB2_EndScriptedWildBattle(void)
     }
 }
 
-u8 BattleSetup_GetEnvironmentId(void)
+enum BattleEnvironments BattleSetup_GetEnvironmentId(void)
 {
     u16 tileBehavior;
     s16 x, y;
@@ -634,18 +634,60 @@ u8 BattleSetup_GetEnvironmentId(void)
 
     tileBehavior = MapGridGetMetatileBehaviorAt(x, y);
 
-    if (MetatileBehavior_IsTallGrass(tileBehavior))
+    if (MetatileBehavior_IsTallGrass(tileBehavior) && gTimeOfDay == TIME_MORNING)
         return BATTLE_ENVIRONMENT_ROUTE;
-    if (MetatileBehavior_IsLongGrass(tileBehavior))
+    if (MetatileBehavior_IsTallGrass(tileBehavior) && gTimeOfDay == TIME_DAY)
         return BATTLE_ENVIRONMENT_ROUTE;
-    if (MetatileBehavior_IsSandOrDeepSand(tileBehavior))
+    if (MetatileBehavior_IsTallGrass(tileBehavior) && gTimeOfDay == TIME_EVENING)
+        return BATTLE_ENVIRONMENT_ROUTE_E;
+    if (MetatileBehavior_IsTallGrass(tileBehavior) && gTimeOfDay == TIME_NIGHT)
+        return BATTLE_ENVIRONMENT_ROUTE_N;
+    if (MetatileBehavior_IsLongGrass(tileBehavior) && gTimeOfDay == TIME_MORNING)
+        return BATTLE_ENVIRONMENT_ROUTE;
+    if (MetatileBehavior_IsLongGrass(tileBehavior) && gTimeOfDay == TIME_DAY)
+        return BATTLE_ENVIRONMENT_ROUTE;
+    if (MetatileBehavior_IsLongGrass(tileBehavior) && gTimeOfDay == TIME_EVENING)
+        return BATTLE_ENVIRONMENT_ROUTE_E;
+    if (MetatileBehavior_IsLongGrass(tileBehavior) && gTimeOfDay == TIME_NIGHT)
+        return BATTLE_ENVIRONMENT_ROUTE_N;
+    if (MetatileBehavior_IsSandOrDeepSand(tileBehavior) && gTimeOfDay == TIME_MORNING)
         return BATTLE_ENVIRONMENT_DESERT;
+    if (MetatileBehavior_IsSandOrDeepSand(tileBehavior) && gTimeOfDay == TIME_DAY)
+        return BATTLE_ENVIRONMENT_DESERT;
+    if (MetatileBehavior_IsSandOrDeepSand(tileBehavior) && gTimeOfDay == TIME_EVENING)
+        return BATTLE_ENVIRONMENT_DESERT_E;
+    if (MetatileBehavior_IsSandOrDeepSand(tileBehavior) && gTimeOfDay == TIME_NIGHT)
+        return BATTLE_ENVIRONMENT_DESERT_N;
 
     switch (gMapHeader.mapType)
     {
     case MAP_TYPE_TOWN:
+        if (gTimeOfDay == TIME_MORNING)
+            return BATTLE_ENVIRONMENT_CITY;
+        if (gTimeOfDay == TIME_DAY)
+            return BATTLE_ENVIRONMENT_CITY;
+        if (gTimeOfDay == TIME_EVENING)
+            return BATTLE_ENVIRONMENT_CITY_E;
+        if (gTimeOfDay == TIME_NIGHT)
+            return BATTLE_ENVIRONMENT_CITY_N;
     case MAP_TYPE_CITY:
+        if (gTimeOfDay == TIME_MORNING)
+            return BATTLE_ENVIRONMENT_CITY;
+        if (gTimeOfDay == TIME_DAY)
+            return BATTLE_ENVIRONMENT_CITY;
+        if (gTimeOfDay == TIME_EVENING)
+            return BATTLE_ENVIRONMENT_CITY_E;
+        if (gTimeOfDay == TIME_NIGHT)
+            return BATTLE_ENVIRONMENT_CITY_N;
     case MAP_TYPE_ROUTE:
+        if (gTimeOfDay == TIME_MORNING)
+            return BATTLE_ENVIRONMENT_ROUTE;
+        if (gTimeOfDay == TIME_DAY)
+            return BATTLE_ENVIRONMENT_ROUTE;
+        if (gTimeOfDay == TIME_EVENING)
+            return BATTLE_ENVIRONMENT_ROUTE_E;
+        if (gTimeOfDay == TIME_NIGHT)
+            return BATTLE_ENVIRONMENT_ROUTE_N;
         break;
     case MAP_TYPE_UNDERGROUND:
         if (MetatileBehavior_IsIndoorEncounter(tileBehavior))
@@ -657,33 +699,95 @@ u8 BattleSetup_GetEnvironmentId(void)
     case MAP_TYPE_SECRET_BASE:
         return BATTLE_ENVIRONMENT_INDOOR;
     case MAP_TYPE_UNDERWATER:
-        return BATTLE_ENVIRONMENT_UNDERWATER;
+        if (gTimeOfDay == TIME_MORNING)
+            return BATTLE_ENVIRONMENT_UNDERWATER;
+        if (gTimeOfDay == TIME_DAY)
+            return BATTLE_ENVIRONMENT_UNDERWATER;
+        if (gTimeOfDay == TIME_EVENING)
+            return BATTLE_ENVIRONMENT_UNDERWATER_E;
+        if (gTimeOfDay == TIME_NIGHT)
+            return BATTLE_ENVIRONMENT_UNDERWATER_N;
     case MAP_TYPE_OCEAN_ROUTE:
-        if (MetatileBehavior_IsSurfableWaterOrUnderwater(tileBehavior))
+        if (MetatileBehavior_IsSurfableWaterOrUnderwater(tileBehavior) && gTimeOfDay == TIME_MORNING)
             return BATTLE_ENVIRONMENT_SEA;
-        return BATTLE_ENVIRONMENT_ROUTE;
+        if (MetatileBehavior_IsSurfableWaterOrUnderwater(tileBehavior) && gTimeOfDay == TIME_DAY)
+            return BATTLE_ENVIRONMENT_SEA;
+        if (MetatileBehavior_IsSurfableWaterOrUnderwater(tileBehavior) && gTimeOfDay == TIME_EVENING)
+            return BATTLE_ENVIRONMENT_SEA_E;
+        if (MetatileBehavior_IsSurfableWaterOrUnderwater(tileBehavior) && gTimeOfDay == TIME_NIGHT)
+            return BATTLE_ENVIRONMENT_SEA_N;
+        if (gTimeOfDay == TIME_MORNING)
+            return BATTLE_ENVIRONMENT_BEACH;
+        if (gTimeOfDay == TIME_DAY)
+            return BATTLE_ENVIRONMENT_BEACH;
+        if (gTimeOfDay == TIME_EVENING)
+            return BATTLE_ENVIRONMENT_BEACH_E;
+        if (gTimeOfDay == TIME_NIGHT)
+            return BATTLE_ENVIRONMENT_BEACH_N;
     }
-    if (MetatileBehavior_IsDeepOrOceanWater(tileBehavior))
+    if (MetatileBehavior_IsDeepOrOceanWater(tileBehavior) && gTimeOfDay == TIME_MORNING)
         return BATTLE_ENVIRONMENT_SEA;
-    if (MetatileBehavior_IsSurfableWaterOrUnderwater(tileBehavior))
+    if (MetatileBehavior_IsDeepOrOceanWater(tileBehavior) && gTimeOfDay == TIME_DAY)
         return BATTLE_ENVIRONMENT_SEA;
-    if (MetatileBehavior_IsMountain(tileBehavior))
+    if (MetatileBehavior_IsDeepOrOceanWater(tileBehavior) && gTimeOfDay == TIME_EVENING)
+        return BATTLE_ENVIRONMENT_SEA_E;
+    if (MetatileBehavior_IsDeepOrOceanWater(tileBehavior) && gTimeOfDay == TIME_NIGHT)
+        return BATTLE_ENVIRONMENT_SEA_N;
+    if (MetatileBehavior_IsSurfableWaterOrUnderwater(tileBehavior) && gTimeOfDay == TIME_MORNING)
+        return BATTLE_ENVIRONMENT_SEA;
+    if (MetatileBehavior_IsSurfableWaterOrUnderwater(tileBehavior) && gTimeOfDay == TIME_DAY)
+        return BATTLE_ENVIRONMENT_SEA;
+    if (MetatileBehavior_IsSurfableWaterOrUnderwater(tileBehavior) && gTimeOfDay == TIME_EVENING)
+        return BATTLE_ENVIRONMENT_SEA_E;
+    if (MetatileBehavior_IsSurfableWaterOrUnderwater(tileBehavior) && gTimeOfDay == TIME_NIGHT)
+        return BATTLE_ENVIRONMENT_SEA_N;
+    if (MetatileBehavior_IsMountain(tileBehavior) && gTimeOfDay == TIME_MORNING)
         return BATTLE_ENVIRONMENT_MOUNTAIN;
+    if (MetatileBehavior_IsMountain(tileBehavior) && gTimeOfDay == TIME_DAY)
+        return BATTLE_ENVIRONMENT_MOUNTAIN;
+    if (MetatileBehavior_IsMountain(tileBehavior) && gTimeOfDay == TIME_EVENING)
+        return BATTLE_ENVIRONMENT_MOUNTAIN_E;
+    if (MetatileBehavior_IsMountain(tileBehavior) && gTimeOfDay == TIME_NIGHT)
+        return BATTLE_ENVIRONMENT_MOUNTAIN_N;
     if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING))
     {
         // Is BRIDGE_TYPE_POND_*?
-        if (MetatileBehavior_GetBridgeType(tileBehavior) != BRIDGE_TYPE_OCEAN)
-            return BATTLE_ENVIRONMENT_SEA;
+        if (MetatileBehavior_GetBridgeType(tileBehavior) != BRIDGE_TYPE_OCEAN && gTimeOfDay == TIME_MORNING)
+            return BATTLE_ENVIRONMENT_ROUTE;
+        if (MetatileBehavior_GetBridgeType(tileBehavior) != BRIDGE_TYPE_OCEAN && gTimeOfDay == TIME_DAY)
+            return BATTLE_ENVIRONMENT_ROUTE;
+        if (MetatileBehavior_GetBridgeType(tileBehavior) != BRIDGE_TYPE_OCEAN && gTimeOfDay == TIME_EVENING)
+            return BATTLE_ENVIRONMENT_ROUTE_E;
+        if (MetatileBehavior_GetBridgeType(tileBehavior) != BRIDGE_TYPE_OCEAN && gTimeOfDay == TIME_NIGHT)
+            return BATTLE_ENVIRONMENT_ROUTE_N;
 
-        if (MetatileBehavior_IsBridgeOverWater(tileBehavior) == TRUE)
-            return BATTLE_ENVIRONMENT_SEA;
+        if (MetatileBehavior_IsBridgeOverWater(tileBehavior) == TRUE && gTimeOfDay == TIME_MORNING)
+            return BATTLE_ENVIRONMENT_BRIDGE;
+        if (MetatileBehavior_IsBridgeOverWater(tileBehavior) == TRUE && gTimeOfDay == TIME_DAY)
+            return BATTLE_ENVIRONMENT_BRIDGE;
+        if (MetatileBehavior_IsBridgeOverWater(tileBehavior) == TRUE && gTimeOfDay == TIME_EVENING)
+            return BATTLE_ENVIRONMENT_BRIDGE_E;
+        if (MetatileBehavior_IsBridgeOverWater(tileBehavior) == TRUE && gTimeOfDay == TIME_NIGHT)
+            return BATTLE_ENVIRONMENT_BRIDGE_N;
     }
-    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ROUTE113) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ROUTE113))
+    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ROUTE113) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ROUTE113) && gTimeOfDay == TIME_MORNING)
         return BATTLE_ENVIRONMENT_DESERT;
-    if (GetSavedWeather() == WEATHER_SANDSTORM)
+    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ROUTE113) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ROUTE113) && gTimeOfDay == TIME_DAY)
         return BATTLE_ENVIRONMENT_DESERT;
-
-    return BATTLE_ENVIRONMENT_ROUTE;
+    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ROUTE113) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ROUTE113) && gTimeOfDay == TIME_EVENING)
+        return BATTLE_ENVIRONMENT_DESERT_E;
+    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ROUTE113) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ROUTE113) && gTimeOfDay == TIME_NIGHT)
+        return BATTLE_ENVIRONMENT_DESERT_N;
+    if (GetSavedWeather() == WEATHER_SNOW && gTimeOfDay == TIME_MORNING)
+        return BATTLE_ENVIRONMENT_SNOW;
+    if (GetSavedWeather() == WEATHER_SNOW && gTimeOfDay == TIME_DAY)
+        return BATTLE_ENVIRONMENT_SNOW;
+    if (GetSavedWeather() == WEATHER_SNOW && gTimeOfDay == TIME_EVENING)
+        return BATTLE_ENVIRONMENT_SNOW_E;
+    if (GetSavedWeather() == WEATHER_SNOW && gTimeOfDay == TIME_NIGHT)
+        return BATTLE_ENVIRONMENT_SNOW_N;
+    
+    return BATTLE_ENVIRONMENT_INDOOR;
 }
 
 static u8 GetBattleTransitionTypeByMap(void)
@@ -757,14 +861,14 @@ u8 GetWildBattleTransition(void)
 
     if (enemyLevel < playerLevel)
     {
-        if (InBattlePyramid())
+        if (CurrentBattlePyramidLocation() != PYRAMID_LOCATION_NONE)
             return B_TRANSITION_BLUR;
         else
             return sBattleTransitionTable_Wild[transitionType][0];
     }
     else
     {
-        if (InBattlePyramid())
+        if (CurrentBattlePyramidLocation() != PYRAMID_LOCATION_NONE)
             return B_TRANSITION_GRID_SQUARES;
         else
             return sBattleTransitionTable_Wild[transitionType][1];
@@ -778,7 +882,7 @@ u8 GetTrainerBattleTransition(void)
     u8 enemyLevel;
     u8 playerLevel;
     u32 trainerId = SanitizeTrainerId(TRAINER_BATTLE_PARAM.opponentA);
-    u32 trainerClass = GetTrainerClassFromId(TRAINER_BATTLE_PARAM.opponentA);
+    enum TrainerClassID trainerClass = GetTrainerClassFromId(TRAINER_BATTLE_PARAM.opponentA);
 
     if (DoesTrainerHaveMugshot(trainerId))
         return B_TRANSITION_MUGSHOT;
@@ -1005,7 +1109,7 @@ void TrainerBattleLoadArgsSecondTrainer(const u8 *data)
 
 void SetMapVarsToTrainerA(void)
 {
-    if (TRAINER_BATTLE_PARAM.objEventLocalIdA != 0)
+    if (TRAINER_BATTLE_PARAM.objEventLocalIdA != LOCALID_NONE)
     {
         gSpecialVar_LastTalked = TRAINER_BATTLE_PARAM.objEventLocalIdA;
         gSelectedObjectEvent = GetObjectEventIdByLocalIdAndMap(TRAINER_BATTLE_PARAM.objEventLocalIdA, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup);
@@ -1144,7 +1248,7 @@ u8 GetTrainerBattleMode(void)
 
 bool8 GetTrainerFlag(void)
 {
-    if (InBattlePyramid())
+    if (CurrentBattlePyramidLocation() != PYRAMID_LOCATION_NONE)
         return GetBattlePyramidTrainerFlag(gSelectedObjectEvent);
     else if (InTrainerHill())
         return GetHillTrainerFlag(gSelectedObjectEvent);
@@ -1201,7 +1305,7 @@ void BattleSetup_StartTrainerBattle(void)
         }
     }
 
-    if (InBattlePyramid())
+    if (CurrentBattlePyramidLocation() != PYRAMID_LOCATION_NONE)
     {
         VarSet(VAR_TEMP_PLAYING_PYRAMID_MUSIC, 0);
         gBattleTypeFlags |= BATTLE_TYPE_PYRAMID;
@@ -1241,7 +1345,7 @@ void BattleSetup_StartTrainerBattle(void)
     gWhichTrainerToFaceAfterBattle = 0;
     gMain.savedCallback = CB2_EndTrainerBattle;
 
-    if (InBattlePyramid() || InTrainerHillChallenge())
+    if (CurrentBattlePyramidLocation() != PYRAMID_LOCATION_NONE || InTrainerHillChallenge())
         DoBattlePyramidTrainerHillBattle();
     else
         DoTrainerBattle();
@@ -1270,7 +1374,7 @@ static void SaveChangesToPlayerParty(void)
     {
         if ((participatedPokemon >> i & 1) == 1)
         {
-            gSaveBlock1Ptr->playerParty[i] = gPlayerParty[j];
+            SavePlayerPartyMon(i, &gPlayerParty[j]);
             j++;
         }
     }
@@ -1305,7 +1409,7 @@ static void CB2_EndTrainerBattle(void)
     }
     else if (IsPlayerDefeated(gBattleOutcome) == TRUE)
     {
-        if (InBattlePyramid() || InTrainerHillChallenge() || (!NoAliveMonsForPlayer()) || FlagGet(B_FLAG_NO_WHITEOUT))
+        if (CurrentBattlePyramidLocation() != PYRAMID_LOCATION_NONE || InTrainerHillChallenge() || (!NoAliveMonsForPlayer()) || FlagGet(B_FLAG_NO_WHITEOUT))
             SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
         else
             SetMainCallback2(CB2_WhiteOut);
@@ -1318,7 +1422,7 @@ static void CB2_EndTrainerBattle(void)
     {
         SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
         DowngradeBadPoison();
-        if (!InBattlePyramid() && !InTrainerHillChallenge())
+        if (CurrentBattlePyramidLocation() == PYRAMID_LOCATION_NONE && !InTrainerHillChallenge())
         {
             RegisterTrainerInMatchCall();
             SetBattledTrainersFlags();
@@ -1357,7 +1461,7 @@ void BattleSetup_StartRematchBattle(void)
 
 void ShowTrainerIntroSpeech(void)
 {
-    if (InBattlePyramid())
+    if (CurrentBattlePyramidLocation() != PYRAMID_LOCATION_NONE)
     {
         if (gNoOfApproachingTrainers == 0 || gNoOfApproachingTrainers == 1)
             CopyPyramidTrainerSpeechBefore(LocalIdToPyramidTrainerId(gSpecialVar_LastTalked));
