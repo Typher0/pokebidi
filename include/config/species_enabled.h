@@ -658,6 +658,6 @@
 #define P_FAMILY_BABOSIRIS               P_GEN_9_POKEMON
 #define P_FAMILY_HUBRISET                P_GEN_9_POKEMON
 #define P_FAMILY_WENDINGO                P_GEN_9_POKEMON
-#define P_FAMILY_ROYGIBIV                 P_GEN_9_POKEMON
+#define P_FAMILY_ROYGIBIV                P_GEN_9_POKEMON
 
 #endif // GUARD_CONFIG_SPECIES_ENABLED_H
