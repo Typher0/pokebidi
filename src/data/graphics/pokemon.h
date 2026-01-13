@@ -28059,17 +28059,6 @@ const u8 gMonIcon_BanetteIlatia[] = INCBIN_U8("graphics/pokemon/banette/ilatia/i
 #endif //P_FOOTPRINTS
 #endif //P_FAMILY_ROYGIBIV
 
-#if P_FAMILY_JUPITOS
-const u32 gMonFrontPic_Jupitos[] = INCBIN_U32("graphics/pokemon/jupitos/front.4bpp.lz");
-const u16 gMonPalette_Jupitos[] = INCBIN_U16("graphics/pokemon/jupitos/normal.gbapal");
-const u32 gMonBackPic_Jupitos[] = INCBIN_U32("graphics/pokemon/jupitos/back.4bpp.lz");
-const u16 gMonShinyPalette_Jupitos[] = INCBIN_U16("graphics/pokemon/jupitos/shiny.gbapal");
-const u8 gMonIcon_Jupitos[] = INCBIN_U8("graphics/pokemon/jupitos/icon.4bpp");
-#if P_FOOTPRINTS
-// const u8 gMonFootprint_Jupitos[] = INCBIN_U8("graphics/pokemon/jupitos/footprint.1bpp");
-#endif //P_FOOTPRINTS
-#endif //P_FAMILY_JUPITOS
-
     const u32 gMonFrontPic_Egg[] = INCBIN_U32("graphics/pokemon/egg/anim_front.4bpp.smol");
     const u16 gMonPalette_Egg[] = INCBIN_U16("graphics/pokemon/egg/normal.gbapal");
     const u8 gMonIcon_Egg[] = INCBIN_U8("graphics/pokemon/egg/icon.4bpp");
