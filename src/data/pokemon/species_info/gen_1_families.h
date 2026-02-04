@@ -18579,6 +18579,81 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .levelUpLearnset = sPorygonZLevelUpLearnset,
         .teachableLearnset = sPorygonZTeachableLearnset,
     },
+
+    [SPECIES_PORYGON_Z_MEGA] =
+    {
+        .baseHP        = 95,
+        .baseAttack    = 80,
+        .baseDefense   = 70,
+        .baseSpeed     = 120,
+        .baseSpAttack  = 185,
+        .baseSpDefense = 85,
+        .types = MON_TYPES(TYPE_NORMAL, TYPE_ELECTRIC),
+        .catchRate = 30,
+    #if P_UPDATED_EXP_YIELDS >= GEN_8
+        .expYield = 268,
+    #elif P_UPDATED_EXP_YIELDS >= GEN_5
+        .expYield = 241,
+    #else
+        .expYield = 185,
+    #endif
+        .evYield_SpAttack = 3,
+        .genderRatio = MON_GENDERLESS,
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MINERAL),
+        .abilities = { ABILITY_ADAPTABILITY, ABILITY_ADAPTABILITY, ABILITY_ADAPTABILITY },
+        .bodyColor = BODY_COLOR_RED,
+        .speciesName = _("Porygon-Z"),
+        .cryId = CRY_PORYGON_Z,
+        .natDexNum = NATIONAL_DEX_PORYGON_Z,
+        .categoryName = _("Virtual"),
+        .height = 9,
+        .weight = 340,
+        .description = COMPOUND_STRING(
+            "In order to create a more advanced\n"
+            "Pokémon, an additional program was\n"
+            "installed, but apparently it contained a\n"
+            "defect that made it move oddly."),
+        .pokemonScale = 338,
+        .pokemonOffset = 8,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_PorygonZ,
+        .frontPicSize = MON_COORDS_SIZE(40, 56),
+        .frontPicYOffset = 6,
+        .frontAnimFrames = ANIM_FRAMES(
+            ANIMCMD_FRAME(1, 30),
+            ANIMCMD_FRAME(0, 30),
+            ANIMCMD_FRAME(1, 30),
+            ANIMCMD_FRAME(0, 40),
+        ),
+        .frontAnimId = ANIM_CIRCLE_C_CLOCKWISE_SLOW,
+        .enemyMonElevation = 12,
+        .backPic = gMonBackPic_PorygonZ,
+        .backPicSize = MON_COORDS_SIZE(64, 56),
+        .backPicYOffset = 6,
+        .backAnimId = BACK_ANIM_H_VIBRATE,
+        .palette = gMonPalette_PorygonZ,
+        .shinyPalette = gMonShinyPalette_PorygonZ,
+        .iconSprite = gMonIcon_PorygonZ,
+        .iconPalIndex = 0,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(0, 17, SHADOW_SIZE_S)
+        FOOTPRINT(PorygonZ)
+        OVERWORLD(
+            sPicTable_PorygonZ,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_PorygonZ,
+            gShinyOverworldPalette_PorygonZ
+        )
+        .levelUpLearnset = sPorygonZLevelUpLearnset,
+        .teachableLearnset = sPorygonZTeachableLearnset,
+    },
 #endif //P_GEN_4_CROSS_EVOS
 #endif //P_GEN_2_CROSS_EVOS
 #endif //P_FAMILY_PORYGON
