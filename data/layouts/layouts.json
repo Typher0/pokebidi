@@ -4410,6 +4410,36 @@
       "secondary_tileset": "gTileset_MysteryEventsHouse",
       "border_filepath": "data/layouts/SootopolisCity_MysteryEventsHouse_1F_StairsUnblocked/border.bin",
       "blockdata_filepath": "data/layouts/SootopolisCity_MysteryEventsHouse_1F_StairsUnblocked/map.bin"
+    },
+    {
+      "id": "LAYOUT_KINGSTON_CITY",
+      "name": "KingstonCity_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/KingstonCity/border.bin",
+      "blockdata_filepath": "data/layouts/KingstonCity/map.bin"
+    },
+    {
+      "id": "LAYOUT_GANARIA_TOWN",
+      "name": "GanariaTown_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/GanariaTown/border.bin",
+      "blockdata_filepath": "data/layouts/GanariaTown/map.bin"
+    },
+    {
+      "id": "LAYOUT_OCCHITA_VILLAGE",
+      "name": "OcchitaVillage_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/OcchitaVillage/border.bin",
+      "blockdata_filepath": "data/layouts/OcchitaVillage/map.bin"
     }
   ]
 }
