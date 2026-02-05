@@ -1001,10 +1001,22 @@
 
 #define ITEM_STRANGE_BALL 835
 
+#define ITEM_MEGANIUMITE 836
+#define ITEM_TYPHLONITE 837
+#define ITEM_FERALIGITE 838
+#define ITEM_EXPLOUDITE 839
+#define ITEM_TORTERRITE 840
+#define ITEM_EMPOLEONITE 841
+#define ITEM_INFERNAPITE 842
+#define ITEM_MAMOSWITE 843
+#define ITEM_DUSKNOIRITE 844
+#define ITEM_COFAGRIGITE 845
+#define ITEM_PORYGONITE 846
+
 // HOPO BERRY
 // LEGEND PLATE
 
-#define ITEMS_COUNT 836
+#define ITEMS_COUNT 847
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
 // A special item id associated with "Cancel"/"Exit" etc. in a list of items or decorations

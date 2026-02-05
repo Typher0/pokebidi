@@ -1767,8 +1767,22 @@
 #define SPECIES_HUBRISET                                1647
 #define SPECIES_WENDINGO                                1648
 #define SPECIES_ROYGIBIV                                1649
+#define SPECIES_MEGANIUM_MEGA                           1650
+#define SPECIES_TYPHLOSION_MEGA                         1651
+#define SPECIES_FERALIGATR_MEGA                         1652
+#define SPECIES_EXPLOUD_MEGA                            1653
+#define SPECIES_TORTERRA_MEGA                           1654
+#define SPECIES_INFERNAPE_MEGA                          1655
+#define SPECIES_EMPOLEON_MEGA                           1656
+#define SPECIES_MAMOSWINE_MEGA                          1657
+#define SPECIES_DUSKNOIR_MEGA                           1658
+#define SPECIES_FROSLASS_MEGA                           1659
+#define SPECIES_MUSHARNA_MEGA                           1660
+#define SPECIES_GIGALITH_MEGA                           1661
+#define SPECIES_COFAGRIGUS_MEGA                         1662
+#define SPECIES_PORYGON_Z_MEGA                          1663
 
-#define SPECIES_EGG                                     (SPECIES_ROYGIBIV + 1)
+#define SPECIES_EGG                                     (SPECIES_PORYGON_Z_MEGA + 1)
 
 #define NUM_SPECIES SPECIES_EGG
 
