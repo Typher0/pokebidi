@@ -1539,9 +1539,20 @@ static const u16 sAvaluggFormSpeciesIdTable[] = {
 static const u16 sXerneasFormSpeciesIdTable[] = {
     SPECIES_XERNEAS_NEUTRAL,
     SPECIES_XERNEAS_ACTIVE,
+#if P_PRIMAL_REVERSIONS
+    SPECIES_XERNEAS_PRIMAL,
+#endif
     FORM_SPECIES_END,
 };
 #endif //P_FAMILY_XERNEAS
+
+#if P_FAMILY_YVELTAL
+static const u16 sYveltalFormSpeciesIdTable[] = {
+    SPECIES_YVELTAL,
+#if P_PRIMAL_REVERSIONS
+    SPECIES_YVELTAL_PRIMAL,
+#endif
+}
 
 #if P_FAMILY_ZYGARDE
 static const u16 sZygardeFormSpeciesIdTable[] = {

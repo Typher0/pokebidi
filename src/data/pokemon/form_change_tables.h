@@ -929,9 +929,23 @@ static const struct FormChange sAegislashFormChangeTable[] = {
 static const struct FormChange sXerneasFormChangeTable[] = {
     {FORM_CHANGE_BEGIN_BATTLE, SPECIES_XERNEAS_ACTIVE},
     {FORM_CHANGE_END_BATTLE,   SPECIES_XERNEAS_NEUTRAL},
+#if P_PRIMAL_REVERSIONS
+    {FORM_CHANGE_BATTLE_PRIMAL_REVERSION,   SPECIES_XERNEAS_PRIMAL, ITEM_RED_CHAIN},
+#endif
+    {FORM_CHANGE_TERMINATOR},
+};
     {FORM_CHANGE_TERMINATOR},
 };
 #endif //P_FAMILY_XERNEAS
+
+#if P_FAMILY_YVELTAL
+static const struct FormChange sYveltalFormChangeTable[] = {
+#if P_PRIMAL_REVERSIONS
+    {FORM_CHANGE_BATTLE_PRIMAL_REVERSION,   SPECIES_YVELTAL_PRIMAL, ITEM_RED_CHAIN},
+#endif
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif // P_FAMILY_YVELTAL
 
 #if P_FAMILY_ZYGARDE
 static const struct FormChange sZygarde50AuraBreakFormChangeTable[] = {

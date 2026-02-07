@@ -1781,8 +1781,10 @@
 #define SPECIES_GIGALITH_MEGA                           1661
 #define SPECIES_COFAGRIGUS_MEGA                         1662
 #define SPECIES_PORYGON_Z_MEGA                          1663
+#define SPECIES_XERNEAS_PRIMAL                          1664
+#define SPECIES_YVELTAL_PRIMAL                          1665
 
-#define SPECIES_EGG                                     (SPECIES_PORYGON_Z_MEGA + 1)
+#define SPECIES_EGG                                     (SPECIES_YVELTAL_PRIMAL + 1)
 
 #define NUM_SPECIES SPECIES_EGG
 
