@@ -200,6 +200,17 @@ static const struct FormChange sEeveeFormChangeTable[] = {
 };
 #endif //P_FAMILY_EEVEE
 
+#if P_FAMILY_PORYGON
+#if P_GEN_4_CROSS_EVOS
+static const struct FormChange sPorygonZFormChangeTable[] = {
+#if P_MEGA_EVOLUTIONS
+    {FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM,    SPECIES_PORYGON_Z_MEGA, ITEM_PORYGONITE},
+#endif
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //P_GEN_4_CROSS_EVOS
+#endif //P_FAMILY_PORYGON
+
 #if P_FAMILY_AERODACTYL
 static const struct FormChange sAerodactylFormChangeTable[] = {
 #if P_MEGA_EVOLUTIONS
@@ -228,6 +239,33 @@ static const struct FormChange sMewtwoFormChangeTable[] = {
 };
 #endif //P_FAMILY_MEWTWO
 
+#if P_FAMILY_CHIKORITA
+static const struct FormChange sMeganiumFormChangeTable[] = {
+#if P_MEGA_EVOLUTIONS
+    {FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM,    SPECIES_MEGANIUM_MEGA, ITEM_MEGANIUMITE},
+#endif
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //P_FAMILY_CHIKORITA
+
+#if P_FAMILY_CYNDAQUIL
+static const struct FormChange sTyphlosionFormChangeTable[] = {
+#if P_MEGA_EVOLUTIONS
+    {FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM,    SPECIES_TYPHLOSION_MEGA, ITEM_TYPHLONITE},
+#endif
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //P_FAMILY_CYNDAQUIL
+
+#if P_FAMILY_TOTODILE
+static const struct FormChange sFeraligatrFormChangeTable[] = {
+#if P_MEGA_EVOLUTIONS
+    {FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM,    SPECIES_FERALIGATR_MEGA, ITEM_AMPHAROSITE},
+#endif
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //P_FAMILY_TOTODILE
+
 #if P_FAMILY_MAREEP
 static const struct FormChange sAmpharosFormChangeTable[] = {
 #if P_MEGA_EVOLUTIONS
@@ -245,6 +283,17 @@ static const struct FormChange sHeracrossFormChangeTable[] = {
     {FORM_CHANGE_TERMINATOR},
 };
 #endif //P_FAMILY_HERACROSS
+
+#if P_FAMILY_SWINUB
+#if P_GEN_4_CROSS_EVOS
+static const struct FormChange sMamoswineFormChangeTable[] = {
+#if P_MEGA_EVOLUTIONS
+    {FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM,    SPECIES_MAMOSWINE_MEGA, ITEM_MAMOSWITE},
+#endif
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //P_GEN_4_CROSS_EVOS
+#endif //P_FAMILY_SWINUB
 
 #if P_FAMILY_HOUNDOUR
 static const struct FormChange sHoundoomFormChangeTable[] = {
@@ -308,6 +357,15 @@ static const struct FormChange sGalladeFormChangeTable[] = {
 };
 #endif //P_GEN_4_CROSS_EVOS
 #endif //P_FAMILY_RALTS
+
+#if P_FAMILY_WHISMUR
+static const struct FormChange sExploudFormChangeTable[] = {
+#if P_MEGA_EVOLUTIONS
+    {FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM,    SPECIES_EXPLOUD_MEGA, ITEM_EXPLOUDITE},
+#endif
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //P_FAMILY_WHISMUR
 
 #if P_FAMILY_SABLEYE
 static const struct FormChange sSableyeFormChangeTable[] = {
@@ -389,6 +447,17 @@ static const struct FormChange sBanetteFormChangeTable[] = {
     {FORM_CHANGE_TERMINATOR},
 };
 #endif //P_FAMILY_SHUPPET
+
+#if P_FAMILY_DUSKULL
+#if P_GEN_4_CROSS_EVOS
+static const struct FormChange sDusknoirFormChangeTable[] = {
+#if P_MEGA_EVOLUTIONS
+    {FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM,    SPECIES_DUSKNOIR_MEGA, ITEM_DUSKNOIRITE},
+#endif
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //P_GEN_4_CROSS_EVOS
+#endif //P_FAMILY_DUSKULL
 
 #if P_FAMILY_ABSOL
 static const struct FormChange sAbsolFormChangeTable[] = {
@@ -525,6 +594,33 @@ static const struct FormChange sDeoxysSpeedFormChangeTable[] = {
     {FORM_CHANGE_TERMINATOR},
 };
 #endif //P_FAMILY_DEOXYS
+
+#if P_FAMILY_TURTWIG
+static const struct FormChange sTorterraFormChangeTable[] = {
+#if P_MEGA_EVOLUTIONS
+    {FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM,    SPECIES_TORTERRA_MEGA, ITEM_TORTERRITE},
+#endif
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //P_FAMILY_TURTWIG
+
+#if P_FAMILY_CHIMCHAR
+static const struct FormChange sInfernapeFormChangeTable[] = {
+#if P_MEGA_EVOLUTIONS
+    {FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM,    SPECIES_INFERNAPE_MEGA, ITEM_INFERNAPITE},
+#endif
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //P_FAMILY_CHIMCHAR
+
+#if P_FAMILY_PIPLUP
+static const struct FormChange sEmpoleonFormChangeTable[] = {
+#if P_MEGA_EVOLUTIONS
+    {FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM,    SPECIES_EMPOLEON_MEGA, ITEM_EMPOLEONITE},
+#endif
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //P_FAMILY_PIPLUP
 
 #if P_FAMILY_BURMY
 static const struct FormChange sBurmyFormChangeTable[] = {
@@ -721,6 +817,15 @@ static const struct FormChange sDarmanitanGalarFormChangeTable[] = {
 #endif //P_GALARIAN_FORMS
 #endif //P_FAMILY_DARUMAKA
 
+#if P_FAMILY_YAMASK
+static const struct FormChange sCofagrigusFormChangeTable[] = {
+#if P_MEGA_EVOLUTIONS
+    {FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM,    SPECIES_COFAGRIGUS_MEGA, ITEM_COFAGRIGITE},
+#endif
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //P_FAMILY_YAMASK
+
 #if P_FAMILY_TRUBBISH
 static const struct FormChange sGarbodorFormChangeTable[] =
 {
@@ -824,9 +929,23 @@ static const struct FormChange sAegislashFormChangeTable[] = {
 static const struct FormChange sXerneasFormChangeTable[] = {
     {FORM_CHANGE_BEGIN_BATTLE, SPECIES_XERNEAS_ACTIVE},
     {FORM_CHANGE_END_BATTLE,   SPECIES_XERNEAS_NEUTRAL},
+#if P_PRIMAL_REVERSIONS
+    {FORM_CHANGE_BATTLE_PRIMAL_REVERSION,   SPECIES_XERNEAS_PRIMAL, ITEM_RED_CHAIN},
+#endif
+    {FORM_CHANGE_TERMINATOR},
+};
     {FORM_CHANGE_TERMINATOR},
 };
 #endif //P_FAMILY_XERNEAS
+
+#if P_FAMILY_YVELTAL
+static const struct FormChange sYveltalFormChangeTable[] = {
+#if P_PRIMAL_REVERSIONS
+    {FORM_CHANGE_BATTLE_PRIMAL_REVERSION,   SPECIES_YVELTAL_PRIMAL, ITEM_RED_CHAIN},
+#endif
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif // P_FAMILY_YVELTAL
 
 #if P_FAMILY_ZYGARDE
 static const struct FormChange sZygarde50AuraBreakFormChangeTable[] = {

@@ -4026,7 +4026,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD, EGG_GROUP_DRAGON),
-        .abilities = {ABILITY_SAPERA, ABILITY_NONE, ABILITY_NONE}, //SAPERA IS A SNAKE CHARMER. COME UP WITH ABILITY BASED ON THAT.
+        .abilities = {ABILITY_SAPERA, ABILITY_NONE, ABILITY_NONE},
         .bodyColor = BODY_COLOR_YELLOW,
         .speciesName = _("Pungriyadh"),
         .cryId = CRY_PUNGRIYADH,
@@ -4406,8 +4406,8 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseAttack    = 60,
         .baseDefense   = 100,
         .baseSpeed     = 50,
-        .baseSpAttack  = 30,
-        .baseSpDefense = 60,
+        .baseSpAttack  = 40,
+        .baseSpDefense = 50,
         .types = MON_TYPES(TYPE_ROCK),
         .catchRate = 105,
         .expYield = 53,
@@ -4462,8 +4462,8 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseAttack    = 90,
         .baseDefense   = 120,
         .baseSpeed     = 20,
-        .baseSpAttack  = 35,
-        .baseSpDefense = 70,
+        .baseSpAttack  = 45,
+        .baseSpDefense = 60,
         .types = MON_TYPES(TYPE_ROCK),
         .catchRate = 75,
         .expYield = 133,
@@ -4522,8 +4522,8 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseAttack    = 100,
         .baseDefense   = 150,
         .baseSpeed     = 80,
-        .baseSpAttack  = 40,
-        .baseSpDefense = 75,
+        .baseSpAttack  = 50,
+        .baseSpDefense = 65,
         .types = MON_TYPES(TYPE_ROCK),
         .catchRate = 45,
         .expYield = 203,
@@ -4578,8 +4578,8 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseAttack    = 81,
         .baseDefense   = 90,
         .baseSpeed     = 36,
-        .baseSpAttack  = 22,
-        .baseSpDefense = 60,
+        .baseSpAttack  = 42,
+        .baseSpDefense = 40,
         .types = MON_TYPES(TYPE_ROCK, TYPE_DRAGON),
         .catchRate = 45,
         .expYield = 64,
@@ -4633,8 +4633,8 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseAttack    = 91,
         .baseDefense   = 100,
         .baseSpeed     = 56,
-        .baseSpAttack  = 27,
-        .baseSpDefense = 84,
+        .baseSpAttack  = 47,
+        .baseSpDefense = 64,
         .types = MON_TYPES(TYPE_ROCK, TYPE_DRAGON),
         .catchRate = 45,
         .expYield = 144,
@@ -4687,8 +4687,8 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseAttack    = 121,
         .baseDefense   = 125,
         .baseSpeed     = 44,
-        .baseSpAttack  = 36,
-        .baseSpDefense = 90,
+        .baseSpAttack  = 56,
+        .baseSpDefense = 70,
         .types = MON_TYPES(TYPE_ROCK, TYPE_DRAGON),
         .catchRate = 45,
         .expYield = 223,
@@ -4742,8 +4742,8 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseAttack    = 81,
         .baseDefense   = 66,
         .baseSpeed     = 90,
-        .baseSpAttack  = 22,
-        .baseSpDefense = 60,
+        .baseSpAttack  = 42,
+        .baseSpDefense = 40,
         .types = MON_TYPES(TYPE_ROCK, TYPE_GRASS),
         .catchRate = 45,
         .expYield = 64,
@@ -4797,8 +4797,8 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseAttack    = 91,
         .baseDefense   = 86,
         .baseSpeed     = 100,
-        .baseSpAttack  = 27,
-        .baseSpDefense = 84,
+        .baseSpAttack  = 47,
+        .baseSpDefense = 64,
         .types = MON_TYPES(TYPE_ROCK, TYPE_GRASS),
         .catchRate = 45,
         .expYield = 144,
@@ -4851,8 +4851,8 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseAttack    = 117,
         .baseDefense   = 101,
         .baseSpeed     = 125,
-        .baseSpAttack  = 30,
-        .baseSpDefense = 84,
+        .baseSpAttack  = 50,
+        .baseSpDefense = 64,
         .types = MON_TYPES(TYPE_ROCK, TYPE_GRASS),
         .catchRate = 45,
         .expYield = 264,
@@ -5369,8 +5369,8 @@ const struct SpeciesInfo gSpeciesInfo[] =
     [SPECIES_FUMIGHAST] = // EVOLVE AT LEVEL 40
     {
         .baseHP        = 86,
-        .baseAttack    = 45,
-        .baseDefense   = 75,
+        .baseAttack    = 55,
+        .baseDefense   = 65,
         .baseSpeed     = 98,
         .baseSpAttack  = 127,
         .baseSpDefense = 85,
@@ -5422,8 +5422,8 @@ const struct SpeciesInfo gSpeciesInfo[] =
     [SPECIES_FUMIGHAST_FEMALE] = // EVOLVE AT LEVEL 40
     {
         .baseHP        = 85,
-        .baseAttack    = 45,
-        .baseDefense   = 75,
+        .baseAttack    = 55,
+        .baseDefense   = 65,
         .baseSpeed     = 101,
         .baseSpAttack  = 125,
         .baseSpDefense = 85,
@@ -6214,7 +6214,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
 #endif //P_FAMILY_BOAREALIS
 
 #if P_FAMILY_WISHP
-    [SPECIES_WISHP] = //WISP THAT EVOLVES INTO A DJINN. PSEUDO LEGEND (SHOULD BE GOOD).
+    [SPECIES_WISHP] =
     {
         .baseHP        = 55,
         .baseAttack    = 35,
@@ -6777,7 +6777,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
 #endif //P_FAMILY_TANUKOON
 
 #if P_FAMILY_HATHROSTUS
-    [SPECIES_HATHROSTUS] = //BAT LEGENDARY BASED OFF OF HATHOR (SIGN. MOVE FIELD OF REEDS)
+    [SPECIES_HATHROSTUS] =
     {
         .baseHP        = 112,
         .baseAttack    = 73,
@@ -6842,7 +6842,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
 #endif //P_FAMILY_HATHROSTUS
 
 #if P_FAMILY_BABOSIRIS
-    [SPECIES_BABOSIRIS] = //BIG BABOON LEGENDARY BASED OFF OF OSIRIS (SIGN. MOVE FIELD OF REEDS+SHOULD GET A DECENT AMOUNT OF FIGHTING MOVES AS WELL)
+    [SPECIES_BABOSIRIS] =
     {
         .baseHP        = 116,
         .baseAttack    = 124,
@@ -6901,7 +6901,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
 #endif //P_FAMILY_BABOSIRIS
 
 #if P_FAMILY_HUBRISET
-    [SPECIES_HUBRISET] = //GLYPH LEGENDARY BASED OFF OF SETH (SIGN. MOVE FIELD OF REEDS+SHOULD HAVE FLYING MOVES AS WELL)
+    [SPECIES_HUBRISET] =
     {
         .baseHP        = 100,
         .baseAttack    = 108,
@@ -15515,12 +15515,12 @@ const struct SpeciesInfo gSpeciesInfo[] =
 #if P_FAMILY_ROYGIBIV
     [SPECIES_ROYGIBIV] =
     {
-        .baseHP        = 135,
-        .baseAttack    = 30,
-        .baseDefense   = 115,
+        .baseHP        = 120,
+        .baseAttack    = 80,
+        .baseDefense   = 100,
         .baseSpeed     = 105,
-        .baseSpAttack  = 165,
-        .baseSpDefense = 130,
+        .baseSpAttack  = 155,
+        .baseSpDefense = 120,
         .types = MON_TYPES(TYPE_FAIRY, TYPE_DRAGON),
         .catchRate = 3,
         .expYield = 311,

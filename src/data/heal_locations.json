@@ -186,6 +186,24 @@
       "y": 52,
       "respawn_map": "MAP_BATTLE_FRONTIER_POKEMON_CENTER_1F",
       "respawn_npc": "LOCALID_FRONTIER_NURSE"
+    },
+    {
+      "id": "HEAL_LOCATION_GANARIA_TOWN",
+      "map": "MAP_GANARIA_TOWN",
+      "x": 10,
+      "y": 10
+    },
+    {
+      "id": "HEAL_LOCATION_OCCHITA_VILLAGE",
+      "map": "MAP_OCCHITA_VILLAGE",
+      "x": 10,
+      "y": 10
+    },
+    {
+      "id": "HEAL_LOCATION_ROUTE104",
+      "map": "MAP_ROUTE104",
+      "x": 20,
+      "y": 30
     }
   ]
 }

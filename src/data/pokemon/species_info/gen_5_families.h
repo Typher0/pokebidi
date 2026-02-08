@@ -1731,7 +1731,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
-        .abilities = { ABILITY_FOREWARN, ABILITY_COMATOSE, ABILITY_TELEPATHY },
+        .abilities = { ABILITY_FOREWARN, ABILITY_SYNCHRONIZE, ABILITY_TELEPATHY },
         .bodyColor = BODY_COLOR_PINK,
         .speciesName = _("Munna"),
         .cryId = CRY_MUNNA,
@@ -1806,7 +1806,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
-        .abilities = { ABILITY_FOREWARN, ABILITY_COMATOSE, ABILITY_TELEPATHY },
+        .abilities = { ABILITY_FOREWARN, ABILITY_SYNCHRONIZE, ABILITY_TELEPATHY },
         .bodyColor = BODY_COLOR_PINK,
         .speciesName = _("Musharna"),
         .cryId = CRY_MUSHARNA,
@@ -1814,6 +1814,76 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .categoryName = _("Drowsing"),
         .height = 11,
         .weight = 605,
+        .description = COMPOUND_STRING(
+            "The mist emanating from their foreheads\n"
+            "is packed with the dreams of people and\n"
+            "Pokémon. It changes into different colors\n"
+            "depending on the dream that was eaten."),
+        .pokemonScale = 320,
+        .pokemonOffset = 7,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_Musharna,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 6,
+        .frontAnimFrames = ANIM_FRAMES(
+            ANIMCMD_FRAME(0, 15),
+            ANIMCMD_FRAME(1, 20),
+            ANIMCMD_FRAME(0, 15),
+            ANIMCMD_FRAME(1, 20),
+            ANIMCMD_FRAME(0, 15),
+        ),
+        .frontAnimId = ANIM_ROTATE_TO_SIDES_TWICE,
+        .enemyMonElevation = 5,
+        .backPic = gMonBackPic_Musharna,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 8,
+        .backAnimId = BACK_ANIM_GROW,
+        .palette = gMonPalette_Musharna,
+        .shinyPalette = gMonShinyPalette_Musharna,
+        .iconSprite = gMonIcon_Musharna,
+        .iconPalIndex = 0,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(6, 10, SHADOW_SIZE_M)
+        FOOTPRINT(Musharna)
+        OVERWORLD(
+            sPicTable_Musharna,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Musharna,
+            gShinyOverworldPalette_Musharna
+        )
+        .levelUpLearnset = sMusharnaLevelUpLearnset,
+        .teachableLearnset = sMusharnaTeachableLearnset,
+    },
+
+    [SPECIES_MUSHARNA_MEGA] =
+    {
+        .baseHP        = 146,
+        .baseAttack    = 55,
+        .baseDefense   = 85,
+        .baseSpeed     = 29,
+        .baseSpAttack  = 137,
+        .baseSpDefense = 135,
+        .types = MON_TYPES(TYPE_PSYCHIC),
+        .catchRate = 75,
+        .expYield = 170,
+        .evYield_HP = 2,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 10,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
+        .abilities = { ABILITY_COMATOSE, ABILITY_COMATOSE, ABILITY_COMATOSE },
+        .bodyColor = BODY_COLOR_PINK,
+        .speciesName = _("Musharna"),
+        .cryId = CRY_MUSHARNA,
+        .natDexNum = NATIONAL_DEX_MUSHARNA,
+        .categoryName = _("Drowsing"),
+        .height = 31,
+        .weight = 405,
         .description = COMPOUND_STRING(
             "The mist emanating from their foreheads\n"
             "is packed with the dreams of people and\n"
@@ -2424,6 +2494,81 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .categoryName = _("Compressed"),
         .height = 17,
         .weight = 2600,
+        .description = COMPOUND_STRING(
+            "The blasts of energy it makes from\n"
+            "sunbeams have terrifying power.\n"
+            "However, it's not able to fire its blasts\n"
+            "at night or on rainy days."),
+        .pokemonScale = 259,
+        .pokemonOffset = 0,
+        .trainerScale = 290,
+        .trainerOffset = 1,
+        .frontPic = gMonFrontPic_Gigalith,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 1,
+        .frontAnimFrames = ANIM_FRAMES(
+            ANIMCMD_FRAME(0, 10),
+            ANIMCMD_FRAME(1, 25),
+            ANIMCMD_FRAME(0, 10),
+        ),
+        .frontAnimId = ANIM_ROTATE_UP_SLAM_DOWN,
+        .backPic = gMonBackPic_Gigalith,
+        .backPicSize = MON_COORDS_SIZE(56, 64),
+        .backPicYOffset = 2,
+        .backAnimId = BACK_ANIM_V_SHAKE_LOW,
+        .palette = gMonPalette_Gigalith,
+        .shinyPalette = gMonShinyPalette_Gigalith,
+        .iconSprite = gMonIcon_Gigalith,
+        .iconPalIndex = 0,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(-1, 8, SHADOW_SIZE_XL_BATTLE_ONLY)
+        FOOTPRINT(Gigalith)
+        OVERWORLD(
+            sPicTable_Gigalith,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Gigalith,
+            gShinyOverworldPalette_Gigalith
+        )
+        .levelUpLearnset = sGigalithLevelUpLearnset,
+        .teachableLearnset = sGigalithTeachableLearnset,
+    },
+
+    [SPECIES_GIGALITH] =
+    {
+        .baseHP        = 105,
+        .baseAttack    = 165,
+        .baseDefense   = 160,
+        .baseSpeed     = 25,
+        .baseSpAttack  = 60,
+        .baseSpDefense = 100,
+        .types = MON_TYPES(TYPE_ROCK, TYPE_FIGHTING),
+        .catchRate = 45,
+    #if P_UPDATED_EXP_YIELDS >= GEN_8
+        .expYield = 258,
+    #elif P_UPDATED_EXP_YIELDS >= GEN_7
+        .expYield = 232,
+    #else
+        .expYield = 227,
+    #endif
+        .evYield_Attack = 3,
+        .itemCommon = ITEM_EVERSTONE,
+        .itemRare = ITEM_HARD_STONE,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 15,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MINERAL),
+        .abilities = { ABILITY_TOUGH_CLAWS, ABILITY_TOUGH_CLAWS, ABILITY_TOUGH_CLAWS },
+        .bodyColor = BODY_COLOR_BLUE,
+        .speciesName = _("Gigalith"),
+        .cryId = CRY_GIGALITH,
+        .natDexNum = NATIONAL_DEX_GIGALITH,
+        .categoryName = _("Compressed"),
+        .height = 20,
+        .weight = 6600,
         .description = COMPOUND_STRING(
             "The blasts of energy it makes from\n"
             "sunbeams have terrifying power.\n"
@@ -5775,6 +5920,74 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .baseSpeed     = 30,
         .baseSpAttack  = 95,
         .baseSpDefense = 105,
+        .types = MON_TYPES(TYPE_GHOST),
+        .catchRate = 90,
+        .expYield = 169,
+        .evYield_Defense = 2,
+        .itemRare = ITEM_SPELL_TAG,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 25,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MINERAL, EGG_GROUP_AMORPHOUS),
+        .abilities = { ABILITY_MUMMY, ABILITY_NONE, ABILITY_NONE },
+        .bodyColor = BODY_COLOR_YELLOW,
+        .speciesName = _("Cofagrigus"),
+        .cryId = CRY_COFAGRIGUS,
+        .natDexNum = NATIONAL_DEX_COFAGRIGUS,
+        .categoryName = _("Coffin"),
+        .height = 17,
+        .weight = 765,
+        .description = COMPOUND_STRING(
+            "Grave robbers who mistake them for\n"
+            "real coffins and get too close end up\n"
+            "trapped inside their bodies. Their bodies\n"
+            "are covered in pure gold."),
+        .pokemonScale = 259,
+        .pokemonOffset = 0,
+        .trainerScale = 290,
+        .trainerOffset = 1,
+        .frontPic = gMonFrontPic_Cofagrigus,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
+        .frontAnimFrames = ANIM_FRAMES(
+            ANIMCMD_FRAME(1, 50),
+            ANIMCMD_FRAME(1, 30),
+            ANIMCMD_FRAME(0, 10),
+        ),
+        .frontAnimId = ANIM_GLOW_BLACK,
+        .backPic = gMonBackPic_Cofagrigus,
+        .backPicSize = MON_COORDS_SIZE(56, 56),
+        .backPicYOffset = 6,
+        .backAnimId = BACK_ANIM_V_SHAKE_H_SLIDE,
+        .palette = gMonPalette_Cofagrigus,
+        .shinyPalette = gMonShinyPalette_Cofagrigus,
+        .iconSprite = gMonIcon_Cofagrigus,
+        .iconPalIndex = 0,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(6, 12, SHADOW_SIZE_M)
+        FOOTPRINT(Cofagrigus)
+        OVERWORLD(
+            sPicTable_Cofagrigus,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Cofagrigus,
+            gShinyOverworldPalette_Cofagrigus
+        )
+        .levelUpLearnset = sCofagrigusLevelUpLearnset,
+        .teachableLearnset = sCofagrigusTeachableLearnset,
+    },
+
+    [SPECIES_COFAGRIGUS_MEGA] =
+    {
+        .baseHP        = 58,
+        .baseAttack    = 50,
+        .baseDefense   = 80,
+        .baseSpeed     = 150,
+        .baseSpAttack  = 150,
+        .baseSpDefense = 95,
         .types = MON_TYPES(TYPE_GHOST),
         .catchRate = 90,
         .expYield = 169,
