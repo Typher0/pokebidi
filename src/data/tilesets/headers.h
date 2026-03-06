@@ -830,3 +830,14 @@ const struct Tileset gTileset_UnionRoom =
     .metatileAttributes = gMetatileAttributes_UnionRoom,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_Primary_North =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_Primary_North,
+    .palettes = gTilesetPalettes_Primary_North,
+    .metatiles = gMetatiles_Primary_North,
+    .metatileAttributes = gMetatileAttributes_Primary_North,
+    .callback = NULL,
+};
