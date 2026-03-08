@@ -1012,11 +1012,15 @@
 #define ITEM_DUSKNOIRITE 844
 #define ITEM_COFAGRIGITE 845
 #define ITEM_PORYGONITE 846
+#define ITEM_FROSLASSITE 847
+#define ITEM_MUSHARNITE 848
+#define ITEM_GIGALITHITE 849
+#define ITEM_RED_CHAIN 850
 
 // HOPO BERRY
 // LEGEND PLATE
 
-#define ITEMS_COUNT 847
+#define ITEMS_COUNT 851
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
 // A special item id associated with "Cancel"/"Exit" etc. in a list of items or decorations

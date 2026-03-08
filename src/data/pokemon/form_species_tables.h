@@ -610,7 +610,7 @@ static const u16 sTyphlosionFormSpeciesIdTable[] = {
     SPECIES_TYPHLOSION_HISUI,
 #endif
 #if P_MEGA_EVOLUTIONS
-    SPECIES_TYPLOSION_MEGA,
+    SPECIES_TYPHLOSION_MEGA,
 #endif
     FORM_SPECIES_END,
 };
@@ -728,7 +728,7 @@ static const u16 sUrsalunaFormSpeciesIdTable[] = {
 
 #if P_FAMILY_SWINUB
 #if P_GEN_4_CROSS_EVOS
-static const u16 sMamoswineZFormSpeciesIdTable[] = {
+static const u16 sMamoswineFormSpeciesIdTable[] = {
     SPECIES_MAMOSWINE,
 #if P_MEGA_EVOLUTIONS
     SPECIES_MAMOSWINE_MEGA,
@@ -835,6 +835,16 @@ static const u16 sGalladeFormSpeciesIdTable[] = {
 };
 #endif //P_GEN_4_CROSS_EVOS
 #endif //P_FAMILY_RALTS
+
+#if P_FAMILY_WHISMUR
+static const u16 sExploudFormSpeciesIdTable[] = {
+    SPECIES_EXPLOUD,
+#if P_MEGA_EVOLUTIONS
+    SPECIES_EXPLOUD_MEGA,
+#endif
+    FORM_SPECIES_END,
+};
+#endif // P_FAMILY_WHISMUR
 
 #if P_FAMILY_SABLEYE
 static const u16 sSableyeFormSpeciesIdTable[] = {
@@ -1058,7 +1068,7 @@ static const u16 sDeoxysFormSpeciesIdTable[] = {
 #endif //P_FAMILY_DEOXYS
 
 #if P_FAMILY_TURTWIG
-static const u16 sTurtwigFormSpeciesIdTable[] = {
+static const u16 sTorterraFormSpeciesIdTable[] = {
     SPECIES_TORTERRA,
 #if P_MEGA_EVOLUTIONS
     SPECIES_TORTERRA_MEGA,
@@ -1677,7 +1687,8 @@ static const u16 sYveltalFormSpeciesIdTable[] = {
 #if P_PRIMAL_REVERSIONS
     SPECIES_YVELTAL_PRIMAL,
 #endif
-}
+};
+#endif // P_FAMILY_YVELTAL
 
 #if P_FAMILY_ZYGARDE
 static const u16 sZygardeFormSpeciesIdTable[] = {

@@ -1857,8 +1857,11 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         )
         .levelUpLearnset = sMusharnaLevelUpLearnset,
         .teachableLearnset = sMusharnaTeachableLearnset,
+        .formSpeciesIdTable = sMusharnaFormSpeciesIdTable,
+        .formChangeTable = sMusharnaFormChangeTable,
     },
 
+#if P_MEGA_EVOLUTIONS
     [SPECIES_MUSHARNA_MEGA] =
     {
         .baseHP        = 146,
@@ -1893,7 +1896,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .pokemonOffset = 7,
         .trainerScale = 256,
         .trainerOffset = 0,
-        .frontPic = gMonFrontPic_Musharna,
+        .frontPic = gMonFrontPic_MusharnaMega,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
         .frontPicYOffset = 6,
         .frontAnimFrames = ANIM_FRAMES(
@@ -1905,29 +1908,24 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         ),
         .frontAnimId = ANIM_ROTATE_TO_SIDES_TWICE,
         .enemyMonElevation = 5,
-        .backPic = gMonBackPic_Musharna,
+        .backPic = gMonBackPic_MusharnaMega,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 8,
         .backAnimId = BACK_ANIM_GROW,
-        .palette = gMonPalette_Musharna,
-        .shinyPalette = gMonShinyPalette_Musharna,
-        .iconSprite = gMonIcon_Musharna,
+        .palette = gMonPalette_MusharnaMega,
+        .shinyPalette = gMonShinyPalette_MusharnaMega,
+        .iconSprite = gMonIcon_MusharnaMega,
         .iconPalIndex = 0,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         SHADOW(6, 10, SHADOW_SIZE_M)
         FOOTPRINT(Musharna)
-        OVERWORLD(
-            sPicTable_Musharna,
-            SIZE_32x32,
-            SHADOW_SIZE_M,
-            TRACKS_FOOT,
-            sAnimTable_Following,
-            gOverworldPalette_Musharna,
-            gShinyOverworldPalette_Musharna
-        )
+        .isMegaEvolution = TRUE,
         .levelUpLearnset = sMusharnaLevelUpLearnset,
         .teachableLearnset = sMusharnaTeachableLearnset,
+        .formSpeciesIdTable = sMusharnaFormSpeciesIdTable,
+        .formChangeTable = sMusharnaFormChangeTable,
     },
+#endif // P_MEGA_EVOLUTIONS
 #endif //P_FAMILY_MUNNA
 
 #if P_FAMILY_PIDOVE
@@ -2534,9 +2532,12 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         )
         .levelUpLearnset = sGigalithLevelUpLearnset,
         .teachableLearnset = sGigalithTeachableLearnset,
+        .formSpeciesIdTable = sGigalithFormSpeciesIdTable,
+        .formChangeTable = sGigalithFormChangeTable,
     },
 
-    [SPECIES_GIGALITH] =
+#if P_MEGA_EVOLUTIONS
+    [SPECIES_GIGALITH_MEGA] =
     {
         .baseHP        = 105,
         .baseAttack    = 165,
@@ -2578,7 +2579,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .pokemonOffset = 0,
         .trainerScale = 290,
         .trainerOffset = 1,
-        .frontPic = gMonFrontPic_Gigalith,
+        .frontPic = gMonFrontPic_GigalithMega,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
         .frontPicYOffset = 1,
         .frontAnimFrames = ANIM_FRAMES(
@@ -2587,29 +2588,24 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
             ANIMCMD_FRAME(0, 10),
         ),
         .frontAnimId = ANIM_ROTATE_UP_SLAM_DOWN,
-        .backPic = gMonBackPic_Gigalith,
+        .backPic = gMonBackPic_GigalithMega,
         .backPicSize = MON_COORDS_SIZE(56, 64),
         .backPicYOffset = 2,
         .backAnimId = BACK_ANIM_V_SHAKE_LOW,
-        .palette = gMonPalette_Gigalith,
-        .shinyPalette = gMonShinyPalette_Gigalith,
-        .iconSprite = gMonIcon_Gigalith,
+        .palette = gMonPalette_GigalithMega,
+        .shinyPalette = gMonShinyPalette_GigalithMega,
+        .iconSprite = gMonIcon_GigalithMega,
         .iconPalIndex = 0,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         SHADOW(-1, 8, SHADOW_SIZE_XL_BATTLE_ONLY)
         FOOTPRINT(Gigalith)
-        OVERWORLD(
-            sPicTable_Gigalith,
-            SIZE_32x32,
-            SHADOW_SIZE_M,
-            TRACKS_FOOT,
-            sAnimTable_Following,
-            gOverworldPalette_Gigalith,
-            gShinyOverworldPalette_Gigalith
-        )
+        .isMegaEvolution = TRUE,
         .levelUpLearnset = sGigalithLevelUpLearnset,
         .teachableLearnset = sGigalithTeachableLearnset,
+        .formSpeciesIdTable = sGigalithFormSpeciesIdTable,
+        .formChangeTable = sGigalithFormChangeTable,
     },
+#endif // P_MEGA_EVOLUTIONS
 #endif //P_FAMILY_ROGGENROLA
 
 #if P_FAMILY_WOOBAT
@@ -5978,8 +5974,11 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         )
         .levelUpLearnset = sCofagrigusLevelUpLearnset,
         .teachableLearnset = sCofagrigusTeachableLearnset,
+        .formSpeciesIdTable = sCofagrigusFormSpeciesIdTable,
+        .formChangeTable = sCofagrigusFormChangeTable,
     },
 
+#if P_MEGA_EVOLUTIONS
     [SPECIES_COFAGRIGUS_MEGA] =
     {
         .baseHP        = 58,
@@ -6015,7 +6014,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .pokemonOffset = 0,
         .trainerScale = 290,
         .trainerOffset = 1,
-        .frontPic = gMonFrontPic_Cofagrigus,
+        .frontPic = gMonFrontPic_CofagrigusMega,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
         .frontPicYOffset = 0,
         .frontAnimFrames = ANIM_FRAMES(
@@ -6024,29 +6023,24 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
             ANIMCMD_FRAME(0, 10),
         ),
         .frontAnimId = ANIM_GLOW_BLACK,
-        .backPic = gMonBackPic_Cofagrigus,
+        .backPic = gMonBackPic_CofagrigusMega,
         .backPicSize = MON_COORDS_SIZE(56, 56),
         .backPicYOffset = 6,
         .backAnimId = BACK_ANIM_V_SHAKE_H_SLIDE,
-        .palette = gMonPalette_Cofagrigus,
-        .shinyPalette = gMonShinyPalette_Cofagrigus,
-        .iconSprite = gMonIcon_Cofagrigus,
+        .palette = gMonPalette_CofagrigusMega,
+        .shinyPalette = gMonShinyPalette_CofagrigusMega,
+        .iconSprite = gMonIcon_CofagrigusMega,
         .iconPalIndex = 0,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         SHADOW(6, 12, SHADOW_SIZE_M)
         FOOTPRINT(Cofagrigus)
-        OVERWORLD(
-            sPicTable_Cofagrigus,
-            SIZE_32x32,
-            SHADOW_SIZE_M,
-            TRACKS_FOOT,
-            sAnimTable_Following,
-            gOverworldPalette_Cofagrigus,
-            gShinyOverworldPalette_Cofagrigus
-        )
+        .isMegaEvolution = TRUE,
         .levelUpLearnset = sCofagrigusLevelUpLearnset,
         .teachableLearnset = sCofagrigusTeachableLearnset,
+        .formSpeciesIdTable = sCofagrigusFormSpeciesIdTable,
+        .formChangeTable = sCofagrigusFormChangeTable,
     },
+#endif // P_MEGA_EVOLUTIONS
 
 #if P_GALARIAN_FORMS
     [SPECIES_YAMASK_GALAR] =

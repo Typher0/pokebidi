@@ -47876,3 +47876,13 @@ static const u16 sWendingoTeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_WENDINGO
+
+#if P_FAMILY_ROYGIBIV
+static const u16 sRoygibivTeachableLearnset[] = {
+    MOVE_DREAM_EATER,
+    MOVE_FALSE_SWIPE,
+    MOVE_SWORDS_DANCE,
+    MOVE_TORMENT,
+    MOVE_UNAVAILABLE,
+};
+#endif // P_FAMILY_ROYGIBIV

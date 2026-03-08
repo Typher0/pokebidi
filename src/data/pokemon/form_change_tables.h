@@ -475,6 +475,15 @@ static const struct FormChange sGlalieFormChangeTable[] = {
 #endif
     {FORM_CHANGE_TERMINATOR},
 };
+
+#if P_GEN_4_CROSS_EVOS
+static const struct FormChange sFroslassFormChangeTable[] = {
+#if P_MEGA_EVOLUTIONS
+    {FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM,    SPECIES_FROSLASS_MEGA, ITEM_FROSLASSITE},
+#endif
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif // P_GEN_4_CROSS_EVOS
 #endif //P_FAMILY_SNORUNT
 
 #if P_FAMILY_CASTFORM
@@ -788,6 +797,24 @@ static const struct FormChange sArceusFormChangeTable[] = {
 };
 #endif //P_FAMILY_ARCEUS
 
+#if P_FAMILY_MUNNA
+static const struct FormChange sMusharnaFormChangeTable[] = {
+#if P_MEGA_EVOLUTIONS
+    {FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM,    SPECIES_MUSHARNA_MEGA, ITEM_MUSHARNITE},
+#endif
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif // P_FAMILY_MUNNA
+
+#if P_FAMILY_ROGGENROLA
+static const struct FormChange sGigalithFormChangeTable[] = {
+#if P_MEGA_EVOLUTIONS
+    {FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM,    SPECIES_GIGALITH_MEGA, ITEM_GIGALITHITE},
+#endif
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif // P_FAMILY_ROGGENROLA
+
 #if P_FAMILY_AUDINO
 static const struct FormChange sAudinoFormChangeTable[] = {
 #if P_MEGA_EVOLUTIONS
@@ -932,8 +959,6 @@ static const struct FormChange sXerneasFormChangeTable[] = {
 #if P_PRIMAL_REVERSIONS
     {FORM_CHANGE_BATTLE_PRIMAL_REVERSION,   SPECIES_XERNEAS_PRIMAL, ITEM_RED_CHAIN},
 #endif
-    {FORM_CHANGE_TERMINATOR},
-};
     {FORM_CHANGE_TERMINATOR},
 };
 #endif //P_FAMILY_XERNEAS

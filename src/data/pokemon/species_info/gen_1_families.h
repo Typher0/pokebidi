@@ -18578,8 +18578,11 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         )
         .levelUpLearnset = sPorygonZLevelUpLearnset,
         .teachableLearnset = sPorygonZTeachableLearnset,
+        .formSpeciesIdTable = sPorygonZFormSpeciesIdTable,
+        .formChangeTable = sPorygonZFormChangeTable,
     },
 
+#if P_MEGA_EVOLUTIONS
     [SPECIES_PORYGON_Z_MEGA] =
     {
         .baseHP        = 95,
@@ -18620,7 +18623,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .pokemonOffset = 8,
         .trainerScale = 256,
         .trainerOffset = 0,
-        .frontPic = gMonFrontPic_PorygonZ,
+        .frontPic = gMonFrontPic_PorygonZMega,
         .frontPicSize = MON_COORDS_SIZE(40, 56),
         .frontPicYOffset = 6,
         .frontAnimFrames = ANIM_FRAMES(
@@ -18631,29 +18634,24 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         ),
         .frontAnimId = ANIM_CIRCLE_C_CLOCKWISE_SLOW,
         .enemyMonElevation = 12,
-        .backPic = gMonBackPic_PorygonZ,
+        .backPic = gMonBackPic_PorygonZMega,
         .backPicSize = MON_COORDS_SIZE(64, 56),
         .backPicYOffset = 6,
         .backAnimId = BACK_ANIM_H_VIBRATE,
-        .palette = gMonPalette_PorygonZ,
-        .shinyPalette = gMonShinyPalette_PorygonZ,
-        .iconSprite = gMonIcon_PorygonZ,
+        .palette = gMonPalette_PorygonZMega,
+        .shinyPalette = gMonShinyPalette_PorygonZMega,
+        .iconSprite = gMonIcon_PorygonZMega,
         .iconPalIndex = 0,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         SHADOW(0, 17, SHADOW_SIZE_S)
         FOOTPRINT(PorygonZ)
-        OVERWORLD(
-            sPicTable_PorygonZ,
-            SIZE_32x32,
-            SHADOW_SIZE_M,
-            TRACKS_FOOT,
-            sAnimTable_Following,
-            gOverworldPalette_PorygonZ,
-            gShinyOverworldPalette_PorygonZ
-        )
+        .isMegaEvolution = TRUE,
         .levelUpLearnset = sPorygonZLevelUpLearnset,
         .teachableLearnset = sPorygonZTeachableLearnset,
+        .formSpeciesIdTable = sPorygonZFormSpeciesIdTable,
+        .formChangeTable = sPorygonZFormChangeTable,
     },
+#endif // P_MEGA_EVOLUTIONS
 #endif //P_GEN_4_CROSS_EVOS
 #endif //P_GEN_2_CROSS_EVOS
 #endif //P_FAMILY_PORYGON
