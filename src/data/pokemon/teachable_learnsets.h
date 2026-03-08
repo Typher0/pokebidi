@@ -47879,10 +47879,9 @@ static const u16 sWendingoTeachableLearnset[] = {
 
 #if P_FAMILY_ROYGIBIV
 static const u16 sRoygibivTeachableLearnset[] = {
-    MOVE_DREAM_EATER,
-    MOVE_FALSE_SWIPE,
-    MOVE_SWORDS_DANCE,
-    MOVE_TORMENT,
+    MOVE_DAZZLING_GLEAM,
+    MOVE_LIGHT_SCREEN,
+    MOVE_REFLECT,
     MOVE_UNAVAILABLE,
 };
 #endif // P_FAMILY_ROYGIBIV
