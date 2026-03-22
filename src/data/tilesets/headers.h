@@ -841,3 +841,14 @@ const struct Tileset gTileset_Primary_North =
     .metatileAttributes = gMetatileAttributes_Primary_North,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_Zephyr =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Zephyr,
+    .palettes = gTilesetPalettes_Zephyr,
+    .metatiles = gMetatiles_Zephyr,
+    .metatileAttributes = gMetatileAttributes_Zephyr,
+    .callback = NULL,
+};

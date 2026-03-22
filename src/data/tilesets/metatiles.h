@@ -210,3 +210,6 @@ const u16 gMetatileAttributes_UnionRoom[] = INCBIN_U16("data/tilesets/secondary/
 
 const u16 gMetatiles_Primary_North[] = INCBIN_U16("data/tilesets/primary/primary_north/metatiles.bin");
 const u16 gMetatileAttributes_Primary_North[] = INCBIN_U16("data/tilesets/primary/primary_north/metatile_attributes.bin");
+
+const u16 gMetatiles_Zephyr[] = INCBIN_U16("data/tilesets/secondary/zephyr/metatiles.bin");
+const u16 gMetatileAttributes_Zephyr[] = INCBIN_U16("data/tilesets/secondary/zephyr/metatile_attributes.bin");
