@@ -14,26 +14,21 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "map": "MAP_ROUTE103",
-      "offset": 0,
-      "direction": "up"
-    },
-    {
       "map": "MAP_ROUTE101",
-      "offset": 0,
-      "direction": "down"
+      "offset": -12,
+      "direction": "up"
     },
     {
       "map": "MAP_ROUTE102",
       "offset": 0,
-      "direction": "left"
+      "direction": "down"
     }
   ],
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_10",
-      "x": 16,
-      "y": 11,
+      "x": 17,
+      "y": 18,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
@@ -88,15 +83,15 @@
   ],
   "warp_events": [
     {
-      "x": 5,
-      "y": 7,
+      "x": 6,
+      "y": 8,
       "elevation": 0,
       "dest_map": "MAP_OLDALE_TOWN_HOUSE1",
       "dest_warp_id": "0"
     },
     {
-      "x": 15,
-      "y": 15,
+      "x": 16,
+      "y": 16,
       "elevation": 0,
       "dest_map": "MAP_OLDALE_TOWN_HOUSE2",
       "dest_warp_id": "0"
