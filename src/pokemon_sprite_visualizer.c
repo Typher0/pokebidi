@@ -985,8 +985,8 @@ static void LoadAndCreateEnemyShadowSpriteCustom(struct PokemonSpriteVisualizer 
 static void LoadBattleBg(u8 battleBgType, enum BattleEnvironments battleEnvironment)
 {
     DecompressDataWithHeaderVram(gBattleEnvironmentInfo[battleEnvironment].background.tileset, (void *)(BG_CHAR_ADDR(BACKGROUND_3_CHAR_BASE)));
-        DecompressDataWithHeaderVram(gBattleEnvironmentInfo[battleEnvironment].background.tilemap, (void *)(BG_SCREEN_ADDR(BACKGROUND_3_MAP_BASE)));
-        LoadPalette(gBattleEnvironmentInfo[battleEnvironment].palette, BG_PLTT_ID(2), 3 * PLTT_SIZE_4BPP);
+    DecompressDataWithHeaderVram(gBattleEnvironmentInfo[battleEnvironment].background.tilemap, (void *)(BG_SCREEN_ADDR(BACKGROUND_3_MAP_BASE)));
+    LoadPalette(gBattleEnvironmentInfo[battleEnvironment].palette, BG_PLTT_ID(2), 3 * PLTT_SIZE_4BPP);
 }
 
 static void PrintBattleBgName(u8 taskId)
@@ -1007,8 +1007,7 @@ static void UpdateBattleBg(u8 taskId, bool8 increment)
     struct PokemonSpriteVisualizer *data = GetStructPtr(taskId);
 
     if (increment) {
-            data->battleEnvironment = (data->battleEnvironment + 1) % (BATTLE_ENVIRONMENT_RAYQUAZA + 1); // Can use BATTLE_ENVIRONMENT_COUNT once the remaining environments have sprites
-    }
+        data->battleEnvironment = (data->battleEnvironment + 1) % (BATTLE_ENVIRONMENT_RAYQUAZA + 1); // Can use BATTLE_ENVIRONMENT_COUNT once the remaining environments have sprites    }
     else
     {
         if (increment)
@@ -1200,9 +1199,9 @@ void CB2_Pokemon_Sprite_Visualizer(void)
             BlendPalettes(PALETTES_ALL, 16, RGB_BLACK);
             LoadPalette(GetTextWindowPalette(0), 15*16, 0x40);
 
-            FillBgTilemapBufferRect(0, 0, 0, 0, 32, 20, 15);
-            InitBgsFromTemplates(0, sBgTemplates, ARRAY_COUNT(sBgTemplates));
-            LoadBattleBg(BATTLE_ENVIRONMENT_GRASS);
+        FillBgTilemapBufferRect(0, 0, 0, 0, 32, 20, 15);
+        InitBgsFromTemplates(0, sBgTemplates, ARRAY_COUNT(sBgTemplates));
+        LoadBattleBg(BATTLE_ENVIRONMENT_GRASS);
 
             gMain.state++;
             break;
