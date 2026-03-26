@@ -105,8 +105,6 @@ void AnimTask_SetCamouflageBlend(u8 taskId)
 {
     u32 selectedPalettes = UnpackSelectedBattlePalettes(gBattleAnimArgs[0]);
     gBattleAnimArgs[4] = gBattleEnvironmentInfo[gBattleEnvironment].camouflageBlend;
-    }
-
     StartBlendAnimSpriteColor(taskId, selectedPalettes);
 }
 
