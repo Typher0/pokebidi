@@ -31,10 +31,22 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
     
     [BATTLE_ENVIRONMENT_ARENA] =
     {
-        .naturePower = MOVE_TRI_ATTACK,
+        .name = _("Long Grass"),
+    #if B_NATURE_POWER_MOVES >= GEN_6
+        .naturePower = MOVE_ENERGY_BALL,
+    #elif B_NATURE_POWER_MOVES >= GEN_4
+        .naturePower = MOVE_SEED_BOMB,
+    #else
+        .naturePower = MOVE_RAZOR_LEAF,
+    #endif
+        .secretPowerAnimation = B_SECRET_POWER_ANIMATION >= GEN_4 ? gBattleAnimMove_NeedleArm : gBattleAnimMove_MagicalLeaf,
         .secretPowerEffect = MOVE_EFFECT_SLEEP,
-        .camouflageType = TYPE_NORMAL,
-        .background = ENVIRONMENT_BACKGROUND(Arena),
+        .camouflageType = TYPE_GRASS,
+        .camouflageBlend = RGB(0, 15, 2),
+        .entry = ENVIRONMENT_ENTRY(LongGrass),
+        .background = ENVIRONMENT_BACKGROUND(LongGrass),
+        .palette = gBattleEnvironmentPalette_LongGrass,
+        .battleIntroSlide = BattleIntroSlide1,
     },
     
     [BATTLE_ENVIRONMENT_AUTUMN_FOREST] =
@@ -137,13 +149,16 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
     
     [BATTLE_ENVIRONMENT_CAVE] =
     {
-         .name = _("Cave"),
-         .naturePower = CAVE_NATURE_POWER,
-         .secretPowerAnimation = CAVE_SECRET_POWER_ANIMATION,
-         .secretPowerEffect = CAVE_SECRET_POWER_EFFECT,
-         .camouflageType = CAVE_CAMOUFLAGE_TYPE,
-         .camouflageBlend = CAVE_CAMOUFLAGE_BLEND,
-         .entry = ENVIRONMENT_ENTRY(Cave),
+        .name = _("Cave"),
+        .naturePower = CAVE_NATURE_POWER,
+        .secretPowerAnimation = CAVE_SECRET_POWER_ANIMATION,
+        .secretPowerEffect = CAVE_SECRET_POWER_EFFECT,
+        .camouflageType = CAVE_CAMOUFLAGE_TYPE,
+        .camouflageBlend = CAVE_CAMOUFLAGE_BLEND,
+        .entry = ENVIRONMENT_ENTRY(Cave),
+        .background = ENVIRONMENT_BACKGROUND(Cave),
+        .palette = gBattleEnvironmentPalette_Cave,
+        .battleIntroSlide = CAVE_BATTLE_INTRO_SLIDE,
     },
     
     [BATTLE_ENVIRONMENT_CAVE_DARK] =
@@ -446,10 +461,12 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
     
     [BATTLE_ENVIRONMENT_ROUTE_E] =
     {
-        .naturePower = MOVE_TRAILBLAZE,
+        .name = _("Swamp"),
+        .naturePower = MOVE_MUD_BOMB,
+        .secretPowerAnimation = gBattleAnimMove_MudShot,
         .secretPowerEffect = MOVE_EFFECT_SPD_MINUS_1,
-        .camouflageType = TYPE_GRASS,
-        .background = ENVIRONMENT_BACKGROUND(RouteE),
+        .camouflageType = TYPE_GROUND,
+        .camouflageBlend = DEFAULT_CAMOUFLAGE_BLEND,
     },
     
     [BATTLE_ENVIRONMENT_ROUTE_N] =
@@ -509,38 +526,6 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
     },
     
     [BATTLE_ENVIRONMENT_SNOW] =
-    {
-        .naturePower = MOVE_BLIZZARD,
-        .secretPowerEffect = MOVE_EFFECT_FROSTBITE,
-        .camouflageType = TYPE_ICE,
-        .background = ENVIRONMENT_BACKGROUND(Snow),
-    },
-    
-    [BATTLE_ENVIRONMENT_SNOW_E] =
-    {
-        .naturePower = MOVE_BLIZZARD,
-        .secretPowerEffect = MOVE_EFFECT_FROSTBITE,
-        .camouflageType = TYPE_ICE,
-        .background = ENVIRONMENT_BACKGROUND(SnowE),
-    },
-    
-    [BATTLE_ENVIRONMENT_SNOW_N] =
-    {
-        .naturePower = MOVE_BLIZZARD,
-        .secretPowerEffect = MOVE_EFFECT_FROSTBITE,
-        .camouflageType = TYPE_ICE,
-        .background = ENVIRONMENT_BACKGROUND(SnowN),
-    },
-    
-    [BATTLE_ENVIRONMENT_SWAMP] =
-    {
-        .secretPowerAnimation = gBattleAnimMove_MudShot,
-        .secretPowerEffect = MOVE_EFFECT_SPD_MINUS_1,
-        .camouflageType = TYPE_GROUND,
-        .camouflageBlend = DEFAULT_CAMOUFLAGE_BLEND,
-    },
-    
-    [BATTLE_ENVIRONMENT_SWAMP_E] =
     {
         .name = _("Snow"),
     #if B_NATURE_POWER_MOVES >= GEN_7
