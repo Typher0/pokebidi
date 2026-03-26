@@ -504,14 +504,8 @@
 #define METATILE_PokemonMansion_Wall_EndCap_Basement                     0x2B0
 #define METATILE_PokemonMansion_Wall_EndPost_Bottom                      0x2AD
 #define METATILE_PokemonMansion_Wall_EndPost_Mid                         0x2A5
->>>>>>> 27119dee335c38c7d5fb7fe4a4133cfc18f377fd
 
 gTilesetUnderwater
-<<<<<<< HEAD
-// gTileset_Primary_North
-#define METATILE_Primary_North_Door_Gym         0x08B
-#define METATILE_Primary_North_Door_PokeCenter  0x062
-=======
 // gTileset_PokemonCenterFrlg
 #define METATILE_PokemonCenterFrlg_CableClubDoor                         0x2DE
 #define METATILE_PokemonCenterFrlg_CounterBarrier                        0x2F9
