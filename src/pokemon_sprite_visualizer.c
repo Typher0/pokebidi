@@ -369,74 +369,93 @@ const u8 gFrontAnimNames[][34] =
     [ANIM_SHAKE_GLOW_WHITE_SLOW]             = _("SHAKE GLOW WHITE SLOW"),
     [ANIM_SHAKE_GLOW_PURPLE_SLOW]            = _("SHAKE GLOW PURPLE SLOW"),
 };
-const u8 gBattleBackgroundNames[][64] =
-{
-    [MAP_BATTLE_SCENE_NORMAL]   = _("NORMAL                  "),
-};
 
 const u8 gBattleBackgroundTerrainNames[][26] =
 {
-    [BATTLE_ENVIRONMENT_ARENA]            = _("NORMAL - ARENA           "),
-    [BATTLE_ENVIRONMENT_AUTUMN_FOREST]    = _("NORMAL - AUTUMN FOREST   "),
-    [BATTLE_ENVIRONMENT_AUTUMN_FOREST_E]  = _("NORMAL - AUTUMN FOREST E "),
-    [BATTLE_ENVIRONMENT_AUTUMN_FOREST_N]  = _("NORMAL - AUTUMN FOREST N "),
-    [BATTLE_ENVIRONMENT_BEACH]            = _("NORMAL - BEACH           "),
-    [BATTLE_ENVIRONMENT_BEACH_E]          = _("NORMAL - BEACH E         "),
-    [BATTLE_ENVIRONMENT_BEACH_N]          = _("NORMAL - BEACH N         "),
-    [BATTLE_ENVIRONMENT_BRIDGE]           = _("NORMAL - BRIDGE          "),
-    [BATTLE_ENVIRONMENT_BRIDGE_E]         = _("NORMAL - BRIDGE E        "),
-    [BATTLE_ENVIRONMENT_BRIDGE_N]         = _("NORMAL - BRIDGE N        "),
-    [BATTLE_ENVIRONMENT_CAVE]             = _("NORMAL - CAVE            "),
-    [BATTLE_ENVIRONMENT_CAVE_DARK]        = _("NORMAL - CAVE DARK       "),
-    [BATTLE_ENVIRONMENT_CAVE_MAGMA]       = _("NORMAL - CAVE MAGMA      "),
-    [BATTLE_ENVIRONMENT_CAVE_SNOW]        = _("NORMAL - CAVE SNOW       "),
-    [BATTLE_ENVIRONMENT_CITY]             = _("NORMAL - CITY            "),
-    [BATTLE_ENVIRONMENT_CITY_E]           = _("NORMAL - CITY E          "),
-    [BATTLE_ENVIRONMENT_CITY_N]           = _("NORMAL - CITY N          "),
-    [BATTLE_ENVIRONMENT_CRAG]             = _("NORMAL - CRAG            "),
-    [BATTLE_ENVIRONMENT_CRAG_E]           = _("NORMAL - CRAG E          "),
-    [BATTLE_ENVIRONMENT_CRAG_N]           = _("NORMAL - CRAG N          "),
-    [BATTLE_ENVIRONMENT_DESERT]           = _("NORMAL - DESERT          "),
-    [BATTLE_ENVIRONMENT_DESERT_E]         = _("NORMAL - DESERT E        "),
-    [BATTLE_ENVIRONMENT_DESERT_N]         = _("NORMAL - DESERT N        "),
-    [BATTLE_ENVIRONMENT_GYM]              = _("NORMAL - GYM             "),
-    [BATTLE_ENVIRONMENT_INDOOR]           = _("NORMAL - INDOOR          "),
-    [BATTLE_ENVIRONMENT_LAB]              = _("NORMAL - LAB             "),
-    [BATTLE_ENVIRONMENT_MOUNTAIN]         = _("NORMAL - MOUNTAIN        "),
-    [BATTLE_ENVIRONMENT_MOUNTAIN_E]       = _("NORMAL - MOUNTAIN E      "),
-    [BATTLE_ENVIRONMENT_MOUNTAIN_N]       = _("NORMAL - MOUNTAIN N      "),
-    [BATTLE_ENVIRONMENT_MOUNTAIN_SNOW]    = _("NORMAL - MOUNTAIN SNOW   "),
-    [BATTLE_ENVIRONMENT_MOUNTAIN_SNOW_E]  = _("NORMAL - MOUNTAIN SNOW E "),
-    [BATTLE_ENVIRONMENT_MOUNTAIN_SNOW_N]  = _("NORMAL - MOUNTAIN SNOW N "),
-    [BATTLE_ENVIRONMENT_ROCKY]            = _("NORMAL - ROCKY           "),
-    [BATTLE_ENVIRONMENT_ROCKY_E]          = _("NORMAL - ROCKY E         "),
-    [BATTLE_ENVIRONMENT_ROCKY_N]          = _("NORMAL - ROCKY N         "),
-    [BATTLE_ENVIRONMENT_ROUTE]            = _("NORMAL - ROUTE           "),
-    [BATTLE_ENVIRONMENT_ROUTE_E]          = _("NORMAL - ROUTE E         "),
-    [BATTLE_ENVIRONMENT_ROUTE_N]          = _("NORMAL - ROUTE N         "),
-    [BATTLE_ENVIRONMENT_SAFARI]           = _("NORMAL - SAFARI          "),
-    [BATTLE_ENVIRONMENT_SAFARI_E]         = _("NORMAL - SAFARI E        "),
-    [BATTLE_ENVIRONMENT_SAFARI_N]         = _("NORMAL - SAFARI N        "),
-    [BATTLE_ENVIRONMENT_SEA]              = _("NORMAL - SEA             "),
-    [BATTLE_ENVIRONMENT_SEA_E]            = _("NORMAL - SEA E           "),
-    [BATTLE_ENVIRONMENT_SEA_N]            = _("NORMAL - SEA N           "),
-    [BATTLE_ENVIRONMENT_SNOW]             = _("NORMAL - SNOW            "),
-    [BATTLE_ENVIRONMENT_SNOW_E]           = _("NORMAL - SNOW E          "),
-    [BATTLE_ENVIRONMENT_SNOW_N]           = _("NORMAL - SNOW N          "),
-    [BATTLE_ENVIRONMENT_SWAMP]            = _("NORMAL - SWAMP           "),
-    [BATTLE_ENVIRONMENT_SWAMP_E]          = _("NORMAL - SWAMP E         "),
-    [BATTLE_ENVIRONMENT_SWAMP_N]          = _("NORMAL - SWAMP N         "),
-    [BATTLE_ENVIRONMENT_UNDERWATER]       = _("NORMAL - UNDERWATER      "),
-    [BATTLE_ENVIRONMENT_UNDERWATER_E]     = _("NORMAL - UNDERWATER E    "),
-    [BATTLE_ENVIRONMENT_UNDERWATER_N]     = _("NORMAL - UNDERWATER N    "),
-    [BATTLE_ENVIRONMENT_VOLCANO]          = _("NORMAL - VOLCANO         "),
-    [BATTLE_ENVIRONMENT_VOLCANO_E]        = _("NORMAL - VOLCANO E       "),
-    [BATTLE_ENVIRONMENT_VOLCANO_N]        = _("NORMAL - VOLCANO N       "),
-    [BATTLE_ENVIRONMENT_MOOSE]            = _("NORMAL - MOOSE           "),
-    [BATTLE_ENVIRONMENT_THOMAS]           = _("NORMAL - THOMAS          "),
-    [BATTLE_ENVIRONMENT_TINKER]           = _("NORMAL - TINKER          "),
-    [BATTLE_ENVIRONMENT_TOBIAS]           = _("NORMAL - TOBIAS          "),
-    [BATTLE_ENVIRONMENT_GWEN]             = _("NORMAL - GWEN            "),
+    [BG_NONE]                      = _("None"),
+    [BG_DARK]                      = _("Dark"),
+    [BG_GHOST]                     = _("Ghost"),
+    [BG_PSYCHIC]                   = _("Psychic"),
+    [BG_IMPACT_OPPONENT]           = _("Impact - Opponent"),
+    [BG_IMPACT_PLAYER]             = _("Impact - Player"),
+    [BG_IMPACT_CONTESTS]           = _("Impact - Contests"),
+    [BG_DRILL]                     = _("Drill"),
+    [BG_DRILL_CONTESTS]            = _("Drill - Contests"),
+    [BG_HIGHSPEED_OPPONENT]        = _("High-Speed - Opponent"),
+    [BG_HIGHSPEED_PLAYER]          = _("High-Speed - Player"),
+    [BG_THUNDER]                   = _("Thunder"),
+    [BG_GUILLOTINE_OPPONENT]       = _("Guillotine - Opponent"),
+    [BG_GUILLOTINE_PLAYER]         = _("Guillotine - Player"),
+    [BG_GUILLOTINE_CONTESTS]       = _("Guillotine - Contests"),
+    [BG_ICE]                       = _("Ice"),
+    [BG_COSMIC]                    = _("Cosmic"),
+    [BG_IN_AIR]                    = _("In Air"),
+    [BG_SKY]                       = _("Sky"),
+    [BG_SKY_CONTESTS]              = _("Sky - Contests"),
+    [BG_AURORA]                    = _("Aurora"),
+    [BG_FISSURE]                   = _("Fissure"),
+    [BG_BUG_OPPONENT]              = _("Bug - Opponent"),
+    [BG_BUG_PLAYER]                = _("Bug - Player"),
+    [BG_SOLAR_BEAM_OPPONENT]       = _("Solar Beam - Opponent"),
+    [BG_SOLAR_BEAM_PLAYER]         = _("Solar Beam - Player"),
+    [BG_SOLAR_BEAM_CONTESTS]       = _("Solar Beam - Contests"),
+    [BG_MAGMA_STORM]               = _("Magma Storm"),
+    [BG_GIGA_IMPACT_OPPONENT]      = _("Giga Impact - Opponent"),
+    [BG_GIGA_IMPACT_PLAYER]        = _("Giga Impact - Player"),
+    [BG_GIGA_IMPACT_CONTESTS]      = _("Giga Impact - Contests"),
+    [BG_TRICK_ROOM]                = _("Trick Room"),
+    [BG_ROCK_WRECKER]              = _("Rock Wrecker"),
+    [BG_SPACIAL_REND_OPPONENT]     = _("Spacial Rend - Opponent"),
+    [BG_SPACIAL_REND_PLAYER]       = _("Spacial Rend - Player"),
+    [BG_DARK_VOID]                 = _("Dark Void"),
+    [BG_WATER]                     = _("Water"),
+    [BG_NIGHTMARE]                 = _("Nightmare"),
+    [BG_LEAF_STORM]                = _("Leaf Storm"),
+    [BG_FIRE]                      = _("Fire"),
+    [BG_FIRE_2]                    = _("Fire 2"),
+    [BG_WATER_2]                   = _("Water 2"),
+    [BG_POISON]                    = _("Poison"),
+    [BG_AEROBLAST]                 = _("Aeroblast"),
+    [BG_HURRICANE]                 = _("Hurricane"),
+    [BG_ELECTRIC_TERRAIN]          = _("Electric Terrain"),
+    [BG_GRASSY_TERRAIN]            = _("Grassy Terrain"),
+    [BG_MISTY_TERRAIN]             = _("Misty Terrain"),
+    [BG_PSYCHIC_TERRAIN]           = _("Psychic Terrain"),
+    [BG_FOCUS_BLAST]               = _("Focus Blast"),
+    [BG_GUNK_SHOT]                 = _("Gunk Shot"),
+    [BG_HYDRO_CANNON]              = _("Hydro Cannon"),
+    [BG_WONDER_ROOM]               = _("Wonder Room"),
+    [BG_MAGIC_ROOM]                = _("Magic Room"),
+    [BG_HYPERSPACE_FURY]           = _("Hyperspace Fury"),
+    [BG_BOLT_STRIKE]               = _("Bolt Strike"),
+    [BG_ZMOVE_ACTIVATE]            = _("Z-Move Activate"),
+    [BG_TECTONIC_RAGE]             = _("Tectonic Rage"),
+    [BG_ROCK_FIELD_DAY]            = _("Rock Field - Day"),
+    [BG_ROCK_FIELD_AFTERNOON]      = _("Rock Field - Afternoon"),
+    [BG_ROCK_FIELD_NIGHT]          = _("Rock Field - Night"),
+    [BG_ZMOVE_MOUNTAIN]            = _("Z-Move Mountain"),
+    [BG_NEVERENDING_NIGHTMARE]     = _("Never-Ending Nightmare"),
+    [BG_WATER_PULSE]               = _("Water Pulse"),
+    [BG_INFERNO_OVERDRIVE]         = _("Inferno Overdrive"),
+    [BG_BLOOM_DOOM]                = _("Bloom Doom"),
+    [BG_SHATTERED_PSYCHE]          = _("Shattered Psyche"),
+    [BG_TWINKLE_TACKLE]            = _("Twinkle Tackle"),
+    [BG_BLACK_HOLE_ECLIPSE]        = _("Black Hole Eclipse"),
+    [BG_SOULSTEALING_7STAR_STRIKE] = _("Soul-Stealing 7-Star Strike"),
+    [BG_MALICIOUS_MOONSAULT]       = _("Malicious Moonsault"),
+    [BG_CLANGOROUS_SOULBLAZE]      = _("Clangorous Soulblaze"),
+    [BG_SNUGGLE_FOREVER]           = _("Snuggle Forever"),
+    [BG_MAX_LIGHTNING]             = _("Max Lightning"),
+    [BG_GARBAGE_FALLS]             = _("Garbage Falls"),
+    [BG_HYPER_BEAM]                = _("Hyper Beam"),
+    [BG_DYNAMAX_CANNON]            = _("Dynamax Cannon"),
+    [BG_AURA_SPHERE]               = _("Aura Sphere"),
+    [BG_STEEL_BEAM_OPPONENT]       = _("Steel Beam - Opponent"),
+    [BG_STEEL_BEAM_PLAYER]         = _("Steel Beam - Player"),
+    [BG_CHLOROBLAST]               = _("Chloroblast"),
+    [BG_RAINBOW_PLAYER]            = _("Rainbow - Player"),
+    [BG_RAINBOW_OPPONENT]          = _("Rainbow - Opponent"),
+    [BG_SWAMP]                     = _("Swamp"),
 };
 
 const u8 sShadowSizeLabels[][4] =
@@ -965,15 +984,9 @@ static void LoadAndCreateEnemyShadowSpriteCustom(struct PokemonSpriteVisualizer 
 //Battle background functions
 static void LoadBattleBg(u8 battleBgType, enum BattleEnvironments battleEnvironment)
 {
-    switch (battleBgType)
-    {
-    default:
-    case MAP_BATTLE_SCENE_NORMAL:
-        DecompressDataWithHeaderVram(gBattleEnvironmentInfo[battleEnvironment].background.tileset, (void*)(BG_CHAR_ADDR(2)));
-        DecompressDataWithHeaderVram(gBattleEnvironmentInfo[battleEnvironment].background.tilemap, (void*)(BG_SCREEN_ADDR(26)));
-        LoadPalette(gBattleEnvironmentInfo[battleEnvironment].background.palette, 0x20, 0x60);
-        break;
-    }
+    DecompressDataWithHeaderVram(gBattleEnvironmentInfo[battleEnvironment].background.tileset, (void *)(BG_CHAR_ADDR(BACKGROUND_3_CHAR_BASE)));
+        DecompressDataWithHeaderVram(gBattleEnvironmentInfo[battleEnvironment].background.tilemap, (void *)(BG_SCREEN_ADDR(BACKGROUND_3_MAP_BASE)));
+        LoadPalette(gBattleEnvironmentInfo[battleEnvironment].palette, BG_PLTT_ID(2), 3 * PLTT_SIZE_4BPP);
 }
 
 static void PrintBattleBgName(u8 taskId)
@@ -993,25 +1006,8 @@ static void UpdateBattleBg(u8 taskId, bool8 increment)
 {
     struct PokemonSpriteVisualizer *data = GetStructPtr(taskId);
 
-    if (data->battleBgType == MAP_BATTLE_SCENE_NORMAL)
-    {
-        if (increment)
-        {
-            if (data->battleEnvironment == BATTLE_ENVIRONMENT_ROUTE)
-                data->battleBgType += 1;
-            else
-                data->battleEnvironment += 1;
-        }
-    }
-    else if (data->battleBgType == MAP_BATTLE_SCENE_GYM)
-    {
-        if (increment)
-            data->battleBgType += 1;
-        else
-        {
-            data->battleBgType = MAP_BATTLE_SCENE_NORMAL;
-            data->battleEnvironment = BATTLE_ENVIRONMENT_ROUTE;
-        }
+    if (increment) {
+            data->battleEnvironment = (data->battleEnvironment + 1) % (BATTLE_ENVIRONMENT_RAYQUAZA + 1); // Can use BATTLE_ENVIRONMENT_COUNT once the remaining environments have sprites
     }
     else
     {
@@ -1206,7 +1202,7 @@ void CB2_Pokemon_Sprite_Visualizer(void)
 
             FillBgTilemapBufferRect(0, 0, 0, 0, 32, 20, 15);
             InitBgsFromTemplates(0, sBgTemplates, ARRAY_COUNT(sBgTemplates));
-            LoadBattleBg(0, BATTLE_ENVIRONMENT_ARENA);
+            LoadBattleBg(BATTLE_ENVIRONMENT_GRASS);
 
             gMain.state++;
             break;

@@ -6826,13 +6826,11 @@ BattleScript_PowderMoveNoEffect::
 	pause B_WAIT_TIME_SHORT
 	jumpiftype BS_TARGET, TYPE_GRASS, BattleScript_PowderMoveNoEffectPrint
 	jumpifability BS_TARGET, ABILITY_OVERCOAT, BattleScript_PowderMoveNoEffectOvercoat
-    jumpifability BS_TARGET, ABILITY_COZY, BattleScript_PowderMoveNoEffectCozy
-	printstring STRINGID_SAFETYGOGGLESPROTECTED
-	goto BattleScript_PowderMoveNoEffectWaitMsg
+    setlastuseditem BS_TARGET
+    printstring STRINGID_SAFETYGOGGLESPROTECTED
+    goto BattleScript_PowderMoveNoEffectWaitMsg
 BattleScript_PowderMoveNoEffectOvercoat:
-	call BattleScript_AbilityPopUp
-BattleScript_PowderMoveNoEffectCozy:
-    call BattleScript_AbilityPopUp
+    call BattleScript_AbilityPopUpTarget
 BattleScript_PowderMoveNoEffectPrint:
 	printstring STRINGID_ITDOESNTAFFECT
 BattleScript_PowderMoveNoEffectWaitMsg:

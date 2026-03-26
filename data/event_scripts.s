@@ -1159,8 +1159,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/text/birch_speech.inc"
 	.include "data/scripts/dexnav.inc"
 
-	.include "data/maps/KingstonCity/scripts.inc"
-
-	.include "data/maps/GanariaTown/scripts.inc"
-
-	.include "data/maps/OcchitaVillage/scripts.inc"
+    .include "data/scripts/battle_frontier.inc"
+    .include "data/scripts/apricorn_tree.inc"

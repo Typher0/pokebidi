@@ -627,8 +627,8 @@ static u8 GetBattleEnvironmentByMapScene(u8 mapBattleScene)
 // Loads the initial battle terrain.
 static void LoadBattleEnvironmentGfx(u16 terrain)
 {
-    if (terrain >= NELEMS(gBattleEnvironmentInfo))
-        terrain = BATTLE_ENVIRONMENT_ROUTE;  // If higher than the number of entries in gBattleEnvironmentInfo, use the default.
+    if (environment >= NELEMS(gBattleEnvironmentInfo))
+        environment = BATTLE_ENVIRONMENT_PLAIN;  // If higher than the number of entries in gBattleEnvironmentInfo, use the default.
     // Copy to bg3
     DecompressDataWithHeaderVram(gBattleEnvironmentInfo[terrain].background.tileset, (void *)(BG_CHAR_ADDR(2)));
     DecompressDataWithHeaderVram(gBattleEnvironmentInfo[terrain].background.tilemap, (void *)(BG_SCREEN_ADDR(26)));
@@ -639,8 +639,8 @@ static void LoadBattleEnvironmentGfx(u16 terrain)
 // This can be the grass moving on the screen at the start of a wild encounter in tall grass.
 static void LoadBattleEnvironmentEntryGfx(u16 terrain)
 {
-    if (terrain >= NELEMS(gBattleEnvironmentInfo))
-        terrain = BATTLE_ENVIRONMENT_ROUTE;
+    if (environment >= NELEMS(gBattleEnvironmentInfo))
+        environment = BATTLE_ENVIRONMENT_PLAIN;
     // Copy to bg1
     DecompressDataWithHeaderVram(gBattleEnvironmentInfo[terrain].background.entryTileset, (void *)BG_CHAR_ADDR(1));
     DecompressDataWithHeaderVram(gBattleEnvironmentInfo[terrain].background.entryTilemap, (void *)BG_SCREEN_ADDR(28));
@@ -650,8 +650,14 @@ static u8 GetBattleEnvironmentOverride(void)
 {
     u8 battleScene = GetCurrentMapBattleScene();
 
-    if (gBattleTypeFlags & (BATTLE_TYPE_FRONTIER | BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED_LINK | BATTLE_TYPE_EREADER_TRAINER))
-        return BATTLE_ENVIRONMENT_ARENA;
+    if (TestRunner_Battle_GetForcedEnvironment()
+     && gBattleEnvironmentInfo[gBattleEnvironment].background.tilemap
+     && gBattleEnvironmentInfo[gBattleEnvironment].background.tileset)
+    {
+        return gBattleEnvironment;
+    }
+    else if (gBattleTypeFlags & (BATTLE_TYPE_FRONTIER | BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED_LINK | BATTLE_TYPE_EREADER_TRAINER))
+        return BATTLE_ENVIRONMENT_FRONTIER;
     else if (gBattleTypeFlags & BATTLE_TYPE_LEGENDARY)
     {
         switch (GetMonData(&gEnemyParty[0], MON_DATA_SPECIES, NULL))
@@ -1031,30 +1037,15 @@ void DrawBattleEntryBackground(void)
         }
     }
     {
-        switch (GetMonData(&gEnemyParty[0], MON_DATA_SPECIES, NULL))
-        {
-        case SPECIES_GROUDON:
-            LoadBattleEnvironmentEntryGfx(BATTLE_ENVIRONMENT_CAVE);
-            break;
-        case SPECIES_KYOGRE:
-            LoadBattleEnvironmentEntryGfx(BATTLE_ENVIRONMENT_UNDERWATER);
-            break;
-        case SPECIES_RAYQUAZA:
-            LoadBattleEnvironmentEntryGfx(BATTLE_ENVIRONMENT_ARENA);
-            break;
-        default:
-            DecompressDataWithHeaderVram(gBattleEnvironmentInfo[gBattleEnvironment].background.entryTileset, (void *)(BG_CHAR_ADDR(1)));
-            DecompressDataWithHeaderVram(gBattleEnvironmentInfo[gBattleEnvironment].background.entryTilemap, (void *)(BG_SCREEN_ADDR(28)));
-            break;
-        }
+        LoadBattleEnvironmentEntryGfx(GetBattleEnvironmentOverride());
     }
     {
         if (gBattleTypeFlags & BATTLE_TYPE_TRAINER)
         {
             enum TrainerClassID trainerClass = GetTrainerClassFromId(TRAINER_BATTLE_PARAM.opponentA);
-            if (trainerClass == TRAINER_CLASS_CHAMPION)
+            if (trainerClass == TRAINER_CLASS_LEADER || trainerClass == TRAINER_CLASS_CHAMPION)
             {
-                LoadBattleEnvironmentEntryGfx(BATTLE_ENVIRONMENT_GWEN);
+                LoadBattleEnvironmentEntryGfx(GetBattleEnvironmentOverride());
                 return;
             }
         }

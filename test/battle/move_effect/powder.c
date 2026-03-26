@@ -237,29 +237,7 @@ DOUBLE_BATTLE_TEST("Powder still blocks the target's Fire type moves even if it 
     }
 }
 
-DOUBLE_BATTLE_TEST("Powder still blocks the target's Fire type moves even if it was given Cozy")
-{
-    GIVEN {
-        ASSUME(GetMoveEffect(MOVE_DOODLE) == EFFECT_DOODLE);
-        PLAYER(SPECIES_WOBBUFFET);
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_FORRETRESS) { Ability(ABILITY_COZY); }
-        OPPONENT(SPECIES_VIVILLON);
-    } WHEN {
-        TURN { MOVE(opponentRight, MOVE_POWDER, target: playerLeft); MOVE(playerRight, MOVE_DOODLE, target: opponentLeft); MOVE(playerLeft, MOVE_EMBER, target: opponentRight); }
-    } SCENE {
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_POWDER, opponentRight);
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_DOODLE, playerRight);
-        NONE_OF {
-            ANIMATION(ANIM_TYPE_MOVE, MOVE_EMBER, playerLeft);
-            HP_BAR(opponentLeft);
-        }
-    } THEN {
-        EXPECT_EQ(playerLeft->ability, ABILITY_COZY);
-    }
-}
-
-SINGLE_BATTLE_TEST("Powder prevents Protean from changing its user to Fire type")
+SINGLE_BATTLE_TEST("Powder prevents Protean/Libero from changing its user to Fire type")
 {
     GIVEN {
         PLAYER(SPECIES_GRENINJA) { Ability(ABILITY_PROTEAN); }

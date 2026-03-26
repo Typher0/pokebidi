@@ -261,8 +261,8 @@ static const u8 *const sModeStrings[NUM_TRAINER_HILL_MODES] =
 
 static const struct ObjectEventTemplate sTrainerObjectEventTemplate =
 {
-    .graphicsId = OBJ_EVENT_GFX_RIVAL_LUCAS_NORMAL,
-    .elevation = 3,
+    .graphicsId = OBJ_EVENT_GFX_RIVAL_BRENDAN_NORMAL,
+    .elevation = ELEVATION_DEFAULT,
     .movementType = MOVEMENT_TYPE_LOOK_AROUND,
     .movementRangeX = 1,
     .movementRangeY = 1,

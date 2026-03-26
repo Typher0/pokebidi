@@ -229,24 +229,18 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .formChangeTable = sMeganiumFormChangeTable,
     },
 
-#if P_MEGA_EVOLUTIONS
+#if P_GEN_9_MEGA_EVOLUTIONS
     [SPECIES_MEGANIUM_MEGA] =
     {
-        .baseHP        = 100,
-        .baseAttack    = 82,
+        .baseHP        = 80,
+        .baseAttack    = 92,
         .baseDefense   = 115,
         .baseSpeed     = 80,
         .baseSpAttack  = 143,
         .baseSpDefense = 115,
         .types = MON_TYPES(TYPE_GRASS, TYPE_FAIRY),
         .catchRate = 45,
-    #if P_UPDATED_EXP_YIELDS >= GEN_8
         .expYield = 263,
-    #elif P_UPDATED_EXP_YIELDS >= GEN_5
-        .expYield = 236,
-    #else
-        .expYield = 208,
-    #endif
         .evYield_Defense = 1,
         .evYield_SpDefense = 2,
         .genderRatio = PERCENT_FEMALE(12.5),
@@ -254,49 +248,46 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MONSTER, EGG_GROUP_GRASS),
-        .abilities = { ABILITY_FLOWER_VEIL, ABILITY_FLOWER_VEIL, ABILITY_FLOWER_VEIL },
+        .abilities = { ABILITY_OVERGROW, ABILITY_NONE, ABILITY_LEAF_GUARD },
         .bodyColor = BODY_COLOR_GREEN,
         .speciesName = _("Meganium"),
+    #if P_MODIFIED_MEGA_CRIES
+        .cryId = CRY_MEGANIUM_MEGA,
+    #else
         .cryId = CRY_MEGANIUM,
+    #endif // P_MODIFIED_MEGA_CRIES
         .natDexNum = NATIONAL_DEX_MEGANIUM,
         .categoryName = _("Herb"),
         .height = 24,
         .weight = 2010,
         .description = COMPOUND_STRING(
-            "This Pokémon can fire a tremendously powerful\n"
-            "Solar Beam from its four flowers.\n"
-            "Another name for this is Mega Sol Cannon.\n"
-            "It still has a pleasant aroma."),
-        .pokemonScale = 256,
-        .pokemonOffset = 0,
-        .trainerScale = 277,
-        .trainerOffset = 1,
-        .frontPic = gMonFrontPic_MeganiumMega,
-        .frontPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(64, 64) : MON_COORDS_SIZE(48, 64),
-        .frontPicYOffset = 0,
-        .frontAnimFrames = ANIM_FRAMES(
-            ANIMCMD_FRAME(1, 40),
-            ANIMCMD_FRAME(0, 5),
-        ),
-        .frontAnimId = P_GBA_STYLE_SPECIES_GFX ? ANIM_V_STRETCH : ANIM_GROW_VIBRATE,
-        .backPic = gMonBackPic_MeganiumMega,
-        .backPicSize = MON_COORDS_SIZE(56, 64),
-        .backPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 0 : 2,
-        .backAnimId = BACK_ANIM_V_SHAKE,
-        .palette = gMonPalette_MeganiumMega,
-        .shinyPalette = gMonShinyPalette_MeganiumMega,
+            "This Pokémon can fire a tremendously\n"
+            "powerful Solar Beam from its four\n"
+            "flowers. Another name for this is\n"
+            "Mega Sol Cannon."),
+        //.frontPic = gMonFrontPic_CircledQuestionMark,
+        //.frontPicSize = MON_COORDS_SIZE(40, 40),
+        //.frontPicYOffset = 12,
+        //.frontAnimFrames = sAnims_TwoFramePlaceHolder,
+        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        //.backPic = gMonBackPic_CircledQuestionMark,
+        //.backPicSize = MON_COORDS_SIZE(40, 40),
+        //.backPicYOffset = 12,
+        //.backAnimId = BACK_ANIM_NONE,
+        //.palette = gMonPalette_CircledQuestionMark,
+        //.shinyPalette = gMonShinyPalette_CircledQuestionMark,
         .iconSprite = gMonIcon_MeganiumMega,
         .iconPalIndex = 1,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
-        SHADOW(0, 13, SHADOW_SIZE_M)
         FOOTPRINT(Meganium)
+        //SHADOW(-1, 0, SHADOW_SIZE_M)
         .isMegaEvolution = TRUE,
         .levelUpLearnset = sMeganiumLevelUpLearnset,
         .teachableLearnset = sMeganiumTeachableLearnset,
         .formSpeciesIdTable = sMeganiumFormSpeciesIdTable,
         .formChangeTable = sMeganiumFormChangeTable,
     },
-#endif // P_MEGA_EVOLUTIONS
+#endif //P_GEN_9_MEGA_EVOLUTIONS
 #endif //P_FAMILY_CHIKORITA
 
 #if P_FAMILY_CYNDAQUIL
@@ -867,24 +858,18 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .formChangeTable = sFeraligatrFormChangeTable,
     },
 
-#if P_MEGA_EVOLUTIONS
+#if P_GEN_9_MEGA_EVOLUTIONS
     [SPECIES_FERALIGATR_MEGA] =
     {
         .baseHP        = 85,
         .baseAttack    = 160,
         .baseDefense   = 125,
-        .baseSpeed     = 83,
+        .baseSpeed     = 78,
         .baseSpAttack  = 89,
         .baseSpDefense = 93,
         .types = MON_TYPES(TYPE_WATER, TYPE_DRAGON),
         .catchRate = 45,
-    #if P_UPDATED_EXP_YIELDS >= GEN_8
         .expYield = 265,
-    #elif P_UPDATED_EXP_YIELDS >= GEN_5
-        .expYield = 239,
-    #else
-        .expYield = 210,
-    #endif
         .evYield_Attack = 2,
         .evYield_Defense = 1,
         .genderRatio = PERCENT_FEMALE(12.5),
@@ -892,51 +877,46 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MONSTER, EGG_GROUP_WATER_1),
-        .abilities = { ABILITY_STRONG_JAW, ABILITY_STRONG_JAW, ABILITY_STRONG_JAW },
+        .abilities = { ABILITY_TORRENT, ABILITY_NONE, ABILITY_SHEER_FORCE },
         .bodyColor = BODY_COLOR_BLUE,
         .speciesName = _("Feraligatr"),
+    #if P_MODIFIED_MEGA_CRIES
+        .cryId = CRY_FERALIGATR_MEGA,
+    #else
         .cryId = CRY_FERALIGATR,
+    #endif // P_MODIFIED_MEGA_CRIES
         .natDexNum = NATIONAL_DEX_FERALIGATR,
-        .categoryName = _("Big Jaw"),
+        .categoryName = _("Double Jaw"),
         .height = 23,
         .weight = 1088,
         .description = COMPOUND_STRING(
-            "With its arms and hoodlike fin, this Pokémon\n"
-            "forms a gigantic set of jaws with a bite\n"
-            "10 times as powerful as Mega Feraligatr's\n"
-            "actual jaws."),
-        .pokemonScale = 256,
-        .pokemonOffset = 0,
-        .trainerScale = 342,
-        .trainerOffset = 7,
+            "With its arms and hoodlike fin, this\n"
+            "Pokémon forms a gigantic set of jaws\n"
+            "with a bite 10 times as powerful\n"
+            "as Mega Feraligatr's actual jaws."),
         .frontPic = gMonFrontPic_FeraligatrMega,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
-        .frontPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 0 : 1,
-        .frontAnimFrames = ANIM_FRAMES(
-            ANIMCMD_FRAME(1, 10),
-            ANIMCMD_FRAME(0, 10),
-            ANIMCMD_FRAME(1, 25),
-            ANIMCMD_FRAME(0, 40),
-        ),
-        .frontAnimId = ANIM_H_SHAKE,
-        .frontAnimDelay = 5,
+        .frontPicYOffset = 0,
+        .frontAnimFrames = sAnims_TwoFramePlaceHolder,
+        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
         .backPic = gMonBackPic_FeraligatrMega,
-        .backPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(64, 64) : MON_COORDS_SIZE(56, 64),
-        .backPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 1 : 2,
-        .backAnimId = BACK_ANIM_V_SHAKE,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 4,
+        //.backAnimId = BACK_ANIM_NONE,
         .palette = gMonPalette_FeraligatrMega,
         .shinyPalette = gMonShinyPalette_FeraligatrMega,
         .iconSprite = gMonIcon_FeraligatrMega,
-        .iconPalIndex = P_GBA_STYLE_SPECIES_ICONS ? 2 : 0,
+        .iconPalIndex = 0,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
-        SHADOW(3, 11, SHADOW_SIZE_XL_BATTLE_ONLY)
         FOOTPRINT(Feraligatr)
+        SHADOW(2, 13, SHADOW_SIZE_L)
+        .isMegaEvolution = TRUE,
         .levelUpLearnset = sFeraligatrLevelUpLearnset,
         .teachableLearnset = sFeraligatrTeachableLearnset,
         .formSpeciesIdTable = sFeraligatrFormSpeciesIdTable,
         .formChangeTable = sFeraligatrFormChangeTable,
     },
-#endif // P_MEGA_EVOLUTIONS
+#endif //P_GEN_9_MEGA_EVOLUTIONS
 #endif //P_FAMILY_TOTODILE
 
 #if P_FAMILY_SENTRET

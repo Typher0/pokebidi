@@ -56,4 +56,4 @@ tools/compresSmol/compresSmolTilemap
 *.fastSmol
 *.smolTM
 __pycache__
-gTileset_Primary_North_Tiles_Pal3.png
+.map_version

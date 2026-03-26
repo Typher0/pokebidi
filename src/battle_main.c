@@ -519,22 +519,9 @@ static void CB2_InitBattleInternal(void)
         gBattleEnvironment = BattleSetup_GetEnvironmentId();
     }
     if (gBattleTypeFlags & BATTLE_TYPE_RECORDED)
-        gBattleEnvironment = BATTLE_ENVIRONMENT_INDOOR;
-
-    if (gBattleTypeFlags & BATTLE_TYPE_TRAINER && !(gBattleTypeFlags & (BATTLE_TYPE_FRONTIER
-                                                                        | BATTLE_TYPE_EREADER_TRAINER
-                                                                        | BATTLE_TYPE_TRAINER_HILL
-                                                                        | BATTLE_TYPE_RECORDED)))
-    {
-        switch (GetTrainerBattleType(TRAINER_BATTLE_PARAM.opponentA))
-        {
-        case TRAINER_BATTLE_TYPE_SINGLES:
-            break;
-        case TRAINER_BATTLE_TYPE_DOUBLES:
-            gBattleTypeFlags |= BATTLE_TYPE_DOUBLE;
-            break;
-        }
-    }
+        gBattleEnvironment = BATTLE_ENVIRONMENT_BUILDING;
+    if (TestRunner_Battle_GetForcedEnvironment())
+        gBattleEnvironment = TestRunner_Battle_GetForcedEnvironment() - 1;
 
     InitBattleBgsVideo();
     LoadBattleTextboxAndBackground();
@@ -4756,9 +4743,7 @@ u32 GetBattlerTotalSpeedStatArgs(u32 battler, u32 ability, enum ItemHoldEffect h
         speed = (speed * 150) / 100;
     else if (ability == ABILITY_SURGE_SURFER && gFieldStatuses & STATUS_FIELD_ELECTRIC_TERRAIN)
         speed *= 2;
-    else if (ability == ABILITY_MISTY_RIDER && gFieldStatuses & STATUS_FIELD_MISTY_TERRAIN)
-        speed *= 2;
-    else if (ability == ABILITY_SLOW_START && gDisableStructs[battler].slowStartTimer != 0)
+    else if (ability == ABILITY_SLOW_START && gBattleMons[battler].volatiles.slowStartTimer != 0)
         speed /= 2;
     else if (ability == ABILITY_PROTOSYNTHESIS && !(gBattleMons[battler].volatiles.transformed) && ((gBattleWeather & B_WEATHER_SUN && HasWeatherEffect()) || gDisableStructs[battler].boosterEnergyActivated))
         speed = (GetHighestStatId(battler) == STAT_SPEED) ? (speed * 150) / 100 : speed;

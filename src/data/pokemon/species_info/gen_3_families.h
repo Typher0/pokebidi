@@ -4789,9 +4789,13 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .baseAttack    = 100,
         .baseDefense   = 100,
         .baseSpeed     = 50,
-        .baseSpAttack  = 75,
-        .baseSpDefense = 75,
-        .types = MAWILE_TYPES,
+        .baseSpAttack  = 55,
+        .baseSpDefense = 55,
+    #if P_UPDATED_TYPES >= GEN_6
+        .types = MON_TYPES(TYPE_STEEL, TYPE_FAIRY),
+    #else
+        .types = MON_TYPES(TYPE_STEEL),
+    #endif
         .catchRate = 45,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 133 : 98,
         .evYield_Attack = 1,
@@ -4866,9 +4870,10 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .baseAttack    = 105,
         .baseDefense   = 125,
         .baseSpeed     = 70,
-        .baseSpAttack  = 100,
-        .baseSpDefense = 100,
-        .types = MAWILE_TYPES,
+        .baseSpeed     = 50,
+        .baseSpAttack  = 55,
+        .baseSpDefense = 95,
+        .types = MON_TYPES(TYPE_STEEL, TYPE_FAIRY),
         .catchRate = 45,
         .expYield = 168,
         .evYield_Attack = 1,
@@ -10907,7 +10912,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .formChangeTable = sFroslassFormChangeTable,
     },
     
-#if P_MEGA_EVOLUTIONS
+#if P_GEN_9_MEGA_EVOLUTIONS
     [SPECIES_FROSLASS_MEGA] =
     {
         .baseHP        = 70,
@@ -10925,7 +10930,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FAIRY, EGG_GROUP_MINERAL),
-        .abilities = { ABILITY_SNOW_WARNING, ABILITY_SNOW_WARNING, ABILITY_SNOW_WARNING },
+        .abilities = { ABILITY_SNOW_CLOAK, ABILITY_NONE, ABILITY_CURSED_BODY },
         .bodyColor = BODY_COLOR_WHITE,
         .speciesName = _("Froslass"),
     #if P_MODIFIED_MEGA_CRIES
@@ -10942,19 +10947,20 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
             "air imbued with ghost energy to\n"
             "freeze even insubstantial things,\n"
             "such as flames or the wind."),
-        .frontPic = gMonFrontPic_FroslassMega,
-        .frontPicSize = MON_COORDS_SIZE(64, 64),
-        .frontPicYOffset = 12,
-        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
-        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        .backPic = gMonBackPic_FroslassMega,
-        .backPicSize = MON_COORDS_SIZE(64, 64),
-        .backPicYOffset = 12,
-        .backAnimId = BACK_ANIM_NONE,
-        .palette = gMonPalette_FroslassMega,
-        .shinyPalette = gMonShinyPalette_FroslassMega,
+        //.frontPic = gMonFrontPic_CircledQuestionMark,
+        //.frontPicSize = MON_COORDS_SIZE(40, 40),
+        //.frontPicYOffset = 12,
+        //.frontAnimFrames = sAnims_TwoFramePlaceHolder,
+        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        //.backPic = gMonBackPic_CircledQuestionMark,
+        //.backPicSize = MON_COORDS_SIZE(40, 40),
+        //.backPicYOffset = 12,
+        //.backAnimId = BACK_ANIM_NONE,
+        //.palette = gMonPalette_CircledQuestionMark,
+        //.shinyPalette = gMonShinyPalette_CircledQuestionMark,
         .iconSprite = gMonIcon_FroslassMega,
         .iconPalIndex = 0,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         FOOTPRINT(Froslass)
         //SHADOW(-1, 0, SHADOW_SIZE_M)
         .isMegaEvolution = TRUE,
@@ -10963,7 +10969,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .formSpeciesIdTable = sFroslassFormSpeciesIdTable,
         .formChangeTable = sFroslassFormChangeTable,
     },
-#endif // P_MEGA_EVOLUTIONS
+#endif //P_GEN_9_MEGA_EVOLUTIONS
 #endif //P_GEN_4_CROSS_EVOS
 #endif //P_FAMILY_SNORUNT
 

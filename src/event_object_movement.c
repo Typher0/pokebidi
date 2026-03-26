@@ -524,18 +524,23 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_Lugia,                 OBJ_EVENT_PAL_TAG_LUGIA},
     {gObjectEventPal_RubySapphireBrendan,   OBJ_EVENT_PAL_TAG_RS_BRENDAN},
     {gObjectEventPal_RubySapphireMay,       OBJ_EVENT_PAL_TAG_RS_MAY},
-    {gObjectEventPal_Dawn,                  OBJ_EVENT_PAL_TAG_DAWN},
-    {gObjectEventPal_Lucas,                 OBJ_EVENT_PAL_TAG_LUCAS},
-    {gObjectEventPal_DawnLucasUnderwater,   OBJ_EVENT_PAL_TAG_DAWN_LUCAS_UNDERWATER},
-    {gObjectEventPal_Adhira,                OBJ_EVENT_PAL_TAG_ADHIRA},
-    {gObjectEventPal_Ahab,                  OBJ_EVENT_PAL_TAG_AHAB},
-    {gObjectEventPal_Carly,                 OBJ_EVENT_PAL_TAG_CARLY},
-    {gObjectEventPal_Israel,                OBJ_EVENT_PAL_TAG_ISRAEL},
-    {gObjectEventPal_Jelissa,               OBJ_EVENT_PAL_TAG_JELISSA},
-    {gObjectEventPal_Josh,                  OBJ_EVENT_PAL_TAG_JOSH},
-    {gObjectEventPal_Otnar,                 OBJ_EVENT_PAL_TAG_OTNAR},
-    {gObjectEventPal_Peter,                 OBJ_EVENT_PAL_TAG_PETER},
-    {gObjectEventPal_Toxianna,              OBJ_EVENT_PAL_TAG_TOXIANNA},
+#if IS_FRLG
+    {gObjectEventPal_PlayerFrlg,            OBJ_EVENT_PAL_TAG_PLAYER_RED},
+    {gObjectEventPal_PlayerReflectionFrlg,  OBJ_EVENT_PAL_TAG_PLAYER_RED_REFLECTION},
+    {gObjectEventPal_PlayerFrlg,            OBJ_EVENT_PAL_TAG_PLAYER_GREEN},
+    {gObjectEventPal_PlayerReflectionFrlg,  OBJ_EVENT_PAL_TAG_PLAYER_GREEN_REFLECTION},
+    {gObjectEventPal_NpcBlue,               OBJ_EVENT_PAL_TAG_NPC_BLUE},
+    {gObjectEventPal_NpcPink,               OBJ_EVENT_PAL_TAG_NPC_PINK},
+    {gObjectEventPal_NpcGreen,              OBJ_EVENT_PAL_TAG_NPC_GREEN},
+    {gObjectEventPal_NpcWhite,              OBJ_EVENT_PAL_TAG_NPC_WHITE},
+    {gObjectEventPal_NpcBlueReflection,     OBJ_EVENT_PAL_TAG_NPC_BLUE_REFLECTION},
+    {gObjectEventPal_NpcPinkReflection,     OBJ_EVENT_PAL_TAG_NPC_PINK_REFLECTION},
+    {gObjectEventPal_NpcGreenReflection,    OBJ_EVENT_PAL_TAG_NPC_GREEN_REFLECTION},
+    {gObjectEventPal_NpcWhiteReflection,    OBJ_EVENT_PAL_TAG_NPC_WHITE_REFLECTION},
+    {gObjectEventPal_Meteorite,             OBJ_EVENT_PAL_TAG_METEORITE},
+    {gObjectEventPal_SSAnne,                OBJ_EVENT_PAL_TAG_SS_ANNE},
+    {gObjectEventPal_Seagallop,             OBJ_EVENT_PAL_TAG_SEAGALLOP},
+#endif // IS_FRLG
 #if OW_FOLLOWERS_POKEBALLS
     {gObjectEventPal_MasterBall,            OBJ_EVENT_PAL_TAG_BALL_MASTER},
     {gObjectEventPal_UltraBall,             OBJ_EVENT_PAL_TAG_BALL_ULTRA},
@@ -3192,10 +3197,10 @@ u8 LoadPlayerObjectEventPalette(u8 gender)
     {
         default:
         case MALE:
-            paletteTag = OBJ_EVENT_PAL_TAG_LUCAS;
+            paletteTag = OBJ_EVENT_PAL_TAG_BRENDAN;
             break;
         case FEMALE:
-            paletteTag = OBJ_EVENT_PAL_TAG_DAWN;
+            paletteTag = OBJ_EVENT_PAL_TAG_MAY;
             break;
     }
     return LoadObjectEventPalette(paletteTag);

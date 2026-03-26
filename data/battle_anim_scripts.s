@@ -31500,64 +31500,8 @@ gBattleAnimMove_SkyUppercut::
 	end
 
 gBattleAnimMove_SecretPower::
-	createvisualtask AnimTask_GetFieldTerrain, 5
-	jumpargeq 0, STATUS_FIELD_MISTY_TERRAIN,    gBattleAnimMove_FairyWind
-	jumpargeq 0, STATUS_FIELD_GRASSY_TERRAIN,   gBattleAnimMove_NeedleArm
-	jumpargeq 0, STATUS_FIELD_ELECTRIC_TERRAIN, gBattleAnimMove_ThunderShock
-	jumpargeq 0, STATUS_FIELD_PSYCHIC_TERRAIN,  gBattleAnimMove_Confusion
-	createvisualtask AnimTask_GetBattleEnvironment, 5
-	jumpargeq 0, BATTLE_ENVIRONMENT_ARENA,          gBattleAnimMove_NeedleArm
-	jumpargeq 0, BATTLE_ENVIRONMENT_AUTUMN_FOREST,  gBattleAnimMove_MagicalLeaf
-    jumpargeq 0, BATTLE_ENVIRONMENT_AUTUMN_FOREST_E,gBattleAnimMove_MagicalLeaf
-    jumpargeq 0, BATTLE_ENVIRONMENT_AUTUMN_FOREST_N,gBattleAnimMove_MagicalLeaf
-	jumpargeq 0, BATTLE_ENVIRONMENT_BEACH,          gBattleAnimMove_MudShot
-    jumpargeq 0, BATTLE_ENVIRONMENT_BEACH_E,        gBattleAnimMove_MudShot
-    jumpargeq 0, BATTLE_ENVIRONMENT_BEACH_N,        gBattleAnimMove_MudShot
-	jumpargeq 0, BATTLE_ENVIRONMENT_BRIDGE,         gBattleAnimMove_Waterfall
-    jumpargeq 0, BATTLE_ENVIRONMENT_BRIDGE_E,       gBattleAnimMove_Waterfall
-    jumpargeq 0, BATTLE_ENVIRONMENT_BRIDGE_N,       gBattleAnimMove_Waterfall
-	jumpargeq 0, BATTLE_ENVIRONMENT_CAVE,           gBattleAnimMove_Surf
-	jumpargeq 0, BATTLE_ENVIRONMENT_CAVE_DARK,      gBattleAnimMove_BubbleBeam
-	jumpargeq 0, BATTLE_ENVIRONMENT_CAVE_MAGMA,     gBattleAnimMove_RockThrow
-	jumpargeq 0, BATTLE_ENVIRONMENT_CAVE_SNOW,      gBattleAnimMove_Bite
-	jumpargeq 0, BATTLE_ENVIRONMENT_CITY,           gBattleAnimMove_Strength
-    jumpargeq 0, BATTLE_ENVIRONMENT_CITY_E,         gBattleAnimMove_Strength
-    jumpargeq 0, BATTLE_ENVIRONMENT_CITY_N,         gBattleAnimMove_Strength
-	jumpargeq 0, BATTLE_ENVIRONMENT_CRAG,           gBattleAnimMove_Gust
-    jumpargeq 0, BATTLE_ENVIRONMENT_CRAG_E,         gBattleAnimMove_Gust
-    jumpargeq 0, BATTLE_ENVIRONMENT_CRAG_N,         gBattleAnimMove_Gust
-	jumpargeq 0, BATTLE_ENVIRONMENT_DESERT,         gBattleAnimMove_Gust
-    jumpargeq 0, BATTLE_ENVIRONMENT_DESERT_E,       gBattleAnimMove_Gust
-    jumpargeq 0, BATTLE_ENVIRONMENT_DESERT_N,       gBattleAnimMove_Gust
-	jumpargeq 0, BATTLE_ENVIRONMENT_GYM,            gBattleAnimMove_ShadowSneak
-	jumpargeq 0, BATTLE_ENVIRONMENT_INDOOR,         gBattleAnimMove_MudShot
-	jumpargeq 0, BATTLE_ENVIRONMENT_LAB,            gBattleAnimMove_MudShot
-	jumpargeq 0, BATTLE_ENVIRONMENT_MOUNTAIN_SNOW,  gBattleAnimMove_IceShard
-    jumpargeq 0, BATTLE_ENVIRONMENT_MOUNTAIN_SNOW_E,gBattleAnimMove_IceShard
-    jumpargeq 0, BATTLE_ENVIRONMENT_MOUNTAIN_SNOW_N,gBattleAnimMove_IceShard
-	jumpargeq 0, BATTLE_ENVIRONMENT_ROCKY,          gBattleAnimMove_Incinerate
-    jumpargeq 0, BATTLE_ENVIRONMENT_ROCKY_E,        gBattleAnimMove_Incinerate
-    jumpargeq 0, BATTLE_ENVIRONMENT_ROCKY_N,        gBattleAnimMove_Incinerate
-	jumpargeq 0, BATTLE_ENVIRONMENT_ROUTE,          gBattleAnimMove_Pound
-    jumpargeq 0, BATTLE_ENVIRONMENT_ROUTE_E,        gBattleAnimMove_Pound
-    jumpargeq 0, BATTLE_ENVIRONMENT_ROUTE_N,        gBattleAnimMove_Pound
-	jumpargeq 0, BATTLE_ENVIRONMENT_SAFARI,         gBattleAnimMove_Swift
-    jumpargeq 0, BATTLE_ENVIRONMENT_SAFARI_E,       gBattleAnimMove_Swift
-    jumpargeq 0, BATTLE_ENVIRONMENT_SAFARI_N,       gBattleAnimMove_Swift
-	jumpargeq 0, BATTLE_ENVIRONMENT_SEA,            gBattleAnimMove_Psywave
-    jumpargeq 0, BATTLE_ENVIRONMENT_SEA_E,          gBattleAnimMove_Psywave
-    jumpargeq 0, BATTLE_ENVIRONMENT_SEA_N,          gBattleAnimMove_Psywave
-	jumpargeq 0, BATTLE_ENVIRONMENT_SNOW,           gBattleAnimMove_IceShard
-    jumpargeq 0, BATTLE_ENVIRONMENT_SNOW_E,         gBattleAnimMove_IceShard
-    jumpargeq 0, BATTLE_ENVIRONMENT_SNOW_N,         gBattleAnimMove_IceShard
-	jumpargeq 0, BATTLE_ENVIRONMENT_UNDERWATER,     gBattleAnimMove_Avalanche
-    jumpargeq 0, BATTLE_ENVIRONMENT_UNDERWATER_E,   gBattleAnimMove_Avalanche
-    jumpargeq 0, BATTLE_ENVIRONMENT_UNDERWATER_N,   gBattleAnimMove_Avalanche
-	jumpargeq 0, BATTLE_ENVIRONMENT_MOOSE,          gBattleAnimMove_Avalanche
-	jumpargeq 0, BATTLE_ENVIRONMENT_THOMAS,         gBattleAnimMove_BodySlam
-	jumpargeq 0, BATTLE_ENVIRONMENT_TINKER,         gBattleAnimMove_Avalanche
-	jumpargeq 0, BATTLE_ENVIRONMENT_TOBIAS,         gBattleAnimMove_Strength
-    jumpargeq 0, BATTLE_ENVIRONMENT_GWEN,           gBattleAnimMove_Strength
+	    @ No actual animation, uses the animation of a move from src/data/battle_environment.h instead
+        
 gBattleAnimMove_Twister::
 	loadspritegfx ANIM_TAG_LEAF
 	loadspritegfx ANIM_TAG_IMPACT

@@ -4712,11 +4712,9 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
             break;
         case ABILITY_EFFECT_SPORE:
         {
-            u32 abilityAtk = GetBattlerAbility(gBattlerAttacker);
-            if ((GetGenConfig(GEN_CONFIG_POWDER_GRASS) < GEN_6 || !IS_BATTLER_OF_TYPE(gBattlerAttacker, TYPE_GRASS))
-             && abilityAtk != ABILITY_OVERCOAT
-             && abilityAtk != ABILITY_COZY
-             && GetBattlerHoldEffect(gBattlerAttacker, TRUE) != HOLD_EFFECT_SAFETY_GOGGLES)
+            enum Ability abilityAtk = GetBattlerAbility(gBattlerAttacker);
+            enum HoldEffect holdEffectAtk = GetBattlerHoldEffect(gBattlerAttacker);
+            if (IsAffectedByPowderMove(gBattlerAttacker, abilityAtk, holdEffectAtk))
             {
                 u32 poison, paralysis, sleep;
 
@@ -7711,9 +7709,7 @@ static bool32 IsBattlerGroundedInverseCheck(u32 battler, u32 ability, enum Inver
         return FALSE;
     if (ability == ABILITY_LEVITATE)
         return FALSE;
-    if ((gAiLogicData->aiCalcInProgress ? gAiLogicData->abilities[battler] : GetBattlerAbility(battler)) == ABILITY_ASTEROID_BELT)
-        return FALSE;
-    if (IS_BATTLER_OF_TYPE(battler, TYPE_FLYING) && (!(checkInverse == INVERSE_BATTLE) || !FlagGet(B_FLAG_INVERSE_BATTLE)))
+    if (IS_BATTLER_OF_TYPE(battler, TYPE_FLYING) && (checkInverse != INVERSE_BATTLE || !FlagGet(B_FLAG_INVERSE_BATTLE)))
         return FALSE;
     return TRUE;
 }

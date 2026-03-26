@@ -964,21 +964,28 @@ static void PrintHpOnHealthbox(u32 spriteId, s16 currHp, s16 maxHp, u32 bgColor,
     // 6 chars can fit on the right healthbox, the rest goes to the left one
     txtPtr = ConvertIntToDecimalStringN(text, currHp, STR_CONV_MODE_RIGHT_ALIGN, 4);
     *txtPtr++ = CHAR_SLASH;
-    txtPtr = ConvertIntToDecimalStringN(txtPtr, maxHp, STR_CONV_MODE_LEFT_ALIGN, 4);
-    // Print last 6 chars on the right window
-    windowTileData = AddTextPrinterAndCreateWindowOnHealthbox(txtPtr - 6, 0, 5, 0, &windowId);
-    HpTextIntoHealthboxObject(objVram + rightTile, windowTileData, 4);
-    RemoveWindowOnHealthbox(windowId);
-    // Print the rest of the chars on the left window
-    txtPtr[-6] = EOS;
-    // if max hp is 3 digits print on block closer to the right window, if 4 digits print further from the right window
-    if (maxHp >= 1000)
-        x = 9, tilesCount = 3;
+    txtPtr = ConvertIntToDecimalStringN(txtPtr, maxHp, STR_CONV_MODE_LEFT_ALIGN, HP_MAX_DIGITS);
+
+    u32 spriteId2 = gSprites[spriteId].oam.affineParam;
+
+    //  Don't assume that healthbox sprites don't have data in the fields used for sprite printing
+    //  and set up temporary values with what's needed
+    s16 savedValue1 = gSprites[spriteId].data[1];
+    s16 savedValue2 = gSprites[spriteId2].data[1];
+    gSprites[spriteId].data[1] = spriteId2;
+    gSprites[spriteId2].data[1] = SPRITE_NONE;
+
+    //  Clear out old text first
+    FillSpriteRectColor(spriteId, 40, yOffset + 8, 56, 8, bgColor);
+
+    width = GetStringWidth(HP_FONT, text, -1) + GetFontAttribute(HP_FONT, FONTATTR_LETTER_SPACING);
+    if (width < 32)
+        AddSpriteTextPrinterParameterized6(spriteId2, HP_FONT, 32 - width, yOffset + 5, 0, 0, sHealthBoxTextColor, 0, text);
     else
-        x = 6, tilesCount = 2, leftTile += 0x20;
-    windowTileData = AddTextPrinterAndCreateWindowOnHealthbox(text, x, 5, 0, &windowId);
-    HpTextIntoHealthboxObject(objVram + leftTile, windowTileData, tilesCount);
-    RemoveWindowOnHealthbox(windowId);
+        AddSpriteTextPrinterParameterized6(spriteId, HP_FONT, 64 - (width - 32), yOffset + 5, 0, 0, sHealthBoxTextColor, 0, text);
+
+    gSprites[spriteId].data[1] = savedValue1;
+    gSprites[spriteId2].data[1] = savedValue2;
 }
 
 // Note: this is only possible to trigger via debug, it was an unused GF function.
@@ -2344,40 +2351,7 @@ u8 GetHPBarLevel(s16 hp, s16 maxhp)
 
     return result;
 }
-
-static u8 *AddTextPrinterAndCreateWindowOnHealthboxWithFont(const u8 *str, u32 x, u32 y, u32 bgColor, u32 *windowId, u32 fontId)
-{
-    u16 winId;
-    u8 color[3];
-    struct WindowTemplate winTemplate = sHealthboxWindowTemplate;
-
-    winId = AddWindow(&winTemplate);
-    FillWindowPixelBuffer(winId, PIXEL_FILL(0));
-
-    color[0] = 0;
-    color[1] = 2;
-    color[2] = 1;
-
-    AddTextPrinterParameterized4(winId, fontId, x, y, 0, 0, color, TEXT_SKIP_DRAW, str);
-
-    *windowId = winId;
-    return (u8 *)(GetWindowAttribute(winId, WINDOW_TILE_DATA));
-}
-
-static u8 *AddTextPrinterAndCreateWindowOnHealthbox(const u8 *str, u32 x, u32 y, u32 bgColor, u32 *windowId)
-{
-    return AddTextPrinterAndCreateWindowOnHealthboxWithFont(str, x, y, 0, windowId, FONT_SMALL);
-}
-
-static u8 *AddTextPrinterAndCreateWindowOnHealthboxToFit(const u8 *str, u32 x, u32 y, u32 bgColor, u32 *windowId, u32 width)
-{
-    u32 fontId = GetFontIdToFit(str, FONT_SMALL, 0, width);
-    return AddTextPrinterAndCreateWindowOnHealthboxWithFont(str, x, y, 0, windowId, fontId);
-}
-
-static void RemoveWindowOnHealthbox(u32 windowId)
-{
-    RemoveWindow(windowId);
+return HP_BAR_EMPTY;
 }
 
 static void FillHealthboxObject(void *dest, u32 valMult, u32 numTiles)
