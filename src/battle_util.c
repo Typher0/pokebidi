@@ -5062,20 +5062,54 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                 effect++;
             }
             break;
-        case ABILITY_SAPERA:
-            if (!(gBattleStruct->moveResultFlags[gBattlerTarget] & MOVE_RESULT_NO_EFFECT)
-             && (IsSoundMove(move))
-             && IsBattlerAlive(gBattlerTarget)
-             && !gProtectStructs[gBattlerAttacker].confusionSelfDmg
-             && CanBeConfused(gBattlerTarget)
-             && RandomPercentage(RNG_SAPERA, 30))
+        default:
+            break;
+        }
+        break;
+    case ABILITYEFFECT_FORM_CHANGE_ON_HIT:
+        speciesForm = gBattleMons[gBattlerTarget].species;
+
+        if (gBattleStruct->unableToUseMove
+         || !IsBattlerTurnDamaged(gBattlerTarget, EXCLUDING_SUBSTITUTES)
+         || !TryBattleFormChange(gBattlerTarget, FORM_CHANGE_BATTLE_HIT_BY_MOVE_CATEGORY, ability))
+            break;
+
+        gBattleScripting.abilityPopupOverwrite = ability;
+        gBattleScripting.battler = gBattlerAbility = battler;
+        effect++;
+
+        switch (ability)
+        {
+        case ABILITY_GULP_MISSILE:
+            if (!IsBattlerAlive(gBattlerAttacker))
+                break;
+
+            if (!IsAbilityAndRecord(gBattlerAttacker, GetBattlerAbility(gBattlerAttacker), ABILITY_MAGIC_GUARD))
+                SetPassiveDamageAmount(gBattlerAttacker, GetNonDynamaxMaxHP(gBattlerAttacker) / 4);
+
+            switch (speciesForm)
             {
-                gBattleScripting.moveEffect = MOVE_EFFECT_CONFUSION;
-                PREPARE_ABILITY_BUFFER(gBattleTextBuff1, gLastUsedAbility);
-                BattleScriptPushCursor();
-                gBattlescriptCurrInstr = BattleScript_AbilityStatusEffect;
-                effect++;
+            case SPECIES_CRAMORANT_GORGING:
+                BattleScriptCall(BattleScript_GulpMissileGorging);
+                break;
+            case SPECIES_CRAMORANT_GULPING:
+                BattleScriptCall(BattleScript_GulpMissileGulping);
+                break;
+            default:
+                BattleScriptCall(BattleScript_BattlerFormChange); // Fallback
+                break;
             }
+            break;
+        case ABILITY_DISGUISE:
+            if (GetConfig(B_DISGUISE_HP_LOSS) >= GEN_8 && ability == ABILITY_DISGUISE)
+                SetPassiveDamageAmount(gBattlerTarget, GetNonDynamaxMaxHP(gBattlerTarget) / 8);
+            BattleScriptCall(BattleScript_BattlerFormChangeDisguise);
+            break;
+        case ABILITY_ICE_FACE:
+            BattleScriptCall(BattleScript_IceFaceNullsDamage);
+            break;
+        default:
+            BattleScriptCall(BattleScript_BattlerFormChange);
             break;
         }
         break;
@@ -7629,9 +7663,7 @@ bool32 IsBattlerProtected(u32 battlerAtk, u32 battlerDef, u32 move)
         isProtected = TRUE;
     else if (gProtectStructs[battlerDef].protected == PROTECT_BURNING_BULWARK)
         isProtected = TRUE;
-    else if (gProtectStructs[battlerDef].protected == PROTECT_FIELD_OF_REEDS)
-        isProtected = TRUE;
-    else if (gProtectStructs[battlerDef].protected == PROTECT_OBSTRUCT && !IsBattleMoveStatus(move))
+    else if (gProtectStructs[ctx->battlerDef].protected == PROTECT_OBSTRUCT && !IsBattleMoveStatus(ctx->move))
         isProtected = TRUE;
     else if (gProtectStructs[battlerDef].protected == PROTECT_SILK_TRAP && !IsBattleMoveStatus(move))
         isProtected = TRUE;
