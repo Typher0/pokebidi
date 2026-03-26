@@ -700,20 +700,20 @@
       "height": 1
     },
     {
-        "id": "MAPSEC_VIRIDIAN_CITY",
-        "name": "VIRIDIAN CITY",
-        "x": 4,
-        "y": 8,
-        "width": 1,
-        "height": 1
+      "id": "MAPSEC_VIRIDIAN_CITY",
+      "name": "VIRIDIAN CITY",
+      "x": 4,
+      "y": 8,
+      "width": 1,
+      "height": 1
     },
     {
-        "id": "MAPSEC_PEWTER_CITY",
-        "name": "PEWTER CITY",
-        "x": 4,
-        "y": 4,
-        "width": 1,
-        "height": 1
+      "id": "MAPSEC_PEWTER_CITY",
+      "name": "PEWTER CITY",
+      "x": 4,
+      "y": 4,
+      "width": 1,
+      "height": 1
     },
     {
       "id": "MAPSEC_CERULEAN_CITY",
@@ -880,15 +880,19 @@
     {
       "id": "MAPSEC_UNDERGROUND_PATH",
       "name": "UNDERGROUND PATH",
-      "name_clone": true,
-      "x": 12,
-      "y": 6,
+      "x": 14,
+      "y": 7,
       "width": 1,
       "height": 1
     },
     {
       "id": "MAPSEC_UNDERGROUND_PATH_2",
-      "name": "UNDERGROUND PATH"
+      "name": "UNDERGROUND PATH",
+      "name_clone": true,
+      "x": 12,
+      "y": 6,
+      "width": 1,
+      "height": 1
     },
     {
       "id": "MAPSEC_DIGLETTS_CAVE",
@@ -1045,11 +1049,10 @@
     {
       "id": "MAPSEC_TRAINER_TOWER",
       "name": "TRAINER TOWER",
-      "name_clone": true,
       "x": 5,
       "y": 6,
       "width": 1,
-      "height": 1
+      "height": 2
     },
     {
       "id": "MAPSEC_CANYON_ENTRANCE",
@@ -1097,7 +1100,12 @@
     },
     {
       "id": "MAPSEC_TRAINER_TOWER_2",
-      "name": "TRAINER TOWER"
+      "name": "TRAINER TOWER",
+      "name_clone": true,
+      "x": 5,
+      "y": 6,
+      "width": 1,
+      "height": 1
     },
     {
       "id": "MAPSEC_DOTTED_HOLE",
