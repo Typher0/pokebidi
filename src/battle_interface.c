@@ -2349,9 +2349,14 @@ u8 GetHPBarLevel(s16 hp, s16 maxhp)
             result = HP_BAR_EMPTY;
     }
 
-    return result;
-}
-return HP_BAR_EMPTY;
+        if (currValue > (maxValue * 50 / 100)) // more than 50% hp
+        return HP_BAR_GREEN;
+    else if (currValue > (maxValue * 20 / 100)) // more than 20% hp
+        return HP_BAR_YELLOW;
+    else if (currValue > 0)
+        return HP_BAR_RED; // 20% or less
+
+    return HP_BAR_EMPTY;
 }
 
 static void FillHealthboxObject(void *dest, u32 valMult, u32 numTiles)
