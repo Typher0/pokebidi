@@ -474,12 +474,16 @@ const u8 gTrainerBackPic_RubySapphireBrendan[] = INCBIN_U8("graphics/trainers/ba
 const u8 gTrainerBackPic_RubySapphireMay[] = INCBIN_U8("graphics/trainers/back_pics/may_rs.4bpp");
 const u8 gTrainerBackPic_Wally[] = INCBIN_U8("graphics/trainers/back_pics/wally.4bpp");
 const u8 gTrainerBackPic_Steven[] = INCBIN_U8("graphics/trainers/back_pics/steven.4bpp");
+const u8 gTrainerBackPic_Pokedude[] = INCBIN_U8("graphics/trainers/back_pics/pokedude.4bpp");
+const u8 gTrainerBackPic_OldMan[] = INCBIN_U8("graphics/trainers/back_pics/old_man.4bpp");
 
 const u16 gTrainerBackPicPalette_Red[] = INCBIN_U16("graphics/trainers/back_pics/red.gbapal");
 const u16 gTrainerBackPicPalette_Leaf[] = INCBIN_U16("graphics/trainers/back_pics/leaf.gbapal");
+const u16 gTrainerBackPicPalette_Pokedude[] = INCBIN_U16("graphics/trainers/back_pics/pokedude.gbapal");
+const u16 gTrainerBackPicPalette_OldMan[] = INCBIN_U16("graphics/trainers/back_pics/old_man.gbapal");
 
 // The first two parameters invoke a front pic and palette by
-// calling a "TRAINER_PIC" constant (e.g. TRAINER_PIC_HIKER), and
+// calling a "TRAINER_PIC" constant (e.g. TRAINER_PIC_FRONT_HIKER), and
 // gTrainerFrontPic/gTrainerPalette pointers, (e.g "gTrainerFrontPic_Hiker" and "gTrainerPalette_Hiker").
 // The last three parameters control the X and Y coordinates and rotation of the mugshot on the screen.
 // They default to 0, 0, and 0x200 which are default values used by the majority of the game's trainer sprites.
@@ -671,6 +675,14 @@ static const union AnimCmd sAnimCmd_Kanto[] =
     ANIMCMD_END,
 };
 
+static const union AnimCmd sAnimCmd_OldManPokedude[] = {
+    ANIMCMD_FRAME(1, 24),
+    ANIMCMD_FRAME(2, 9),
+    ANIMCMD_FRAME(3, 24),
+    ANIMCMD_FRAME(0, 9),
+    ANIMCMD_END
+};
+
 static const union AnimCmd sAnimCmd_Point_HGSS[] =
 {
     ANIMCMD_FRAME(3, 9),
@@ -705,6 +717,12 @@ static const union AnimCmd *const sBackAnims_Kanto[] =
     sAnimCmd_Point_HGSS_Red_Leaf,
 };
 
+const union AnimCmd *const sBackAnims_OldManPokedude[] = {
+    sAnim_GeneralFrame0,
+    sAnimCmd_OldManPokedude,
+    sAnim_GeneralFrame0,
+};
+
 #define TRAINER_BACK_SPRITE(trainerPic, yOffset, sprite, pal, anim)                          \
     [trainerPic] =                                                                           \
     {                                                                                        \
@@ -716,12 +734,15 @@ static const union AnimCmd *const sBackAnims_Kanto[] =
 
 const struct TrainerBacksprite gTrainerBacksprites[] =
 {
-    TRAINER_BACK_SPRITE(TRAINER_BACK_PIC_BRENDAN, 4, gTrainerBackPic_Brendan, gTrainerPalette_Brendan, sBackAnims_Hoenn),
-    TRAINER_BACK_SPRITE(TRAINER_BACK_PIC_MAY, 4, gTrainerBackPic_May, gTrainerPalette_May, sBackAnims_Hoenn),
-    TRAINER_BACK_SPRITE(TRAINER_BACK_PIC_RED, 5, gTrainerBackPic_Red, gTrainerBackPicPalette_Red, sBackAnims_Kanto),
-    TRAINER_BACK_SPRITE(TRAINER_BACK_PIC_LEAF, 5, gTrainerBackPic_Leaf, gTrainerBackPicPalette_Leaf, sBackAnims_Kanto),
-    TRAINER_BACK_SPRITE(TRAINER_BACK_PIC_RUBY_SAPPHIRE_BRENDAN, 4, gTrainerBackPic_RubySapphireBrendan, gTrainerPalette_RubySapphireBrendan, sBackAnims_Hoenn),
-    TRAINER_BACK_SPRITE(TRAINER_BACK_PIC_RUBY_SAPPHIRE_MAY, 4, gTrainerBackPic_RubySapphireMay, gTrainerPalette_RubySapphireMay, sBackAnims_Hoenn),
-    TRAINER_BACK_SPRITE(TRAINER_BACK_PIC_WALLY, 4, gTrainerBackPic_Wally, gTrainerPalette_Wally, sBackAnims_Hoenn),
-    TRAINER_BACK_SPRITE(TRAINER_BACK_PIC_STEVEN, 4, gTrainerBackPic_Steven, gTrainerPalette_Steven, sBackAnims_Hoenn),
+    TRAINER_BACK_SPRITE(TRAINER_PIC_BACK_BRENDAN, 4, gTrainerBackPic_Brendan, gTrainerPalette_Brendan, sBackAnims_Hoenn),
+    TRAINER_BACK_SPRITE(TRAINER_PIC_BACK_MAY, 4, gTrainerBackPic_May, gTrainerPalette_May, sBackAnims_Hoenn),
+    TRAINER_BACK_SPRITE(TRAINER_PIC_BACK_RED, 5, gTrainerBackPic_Red, gTrainerBackPicPalette_Red, sBackAnims_Kanto),
+    TRAINER_BACK_SPRITE(TRAINER_PIC_BACK_LEAF, 5, gTrainerBackPic_Leaf, gTrainerBackPicPalette_Leaf, sBackAnims_Kanto),
+    TRAINER_BACK_SPRITE(TRAINER_PIC_BACK_RUBY_SAPPHIRE_BRENDAN, 4, gTrainerBackPic_RubySapphireBrendan, gTrainerPalette_RubySapphireBrendan, sBackAnims_Hoenn),
+    TRAINER_BACK_SPRITE(TRAINER_PIC_BACK_RUBY_SAPPHIRE_MAY, 4, gTrainerBackPic_RubySapphireMay, gTrainerPalette_RubySapphireMay, sBackAnims_Hoenn),
+    TRAINER_BACK_SPRITE(TRAINER_PIC_BACK_WALLY, 4, gTrainerBackPic_Wally, gTrainerPalette_Wally, sBackAnims_Hoenn),
+    TRAINER_BACK_SPRITE(TRAINER_PIC_BACK_STEVEN, 4, gTrainerBackPic_Steven, gTrainerPalette_Steven, sBackAnims_Hoenn),
+    TRAINER_BACK_SPRITE(TRAINER_PIC_BACK_POKEDUDE, 4, gTrainerBackPic_Pokedude, gTrainerBackPicPalette_Pokedude, sBackAnims_OldManPokedude),
+    TRAINER_BACK_SPRITE(TRAINER_PIC_BACK_OLD_MAN, 4, gTrainerBackPic_OldMan, gTrainerBackPicPalette_OldMan, sBackAnims_OldManPokedude),
+
 };
