@@ -6824,11 +6824,11 @@ BattleScript_PowderMoveNoEffect::
 	attackstring
 	ppreduce
 	pause B_WAIT_TIME_SHORT
-	jumpiftype BS_TARGET, TYPE_GRASS, BattleScript_PowderMoveNoEffectPrint
-	jumpifability BS_TARGET, ABILITY_OVERCOAT, BattleScript_PowderMoveNoEffectOvercoat
-    setlastuseditem BS_TARGET
-    printstring STRINGID_SAFETYGOGGLESPROTECTED
-    goto BattleScript_PowderMoveNoEffectWaitMsg
+	jumpiftype BS_SCRIPTING, TYPE_GRASS, BattleScript_PowderMoveNoEffectPrint
+	jumpifability BS_SCRIPTING, ABILITY_OVERCOAT, BattleScript_PowderMoveNoEffectOvercoat
+	setlastuseditem BS_SCRIPTING
+	printstring STRINGID_SAFETYGOGGLESPROTECTED
+	goto BattleScript_PowderMoveNoEffectWaitMsg
 BattleScript_PowderMoveNoEffectOvercoat:
     call BattleScript_AbilityPopUpTarget
 BattleScript_PowderMoveNoEffectPrint:
