@@ -10911,7 +10911,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .formSpeciesIdTable = sFroslassFormSpeciesIdTable,
         .formChangeTable = sFroslassFormChangeTable,
     },
-    
+
 #if P_GEN_9_MEGA_EVOLUTIONS
     [SPECIES_FROSLASS_MEGA] =
     {
