@@ -1066,7 +1066,6 @@
 
 #define CONFUSE_BERRY_HP_FRACTION ((B_CONFUSE_BERRIES_HEAL >= GEN_7) ? 4 : 2)
 
-
 // Range of berries given out by various NPCS
 #define FIRST_BERRY_MASTER_BERRY      ITEM_POMEG_BERRY
 #define LAST_BERRY_MASTER_BERRY       ITEM_NOMEL_BERRY
