@@ -1811,7 +1811,7 @@ gCryTable::
 	cry Cry_Goodra
 .endif @ P_FAMILY_GOOMY
 .if P_FAMILY_KLEFKI == TRUE
-	cry_uncomp Cry_Klefki @ Cannot be heard unless we use cry_uncomp here.
+	cry Cry_Klefki
 .endif @ P_FAMILY_KLEFKI
 .if P_FAMILY_PHANTUMP == TRUE
 	cry Cry_Phantump
@@ -1896,7 +1896,7 @@ gCryTable::
 .endif @ P_FAMILY_CRABRAWLER
 .if P_FAMILY_ORICORIO == TRUE
 	cry Cry_OricorioBaile
-	cry_uncomp Cry_OricorioPomPom @ Cannot be heard unless we use cry_uncomp here.
+	cry Cry_OricorioPomPom
 	cry Cry_OricorioPau
 	cry Cry_OricorioSensu
 .endif @ P_FAMILY_ORICORIO
@@ -2404,7 +2404,6 @@ gCryTable::
 .endif @ P_FAMILY_BOMBIRDIER
 .if P_FAMILY_FINIZEN == TRUE
 	cry Cry_Finizen
-	cry Cry_PalafinZero
 	cry Cry_PalafinHero
 .endif @ P_FAMILY_FINIZEN
 .if P_FAMILY_VAROOM == TRUE
@@ -2494,7 +2493,8 @@ gCryTable::
 .endif @ P_MODIFIED_MEGA_CRIES
 .endif @ P_FAMILY_FRIGIBAX
 .if P_FAMILY_GIMMIGHOUL == TRUE
-	cry Cry_Gimmighoul
+	cry Cry_GimmighoulChest
+	cry Cry_GimmighoulRoaming
 	cry Cry_Gholdengo
 .endif @ P_FAMILY_GIMMIGHOUL
 .if P_FAMILY_WO_CHIEN == TRUE
@@ -4605,7 +4605,7 @@ gCryTable_Reverse::
 	cry_reverse Cry_Goodra
 .endif @ P_FAMILY_GOOMY
 .if P_FAMILY_KLEFKI == TRUE
-	cry_reverse_uncomp Cry_Klefki @ Cannot be heard unless we use cry_reverse_uncomp here.
+	cry_reverse Cry_Klefki
 .endif @ P_FAMILY_KLEFKI
 .if P_FAMILY_PHANTUMP == TRUE
 	cry_reverse Cry_Phantump
@@ -4690,7 +4690,7 @@ gCryTable_Reverse::
 .endif @ P_FAMILY_CRABRAWLER
 .if P_FAMILY_ORICORIO == TRUE
 	cry_reverse Cry_OricorioBaile
-	cry_reverse_uncomp Cry_OricorioPomPom @ Cannot be heard unless we use cry_reverse_uncomp here.
+	cry_reverse Cry_OricorioPomPom
 	cry_reverse Cry_OricorioPau
 	cry_reverse Cry_OricorioSensu
 .endif @ P_FAMILY_ORICORIO
@@ -5198,7 +5198,6 @@ gCryTable_Reverse::
 .endif @ P_FAMILY_BOMBIRDIER
 .if P_FAMILY_FINIZEN == TRUE
 	cry_reverse Cry_Finizen
-	cry_reverse Cry_PalafinZero
 	cry_reverse Cry_PalafinHero
 .endif @ P_FAMILY_FINIZEN
 .if P_FAMILY_VAROOM == TRUE
@@ -5288,7 +5287,8 @@ gCryTable_Reverse::
 .endif @ P_MODIFIED_MEGA_CRIES
 .endif @ P_FAMILY_FRIGIBAX
 .if P_FAMILY_GIMMIGHOUL == TRUE
-	cry_reverse Cry_Gimmighoul
+	cry_reverse Cry_GimmighoulChest
+	cry_reverse Cry_GimmighoulRoaming
 	cry_reverse Cry_Gholdengo
 .endif @ P_FAMILY_GIMMIGHOUL
 .if P_FAMILY_WO_CHIEN == TRUE
