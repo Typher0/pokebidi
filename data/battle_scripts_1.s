@@ -7137,6 +7137,13 @@ BattleScript_MentalHerbCureRet::
 	removeitem BS_SCRIPTING
 	return
 
+BattleScript_MentalHerbCureFling::
+	playanimation BS_SCRIPTING, B_ANIM_HELD_ITEM_EFFECT
+	printfromtable gMentalHerbCureStringIds
+	waitmessage B_WAIT_TIME_LONG
+	updatestatusicon BS_SCRIPTING
+	return
+
 BattleScript_MentalHerbCureEnd2::
 	call BattleScript_MentalHerbCureRet
 	end2
@@ -7150,6 +7157,12 @@ BattleScript_WhiteHerbRet::
 	printstring STRINGID_PKMNSITEMRESTOREDSTATUS
 	waitmessage B_WAIT_TIME_LONG
 	removeitem BS_SCRIPTING
+	return
+
+BattleScript_WhiteHerbFling::
+	playanimation BS_SCRIPTING, B_ANIM_HELD_ITEM_EFFECT
+	printstring STRINGID_PKMNSITEMRESTOREDSTATUS
+	waitmessage B_WAIT_TIME_LONG
 	return
 
 BattleScript_ItemHealHP_RemoveItem::
@@ -8332,4 +8345,3 @@ BattleScript_SilphScopeUnveiled::
 	printstring STRINGID_GHOSTWASMAROWAK
 	waitmessage B_WAIT_TIME_LONG
 	end2
-

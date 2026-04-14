@@ -939,7 +939,7 @@ static const struct PickupItem sPickupTable[] =
 bool32 ProteanTryChangeType(enum BattlerId battler, enum Ability ability, enum Move move, enum Type moveType)
 {
       if ((ability == ABILITY_PROTEAN || ability == ABILITY_LIBERO)
-         && !gBattleMons[gBattlerAttacker].volatiles.usedProteanLibero
+         && !gBattleMons[battler].volatiles.usedProteanLibero
          && !gBattleStruct->bouncedMoveIsUsed
          && (gBattleMons[battler].types[0] != moveType || gBattleMons[battler].types[1] != moveType
              || (gBattleMons[battler].types[2] != moveType && gBattleMons[battler].types[2] != TYPE_MYSTERY))
@@ -2897,6 +2897,7 @@ void SetMoveEffect(enum BattlerId battlerAtk, enum BattlerId effectBattler, enum
         break;
     case MOVE_EFFECT_CORE_ENFORCER:
         if (HasBattlerActedThisTurn(gBattlerTarget)
+         && gBattleStruct->battlerState[gBattlerTarget].isFirstTurn != 2
          && !NoAliveMonsForEitherParty())
         {
             BattleScriptPush(battleScript);
