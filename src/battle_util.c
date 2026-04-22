@@ -3604,9 +3604,10 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, enum BattlerId battler, enum
         case ABILITY_EMBODY_ASPECT_HEARTHFLAME_MASK:
         case ABILITY_EMBODY_ASPECT_WELLSPRING_MASK:
         case ABILITY_EMBODY_ASPECT_CORNERSTONE_MASK:
-            if (shouldAbilityTrigger)
+            if (shouldAbilityTrigger && !gBattleMons[battler].volatiles.embodyAspectActivated)
             {
                 enum Stat stat;
+                gBattleMons[battler].volatiles.embodyAspectActivated = TRUE;
 
                 if (gLastUsedAbility == ABILITY_EMBODY_ASPECT_HEARTHFLAME_MASK)
                     stat = STAT_ATK;
@@ -4351,6 +4352,7 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, enum BattlerId battler, enum
         case ABILITY_POISON_TOUCH:
             if (IsBattlerAlive(gBattlerTarget)
              && !gBattleStruct->unableToUseMove
+             && !IsMoveEffectBlockedByTarget(GetBattlerAbility(gBattlerTarget))
              && CanBePoisoned(gBattlerAttacker, gBattlerTarget, gLastUsedAbility, GetBattlerAbility(gBattlerTarget))
              && IsMoveMakingContact(gBattlerAttacker, gBattlerTarget, GetBattlerAbility(gBattlerAttacker), GetBattlerHoldEffect(gBattlerAttacker), move)
              && IsBattlerTurnDamaged(gBattlerTarget, EXCLUDING_SUBSTITUTES) // Need to actually hit the target
@@ -4368,12 +4370,15 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, enum BattlerId battler, enum
             if (gBattleStruct->toxicChainPriority)
             {
                 gBattleStruct->toxicChainPriority = FALSE;
-                gEffectBattler = gBattlerTarget;
-                gBattleScripting.battler = gBattlerAttacker;
-                gBattleScripting.moveEffect = MOVE_EFFECT_TOXIC;
-                PREPARE_ABILITY_BUFFER(gBattleTextBuff1, gLastUsedAbility);
-                BattleScriptCall(BattleScript_AbilityStatusEffect);
-                effect++;
+                if (!IsMoveEffectBlockedByTarget(GetBattlerAbility(gBattlerTarget)))
+                {
+                    gEffectBattler = gBattlerTarget;
+                    gBattleScripting.battler = gBattlerAttacker;
+                    gBattleScripting.moveEffect = MOVE_EFFECT_TOXIC;
+                    PREPARE_ABILITY_BUFFER(gBattleTextBuff1, gLastUsedAbility);
+                    BattleScriptCall(BattleScript_AbilityStatusEffect);
+                    effect++;
+                }
             }
             break;
         case ABILITY_STENCH:
@@ -4383,7 +4388,7 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, enum BattlerId battler, enum
              && IsBattlerTurnDamaged(gBattlerTarget, EXCLUDING_SUBSTITUTES)
              && !MoveHasAdditionalEffect(gCurrentMove, MOVE_EFFECT_FLINCH))
             {
-                SetMoveEffect(gBattlerAttacker, gBattlerTarget, MOVE_EFFECT_FLINCH, gBattlescriptCurrInstr, EFFECT_PRIMARY);
+                SetMoveEffect(gBattlerAttacker, gBattlerTarget, MOVE_EFFECT_FLINCH, gBattlescriptCurrInstr, NO_FLAGS);
                 effect++;
             }
             break;
