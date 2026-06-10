@@ -122,7 +122,8 @@
 #define METATILE_BuildingFrlg_PCOn   0x063
 
 // gTileset_Cave
-#define METATILE_Cave_CrackedFloor                       0x22F
+#define METATILE_Cave_Cave_CrackedFloor                  0x26A
+#define METATILE_Cave_CrackedFloor                       0x20A
 #define METATILE_Cave_CrackedFloor_Hole                  0x206
 #define METATILE_Cave_EntranceCover                      0x229
 #define METATILE_Cave_Floor_Ledge_Bottom                 0x2E1

@@ -14,18 +14,13 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "map": "MAP_ROUTE115",
+      "map": "MAP_ROUTE105",
       "offset": 0,
-      "direction": "up"
+      "direction": "left"
     },
     {
       "map": "MAP_ROUTE104",
-      "offset": 0,
-      "direction": "down"
-    },
-    {
-      "map": "MAP_ROUTE116",
-      "offset": 0,
+      "offset": 20,
       "direction": "right"
     }
   ],
@@ -243,11 +238,24 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "RustboroCity_EventScript_Boy1",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_LIGHT_SPRITE",
+      "x": 15,
+      "y": 38,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
     }
   ],
   "warp_events": [
     {
-      "x": 27,
+      "x": 26,
       "y": 19,
       "elevation": 0,
       "dest_map": "MAP_RUSTBORO_CITY_GYM",
@@ -261,15 +269,15 @@
       "dest_warp_id": "0"
     },
     {
-      "x": 16,
-      "y": 45,
+      "x": 39,
+      "y": 19,
       "elevation": 0,
       "dest_map": "MAP_RUSTBORO_CITY_MART",
       "dest_warp_id": "0"
     },
     {
-      "x": 16,
-      "y": 38,
+      "x": 15,
+      "y": 39,
       "elevation": 0,
       "dest_map": "MAP_RUSTBORO_CITY_POKEMON_CENTER_1F",
       "dest_warp_id": "0"
@@ -525,7 +533,7 @@
   "bg_events": [
     {
       "type": "sign",
-      "x": 23,
+      "x": 30,
       "y": 19,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
@@ -541,16 +549,16 @@
     },
     {
       "type": "sign",
-      "x": 17,
-      "y": 45,
+      "x": 39,
+      "y": 18,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
       "script": "Common_EventScript_ShowPokemartSign"
     },
     {
       "type": "sign",
-      "x": 18,
-      "y": 38,
+      "x": 17,
+      "y": 39,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
       "script": "Common_EventScript_ShowPokemonCenterSign"
@@ -565,16 +573,16 @@
     },
     {
       "type": "sign",
-      "x": 18,
-      "y": 45,
+      "x": 39,
+      "y": 17,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
       "script": "Common_EventScript_ShowPokemartSign"
     },
     {
       "type": "sign",
-      "x": 17,
-      "y": 38,
+      "x": 16,
+      "y": 39,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
       "script": "Common_EventScript_ShowPokemonCenterSign"

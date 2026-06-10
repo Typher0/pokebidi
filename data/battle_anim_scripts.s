@@ -26209,8 +26209,9 @@ gBattleAnimMove_Extrasensory::
 
 gBattleAnimMove_AerialAce::
 	loadspritegfx ANIM_TAG_CUT
-	monbg ANIM_TARGET
+	monbg ANIM_ATTACKER
 	setalpha 12, 8
+	delay 12
 	createvisualtask AnimTask_TranslateMonEllipticalRespectSide, 2, ANIM_ATTACKER, 24, 6, 1, 5
 	createvisualtask AnimTask_TraceMonBlended, 2, 0, 4, 7, 3
 	createsprite gCuttingSliceSpriteTemplate, ANIM_ATTACKER, 2, 40, -32, 0
@@ -26220,8 +26221,10 @@ gBattleAnimMove_AerialAce::
 	complex_palette_blend selector=F_PAL_BG | F_PAL_BATTLERS, delay=3, num_blends=1, color1=RGB_BLACK, blend_y1=10, color2=RGB_BLACK, blend_y2=0
 	playsewithpan SE_M_RAZOR_WIND, SOUND_PAN_TARGET
 	waitforvisualfinish
-	clearmonbg ANIM_TARGET
+	delay 4
+	clearmonbg ANIM_ATTACKER
 	blendoff
+	delay 1
 	end
 
 gBattleAnimMove_IronDefense::

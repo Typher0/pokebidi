@@ -26,7 +26,7 @@ RustboroCity_Gym_EventScript_RoxanneDefeated::
 	end
 
 RustboroCity_Gym_EventScript_GiveRockTomb::
-	giveitem ITEM_TM_ROCK_TOMB
+	giveitem ITEM_TM_HAIL
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	setflag FLAG_RECEIVED_TM_ROCK_TOMB
 	msgbox RustboroCity_Gym_Text_ExplainRockTomb, MSGBOX_DEFAULT
@@ -58,6 +58,7 @@ RustboroCity_Gym_EventScript_GymGuide::
 	faceplayer
 	goto_if_set FLAG_DEFEATED_RUSTBORO_GYM, RustboroCity_Gym_EventScript_GymGuidePostVictory
 	msgbox RustboroCity_Gym_Text_GymGuideAdvice, MSGBOX_DEFAULT
+	giveitem ITEM_FRESH_WATER
 	release
 	end
 
@@ -106,64 +107,66 @@ RustboroCity_Gym_EventScript_RegisterRoxanne::
 RustboroCity_Gym_Text_GymGuideAdvice:
 	.string "Yo, how's it going?\p"
 	.string "Listen, my friend!\n"
-	.string "Would you like to become the CHAMPION?\p"
-	.string "I'm no TRAINER, not me, but I can\n"
+	.string "Would you like to become the Champion?\p"
+	.string "I'm no Trainer, not me, but I can\n"
 	.string "sure give you winning advice.\p"
 	.string "That's settled, then! We'll aim for the\n"
-	.string "POKéMON CHAMPIONSHIP together!\p"
-	.string "It's your job as a TRAINER to collect\n"
-	.string "GYM BADGES, am I right?\p"
-	.string "But GYM LEADERS aren't pushovers!\p"
+	.string "Pokémon Championship together!\p"
+	.string "It's your job as a Trainer to collect\n"
+	.string "Gym Badges, am I right?\p"
+	.string "But Gym Leaders aren't pushovers!\p"
 	.string "And that's where I come in!\n"
 	.string "I'm here to provide expert advice!\p"
-	.string "ROXANNE, the GYM LEADER, is a user\n"
-	.string "of ROCK-type POKéMON.\p"
-	.string "The ROCK type is very durable, but\n"
-	.string "it can't stand WATER-type and\l"
-	.string "GRASS-type moves.\p"
-	.string "Come see me afterwards, if you beat\n"
-	.string "the GYM LEADER.\p"
-	.string "Well, go for it!$"
+	.string "Otnar, the Gym Leader, is a user\n"
+	.string "of Ice-type Pokémon.\p"
+	.string "The Ice type is very powerful, but\n"
+	.string "it can't stand Fire-type and\l"
+	.string "Rock-type moves.\p"
+	.string "Also, I'd like to give you this\n"
+	.string "Fresh Water to keep you and your\l"
+	.string "Pokémon hydrated!\p"
+	.string "{PLAYER} received a Fresh Water\n"
+	.string "from the friendly Gym Guide.$"
 
 RustboroCity_Gym_Text_GymGuidePostVictory:
 	.string "Whoa! What a breathtaking victory!\n"
 	.string "My cheering must've worked!\p"
 	.string "Great!\n"
-	.string "Check your TRAINER CARD.\p"
-	.string "The STONE BADGE you got should be\n"
+	.string "Check your Trainer Card.\p"
+	.string "The Snowflake Badge you got should be\n"
 	.string "properly recorded on it.\p"
 	.string "In other words…\p"
 	.string "You've climbed the first step on\n"
-	.string "the stairs to the CHAMPIONSHIP!\p"
+	.string "the stairs to the Chamionship!\p"
 	.string "That's got to feel awesome!$"
 
 RustboroCity_Gym_Text_JoshIntro:
-	.string "Don't take us GYM TRAINERS lightly!\n"
+	.string "Don't take us Gym Trainers lightly!\n"
 	.string "I'll show you why we're better!$"
 
 RustboroCity_Gym_Text_JoshDefeat:
 	.string "You were too good for me…$"
 
 RustboroCity_Gym_Text_JoshPostBattle:
-	.string "You haven't seen anything of the ROCK\n"
+	.string "You haven't seen anything of the Ice\n"
 	.string "type's terrifying power!$"
 
 RustboroCity_Gym_Text_TommyIntro:
 	.string "If you can't beat me, you won't stand\n"
-	.string "a chance against ROXANNE!$"
+	.string "a chance against Otnar!$"
 
 RustboroCity_Gym_Text_TommyDefeat:
 	.string "Wow! You've got some potential!$"
 
 RustboroCity_Gym_Text_TommyPostBattle:
-	.string "ROXANNE is stronger than me by\n"
+	.string "Otnar is stronger than me by\n"
 	.string "several times.\p"
 	.string "You'd better be on your guard!$"
 
 RustboroCity_Gym_Text_MarcIntro:
 	.string "We might be in the middle of town,\n"
 	.string "but so what?\p"
-	.string "My ROCK POKéMON need room to\n"
+	.string "My Ice Pokémon need room to\n"
 	.string "rampage!$"
 
 RustboroCity_Gym_Text_MarcDefeat:
@@ -171,65 +174,74 @@ RustboroCity_Gym_Text_MarcDefeat:
 	.string "Our challenger is one feisty customer!$"
 
 RustboroCity_Gym_Text_MarcPostBattle:
-	.string "I have to hand it to our LEADER.\p"
-	.string "It took smarts and sense for her to\n"
-	.string "pick the ROCK type at her young age.$"
+	.string "I have to hand it to our Leader.\p"
+	.string "He is an absolute master of the\n"
+	.string "Ice type, even at his old age.$"
 
 RustboroCity_Gym_Text_RoxanneIntro:
-	.string "Hello, I am ROXANNE, the RUSTBORO\n"
-	.string "POKéMON GYM LEADER.\p"
-	.string "I became a GYM LEADER so that I might\n"
-	.string "apply what I learned at the POKéMON\l"
-	.string "TRAINER'S SCHOOL in battle.\p"
-	.string "Would you kindly demonstrate how you\n"
-	.string "battle, and with which POKéMON?$"
+	.string "Wo-hohohohoho!\p"
+	.string "Hello! I am Otnar, the Papilys\n"
+	.string "Pokémon Gym Leader.\p"
+	.string "After decades of exploration of\n"
+	.string "Banjime's frigid landscape, I have\l"
+	.string "mastered the Ice-type.\p"
+	.string "Now, as a Gym Leader, I test\n"
+	.string "trainers to see if they are up\l"
+	.string "to the challenges that await them.\p"
+	.string "Now, show me what you've got!$"
 
 RustboroCity_Gym_Text_RoxanneDefeat:
-	.string "So…\n"
-	.string "I lost…\p"
-	.string "It seems that I still have much more\n"
-	.string "to learn…\p"
-	.string "I understand.\p"
-	.string "The POKéMON LEAGUE's rules state\n"
-	.string "that TRAINERS are to be given this\l"
-	.string "if they defeat a GYM LEADER.\p"
-	.string "Please accept the official POKéMON\n"
-	.string "LEAGUE STONE BADGE.$"
+	.string "Wo-hohohohoho!\n"
+	.string "I have lost!\p"
+	.string "It seems that you indeed have\n"
+	.string "what it takes to travel Banjime!\p"
+	.string "Well then,\p"
+	.string "By the power vested in me by the\n"
+	.string "State of Banjime and it's Pokémon\l"
+	.string "Leage, I pronounce you a Trainer.\p"
+	.string "Now, accept the official Pokémon\n"
+	.string "League Snowflake Badge!$"
 
 RustboroCity_Gym_Text_ReceivedStoneBadge:
-	.string "{PLAYER} received the STONE BADGE\n"
-	.string "from ROXANNE.$"
+	.string "{PLAYER} received the Snowflake\n"
+	.string "Badge from Otnar.$"
 
 RustboroCity_Gym_Text_StoneBadgeInfoTakeThis:
-	.string "The STONE BADGE heightens the ATTACK\n"
-	.string "power of your POKéMON.\p"
-	.string "It also enables them to use the HM move\n"
-	.string "CUT outside of battle.\p"
-	.string "Please take this with you, too.$"
+	.string "The Snowflake Badge enables your\n"
+	.string "Pokémon to use the HM move Cut\l"
+ 	.string "outside of battle.\p"
+	.string "You can have this as well.$"
 
 RustboroCity_Gym_Text_ExplainRockTomb:
-	.string "That TECHNICAL MACHINE, TM39,\n"
-	.string "contains ROCK TOMB.\p"
-	.string "It not only inflicts damage by dropping\n"
-	.string "rocks, it also lowers SPEED.\p"
-	.string "If you use a TM, it instantly teaches\n"
-	.string "the move to a POKéMON.\p"
-	.string "Remember, a TM can be used only once,\n"
-	.string "so think before you use it.$"
+	.string "That Technical Machine, TM07,\n"
+	.string "contains Hail.\p"
+	.string "It not only inflicts damage every turn\n"
+	.string "on non-Ice types, but gives Ice types\l"
+	.string "a Defense boost as well!\p"
+	.string "It makes the frail guys into much\n"
+	.string "tougher opponents, so I recommend it!\p"
+	.string "Just use it on one of your Pokémon,\n"
+	.string "and they'll learn the move instantly!$"
 
 RustboroCity_Gym_Text_RoxannePostBattle:
-	.string "Since you are so strong, you should\n"
-	.string "challenge other GYM LEADERS.\p"
-	.string "By battling many TRAINERS, you should\n"
-	.string "learn many things.$"
+	.string "Now that you have defeated me, you ought\n"
+	.string "to challenge other Gym Leaders.\p"
+	.string "The next Gym I recommend is in Joridan City,\n"
+	.string "which is to the West of Zephyr Town.$"
 
 RustboroCity_Gym_Text_GymStatue:
-	.string "RUSTBORO CITY POKéMON GYM$"
+	.string "Papilys City Pokémon Gym\p"
+	.string "Certified Trainers in order of completion:\n"
+	.string "Peter, Ahab, Jelissa, Toxiana, Tinker\p"
+	.string "Moose, Gwen, Tobias, Ishmael, Josh, Adhira\n"
+	.string "Amanda, Sean$"
 
 RustboroCity_Gym_Text_GymStatueCertified:
-	.string "RUSTBORO CITY POKéMON GYM\p"
-	.string "ROXANNE'S CERTIFIED TRAINERS:\n"
-	.string "{PLAYER}$"
+	.string "Papilys City Pokémon Gym\p"
+	.string "Certified Trainers in order of completion:\n"
+	.string "Peter, Ahab, Jelissa, Toxiana, Tinker\p"
+	.string "Moose, Gwen, Tobias, Ishmael, Josh, Adhira\n"
+	.string "Amanda, Sean, {PLAYER}$"
 
 RustboroCity_Gym_Text_RoxanneRegisterCall:
 	.string "… … … … … …\n"
@@ -249,8 +261,8 @@ RustboroCity_Gym_Text_RoxanneRegisterCall:
 	.string "… … … … … Click!$"
 
 RustboroCity_Gym_Text_RegisteredRoxanne:
-	.string "Registered GYM LEADER ROXANNE\n"
-	.string "in the POKéNAV.$"
+	.string "Registered Gym Leader Otnar\n"
+	.string "in the Pokénav.$"
 
 RustboroCity_Gym_Text_RoxannePreRematch:
 	.string "ROXANNE: I'm so glad to see you again.\n"

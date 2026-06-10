@@ -27,6 +27,11 @@
       "map": "MAP_UNDERWATER_ROUTE105",
       "offset": 0,
       "direction": "dive"
+    },
+    {
+      "map": "MAP_RUSTBORO_CITY",
+      "offset": 0,
+      "direction": "right"
     }
   ],
   "object_events": [

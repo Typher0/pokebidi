@@ -12,7 +12,7 @@ PetalburgCity_OnTransition:
 	end
 
 PetalburgCity_EventScript_MoveGymBoyToWestEntrance::
-	setobjectxyperm LOCALID_GYM_BOY, 5, 11
+	setobjectxyperm LOCALID_GYM_BOY, 38, 12
 	return
 
 PetalburgCity_EventScript_DisableMapNameAndMusic::
@@ -92,6 +92,10 @@ PetalburgCity_EventScript_Boy::
 
 PetalburgCity_EventScript_WallysMom::
 	msgbox PetalburgCity_Text_WhereIsWally, MSGBOX_NPC
+	end
+
+PetalburgCity_EventScript_PoliceMan::
+	msgbox PetalburgCity_Text_PoliceMan, MSGBOX_NPC
 	end
 
 PetalburgCity_Movement_WalkToWallyHousePlayer:
@@ -234,6 +238,10 @@ PetalburgCity_EventScript_WallyHouseSign::
 	msgbox PetalburgCity_Text_WallyHouseSign, MSGBOX_SIGN
 	end
 
+PetalburgCity_EventScript_HouseSign::
+	msgbox PetalburgCity_Text_HouseSign, MSGBOX_SIGN
+	end
+
 PetalburgCity_EventScript_ShowGymToPlayer0::
 	lockall
 	setvar VAR_0x8008, 0
@@ -299,6 +307,8 @@ PetalburgCity_EventScript_BoyApproachPlayer0::
 PetalburgCity_EventScript_BoyApproachPlayer1::
 	applymovement LOCALID_GYM_BOY, PetalburgCity_Movement_BoyApproachPlayer1
 	waitmovement 0
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
+	waitmovement 0
 	return
 
 PetalburgCity_EventScript_BoyApproachPlayer2::
@@ -350,15 +360,21 @@ PetalburgCity_Movement_BoyApproachPlayer0:
 	walk_right
 	walk_right
 	walk_right
+	walk_right
+	walk_right
 	walk_in_place_faster_up
 	step_end
 
 PetalburgCity_Movement_BoyApproachPlayer1:
 	walk_right
 	walk_right
+	walk_right
+	walk_right
 	step_end
 
 PetalburgCity_Movement_BoyApproachPlayer2:
+	walk_right
+	walk_right
 	walk_right
 	walk_right
 	walk_right
@@ -381,15 +397,33 @@ PetalburgCity_Movement_BoyWalkToGym0:
 	walk_right
 	walk_right
 	walk_right
-	walk_up
 	walk_right
-	walk_in_place_faster_up
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_up
+	walk_in_place_faster_left
 	step_end
 
 PetalburgCity_Movement_BoyWalkToGym1:
 	walk_down
 	walk_right
 	walk_right
+	walk_up
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
 	walk_right
 	walk_right
 	walk_right
@@ -397,9 +431,7 @@ PetalburgCity_Movement_BoyWalkToGym1:
 	walk_right
 	walk_right
 	walk_up
-	walk_up
-	walk_right
-	walk_in_place_faster_up
+	walk_in_place_faster_left
 	step_end
 
 PetalburgCity_Movement_BoyWalkToGym2:
@@ -410,9 +442,17 @@ PetalburgCity_Movement_BoyWalkToGym2:
 	walk_right
 	walk_right
 	walk_right
-	walk_up
 	walk_right
-	walk_in_place_faster_up
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_up
+	walk_in_place_faster_left
 	step_end
 
 PetalburgCity_Movement_BoyWalkToGym3:
@@ -442,6 +482,15 @@ PetalburgCity_Movement_BoyWalkAway:
 	walk_left
 	walk_left
 	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
 	step_end
 
 PetalburgCity_Movement_PlayerWalkToGym0:
@@ -453,13 +502,31 @@ PetalburgCity_Movement_PlayerWalkToGym0:
 	walk_right
 	walk_right
 	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
 	walk_up
+	walk_in_place_faster_right
 	step_end
 
 PetalburgCity_Movement_PlayerWalkToGym1:
 	delay_16
 	delay_16
-	walk_down
+	walk_in_place_down
+	delay_16
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
 	walk_right
 	walk_right
 	walk_right
@@ -468,7 +535,7 @@ PetalburgCity_Movement_PlayerWalkToGym1:
 	walk_right
 	walk_right
 	walk_up
-	walk_up
+	walk_in_place_faster_right
 	step_end
 
 PetalburgCity_Movement_PlayerWalkToGym2:
@@ -480,7 +547,16 @@ PetalburgCity_Movement_PlayerWalkToGym2:
 	walk_right
 	walk_right
 	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
 	walk_up
+	walk_in_place_faster_right
 	step_end
 
 PetalburgCity_Movement_PlayerWalkToGym3:
@@ -699,49 +775,62 @@ PetalburgCity_EventScript_GymBoy::
 	end
 
 PetalburgCity_Text_WhereIsWally:
-	.string "Where has our WALLY gone?\p"
-	.string "We have to leave for VERDANTURF TOWN\n"
-	.string "very soon…$"
+	.string "I am the mayor and Otnar's wife.\p"
+	.string "In my younger days, I traveled with\n"
+	.string "my husband, painting the scenes we\l"
+	.string "saw along our many travels.\p"
+	.string "Now, I help fund other artists who\n"
+	.string "wish to pursue a career in art.$"
 
 PetalburgCity_Text_AreYouRookieTrainer:
 	.string "Hiya! Are you maybe…\n"
-	.string "A rookie TRAINER?\p"
-	.string "Do you know what POKéMON TRAINERS\n"
+	.string "A rookie Trainer?\p"
+	.string "Do you know what Pokémon Trainers\n"
 	.string "do when they reach a new town?\p"
-	.string "They first check what kind of GYM\n"
+	.string "They first check what kind of Gym\n"
 	.string "is in the town.$"
 
 PetalburgCity_Text_ThisIsPetalburgGym:
-	.string "See? This is PETALBURG CITY's GYM.$"
+	.string "See? This is Papilys City's Gym.$"
 
 PetalburgCity_Text_ThisIsGymSign:
-	.string "This is the GYM's sign. Look for it\n"
-	.string "whenever you're looking for a GYM.$"
+	.string "This is the Gym's sign. Look for it\n"
+	.string "whenever you're looking for a Gym.$"
 
 PetalburgCity_Text_WaterReflection:
-	.string "My face is reflected in the water.\p"
-	.string "It's a shining grin full of hope…\p"
-	.string "Or it could be a look of somber silence\n"
-	.string "struggling with fear…\p"
-	.string "What do you see reflected in your face?$"
+	.string "Most people come here as aspiring\n"
+	.string "painters or sculptors.\p"
+	.string "Me?\p"
+	.string "I came here because I'm a fan of Otnar.\p"
+	.string "He's an adventurer who has traversed\n"
+	.string "across a multitude of terrains.\p"
+	.string "From the frigid tundras around here\n"
+	.string "to the scorching deserts of Redburro,\l"
+	.string "Otnar's conquered it all!\p"
+	.string "I hope to be a trainer like him\n"
+	.string "who inspires young men to take on the\l"
+	.string "treacherous world of the unknown!$"
 
 PetalburgCity_Text_FullPartyExplanation:
-	.string "Let's say you have six POKéMON.\n"
-	.string "If you catch another one…\p"
-	.string "It is automatically sent to a STORAGE\n"
-	.string "BOX over a PC connection.$"
+	.string "Back in my day, this town was a\n"
+	.string "mining town.\p"
+	.string "We carved these buildings out of the\n"
+	.string "mountain with our own two hands.\p"
+	.string "Later, artists like Anton DeRoux\n"
+	.string "came in and made our crude buildings\l"
+	.string "into beautiful works of art.$"
 
 PetalburgCity_Text_GymSign:
-	.string "PETALBURG CITY POKéMON GYM\n"
-	.string "LEADER: NORMAN\l"
-	.string "“A man in pursuit of power!”$"
+	.string "Papilys City Pokémon Gym\n"
+	.string "Leader: Otnar\l"
+	.string "“The cool-headed warrior!”$"
 
 PetalburgCity_Text_CitySign:
-	.string "PETALBURG CITY\n"
-	.string "“Where people mingle with nature.”$"
+	.string "Papilys City\n"
+	.string "“Home of cliffside artists.”$"
 
 PetalburgCity_Text_WallyHouseSign:
-	.string "WALLY'S HOUSE$"
+	.string "Otnar's Inn$"
 
 PetalburgCity_Text_AreYouATrainer:
 	.string "Excuse me!\p"
@@ -759,3 +848,10 @@ PetalburgCity_Text_ImLookingForTalentedTrainers:
 	.string "I'm roaming the land in search of\n"
 	.string "talented TRAINERS.\p"
 	.string "I'm sorry to have taken your time.$"
+
+PetalburgCity_Text_PoliceMan:
+	.string "Sorry, but you can't enter here\n"
+	.string "without a gym badge.$"
+
+PetalburgCity_Text_HouseSign:
+	.string "Papilys Art Studio$"

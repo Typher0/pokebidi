@@ -339,15 +339,16 @@ Route103_Text_BrendanTimeToHeadBack:
 	.string "We should head back to the LAB.$"
 
 Route103_Text_ShouldHaveBroughtPotion:
-	.string "My POKéMON is staggeringly tired…\n"
-	.string "I should have brought a POTION…$"
+	.string "My Pokémon is staggeringly tired…\n"
+	.string "I should have brought a Potion…$"
 
 Route103_Text_ShortcutToOldale:
-	.string "If you cross the sea from here,\n"
-	.string "it'll be a shortcut to OLDALE TOWN.\p"
-	.string "Fufufu, that's useful, isn't it?$"
+	.string "If you scale that rock wall,\n"
+	.string "I think you can enter Mt. Eleny.\p"
+	.string "What's hidden in that entrance?$"
 
 Route103_Text_RouteSign:
-	.string "ROUTE 103\n"
-	.string "{DOWN_ARROW} OLDALE TOWN$"
+	.string "Route 633\l"
+	.string "{LEFT_ARROW} Route 632\n"
+	.string "{UP_ARROW} Papilys City$"
 

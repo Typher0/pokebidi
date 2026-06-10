@@ -327,7 +327,7 @@ Route104_EventScript_Boy2::
 	faceplayer
 	goto_if_set FLAG_RECEIVED_TM_BULLET_SEED, Route104_EventScript_ReceivedBulletSeed
 	msgbox Route104_Text_LikeFillingMouthWithSeedsTakeThis, MSGBOX_DEFAULT
-	giveitem ITEM_TM_BULLET_SEED
+	giveitem ITEM_TM_RETURN
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	setflag FLAG_RECEIVED_TM_BULLET_SEED
 	release
@@ -1001,9 +1001,9 @@ Route104_Text_BrineyLivesInSeasideCottage:
 	.string "feared the sea, however stormy.$"
 
 Route104_Text_WhatsItLikeAtBottomOfSea:
-	.string "The sea, huh?\p"
+	.string "The lake sure is huge, huh?\p"
 	.string "I wonder what it's like at the bottom\n"
-	.string "of the sea?$"
+	.string "of this lake?$"
 
 Route104_Text_ThrowBallAtWeakenedPokemon:
 	.string "If you're going to throw a POKé BALL,\n"
@@ -1013,38 +1013,41 @@ Route104_Text_ThrowBallAtWeakenedPokemon:
 
 Route104_Text_OnlyThrowBallAtWildPokemon:
 	.string "You're a thief if you try to steal\n"
-	.string "someone else's POKéMON.\p"
-	.string "You should throw POKé BALLS only at\n"
-	.string "wild POKéMON.$"
+	.string "someone else's Pokémon.\p"
+	.string "You should throw Poké Balls only at\n"
+	.string "wild Pokémon.$"
 
 Route104_Text_ImNotATrainer:
-	.string "Oh, no, I'm not a TRAINER.\p"
-	.string "But that's right, if TRAINERS lock eyes,\n"
+	.string "Oh, no, I'm not a Trainer.\p"
+	.string "But that's right, if Trainers lock eyes,\n"
 	.string "it's a challenge to battle.\p"
 	.string "If you don't want to battle, stay out\n"
 	.string "of their sight.$"
 
 Route104_Text_LikeFillingMouthWithSeedsTakeThis:
-	.string "I like filling my mouth with seeds,\n"
-	.string "then spitting them out fast!\p"
-	.string "You can have this, so you try it out!\p"
-	.string "Use it on a POKéMON, and it will learn\n"
-	.string "a move for firing seeds rapidly.$"
+	.string "The bonds you form with your Pokémon\n"
+	.string "are priceless.\p"
+	.string "There's even a move that gets stronger\n"
+	.string "the closer you are to your Pokémon.\p"
+	.string "Take this TM to teach it to your friend.$"
 
 Route104_Text_TMsAreOneTimeUse:
 	.string "A word of advice!\p"
-	.string "A TM, TECHNICAL MACHINE, is good only\n"
-	.string "for one-time use.\p"
-	.string "Once you use it, it's gone.\n"
-	.string "Think twice before using it!$"
+	.string "Return is very strong when you treat\n"
+	.string "your Pokémon well.\p"
+	.string "Pokémon lose friendship points when.\n"
+	.string "you let them faint, so battle wisely!$"
 
 Route104_Text_DontNeedThisTakeIt:
-	.string "This FLOWER SHOP started selling\n"
-	.string "saplings recently.\p"
-	.string "It made me so happy, I went overboard\n"
-	.string "shopping.\p"
-	.string "I don't need this WHITE HERB anymore.\n"
-	.string "Would you take it, please?$"
+	.string "Recently, I have been reading a\n"
+	.string "self-help book.\p"
+	.string "It taught me how to shrug off the\n"
+	.string "insults people throw at me.\p"
+	.string "If you use a White Herb on your\n"
+	.string "Pokémon, they'll be unfazed by\l"
+	.string "stat changes, just like me!\p"
+	.string "Would you take it, and spread\n"
+	.string "this mentality to your Pokémon?$"
 
 Route104_Text_FlowerShopSellingSaplings:
 	.string "This FLOWER SHOP started selling\n"
@@ -1056,12 +1059,13 @@ Route104_Text_MrBrineysCottage:
 	.string "MR. BRINEY'S COTTAGE$"
 
 Route104_Text_RouteSignPetalburg:
-	.string "ROUTE 1O4\n"
-	.string "{RIGHT_ARROW} PETALBURG CITY$"
+	.string "Route 634\n"
+	.string "{RIGHT_ARROW} Zephyr Town {LEFT_ARROW} Joridan City$"
 
 Route104_Text_RouteSignRustboro:
-	.string "ROUTE 1O4\n"
-	.string "{UP_ARROW} RUSTBORO CITY$"
+	.string "Route 634\p"
+	.string "{LEFT_ARROW} Joridan City {RIGHT_ARROW} Zephyr Town\n"
+	.string "{DOWN_ARROW} Route 635$"
 
 Route104_Text_PrettyPetalFlowShop:
 	.string "PRETTY PETAL FLOWER SHOP$"

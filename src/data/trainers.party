@@ -662,7 +662,7 @@ Level: 31
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_DAISY ===
-Name: DAISY
+Name: Daisy
 Class: Aroma Lady
 Pic: Aroma Lady
 Gender: Female
@@ -670,12 +670,12 @@ Music: Female
 Double Battle: No
 AI: Check Bad Move
 
-Budew
-Level: 14
+Cherubi
+Level: 6
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Roselia
-Level: 14
+Combee (F)
+Level: 6
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_ROSE_1 ===
@@ -2553,7 +2553,7 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 - Crunch
 
 === TRAINER_WINSTON_1 ===
-Name: WINSTON
+Name: Winston
 Class: Rich Boy
 Pic: Rich Boy
 Gender: Male
@@ -2701,7 +2701,7 @@ Level: 31
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_MT_CHIMNEY_1 ===
-Name: GRUNT
+Name: Grunt
 Class: Team Magma
 Pic: Magma Grunt F
 Gender: Female
@@ -2709,8 +2709,8 @@ Music: Magma
 Double Battle: No
 AI: Check Bad Move
 
-Shelfur
-Level: 20
+Woobat
+Level: 12
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_STEVE_2 ===
@@ -4975,46 +4975,48 @@ Nature: Adamant
 - Iron Tail
 
 === TRAINER_ROXANNE_1 ===
-Name: Roxanne
+Name: Otnar
 Class: Leader
-Pic: Leader Roxanne
-Gender: Female
-Music: Female
-Items: Potion / Potion
+Pic: gym b otnar
+Gender: Male
+Music: Male
+Items: Potion / Burn Heal / Burn Heal
 Double Battle: No
 AI: Smart Trainer / AI_FLAG_ACE_POKEMON
-Mugshot: Yellow
+Mugshot: Blue
 
-Roggenrola
+Pingloo (M)
 Level: 12
-Ability: Sturdy
-IVs: 22 HP / 18 Atk / 26 Def / 8 SpA / 20 SpD / 8 Spe
-- Tackle
-- Defense Curl
-- Rock Throw
-- Rock Tomb
+Ability: Ice Body
+IVs: 12 HP / 8 Atk / 20 Def / 12 SpA / 20 SpD / 12 Spe
+Ball: Premier Ball
+- Hail
+- Bubble
+- Powder Snow
+- Play Nice
 
-Tenrock
-Level: 13
-Ability: Sand Rush
-IVs: 22 HP / 18 Atk / 20 Def / 4 SpA / 18 SpD / 23 Spe
+Cabob (M)
+Level: 12
+Ability: Rivalry
+IVs: 12 HP / 18 Atk / 20 Def / 4 SpA / 12 SpD / 12 Spe
+Ball: Premier Ball
 - Quick Attack
-- Defense Curl
-- Rock Throw
-- Rock Tomb
+- Pursuit
+- Powder Snow
+- Scratch
 
-Shelfur (F) @ Oran Berry
-Level: 15
-Ability: Sturdy
-IVs: 28 HP / 30 Atk / 26 Def / 30 SpA / 28 SpD / 30 Spe
-EVs: 50 HP / 20 Atk / 40 Def / 30 SpA / 10 SpD
+Snuggybara (M) @ Occa Berry
+Level: 14
+Ability: Cozy
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+EVs: 20 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
 Ball: Cherish Ball
 Happiness: 255
 Nature: Sassy
-- Ember
-- Harden
-- Bite
-- Rock Tomb
+- Hail
+- Screech
+- Ice Fang
+- Quick Attack
 
 === TRAINER_BRAWLY_1 ===
 Name: Brawly
@@ -5880,7 +5882,7 @@ Level: 16
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
 === TRAINER_MIGUEL_1 ===
-Name: MIGUEL
+Name: Miguel
 Class: Pokefan
 Pic: Pokefan M
 Gender: Male
@@ -5888,9 +5890,15 @@ Music: Twins
 Double Battle: No
 AI: Check Bad Move
 
-Nobunata @ Oran Berry
-Level: 15
+Munchlax @ Chople Berry
+Level: 8
+Ability: Pickup
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ball: Luxury Ball
+- Lick
+- Tackle
+- Defense Curl
+- Odor Sleuth
 
 === TRAINER_COLTON ===
 Name: COLTON
@@ -6317,7 +6325,7 @@ Level: 39
 IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
 
 === TRAINER_CALVIN_1 ===
-Name: CALVIN
+Name: Calvin
 Class: Youngster
 Pic: Youngster
 Gender: Male
@@ -6330,24 +6338,24 @@ Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_BILLY ===
-Name: BILLY
-Class: Youngster
-Pic: Youngster
+Name: Billy
+Class: Swimmer M
+Pic: Swimmer M
 Gender: Male
-Music: Male
+Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Zigzagoon
-Level: 5
+Frillish (M)
+Level: 32
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Snom
-Level: 7
+Squibble
+Level: 33
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_JOSH ===
-Name: JOSH
+Name: Michael
 Class: Youngster
 Pic: Youngster
 Gender: Male
@@ -6355,13 +6363,13 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Roggenrola
-Level: 10
+Snorunt (M)
+Level: 9
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Tackle
 
 === TRAINER_TOMMY ===
-Name: TOMMY
+Name: Tommy
 Class: Youngster
 Pic: Youngster
 Gender: Male
@@ -6369,11 +6377,11 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Roggenrola
+Swinub
 Level: 8
 IVs: 13 HP / 13 Atk / 13 Def / 13 SpA / 13 SpD / 13 Spe
 
-Tenrock
+Snom
 Level: 8
 IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
 
@@ -6583,7 +6591,7 @@ Level: 16
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_ALLEN ===
-Name: ALLEN
+Name: Allen
 Class: Youngster
 Pic: Youngster
 Gender: Male
@@ -6591,12 +6599,8 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Skwovet
+Hoothoot
 Level: 4
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Snom
-Level: 3
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_TIMMY ===
@@ -6706,7 +6710,28 @@ Nature: Adamant
 - Night Slash
 
 === TRAINER_ANDREW ===
-Name: ANDREW
+Name: Andrew
+Class: Sailor
+Pic: Roughneck
+Gender: Male
+Music: Hiker
+Double Battle: No
+AI: Check Bad Move
+
+Lillipup
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Cabob
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Skwovet
+Level: 6
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_IVAN ===
+Name: Carl
 Class: Fisherman
 Pic: Fisherman
 Gender: Male
@@ -6715,36 +6740,15 @@ Double Battle: No
 AI: Check Bad Move
 
 Cuppy
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Squibble
 Level: 10
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Cuppy
-Level: 15
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-=== TRAINER_IVAN ===
-Name: IVAN
-Class: Fisherman
-Pic: Fisherman
-Gender: Male
-Music: Hiker
-Double Battle: No
-AI: Check Bad Move
-
-Cuppy
-Level: 5
+Level: 11
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Cuppy
-Level: 6
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Cuppy
-Level: 7
+Level: 12
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_CLAUDE ===
@@ -9170,7 +9174,7 @@ Level: 40
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
 === TRAINER_AMY_AND_LIV_1 ===
-Name: AMY & LIV
+Name: Amy & Liv
 Class: Twins
 Pic: Twins
 Gender: Male
@@ -9178,12 +9182,12 @@ Music: Twins
 Double Battle: Yes
 AI: Check Bad Move
 
-Silkinder Male
-Level: 15
+Snorunt (F)
+Level: 7
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Silkinder Female
-Level: 15
+Snorunt (M)
+Level: 7
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_AMY_AND_LIV_2 ===
@@ -11075,7 +11079,7 @@ Level: 22
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 === TRAINER_MARC ===
-Name: MARC
+Name: Marc
 Class: Hiker
 Pic: Hiker
 Gender: Male
@@ -11083,11 +11087,11 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Roggenrola
+Cabob
 Level: 8
 IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
 
-Tenrock
+Hamsnug
 Level: 8
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
@@ -11193,7 +11197,7 @@ Level: 35
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_MT_CHIMNEY_2 ===
-Name: GRUNT
+Name: Grunt
 Class: Team Magma
 Pic: Magma Grunt M
 Gender: Male
@@ -11201,8 +11205,8 @@ Music: Magma
 Double Battle: No
 AI: Check Bad Move
 
-Zubat
-Level: 20
+Cabob
+Level: 12
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_CLARENCE ===
@@ -11448,28 +11452,20 @@ Level: 27
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_TABITHA_MT_CHIMNEY ===
-Name: TABITHA
-Class: Magma Admin
-Pic: Magma Admin
-Gender: Male
+Name: Grunt
+Class: Team Magma
+Pic: Magma Grunt F
+Gender: Female
 Music: Magma
 Double Battle: No
 AI: Basic Trainer
 
-Shelfur
-Level: 18
+Woobat
+Level: 11
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
-Sandile
-Level: 20
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
-
-Ponyta
-Level: 22
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
-
-Zubat
-Level: 22
+Scraggy
+Level: 11
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 === TRAINER_JONATHAN ===
@@ -11559,29 +11555,47 @@ Level: 39
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 === TRAINER_MAXIE_MT_CHIMNEY ===
-Name: MAXIE
-Class: Magma Leader
-Pic: Magma Leader Maxie
-Gender: Male
+Name: Bellis
+Class: Magma Admin
+Pic: singularity com bellis
+Gender: Female
 Music: Magma
-Items: Super Potion / Super Potion
+Items: Potion / Ice Heal
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer / AI_FLAG_ACE_POKEMON
 
-Sandile
-Level: 24
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+Woobat (F) @ Wide Lens
+Level: 13
+Ability: Unaware
+IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
+Ball: Dusk Ball
+- Attract
+- Gust
+- Confusion
+- Supersonic
 
-Sedirrot
-Level: 24
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+Roggenrola (F) @ Red Card
+Level: 13
+Ability: Sturdy
+IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
+Ball: Dusk Ball
+- Sand Attack
+- Tackle
+- Harden
+- Rock Throw
 
-Carkol
-Level: 25
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+Snorunt (F) @ Quick Claw
+Level: 15
+Ability: Inner Focus
+IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
+Ball: Luxury Ball
+- Astonish
+- Headbutt
+- Powder Snow
+- Double Team
 
 === TRAINER_TIANA ===
-Name: TIANA
+Name: Tiana
 Class: Lass
 Pic: Lass
 Gender: Female
@@ -11589,8 +11603,8 @@ Music: Female
 Double Battle: No
 AI: Check Bad Move
 
-Zigzagoon
-Level: 4
+Lillipup
+Level: 3
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Bidoof
@@ -11785,7 +11799,7 @@ Level: 39
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_RICK ===
-Name: RICK
+Name: Rick
 Class: Bug Catcher
 Pic: Bug Catcher
 Gender: Male
@@ -11794,15 +11808,15 @@ Double Battle: No
 AI: Check Bad Move
 
 Snom
-Level: 4
+Level: 3
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Kricketot
+Sewaddle
 Level: 4
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_LYLE ===
-Name: LYLE
+Name: Lyle
 Class: Bug Catcher
 Pic: Bug Catcher
 Gender: Male
@@ -11810,20 +11824,20 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Kricketot
-Level: 3
+Kricketune
+Level: 12
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Burmy
-Level: 3
+Burmy Plant
+Level: 12
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Skullarva
-Level: 3
+Burmy Sandy
+Level: 12
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Burmy
-Level: 3
+Burmy Trash
+Level: 12
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_JOSE ===
@@ -11891,7 +11905,7 @@ Level: 25
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_JAMES_1 ===
-Name: JAMES
+Name: James
 Class: Bug Catcher
 Pic: Bug Catcher
 Gender: Male
@@ -11900,15 +11914,15 @@ Double Battle: No
 AI: Check Bad Move
 
 Skullarva
-Level: 6
+Level: 13
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Kakone
-Level: 6
+Sewaddle
+Level: 13
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_JAMES_2 ===
-Name: JAMES
+Name: James
 Class: Bug Catcher
 Pic: Bug Catcher
 Gender: Male
@@ -11916,12 +11930,12 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Frosmoth
+Swadloon
 Level: 27
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
 === TRAINER_JAMES_3 ===
-Name: JAMES
+Name: James
 Class: Bug Catcher
 Pic: Bug Catcher
 Gender: Male
@@ -11929,7 +11943,7 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Skorupi
+Swadloon
 Level: 29
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
@@ -11938,7 +11952,7 @@ Level: 29
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
 === TRAINER_JAMES_4 ===
-Name: JAMES
+Name: James
 Class: Bug Catcher
 Pic: Bug Catcher
 Gender: Male
@@ -11946,7 +11960,7 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Skorupi
+Leavanny
 Level: 31
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
@@ -11954,12 +11968,12 @@ Mortasque
 Level: 31
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
-Forretress
+Frosmoth
 Level: 31
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
 === TRAINER_JAMES_5 ===
-Name: JAMES
+Name: James
 Class: Bug Catcher
 Pic: Bug Catcher
 Gender: Male
@@ -11967,7 +11981,7 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Forretress
+Leavanny
 Level: 33
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
@@ -11979,7 +11993,7 @@ Mortasque
 Level: 33
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
-Skorupi
+Frosmoth
 Level: 33
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
@@ -13552,7 +13566,7 @@ Level: 8
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_DARIAN ===
-Name: DARIAN
+Name: Darian
 Class: Fisherman
 Pic: Fisherman
 Gender: Male
@@ -13560,8 +13574,8 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Cuppy
-Level: 9
+Slowpoke
+Level: 13
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_HAILEY ===
@@ -13642,20 +13656,20 @@ Level: 15
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_MARCOS ===
-Name: MARCOS
-Class: Guitarist
-Pic: Guitarist
+Name: Link
+Class: Bird Keeper
+Pic: Bird Keeper
 Gender: Male
 Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Voltorb
-Level: 15
+Hoothoot
+Level: 7
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_RHETT ===
-Name: RHETT
+Name: Rhett
 Class: Black Belt
 Pic: Black Belt
 Gender: Male
@@ -13663,8 +13677,8 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Makuhita
-Level: 15
+Pingloo
+Level: 7
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_TYRON ===

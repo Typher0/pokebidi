@@ -15,7 +15,7 @@
   "connections": null,
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_ROXANNE_1",
+      "graphics_id": "OBJ_EVENT_GFX_OTNAR",
       "x": 5,
       "y": 2,
       "elevation": 3,
@@ -29,10 +29,10 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER_3",
-      "x": 5,
-      "y": 13,
+      "x": 3,
+      "y": 12,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
@@ -85,15 +85,15 @@
       "x": 5,
       "y": 19,
       "elevation": 0,
-      "dest_map": "MAP_RUSTBORO_CITY",
-      "dest_warp_id": "0"
+      "dest_map": "MAP_PETALBURG_CITY",
+      "dest_warp_id": "2"
     },
     {
       "x": 6,
       "y": 19,
       "elevation": 0,
-      "dest_map": "MAP_RUSTBORO_CITY",
-      "dest_warp_id": "0"
+      "dest_map": "MAP_PETALBURG_CITY",
+      "dest_warp_id": "2"
     }
   ],
   "coord_events": [],

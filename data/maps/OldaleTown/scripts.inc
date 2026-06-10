@@ -16,7 +16,7 @@ OldaleTown_EventScript_SetOldaleState::
 	return
 
 OldaleTown_EventScript_BlockWestEntrance::
-	setobjectxyperm LOCALID_FOOTPRINTS_MAN, 1, 11
+	setobjectxyperm LOCALID_FOOTPRINTS_MAN, 29, 16
 	setobjectmovementtype LOCALID_FOOTPRINTS_MAN, MOVEMENT_TYPE_FACE_LEFT
 	return
 
@@ -98,6 +98,7 @@ OldaleTown_Movement_EmployeeEast:
 	walk_up
 	walk_up
 	walk_up
+	walk_right
 	walk_in_place_faster_down
 	step_end
 
@@ -111,6 +112,7 @@ OldaleTown_Movement_EmployeeSouth:
 	walk_up
 	walk_up
 	walk_up
+	walk_right
 	walk_in_place_faster_down
 	step_end
 
@@ -122,6 +124,7 @@ OldaleTown_Movement_EmployeeNorth:
 	walk_up
 	walk_up
 	walk_up
+	walk_right
 	walk_in_place_faster_down
 	step_end
 
@@ -149,6 +152,8 @@ OldaleTown_Movement_PlayerEast:
 	walk_up
 	walk_up
 	walk_up
+	walk_right
+	walk_in_place_faster_up
 	step_end
 
 OldaleTown_Movement_PlayerSouth:
@@ -161,6 +166,8 @@ OldaleTown_Movement_PlayerSouth:
 	walk_up
 	walk_up
 	walk_up
+	walk_right
+	walk_in_place_faster_up
 	step_end
 
 OldaleTown_Movement_PlayerNorth:
@@ -171,6 +178,8 @@ OldaleTown_Movement_PlayerNorth:
 	walk_up
 	walk_up
 	walk_up
+	walk_right
+	walk_in_place_faster_up
 	step_end
 
 OldaleTown_Movement_Unknown2:
@@ -323,75 +332,79 @@ OldaleTown_Movement_WatchRivalExit:
 
 OldaleTown_Movement_PlayerStepBack:
 	delay_8
-	walk_right
+	walk_left
 	step_end
 
 OldaleTown_Movement_BackUp:
-	walk_fast_up
+	walk_fast_down
 	walk_in_place_faster_left
 	lock_facing_direction
-	walk_right
+	walk_left
 	unlock_facing_direction
 	step_end
 
 OldaleTown_Movement_ReturnToOriginalPosition:
-	walk_down
-	walk_left
+	walk_up
+	walk_right
+	walk_in_place_faster_down
 	step_end
 
 OldaleTown_Text_SavingMyProgress:
 	.string "I want to take a rest, so I'm saving my\n"
-	.string "progress.$"
+	.string "progress.\p"
+	.string "Who knew I had so much data?$"
 
 OldaleTown_Text_IWorkAtPokemonMart:
 	.string "Hi!\n"
-	.string "I work at a POKéMON MART.\p"
+	.string "I work at a Pokémon Center.\p"
 	.string "Can I get you to come with me?$"
 
 OldaleTown_Text_ThisIsAPokemonMart:
-	.string "This is a POKéMON MART.\n"
-	.string "Just look for our blue roof.\p"
+	.string "This is a Pokémon Center.\n"
+	.string "Just look for our red roof.\p"
 	.string "We sell a variety of goods including\n"
-	.string "POKé BALLS for catching POKéMON.\p"
+	.string "Poké Balls for catching Pokémon.\p"
 	.string "Here, I'd like you to have this as\n"
 	.string "a promotional item.$"
 
 OldaleTown_Text_PotionExplanation:
-	.string "A POTION can be used anytime, so it's\n"
-	.string "even more useful than a POKéMON CENTER\l"
+	.string "A Potion can be used anytime, so it's\n"
+	.string "even more useful than a Pokémon Center\l"
 	.string "in certain situations.$"
 
 OldaleTown_Text_WaitDontComeInHere:
-	.string "Aaaaah! Wait!\n"
+	.string "STOP!\p"
+	.string "RIGHT!\p"
+	.string "THERE!\p"
 	.string "Please don't come in here.\p"
 	.string "I just discovered the footprints of\n"
-	.string "a rare POKéMON!\p"
+	.string "a rare Pokémon!\p"
 	.string "Wait until I finish sketching\n"
 	.string "them, okay?$"
 
 OldaleTown_Text_DiscoveredFootprints:
 	.string "I just discovered the footprints of\n"
-	.string "a rare POKéMON!\p"
+	.string "a rare Pokémon!\p"
 	.string "Wait until I finish sketching\n"
 	.string "them, okay?$"
 
 OldaleTown_Text_FinishedSketchingFootprints:
 	.string "I finished sketching the footprints of\n"
-	.string "a rare POKéMON.\p"
+	.string "a rare Pokémon.\p"
 	.string "But it turns out they were only my\n"
 	.string "own footprints…$"
 
 OldaleTown_Text_MayLetsGoBack:
-	.string "MAY: {PLAYER}{KUN}!\n"
+	.string "May: {PLAYER}{KUN}!\n"
 	.string "Over here!\l"
 	.string "Let's hurry home!$"
 
 OldaleTown_Text_BrendanLetsGoBack:
-	.string "BRENDAN: I'm heading back to my dad's\n"
-	.string "LAB now.\l"
+	.string "Brendan: I'm heading back to my dad's\n"
+	.string "Lab now.\l"
 	.string "{PLAYER}, you should hustle back, too.$"
 
 OldaleTown_Text_TownSign:
-	.string "OLDALE TOWN\n"
-	.string "“Where things start off scarce.”$"
+	.string "Albatross Town\n"
+	.string "“Home to those who want to get away.”$"
 
