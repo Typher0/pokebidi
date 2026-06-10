@@ -5699,7 +5699,12 @@ BattleScript_PowderMoveNoEffect::
 	setlastuseditem BS_SCRIPTING
 	printstring STRINGID_SAFETYGOGGLESPROTECTED
 	goto BattleScript_PowderMoveNoEffectWaitMsg
+jumpifability BS_TARGET, ABILITY_COZY, BattleScript_PowderMoveNoEffectCozy
+    printstring STRINGID_SAFETYGOGGLESPROTECTED
+    goto BattleScript_PowderMoveNoEffectWaitMsg
 BattleScript_PowderMoveNoEffectOvercoat:
+    call BattleScript_AbilityPopUpTarget
+BattleScript_PowderMoveNoEffectCozy:
     call BattleScript_AbilityPopUpTarget
 BattleScript_PowderMoveNoEffectPrint:
 	printstring STRINGID_SCR_ITDOESNTAFFECT

@@ -865,7 +865,7 @@ static u8 GetBattleEnvironmentByMapScene(u8 mapBattleScene)
 static void LoadBattleEnvironmentGfx(u16 environment)
 {
     if (environment >= NELEMS(gBattleEnvironmentInfo))
-        environment = BATTLE_ENVIRONMENT_PLAIN;  // If higher than the number of entries in gBattleEnvironmentInfo, use the default.
+        environment = BATTLE_ENVIRONMENT_ROUTE;  // If higher than the number of entries in gBattleEnvironmentInfo, use the default.
     // Copy to bg3
     DecompressDataWithHeaderVram(gBattleEnvironmentInfo[environment].background.tileset, (void *)(BG_CHAR_ADDR(2)));
     DecompressDataWithHeaderVram(gBattleEnvironmentInfo[environment].background.tilemap, (void *)(BG_SCREEN_ADDR(26)));
@@ -877,7 +877,7 @@ static void LoadBattleEnvironmentGfx(u16 environment)
 static void LoadBattleEnvironmentEntryGfx(u16 environment)
 {
     if (environment >= NELEMS(gBattleEnvironmentInfo))
-        environment = BATTLE_ENVIRONMENT_PLAIN;
+        environment = BATTLE_ENVIRONMENT_ROUTE;
     // Copy to bg1
     DecompressDataWithHeaderVram(gBattleEnvironmentInfo[environment].entry.tileset, (void *)BG_CHAR_ADDR(1));
     DecompressDataWithHeaderVram(gBattleEnvironmentInfo[environment].entry.tilemap, (void *)BG_SCREEN_ADDR(28));
@@ -894,7 +894,7 @@ static u8 GetBattleEnvironmentOverride(void)
         return gBattleEnvironment;
     }
     else if (gBattleTypeFlags & (BATTLE_TYPE_FRONTIER | BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED_LINK | BATTLE_TYPE_EREADER_TRAINER))
-        return BATTLE_ENVIRONMENT_FRONTIER;
+        return BATTLE_ENVIRONMENT_ARENA;
     else if (gBattleTypeFlags & BATTLE_TYPE_LEGENDARY)
     {
         switch (GetMonData(&gEnemyParty[0], MON_DATA_SPECIES))

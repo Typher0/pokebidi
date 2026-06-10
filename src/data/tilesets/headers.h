@@ -833,6 +833,28 @@ const struct Tileset gTileset_UnionRoom =
     .callback = NULL,
 };
 
+const struct Tileset gTileset_Primary_North =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_Primary_North,
+    .palettes = gTilesetPalettes_Primary_North,
+    .metatiles = gMetatiles_Primary_North,
+    .metatileAttributes = gMetatileAttributes_Primary_North,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_Zephyr =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Zephyr,
+    .palettes = gTilesetPalettes_Zephyr,
+    .metatiles = gMetatiles_Zephyr,
+    .metatileAttributes = gMetatileAttributes_Zephyr,
+    .callback = NULL,
+};
+
 #else
 
 // FRLG tilesets

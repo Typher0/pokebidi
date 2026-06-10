@@ -984,12 +984,12 @@ static void UpdateBattleBg(u8 taskId, bool8 increment)
     struct PokemonSpriteVisualizer *data = GetStructPtr(taskId);
 
     if (increment) {
-        data->battleEnvironment = (data->battleEnvironment + 1) % (BATTLE_ENVIRONMENT_RAYQUAZA + 1); // Can use BATTLE_ENVIRONMENT_COUNT once the remaining environments have sprites
+        data->battleEnvironment = (data->battleEnvironment + 1) % (BATTLE_ENVIRONMENT_GWEN + 1); // Can use BATTLE_ENVIRONMENT_COUNT once the remaining environments have sprites
     }
     else
     {
-        if (data->battleEnvironment == BATTLE_ENVIRONMENT_GRASS)
-            data->battleEnvironment = BATTLE_ENVIRONMENT_RAYQUAZA;
+        if (data->battleEnvironment == BATTLE_ENVIRONMENT_ROUTE)
+            data->battleEnvironment = BATTLE_ENVIRONMENT_INDOOR;
         else
             data->battleEnvironment -= 1;
     }
@@ -1242,7 +1242,7 @@ void CB2_Pokemon_Sprite_Visualizer(void)
 
         FillBgTilemapBufferRect(0, 0, 0, 0, 32, 20, 15);
         InitBgsFromTemplates(0, sBgTemplates, ARRAY_COUNT(sBgTemplates));
-        LoadBattleBg(BATTLE_ENVIRONMENT_GRASS);
+        LoadBattleBg(BATTLE_ENVIRONMENT_ROUTE);
 
         gMain.state++;
         break;

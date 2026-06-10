@@ -2026,6 +2026,14 @@ Cry_Noctowl::
 .if TESTING == FALSE
 	.incbin "sound/direct_sound_samples/cries/noctowl.bin"
 .endif
+
+.if P_GEN_9_CROSS_EVOS == TRUE
+    .align 2
+Cry_Doctowl::
+.if TESTING == FALSE
+    .incbin "sound/direct_sound_samples/cries/doctowl.bin"
+.endif
+.endif @ P_GEN_9_CROSS_EVOS
 .endif @ P_FAMILY_HOOTHOOT
 
 .if P_FAMILY_LEDYBA == TRUE
@@ -2291,6 +2299,14 @@ Cry_Unown::
 .if TESTING == FALSE
 	.incbin "sound/direct_sound_samples/cries/unown.bin"
 .endif
+
+.if P_GEN_9_CROSS_EVOS == TRUE
+    .align 2
+Cry_Esoterown::
+.if TESTING == FALSE
+    .incbin "sound/direct_sound_samples/cries/esoterown.bin"
+.endif
+.endif @ P_GEN_9_CROSS_EVOS
 .endif @ P_FAMILY_UNOWN
 
 .if P_FAMILY_WOBBUFFET == TRUE
@@ -3417,6 +3433,14 @@ Cry_Cacturne::
 .if TESTING == FALSE
 	.incbin "sound/direct_sound_samples/cries/cacturne.bin"
 .endif
+
+.if P_GEN_9_CROSS_EVOS == TRUE
+    .align 2
+Cry_Cacturado::
+.if TESTING == FALSE
+    .incbin "sound/direct_sound_samples/cries/cacturado.bin"
+.endif
+.endif @ P_GEN_9_CROSS_EVOS
 .endif @ P_FAMILY_CACNEA
 
 .if P_FAMILY_SWABLU == TRUE

@@ -522,6 +522,18 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_Lugia,                 OBJ_EVENT_PAL_TAG_LUGIA},
     {gObjectEventPal_RubySapphireBrendan,   OBJ_EVENT_PAL_TAG_RS_BRENDAN},
     {gObjectEventPal_RubySapphireMay,       OBJ_EVENT_PAL_TAG_RS_MAY},
+    {gObjectEventPal_Dawn,                  OBJ_EVENT_PAL_TAG_DAWN},
+    {gObjectEventPal_Lucas,                 OBJ_EVENT_PAL_TAG_LUCAS},
+    {gObjectEventPal_DawnLucasUnderwater,   OBJ_EVENT_PAL_TAG_DAWN_LUCAS_UNDERWATER},
+    {gObjectEventPal_Adhira,                OBJ_EVENT_PAL_TAG_ADHIRA},
+    {gObjectEventPal_Ahab,                  OBJ_EVENT_PAL_TAG_AHAB},
+    {gObjectEventPal_Carly,                 OBJ_EVENT_PAL_TAG_CARLY},
+    {gObjectEventPal_Israel,                OBJ_EVENT_PAL_TAG_ISRAEL},
+    {gObjectEventPal_Jelissa,               OBJ_EVENT_PAL_TAG_JELISSA},
+    {gObjectEventPal_Josh,                  OBJ_EVENT_PAL_TAG_JOSH},
+    {gObjectEventPal_Otnar,                 OBJ_EVENT_PAL_TAG_OTNAR},
+    {gObjectEventPal_Peter,                 OBJ_EVENT_PAL_TAG_PETER},
+    {gObjectEventPal_Toxianna,              OBJ_EVENT_PAL_TAG_TOXIANNA},
 #if IS_FRLG
     {gObjectEventPal_PlayerFrlg,            OBJ_EVENT_PAL_TAG_PLAYER_RED},
     {gObjectEventPal_PlayerReflectionFrlg,  OBJ_EVENT_PAL_TAG_PLAYER_RED_REFLECTION},
@@ -3327,10 +3339,10 @@ u8 LoadPlayerObjectEventPalette(enum Gender gender)
     {
     default:
     case MALE:
-        paletteTag = OBJ_EVENT_PAL_TAG_BRENDAN;
+        paletteTag = OBJ_EVENT_PAL_TAG_LUCAS;
         break;
     case FEMALE:
-        paletteTag = OBJ_EVENT_PAL_TAG_MAY;
+        paletteTag = OBJ_EVENT_PAL_TAG_DAWN;
         break;
     }
     return LoadObjectEventPalette(paletteTag);

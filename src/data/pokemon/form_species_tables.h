@@ -1000,6 +1000,18 @@ static const u16 sBanetteFormSpeciesIdTable[] = {
 };
 #endif //P_FAMILY_SHUPPET
 
+#if P_FAMILY_DUSKULL
+#if P_GEN_4_CROSS_EVOS
+static const u16 sDusknoirFormSpeciesIdTable[] = {
+    SPECIES_DUSKNOIR
+#if P_MEGA_EVOLUTIONS
+    SPECIES_DUSKNOIR_MEGA,
+#endif
+    FORM_SPECIES_END,
+};
+#endif // P_GEN_4_CROSS_EVOS
+#endif // P_FAMILY_DUSKULL
+
 #if P_FAMILY_CHIMECHO
 static const u16 sChimechoFormSpeciesIdTable[] = {
     SPECIES_CHIMECHO,
@@ -1120,6 +1132,36 @@ static const u16 sDeoxysFormSpeciesIdTable[] = {
     FORM_SPECIES_END,
 };
 #endif //P_FAMILY_DEOXYS
+
+#if P_FAMILY_TURTWIG
+static const u16 sTorterraFormSpeciesIdTable[] = {
+    SPECIES_TORTERRA,
+#if P_MEGA_EVOLUTIONS
+    SPECIES_TORTERRA_MEGA,
+#endif
+    FORM_SPECIES_END,
+};
+#endif // P_FAMILY_TURTWIG
+
+#if P_FAMILY_CHIMCHAR
+static const u16 sInfernapeFormSpeciesIdTable[] = {
+    SPECIES_INFERNAPE,
+#if P_MEGA_EVOLUTIONS
+    SPECIES_INFERNAPE_MEGA,
+#endif
+    FORM_SPECIES_END,
+};
+#endif // P_FAMILY_CHIMCHAR
+
+#if P_FAMILY_PIPLUP
+static const u16 sEmpoleonFormSpeciesIdTable[] = {
+    SPECIES_EMPOLEON,
+#if P_MEGA_EVOLUTIONS
+    SPECIES_EMPOLEON_MEGA,
+#endif
+    FORM_SPECIES_END,
+};
+#endif // P_FAMILY_PIPLUP
 
 #if P_FAMILY_STARLY
 static const u16 sStaraptorFormSpeciesIdTable[] = {
@@ -1330,6 +1372,24 @@ static const u16 sSamurottFormSpeciesIdTable[] = {
     FORM_SPECIES_END,
 };
 #endif //P_FAMILY_OSHAWOTT
+
+#if P_FAMILY_MUNNA
+static const u16 sMusharnaFormSpeciesIdTable[] = {
+    SPECIES_MUSHARNA,
+#if P_MEGA_EVOLUTIONS
+    SPECIES_MUSHARNA_MEGA,
+#endif
+    FORM_SPECIES_END,
+#endif // P_FAMILY_MUNNA
+    
+#if P_FAMILY_ROGGENROLA
+static const u16 sGigalithFormSpeciesIdTable[] = {
+    SPECIES_GIGALITH,
+#if P_MEGA_EVOLUTIONS
+    SPECIES_GIGALITH_MEGA,
+#endif
+    FORM_SPECIES_END,
+#endif // P_FAMILY_ROGGENROLA
 
 #if P_FAMILY_DRILBUR
 static const u16 sExcadrillFormSpeciesIdTable[] = {

@@ -2828,15 +2828,15 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .baseSpAttack  = 95,
         .baseSpDefense = 85,
         .types = MON_TYPES(TYPE_ELECTRIC),
-        .catchRate = 190,
-        .expYield = 42,
-        .evYield_Speed = 1,
+        .catchRate = 45,
+        .expYield = 112,
+        .evYield_Speed = 2,
         .genderRatio = PERCENT_FEMALE(50),
         .eggCycles = 10,
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
-        .abilities = { ABILITY_STATIC, ABILITY_NONE, ABILITY_NONE },
+        .abilities = { ABILITY_PRANKSTER, ABILITY_NONE, ABILITY_NONE },
         .bodyColor = BODY_COLOR_YELLOW,
         .noFlip = TRUE,
         .speciesName = _("Pichu"),
@@ -2994,12 +2994,12 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 #if P_COSPLAY_PIKACHU_FORMS
     [SPECIES_PIKACHU_COSPLAY]   =
     {
-        .baseHP        = 35,
-        .baseAttack    = 55,
-        .baseDefense   = 40,
-        .baseSpeed     = 90,
-        .baseSpAttack  = 50,
-        .baseSpDefense = 50,
+        .baseHP        = 65,
+        .baseAttack    = 75,
+        .baseDefense   = 70,
+        .baseSpeed     = 100,
+        .baseSpAttack  = 70,
+        .baseSpDefense = 80,
         .types = MON_TYPES(TYPE_ELECTRIC),
         .catchRate = 190,
         .expYield = PIKACHU_EXP_YIELD,
@@ -3046,13 +3046,13 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 
     [SPECIES_PIKACHU_ROCK_STAR] =
     {
-        .baseHP        = 35,
-        .baseAttack    = 55,
-        .baseDefense   = 40,
-        .baseSpeed     = 90,
-        .baseSpAttack  = 50,
-        .baseSpDefense = 50,
-        .types = MON_TYPES(TYPE_ELECTRIC),
+        .baseHP        = 65,
+        .baseAttack    = 110,
+        .baseDefense   = 80,
+        .baseSpeed     = 100,
+        .baseSpAttack  = 90,
+        .baseSpDefense = 80,
+        .types = MON_TYPES(TYPE_ELECTRIC, TYPE_DARK),
         .catchRate = 190,
         .expYield = PIKACHU_EXP_YIELD,
         .evYield_Speed = 2,
@@ -3098,13 +3098,13 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 
     [SPECIES_PIKACHU_BELLE] =
     {
-        .baseHP        = 35,
-        .baseAttack    = 55,
-        .baseDefense   = 40,
-        .baseSpeed     = 90,
-        .baseSpAttack  = 50,
-        .baseSpDefense = 50,
-        .types = MON_TYPES(TYPE_ELECTRIC),
+        .baseHP        = 65,
+        .baseAttack    = 80,
+        .baseDefense   = 80,
+        .baseSpeed     = 100,
+        .baseSpAttack  = 110,
+        .baseSpDefense = 90,
+        .types = MON_TYPES(TYPE_ELECTRIC, TYPE_ICE),
         .catchRate = 190,
         .expYield = PIKACHU_EXP_YIELD,
         .evYield_Speed = 2,
@@ -3151,13 +3151,13 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 
     [SPECIES_PIKACHU_POP_STAR] =
     {
-        .baseHP        = 35,
-        .baseAttack    = 55,
-        .baseDefense   = 40,
-        .baseSpeed     = 90,
-        .baseSpAttack  = 50,
-        .baseSpDefense = 50,
-        .types = MON_TYPES(TYPE_ELECTRIC),
+        .baseHP        = 65,
+        .baseAttack    = 80,
+        .baseDefense   = 80,
+        .baseSpeed     = 100,
+        .baseSpAttack  = 90,
+        .baseSpDefense = 110,
+        .types = MON_TYPES(TYPE_ELECTRIC, TYPE_FAIRY),
         .catchRate = 190,
         .expYield = PIKACHU_EXP_YIELD,
         .evYield_Speed = 2,
@@ -3204,13 +3204,13 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 
     [SPECIES_PIKACHU_PHD] =
     {
-        .baseHP        = 35,
-        .baseAttack    = 55,
-        .baseDefense   = 40,
-        .baseSpeed     = 90,
-        .baseSpAttack  = 50,
-        .baseSpDefense = 50,
-        .types = MON_TYPES(TYPE_ELECTRIC),
+        .baseHP        = 65,
+        .baseAttack    = 80,
+        .baseDefense   = 100,
+        .baseSpeed     = 80,
+        .baseSpAttack  = 110,
+        .baseSpDefense = 90,
+        .types = MON_TYPES(TYPE_ELECTRIC, TYPE_PSYCHIC),
         .catchRate = 190,
         .expYield = PIKACHU_EXP_YIELD,
         .evYield_Speed = 2,
@@ -3256,13 +3256,13 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 
     [SPECIES_PIKACHU_LIBRE] =
     {
-        .baseHP        = 35,
-        .baseAttack    = 55,
-        .baseDefense   = 40,
-        .baseSpeed     = 90,
-        .baseSpAttack  = 50,
-        .baseSpDefense = 50,
-        .types = MON_TYPES(TYPE_ELECTRIC),
+        .baseHP        = 65,
+        .baseAttack    = 110,
+        .baseDefense   = 90,
+        .baseSpeed     = 100,
+        .baseSpAttack  = 80,
+        .baseSpDefense = 80,
+        .types = MON_TYPES(TYPE_ELECTRIC, TYPE_FIGHTING),
         .catchRate = 190,
         .expYield = PIKACHU_EXP_YIELD,
         .evYield_Speed = 2,
@@ -3311,12 +3311,12 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 #if P_CAP_PIKACHU_FORMS
     [SPECIES_PIKACHU_ORIGINAL] =
     {
-        .baseHP        = 35,
-        .baseAttack    = 55,
-        .baseDefense   = 40,
-        .baseSpeed     = 90,
-        .baseSpAttack  = 50,
-        .baseSpDefense = 50,
+        .baseHP        = 95,
+        .baseAttack    = 125,
+        .baseDefense   = 90,
+        .baseSpeed     = 125,
+        .baseSpAttack  = 130,
+        .baseSpDefense = 90,
         .types = MON_TYPES(TYPE_ELECTRIC),
         .catchRate = 3,
         .expYield = PIKACHU_EXP_YIELD,
@@ -3368,12 +3368,12 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 
     [SPECIES_PIKACHU_HOENN] =
     {
-        .baseHP        = 35,
-        .baseAttack    = 55,
-        .baseDefense   = 40,
-        .baseSpeed     = 90,
-        .baseSpAttack  = 50,
-        .baseSpDefense = 50,
+        .baseHP        = 95,
+        .baseAttack    = 125,
+        .baseDefense   = 90,
+        .baseSpeed     = 125,
+        .baseSpAttack  = 130,
+        .baseSpDefense = 90,
         .types = MON_TYPES(TYPE_ELECTRIC),
         .catchRate = 190,
         .expYield = PIKACHU_EXP_YIELD,
@@ -3424,12 +3424,12 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 
     [SPECIES_PIKACHU_SINNOH] =
     {
-        .baseHP        = 35,
-        .baseAttack    = 55,
-        .baseDefense   = 40,
-        .baseSpeed     = 90,
-        .baseSpAttack  = 50,
-        .baseSpDefense = 50,
+        .baseHP        = 95,
+        .baseAttack    = 125,
+        .baseDefense   = 90,
+        .baseSpeed     = 125,
+        .baseSpAttack  = 130,
+        .baseSpDefense = 90,
         .types = MON_TYPES(TYPE_ELECTRIC),
         .catchRate = 190,
         .expYield = PIKACHU_EXP_YIELD,
@@ -3480,12 +3480,12 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 
     [SPECIES_PIKACHU_UNOVA] =
     {
-        .baseHP        = 35,
-        .baseAttack    = 55,
-        .baseDefense   = 40,
-        .baseSpeed     = 90,
-        .baseSpAttack  = 50,
-        .baseSpDefense = 50,
+        .baseHP        = 95,
+        .baseAttack    = 125,
+        .baseDefense   = 90,
+        .baseSpeed     = 125,
+        .baseSpAttack  = 130,
+        .baseSpDefense = 90,
         .types = MON_TYPES(TYPE_ELECTRIC),
         .catchRate = 190,
         .expYield = PIKACHU_EXP_YIELD,
@@ -3536,12 +3536,12 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 
     [SPECIES_PIKACHU_KALOS] =
     {
-        .baseHP        = 35,
-        .baseAttack    = 55,
-        .baseDefense   = 40,
-        .baseSpeed     = 90,
-        .baseSpAttack  = 50,
-        .baseSpDefense = 50,
+        .baseHP        = 95,
+        .baseAttack    = 125,
+        .baseDefense   = 90,
+        .baseSpeed     = 125,
+        .baseSpAttack  = 130,
+        .baseSpDefense = 90,
         .types = MON_TYPES(TYPE_ELECTRIC),
         .catchRate = 190,
         .expYield = PIKACHU_EXP_YIELD,
@@ -3592,12 +3592,12 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 
     [SPECIES_PIKACHU_ALOLA] =
     {
-        .baseHP        = 35,
-        .baseAttack    = 55,
-        .baseDefense   = 40,
-        .baseSpeed     = 90,
-        .baseSpAttack  = 50,
-        .baseSpDefense = 50,
+        .baseHP        = 95,
+        .baseAttack    = 125,
+        .baseDefense   = 90,
+        .baseSpeed     = 125,
+        .baseSpAttack  = 130,
+        .baseSpDefense = 90,
         .types = MON_TYPES(TYPE_ELECTRIC),
         .catchRate = 190,
         .expYield = PIKACHU_EXP_YIELD,
@@ -3648,12 +3648,12 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 
     [SPECIES_PIKACHU_PARTNER] =
     {
-        .baseHP        = 35,
-        .baseAttack    = 55,
-        .baseDefense   = 40,
-        .baseSpeed     = 90,
-        .baseSpAttack  = 50,
-        .baseSpDefense = 50,
+        .baseHP        = 95,
+        .baseAttack    = 125,
+        .baseDefense   = 90,
+        .baseSpeed     = 125,
+        .baseSpAttack  = 130,
+        .baseSpDefense = 90,
         .types = MON_TYPES(TYPE_ELECTRIC),
         .catchRate = 190,
         .expYield = PIKACHU_EXP_YIELD,
@@ -3705,12 +3705,12 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 
     [SPECIES_PIKACHU_WORLD] =
     {
-        .baseHP        = 35,
-        .baseAttack    = 55,
-        .baseDefense   = 40,
-        .baseSpeed     = 90,
-        .baseSpAttack  = 50,
-        .baseSpDefense = 50,
+        .baseHP        = 95,
+        .baseAttack    = 125,
+        .baseDefense   = 90,
+        .baseSpeed     = 125,
+        .baseSpAttack  = 130,
+        .baseSpDefense = 90,
         .types = MON_TYPES(TYPE_ELECTRIC),
         .catchRate = 190,
         .expYield = PIKACHU_EXP_YIELD,
@@ -9717,7 +9717,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 
     [SPECIES_GOLEM] =
     {
-        .baseHP        = 80,
+        .baseHP        = 85,
         .baseAttack    = P_UPDATED_STATS >= GEN_6 ? 120 : 110,
         .baseDefense   = 130,
         .baseSpeed     = 45,
@@ -9934,7 +9934,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 
     [SPECIES_GOLEM_ALOLA] =
     {
-        .baseHP        = 80,
+        .baseHP        = 85,
         .baseAttack    = 120,
         .baseDefense   = 130,
         .baseSpeed     = 45,

@@ -505,6 +505,10 @@
 #define METATILE_PokemonCenter_Floor_ShadowTop           0x21E
 #define METATILE_PokemonCenter_Floor_ShadowTop_Alt       0x2DC
 
+// gTileset_Primary_North
+#define METATILE_Primary_North_Door_Gym         0x08B
+#define METATILE_Primary_North_Door_PokeCenter  0x064
+
 // gTileset_PokemonCenterFrlg
 #define METATILE_PokemonCenterFrlg_CableClubDoor                         0x2DE
 #define METATILE_PokemonCenterFrlg_CounterBarrier                        0x2F9
@@ -1014,6 +1018,10 @@
 // gTileset_Underwater
 #define METATILE_Underwater_FloorShadow  0x228
 #define METATILE_Underwater_RockWall     0x21E
+
+// gTileset_Primary_North
+#define METATILE_Primary_North_Door_Gym         0x08B
+#define METATILE_Primary_North_Door_PokeCenter  0x064
 
 // gTileset_VermilionCity
 #define METATILE_VermilionCity_Door        0x29E
