@@ -3604,9 +3604,10 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, enum BattlerId battler, enum
         case ABILITY_EMBODY_ASPECT_HEARTHFLAME_MASK:
         case ABILITY_EMBODY_ASPECT_WELLSPRING_MASK:
         case ABILITY_EMBODY_ASPECT_CORNERSTONE_MASK:
-            if (shouldAbilityTrigger)
+            if (shouldAbilityTrigger && !gBattleMons[battler].volatiles.embodyAspectActivated)
             {
                 enum Stat stat;
+                gBattleMons[battler].volatiles.embodyAspectActivated = TRUE;
 
                 if (gLastUsedAbility == ABILITY_EMBODY_ASPECT_HEARTHFLAME_MASK)
                     stat = STAT_ATK;
@@ -3752,35 +3753,34 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, enum BattlerId battler, enum
                 }
                 break;
             case ABILITY_MOODY:
-                if (gBattleStruct->battlerState[battler].isFirstTurn != 2)
+            {
+                u32 validToRaise = 0, validToLower = 0;
+                u32 statsNum = GetConfig(B_MOODY_ACC_EVASION) >= GEN_8 ? NUM_STATS : NUM_BATTLE_STATS;
+
+                for (i = STAT_ATK; i < statsNum; i++)
                 {
-                    u32 validToRaise = 0, validToLower = 0;
-                    u32 statsNum = GetConfig(B_MOODY_ACC_EVASION) >= GEN_8 ? NUM_STATS : NUM_BATTLE_STATS;
-
-                    for (i = STAT_ATK; i < statsNum; i++)
-                    {
-                        if (CompareStat(battler, i, MIN_STAT_STAGE, CMP_GREATER_THAN, gLastUsedAbility))
-                            validToLower |= 1u << i;
-                        if (CompareStat(battler, i, MAX_STAT_STAGE, CMP_LESS_THAN, gLastUsedAbility))
-                            validToRaise |= 1u << i;
-                    }
-
-                    gBattleScripting.statChanger = gBattleScripting.savedStatChanger = 0; // for raising and lowering stat respectively
-                    if (validToRaise) // Find stat to raise
-                    {
-                        i = RandomUniformExcept(RNG_MOODY_INCREASE, STAT_ATK, statsNum - 1, MoodyCantRaiseStat);
-                        SET_STATCHANGER(i, 2, FALSE);
-                        validToLower &= ~(1u << i); // Can't lower the same stat as raising.
-                    }
-                    if (validToLower) // Find stat to lower
-                    {
-                        // MoodyCantLowerStat already checks that both stats are different
-                        i = RandomUniformExcept(RNG_MOODY_DECREASE, STAT_ATK, statsNum - 1, MoodyCantLowerStat);
-                        SET_STATCHANGER2(gBattleScripting.savedStatChanger, i, 1, TRUE);
-                    }
-                    BattleScriptExecute(BattleScript_MoodyActivates);
-                    effect++;
+                    if (CompareStat(battler, i, MIN_STAT_STAGE, CMP_GREATER_THAN, gLastUsedAbility))
+                        validToLower |= 1u << i;
+                    if (CompareStat(battler, i, MAX_STAT_STAGE, CMP_LESS_THAN, gLastUsedAbility))
+                        validToRaise |= 1u << i;
                 }
+
+                gBattleScripting.statChanger = gBattleScripting.savedStatChanger = 0; // for raising and lowering stat respectively
+                if (validToRaise) // Find stat to raise
+                {
+                    i = RandomUniformExcept(RNG_MOODY_INCREASE, STAT_ATK, statsNum - 1, MoodyCantRaiseStat);
+                    SET_STATCHANGER(i, 2, FALSE);
+                    validToLower &= ~(1u << i); // Can't lower the same stat as raising.
+                }
+                if (validToLower) // Find stat to lower
+                {
+                    // MoodyCantLowerStat already checks that both stats are different
+                    i = RandomUniformExcept(RNG_MOODY_DECREASE, STAT_ATK, statsNum - 1, MoodyCantLowerStat);
+                    SET_STATCHANGER2(gBattleScripting.savedStatChanger, i, 1, TRUE);
+                }
+                BattleScriptExecute(BattleScript_MoodyActivates);
+                effect++;
+            }
                 break;
             case ABILITY_TRUANT:
                 gBattleMons[gBattlerAttacker].volatiles.truantCounter ^= 1;
@@ -4351,6 +4351,7 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, enum BattlerId battler, enum
         case ABILITY_POISON_TOUCH:
             if (IsBattlerAlive(gBattlerTarget)
              && !gBattleStruct->unableToUseMove
+             && !IsMoveEffectBlockedByTarget(GetBattlerAbility(gBattlerTarget))
              && CanBePoisoned(gBattlerAttacker, gBattlerTarget, gLastUsedAbility, GetBattlerAbility(gBattlerTarget))
              && IsMoveMakingContact(gBattlerAttacker, gBattlerTarget, GetBattlerAbility(gBattlerAttacker), GetBattlerHoldEffect(gBattlerAttacker), move)
              && IsBattlerTurnDamaged(gBattlerTarget, EXCLUDING_SUBSTITUTES) // Need to actually hit the target
@@ -4368,12 +4369,15 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, enum BattlerId battler, enum
             if (gBattleStruct->toxicChainPriority)
             {
                 gBattleStruct->toxicChainPriority = FALSE;
-                gEffectBattler = gBattlerTarget;
-                gBattleScripting.battler = gBattlerAttacker;
-                gBattleScripting.moveEffect = MOVE_EFFECT_TOXIC;
-                PREPARE_ABILITY_BUFFER(gBattleTextBuff1, gLastUsedAbility);
-                BattleScriptCall(BattleScript_AbilityStatusEffect);
-                effect++;
+                if (!IsMoveEffectBlockedByTarget(GetBattlerAbility(gBattlerTarget)))
+                {
+                    gEffectBattler = gBattlerTarget;
+                    gBattleScripting.battler = gBattlerAttacker;
+                    gBattleScripting.moveEffect = MOVE_EFFECT_TOXIC;
+                    PREPARE_ABILITY_BUFFER(gBattleTextBuff1, gLastUsedAbility);
+                    BattleScriptCall(BattleScript_AbilityStatusEffect);
+                    effect++;
+                }
             }
             break;
         case ABILITY_STENCH:
@@ -4383,7 +4387,7 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, enum BattlerId battler, enum
              && IsBattlerTurnDamaged(gBattlerTarget, EXCLUDING_SUBSTITUTES)
              && !MoveHasAdditionalEffect(gCurrentMove, MOVE_EFFECT_FLINCH))
             {
-                SetMoveEffect(gBattlerAttacker, gBattlerTarget, MOVE_EFFECT_FLINCH, gBattlescriptCurrInstr, EFFECT_PRIMARY);
+                SetMoveEffect(gBattlerAttacker, gBattlerTarget, MOVE_EFFECT_FLINCH, gBattlescriptCurrInstr, NO_FLAGS);
                 effect++;
             }
             break;
@@ -4486,12 +4490,15 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, enum BattlerId battler, enum
         case ABILITY_MAGICIAN:
             if (GetMoveEffect(move) != EFFECT_FLING
              && GetMoveEffect(move) != EFFECT_NATURAL_GIFT
+             && GetMoveEffect(move) != EFFECT_FUTURE_SIGHT
              && gBattleMons[battler].item == ITEM_NONE
              && IsBattlerAlive(battler)
              && !gSpecialStatuses[battler].gemBoost) // In base game, gems are consumed after magician would activate.
             {
-                u32 numMagicianTargets = 0;
-                u32 magicianTargets = 0;
+                u32 numFoeMagicianTargets = 0;
+                u32 numAllyMagicianTargets = 0;
+                u32 foeMagicianTargets = 0;
+                u32 allyMagicianTargets = 0;
 
                 for (enum BattlerId battlerDef = 0; battlerDef < gBattlersCount; battlerDef++)
                 {
@@ -4500,23 +4507,34 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, enum BattlerId battler, enum
                      && IsBattlerTurnDamaged(battlerDef, EXCLUDING_SUBSTITUTES)
                      && CanStealItem(battler, battlerDef, gBattleMons[battlerDef].item)
                      && !GetBattlerPartyState(battlerDef)->isKnockedOff
-                     && !DoesSubstituteBlockMove(battler, battlerDef, move)
-                     && (GetBattlerAbility(battlerDef) != ABILITY_STICKY_HOLD || !IsBattlerAlive(battlerDef)))
+                     && !DoesSubstituteBlockMove(battler, battlerDef, move))
                     {
-                        magicianTargets |= 1u << battlerDef;
-                        numMagicianTargets++;
+                        if (IsBattlerAlly(battler, battlerDef))
+                        {
+                            allyMagicianTargets |= 1u << battlerDef;
+                            numAllyMagicianTargets++;
+                        }
+                        else
+                        {
+                            foeMagicianTargets |= 1u << battlerDef;
+                            numFoeMagicianTargets++;
+                        }
                     }
                 }
 
-                if (numMagicianTargets == 0)
+                if (numFoeMagicianTargets == 0 && numAllyMagicianTargets == 0)
                 {
                     effect = FALSE;
                     break;
                 }
 
+                // For spread moves, Magician prioritizes opponents over allies.
+                u32 magicianTargets = (numFoeMagicianTargets != 0) ? foeMagicianTargets : allyMagicianTargets;
+                u32 numMagicianTargets = (numFoeMagicianTargets != 0) ? numFoeMagicianTargets : numAllyMagicianTargets;
                 enum BattlerId battlers[MAX_BATTLERS_COUNT] = {0, 1, 2, 3};
+
                 if (numMagicianTargets > 1)
-                    SortBattlersBySpeed(battlers, FALSE);
+                    SortBattlersBySpeed(battlers, (gFieldStatuses & STATUS_FIELD_TRICK_ROOM) != 0);
 
                 for (u32 i = 0; i < gBattlersCount; i++)
                 {
@@ -4524,6 +4542,12 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, enum BattlerId battler, enum
 
                     if (!(magicianTargets & 1u << targetBattler))
                         continue;
+
+                    if (GetBattlerAbility(targetBattler) == ABILITY_STICKY_HOLD && IsBattlerAlive(targetBattler))
+                    {
+                        effect = FALSE;
+                        break;
+                    }
 
                     StealTargetItem(battler, targetBattler);
                     gBattlerAbility = battler;
@@ -4649,7 +4673,9 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, enum BattlerId battler, enum
             return effect;
         break;
     case ABILITYEFFECT_SYNCHRONIZE:
-        if (gLastUsedAbility == ABILITY_SYNCHRONIZE && gBattleStruct->synchronizeMoveEffect != MOVE_EFFECT_NONE)
+        if (gLastUsedAbility == ABILITY_SYNCHRONIZE
+         && gBattleStruct->synchronizeMoveEffect != MOVE_EFFECT_NONE
+         && gEffectBattler == gBattlerTarget)
         {
             gBattleScripting.battler = gBattlerAbility = gBattlerTarget;
             RecordAbilityBattle(gBattlerTarget, ABILITY_SYNCHRONIZE);
@@ -4679,7 +4705,9 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, enum BattlerId battler, enum
         }
         break;
     case ABILITYEFFECT_ATK_SYNCHRONIZE:
-        if (gLastUsedAbility == ABILITY_SYNCHRONIZE && gBattleStruct->synchronizeMoveEffect != MOVE_EFFECT_NONE)
+        if (gLastUsedAbility == ABILITY_SYNCHRONIZE
+         && gBattleStruct->synchronizeMoveEffect != MOVE_EFFECT_NONE
+         && gEffectBattler == gBattlerAttacker)
         {
             gBattleScripting.battler = gBattlerAbility = gBattlerAttacker;
             RecordAbilityBattle(gBattlerAttacker, ABILITY_SYNCHRONIZE);
@@ -8128,7 +8156,7 @@ static bool32 IsCriticalHit(struct BattleContext *ctx)
         return FALSE;
     if (ctx->isSelfInflicted)
         return FALSE;
-    if (gSideStatuses[ctx->battlerDef] & SIDE_STATUS_LUCKY_CHANT)
+    if (gSideStatuses[GetBattlerSide(ctx->battlerDef)] & SIDE_STATUS_LUCKY_CHANT)
         return FALSE;
 
     bool32 isCrit = FALSE;
