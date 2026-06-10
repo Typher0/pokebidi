@@ -855,6 +855,28 @@ const struct Tileset gTileset_Zephyr =
     .callback = NULL,
 };
 
+const struct Tileset gTileset_Route =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Route,
+    .palettes = gTilesetPalettes_Route,
+    .metatiles = gMetatiles_Route,
+    .metatileAttributes = gMetatileAttributes_Route,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_Primary =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_Primary,
+    .palettes = gTilesetPalettes_Primary,
+    .metatiles = gMetatiles_Primary,
+    .metatileAttributes = gMetatileAttributes_Primary,
+    .callback = NULL,
+};
+
 #else
 
 // FRLG tilesets

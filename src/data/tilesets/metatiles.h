@@ -216,6 +216,12 @@ const u16 gMetatileAttributes_Primary_North[] = INCBIN_U16("data/tilesets/primar
 const u16 gMetatiles_Zephyr[] = INCBIN_U16("data/tilesets/secondary/zephyr/metatiles.bin");
 const u16 gMetatileAttributes_Zephyr[] = INCBIN_U16("data/tilesets/secondary/zephyr/metatile_attributes.bin");
 
+const u16 gMetatiles_Route[] = INCBIN_U16("data/tilesets/secondary/route/metatiles.bin");
+const u16 gMetatileAttributes_Route[] = INCBIN_U16("data/tilesets/secondary/route/metatile_attributes.bin");
+
+const u16 gMetatiles_Primary[] = INCBIN_U16("data/tilesets/primary/primary/metatiles.bin");
+const u16 gMetatileAttributes_Primary[] = INCBIN_U16("data/tilesets/primary/primary/metatile_attributes.bin");
+
 #else
 
 const u16 gMetatiles_Building_Frlg[] = INCBIN_U16("data/tilesets/primary/building_frlg/metatiles.bin");
