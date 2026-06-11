@@ -16219,7 +16219,7 @@ const u8 gMonIcon_Cacturado[] = INCBIN_U8("graphics/pokemon/cacturado/icon.4bpp"
     const u16 gMonShinyPalette_ArceusSound[] = INCBIN_U16("graphics/pokemon/arceus/sound/shiny.gbapal");
 
 #if P_ARCEUS_UNIQUE_FORM_ICONS >= GEN_9
-const u8 gMonIcon_ArceusFighting[] = INCGFX_U8("graphics/pokemon/arceus/fighting/icon.png", ".4bpp");
+    const u8 gMonIcon_ArceusFighting[] = INCGFX_U8("graphics/pokemon/arceus/fighting/icon.png", ".4bpp");
     const u8 gMonIcon_ArceusFlying[] = INCGFX_U8("graphics/pokemon/arceus/flying/icon.png", ".4bpp");
     const u8 gMonIcon_ArceusPoison[] = INCGFX_U8("graphics/pokemon/arceus/poison/icon.png", ".4bpp");
     const u8 gMonIcon_ArceusGround[] = INCGFX_U8("graphics/pokemon/arceus/ground/icon.png", ".4bpp");
@@ -16236,7 +16236,7 @@ const u8 gMonIcon_ArceusFighting[] = INCGFX_U8("graphics/pokemon/arceus/fighting
     const u8 gMonIcon_ArceusDragon[] = INCGFX_U8("graphics/pokemon/arceus/dragon/icon.png", ".4bpp");
     const u8 gMonIcon_ArceusDark[] = INCGFX_U8("graphics/pokemon/arceus/dark/icon.png", ".4bpp");
     const u8 gMonIcon_ArceusFairy[] = INCGFX_U8("graphics/pokemon/arceus/fairy/icon.png", ".4bpp");
-#endif //P_ARCEUS_UNIQUE_FORM_ICONS  OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
+#endif //P_ARCEUS_UNIQUE_FORM_ICONS
 #if OW_POKEMON_OBJECT_EVENTS
     const u32 gObjectEventPic_ArceusNormal[] = INCGFX_COMP("graphics/pokemon/arceus/overworld.png", ".4bpp", "-mwidth 8 -mheight 8");
     const u32 gObjectEventPic_ArceusFighting[] = INCGFX_COMP("graphics/pokemon/arceus/overworld.png", ".4bpp", "-mwidth 8 -mheight 8");
@@ -27623,6 +27623,24 @@ const u8 gMonIcon_ArceusFighting[] = INCGFX_U8("graphics/pokemon/arceus/fighting
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS
 #endif //P_FAMILY_TERAPAGOS
+
+#if P_FAMILY_PECHARUNT
+    const u32 gMonFrontPic_Pecharunt[] = INCGFX_U32("graphics/pokemon/pecharunt/front.png", ".4bpp.smol");
+    const u16 gMonPalette_Pecharunt[] = INCGFX_U16("graphics/pokemon/pecharunt/normal.pal", ".gbapal");
+    const u32 gMonBackPic_Pecharunt[] = INCGFX_U32("graphics/pokemon/pecharunt/back.png", ".4bpp.smol");
+    const u16 gMonShinyPalette_Pecharunt[] = INCGFX_U16("graphics/pokemon/pecharunt/shiny.pal", ".gbapal");
+    const u8 gMonIcon_Pecharunt[] = INCGFX_U8("graphics/pokemon/pecharunt/icon.png", ".4bpp");
+#if P_FOOTPRINTS
+    const u8 gMonFootprint_Pecharunt[] = INCGFX_U8("graphics/pokemon/pecharunt/footprint.png", ".1bpp");
+#endif //P_FOOTPRINTS
+#if OW_POKEMON_OBJECT_EVENTS
+    const u32 gObjectEventPic_Pecharunt[] = INCGFX_COMP("graphics/pokemon/pecharunt/overworld.png", ".4bpp", "-mwidth 4 -mheight 4");
+#if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
+    const u16 gOverworldPalette_Pecharunt[] = INCGFX_U16("graphics/pokemon/pecharunt/overworld_normal.pal", ".gbapal");
+    const u16 gShinyOverworldPalette_Pecharunt[] = INCGFX_U16("graphics/pokemon/pecharunt/overworld_shiny.pal", ".gbapal");
+#endif //OW_PKMN_OBJECTS_SHARE_PALETTES
+#endif //OW_POKEMON_OBJECT_EVENTS
+#endif //P_FAMILY_PECHARUNT
 
     const u32 gMonFrontPic_Egg[] = INCGFX_U32("graphics/pokemon/egg/anim_front.png", ".4bpp.smol");
     const u16 gMonPalette_Egg[] = INCGFX_U16("graphics/pokemon/egg/normal.pal", ".gbapal");
