@@ -51,6 +51,7 @@ const u8 gText_UnkWeight[] = _("????.? lbs.");
 const u8 gText_UnkWeightMetric[] = _("???.? kg.");
 const u8 gText_EmptyPkmnCategory[] = _("                       POKéMON"); // Unused
 const u8 gText_EmptyHeight[] = _("{CLEAR_TO 12}    '    ”"); // Unused
+const u8 gText_EmptyWeight[] = _("        .   lbs."); // Unused
 const u8 gText_EmptyPokedexInfo1[] = _(""); // Unused
 const u8 gText_CryOf[] = _("Cry of");
 const u8 gText_EmptyPokedexInfo2[] = _(""); // Unused
