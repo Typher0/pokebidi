@@ -22,102 +22,6 @@ const u8 gNotDoneYetDescription[] = _(
     "This move can't be used. Its\n"
     "effect is in development.");
 
-static const u8 sNullDescription[] = _("");
-
-static const u8 sMegaDrainDescription[] = _(
-    "An attack that absorbs half\n"
-    "the damage inflicted.");
-
-#if B_SKIP_RECHARGE != GEN_1
-static const u8 sHyperBeamDescription[] = _(
-    "Powerful, but leaves the\n"
-    "user immobile the next turn.");
-#else
-static const u8 sHyperBeamDescription[] = _(
-    "Leaves the user immobile\n"
-    "if target is not KO'd.");
-#endif
-
-static const u8 sRevengeDescription[] = _(
-    "An attack that moves last\n"
-    "and gains power if hit.");
-
-static const u8 sPluckDescription[] = _(
-    "Eats the foe's held Berry\n"
-    "gaining its effect.");
-
-static const u8 sHealingWishDescription[] = _(
-    "The user faints to heal up\n"
-    "the recipient.");
-
-static const u8 sWringOutDescription[] = _(
-    "The higher the foe's HP\n"
-    "the more damage caused.");
-
-static const u8 sUTurnDescription[] = _(
-    "Does damage then switches\n"
-    "out the user.");
-
-static const u8 sStormThrowDescription[] = _(
-    "This attack always results\n"
-    "in a critical hit.");
-
-static const u8 sCircleThrowDescription[] = _(
-    "Knocks foe away to switch\n"
-    "it out or end wild battle.");
-
-static const u8 sChipAwayDescription[] = _(
-    "Strikes through the foe's\n"
-    "stat changes.");
-
-static const u8 sHeavySlamDescription[] = _(
-    "Does more damage if the\n"
-    "user outweighs the foe.");
-
-static const u8 sPsyshockDescription[] = _(
-    "Attacks with a psychic wave\n"
-    "that does physical damage.");
-
-static const u8 sLavaPlumeDescription[] = _(
-    "Scarlet flames torch\n"
-    "everything around the user.");
-
-static const u8 sShadowForceDescription[] = _(
-    "Vanishes on the first turn\n"
-    "then strikes the next turn.");
-
-static const u8 sFalseSwipeDescription[] = _(
-    "An attack that leaves the\n"
-    "foe with at least 1 HP.");
-
-static const u8 sDrainingKissDescription[] = _(
-    "An attack that absorbs over\n"
-    "half the damage inflicted.");
-
-static const u8 sCloseCombatDescription[] = _(
-    "A strong attack but lowers\n"
-    "the defensive stats.");
-
-static const u8 sHyperspaceHoleDescription[] = _(
-    "Uses a warp hole to attack.\n"
-    "Can't be evaded.");
-
-static const u8 sSuckerPunchDescription[] = _(
-    "Strikes first if the foe\n"
-    "is preparing an attack.");
-
-static const u8 sFeintDescription[] = _(
-    "An attack that hits foes\n"
-    "using moves like Protect.");
-
-static const u8 sProtectDescription[] = _(
-    "Evades attack, but may fail\n"
-    "if used in succession.");
-
-static const u8 sGMaxOneBlowDescription[] = _(
-    "G-max Urshifu attack.\n"
-    "Ignores Max Guard.");
-
 const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
 {
     [MOVE_NONE] =
@@ -6759,8 +6663,9 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .category = DAMAGE_CATEGORY_PHYSICAL,
         .makesContact = TRUE,
         .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_DEF_MINUS_1,
-            .chance = 100,
+            .moveEffect = MOVE_EFFECT_STAT_MINUS,
+            .defense = 1,
+            .chance = 50,
         }),
         .contestEffect = C_UPDATED_MOVE_EFFECTS >= GEN_6 ? CONTEST_EFFECT_HIGHLY_APPEALING : CONTEST_EFFECT_BETTER_WITH_GOOD_CONDITION,
         .contestCategory = CONTEST_CATEGORY_TOUGH,
@@ -8272,8 +8177,9 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .category = DAMAGE_CATEGORY_PHYSICAL,
         .makesContact = TRUE,
         .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_DEF_MINUS_1,
-            .chance = 100,
+            .moveEffect = MOVE_EFFECT_STAT_MINUS,
+            .defense = 1,
+            .chance = 50,
         }),
         .contestEffect = CONTEST_EFFECT_BADLY_STARTLE_FRONT_MON,
         .contestCategory = CONTEST_CATEGORY_COOL,
@@ -10893,13 +10799,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .category = DAMAGE_CATEGORY_SPECIAL,
         .ballisticMove = TRUE,
         .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_ATK_PLUS_1,
-            .self = TRUE,
-            .chance = 10,
-        },
-        {
-            .moveEffect = MOVE_EFFECT_ACC_PLUS_1,
-            .self = TRUE,
+            .moveEffect = MOVE_EFFECT_STAT_MINUS,
+            .spDef = 1,
             .chance = 10,
         }),
         .contestEffect = CONTEST_EFFECT_HIGHLY_APPEALING,
@@ -20396,7 +20297,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             .moveEffect = MOVE_EFFECT_PAYDAY,
         },
         {
-            .moveEffect = MOVE_EFFECT_SP_ATK_MINUS_2,
+            .moveEffect = MOVE_EFFECT_STAT_MINUS,
+            .spAtk = 1,
             .self = TRUE,
         }),
         .battleAnimScript = gBattleAnimMove_MakeItRain,

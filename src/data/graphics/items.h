@@ -724,12 +724,9 @@ const u16 gItemIconPalette_SteelMemory[] = INCBIN_U16("graphics/items/icon_palet
 const u32 gItemIcon_FairyMemory[] = INCBIN_U32("graphics/items/icons/fairy_memory.4bpp.smol");
 const u16 gItemIconPalette_FairyMemory[] = INCBIN_U16("graphics/items/icon_palettes/fairy_memory.gbapal");
 
-const u32 gItemIcon_SoundMemory[] = INCBIN_U32("graphics/items/icons/sound_memory.4bpp.smol");
-const u16 gItemIconPalette_SoundMemory[] = INCBIN_U16("graphics/items/icon_palettes/sound_memory.gbapal");
-
-const u32 gItemIcon_RustedSword[] = INCBIN_U32("graphics/items/icons/rusted_sword.4bpp.smol");
-const u32 gItemIcon_RustedShield[] = INCBIN_U32("graphics/items/icons/rusted_shield.4bpp.smol");
-const u16 gItemIconPalette_RustedWeapons[] = INCBIN_U16("graphics/items/icon_palettes/rusted_weapons.gbapal");
+const u32 gItemIcon_RustedSword[] = INCGFX_U32("graphics/items/icons/rusted_sword.png", ".4bpp.smol");
+const u32 gItemIcon_RustedShield[] = INCGFX_U32("graphics/items/icons/rusted_shield.png", ".4bpp.smol");
+const u16 gItemIconPalette_RustedWeapons[] = INCGFX_U16("graphics/items/icon_palettes/rusted_weapons.pal", ".gbapal");
 
 // Colored Orbs
 
@@ -1098,11 +1095,8 @@ const u16 gItemIconPalette_SteeliumZ[] = INCBIN_U16("graphics/items/icon_palette
 const u32 gItemIcon_FairiumZ[] = INCBIN_U32("graphics/items/icons/fairium_z.4bpp.smol");
 const u16 gItemIconPalette_FairiumZ[] = INCBIN_U16("graphics/items/icon_palettes/fairium_z.gbapal");
 
-const u32 gItemIcon_SoundiumZ[] = INCBIN_U32("graphics/items/icons/soundium_z.4bpp.smol");
-const u16 gItemIconPalette_SoundiumZ[] = INCBIN_U16("graphics/items/icon_palettes/soundium_z.gbapal");
-
-const u32 gItemIcon_PikaniumZ[] = INCBIN_U32("graphics/items/icons/pikanium_z.4bpp.smol");
-const u16 gItemIconPalette_PikaniumZ[] = INCBIN_U16("graphics/items/icon_palettes/pikanium_z.gbapal");
+const u32 gItemIcon_PikaniumZ[] = INCGFX_U32("graphics/items/icons/pikanium_z.png", ".4bpp.smol");
+const u16 gItemIconPalette_PikaniumZ[] = INCGFX_U16("graphics/items/icon_palettes/pikanium_z.pal", ".gbapal");
 
 const u32 gItemIcon_EeviumZ[] = INCBIN_U32("graphics/items/icons/eevium_z.4bpp.smol");
 const u16 gItemIconPalette_EeviumZ[] = INCBIN_U16("graphics/items/icon_palettes/eevium_z.gbapal");
@@ -2039,26 +2033,25 @@ const u16 gItemIconPalette_TinyBambooShoot[] = INCBIN_U16("graphics/items/icon_p
 
 // Tera Shards
 
-const u32 gItemIcon_TeraShard[] = INCBIN_U32("graphics/items/icons/tera_shard.4bpp.smol");
-const u16 gItemIconPalette_NormalTeraShard[] = INCBIN_U16("graphics/items/icon_palettes/normal_tera_shard.gbapal");
-const u16 gItemIconPalette_FireTeraShard[] = INCBIN_U16("graphics/items/icon_palettes/fire_tera_shard.gbapal");
-const u16 gItemIconPalette_WaterTeraShard[] = INCBIN_U16("graphics/items/icon_palettes/water_tera_shard.gbapal");
-const u16 gItemIconPalette_GrassTeraShard[] = INCBIN_U16("graphics/items/icon_palettes/grass_tera_shard.gbapal");
-const u16 gItemIconPalette_ElectricTeraShard[] = INCBIN_U16("graphics/items/icon_palettes/electric_tera_shard.gbapal");
-const u16 gItemIconPalette_IceTeraShard[] = INCBIN_U16("graphics/items/icon_palettes/ice_tera_shard.gbapal");
-const u16 gItemIconPalette_FightingTeraShard[] = INCBIN_U16("graphics/items/icon_palettes/fighting_tera_shard.gbapal");
-const u16 gItemIconPalette_PoisonTeraShard[] = INCBIN_U16("graphics/items/icon_palettes/poison_tera_shard.gbapal");
-const u16 gItemIconPalette_GroundTeraShard[] = INCBIN_U16("graphics/items/icon_palettes/ground_tera_shard.gbapal");
-const u16 gItemIconPalette_FlyingTeraShard[] = INCBIN_U16("graphics/items/icon_palettes/flying_tera_shard.gbapal");
-const u16 gItemIconPalette_PsychicTeraShard[] = INCBIN_U16("graphics/items/icon_palettes/psychic_tera_shard.gbapal");
-const u16 gItemIconPalette_BugTeraShard[] = INCBIN_U16("graphics/items/icon_palettes/bug_tera_shard.gbapal");
-const u16 gItemIconPalette_RockTeraShard[] = INCBIN_U16("graphics/items/icon_palettes/rock_tera_shard.gbapal");
-const u16 gItemIconPalette_GhostTeraShard[] = INCBIN_U16("graphics/items/icon_palettes/ghost_tera_shard.gbapal");
-const u16 gItemIconPalette_DarkTeraShard[] = INCBIN_U16("graphics/items/icon_palettes/dark_tera_shard.gbapal");
-const u16 gItemIconPalette_DragonTeraShard[] = INCBIN_U16("graphics/items/icon_palettes/dragon_tera_shard.gbapal");
-const u16 gItemIconPalette_SteelTeraShard[] = INCBIN_U16("graphics/items/icon_palettes/steel_tera_shard.gbapal");
-const u16 gItemIconPalette_FairyTeraShard[] = INCBIN_U16("graphics/items/icon_palettes/fairy_tera_shard.gbapal");
-const u16 gItemIconPalette_SoundTeraShard[] = INCBIN_U16("graphics/items/icon_palettes/sound_tera_shard.gbapal");
+const u32 gItemIcon_TeraShard[] = INCGFX_U32("graphics/items/icons/tera_shard.png", ".4bpp.smol");
+const u16 gItemIconPalette_NormalTeraShard[] = INCGFX_U16("graphics/items/icon_palettes/normal_tera_shard.pal", ".gbapal");
+const u16 gItemIconPalette_FireTeraShard[] = INCGFX_U16("graphics/items/icon_palettes/fire_tera_shard.pal", ".gbapal");
+const u16 gItemIconPalette_WaterTeraShard[] = INCGFX_U16("graphics/items/icon_palettes/water_tera_shard.pal", ".gbapal");
+const u16 gItemIconPalette_GrassTeraShard[] = INCGFX_U16("graphics/items/icon_palettes/grass_tera_shard.pal", ".gbapal");
+const u16 gItemIconPalette_ElectricTeraShard[] = INCGFX_U16("graphics/items/icon_palettes/electric_tera_shard.pal", ".gbapal");
+const u16 gItemIconPalette_IceTeraShard[] = INCGFX_U16("graphics/items/icon_palettes/ice_tera_shard.pal", ".gbapal");
+const u16 gItemIconPalette_FightingTeraShard[] = INCGFX_U16("graphics/items/icon_palettes/fighting_tera_shard.pal", ".gbapal");
+const u16 gItemIconPalette_PoisonTeraShard[] = INCGFX_U16("graphics/items/icon_palettes/poison_tera_shard.pal", ".gbapal");
+const u16 gItemIconPalette_GroundTeraShard[] = INCGFX_U16("graphics/items/icon_palettes/ground_tera_shard.pal", ".gbapal");
+const u16 gItemIconPalette_FlyingTeraShard[] = INCGFX_U16("graphics/items/icon_palettes/flying_tera_shard.pal", ".gbapal");
+const u16 gItemIconPalette_PsychicTeraShard[] = INCGFX_U16("graphics/items/icon_palettes/psychic_tera_shard.pal", ".gbapal");
+const u16 gItemIconPalette_BugTeraShard[] = INCGFX_U16("graphics/items/icon_palettes/bug_tera_shard.pal", ".gbapal");
+const u16 gItemIconPalette_RockTeraShard[] = INCGFX_U16("graphics/items/icon_palettes/rock_tera_shard.pal", ".gbapal");
+const u16 gItemIconPalette_GhostTeraShard[] = INCGFX_U16("graphics/items/icon_palettes/ghost_tera_shard.pal", ".gbapal");
+const u16 gItemIconPalette_DarkTeraShard[] = INCGFX_U16("graphics/items/icon_palettes/dark_tera_shard.pal", ".gbapal");
+const u16 gItemIconPalette_DragonTeraShard[] = INCGFX_U16("graphics/items/icon_palettes/dragon_tera_shard.pal", ".gbapal");
+const u16 gItemIconPalette_SteelTeraShard[] = INCGFX_U16("graphics/items/icon_palettes/steel_tera_shard.pal", ".gbapal");
+const u16 gItemIconPalette_FairyTeraShard[] = INCGFX_U16("graphics/items/icon_palettes/fairy_tera_shard.pal", ".gbapal");
 
 const u32 gItemIcon_StellarTeraShard[] = INCBIN_U32("graphics/items/icons/stellar_tera_shard.4bpp.smol");
 const u16 gItemIconPalette_StellarTeraShard[] = INCBIN_U16("graphics/items/icon_palettes/stellar_tera_shard.gbapal");

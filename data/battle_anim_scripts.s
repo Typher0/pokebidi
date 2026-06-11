@@ -26208,8 +26208,7 @@ gBattleAnimMove_Extrasensory::
 	end
 
 gBattleAnimMove_AerialAce::
-	loadspritegfx ANIM_TAG_CUT
-	monbg ANIM_ATTACKER
+	monbg ANIM_TARGET
 	setalpha 12, 8
 	delay 12
 	createvisualtask AnimTask_TranslateMonEllipticalRespectSide, 2, ANIM_ATTACKER, 24, 6, 1, 5

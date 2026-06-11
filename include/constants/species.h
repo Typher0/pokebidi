@@ -1382,456 +1382,315 @@
 
 #define GEN9_START                                      SPECIES_ALCREMIE_RIBBON_RAINBOW_SWIRL
 
-#define SPECIES_SPRIGATITO                              1289
-#define SPECIES_FLORAGATO                               1290
-#define SPECIES_MEOWSCARADA                             1291
-#define SPECIES_FUECOCO                                 1292
-#define SPECIES_CROCALOR                                1293
-#define SPECIES_SKELEDIRGE                              1294
-#define SPECIES_QUAXLY                                  1295
-#define SPECIES_QUAXWELL                                1296
-#define SPECIES_QUAQUAVAL                               1297
-#define SPECIES_LECHONK                                 1298
-#define SPECIES_OINKOLOGNE                              SPECIES_OINKOLOGNE_M
-#define SPECIES_OINKOLOGNE_M                            1299
-#define SPECIES_OINKOLOGNE_F                            1300
-#define SPECIES_TAROUNTULA                              1301
-#define SPECIES_SPIDOPS                                 1302
-#define SPECIES_NYMBLE                                  1303
-#define SPECIES_LOKIX                                   1304
-#define SPECIES_PAWMI                                   1305
-#define SPECIES_PAWMO                                   1306
-#define SPECIES_PAWMOT                                  1307
-#define SPECIES_TANDEMAUS                               1308
-#define SPECIES_MAUSHOLD                                SPECIES_MAUSHOLD_THREE
-#define SPECIES_MAUSHOLD_THREE                          1309
-#define SPECIES_MAUSHOLD_FOUR                           1310
-#define SPECIES_FIDOUGH                                 1311
-#define SPECIES_DACHSBUN                                1312
-#define SPECIES_SMOLIV                                  1313
-#define SPECIES_DOLLIV                                  1314
-#define SPECIES_ARBOLIVA                                1315
-#define SPECIES_SQUAWKABILLY                            SPECIES_SQUAWKABILLY_GREEN
-#define SPECIES_SQUAWKABILLY_GREEN                      1316
-#define SPECIES_SQUAWKABILLY_BLUE                       1317
-#define SPECIES_SQUAWKABILLY_YELLOW                     1318
-#define SPECIES_SQUAWKABILLY_WHITE                      1319
-#define SPECIES_NACLI                                   1320
-#define SPECIES_NACLSTACK                               1321
-#define SPECIES_GARGANACL                               1322
-#define SPECIES_CHARCADET                               1323
-#define SPECIES_ARMAROUGE                               1324
-#define SPECIES_CERULEDGE                               1325
-#define SPECIES_TADBULB                                 1326
-#define SPECIES_BELLIBOLT                               1327
-#define SPECIES_WATTREL                                 1328
-#define SPECIES_KILOWATTREL                             1329
-#define SPECIES_MASCHIFF                                1330
-#define SPECIES_MABOSSTIFF                              1331
-#define SPECIES_SHROODLE                                1332
-#define SPECIES_GRAFAIAI                                1333
-#define SPECIES_BRAMBLIN                                1334
-#define SPECIES_BRAMBLEGHAST                            1335
-#define SPECIES_TOEDSCOOL                               1336
-#define SPECIES_TOEDSCRUEL                              1337
-#define SPECIES_KLAWF                                   1338
-#define SPECIES_CAPSAKID                                1339
-#define SPECIES_SCOVILLAIN                              1340
-#define SPECIES_RELLOR                                  1341
-#define SPECIES_RABSCA                                  1342
-#define SPECIES_FLITTLE                                 1343
-#define SPECIES_ESPATHRA                                1344
-#define SPECIES_TINKATINK                               1345
-#define SPECIES_TINKATUFF                               1346
-#define SPECIES_TINKATON                                1347
-#define SPECIES_WIGLETT                                 1348
-#define SPECIES_WUGTRIO                                 1349
-#define SPECIES_BOMBIRDIER                              1350
-#define SPECIES_FINIZEN                                 1351
-#define SPECIES_PALAFIN                                 SPECIES_PALAFIN_ZERO
-#define SPECIES_PALAFIN_ZERO                            1352
-#define SPECIES_PALAFIN_HERO                            1353
-#define SPECIES_VAROOM                                  1354
-#define SPECIES_REVAVROOM                               1355
-#define SPECIES_CYCLIZAR                                1356
-#define SPECIES_ORTHWORM                                1357
-#define SPECIES_GLIMMET                                 1358
-#define SPECIES_GLIMMORA                                1359
-#define SPECIES_GREAVARD                                1360
-#define SPECIES_HOUNDSTONE                              1361
-#define SPECIES_FLAMIGO                                 1362
-#define SPECIES_CETODDLE                                1363
-#define SPECIES_CETITAN                                 1364
-#define SPECIES_VELUZA                                  1365
-#define SPECIES_DONDOZO                                 1366
-#define SPECIES_TATSUGIRI                               SPECIES_TATSUGIRI_CURLY
-#define SPECIES_TATSUGIRI_CURLY                         1367
-#define SPECIES_TATSUGIRI_DROOPY                        1368
-#define SPECIES_TATSUGIRI_STRETCHY                      1369
-#define SPECIES_ANNIHILAPE                              1370
-#define SPECIES_CLODSIRE                                1371
-#define SPECIES_FARIGIRAF                               1372
-#define SPECIES_DUDUNSPARCE                             SPECIES_DUDUNSPARCE_TWO_SEGMENT
-#define SPECIES_DUDUNSPARCE_TWO_SEGMENT                 1373
-#define SPECIES_DUDUNSPARCE_THREE_SEGMENT               1374
-#define SPECIES_KINGAMBIT                               1375
-#define SPECIES_GREAT_TUSK                              1376
-#define SPECIES_SCREAM_TAIL                             1377
-#define SPECIES_BRUTE_BONNET                            1378
-#define SPECIES_FLUTTER_MANE                            1379
-#define SPECIES_SLITHER_WING                            1380
-#define SPECIES_SANDY_SHOCKS                            1381
-#define SPECIES_IRON_TREADS                             1382
-#define SPECIES_IRON_BUNDLE                             1383
-#define SPECIES_IRON_HANDS                              1384
-#define SPECIES_IRON_JUGULIS                            1385
-#define SPECIES_IRON_MOTH                               1386
-#define SPECIES_IRON_THORNS                             1387
-#define SPECIES_FRIGIBAX                                1388
-#define SPECIES_ARCTIBAX                                1389
-#define SPECIES_BAXCALIBUR                              1390
-#define SPECIES_GIMMIGHOUL                              SPECIES_GIMMIGHOUL_CHEST
-#define SPECIES_GIMMIGHOUL_CHEST                        1391
-#define SPECIES_GIMMIGHOUL_ROAMING                      1392
-#define SPECIES_GHOLDENGO                               1393
-#define SPECIES_WO_CHIEN                                1394
-#define SPECIES_CHIEN_PAO                               1395
-#define SPECIES_TING_LU                                 1396
-#define SPECIES_CHI_YU                                  1397
-#define SPECIES_ROARING_MOON                            1398
-#define SPECIES_IRON_VALIANT                            1399
-#define SPECIES_KORAIDON                                1400
-#define SPECIES_MIRAIDON                                1401
+    SPECIES_SPRIGATITO = 1289,
+    SPECIES_FLORAGATO = 1290,
+    SPECIES_MEOWSCARADA = 1291,
+    SPECIES_FUECOCO = 1292,
+    SPECIES_CROCALOR = 1293,
+    SPECIES_SKELEDIRGE = 1294,
+    SPECIES_QUAXLY = 1295,
+    SPECIES_QUAXWELL = 1296,
+    SPECIES_QUAQUAVAL = 1297,
+    SPECIES_LECHONK = 1298,
+    SPECIES_OINKOLOGNE_M = 1299,
+    SPECIES_OINKOLOGNE = SPECIES_OINKOLOGNE_M,
+    SPECIES_OINKOLOGNE_F = 1300,
+    SPECIES_TAROUNTULA = 1301,
+    SPECIES_SPIDOPS = 1302,
+    SPECIES_NYMBLE = 1303,
+    SPECIES_LOKIX = 1304,
+    SPECIES_PAWMI = 1305,
+    SPECIES_PAWMO = 1306,
+    SPECIES_PAWMOT = 1307,
+    SPECIES_TANDEMAUS = 1308,
+    SPECIES_MAUSHOLD_THREE = 1309,
+    SPECIES_MAUSHOLD = SPECIES_MAUSHOLD_THREE,
+    SPECIES_MAUSHOLD_FOUR = 1310,
+    SPECIES_FIDOUGH = 1311,
+    SPECIES_DACHSBUN = 1312,
+    SPECIES_SMOLIV = 1313,
+    SPECIES_DOLLIV = 1314,
+    SPECIES_ARBOLIVA = 1315,
+    SPECIES_SQUAWKABILLY_GREEN = 1316,
+    SPECIES_SQUAWKABILLY = SPECIES_SQUAWKABILLY_GREEN,
+    SPECIES_SQUAWKABILLY_BLUE = 1317,
+    SPECIES_SQUAWKABILLY_YELLOW = 1318,
+    SPECIES_SQUAWKABILLY_WHITE = 1319,
+    SPECIES_NACLI = 1320,
+    SPECIES_NACLSTACK = 1321,
+    SPECIES_GARGANACL = 1322,
+    SPECIES_CHARCADET = 1323,
+    SPECIES_ARMAROUGE = 1324,
+    SPECIES_CERULEDGE = 1325,
+    SPECIES_TADBULB = 1326,
+    SPECIES_BELLIBOLT = 1327,
+    SPECIES_WATTREL = 1328,
+    SPECIES_KILOWATTREL = 1329,
+    SPECIES_MASCHIFF = 1330,
+    SPECIES_MABOSSTIFF = 1331,
+    SPECIES_SHROODLE = 1332,
+    SPECIES_GRAFAIAI = 1333,
+    SPECIES_BRAMBLIN = 1334,
+    SPECIES_BRAMBLEGHAST = 1335,
+    SPECIES_TOEDSCOOL = 1336,
+    SPECIES_TOEDSCRUEL = 1337,
+    SPECIES_KLAWF = 1338,
+    SPECIES_CAPSAKID = 1339,
+    SPECIES_SCOVILLAIN = 1340,
+    SPECIES_RELLOR = 1341,
+    SPECIES_RABSCA = 1342,
+    SPECIES_FLITTLE = 1343,
+    SPECIES_ESPATHRA = 1344,
+    SPECIES_TINKATINK = 1345,
+    SPECIES_TINKATUFF = 1346,
+    SPECIES_TINKATON = 1347,
+    SPECIES_WIGLETT = 1348,
+    SPECIES_WUGTRIO = 1349,
+    SPECIES_BOMBIRDIER = 1350,
+    SPECIES_FINIZEN = 1351,
+    SPECIES_PALAFIN_ZERO = 1352,
+    SPECIES_PALAFIN = SPECIES_PALAFIN_ZERO,
+    SPECIES_PALAFIN_HERO = 1353,
+    SPECIES_VAROOM = 1354,
+    SPECIES_REVAVROOM = 1355,
+    SPECIES_CYCLIZAR = 1356,
+    SPECIES_ORTHWORM = 1357,
+    SPECIES_GLIMMET = 1358,
+    SPECIES_GLIMMORA = 1359,
+    SPECIES_GREAVARD = 1360,
+    SPECIES_HOUNDSTONE = 1361,
+    SPECIES_FLAMIGO = 1362,
+    SPECIES_CETODDLE = 1363,
+    SPECIES_CETITAN = 1364,
+    SPECIES_VELUZA = 1365,
+    SPECIES_DONDOZO = 1366,
+    SPECIES_TATSUGIRI_CURLY = 1367,
+    SPECIES_TATSUGIRI = SPECIES_TATSUGIRI_CURLY,
+    SPECIES_TATSUGIRI_DROOPY = 1368,
+    SPECIES_TATSUGIRI_STRETCHY = 1369,
+    SPECIES_ANNIHILAPE = 1370,
+    SPECIES_CLODSIRE = 1371,
+    SPECIES_FARIGIRAF = 1372,
+    SPECIES_DUDUNSPARCE_TWO_SEGMENT = 1373,
+    SPECIES_DUDUNSPARCE = SPECIES_DUDUNSPARCE_TWO_SEGMENT,
+    SPECIES_DUDUNSPARCE_THREE_SEGMENT = 1374,
+    SPECIES_KINGAMBIT = 1375,
+    SPECIES_GREAT_TUSK = 1376,
+    SPECIES_SCREAM_TAIL = 1377,
+    SPECIES_BRUTE_BONNET = 1378,
+    SPECIES_FLUTTER_MANE = 1379,
+    SPECIES_SLITHER_WING = 1380,
+    SPECIES_SANDY_SHOCKS = 1381,
+    SPECIES_IRON_TREADS = 1382,
+    SPECIES_IRON_BUNDLE = 1383,
+    SPECIES_IRON_HANDS = 1384,
+    SPECIES_IRON_JUGULIS = 1385,
+    SPECIES_IRON_MOTH = 1386,
+    SPECIES_IRON_THORNS = 1387,
+    SPECIES_FRIGIBAX = 1388,
+    SPECIES_ARCTIBAX = 1389,
+    SPECIES_BAXCALIBUR = 1390,
+    SPECIES_GIMMIGHOUL_CHEST = 1391,
+    SPECIES_GIMMIGHOUL = SPECIES_GIMMIGHOUL_CHEST,
+    SPECIES_GIMMIGHOUL_ROAMING = 1392,
+    SPECIES_GHOLDENGO = 1393,
+    SPECIES_WO_CHIEN = 1394,
+    SPECIES_CHIEN_PAO = 1395,
+    SPECIES_TING_LU = 1396,
+    SPECIES_CHI_YU = 1397,
+    SPECIES_ROARING_MOON = 1398,
+    SPECIES_IRON_VALIANT = 1399,
+    SPECIES_KORAIDON = 1400,
+    SPECIES_MIRAIDON = 1401,
 // Paldean Forms
-#define SPECIES_TAUROS_PALDEA_COMBAT                    1402
-#define SPECIES_TAUROS_PALDEA_BLAZE                     1403
-#define SPECIES_TAUROS_PALDEA_AQUA                      1404
-#define SPECIES_WOOPER_PALDEA                           1405
+    SPECIES_TAUROS_PALDEA_COMBAT = 1402,
+    SPECIES_TAUROS_PALDEA_BLAZE = 1403,
+    SPECIES_TAUROS_PALDEA_AQUA = 1404,
+    SPECIES_WOOPER_PALDEA = 1405,
 // Scarlet and Violet 1.2.0
-#define SPECIES_WALKING_WAKE                            1406
-#define SPECIES_IRON_LEAVES                             1407
+    SPECIES_WALKING_WAKE = 1406,
+    SPECIES_IRON_LEAVES = 1407,
 // Teal Mask
-#define SPECIES_DIPPLIN                                 1408
-#define SPECIES_POLTCHAGEIST                            SPECIES_POLTCHAGEIST_COUNTERFEIT
-#define SPECIES_POLTCHAGEIST_COUNTERFEIT                1409
-#define SPECIES_POLTCHAGEIST_ARTISAN                    1410
-#define SPECIES_SINISTCHA                               SPECIES_SINISTCHA_UNREMARKABLE
-#define SPECIES_SINISTCHA_UNREMARKABLE                  1411
-#define SPECIES_SINISTCHA_MASTERPIECE                   1412
-#define SPECIES_OKIDOGI                                 1413
-#define SPECIES_MUNKIDORI                               1414
-#define SPECIES_FEZANDIPITI                             1415
-#define SPECIES_OGERPON                                 SPECIES_OGERPON_TEAL
-#define SPECIES_OGERPON_TEAL                            1416
-#define SPECIES_OGERPON_WELLSPRING                      1417
-#define SPECIES_OGERPON_HEARTHFLAME                     1418
-#define SPECIES_OGERPON_CORNERSTONE                     1419
-#define SPECIES_OGERPON_TEAL_TERA                       1420
-#define SPECIES_OGERPON_WELLSPRING_TERA                 1421
-#define SPECIES_OGERPON_HEARTHFLAME_TERA                1422
-#define SPECIES_OGERPON_CORNERSTONE_TERA                1423
-#define SPECIES_URSALUNA_BLOODMOON                      1424
+    SPECIES_DIPPLIN = 1408,
+    SPECIES_POLTCHAGEIST_COUNTERFEIT = 1409,
+    SPECIES_POLTCHAGEIST = SPECIES_POLTCHAGEIST_COUNTERFEIT,
+    SPECIES_POLTCHAGEIST_ARTISAN = 1410,
+    SPECIES_SINISTCHA_UNREMARKABLE = 1411,
+    SPECIES_SINISTCHA = SPECIES_SINISTCHA_UNREMARKABLE,
+    SPECIES_SINISTCHA_MASTERPIECE = 1412,
+    SPECIES_OKIDOGI = 1413,
+    SPECIES_MUNKIDORI = 1414,
+    SPECIES_FEZANDIPITI = 1415,
+    SPECIES_OGERPON_TEAL = 1416,
+    SPECIES_OGERPON = SPECIES_OGERPON_TEAL,
+    SPECIES_OGERPON_WELLSPRING = 1417,
+    SPECIES_OGERPON_HEARTHFLAME = 1418,
+    SPECIES_OGERPON_CORNERSTONE = 1419,
+    SPECIES_OGERPON_TEAL_TERA = 1420,
+    SPECIES_OGERPON_WELLSPRING_TERA = 1421,
+    SPECIES_OGERPON_HEARTHFLAME_TERA = 1422,
+    SPECIES_OGERPON_CORNERSTONE_TERA = 1423,
+    SPECIES_URSALUNA_BLOODMOON = 1424,
 // Indigo Disk
-#define SPECIES_ARCHALUDON                              1425
-#define SPECIES_HYDRAPPLE                               1426
-#define SPECIES_GOUGING_FIRE                            1427
-#define SPECIES_RAGING_BOLT                             1428
-#define SPECIES_IRON_BOULDER                            1429
-#define SPECIES_IRON_CROWN                              1430
-#define SPECIES_TERAPAGOS                               SPECIES_TERAPAGOS_NORMAL
-#define SPECIES_TERAPAGOS_NORMAL                        1431
-#define SPECIES_TERAPAGOS_TERASTAL                      1432
-#define SPECIES_TERAPAGOS_STELLAR                       1433
-#define SPECIES_PECHARUNT                               1434
-#define SPECIES_LUGIA_SHADOW                            1435
-#define SPECIES_MOTHIM_SANDY                            1436
-#define SPECIES_MOTHIM_TRASH                            1437
-#define SPECIES_SCATTERBUG_POLAR                        1438
-#define SPECIES_SCATTERBUG_TUNDRA                       1439
-#define SPECIES_SCATTERBUG_CONTINENTAL                  1440
-#define SPECIES_SCATTERBUG_GARDEN                       1441
-#define SPECIES_SCATTERBUG_ELEGANT                      1442
-#define SPECIES_SCATTERBUG_MEADOW                       1443
-#define SPECIES_SCATTERBUG_MODERN                       1444
-#define SPECIES_SCATTERBUG_MARINE                       1445
-#define SPECIES_SCATTERBUG_ARCHIPELAGO                  1446
-#define SPECIES_SCATTERBUG_HIGH_PLAINS                  1447
-#define SPECIES_SCATTERBUG_SANDSTORM                    1448
-#define SPECIES_SCATTERBUG_RIVER                        1449
-#define SPECIES_SCATTERBUG_MONSOON                      1450
-#define SPECIES_SCATTERBUG_SAVANNA                      1451
-#define SPECIES_SCATTERBUG_SUN                          1452
-#define SPECIES_SCATTERBUG_OCEAN                        1453
-#define SPECIES_SCATTERBUG_JUNGLE                       1454
-#define SPECIES_SCATTERBUG_FANCY                        1455
-#define SPECIES_SCATTERBUG_POKEBALL                     1456
-#define SPECIES_SPEWPA_POLAR                            1457
-#define SPECIES_SPEWPA_TUNDRA                           1458
-#define SPECIES_SPEWPA_CONTINENTAL                      1459
-#define SPECIES_SPEWPA_GARDEN                           1460
-#define SPECIES_SPEWPA_ELEGANT                          1461
-#define SPECIES_SPEWPA_MEADOW                           1462
-#define SPECIES_SPEWPA_MODERN                           1463
-#define SPECIES_SPEWPA_MARINE                           1464
-#define SPECIES_SPEWPA_ARCHIPELAGO                      1465
-#define SPECIES_SPEWPA_HIGH_PLAINS                      1466
-#define SPECIES_SPEWPA_SANDSTORM                        1467
-#define SPECIES_SPEWPA_RIVER                            1468
-#define SPECIES_SPEWPA_MONSOON                          1469
-#define SPECIES_SPEWPA_SAVANNA                          1470
-#define SPECIES_SPEWPA_SUN                              1471
-#define SPECIES_SPEWPA_OCEAN                            1472
-#define SPECIES_SPEWPA_JUNGLE                           1473
-#define SPECIES_SPEWPA_FANCY                            1474
-#define SPECIES_SPEWPA_POKEBALL                         1475
-#define SPECIES_RATICATE_ALOLA_TOTEM                    1476
-#define SPECIES_GUMSHOOS_TOTEM                          1477
-#define SPECIES_VIKAVOLT_TOTEM                          1478
-#define SPECIES_LURANTIS_TOTEM                          1479
-#define SPECIES_SALAZZLE_TOTEM                          1480
-#define SPECIES_MIMIKYU_TOTEM                           SPECIES_MIMIKYU_TOTEM_DISGUISED
-#define SPECIES_MIMIKYU_TOTEM_DISGUISED                 1481
-#define SPECIES_KOMMO_O_TOTEM                           1482
-#define SPECIES_MAROWAK_ALOLA_TOTEM                     1483
-#define SPECIES_RIBOMBEE_TOTEM                          1484
-#define SPECIES_ARAQUANID_TOTEM                         1485
-#define SPECIES_TOGEDEMARU_TOTEM                        1486
-#define SPECIES_PIKACHU_STARTER                         1487
-#define SPECIES_EEVEE_STARTER                           1488
-#define SPECIES_VENUSAUR_GMAX                           1489
-#define SPECIES_BLASTOISE_GMAX                          1490
-#define SPECIES_CHARIZARD_GMAX                          1491
-#define SPECIES_BUTTERFREE_GMAX                         1492
-#define SPECIES_PIKACHU_GMAX                            1493
-#define SPECIES_MEOWTH_GMAX                             1494
-#define SPECIES_MACHAMP_GMAX                            1495
-#define SPECIES_GENGAR_GMAX                             1496
-#define SPECIES_KINGLER_GMAX                            1497
-#define SPECIES_LAPRAS_GMAX                             1498
-#define SPECIES_EEVEE_GMAX                              1499
-#define SPECIES_SNORLAX_GMAX                            1500
-#define SPECIES_GARBODOR_GMAX                           1501
-#define SPECIES_MELMETAL_GMAX                           1502
-#define SPECIES_RILLABOOM_GMAX                          1503
-#define SPECIES_CINDERACE_GMAX                          1504
-#define SPECIES_INTELEON_GMAX                           1505
-#define SPECIES_CORVIKNIGHT_GMAX                        1506
-#define SPECIES_ORBEETLE_GMAX                           1507
-#define SPECIES_DREDNAW_GMAX                            1508
-#define SPECIES_COALOSSAL_GMAX                          1509
-#define SPECIES_FLAPPLE_GMAX                            1510
-#define SPECIES_APPLETUN_GMAX                           1511
-#define SPECIES_SANDACONDA_GMAX                         1512
-#define SPECIES_TOXTRICITY_AMPED_GMAX                   1513
-#define SPECIES_TOXTRICITY_LOW_KEY_GMAX                 1514
-#define SPECIES_CENTISKORCH_GMAX                        1515
-#define SPECIES_HATTERENE_GMAX                          1516
-#define SPECIES_GRIMMSNARL_GMAX                         1517
-#define SPECIES_ALCREMIE_GMAX                           1518
-#define SPECIES_COPPERAJAH_GMAX                         1519
-#define SPECIES_DURALUDON_GMAX                          1520
-#define SPECIES_URSHIFU_SINGLE_STRIKE_GMAX              1521
-#define SPECIES_URSHIFU_GMAX                            SPECIES_URSHIFU_SINGLE_STRIKE_GMAX
-#define SPECIES_URSHIFU_SINGLE_STRIKE_STYLE_GMAX        SPECIES_URSHIFU_SINGLE_STRIKE_GMAX
-#define SPECIES_URSHIFU_RAPID_STRIKE_GMAX               1522
-#define SPECIES_URSHIFU_RAPID_STRIKE_STYLE_GMAX         SPECIES_URSHIFU_RAPID_STRIKE_GMAX
-#define SPECIES_MIMIKYU_BUSTED_TOTEM                    1523
-#define SPECIES_MIMIKYU_TOTEM_BUSTED                    SPECIES_MIMIKYU_BUSTED_TOTEM
+    SPECIES_ARCHALUDON = 1425,
+    SPECIES_HYDRAPPLE = 1426,
+    SPECIES_GOUGING_FIRE = 1427,
+    SPECIES_RAGING_BOLT = 1428,
+    SPECIES_IRON_BOULDER = 1429,
+    SPECIES_IRON_CROWN = 1430,
+    SPECIES_TERAPAGOS_NORMAL = 1431,
+    SPECIES_TERAPAGOS = SPECIES_TERAPAGOS_NORMAL,
+    SPECIES_TERAPAGOS_TERASTAL = 1432,
+    SPECIES_TERAPAGOS_STELLAR = 1433,
+    SPECIES_PECHARUNT = 1434,
+    SPECIES_LUGIA_SHADOW = 1435,
+    SPECIES_MOTHIM_SANDY = 1436,
+    SPECIES_MOTHIM_TRASH = 1437,
+    SPECIES_SCATTERBUG_POLAR = 1438,
+    SPECIES_SCATTERBUG_TUNDRA = 1439,
+    SPECIES_SCATTERBUG_CONTINENTAL = 1440,
+    SPECIES_SCATTERBUG_GARDEN = 1441,
+    SPECIES_SCATTERBUG_ELEGANT = 1442,
+    SPECIES_SCATTERBUG_MEADOW = 1443,
+    SPECIES_SCATTERBUG_MODERN = 1444,
+    SPECIES_SCATTERBUG_MARINE = 1445,
+    SPECIES_SCATTERBUG_ARCHIPELAGO = 1446,
+    SPECIES_SCATTERBUG_HIGH_PLAINS = 1447,
+    SPECIES_SCATTERBUG_SANDSTORM = 1448,
+    SPECIES_SCATTERBUG_RIVER = 1449,
+    SPECIES_SCATTERBUG_MONSOON = 1450,
+    SPECIES_SCATTERBUG_SAVANNA = 1451,
+    SPECIES_SCATTERBUG_SUN = 1452,
+    SPECIES_SCATTERBUG_OCEAN = 1453,
+    SPECIES_SCATTERBUG_JUNGLE = 1454,
+    SPECIES_SCATTERBUG_FANCY = 1455,
+    SPECIES_SCATTERBUG_POKEBALL = 1456,
+    SPECIES_SPEWPA_POLAR = 1457,
+    SPECIES_SPEWPA_TUNDRA = 1458,
+    SPECIES_SPEWPA_CONTINENTAL = 1459,
+    SPECIES_SPEWPA_GARDEN = 1460,
+    SPECIES_SPEWPA_ELEGANT = 1461,
+    SPECIES_SPEWPA_MEADOW = 1462,
+    SPECIES_SPEWPA_MODERN = 1463,
+    SPECIES_SPEWPA_MARINE = 1464,
+    SPECIES_SPEWPA_ARCHIPELAGO = 1465,
+    SPECIES_SPEWPA_HIGH_PLAINS = 1466,
+    SPECIES_SPEWPA_SANDSTORM = 1467,
+    SPECIES_SPEWPA_RIVER = 1468,
+    SPECIES_SPEWPA_MONSOON = 1469,
+    SPECIES_SPEWPA_SAVANNA = 1470,
+    SPECIES_SPEWPA_SUN = 1471,
+    SPECIES_SPEWPA_OCEAN = 1472,
+    SPECIES_SPEWPA_JUNGLE = 1473,
+    SPECIES_SPEWPA_FANCY = 1474,
+    SPECIES_SPEWPA_POKEBALL = 1475,
+    SPECIES_RATICATE_ALOLA_TOTEM = 1476,
+    SPECIES_GUMSHOOS_TOTEM = 1477,
+    SPECIES_VIKAVOLT_TOTEM = 1478,
+    SPECIES_LURANTIS_TOTEM = 1479,
+    SPECIES_SALAZZLE_TOTEM = 1480,
+    SPECIES_MIMIKYU_TOTEM_DISGUISED = 1481,
+    SPECIES_MIMIKYU_TOTEM = SPECIES_MIMIKYU_TOTEM_DISGUISED,
+    SPECIES_KOMMO_O_TOTEM = 1482,
+    SPECIES_MAROWAK_ALOLA_TOTEM = 1483,
+    SPECIES_RIBOMBEE_TOTEM = 1484,
+    SPECIES_ARAQUANID_TOTEM = 1485,
+    SPECIES_TOGEDEMARU_TOTEM = 1486,
+    SPECIES_PIKACHU_STARTER = 1487,
+    SPECIES_EEVEE_STARTER = 1488,
+    SPECIES_VENUSAUR_GMAX = 1489,
+    SPECIES_BLASTOISE_GMAX = 1490,
+    SPECIES_CHARIZARD_GMAX = 1491,
+    SPECIES_BUTTERFREE_GMAX = 1492,
+    SPECIES_PIKACHU_GMAX = 1493,
+    SPECIES_MEOWTH_GMAX = 1494,
+    SPECIES_MACHAMP_GMAX = 1495,
+    SPECIES_GENGAR_GMAX = 1496,
+    SPECIES_KINGLER_GMAX = 1497,
+    SPECIES_LAPRAS_GMAX = 1498,
+    SPECIES_EEVEE_GMAX = 1499,
+    SPECIES_SNORLAX_GMAX = 1500,
+    SPECIES_GARBODOR_GMAX = 1501,
+    SPECIES_MELMETAL_GMAX = 1502,
+    SPECIES_RILLABOOM_GMAX = 1503,
+    SPECIES_CINDERACE_GMAX = 1504,
+    SPECIES_INTELEON_GMAX = 1505,
+    SPECIES_CORVIKNIGHT_GMAX = 1506,
+    SPECIES_ORBEETLE_GMAX = 1507,
+    SPECIES_DREDNAW_GMAX = 1508,
+    SPECIES_COALOSSAL_GMAX = 1509,
+    SPECIES_FLAPPLE_GMAX = 1510,
+    SPECIES_APPLETUN_GMAX = 1511,
+    SPECIES_SANDACONDA_GMAX = 1512,
+    SPECIES_TOXTRICITY_AMPED_GMAX = 1513,
+    SPECIES_TOXTRICITY_LOW_KEY_GMAX = 1514,
+    SPECIES_CENTISKORCH_GMAX = 1515,
+    SPECIES_HATTERENE_GMAX = 1516,
+    SPECIES_GRIMMSNARL_GMAX = 1517,
+    SPECIES_ALCREMIE_GMAX = 1518,
+    SPECIES_COPPERAJAH_GMAX = 1519,
+    SPECIES_DURALUDON_GMAX = 1520,
+    SPECIES_URSHIFU_SINGLE_STRIKE_GMAX = 1521,
+    SPECIES_URSHIFU_GMAX = SPECIES_URSHIFU_SINGLE_STRIKE_GMAX,
+    SPECIES_URSHIFU_SINGLE_STRIKE_STYLE_GMAX = SPECIES_URSHIFU_SINGLE_STRIKE_GMAX,
+    SPECIES_URSHIFU_RAPID_STRIKE_GMAX = 1522,
+    SPECIES_URSHIFU_RAPID_STRIKE_STYLE_GMAX = SPECIES_URSHIFU_RAPID_STRIKE_GMAX,
+    SPECIES_MIMIKYU_BUSTED_TOTEM = 1523,
+    SPECIES_MIMIKYU_TOTEM_BUSTED = SPECIES_MIMIKYU_BUSTED_TOTEM,
 // Legends Z-A
-#define SPECIES_CLEFABLE_MEGA                           1524
-#define SPECIES_VICTREEBEL_MEGA                         1525
-#define SPECIES_STARMIE_MEGA                            1526
-#define SPECIES_DRAGONITE_MEGA                          1527
-#define SPECIES_MEGANIUM_MEGA                           1528
-#define SPECIES_FERALIGATR_MEGA                         1529
-#define SPECIES_SKARMORY_MEGA                           1530
-#define SPECIES_FROSLASS_MEGA                           1531
-#define SPECIES_EMBOAR_MEGA                             1532
-#define SPECIES_EXCADRILL_MEGA                          1533
-#define SPECIES_SCOLIPEDE_MEGA                          1534
-#define SPECIES_SCRAFTY_MEGA                            1535
-#define SPECIES_EELEKTROSS_MEGA                         1536
-#define SPECIES_CHANDELURE_MEGA                         1537
-#define SPECIES_CHESNAUGHT_MEGA                         1538
-#define SPECIES_DELPHOX_MEGA                            1539
-#define SPECIES_GRENINJA_MEGA                           1540
-#define SPECIES_PYROAR_MEGA                             1541
-#define SPECIES_MALAMAR_MEGA                            1542
-#define SPECIES_DRAGALGE_MEGA                           1543
-#define SPECIES_HAWLUCHA_MEGA                           1544
-#define SPECIES_FLOETTE_MEGA                            1545
-#define SPECIES_BARBARACLE_MEGA                         1546
-#define SPECIES_ZYGARDE_MEGA                            1547
-#define SPECIES_DRAMPA_MEGA                             1548
-#define SPECIES_FALINKS_MEGA                            1549
-#define SPECIES_HEATRAN_MEGA                            1550
-#define SPECIES_DARKRAI_MEGA                            1551
-#define SPECIES_ZERAORA_MEGA                            1552
-#define SPECIES_RAICHU_MEGA_X                           1553
-#define SPECIES_RAICHU_MEGA_Y                           1554
-#define SPECIES_CHIMECHO_MEGA                           1555
-#define SPECIES_ABSOL_MEGA_Z                            1556
-#define SPECIES_STARAPTOR_MEGA                          1557
-#define SPECIES_GARCHOMP_MEGA_Z                         1558
-#define SPECIES_LUCARIO_MEGA_Z                          1559
-#define SPECIES_GOLURK_MEGA                             1560
-#define SPECIES_MEOWSTIC_M_MEGA                         1561
-#define SPECIES_MEOWSTIC_F_MEGA                         1562
-#define SPECIES_CRABOMINABLE_MEGA                       1563
-#define SPECIES_GOLISOPOD_MEGA                          1564
-#define SPECIES_MAGEARNA_MEGA                           1565
-#define SPECIES_MAGEARNA_ORIGINAL_MEGA                  1566
-#define SPECIES_SCOVILLAIN_MEGA                         1567
-#define SPECIES_BAXCALIBUR_MEGA                         1568
-#define SPECIES_TATSUGIRI_CURLY_MEGA                    1569
-#define SPECIES_TATSUGIRI_DROOPY_MEGA                   1570
-#define SPECIES_TATSUGIRI_STRETCHY_MEGA                 1571
-#define SPECIES_GLIMMORA_MEGA                           1572
-#define SPECIES_HAMSNUG                                 1573
-#define SPECIES_SNUGGYBARA                              1574
-#define SPECIES_PINGLOO                                 1575
-#define SPECIES_PENGLACIER                              1576
-#define SPECIES_CABOB                                   1577
-#define SPECIES_LYNXSKEW                                1578
-#define SPECIES_PUMACH                                  1579
-#define SPECIES_JAGWIRE                                 1580
-#define SPECIES_SKULLARVA                               1581
-#define SPECIES_KAKONE                                  1582
-#define SPECIES_MORTASQUE                               1583
-#define SPECIES_TOTTER                                  1584
-#define SPECIES_CASCOTTA                                1585
-#define SPECIES_LUTRAJET                                1586
-#define SPECIES_TENROCK                                 1587
-#define SPECIES_SHREWEL                                 1588
-#define SPECIES_PANGOLEM                                1589
-#define SPECIES_SHELFUR                                 1590
-#define SPECIES_IGNOISE                                 1591
-#define SPECIES_MOLTORTOISE                             1592
-#define SPECIES_CHIHAHA                                 1593
-#define SPECIES_HOWLEQUIN                               1594
-#define SPECIES_PALLECTRON                              1595
-#define SPECIES_CALLUMMOTOR                             1596
-#define SPECIES_ELECTRIOCEROS                           1597
-#define SPECIES_CHIMPOCA                                1598
-#define SPECIES_SIMAYAN                                 1599
-#define SPECIES_ICETOPE                                 1600
-#define SPECIES_CHILLNOBYL                              1601
-#define SPECIES_MAGROPLEX                               1602
-#define SPECIES_PSYYNEN                                 1603
-#define SPECIES_AANCHGORA                               1604
-#define SPECIES_FOLTERGEIST                             1605
-#define SPECIES_FANTASMARE                              1606
-#define SPECIES_CUPPY                                   1607
-#define SPECIES_FETTLEKISH                              1608
-#define SPECIES_NECTRI                                  1609
-#define SPECIES_HUMMISCUS                               1610
-#define SPECIES_NECTRIARY                               1611
-#define SPECIES_CARDINITE                               1612
-#define SPECIES_CHARDINAL                               1613
-#define SPECIES_SALAGUADE                               1614
-#define SPECIES_IGUASH                                  1615
-#define SPECIES_JUGGERCROC                              1616
-#define SPECIES_ARROWBIN                                1617
-#define SPECIES_HAWTCHET                                1618
-#define SPECIES_CHIEFTURK                               1619
-#define SPECIES_NEUREKA                                 1620
-#define SPECIES_EDISYNAPSE                              1621
-#define SPECIES_SCLICK                                  1622
-#define SPECIES_VECTRION                                1623
-#define SPECIES_FAWNPIRE                                1624
-#define SPECIES_ALPACULA                                1625
-#define SPECIES_MOOSEFERATU                             1626
-#define SPECIES_PLATYPOW                                1627
-#define SPECIES_PLATYPUNCH                              1628
-#define SPECIES_SILKINDER                               SPECIES_SILKINDER_MALE
-#define SPECIES_SILKINDER_MALE                          1629
-#define SPECIES_SILKINDER_FEMALE                        1630
-#define SPECIES_SENSILK                                 SPECIES_SENSILK_MALE
-#define SPECIES_SENSILK_MALE                            1631
-#define SPECIES_SENSILK_FEMALE                          1632
-#define SPECIES_DALTOM                                  1633
-#define SPECIES_OPPENHION                               1634
-#define SPECIES_GOLTERRA                                1635
-#define SPECIES_GAIOLEM                                 1636
-#define SPECIES_RELLADUNE                               1637
-#define SPECIES_CAMORELLA                               1638
-#define SPECIES_COBOE                                   1639
-#define SPECIES_PUNGRIYADH                              1640
-#define SPECIES_SEDIRROT                                1641
-#define SPECIES_CONDESA                                 1642
-#define SPECIES_NOBUNATA                                1643
-#define SPECIES_SOMBERO                                 1644
-#define SPECIES_MINARAC                                 1645
-#define SPECIES_TARENCHULA                              1646
-#define SPECIES_CARBITE                                 1647
-#define SPECIES_PRESSAUR                                1648
-#define SPECIES_DIAMAW                                  1649
-#define SPECIES_GILLA                                   1650
-#define SPECIES_ANODONTOR                               1651
-#define SPECIES_ANKILLOSAUR                             1652
-#define SPECIES_BAZILISK                                1653
-#define SPECIES_ORNITHAUR                               1654
-#define SPECIES_DILOPHLORA                              1655
-#define SPECIES_SQUIBBLE                                1656
-#define SPECIES_SQUINGO                                 1657
-#define SPECIES_DRAKNARR                                1658
-#define SPECIES_RAGNAROW                                1659
-#define SPECIES_MANDALLOY                               1660
-#define SPECIES_PHLASK                                  1661
-#define SPECIES_NOXIGHAST                               SPECIES_NOXIGHAST_MALE
-#define SPECIES_NOXIGHAST_MALE                          1662
-#define SPECIES_NOXIGHAST_FEMALE                        1663
-#define SPECIES_FUMIGHAST                               SPECIES_FUMIGHAST_MALE
-#define SPECIES_FUMIGHAST_MALE                          1664
-#define SPECIES_FUMIGHAST_FEMALE                        1665
-#define SPECIES_PINECALF                                1666
-#define SPECIES_TRUNKONIFR                              1667
-#define SPECIES_MASKREEP                                1668
-#define SPECIES_PHANTIKI                                1669
-#define SPECIES_TAOMARIN                                1670
-#define SPECIES_ORANGUTAO                               1671
-#define SPECIES_COALT                                   1672
-#define SPECIES_ARIESKORCH                              1673
-#define SPECIES_BLUFFIN                                 1674
-#define SPECIES_SKARPIE                                 1675
-#define SPECIES_GNOWM                                   1676
-#define SPECIES_SNOWGRE                                 1677
-#define SPECIES_BOAREALIS                               1678
-#define SPECIES_WISHP                                   1679
-#define SPECIES_IGFRIT                                  1680
-#define SPECIES_DJINNFERNO                              1681
-#define SPECIES_MOONIGHT                                1682
-#define SPECIES_JOUSTOCK                                1683
-#define SPECIES_CRUSABER                                1684
-#define SPECIES_CHELONITE                               1685
-#define SPECIES_GALAXAGOS                               1686
-#define SPECIES_TANUKOON                                1687
-#define SPECIES_LEUKOON                                 1688
-#define SPECIES_CACTURADO                               1689
-#define SPECIES_ESOTEROWN                               1690
-#define SPECIES_DOCTOWL                                 1691
-#define SPECIES_SILVALLY_SOUND                          1692
-#define SPECIES_ARCEUS_SOUND                            1693
-#define SPECIES_HATHROSTUS                              1694
-#define SPECIES_BABOSIRIS                               1695
-#define SPECIES_HUBRISET                                1696
-#define SPECIES_WENDINGO                                1697
-#define SPECIES_ROYGIBIV                                1698
-#define SPECIES_TYPHLOSION_MEGA                         1699
-#define SPECIES_EXPLOUD_MEGA                            1700
-#define SPECIES_TORTERRA_MEGA                           1701
-#define SPECIES_INFERNAPE_MEGA                          1702
-#define SPECIES_EMPOLEON_MEGA                           1703
-#define SPECIES_MAMOSWINE_MEGA                          1704
-#define SPECIES_DUSKNOIR_MEGA                           1705
-#define SPECIES_MUSHARNA_MEGA                           1706
-#define SPECIES_GIGALITH_MEGA                           1707
-#define SPECIES_COFAGRIGUS_MEGA                         1708
-#define SPECIES_PORYGON_Z_MEGA                          1709
-#define SPECIES_XERNEAS_PRIMAL                          1710
-#define SPECIES_YVELTAL_PRIMAL                          1711
+    SPECIES_CLEFABLE_MEGA = 1524,
+    SPECIES_VICTREEBEL_MEGA = 1525,
+    SPECIES_STARMIE_MEGA = 1526,
+    SPECIES_DRAGONITE_MEGA = 1527,
+    SPECIES_MEGANIUM_MEGA = 1528,
+    SPECIES_FERALIGATR_MEGA = 1529,
+    SPECIES_SKARMORY_MEGA = 1530,
+    SPECIES_FROSLASS_MEGA = 1531,
+    SPECIES_EMBOAR_MEGA = 1532,
+    SPECIES_EXCADRILL_MEGA = 1533,
+    SPECIES_SCOLIPEDE_MEGA = 1534,
+    SPECIES_SCRAFTY_MEGA = 1535,
+    SPECIES_EELEKTROSS_MEGA = 1536,
+    SPECIES_CHANDELURE_MEGA = 1537,
+    SPECIES_CHESNAUGHT_MEGA = 1538,
+    SPECIES_DELPHOX_MEGA = 1539,
+    SPECIES_GRENINJA_MEGA = 1540,
+    SPECIES_PYROAR_MEGA = 1541,
+    SPECIES_MALAMAR_MEGA = 1542,
+    SPECIES_DRAGALGE_MEGA = 1543,
+    SPECIES_HAWLUCHA_MEGA = 1544,
+    SPECIES_FLOETTE_MEGA = 1545,
+    SPECIES_BARBARACLE_MEGA = 1546,
+    SPECIES_ZYGARDE_MEGA = 1547,
+    SPECIES_DRAMPA_MEGA = 1548,
+    SPECIES_FALINKS_MEGA = 1549,
+    SPECIES_HEATRAN_MEGA = 1550,
+    SPECIES_DARKRAI_MEGA = 1551,
+    SPECIES_ZERAORA_MEGA = 1552,
+    SPECIES_RAICHU_MEGA_X = 1553,
+    SPECIES_RAICHU_MEGA_Y = 1554,
+    SPECIES_CHIMECHO_MEGA = 1555,
+    SPECIES_ABSOL_MEGA_Z = 1556,
+    SPECIES_STARAPTOR_MEGA = 1557,
+    SPECIES_GARCHOMP_MEGA_Z = 1558,
+    SPECIES_LUCARIO_MEGA_Z = 1559,
+    SPECIES_GOLURK_MEGA = 1560,
+    SPECIES_MEOWSTIC_M_MEGA = 1561,
+    SPECIES_MEOWSTIC_F_MEGA = 1562,
+    SPECIES_CRABOMINABLE_MEGA = 1563,
+    SPECIES_GOLISOPOD_MEGA = 1564,
+    SPECIES_MAGEARNA_MEGA = 1565,
+    SPECIES_MAGEARNA_ORIGINAL_MEGA = 1566,
+    SPECIES_SCOVILLAIN_MEGA = 1567,
+    SPECIES_BAXCALIBUR_MEGA = 1568,
+    SPECIES_TATSUGIRI_CURLY_MEGA = 1569,
+    SPECIES_TATSUGIRI_DROOPY_MEGA = 1570,
+    SPECIES_TATSUGIRI_STRETCHY_MEGA = 1571,
+    SPECIES_GLIMMORA_MEGA = 1572,
 
-#define SPECIES_EGG                                     (SPECIES_YVELTAL_PRIMAL + 1)
+    SPECIES_CUSTOM_START = SPECIES_GLIMMORA_MEGA,
+    // Add any custom species between here and SPECIES_CUSTOM_END
+    SPECIES_CUSTOM_END,
 
 #define NUM_SPECIES SPECIES_EGG
 

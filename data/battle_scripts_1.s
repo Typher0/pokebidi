@@ -6110,20 +6110,6 @@ BattleScript_AbilityHpHeal:
 	datahpupdate BS_ATTACKER, PASSIVE_HP_UPDATE
 	return
 
-BattleScript_RainDishActivates::
-	call BattleScript_AbilityHpHeal
-	end2
-
-BattleScript_VampirismActivates::
-    call BattleScript_AbilityPopUp
-    absorbhealthbarupdate BS_ATTACKER
-    datahpupdate BS_ATTACKER
-    printfromtable gAbsorbDrainStringIds
-    waitmessage B_WAIT_TIME_LONG
-    tryfaintmon BS_ATTACKER
-    orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE
-    return
-
 BattleScript_CheekPouchActivates::
 	copybyte sSAVED_BATTLER, gBattlerAttacker
 	copybyte gBattlerAttacker, gBattlerAbility
