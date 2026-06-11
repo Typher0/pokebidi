@@ -10,12 +10,12 @@
 #include "main.h"
 #include "random.h"
 #include "script_pokemon_util.h"
+#include "sprite.h"
 #include "string_util.h"
 #include "text.h"
 #include "constants/event_object_movement.h"
 #include "constants/items.h"
 
-static enum Item BerryTypeToItemId(u16 berry);
 static u8 BerryTreeGetNumStagesWatered(struct BerryTree *tree);
 static u8 GetNumStagesWateredByBerryTreeId(u8 id);
 static u8 CalcBerryYieldInternal(u16 max, u16 min, u8 water);
@@ -29,7 +29,7 @@ static u8 GetWeedingBonusByBerryType(u8);
 static u8 GetPestsBonusByBerryType(u8);
 static void SetTreeMutations(u8 id, u8 berry);
 static u8 GetTreeMutationValue(u8 id);
-static u16 GetBerryPestSpecies(u8 berryId);
+static enum Species GetBerryPestSpecies(u8 berryId);
 static void TryForWeeds(struct BerryTree *tree);
 static void TryForPests(struct BerryTree *tree);
 static void AddTreeBonus(struct BerryTree *tree, u8 bonus);
@@ -56,7 +56,7 @@ static void AddTreeBonus(struct BerryTree *tree, u8 bonus);
 #define GROWTH_DURATION(g3, g4, g5, xy, oras, g7) OW_BERRY_GROWTH_RATE == GEN_3 ? g3 : OW_BERRY_GROWTH_RATE == GEN_4 ? g4 : OW_BERRY_GROWTH_RATE == GEN_5 ? g5 : OW_BERRY_GROWTH_RATE == GEN_6_XY ? xy : OW_BERRY_GROWTH_RATE == GEN_6_ORAS ? oras : g7
 #define YIELD_RATE(g3, g4, xy, oras) OW_BERRY_YIELD_RATE == GEN_3 ? g3 : OW_BERRY_YIELD_RATE == GEN_4 ? g4 : OW_BERRY_YIELD_RATE == GEN_6_XY ? xy : oras
 
-const struct Berry gBerries[] =
+const struct Berry gBerries[NUM_BERRIES + 1] =
 {
     [BERRY_ID_NONE] = {
         .info = {
@@ -2356,14 +2356,14 @@ bool32 IsEnigmaBerryValid(void)
 #endif //FREE_ENIGMA_BERRY
 }
 
-const struct Berry *GetBerryInfo(u8 berry)
+const struct BerryInfo *GetBerryInfo(enum BerryId berry)
 {
-    if (berry == ITEM_TO_BERRY(ITEM_ENIGMA_BERRY_E_READER) && IsEnigmaBerryValid())
+    if (berry == BERRY_ID_ENGIMA_E_READER && IsEnigmaBerryValid())
     {
     #if FREE_ENIGMA_BERRY == FALSE
-        return (struct Berry *)(&gSaveBlock1Ptr->enigmaBerry.berry);
+        return (struct BerryInfo *)(&gSaveBlock1Ptr->enigmaBerry.berry);
     #else
-        return &gBerries[0];    //never reached, but will appease the compiler gods
+        return &gBerries[BERRY_ID_NONE].info;    //never reached, but will appease the compiler gods
     #endif //FREE_ENIGMA_BERRY
     }
     else
@@ -2575,7 +2575,7 @@ void BerryTreeTimeUpdate(s32 minutes)
     }
 }
 
-void PlantBerryTree(u8 id, u8 berry, u8 stage, bool8 allowGrowth)
+void PlantBerryTree(u8 id, enum BerryId berry, u8 stage, bool8 allowGrowth)
 {
     struct BerryTree *tree = GetBerryTreeInfo(id);
 
@@ -2624,26 +2624,6 @@ u8 GetStageByBerryTreeId(u8 id)
 u8 GetMulchByBerryTreeId(u8 id)
 {
     return gSaveBlock1Ptr->berryTrees[id].mulch;
-}
-
-u8 ItemIdToBerryType(enum Item item)
-{
-    u16 berry = item - FIRST_BERRY_INDEX;
-
-    if (berry > LAST_BERRY_INDEX - FIRST_BERRY_INDEX)
-        return ITEM_TO_BERRY(FIRST_BERRY_INDEX);
-    else
-        return ITEM_TO_BERRY(item);
-}
-
-static enum Item BerryTypeToItemId(u16 berry)
-{
-    enum Item item = berry - 1;
-
-    if (item > LAST_BERRY_INDEX - FIRST_BERRY_INDEX)
-        return FIRST_BERRY_INDEX;
-    else
-        return berry + FIRST_BERRY_INDEX - 1;
 }
 
 void GetBerryNameByBerryType(u8 berry, u8 *string)
@@ -2708,14 +2688,14 @@ static u8 CalcBerryYieldInternal(u16 max, u16 min, u8 water)
 
 static u8 CalcBerryYield(struct BerryTree *tree)
 {
-    const struct Berry *berry = GetBerryInfo(tree->berry);
+    const struct BerryInfo *berryInfo = GetBerryInfo(tree->berry);
     u8 min = tree->berryYield;
-    u8 max = berry->maxYield;
+    u8 max = berryInfo->maxYield;
     u8 result;
     if (OW_BERRY_MULCH_USAGE && (tree->mulch == ITEM_TO_MULCH(ITEM_RICH_MULCH) || tree->mulch == ITEM_TO_MULCH(ITEM_AMAZE_MULCH)))
         min += 2;
     if (!(OW_BERRY_MOISTURE && OW_BERRY_ALWAYS_WATERABLE))
-        min += berry->minYield;
+        min += berryInfo->minYield;
     if (min >= max)
         result = max;
     else
@@ -2815,12 +2795,12 @@ void ObjectEventInteractionGetBerryCountString(void)
         count = 1;
 
     gSpecialVar_0x8006 = BerryTypeToItemId(berry);
-    CopyItemNameHandlePlural(BerryTypeToItemId(berry), gStringVar1, count);
+    CopyItemNameHandlePlural(gSpecialVar_0x8006, gStringVar1, count);
     berry = GetTreeMutationValue(treeId);
     if (berry > 0)
     {
         count = 1;
-        CopyItemNameHandlePlural(BerryTypeToItemId(berry), gStringVar3, count);
+        CopyItemNameHandlePlural(gSpecialVar_0x8006, gStringVar3, count);
         gSpecialVar_Result = TRUE;
     }
     else
@@ -2839,9 +2819,7 @@ void Bag_ChooseMulch(void)
 
 void ObjectEventInteractionPlantBerryTree(void)
 {
-    u8 berry = ItemIdToBerryType(gSpecialVar_ItemId);
-
-    PlantBerryTree(GetObjectEventBerryTreeId(gSelectedObjectEvent), berry, BERRY_STAGE_PLANTED, TRUE);
+    PlantBerryTree(GetObjectEventBerryTreeId(gSelectedObjectEvent), ItemIdToBerryType(gSpecialVar_ItemId), BERRY_STAGE_PLANTED, TRUE);
     ObjectEventInteractionGetBerryTreeData();
 }
 
@@ -2904,7 +2882,7 @@ bool8 ObjectEventInteractionBerryHasWeed(void)
 
 bool8 ObjectEventInteractionBerryHasPests(void)
 {
-    u16 species;
+    enum Species species;
     if (!OW_BERRY_PESTS || !gSaveBlock1Ptr->berryTrees[GetObjectEventBerryTreeId(gSelectedObjectEvent)].pests)
         return FALSE;
     species = GetBerryPestSpecies(gSaveBlock1Ptr->berryTrees[GetObjectEventBerryTreeId(gSelectedObjectEvent)].berry);
@@ -2969,19 +2947,20 @@ bool8 PlayerHasMulch(void)
 
 #if OW_BERRY_MUTATIONS == TRUE
 static const u8 sBerryMutations[][3] = {
-    {ITEM_TO_BERRY(ITEM_IAPAPA_BERRY), ITEM_TO_BERRY(ITEM_MAGO_BERRY),   ITEM_TO_BERRY(ITEM_POMEG_BERRY)},
-    {ITEM_TO_BERRY(ITEM_CHESTO_BERRY), ITEM_TO_BERRY(ITEM_PERSIM_BERRY), ITEM_TO_BERRY(ITEM_KELPSY_BERRY)},
-    {ITEM_TO_BERRY(ITEM_ORAN_BERRY),   ITEM_TO_BERRY(ITEM_PECHA_BERRY),  ITEM_TO_BERRY(ITEM_QUALOT_BERRY)},
-    {ITEM_TO_BERRY(ITEM_ASPEAR_BERRY), ITEM_TO_BERRY(ITEM_LEPPA_BERRY),  ITEM_TO_BERRY(ITEM_HONDEW_BERRY)},
-    {ITEM_TO_BERRY(ITEM_AGUAV_BERRY),  ITEM_TO_BERRY(ITEM_FIGY_BERRY),   ITEM_TO_BERRY(ITEM_GREPA_BERRY)},
-    {ITEM_TO_BERRY(ITEM_LUM_BERRY),    ITEM_TO_BERRY(ITEM_SITRUS_BERRY), ITEM_TO_BERRY(ITEM_TAMATO_BERRY)},
-    {ITEM_TO_BERRY(ITEM_HONDEW_BERRY), ITEM_TO_BERRY(ITEM_YACHE_BERRY),  ITEM_TO_BERRY(ITEM_LIECHI_BERRY)},
-    {ITEM_TO_BERRY(ITEM_QUALOT_BERRY), ITEM_TO_BERRY(ITEM_TANGA_BERRY),  ITEM_TO_BERRY(ITEM_GANLON_BERRY)},
-    {ITEM_TO_BERRY(ITEM_GREPA_BERRY),  ITEM_TO_BERRY(ITEM_ROSELI_BERRY), ITEM_TO_BERRY(ITEM_SALAC_BERRY)},
-    {ITEM_TO_BERRY(ITEM_POMEG_BERRY),  ITEM_TO_BERRY(ITEM_KASIB_BERRY),  ITEM_TO_BERRY(ITEM_PETAYA_BERRY)},
-    {ITEM_TO_BERRY(ITEM_KELPSY_BERRY), ITEM_TO_BERRY(ITEM_WACAN_BERRY),  ITEM_TO_BERRY(ITEM_APICOT_BERRY)},
-    {ITEM_TO_BERRY(ITEM_GANLON_BERRY), ITEM_TO_BERRY(ITEM_LIECHI_BERRY), ITEM_TO_BERRY(ITEM_KEE_BERRY)},
-    {ITEM_TO_BERRY(ITEM_SALAC_BERRY),  ITEM_TO_BERRY(ITEM_PETAYA_BERRY), ITEM_TO_BERRY(ITEM_MARANGA_BERRY)},
+    {BERRY_ID_IAPAPA, BERRY_ID_MAGO,   BERRY_ID_POMEG},
+    {BERRY_ID_CHESTO, BERRY_ID_PERSIM, BERRY_ID_KELPSY},
+    {BERRY_ID_ORAN,   BERRY_ID_PECHA,  BERRY_ID_QUALOT},
+    {BERRY_ID_CHESTO, BERRY_ID_PERSIM, BERRY_ID_KELPSY},
+    {BERRY_ID_ASPEAR, BERRY_ID_LEPPA,  BERRY_ID_HONDEW},
+    {BERRY_ID_AGUAV,  BERRY_ID_FIGY,   BERRY_ID_GREPA},
+    {BERRY_ID_LUM,    BERRY_ID_SITRUS, BERRY_ID_TAMATO},
+    {BERRY_ID_HONDEW, BERRY_ID_YACHE,  BERRY_ID_LIECHI},
+    {BERRY_ID_QUALOT, BERRY_ID_TANGA,  BERRY_ID_GANLON},
+    {BERRY_ID_GREPA,  BERRY_ID_ROSELI, BERRY_ID_SALAC},
+    {BERRY_ID_POMEG,  BERRY_ID_KASIB,  BERRY_ID_PETAYA},
+    {BERRY_ID_KELPSY, BERRY_ID_WACAN,  BERRY_ID_APICOT},
+    {BERRY_ID_GANLON, BERRY_ID_LIECHI, BERRY_ID_KEE},
+    {BERRY_ID_SALAC,  BERRY_ID_PETAYA, BERRY_ID_MARANGA},
     // Up to one more Mutation can be added here for a total of 15 (only 4 bits are allocated)
 };
 
@@ -3081,11 +3060,11 @@ static void SetTreeMutations(u8 id, u8 berry)
 #endif
 }
 
-static u16 GetBerryPestSpecies(u8 berryId)
+static enum Species GetBerryPestSpecies(u8 berryId)
 {
 #if OW_BERRY_PESTS == TRUE
-    const struct Berry *berry = GetBerryInfo(berryId);
-    switch (berry->color)
+    const struct BerryInfo *berryInfo = GetBerryInfo(berryId);
+    switch (berryInfo->color)
     {
     case BERRY_COLOR_RED:
         return P_FAMILY_LEDYBA ? SPECIES_LEDYBA : SPECIES_NONE;

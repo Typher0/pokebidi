@@ -897,7 +897,7 @@ static u8 GetBattleEnvironmentOverride(void)
         return BATTLE_ENVIRONMENT_ARENA;
     else if (gBattleTypeFlags & BATTLE_TYPE_LEGENDARY)
     {
-        switch (GetMonData(&gEnemyParty[0], MON_DATA_SPECIES))
+        switch (GetMonData(&gParties[B_TRAINER_OPPONENT_A][0], MON_DATA_SPECIES))
         {
         default:
             return gBattleEnvironment;

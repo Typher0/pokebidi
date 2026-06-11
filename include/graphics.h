@@ -1655,6 +1655,7 @@ extern const u16 gItemIconPalette_GhostTMHM[];
 extern const u16 gItemIconPalette_DragonTMHM[];
 extern const u16 gItemIconPalette_DarkTMHM[];
 extern const u16 gItemIconPalette_SteelTMHM[];
+extern const u16 gItemIconPalette_MysteryTMHM[];
 extern const u16 gItemIconPalette_FairyTMHM[];
 extern const u16 gItemIconPalette_SoundTMHM[];
 // Charms

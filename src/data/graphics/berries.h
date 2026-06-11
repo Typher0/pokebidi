@@ -1,10 +1,10 @@
-const u32 gBerryCheck_Gfx[] = INCBIN_U32("graphics/bag/check_berry.4bpp.smol");
-const u16 gBerryCheck_Pal[] = INCBIN_U16("graphics/bag/check_berry.gbapal");
+const u32 gBerryCheck_Gfx[] = INCGFX_U32("graphics/bag/check_berry.png", ".4bpp.smol");
+const u16 gBerryCheck_Pal[] = INCGFX_U16("graphics/bag/check_berry.pal", ".gbapal");
 
-const u32 gBerryTag_Gfx[] = INCBIN_U32("graphics/bag/berry_tag.bin.smolTM");
-const u32 gBerryTag_Tilemap[] = INCBIN_U32("graphics/bag/berry_tag_title.bin.smolTM");
+const u32 gBerryTag_Gfx[] = INCGFX_U32("graphics/bag/berry_tag.bin", ".smolTM");
+const u32 gBerryTag_Tilemap[] = INCGFX_U32("graphics/bag/berry_tag_title.bin", ".smolTM");
 
-const u32 gBerryCheckCircle_Gfx[] = INCBIN_U32("graphics/bag/check_berry_circle.4bpp.smol");
+const u32 gBerryCheckCircle_Gfx[] = INCGFX_U32("graphics/bag/check_berry_circle.png", ".4bpp.smol");
 
 const u32 gBerryPic_Cheri[] = INCGFX_U32("graphics/berries/cheri.png", ".4bpp.smol");
 const u32 gBerryPic_Chesto[] = INCGFX_U32("graphics/berries/chesto.png", ".4bpp.smol");
