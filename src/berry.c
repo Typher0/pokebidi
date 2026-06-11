@@ -2368,9 +2368,9 @@ const struct Berry *GetBerryInfo(u8 berry)
     }
     else
     {
-        if (berry == BERRY_NONE || berry > ITEM_TO_BERRY(LAST_BERRY_INDEX))
-        berry = ITEM_TO_BERRY(FIRST_BERRY_INDEX);
-        return &gBerries[berry - 1];
+        if (berry == BERRY_ID_NONE || berry > NUM_BERRIES)
+            berry = 1;
+        return &gBerries[berry].info;
     }
 }
 
