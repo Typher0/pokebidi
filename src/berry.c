@@ -68,9 +68,9 @@ const struct Berry gBerries[] =
         .berryPal =  gBerryPalette_Enigma,
         .berryTreePicTable = gPicTable_DurinBerryTree,
         .berryTreePaletteSlotTable = gBerryTreePaletteSlotTable_Durin,
-        },
-        [BERRY_ID_CHERI] =
-        {
+    },
+    [BERRY_ID_CHERI] =
+    {
         .info = {
             .name = _("Cheri"),
             .firmness = BERRY_FIRMNESS_SOFT,
@@ -100,10 +100,10 @@ const struct Berry gBerries[] =
         .berryPal =  gBerryPalette_Cheri,
         .berryTreePicTable = gPicTable_CheriBerryTree,
         .berryTreePaletteSlotTable = gBerryTreePaletteSlotTable_Cheri,
-        },
+    },
 
-        [BERRY_ID_CHESTO] =
-        {
+    [BERRY_ID_CHESTO] =
+    {
         .info = {
             .name = _("Chesto"),
             .firmness = BERRY_FIRMNESS_SUPER_HARD,
@@ -133,10 +133,10 @@ const struct Berry gBerries[] =
         .berryPal = gBerryPalette_Chesto,
         .berryTreePicTable = gPicTable_ChestoBerryTree,
         .berryTreePaletteSlotTable = gBerryTreePaletteSlotTable_Chesto,
-        },
+    },
 
-        [BERRY_ID_PECHA] =
-        {
+    [BERRY_ID_PECHA] =
+    {
         .info = {
             .name = _("Pecha"),
             .firmness = BERRY_FIRMNESS_VERY_SOFT,
@@ -166,10 +166,10 @@ const struct Berry gBerries[] =
         .berryPal =  gBerryPalette_Pecha,
         .berryTreePicTable = gPicTable_PechaBerryTree,
         .berryTreePaletteSlotTable = gBerryTreePaletteSlotTable_Pecha,
-        },
+    },
 
-        [BERRY_ID_RAWST] =
-        {
+    [BERRY_ID_RAWST] =
+    {
         .info = {
             .name = _("Rawst"),
             .firmness = BERRY_FIRMNESS_HARD,
@@ -199,10 +199,10 @@ const struct Berry gBerries[] =
         .berryPal =  gBerryPalette_Rawst,
         .berryTreePicTable = gPicTable_RawstBerryTree,
         .berryTreePaletteSlotTable = gBerryTreePaletteSlotTable_Rawst,
-        },
+    },
 
-        [BERRY_ID_ASPEAR] =
-        {
+    [BERRY_ID_ASPEAR] =
+    {
         .info = {
             .name = _("Aspear"),
             .firmness = BERRY_FIRMNESS_SUPER_HARD,
@@ -232,10 +232,10 @@ const struct Berry gBerries[] =
         .berryPal = gBerryPalette_Aspear,
         .berryTreePicTable = gPicTable_AspearBerryTree,
         .berryTreePaletteSlotTable = gBerryTreePaletteSlotTable_Aspear,
-        },
+    },
 
-        [BERRY_ID_LEPPA] =
-        {
+    [BERRY_ID_LEPPA] =
+    {
         .info = {
             .name = _("Leppa"),
             .firmness = BERRY_FIRMNESS_VERY_HARD,
@@ -265,10 +265,10 @@ const struct Berry gBerries[] =
         .berryPal =  gBerryPalette_Leppa,
         .berryTreePicTable = gPicTable_LeppaBerryTree,
         .berryTreePaletteSlotTable = gBerryTreePaletteSlotTable_Leppa,
-        },
+    },
 
-        [BERRY_ID_ORAN] =
-        {
+    [BERRY_ID_ORAN] =
+    {
         .info = {
             .name = _("Oran"),
             .firmness = BERRY_FIRMNESS_SUPER_HARD,
@@ -298,10 +298,10 @@ const struct Berry gBerries[] =
         .berryPal =   gBerryPalette_Oran,
         .berryTreePicTable = gPicTable_OranBerryTree,
         .berryTreePaletteSlotTable = gBerryTreePaletteSlotTable_Oran,
-        },
+    },
 
-        [BERRY_ID_PERSIM] =
-        {
+    [BERRY_ID_PERSIM] =
+    {
         .info = {
             .name = _("Persim"),
             .firmness = BERRY_FIRMNESS_HARD,
@@ -331,10 +331,10 @@ const struct Berry gBerries[] =
         .berryPal = gBerryPalette_Persim,
         .berryTreePicTable = gPicTable_PersimBerryTree,
         .berryTreePaletteSlotTable = gBerryTreePaletteSlotTable_Persim,
-        },
+    },
 
-        [BERRY_ID_LUM] =
-        {
+    [BERRY_ID_LUM] =
+    {
         .info = {
             .name = _("Lum"),
             .firmness = BERRY_FIRMNESS_SUPER_HARD,
@@ -364,10 +364,10 @@ const struct Berry gBerries[] =
         .berryPal =    gBerryPalette_Lum,
         .berryTreePicTable = gPicTable_LumBerryTree,
         .berryTreePaletteSlotTable = gBerryTreePaletteSlotTable_Lum,
-        },
+    },
 
-        [BERRY_ID_SITRUS] =
-        {
+    [BERRY_ID_SITRUS] =
+    {
         .info = {
             .name = _("Sitrus"),
             .firmness = BERRY_FIRMNESS_VERY_HARD,
@@ -397,10 +397,10 @@ const struct Berry gBerries[] =
         .berryPal = gBerryPalette_Sitrus,
         .berryTreePicTable = gPicTable_SitrusBerryTree,
         .berryTreePaletteSlotTable = gBerryTreePaletteSlotTable_Sitrus,
-        },
+    },
 
-        [BERRY_ID_FIGY] =
-        {
+    [BERRY_ID_FIGY] =
+    {
         .info = {
             .name = _("Figy"),
             .firmness = BERRY_FIRMNESS_SOFT,
@@ -430,10 +430,10 @@ const struct Berry gBerries[] =
         .berryPal =   gBerryPalette_Figy,
         .berryTreePicTable = gPicTable_FigyBerryTree,
         .berryTreePaletteSlotTable = gBerryTreePaletteSlotTable_Figy,
-        },
+    },
 
-        [BERRY_ID_WIKI] =
-        {
+    [BERRY_ID_WIKI] =
+    {
         .info = {
             .name = _("Wiki"),
             .firmness = BERRY_FIRMNESS_HARD,
@@ -463,10 +463,10 @@ const struct Berry gBerries[] =
         .berryPal =   gBerryPalette_Wiki,
         .berryTreePicTable = gPicTable_WikiBerryTree,
         .berryTreePaletteSlotTable = gBerryTreePaletteSlotTable_Wiki,
-        },
+    },
 
-        [BERRY_ID_MAGO] =
-        {
+    [BERRY_ID_MAGO] =
+    {
         .info = {
             .name = _("Mago"),
             .firmness = BERRY_FIRMNESS_HARD,
@@ -496,10 +496,10 @@ const struct Berry gBerries[] =
         .berryPal =   gBerryPalette_Mago,
         .berryTreePicTable = gPicTable_MagoBerryTree,
         .berryTreePaletteSlotTable = gBerryTreePaletteSlotTable_Mago,
-        },
+    },
 
-        [BERRY_ID_AGUAV] =
-        {
+    [BERRY_ID_AGUAV] =
+    {
         .info = {
             .name = _("Aguav"),
             .firmness = BERRY_FIRMNESS_SUPER_HARD,
@@ -529,10 +529,10 @@ const struct Berry gBerries[] =
         .berryPal =  gBerryPalette_Aguav,
         .berryTreePicTable = gPicTable_AguavBerryTree,
         .berryTreePaletteSlotTable = gBerryTreePaletteSlotTable_Aguav,
-        },
+    },
 
-        [BERRY_ID_IAPAPA] =
-        {
+    [BERRY_ID_IAPAPA] =
+    {
         .info = {
             .name = _("Iapapa"),
             .firmness = BERRY_FIRMNESS_SOFT,
@@ -562,10 +562,10 @@ const struct Berry gBerries[] =
         .berryPal = gBerryPalette_Iapapa,
         .berryTreePicTable = gPicTable_IapapaBerryTree,
         .berryTreePaletteSlotTable = gBerryTreePaletteSlotTable_Iapapa,
-        },
+    },
 
-        [BERRY_ID_RAZZ] =
-        {
+    [BERRY_ID_RAZZ] =
+    {
         .info = {
             .name = _("Razz"),
             .firmness = BERRY_FIRMNESS_VERY_HARD,
@@ -595,10 +595,10 @@ const struct Berry gBerries[] =
         .berryPal =   gBerryPalette_Razz,
         .berryTreePicTable = gPicTable_RazzBerryTree,
         .berryTreePaletteSlotTable = gBerryTreePaletteSlotTable_Razz,
-        },
+    },
 
-        [BERRY_ID_BLUK] =
-        {
+    [BERRY_ID_BLUK] =
+    {
         .info = {
             .name = _("Bluk"),
             .firmness = BERRY_FIRMNESS_SOFT,
@@ -628,10 +628,10 @@ const struct Berry gBerries[] =
         .berryPal =   gBerryPalette_Bluk,
         .berryTreePicTable = gPicTable_RazzBerryTree,
         .berryTreePaletteSlotTable = gBerryTreePaletteSlotTable_Razz,
-        },
+    },
 
-        [BERRY_ID_NANAB] =
-        {
+    [BERRY_ID_NANAB] =
+    {
         .info = {
             .name = _("Nanab"),
             .firmness = BERRY_FIRMNESS_VERY_HARD,
@@ -661,10 +661,10 @@ const struct Berry gBerries[] =
         .berryPal =  gBerryPalette_Nanab,
         .berryTreePicTable = gPicTable_MagoBerryTree,
         .berryTreePaletteSlotTable = gBerryTreePaletteSlotTable_Mago,
-        },
+    },
 
-        [BERRY_ID_WEPEAR] =
-        {
+    [BERRY_ID_WEPEAR] =
+    {
         .info = {
             .name = _("Wepear"),
             .firmness = BERRY_FIRMNESS_SUPER_HARD,
@@ -694,10 +694,10 @@ const struct Berry gBerries[] =
         .berryPal = gBerryPalette_Wepear,
         .berryTreePicTable = gPicTable_WepearBerryTree,
         .berryTreePaletteSlotTable = gBerryTreePaletteSlotTable_Wepear,
-        },
+    },
 
-        [BERRY_ID_PINAP] =
-        {
+    [BERRY_ID_PINAP] =
+    {
         .info = {
             .name = _("Pinap"),
             .firmness = BERRY_FIRMNESS_HARD,
@@ -727,10 +727,10 @@ const struct Berry gBerries[] =
         .berryPal =  gBerryPalette_Pinap,
         .berryTreePicTable = gPicTable_IapapaBerryTree,
         .berryTreePaletteSlotTable = gBerryTreePaletteSlotTable_Iapapa,
-        },
+    },
 
-        [BERRY_ID_POMEG] =
-        {
+    [BERRY_ID_POMEG] =
+    {
         .info = {
             .name = _("Pomeg"),
             .firmness = BERRY_FIRMNESS_VERY_HARD,
@@ -760,10 +760,10 @@ const struct Berry gBerries[] =
         .berryPal =  gBerryPalette_Pomeg,
         .berryTreePicTable = gPicTable_PomegBerryTree,
         .berryTreePaletteSlotTable = gBerryTreePaletteSlotTable_Pomeg,
-        },
+    },
 
-        [BERRY_ID_KELPSY] =
-        {
+    [BERRY_ID_KELPSY] =
+    {
         .info = {
             .name = _("Kelpsy"),
             .firmness = BERRY_FIRMNESS_HARD,
@@ -793,10 +793,10 @@ const struct Berry gBerries[] =
         .berryPal = gBerryPalette_Kelpsy,
         .berryTreePicTable = gPicTable_KelpsyBerryTree,
         .berryTreePaletteSlotTable = gBerryTreePaletteSlotTable_Kelpsy,
-        },
+    },
 
-        [BERRY_ID_QUALOT] =
-        {
+    [BERRY_ID_QUALOT] =
+    {
         .info = {
             .name = _("Qualot"),
             .firmness = BERRY_FIRMNESS_HARD,
@@ -826,10 +826,10 @@ const struct Berry gBerries[] =
         .berryPal = gBerryPalette_Qualot,
         .berryTreePicTable = gPicTable_WepearBerryTree,
         .berryTreePaletteSlotTable = gBerryTreePaletteSlotTable_Wepear,
-        },
+    },
 
-        [BERRY_ID_HONDEW] =
-        {
+    [BERRY_ID_HONDEW] =
+    {
         .info = {
             .name = _("Hondew"),
             .firmness = BERRY_FIRMNESS_HARD,
@@ -859,10 +859,10 @@ const struct Berry gBerries[] =
         .berryPal = gBerryPalette_Hondew,
         .berryTreePicTable = gPicTable_HondewBerryTree,
         .berryTreePaletteSlotTable = gBerryTreePaletteSlotTable_Hondew,
-        },
+    },
 
-        [BERRY_ID_GREPA] =
-        {
+    [BERRY_ID_GREPA] =
+    {
         .info = {
             .name = _("Grepa"),
             .firmness = BERRY_FIRMNESS_SOFT,
@@ -892,10 +892,10 @@ const struct Berry gBerries[] =
         .berryPal =  gBerryPalette_Grepa,
         .berryTreePicTable = gPicTable_GrepaBerryTree,
         .berryTreePaletteSlotTable = gBerryTreePaletteSlotTable_Grepa,
-        },
+    },
 
-        [BERRY_ID_TAMATO] =
-        {
+    [BERRY_ID_TAMATO] =
+    {
         .info = {
             .name = _("Tamato"),
             .firmness = BERRY_FIRMNESS_SOFT,
@@ -925,10 +925,10 @@ const struct Berry gBerries[] =
         .berryPal = gBerryPalette_Tamato,
         .berryTreePicTable = gPicTable_TamatoBerryTree,
         .berryTreePaletteSlotTable = gBerryTreePaletteSlotTable_Tamato,
-        },
+    },
 
-        [BERRY_ID_CORNN] =
-        {
+    [BERRY_ID_CORNN] =
+    {
         .info = {
             .name = _("Cornn"),
             .firmness = BERRY_FIRMNESS_HARD,
@@ -958,10 +958,10 @@ const struct Berry gBerries[] =
         .berryPal =  gBerryPalette_Cornn,
         .berryTreePicTable = gPicTable_CornnBerryTree,
         .berryTreePaletteSlotTable = gBerryTreePaletteSlotTable_Cornn,
-        },
+    },
 
-        [BERRY_ID_MAGOST] =
-        {
+    [BERRY_ID_MAGOST] =
+    {
         .info = {
             .name = _("Magost"),
             .firmness = BERRY_FIRMNESS_HARD,
@@ -991,10 +991,10 @@ const struct Berry gBerries[] =
         .berryPal = gBerryPalette_Magost,
         .berryTreePicTable = gPicTable_PomegBerryTree,
         .berryTreePaletteSlotTable = gBerryTreePaletteSlotTable_Pomeg,
-        },
+    },
 
-        [BERRY_ID_RABUTA] =
-        {
+    [BERRY_ID_RABUTA] =
+    {
         .info = {
             .name = _("Rabuta"),
             .firmness = BERRY_FIRMNESS_SOFT,
@@ -1024,10 +1024,10 @@ const struct Berry gBerries[] =
         .berryPal = gBerryPalette_Rabuta,
         .berryTreePicTable = gPicTable_RabutaBerryTree,
         .berryTreePaletteSlotTable = gBerryTreePaletteSlotTable_Rabuta,
-        },
+    },
 
-        [BERRY_ID_NOMEL] =
-        {
+    [BERRY_ID_NOMEL] =
+    {
         .info = {
             .name = _("Nomel"),
             .firmness = BERRY_FIRMNESS_SUPER_HARD,
@@ -1057,10 +1057,10 @@ const struct Berry gBerries[] =
         .berryPal =  gBerryPalette_Nomel,
         .berryTreePicTable = gPicTable_NomelBerryTree,
         .berryTreePaletteSlotTable = gBerryTreePaletteSlotTable_Nomel,
-        },
+    },
 
-        [BERRY_ID_SPELON] =
-        {
+    [BERRY_ID_SPELON] =
+    {
         .info = {
             .name = _("Spelon"),
             .firmness = BERRY_FIRMNESS_SOFT,
@@ -1090,10 +1090,10 @@ const struct Berry gBerries[] =
         .berryPal = gBerryPalette_Spelon,
         .berryTreePicTable = gPicTable_SpelonBerryTree,
         .berryTreePaletteSlotTable = gBerryTreePaletteSlotTable_Spelon,
-        },
+    },
 
-        [BERRY_ID_PAMTRE] =
-        {
+    [BERRY_ID_PAMTRE] =
+    {
         .info = {
             .name = _("Pamtre"),
             .firmness = BERRY_FIRMNESS_VERY_SOFT,
@@ -1123,10 +1123,10 @@ const struct Berry gBerries[] =
         .berryPal = gBerryPalette_Pamtre,
         .berryTreePicTable = gPicTable_PamtreBerryTree,
         .berryTreePaletteSlotTable = gBerryTreePaletteSlotTable_Pamtre,
-        },
+    },
 
-        [BERRY_ID_WATMEL] =
-        {
+    [BERRY_ID_WATMEL] =
+    {
         .info = {
             .name = _("Watmel"),
             .firmness = BERRY_FIRMNESS_SOFT,
@@ -1156,10 +1156,10 @@ const struct Berry gBerries[] =
         .berryPal = gBerryPalette_Watmel,
         .berryTreePicTable = gPicTable_RabutaBerryTree,
         .berryTreePaletteSlotTable = gBerryTreePaletteSlotTable_Rabuta,
-        },
+    },
 
-        [BERRY_ID_DURIN] =
-        {
+    [BERRY_ID_DURIN] =
+    {
         .info = {
             .name = _("Durin"),
             .firmness = BERRY_FIRMNESS_HARD,
@@ -1189,10 +1189,10 @@ const struct Berry gBerries[] =
         .berryPal =  gBerryPalette_Durin,
         .berryTreePicTable = gPicTable_DurinBerryTree,
         .berryTreePaletteSlotTable = gBerryTreePaletteSlotTable_Durin,
-        },
+    },
 
-        [BERRY_ID_BELUE] =
-        {
+    [BERRY_ID_BELUE] =
+    {
         .info = {
             .name = _("Belue"),
             .firmness = BERRY_FIRMNESS_VERY_SOFT,
@@ -1222,10 +1222,10 @@ const struct Berry gBerries[] =
         .berryPal =  gBerryPalette_Belue,
         .berryTreePicTable = gPicTable_HondewBerryTree,
         .berryTreePaletteSlotTable = gBerryTreePaletteSlotTable_Hondew,
-        },
+    },
 
-        [BERRY_ID_OCCA] =
-        {
+    [BERRY_ID_OCCA] =
+    {
         .info = {
             .name = _("Occa"),
             .firmness = BERRY_FIRMNESS_SUPER_HARD,
@@ -1255,10 +1255,10 @@ const struct Berry gBerries[] =
         .berryPal = gBerryPalette_Occa,
         .berryTreePicTable = gPicTable_OccaBerryTree,
         .berryTreePaletteSlotTable = gBerryTreePaletteSlotTable_Occa,
-        },
+    },
 
-        [BERRY_ID_PASSHO] =
-        {
+    [BERRY_ID_PASSHO] =
+    {
         .info = {
             .name = _("Passho"),
             .firmness = BERRY_FIRMNESS_SOFT,
@@ -1288,10 +1288,10 @@ const struct Berry gBerries[] =
         .berryPal = gBerryPalette_Passho,
         .berryTreePicTable = gPicTable_CornnBerryTree,
         .berryTreePaletteSlotTable = gBerryTreePaletteSlotTable_Cornn,
-        },
+    },
 
-        [BERRY_ID_WACAN] =
-        {
+    [BERRY_ID_WACAN] =
+    {
         .info = {
             .name = _("Wacan"),
             .firmness = BERRY_FIRMNESS_VERY_SOFT,
@@ -1321,10 +1321,10 @@ const struct Berry gBerries[] =
         .berryPal = gBerryPalette_Wacan,
         .berryTreePicTable = gPicTable_RazzBerryTree,
         .berryTreePaletteSlotTable = gBerryTreePaletteSlotTable_Razz,
-        },
+    },
 
-        [BERRY_ID_RINDO] =
-        {
+    [BERRY_ID_RINDO] =
+    {
         .info = {
             .name = _("Rindo"),
             .firmness = BERRY_FIRMNESS_SOFT,
@@ -1354,10 +1354,10 @@ const struct Berry gBerries[] =
         .berryPal = gBerryPalette_Rindo,
         .berryTreePicTable = gPicTable_TamatoBerryTree,
         .berryTreePaletteSlotTable = gBerryTreePaletteSlotTable_Tamato,
-        },
+    },
 
-        [BERRY_ID_YACHE] =
-        {
+    [BERRY_ID_YACHE] =
+    {
         .info = {
             .name = _("Yache"),
             .firmness = BERRY_FIRMNESS_VERY_HARD,
@@ -1387,10 +1387,10 @@ const struct Berry gBerries[] =
         .berryPal = gBerryPalette_Yache,
         .berryTreePicTable = gPicTable_YacheBerryTree,
         .berryTreePaletteSlotTable = gBerryTreePaletteSlotTable_Yache,
-        },
+    },
 
-        [BERRY_ID_CHOPLE] =
-        {
+    [BERRY_ID_CHOPLE] =
+    {
         .info = {
             .name = _("Chople"),
             .firmness = BERRY_FIRMNESS_SOFT,
@@ -1420,10 +1420,10 @@ const struct Berry gBerries[] =
         .berryPal = gBerryPalette_Chople,
         .berryTreePicTable = gPicTable_ChopleBerryTree,
         .berryTreePaletteSlotTable = gBerryTreePaletteSlotTable_Chople,
-        },
+    },
 
-        [BERRY_ID_KEBIA] =
-        {
+    [BERRY_ID_KEBIA] =
+    {
         .info = {
             .name = _("Kebia"),
             .firmness = BERRY_FIRMNESS_HARD,
@@ -1453,10 +1453,10 @@ const struct Berry gBerries[] =
         .berryPal = gBerryPalette_Kebia,
         .berryTreePicTable = gPicTable_KebiaBerryTree,
         .berryTreePaletteSlotTable = gBerryTreePaletteSlotTable_Kebia,
-        },
+    },
 
-        [BERRY_ID_SHUCA] =
-        {
+    [BERRY_ID_SHUCA] =
+    {
         .info = {
             .name = _("Shuca"),
             .firmness = BERRY_FIRMNESS_SOFT,
@@ -1486,10 +1486,10 @@ const struct Berry gBerries[] =
         .berryPal = gBerryPalette_Shuca,
         .berryTreePicTable = gPicTable_ShucaBerryTree,
         .berryTreePaletteSlotTable = gBerryTreePaletteSlotTable_Shuca,
-        },
+    },
 
-        [BERRY_ID_COBA] =
-        {
+    [BERRY_ID_COBA] =
+    {
         .info = {
             .name = _("Coba"),
             .firmness = BERRY_FIRMNESS_VERY_HARD,
@@ -1519,10 +1519,10 @@ const struct Berry gBerries[] =
         .berryPal = gBerryPalette_Coba,
         .berryTreePicTable = gPicTable_RawstBerryTree,
         .berryTreePaletteSlotTable = gBerryTreePaletteSlotTable_Rawst,
-        },
+    },
 
-        [BERRY_ID_PAYAPA] =
-        {
+    [BERRY_ID_PAYAPA] =
+    {
         .info = {
             .name = _("Payapa"),
             .firmness = BERRY_FIRMNESS_SOFT,
@@ -1552,10 +1552,10 @@ const struct Berry gBerries[] =
         .berryPal = gBerryPalette_Payapa,
         .berryTreePicTable = gPicTable_PayapaBerryTree,
         .berryTreePaletteSlotTable = gBerryTreePaletteSlotTable_Payapa,
-        },
+    },
 
-        [BERRY_ID_TANGA] =
-        {
+    [BERRY_ID_TANGA] =
+    {
         .info = {
             .name = _("Tanga"),
             .firmness = BERRY_FIRMNESS_VERY_SOFT,
@@ -1585,10 +1585,10 @@ const struct Berry gBerries[] =
         .berryPal = gBerryPalette_Tanga,
         .berryTreePicTable = gPicTable_TangaBerryTree,
         .berryTreePaletteSlotTable = gBerryTreePaletteSlotTable_Tanga,
-        },
+    },
 
-        [BERRY_ID_CHARTI] =
-        {
+    [BERRY_ID_CHARTI] =
+    {
         .info = {
             .name = _("Charti"),
             .firmness = BERRY_FIRMNESS_VERY_SOFT,
@@ -1618,10 +1618,10 @@ const struct Berry gBerries[] =
         .berryPal = gBerryPalette_Charti,
         .berryTreePicTable = gPicTable_LansatBerryTree,
         .berryTreePaletteSlotTable = gBerryTreePaletteSlotTable_Lansat,
-        },
+    },
 
-        [BERRY_ID_KASIB] =
-        {
+    [BERRY_ID_KASIB] =
+    {
         .info = {
             .name = _("Kasib"),
             .firmness = BERRY_FIRMNESS_HARD,
@@ -1651,10 +1651,10 @@ const struct Berry gBerries[] =
         .berryPal = gBerryPalette_Kasib,
         .berryTreePicTable = gPicTable_KasibBerryTree,
         .berryTreePaletteSlotTable = gBerryTreePaletteSlotTable_Kasib,
-        },
+    },
 
-        [BERRY_ID_HABAN] =
-        {
+    [BERRY_ID_HABAN] =
+    {
         .info = {
             .name = _("Haban"),
             .firmness = BERRY_FIRMNESS_SOFT,
@@ -1684,10 +1684,10 @@ const struct Berry gBerries[] =
         .berryPal = gBerryPalette_Haban,
         .berryTreePicTable = gPicTable_HabanBerryTree,
         .berryTreePaletteSlotTable = gBerryTreePaletteSlotTable_Haban,
-        },
+    },
 
-        [BERRY_ID_COLBUR] =
-        {
+    [BERRY_ID_COLBUR] =
+    {
         .info = {
             .name = _("Colbur"),
             .firmness = BERRY_FIRMNESS_SUPER_HARD,
@@ -1717,10 +1717,10 @@ const struct Berry gBerries[] =
         .berryPal = gBerryPalette_Colbur,
         .berryTreePicTable = gPicTable_ColburBerryTree,
         .berryTreePaletteSlotTable = gBerryTreePaletteSlotTable_Colbur,
-        },
+    },
 
-        [BERRY_ID_BABIRI] =
-        {
+    [BERRY_ID_BABIRI] =
+    {
         .info = {
             .name = _("Babiri"),
             .firmness = BERRY_FIRMNESS_SUPER_HARD,
@@ -1750,10 +1750,10 @@ const struct Berry gBerries[] =
         .berryPal = gBerryPalette_Babiri,
         .berryTreePicTable = gPicTable_LiechiBerryTree,
         .berryTreePaletteSlotTable = gBerryTreePaletteSlotTable_Liechi,
-        },
+    },
 
-        [BERRY_ID_CHILAN] =
-        {
+    [BERRY_ID_CHILAN] =
+    {
         .info = {
             .name = _("Chilan"),
             .firmness = BERRY_FIRMNESS_VERY_SOFT,
@@ -1783,10 +1783,10 @@ const struct Berry gBerries[] =
         .berryPal = gBerryPalette_Chilan,
         .berryTreePicTable = gPicTable_GrepaBerryTree,
         .berryTreePaletteSlotTable = gBerryTreePaletteSlotTable_Grepa,
-        },
+    },
 
-        [BERRY_ID_LIECHI] =
-        {
+    [BERRY_ID_LIECHI] =
+    {
         .info = {
             .name = _("Liechi"),
             .firmness = BERRY_FIRMNESS_VERY_HARD,
@@ -1816,10 +1816,10 @@ const struct Berry gBerries[] =
         .berryPal = gBerryPalette_Liechi,
         .berryTreePicTable = gPicTable_LiechiBerryTree,
         .berryTreePaletteSlotTable = gBerryTreePaletteSlotTable_Liechi,
-        },
+    },
 
-        [BERRY_ID_GANLON] =
-        {
+    [BERRY_ID_GANLON] =
+    {
         .info = {
             .name = _("Ganlon"),
             .firmness = BERRY_FIRMNESS_VERY_HARD,
@@ -1849,10 +1849,10 @@ const struct Berry gBerries[] =
         .berryPal = gBerryPalette_Ganlon,
         .berryTreePicTable = gPicTable_HondewBerryTree,
         .berryTreePaletteSlotTable = gBerryTreePaletteSlotTable_Hondew,
-        },
+    },
 
-        [BERRY_ID_SALAC] =
-        {
+    [BERRY_ID_SALAC] =
+    {
         .info = {
             .name = _("Salac"),
             .firmness = BERRY_FIRMNESS_VERY_HARD,
@@ -1882,10 +1882,10 @@ const struct Berry gBerries[] =
         .berryPal =  gBerryPalette_Salac,
         .berryTreePicTable = gPicTable_AguavBerryTree,
         .berryTreePaletteSlotTable = gBerryTreePaletteSlotTable_Aguav,
-        },
+    },
 
-        [BERRY_ID_PETAYA] =
-        {
+    [BERRY_ID_PETAYA] =
+    {
         .info = {
             .name = _("Petaya"),
             .firmness = BERRY_FIRMNESS_VERY_HARD,
@@ -1915,10 +1915,10 @@ const struct Berry gBerries[] =
         .berryPal = gBerryPalette_Petaya,
         .berryTreePicTable = gPicTable_PomegBerryTree,
         .berryTreePaletteSlotTable = gBerryTreePaletteSlotTable_Pomeg,
-        },
+    },
 
-        [BERRY_ID_APICOT] =
-        {
+    [BERRY_ID_APICOT] =
+    {
         .info = {
             .name = _("Apicot"),
             .firmness = BERRY_FIRMNESS_HARD,
@@ -1948,10 +1948,10 @@ const struct Berry gBerries[] =
         .berryPal = gBerryPalette_Apicot,
         .berryTreePicTable = gPicTable_GrepaBerryTree,
         .berryTreePaletteSlotTable = gBerryTreePaletteSlotTable_Grepa,
-        },
+    },
 
-        [BERRY_ID_LANSAT] =
-        {
+    [BERRY_ID_LANSAT] =
+    {
         .info = {
             .name = _("Lansat"),
             .firmness = BERRY_FIRMNESS_SOFT,
@@ -1981,10 +1981,10 @@ const struct Berry gBerries[] =
         .berryPal = gBerryPalette_Lansat,
         .berryTreePicTable = gPicTable_LansatBerryTree,
         .berryTreePaletteSlotTable = gBerryTreePaletteSlotTable_Lansat,
-        },
+    },
 
-        [BERRY_ID_STARF] =
-        {
+    [BERRY_ID_STARF] =
+    {
         .info = {
             .name = _("Starf"),
             .firmness = BERRY_FIRMNESS_SUPER_HARD,
@@ -2014,10 +2014,10 @@ const struct Berry gBerries[] =
         .berryPal =  gBerryPalette_Starf,
         .berryTreePicTable = gPicTable_CornnBerryTree,
         .berryTreePaletteSlotTable = gBerryTreePaletteSlotTable_Cornn,
-        },
+    },
 
-        [BERRY_ID_ENIGMA] =
-        {
+    [BERRY_ID_ENIGMA] =
+    {
         .info = {
             .name = _("Enigma"),
             .firmness = BERRY_FIRMNESS_HARD,
@@ -2047,10 +2047,10 @@ const struct Berry gBerries[] =
         .berryPal = gBerryPalette_Enigma,
         .berryTreePicTable = gPicTable_DurinBerryTree,
         .berryTreePaletteSlotTable = gBerryTreePaletteSlotTable_Durin,
-        },
+    },
 
-        [BERRY_ID_MICLE] =
-        {
+    [BERRY_ID_MICLE] =
+    {
         .info = {
             .name = _("Micle"),
             .firmness = BERRY_FIRMNESS_SOFT,
@@ -2080,10 +2080,10 @@ const struct Berry gBerries[] =
         .berryPal = gBerryPalette_Micle,
         .berryTreePicTable = gPicTable_MicleBerryTree,
         .berryTreePaletteSlotTable = gBerryTreePaletteSlotTable_Micle,
-        },
+    },
 
-        [BERRY_ID_CUSTAP] =
-        {
+    [BERRY_ID_CUSTAP] =
+    {
         .info = {
             .name = _("Custap"),
             .firmness = BERRY_FIRMNESS_SUPER_HARD,
@@ -2113,10 +2113,10 @@ const struct Berry gBerries[] =
         .berryPal = gBerryPalette_Custap,
         .berryTreePicTable = gPicTable_CustapBerryTree,
         .berryTreePaletteSlotTable = gBerryTreePaletteSlotTable_Custap,
-        },
+    },
 
-        [BERRY_ID_JABOCA] =
-        {
+    [BERRY_ID_JABOCA] =
+    {
         .info = {
             .name = _("Jaboca"),
             .firmness = BERRY_FIRMNESS_SOFT,
@@ -2146,10 +2146,10 @@ const struct Berry gBerries[] =
         .berryPal = gBerryPalette_Jaboca,
         .berryTreePicTable = gPicTable_JabocaBerryTree,
         .berryTreePaletteSlotTable = gBerryTreePaletteSlotTable_Jaboca,
-        },
+    },
 
-        [BERRY_ID_ROWAP] =
-        {
+    [BERRY_ID_ROWAP] =
+    {
         .info = {
             .name = _("Rowap"),
             .firmness = BERRY_FIRMNESS_VERY_SOFT,
@@ -2179,10 +2179,10 @@ const struct Berry gBerries[] =
         .berryPal = gBerryPalette_Rowap,
         .berryTreePicTable = gPicTable_RowapBerryTree,
         .berryTreePaletteSlotTable = gBerryTreePaletteSlotTable_Rowap,
-        },
+    },
 
-        [BERRY_ID_ROSELI] =
-        {
+    [BERRY_ID_ROSELI] =
+    {
         .info = {
             .name = _("Roseli"),
             .firmness = BERRY_FIRMNESS_HARD,
@@ -2212,10 +2212,10 @@ const struct Berry gBerries[] =
         .berryPal = gBerryPalette_Roseli,
         .berryTreePicTable = gPicTable_RoseliBerryTree,
         .berryTreePaletteSlotTable = gBerryTreePaletteSlotTable_Roseli,
-        },
+    },
 
-        [BERRY_ID_KEE] =
-        {
+    [BERRY_ID_KEE] =
+    {
         .info = {
             .name = _("Kee"),
             .firmness = BERRY_FIRMNESS_UNKNOWN,
@@ -2245,10 +2245,10 @@ const struct Berry gBerries[] =
         .berryPal = gBerryPalette_Kee,
         .berryTreePicTable = gPicTable_PechaBerryTree,
         .berryTreePaletteSlotTable = gBerryTreePaletteSlotTable_Pecha,
-        },
+    },
 
-        [BERRY_ID_MARANGA] =
-        {
+    [BERRY_ID_MARANGA] =
+    {
         .info = {
             .name = _("Marnga"), // "Maranga" is too long
             .firmness = BERRY_FIRMNESS_UNKNOWN,
@@ -2278,10 +2278,10 @@ const struct Berry gBerries[] =
         .berryPal = gBerryPalette_Maranga,
         .berryTreePicTable = gPicTable_OccaBerryTree,
         .berryTreePaletteSlotTable = gBerryTreePaletteSlotTable_Occa,
-        },
+    },
 
-        [BERRY_ID_ENGIMA_E_READER] =
-        {
+    [BERRY_ID_ENGIMA_E_READER] =
+    {
         .info = {
             .name = _("Enigma"),
             .firmness = BERRY_FIRMNESS_UNKNOWN,
@@ -2309,7 +2309,7 @@ const struct Berry gBerries[] =
         .berryPal = gBerryPalette_Enigma,
         .berryTreePicTable = gPicTable_DurinBerryTree,
         .berryTreePaletteSlotTable = gBerryTreePaletteSlotTable_Durin,
-        },
+    },
 };
 
 const struct BerryTree gBlankBerryTree = {};
