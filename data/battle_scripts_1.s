@@ -4849,6 +4849,7 @@ BattleScript_BadDreamsIncrement:
 	jumpifbytenotequal gBattlerTarget, gBattlersCount, BattleScript_BadDreamsLoop
 	jumpifbyteequal sFIXED_ABILITY_POPUP, sZero, BattleScript_BadDreamsEnd
 	destroyabilitypopup
+	setbyte sFIXED_ABILITY_POPUP, FALSE
 	pause 15
 BattleScript_BadDreamsEnd:
 	return
