@@ -660,8 +660,8 @@ const u16 gItemIconPalette_DreadPlate[] = INCGFX_U16("graphics/items/icon_palett
 const u16 gItemIconPalette_IronPlate[] = INCGFX_U16("graphics/items/icon_palettes/iron_plate.pal", ".gbapal");
 const u16 gItemIconPalette_PixiePlate[] = INCGFX_U16("graphics/items/icon_palettes/pixie_plate.pal", ".gbapal");
 
-const u32 gItemIcon_SonarPlate[] = INCBIN_U32("graphics/items/icons/sonar_plate.4bpp.lz");
-const u16 gItemIconPalette_SonarPlate[] = INCBIN_U16("graphics/items/icon_palettes/sonar_plate.gbapal");
+const u32 gItemIcon_SonarPlate[] = INCGFX_U32("graphics/items/icons/sonar_plate.png", ".4bpp.smol");
+const u16 gItemIconPalette_SonarPlate[] = INCGFX_U16("graphics/items/icon_palettes/sonar_plate.pal", ".gbapal");
 
 // Drives
 
@@ -723,6 +723,9 @@ const u16 gItemIconPalette_SteelMemory[] = INCGFX_U16("graphics/items/icon_palet
 
 const u32 gItemIcon_FairyMemory[] = INCGFX_U32("graphics/items/icons/fairy_memory.png", ".4bpp.smol");
 const u16 gItemIconPalette_FairyMemory[] = INCGFX_U16("graphics/items/icon_palettes/fairy_memory.pal", ".gbapal");
+
+const u32 gItemIcon_SoundMemory[] = INCGFX_U32("graphics/items/icons/sound_memory.png", ".4bpp.smol");
+const u16 gItemIconPalette_SoundMemory[] = INCGFX_U16("graphics/items/icon_palettes/sound_memory.pal", ".gbapal");
 
 const u32 gItemIcon_RustedSword[] = INCGFX_U32("graphics/items/icons/rusted_sword.png", ".4bpp.smol");
 const u32 gItemIcon_RustedShield[] = INCGFX_U32("graphics/items/icons/rusted_shield.png", ".4bpp.smol");
@@ -1036,8 +1039,8 @@ const u16 gItemIconPalette_DarkGem[] = INCGFX_U16("graphics/items/icon_palettes/
 const u16 gItemIconPalette_SteelGem[] = INCGFX_U16("graphics/items/icon_palettes/steel_gem.pal", ".gbapal");
 const u16 gItemIconPalette_FairyGem[] = INCGFX_U16("graphics/items/icon_palettes/fairy_gem.pal", ".gbapal");
 
-const u32 gItemIcon_SoundGem[] = INCBIN_U32("graphics/items/icons/sound_gem.4bpp.lz");
-const u16 gItemIconPalette_SoundGem[] = INCBIN_U16("graphics/items/icon_palettes/sound_gem.gbapal");
+const u32 gItemIcon_SoundGem[] = INCGFX_U32("graphics/items/icons/sound_gem.png", ".4bpp.smol");
+const u16 gItemIconPalette_SoundGem[] = INCGFX_U16("graphics/items/icon_palettes/sound_gem.pal", ".gbapal");
 
 // Z-Crystals
 
@@ -1094,6 +1097,9 @@ const u16 gItemIconPalette_SteeliumZ[] = INCGFX_U16("graphics/items/icon_palette
 
 const u32 gItemIcon_FairiumZ[] = INCGFX_U32("graphics/items/icons/fairium_z.png", ".4bpp.smol");
 const u16 gItemIconPalette_FairiumZ[] = INCGFX_U16("graphics/items/icon_palettes/fairium_z.pal", ".gbapal");
+
+const u32 gItemIcon_SoundiumZ[] = INCGFX_U32("graphics/items/icons/soundium_z.png", ".4bpp.smol");
+const u16 gItemIconPalette_SoundiumZ[] = INCGFX_U16("graphics/items/icon_palettes/soundium_z.pal", ".gbapal");
 
 const u32 gItemIcon_PikaniumZ[] = INCGFX_U32("graphics/items/icons/pikanium_z.png", ".4bpp.smol");
 const u16 gItemIconPalette_PikaniumZ[] = INCGFX_U16("graphics/items/icon_palettes/pikanium_z.pal", ".gbapal");
@@ -1299,8 +1305,8 @@ const u32 gItemIcon_BlackGlasses[] = INCGFX_U32("graphics/items/icons/black_glas
 const u32 gItemIcon_MetalCoat[] = INCGFX_U32("graphics/items/icons/metal_coat.png", ".4bpp.smol");
 const u16 gItemIconPalette_MetalCoat[] = INCGFX_U16("graphics/items/icon_palettes/metal_coat.pal", ".gbapal");
 
-const u32 gItemIcon_Mp3Player[] = INCBIN_U32("graphics/items/icons/mp3_player.4bpp.lz");
-const u16 gItemIconPalette_Mp3Player[] = INCBIN_U16("graphics/items/icon_palettes/mp3_player.gbapal");
+const u32 gItemIcon_Mp3Player[] = INCGFX_U32("graphics/items/icons/mp3_player.png", ".4bpp.smol");
+const u16 gItemIconPalette_Mp3Player[] = INCGFX_U16("graphics/items/icon_palettes/mp3_player.pal", ".gbapal");
 
 // Choice Items
 
@@ -1725,8 +1731,8 @@ const u16 gItemIconPalette_KeeBerry[] = INCGFX_U16("graphics/items/icon_palettes
 const u32 gItemIcon_MarangaBerry[] = INCGFX_U32("graphics/items/icons/maranga_berry.png", ".4bpp.smol");
 const u16 gItemIconPalette_MarangaBerry[] = INCGFX_U16("graphics/items/icon_palettes/maranga_berry.pal", ".gbapal");
 
-const u32 gItemIcon_NinikuBerry[] = INCBIN_U32("graphics/items/icons/niniku_berry.4bpp.lz");
-const u16 gItemIconPalette_NinikuBerry[] = INCBIN_U16("graphics/items/icon_palettes/niniku_berry.gbapal");
+const u32 gItemIcon_NinikuBerry[] = INCGFX_U32("graphics/items/icons/niniku_berry.png", ".4bpp.smol");
+const u16 gItemIconPalette_NinikuBerry[] = INCGFX_U16("graphics/items/icon_palettes/niniku_berry.pal", ".gbapal");
 
 // TMs/HMs
 
@@ -1772,7 +1778,7 @@ const u16 gItemIconPalette_MysteryTMHM[] = INCGFX_U16("graphics/items/icon_palet
 
 const u16 gItemIconPalette_FairyTMHM[] = INCGFX_U16("graphics/items/icon_palettes/fairy_tm_hm.pal", ".gbapal");
 
-const u16 gItemIconPalette_SoundTMHM[] = INCBIN_U16("graphics/items/icon_palettes/sound_tm_hm.gbapal");
+const u16 gItemIconPalette_SoundTMHM[] = INCGFX_U16("graphics/items/icon_palettes/sound_tm_hm.pal", ".gbapal");
 
 // Charms
 
@@ -2054,6 +2060,7 @@ const u16 gItemIconPalette_DarkTeraShard[] = INCGFX_U16("graphics/items/icon_pal
 const u16 gItemIconPalette_DragonTeraShard[] = INCGFX_U16("graphics/items/icon_palettes/dragon_tera_shard.pal", ".gbapal");
 const u16 gItemIconPalette_SteelTeraShard[] = INCGFX_U16("graphics/items/icon_palettes/steel_tera_shard.pal", ".gbapal");
 const u16 gItemIconPalette_FairyTeraShard[] = INCGFX_U16("graphics/items/icon_palettes/fairy_tera_shard.pal", ".gbapal");
+const u16 gItemIconPalette_SoundTeraShard[] = INCGFX_U16("graphics/items/icon_palettes/sound_tera_shard.pal", ".gbapal");
 
 const u32 gItemIcon_StellarTeraShard[] = INCGFX_U32("graphics/items/icons/stellar_tera_shard.png", ".4bpp.smol");
 const u16 gItemIconPalette_StellarTeraShard[] = INCGFX_U16("graphics/items/icon_palettes/stellar_tera_shard.pal", ".gbapal");

@@ -2279,6 +2279,39 @@ const struct Berry gBerries[NUM_BERRIES + 1] =
         .berryTreePicTable = gPicTable_OccaBerryTree,
         .berryTreePaletteSlotTable = gBerryTreePaletteSlotTable_Occa,
     },
+    
+    [BERRY_ID_NINIKU] =
+    {
+        .info = {
+            .name = _("Niniku"),
+            .firmness = BERRY_FIRMNESS_HARD,
+            .color = BERRY_COLOR_BLUE,
+            .size = 35,
+            .maxYield = YIELD_RATE(5, 5, 20, 10),
+            .minYield = YIELD_RATE(2, 1, 3, 2),
+            .description1 = COMPOUND_STRING("In nature, they grow in wide rings"),
+            .description2 = COMPOUND_STRING("for reasons that are still unknown."),
+            .growthDuration = GROWTH_DURATION(84, 72, 108, 48, 32, 48),
+            .spicy = 0,
+            .dry = 0,
+            .sweet = 25,
+            .bitter = 10,
+            .sour = 0,
+            .smoothness = 35,
+            .drainRate = 6,
+            .waterBonus = 10,
+            .weedsBonus = 1,
+            .pestsBonus = 4,
+        },
+        .naturalGiftType = TYPE_SOUND,
+        .naturalGiftPower = 80,
+        .berryCrushDifficulty = 50,
+        .berryCrushPowder = 30,
+        .berryPic = gBerryPic_Niniku,
+        .berryPal = gBerryPalette_Niniku,
+        .berryTreePicTable = gPicTable_OccaBerryTree,
+        .berryTreePaletteSlotTable = gBerryTreePaletteSlotTable_Occa,
+    },
 
     [BERRY_ID_ENGIMA_E_READER] =
     {

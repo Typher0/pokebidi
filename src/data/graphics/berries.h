@@ -73,6 +73,7 @@ const u32 gBerryPic_Jaboca[] = INCGFX_U32("graphics/berries/jaboca.png", ".4bpp.
 const u32 gBerryPic_Rowap[] = INCGFX_U32("graphics/berries/rowap.png", ".4bpp.smol");
 const u32 gBerryPic_Kee[] = INCGFX_U32("graphics/berries/kee.png", ".4bpp.smol");
 const u32 gBerryPic_Maranga[] = INCGFX_U32("graphics/berries/maranga.png", ".4bpp.smol");
+const u32 gBerryPic_Niniku[] = INCGFX_U32("graphics/berries/niniku.png", ".4bpp.smol");
 
 const u16 gBerryPalette_Cheri[] = INCGFX_U16("graphics/berries/cheri.png", ".gbapal");
 const u16 gBerryPalette_Chesto[] = INCGFX_U16("graphics/berries/chesto.png", ".gbapal");
@@ -141,3 +142,4 @@ const u16 gBerryPalette_Jaboca[] = INCGFX_U16("graphics/berries/jaboca.png", ".g
 const u16 gBerryPalette_Rowap[] = INCGFX_U16("graphics/berries/rowap.png", ".gbapal");
 const u16 gBerryPalette_Kee[] = INCGFX_U16("graphics/berries/kee.png", ".gbapal");
 const u16 gBerryPalette_Maranga[] = INCGFX_U16("graphics/berries/maranga.png", ".gbapal");
+const u16 gBerryPalette_Niniku[] = INCGFX_U16("graphics/berries/niniku.png", ".gbapal");
