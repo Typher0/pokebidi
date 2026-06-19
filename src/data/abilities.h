@@ -2433,6 +2433,53 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .cantBeTraced = TRUE,
     },
 
+    [ABILITY_PIERCING_DRILL] =
+    {
+        .name = _("Piercing Drill"),
+        .description = COMPOUND_STRING("Contact evades protection."),
+    },
+
+    [ABILITY_DRAGONIZE] =
+    {
+        .name = _("Dragonize"),
+        .description = COMPOUND_STRING("Normal moves turn Dragon."),
+    },
+
+    [ABILITY_EELEVATE] =
+    {
+        .name = _("Eelevate"),
+        .description = COMPOUND_STRING("Unimplemented."),
+    },
+
+    [ABILITY_314] =
+    {
+        .name = _("-------"),
+        .description = COMPOUND_STRING("No special ability."),
+    },
+
+    [ABILITY_MEGA_SOL] =
+    {
+        .name = _("Mega Sol"),
+        .description = COMPOUND_STRING("Acts like under sun."),
+    },
+
+    [ABILITY_FIRE_MANE] =
+    {
+        .name = _("Fire Mane"),
+        .description = COMPOUND_STRING("Unimplemented."),
+    },
+
+    [ABILITY_317] =
+    {
+        .name = _("-------"),
+        .description = COMPOUND_STRING("No special ability."),
+    },
+
+    [ABILITY_SPICY_SPRAY] =
+    {
+        .name = _("Spicy Spray"),
+        .description = COMPOUND_STRING("Burns the foe when damaged."),
+    },
     [ABILITY_COZY] =
     {
         .name = _("Cozy"),
@@ -2440,28 +2487,24 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .aiRating = 7,
         .breakable = TRUE,
     },
-
     [ABILITY_JESTER] =
     {
         .name = _("Jester"),
         .description = COMPOUND_STRING("No “Supereffective” hits."),
         .aiRating = 3,
     },
-
     [ABILITY_MISTY_RIDER] =
     {
         .name = _("Misty Rider"),
         .description = COMPOUND_STRING("Faster on misty terrain."),
         .aiRating = 4,
     },
-
     [ABILITY_VAMPIRISM] =
     {
         .name = _("Vampirism"),
         .description = COMPOUND_STRING("Bites higher 2nd effects odds."),
         .aiRating = 8,
     },
-
     [ABILITY_SAPERA] =
     {
         .name = _("Sapera"),
@@ -2469,28 +2512,24 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .aiRating = 2,
         .breakable = TRUE,
     },
-
     [ABILITY_GUNSLINGER] =
     {
         .name = _("Gunslinger"),
         .description = COMPOUND_STRING("Strengthens ballistic moves."),
         .aiRating = 7,
     },
-
     [ABILITY_SLANDER] =
     {
         .name = _("Slander"),
         .description = COMPOUND_STRING("Lowers the foe's Sp. Att."),
         .aiRating = 7,
     },
-
     [ABILITY_NARCISSIST] =
     {
         .name = _("Narcissist"),
         .description = COMPOUND_STRING("KOs raise Sp. Att."),
         .aiRating = 7,
     },
-
     [ABILITY_ASTEROID_BELT] =
     {
         .name = _("Asteroid Belt"),
