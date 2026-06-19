@@ -478,6 +478,25 @@
 // gTileset_PewterCity
 #define METATILE_PewterCity_Door  0x2CE
 
+// gTileset_PlayersHouse
+#define METATILE_PlayersHouse_Laptop_Off         0x29E
+#define METATILE_PlayersHouse_Laptop_On          0x29F
+#define METATILE_PlayersHouse_Sink_Off_Left      0x2BE
+#define METATILE_PlayersHouse_Sink_On_Left       0x2AE
+#define METATILE_PlayersHouse_Sink_On_Right      0x2AF
+#define METATILE_PlayersHouse_TV_Off_Left        0x28B
+#define METATILE_PlayersHouse_TV_Off_Middle      0x28C
+#define METATILE_PlayersHouse_TV_Off_Right       0x2A5
+#define METATILE_PlayersHouse_TV_Off_Top_Left    0x29B
+#define METATILE_PlayersHouse_TV_Off_Top_Middle  0x29C
+#define METATILE_PlayersHouse_TV_Off_Top_Right   0x285
+#define METATILE_PlayersHouse_TV_On_Left         0x2A8
+#define METATILE_PlayersHouse_TV_On_Middle       0x299
+#define METATILE_PlayersHouse_TV_On_Right        0x29A
+#define METATILE_PlayersHouse_TV_On_Top_Left     0x290
+#define METATILE_PlayersHouse_TV_On_Top_Middle   0x2A1
+#define METATILE_PlayersHouse_TV_On_Top_Right    0x292
+
 // gTileset_PokemonCenter
 #define METATILE_PokemonCenter_CounterBarrier            0x25D
 #define METATILE_PokemonCenter_Door_CableClub            0x264
@@ -505,10 +524,6 @@
 #define METATILE_PokemonCenter_Floor_Plain_Alt           0x2E4
 #define METATILE_PokemonCenter_Floor_ShadowTop           0x21E
 #define METATILE_PokemonCenter_Floor_ShadowTop_Alt       0x2DC
-
-// gTileset_Primary_North
-#define METATILE_Primary_North_Door_Gym         0x08B
-#define METATILE_Primary_North_Door_PokeCenter  0x064
 
 // gTileset_PokemonCenterFrlg
 #define METATILE_PokemonCenterFrlg_CableClubDoor                         0x2DE
@@ -583,6 +598,10 @@
 #define METATILE_PokemonMansion_Wall_EndCap_Basement                     0x2B0
 #define METATILE_PokemonMansion_Wall_EndPost_Bottom                      0x2AD
 #define METATILE_PokemonMansion_Wall_EndPost_Mid                         0x2A5
+
+// gTileset_Primary_North
+#define METATILE_Primary_North_Door_Gym         0x08B
+#define METATILE_Primary_North_Door_PokeCenter  0x064
 
 // gTileset_Rustboro
 #define METATILE_Rustboro_Door_Gray  0x21F
@@ -1019,10 +1038,6 @@
 // gTileset_Underwater
 #define METATILE_Underwater_FloorShadow  0x228
 #define METATILE_Underwater_RockWall     0x21E
-
-// gTileset_Primary_North
-#define METATILE_Primary_North_Door_Gym         0x08B
-#define METATILE_Primary_North_Door_PokeCenter  0x064
 
 // gTileset_VermilionCity
 #define METATILE_VermilionCity_Door        0x29E

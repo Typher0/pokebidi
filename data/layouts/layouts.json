@@ -587,10 +587,10 @@
     {
       "id": "LAYOUT_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F",
       "name": "LittlerootTown_BrendansHouse_1F_Layout",
-      "width": 11,
-      "height": 9,
+      "width": 14,
+      "height": 12,
       "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_BrendansMaysHouse",
+      "secondary_tileset": "gTileset_PlayersHouse",
       "border_filepath": "data/layouts/LittlerootTown_BrendansHouse_1F/border.bin",
       "blockdata_filepath": "data/layouts/LittlerootTown_BrendansHouse_1F/map.bin",
       "layout_version": "emerald"
@@ -598,10 +598,10 @@
     {
       "id": "LAYOUT_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F",
       "name": "LittlerootTown_BrendansHouse_2F_Layout",
-      "width": 9,
+      "width": 13,
       "height": 8,
       "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_BrendansMaysHouse",
+      "secondary_tileset": "gTileset_PlayersHouse",
       "border_filepath": "data/layouts/LittlerootTown_BrendansHouse_2F/border.bin",
       "blockdata_filepath": "data/layouts/LittlerootTown_BrendansHouse_2F/map.bin",
       "layout_version": "emerald"
@@ -9323,6 +9323,98 @@
       "border_height": 2,
       "border_width": 2,
       "layout_version": "frlg"
+    },
+    {
+      "id": "LAYOUT_PLAYERS_HOUSE_HALLWAY",
+      "name": "PlayersHouseHallway_Layout",
+      "width": 19,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PlayersHouse",
+      "border_filepath": "data/layouts/PlayersHouseHallway/border.bin",
+      "blockdata_filepath": "data/layouts/PlayersHouseHallway/map.bin"
+    },
+    {
+      "id": "LAYOUT_PLAYERS_HOUSE_BATHROOM",
+      "name": "PlayersHouseBathroom_Layout",
+      "width": 6,
+      "height": 6,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PlayersHouse",
+      "border_filepath": "data/layouts/PlayersHouseBathroom/border.bin",
+      "blockdata_filepath": "data/layouts/PlayersHouseBathroom/map.bin"
+    },
+    {
+      "id": "LAYOUT_PLAYERS_HOUSE_SISTERS_ROOM",
+      "name": "PlayersHouseSistersRoom_Layout",
+      "width": 10,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PlayersHouse",
+      "border_filepath": "data/layouts/PlayersHouseSistersRoom/border.bin",
+      "blockdata_filepath": "data/layouts/PlayersHouseSistersRoom/map.bin"
+    },
+    {
+      "id": "LAYOUT_PLAYERS_HOUSE_PARENTS_ROOM",
+      "name": "PlayersHouseParentsRoom_Layout",
+      "width": 14,
+      "height": 14,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PlayersHouse",
+      "border_filepath": "data/layouts/PlayersHouseParentsRoom/border.bin",
+      "blockdata_filepath": "data/layouts/PlayersHouseParentsRoom/map.bin"
+    },
+    {
+      "id": "LAYOUT_OCCHITA_VILLAGE",
+      "name": "OcchitaVillage_Layout",
+      "width": 14,
+      "height": 14,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PlayersHouse",
+      "border_filepath": "data/layouts/OcchitaVillage/border.bin",
+      "blockdata_filepath": "data/layouts/OcchitaVillage/map.bin"
+    },
+    {
+      "id": "LAYOUT_GANARIA_TOWN",
+      "name": "GanariaTown_Layout",
+      "width": 14,
+      "height": 14,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PlayersHouse",
+      "border_filepath": "data/layouts/GanariaTown/border.bin",
+      "blockdata_filepath": "data/layouts/GanariaTown/map.bin"
+    },
+    {
+      "id": "LAYOUT_KINGSTON_CITY",
+      "name": "KingstonCity_Layout",
+      "width": 14,
+      "height": 14,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PlayersHouse",
+      "border_filepath": "data/layouts/KingstonCity/border.bin",
+      "blockdata_filepath": "data/layouts/KingstonCity/map.bin"
+    },
+    {
+      "id": "LAYOUT_PETALBURG_CITY_OTNARS_INN_2F",
+      "name": "PetalburgCity_OtnarsInn_2F_Layout",
+      "width": 16,
+      "height": 24,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/PetalburgCity_OtnarsInn_2F/border.bin",
+      "blockdata_filepath": "data/layouts/PetalburgCity_OtnarsInn_2F/map.bin",
+      "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_PETALBURG_CITY_OTNARS_INN_3F",
+      "name": "PetalburgCity_OtnarsInn_3F_Layout",
+      "width": 16,
+      "height": 24,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/PetalburgCity_OtnarsInn_3F/border.bin",
+      "blockdata_filepath": "data/layouts/PetalburgCity_OtnarsInn_3F/map.bin",
+      "layout_version": "emerald"
     }
   ]
 }

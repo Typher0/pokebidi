@@ -17,9 +17,6 @@ LittlerootTown_BrendansHouse_2F_EventScript_CheckShouldUpdateBrendanPos::
 	goto LittlerootTown_BrendansHouse_2F_EventScript_TryUpdateBrendanPos
 
 LittlerootTown_BrendansHouse_2F_EventScript_TryUpdateBrendanPos::
-	checkplayergender
-	goto_if_eq VAR_RESULT, MALE, LittlerootTown_BrendansHouse_2F_EventScript_Ret
-	@ Odd that the MaysHouse equivalent was used below instead
 	goto_if_ge VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 2, LittlerootTown_MaysHouse_2F_EventScript_Ret
 	setobjectxyperm LOCALID_RIVALS_HOUSE_2F_RIVAL, 0, 2
 	setobjectmovementtype LOCALID_RIVALS_HOUSE_2F_RIVAL, MOVEMENT_TYPE_FACE_UP
@@ -31,6 +28,7 @@ LittlerootTown_BrendansHouse_2F_EventScript_Ret::
 LittlerootTown_BrendansHouse_2F_EventScript_CheckSetReadyToMeetBrendan::
 	checkplayergender
 	goto_if_eq VAR_RESULT, FEMALE, LittlerootTown_BrendansHouse_2F_EventScript_SetReadyToMeetBrendan
+	goto_if_eq VAR_RESULT, MALE, LittlerootTown_BrendansHouse_2F_EventScript_SetReadyToMeetBrendan
 	return
 
 LittlerootTown_BrendansHouse_2F_EventScript_SetReadyToMeetBrendan::
@@ -44,6 +42,7 @@ LittlerootTown_BrendansHouse_2F_OnWarp:
 LittlerootTown_BrendansHouse_2F_EventScript_CheckInitDecor::
 	checkplayergender
 	goto_if_eq VAR_RESULT, MALE, SecretBase_EventScript_InitDecorations
+	goto_if_eq VAR_RESULT, FEMALE, SecretBase_EventScript_InitDecorations
 	end
 
 LittlerootTown_BrendansHouse_2F_EventScript_RivalsPokeBall::
@@ -54,9 +53,12 @@ LittlerootTown_BrendansHouse_2F_EventScript_RivalsPokeBall::
 	end
 
 LittlerootTown_BrendansHouse_2F_EventScript_MeetBrendan::
+	msgbox BrendansHouse_2F_Text_CallOut, MSGBOX_DEFAULT
 	delay 10
 	addobject LOCALID_RIVALS_HOUSE_2F_RIVAL
+	addobject LOCALID_RIVALS_HOUSE_2F_MOM
 	applymovement LOCALID_RIVALS_HOUSE_2F_RIVAL, LittlerootTown_BrendansHouse_2F_Movement_BrendanEnters
+	applymovement LOCALID_RIVALS_HOUSE_2F_MOM, LittlerootTown_BrendansHouse_2F_Movement_BrendanEnters
 	waitmovement 0
 	playse SE_PIN
 	applymovement LOCALID_RIVALS_HOUSE_2F_RIVAL, Common_Movement_ExclamationMark
@@ -126,16 +128,15 @@ LittlerootTown_BrendansHouse_2F_EventScript_MeetBrendanEast::
 	return
 
 LittlerootTown_BrendansHouse_2F_Movement_BrendanEnters:
-	walk_down
-	walk_down
+	walk_up
+	walk_up
 	walk_in_place_faster_left
 	step_end
 
 LittlerootTown_BrendansHouse_2F_Movement_BrendanApproachPlayerNorth:
 	walk_left
 	walk_left
-	walk_down
-	walk_down
+	walk_up
 	walk_left
 	step_end
 
@@ -237,7 +238,7 @@ LittlerootTown_BrendansHouse_2F_EventScript_PC::
 	lockall
 	checkplayergender
 	goto_if_eq VAR_RESULT, MALE, LittlerootTown_BrendansHouse_2F_EventScript_CheckPlayersPC
-	goto_if_eq VAR_RESULT, FEMALE, LittlerootTown_BrendansHouse_2F_EventScript_CheckRivalsPC
+	goto_if_eq VAR_RESULT, FEMALE, LittlerootTown_BrendansHouse_2F_EventScript_CheckPlayersPC
 	end
 
 LittlerootTown_BrendansHouse_2F_EventScript_CheckPlayersPC::
@@ -257,17 +258,12 @@ LittlerootTown_BrendansHouse_2F_EventScript_TurnOffPlayerPC::
 	releaseall
 	end
 
-LittlerootTown_BrendansHouse_2F_EventScript_CheckRivalsPC::
-	msgbox gText_PokemonTrainerSchoolEmail, MSGBOX_DEFAULT
-	releaseall
-	end
-
 PlayersHouse_2F_EventScript_Notebook::
 	msgbox PlayersHouse_2F_Text_Notebook, MSGBOX_SIGN
 	end
 
 PlayersHouse_2F_EventScript_GameCube::
-	msgbox PlayersHouse_2F_Text_ItsAGameCube, MSGBOX_SIGN
+	msgbox PlayersHouse_2F_Text_ItsAWii, MSGBOX_SIGN
 	end
 
 PlayersHouse_2F_Text_ClockIsStopped:
@@ -296,7 +292,18 @@ Common_Text_LookCloserAtMap:
 	.string "{PLAYER} took a closer look at the\n"
 	.string "{REGION} region map.$"
 
-PlayersHouse_2F_Text_ItsAGameCube:
-	.string "It's a Nintendo GameCube.\p"
-	.string "A Game Boy Advance is connected to\n"
-	.string "serve as the Controller.$"
+PlayersHouse_2F_Text_ItsAWii:
+	.string "It's your Nintendo Wii!\p"
+	.string "A copy of The Legend of Zelda: Twilight\n"
+	.string "Princess is loaded in the disc slot.$"
+
+BrendansHouse_2F_Text_CallOut:
+	.string "Sean: {PLAYER}!!!!!!!\n"
+	.string "Did Amanda leave her dad's Poké Ball\l"
+	.string "in your room?!!!!!!\p"
+	.string "Amanda: SEAN!!!\n"
+	.string "STOP!!!\p"
+	.string "You can't just barge into people's room\n"
+	.string "whenever you feel like it!$"
+
+
