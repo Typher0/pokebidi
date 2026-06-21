@@ -5434,7 +5434,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .description = COMPOUND_STRING(
             "Strikes the foe with a bone\n"
             "in hand 2 to 5 times."),
-        .effect = EFFECT_MULTI_HIT,
+        .effect = EFFECT_HIT,
         .power = 30,
         .type = TYPE_GROUND,
         .accuracy = B_UPDATED_MOVE_DATA >= GEN_5 ? 90 : 80,
@@ -7249,7 +7249,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .instructBanned = TRUE,
         .assistBanned = TRUE,
         .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_DEF_PLUS_1,
+            .moveEffect = MOVE_EFFECT_STAT_PLUS,
+            .defense = 1,
             .self = TRUE,
         }),
         .contestEffect = C_UPDATED_MOVE_EFFECTS >= GEN_6 ? CONTEST_EFFECT_BETTER_IF_LAST : CONTEST_EFFECT_NEXT_APPEAL_LATER,
@@ -9232,7 +9233,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .skyBattleBanned = TRUE,
         .cantUseTwice = TRUE,
         .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_SPD_MINUS_1,
+            .moveEffect = MOVE_EFFECT_STAT_MINUS,
+            .speed = 1,
             .chance = 10,
         }),
         .contestEffect = CONTEST_EFFECT_JAMS_OTHERS_BUT_MISS_ONE_TURN,
@@ -12319,7 +12321,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .category = DAMAGE_CATEGORY_SPECIAL,
         .cantUseTwice = TRUE,
         .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_SPD_MINUS_2,
+            .moveEffect = MOVE_EFFECT_STAT_MINUS,
+            .speed = 2,
             .chance = 100,
         }),
         .contestEffect = CONTEST_EFFECT_JAMS_OTHERS_BUT_MISS_ONE_TURN,
@@ -12346,11 +12349,13 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .category = DAMAGE_CATEGORY_SPECIAL,
         .cantUseTwice = TRUE,
         .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_SP_DEF_MINUS_1,
+            .moveEffect = MOVE_EFFECT_STAT_MINUS,
+            .spDef = 1,
             .chance = 100,
         },
         {
-            .moveEffect = MOVE_EFFECT_DEF_MINUS_1,
+            .moveEffect = MOVE_EFFECT_STAT_MINUS,
+            .defense = 1,
             .chance = 100,
         }),
         .contestEffect = CONTEST_EFFECT_USER_MORE_EASILY_STARTLED,
@@ -16035,7 +16040,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .description = COMPOUND_STRING(
             "Lets an ally drink way too\n"
             "much to raise their Attack."),
-        .effect = EFFECT_ATTACK_UP_2,
+        .effect = EFFECT_STAT_CHANGE,
         .power = 0,
         .type = TYPE_NORMAL,
         .accuracy = 0,
@@ -16046,6 +16051,10 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .zMove = { .effect = Z_EFFECT_ALL_STATS_UP_1 },
         .ignoresProtect = TRUE,
         .mirrorMoveBanned = TRUE,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = STAT_CHANGE_EFFECT_PLUS,
+            .attack = 2,
+        }),
         .contestEffect = CONTEST_EFFECT_EXCITE_AUDIENCE_IN_ANY_CONTEST,
         .contestCategory = CONTEST_CATEGORY_CUTE,
         .contestComboStarterId = COMBO_STARTER_HAPPY_HOUR,
@@ -16105,7 +16114,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .description = COMPOUND_STRING(
             "Celebrates a teammate's success\n"
             "to raise their Speed x2."),
-        .effect = EFFECT_SPEED_UP_2,
+        .effect = EFFECT_STAT_CHANGE,
         .power = 0,
         .type = TYPE_NORMAL,
         .accuracy = 100,
@@ -16114,6 +16123,10 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
         .zMove = { .effect = Z_EFFECT_ALL_STATS_UP_1 },
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = STAT_CHANGE_EFFECT_PLUS,
+            .speed = 2,
+        }),
         .contestEffect = CONTEST_EFFECT_EXCITE_AUDIENCE_IN_ANY_CONTEST,
         .contestCategory = CONTEST_CATEGORY_CUTE,
         .contestComboStarterId = COMBO_STARTER_CELEBRATE,
@@ -22107,11 +22120,13 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .soundMove = TRUE,
         .damagesAirborne = TRUE,
         .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_SP_DEF_MINUS_2,
+            .moveEffect = MOVE_EFFECT_STAT_MINUS,
+            .spDef = 2,
             .chance = 100,
         },
         {
-            .moveEffect = MOVE_EFFECT_SP_ATK_MINUS_2,
+            .moveEffect = MOVE_EFFECT_STAT_MINUS,
+            .spAtk = 2,
             .self = TRUE,
         }),
         .battleAnimScript = gBattleAnimMove_Yodel,
@@ -22550,7 +22565,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .ignoresSubstitute = TRUE,
         .magicCoatAffected = B_UPDATED_MOVE_FLAGS >= GEN_5,
         .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_ATK_PLUS_1,
+            .moveEffect = MOVE_EFFECT_STAT_PLUS,
+            .attack = 1,
             .self = TRUE,
         }),
         .battleAnimScript = gBattleAnimMove_EnGarde,
@@ -22563,7 +22579,9 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     [MOVE_SABER_THRUST] =
     {
         .name = COMPOUND_STRING("Saber Thrust"),
-        .description = sStormThrowDescription,
+        .description = COMPOUND_STRING(
+            "This attack always results\n"
+            "in a critical hit."),
         .effect = EFFECT_HIT,
         .power = 70,
         .type = TYPE_STEEL,
@@ -22584,7 +22602,9 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     [MOVE_VIBRANT_ARROW] =
     {
         .name = COMPOUND_STRING("Vibrant Arrow"),
-        .description = sStormThrowDescription,
+        .description = COMPOUND_STRING(
+            "This attack always results\n"
+            "in a critical hit."),
         .effect = EFFECT_HIT,
         .power = 70,
         .type = TYPE_FLYING,
