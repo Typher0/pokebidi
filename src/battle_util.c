@@ -3323,12 +3323,17 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, enum BattlerId battler, enum
             }
             break;
         case ABILITY_SLANDER:
-            if (!gSpecialStatuses[battler].switchInAbilityDone)
+            if (shouldAbilityTrigger && !IsOpposingSideEmpty(battler))
             {
-                gBattlerAttacker = battler;
-                gSpecialStatuses[battler].switchInAbilityDone = TRUE;
-                SET_STATCHANGER(STAT_SPATK, 1, TRUE);
-                BattleScriptPushCursorAndCallback(BattleScript_SlanderActivates);
+                gEffectBattler = battler;
+                gBattleStruct->intimidateActivated = TRUE;
+                for (enum BattlerId i = 0; i < gBattlersCount; i++)
+                {
+                    if (IsBattlerAlly(battler, i) || !IsBattlerAlive(i))
+                        continue;
+                    SetStatChange(i, STAT_SPATK, -1);
+                }
+                BattleScriptCall(BattleScript_IntimidateActivates);
                 effect++;
             }
             break;
@@ -6643,16 +6648,17 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageContext *ctx)
         break;
     case ABILITY_COZY:
         if (moveType == TYPE_FIRE)
+        if (moveType == TYPE_FIRE)
         {
             modifier = uq4_12_multiply(modifier, UQ_4_12(0.5));
             if (ctx->updateFlags)
-                RecordAbilityBattle(battlerDef, ctx->abilityDef);
+                RecordAbilityBattle(battlerDef, ctx->abilities[ctx->battlerDef]);
         }
         if (moveType == TYPE_ICE)
         {
             modifier = uq4_12_multiply(modifier, UQ_4_12(0.5));
             if (ctx->updateFlags)
-                RecordAbilityBattle(battlerDef, ctx->abilityDef);
+                RecordAbilityBattle(battlerDef, ctx->abilities[ctx->battlerDef]);
         }
         break;
     case ABILITY_DRY_SKIN:
@@ -8254,8 +8260,8 @@ static inline uq4_12_t CalcTypeEffectivenessMultiplierInternal(struct DamageCont
         }
     }
     
-    if (((ctx->abilityDef == ABILITY_JESTER && modifier > UQ_4_12(1.0))
-         || (ctx->abilityDef == ABILITY_TELEPATHY && ctx->battlerDef == BATTLE_PARTNER(ctx->battlerAtk)))
+    if (((ctx->abilities[ctx->battlerDef] == ABILITY_JESTER && modifier > UQ_4_12(1.0))
+         || (ctx->abilities[ctx->battlerDef] == ABILITY_TELEPATHY && ctx->battlerDef == BATTLE_PARTNER(ctx->battlerAtk)))
         && GetMovePower(ctx->move) != 0)
     {
         modifier = UQ_4_12(0.0);
@@ -8264,7 +8270,6 @@ static inline uq4_12_t CalcTypeEffectivenessMultiplierInternal(struct DamageCont
             gLastUsedAbility = gBattleMons[ctx->battlerDef].ability;
             gBattleStruct->moveResultFlags[ctx->battlerDef] |= MOVE_RESULT_MISSED;
             gLastLandedMoves[ctx->battlerDef] = 0;
-            gBattleStruct->missStringId[ctx->battlerDef] = B_MSG_AVOIDED_DMG;
             RecordAbilityBattle(ctx->battlerDef, gBattleMons[ctx->battlerDef].ability);
         }
     }
@@ -9506,7 +9511,7 @@ u32 CalcSecondaryEffectChance(enum BattlerId battler, enum Ability battlerAbilit
         secondaryEffectChance *= 2;
     if (hasVampirism && additionalEffect->moveEffect != MOVE_EFFECT_FLINCH) 
         secondaryEffectChance *= 3;
-    if (hasVampirism && additionalEffect->moveEffect != MOVE_EFFECT_DEF_MINUS_1)
+    if (hasVampirism && additionalEffect->moveEffect != MOVE_EFFECT_STAT_MINUS)
         secondaryEffectChance *= 3;
     if (hasRainbow && additionalEffect->moveEffect != MOVE_EFFECT_SECRET_POWER)
         secondaryEffectChance *= 2;
