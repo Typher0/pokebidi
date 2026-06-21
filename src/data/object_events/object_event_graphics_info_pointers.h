@@ -425,7 +425,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Blackbelt2;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Blackbelt3;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Blaine1;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Boarder;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Boy;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Boy4;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Brawly1;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BreederF1;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BreederF2;
@@ -445,7 +445,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Calem;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Cameraman1;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Camper1;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Candice;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Captain;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Captain1;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Carly;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Carmine;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Carter;
@@ -1010,7 +1010,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_BLACKBELT_3] =              &gObjectEventGraphicsInfo_Blackbelt3,
     [OBJ_EVENT_GFX_BLAINE_1] =                 &gObjectEventGraphicsInfo_Blaine1,
     [OBJ_EVENT_GFX_BOARDER] =                  &gObjectEventGraphicsInfo_Boarder,
-    [OBJ_EVENT_GFX_BOY] =                      &gObjectEventGraphicsInfo_Boy,
+    [OBJ_EVENT_GFX_BOY_4] =                    &gObjectEventGraphicsInfo_Boy4,
     [OBJ_EVENT_GFX_BRAWLY_1] =                 &gObjectEventGraphicsInfo_Brawly1,
     [OBJ_EVENT_GFX_BROCK_1] =                  &gObjectEventGraphicsInfo_Brock1,
     [OBJ_EVENT_GFX_BRYCEN] =                   &gObjectEventGraphicsInfo_Brycen,
@@ -1022,7 +1022,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_CAITLIN] =                  &gObjectEventGraphicsInfo_Caitlin,
     [OBJ_EVENT_GFX_CAMERAMAN_1] =              &gObjectEventGraphicsInfo_Cameraman1,
     [OBJ_EVENT_GFX_CAMPER_1] =                 &gObjectEventGraphicsInfo_Camper1,
-    [OBJ_EVENT_GFX_CAPTAIN] =                  &gObjectEventGraphicsInfo_Captain,
+    [OBJ_EVENT_GFX_CAPTAIN_1] =                &gObjectEventGraphicsInfo_Captain1,
     [OBJ_EVENT_GFX_CEDRIC] =                   &gObjectEventGraphicsInfo_Cedric,
     [OBJ_EVENT_GFX_CHANNELLER] =               &gObjectEventGraphicsInfo_Channeller,
     [OBJ_EVENT_GFX_CHEREN] =                   &gObjectEventGraphicsInfo_Cheren,
@@ -1316,7 +1316,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_GEETA] =                    &gObjectEventGraphicsInfo_Geeta,
     [OBJ_EVENT_GFX_GLORIA] =                   &gObjectEventGraphicsInfo_Gloria,
     [OBJ_EVENT_GFX_GUZMA] =                    &gObjectEventGraphicsInfo_Guzma,
-    [OBJ_EVENT_GFX_HEX_MANIAC] =               &gObjectEventGraphicsInfo_HexManiac,
+    [OBJ_EVENT_GFX_HEX_MANIAC_1] =             &gObjectEventGraphicsInfo_HexManiac1,
     [OBJ_EVENT_GFX_HILDA] =                    &gObjectEventGraphicsInfo_Hilda,
     [OBJ_EVENT_GFX_HOBIE] =                    &gObjectEventGraphicsInfo_Hobie,
     [OBJ_EVENT_GFX_JANINE] =                   &gObjectEventGraphicsInfo_Janine,

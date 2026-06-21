@@ -109,7 +109,7 @@ void HandleIntroSlide(u8 environment)
     {
         if (environment >= NELEMS(gBattleEnvironmentInfo)
          || gBattleEnvironmentInfo[environment].battleIntroSlide == NULL)
-            environment = BATTLE_ENVIRONMENT_PLAIN;
+            environment = BATTLE_ENVIRONMENT_ROUTE;
         taskId = CreateTask(gBattleEnvironmentInfo[environment].battleIntroSlide, 0);
     }
 
@@ -284,7 +284,7 @@ void BattleIntroSlide2(u8 taskId)
         gBattle_BG1_X += 8;
         break;
     case BATTLE_ENVIRONMENT_UNDERWATER:
-    case BATTLE_ENVIRONMENT_KYOGRE:
+    case BATTLE_ENVIRONMENT_BEACH:
         gBattle_BG1_X += 6;
         break;
     }

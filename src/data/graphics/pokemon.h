@@ -28179,8 +28179,8 @@ const u8 gMonIcon_Cacturado[] = INCGFX_U8("graphics/pokemon/cacturado/icon.png",
     // const u8 gMonFootprint_Mooseferatu[] = INCGFX_U8("graphics/pokemon/mooseferatu/footprint.png", ".1bpp");
 #endif //P_FOOTPRINTS
 
-    const u32 gMonFrontPic_MooseferatuF[] = INCGFX_U32("graphics/pokemon/mooseferatu/frontf.4bpp.smol");
-    const u32 gMonBackPic_MooseferatuF[] = INCGFX_U32("graphics/pokemon/mooseferatu/backf.4bpp.smol");
+    const u32 gMonFrontPic_MooseferatuF[] = INCGFX_U32("graphics/pokemon/mooseferatu/frontf.png", ".4bpp.smol");
+    const u32 gMonBackPic_MooseferatuF[] = INCGFX_U32("graphics/pokemon/mooseferatu/backf.png", ".4bpp.smol");
 #endif //P_FAMILY_FAWNPIRE
 
 #if P_FAMILY_PLATYPOW

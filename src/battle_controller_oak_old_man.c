@@ -686,7 +686,7 @@ static void OakOldManHandleDrawTrainerPic(enum BattlerId battler)
     if (gBattleTypeFlags & BATTLE_TYPE_FIRST_BATTLE)
         trainerPicId = GetPlayerTrainerPic(gSaveBlock2Ptr->playerGender, GAME_VERSION);
     else
-        trainerPicId = TRAINER_PIC_OLD_MAN;
+        trainerPicId = TRAINER_PIC_GENTLEMAN;
 
     BtlController_HandleDrawTrainerPic(battler, trainerPicId, FALSE, 80, (8 - GetTrainerBackPicCoords(trainerPicId)->size) * 4 + 80, 30);
 }
@@ -698,7 +698,7 @@ static void OakOldManHandleTrainerSlide(enum BattlerId battler)
     if (gBattleTypeFlags & BATTLE_TYPE_FIRST_BATTLE)
         trainerPicId = GetPlayerTrainerPic(gSaveBlock2Ptr->playerGender, GAME_VERSION);
     else
-        trainerPicId = TRAINER_PIC_OLD_MAN;
+        trainerPicId = TRAINER_PIC_GENTLEMAN;
 
     BtlController_HandleTrainerSlide(battler, trainerPicId);
 }

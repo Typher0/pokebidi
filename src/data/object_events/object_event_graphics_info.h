@@ -4965,7 +4965,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Boarder = {
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 
-const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Boy = {
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Boy4 = {
     .tileTag = TAG_NONE,
     .paletteTag = OBJ_EVENT_PAL_TAG_NPC_5,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
@@ -4980,7 +4980,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Boy = {
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
     .anims = sAnimTable_Standard,
-    .images = sPicTable_Boy,
+    .images = sPicTable_Boy4,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 
@@ -5269,7 +5269,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Camper1 = {
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 
-const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Captain = {
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Captain1 = {
     .tileTag = TAG_NONE,
     .paletteTag = OBJ_EVENT_PAL_TAG_NPC_3,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
@@ -5284,7 +5284,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Captain = {
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
     .anims = sAnimTable_Standard,
-    .images = sPicTable_Captain,
+    .images = sPicTable_Captain1,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 
@@ -10779,7 +10779,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Guzma = {
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 
-const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_HexManiac = {
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_HexManiac1 = {
     .tileTag = TAG_NONE,
     .paletteTag = OBJ_EVENT_PAL_TAG_NPC_6,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
@@ -10794,7 +10794,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_HexManiac = {
     .oam = &gObjectEventBaseOam_32x32,
     .substriteTables = sOamTables_32x32,
     .anims = sAnimTable_Standard,
-    .images = sPicTable_HexManiac,
+    .images = sPicTable_HexManiac1,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 
