@@ -4637,7 +4637,7 @@ Level: 51
 Ability: Vampirism
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 4 HP / 252 Atk / 248 Spe
-Ball: Luxury Ball
+Ball: Luxury
 Happiness: 255
 Nature: Adamant
 - Crunch
@@ -4650,7 +4650,7 @@ Level: 50
 Ability: Intimidate
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 4 HP / 252 Atk / 248 Spe
-Ball: Luxury Ball
+Ball: Luxury
 Happiness: 255
 Nature: Adamant
 - Psychic Fangs
@@ -4663,7 +4663,7 @@ Level: 50
 Ability: Moxie
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 4 HP / 252 Atk / 248 Spe
-Ball: Luxury Ball
+Ball: Luxury
 Happiness: 255
 Nature: Adamant
 - Sand Attack
@@ -4676,7 +4676,7 @@ Level: 51
 Ability: Moxie
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 144 HP / 100 Atk / 148 Def / 148 Spe
-Ball: Luxury Ball
+Ball: Luxury
 Happiness: 255
 Nature: Impish
 - Swagger
@@ -4689,7 +4689,7 @@ Level: 52
 Ability: Rough Skin
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 4 HP / 252 SpA / 248 Spe
-Ball: Luxury Ball
+Ball: Luxury
 Happiness: 255
 Nature: Modest
 - Nasty Plot
@@ -4702,7 +4702,7 @@ Level: 53
 Ability: Sand Stream
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 Atk / 4 SpD / 252 Spe
-Ball: Cherish Ball
+Ball: Cherish
 Happiness: 255
 Nature: Adamant
 - Stone Edge
@@ -4726,7 +4726,7 @@ Level: 52
 Ability: Weak Armor
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 4 HP / 252 Atk / 248 Spe
-Ball: Dusk Ball
+Ball: Dusk
 Happiness: 255
 Nature: Adamant
 - Swords Dance
@@ -4739,7 +4739,7 @@ Level: 51
 Ability: Weak Armor
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 4 HP / 252 SpA / 248 Spe
-Ball: Dusk Ball
+Ball: Dusk
 Happiness: 255
 Nature: Modest
 - Shadow Ball
@@ -4752,7 +4752,7 @@ Level: 51
 Ability: Gunslinger
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 SpA / 4 SpD / 248 Spe
-Ball: Dusk Ball
+Ball: Dusk
 Happiness: 255
 Nature: Modest
 - Shadow Ball
@@ -4765,7 +4765,7 @@ Level: 53
 Ability: Static
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 SpA / 252 SpD / 4 Spe
-Ball: Dusk Ball
+Ball: Dusk
 Happiness: 255
 Nature: Modest
 - Shadow Ball
@@ -4777,7 +4777,7 @@ Fantasmare @ Terrain Extender
 Level: 53
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 SpA / 252 SpD / 4 Spe
-Ball: Dusk Ball
+Ball: Dusk
 Happiness: 255
 Nature: Modest
 - Shadow Ball
@@ -4790,7 +4790,7 @@ Level: 54
 Ability: Infiltrator
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 SpA / 4 SpD / 252 Spe
-Ball: Cherish Ball
+Ball: Cherish
 Happiness: 255
 Nature: Timid
 - Will O Wisp
@@ -4814,7 +4814,7 @@ Level: 53
 Ability: Snow Warning
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 248 HP / 4 Def / 252 Spe
-Ball: Premier Ball
+Ball: Premier
 Happiness: 255
 Nature: Timid
 - Aurora Veil
@@ -4827,7 +4827,7 @@ Level: 52
 Ability: Ice Scales
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 8 HP / 248 SpA / 252 Spe
-Ball: Premier Ball
+Ball: Premier
 Happiness: 255
 Nature: Timid
 - Quiver Dance
@@ -4840,7 +4840,7 @@ Level: 52
 Ability: Corrosion
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 248 SpA / 8 SpD
-Ball: Premier Ball
+Ball: Premier
 Happiness: 255
 Nature: Sassy
 - Irradiate
@@ -4853,7 +4853,7 @@ Level: 53
 Ability: Power of Alchemy
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 248 SpA / 8 SpD
-Ball: Premier Ball
+Ball: Premier
 Happiness: 255
 Nature: Calm
 - Aurora Veil
@@ -4866,7 +4866,7 @@ Level: 54
 Ability: Pressure
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 Atk / 4 SpD / 252 Spe
-Ball: Premier Ball
+Ball: Premier
 Happiness: 255
 Nature: Jolly
 - Triple Axel
@@ -4879,7 +4879,7 @@ Level: 55
 Ability: Thermal Exchange
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 Atk / 4 SpD / 252 Spe
-Ball: Cherish Ball
+Ball: Cherish
 Happiness: 255
 Nature: Adamant
 - Icicle Spear
@@ -4903,7 +4903,7 @@ Level: 54
 Ability: Water Bubble
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 Atk / 104 Def / 152 SpD
-Ball: Heavy Ball
+Ball: Heavy
 Happiness: 255
 Nature: Impish
 - Dragon Dance
@@ -4916,7 +4916,7 @@ Level: 53
 Ability: Multiscale
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 Atk / 4 Def / 252 Spe
-Ball: Moon Ball
+Ball: Moon
 Happiness: 255
 Nature: Jolly
 - Dragon Dance
@@ -4929,7 +4929,7 @@ Level: 53
 Ability: Sap Sipper
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 4 Def / 252 SpA / 252 Spe
-Ball: Net Ball
+Ball: Net
 Happiness: 255
 Nature: Timid
 - Draco Meteor
@@ -4942,7 +4942,7 @@ Level: 54
 Ability: Intimidate
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 20 Atk / 80 Def / 156 Spe
-Ball: Moon Ball
+Ball: Moon
 Happiness: 255
 Nature: Adamant
 - Dragon Dance
@@ -4955,7 +4955,7 @@ Level: 55
 Ability: Soundproof
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 SpA / 4 SpD / 252 Spe
-Ball: Level Ball
+Ball: Level
 Happiness: 255
 Nature: Timid
 - Clangorous Soul
@@ -4968,7 +4968,7 @@ Level: 56
 Ability: Moxie
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Atk / 4 SpD
-Ball: Cherish Ball
+Ball: Cherish
 Happiness: 255
 Nature: Adamant
 - Earthquake
@@ -4991,7 +4991,7 @@ Pingloo (M)
 Level: 12
 Ability: Ice Body
 IVs: 12 HP / 8 Atk / 20 Def / 12 SpA / 20 SpD / 12 Spe
-Ball: Premier Ball
+Ball: Premier
 - Hail
 - Bubble
 - Powder Snow
@@ -5001,7 +5001,7 @@ Cabob (M)
 Level: 12
 Ability: Rivalry
 IVs: 12 HP / 18 Atk / 20 Def / 4 SpA / 12 SpD / 12 Spe
-Ball: Premier Ball
+Ball: Premier
 - Quick Attack
 - Pursuit
 - Powder Snow
@@ -5012,7 +5012,7 @@ Level: 14
 Ability: Cozy
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 EVs: 20 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
-Ball: Cherish Ball
+Ball: Cherish
 Happiness: 255
 Nature: Sassy
 - Hail
@@ -5061,7 +5061,7 @@ Penglacier (M) @ Sitrus Berry
 Level: 16
 Ability: Slush Rush
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-Ball: Cherish Ball
+Ball: Cherish
 Happiness: 255
 Nature: Mild
 - Ice Shard
@@ -5111,7 +5111,7 @@ Jagwire @ Sitrus Berry
 Level: 22
 Ability: Slander
 IVs: 30 HP / 31 Atk / 30 Def / 31 SpA / 30 SpD / 31 Spe
-Ball: Cherish Ball
+Ball: Cherish
 Happiness: 255
 Nature: Adamant
 - Thunder Fang
@@ -5177,7 +5177,7 @@ Fettlekish @ White Herb
 Level: 30
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 EVs: 150 SpA / 130 Spe
-Ball: Cherish Ball
+Ball: Cherish
 Happiness: 255
 Nature: Modest
 - Overheat
@@ -5227,7 +5227,7 @@ Level: 31
 Ability: Download
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 EVs: 4 HP / 150 SpA / 150 Spe
-Ball: Luxury Ball
+Ball: Luxury
 Happiness: 255
 Nature: Modest
 Tera Type: Ground
@@ -5241,7 +5241,7 @@ Level: 32
 Ability: Guts
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 152 Atk / 152 Spe
-Ball: Cherish Ball
+Ball: Cherish
 Happiness: 255
 Nature: Jolly
 - Knock Off
@@ -5265,7 +5265,7 @@ Level: 34
 Ability: Drizzle
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 EVs: 152 HP / 152 SpD
-Ball: Dive Ball
+Ball: Dive
 Happiness: 200
 Nature: Timid
 - Aqua Ring
@@ -5278,7 +5278,7 @@ Level: 33
 Ability: Magic Bounce
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 EVs: 152 HP / 152 Def
-Ball: Nest Ball
+Ball: Nest
 Happiness: 200
 Nature: Bold
 - Stored Power
@@ -5291,7 +5291,7 @@ Level: 33
 Ability: Sap Sipper
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 EVs: 152 SpA / 152 Spe
-Ball: Nest Ball
+Ball: Nest
 Happiness: 200
 Nature: Timid
 - Agility
@@ -5304,7 +5304,7 @@ Level: 34
 Ability: Blaze
 IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
 EVs: 152 HP / 152 SpA / 30 SpD
-Ball: Heavy Ball
+Ball: Heavy
 Happiness: 225
 Nature: Modest
 - Fire Blast
@@ -5317,7 +5317,7 @@ Level: 35
 Ability: Regenerator
 IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
 EVs: 152 HP / 152 Def / 30 SpD
-Ball: Heavy Ball
+Ball: Heavy
 Happiness: 225
 Nature: Adamant
 - Stealth Rock
@@ -5330,7 +5330,7 @@ Level: 35
 Ability: Serene Grace
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 160 HP / 52 SpD / 150 Spe
-Ball: Love Ball
+Ball: Love
 Happiness: 245
 Nature: Timid
 - Air Slash
@@ -5342,7 +5342,7 @@ Altaria @ Sitrus Berry
 Level: 36
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 152 HP / 80 Atk / 52 SpD / 80 Spe
-Ball: Cherish Ball
+Ball: Cherish
 Happiness: 255
 Nature: Adamant
 - Earthquake
@@ -5366,7 +5366,7 @@ Level: 46
 Ability: Plus
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 EVs: 152 HP / 80 Def / 200 Spe
-Ball: Great Ball
+Ball: Great
 Nature: Timid
 - Psychic Terrain
 - Thunder Wave
@@ -5378,7 +5378,7 @@ Level: 46
 Ability: Minus
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 EVs: 80 Def / 200 SpA / 152 Spe
-Ball: Repeat Ball
+Ball: Repeat
 Nature: Modest
 - Psychic
 - Irradiate
@@ -5390,7 +5390,7 @@ Level: 46
 Ability: Berserk
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 EVs: 80 Def / 200 SpA / 152 SpD
-Ball: Timer Ball
+Ball: Timer
 Nature: Modest
 - Psychic
 - Amnesia
@@ -5402,7 +5402,7 @@ Level: 46
 Ability: Weak Armor
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 EVs: 80 HP / 200 SpA / 152 Spe
-Ball: Fast Ball
+Ball: Fast
 Nature: Modest
 - Expanding Force
 - Heat Wave
@@ -5413,7 +5413,7 @@ Galaxagos (F) @ Rocky Helmet
 Level: 48
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 160 HP / 200 SpA / 40 SpD
-Ball: Cherish Ball
+Ball: Cherish
 Happiness: 255
 Nature: Modest
 - Gravitate
@@ -5425,7 +5425,7 @@ Orangutao (M) @ Leftovers
 Level: 48
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 200 HP / 120 Def / 100 SpA / 40 SpD
-Ball: Cherish Ball
+Ball: Cherish
 Happiness: 255
 Nature: Bold
 - Aura Sphere
@@ -5449,7 +5449,7 @@ Level: 47
 Ability: Drizzle
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 EVs: 200 HP / 80 Def / 200 SpD
-Ball: Dive Ball
+Ball: Dive
 Nature: Timid
 - Aqua Ring
 - U Turn
@@ -5461,7 +5461,7 @@ Level: 46
 Ability: Technician
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 EVs: 200 SpA / 200 Spe
-Ball: Dive Ball
+Ball: Dive
 Nature: Brave
 - Flip Turn
 - Swift
@@ -5473,7 +5473,7 @@ Level: 46
 Ability: Swift Swim
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 EVs: 200 Atk / 200 Spe
-Ball: Net Ball
+Ball: Net
 Nature: Adamant
 - Flip Turn
 - Poison Jab
@@ -5485,7 +5485,7 @@ Level: 47
 Ability: Regenerator
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 EVs: 200 HP / 150 Atk / 50 Spe
-Ball: Net Ball
+Ball: Net
 Nature: Adamant
 - Flip Turn
 - Liquidation
@@ -5496,7 +5496,7 @@ Ragnarow (M) @ Leftovers
 Level: 49
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 200 Atk / 122 Def / 50 Spe
-Ball: Cherish Ball
+Ball: Cherish
 Happiness: 255
 Nature: Adamant
 - Dragon Dance
@@ -5896,7 +5896,7 @@ Munchlax @ Chople Berry
 Level: 8
 Ability: Pickup
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-Ball: Luxury Ball
+Ball: Luxury
 - Lick
 - Tackle
 - Defense Curl
@@ -6638,7 +6638,7 @@ Level: 59
 Ability: Toxic Boost
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 152 HP / 252 Atk / 148 Spe
-Ball: Cherish Ball
+Ball: Cherish
 Happiness: 255
 Nature: Jolly
 - Stealth Rock
@@ -6651,7 +6651,7 @@ Level: 58
 Ability: Magic Bounce
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 80 Def / 20 SpA / 156 Spe
-Ball: Cherish Ball
+Ball: Cherish
 Happiness: 255
 Nature: Modest
 - Misty Terrain
@@ -6664,7 +6664,7 @@ Level: 58
 Ability: Wind Rider
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP /  20 Atk / 80 Def / 156 Spe
-Ball: Cherish Ball
+Ball: Cherish
 Happiness: 255
 Nature: Jolly
 - Wave Crash
@@ -6677,7 +6677,7 @@ Level: 58
 Ability: Guts
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP /  252 Atk / 4 Spe
-Ball: Cherish Ball
+Ball: Cherish
 Happiness: 255
 Nature: Adamant
 - Earthquake
@@ -6690,7 +6690,7 @@ Level: 60
 Ability: White Smoke
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 4 HP /  252 SpA / 252 Spe
-Ball: Cherish Ball
+Ball: Cherish
 Happiness: 255
 Nature: Modest
 - Heat Wave
@@ -6703,7 +6703,7 @@ Level: 61
 Ability: Stamina
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 20 Atk / 80 Def / 156 Spe
-Ball: Cherish Ball
+Ball: Cherish
 Happiness: 255
 Nature: Adamant
 - Swords Dance
@@ -11571,7 +11571,7 @@ Woobat (F) @ Wide Lens
 Level: 13
 Ability: Unaware
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
-Ball: Dusk Ball
+Ball: Dusk
 - Attract
 - Gust
 - Confusion
@@ -11581,7 +11581,7 @@ Roggenrola (F) @ Red Card
 Level: 13
 Ability: Sturdy
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
-Ball: Dusk Ball
+Ball: Dusk
 - Sand Attack
 - Tackle
 - Harden
@@ -11591,7 +11591,7 @@ Snorunt (F) @ Quick Claw
 Level: 15
 Ability: Inner Focus
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
-Ball: Luxury Ball
+Ball: Luxury
 - Astonish
 - Headbutt
 - Powder Snow
