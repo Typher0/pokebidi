@@ -20,13 +20,13 @@ PlayersHouseParentsRoom_EventScript_Sink_On::
 	releaseall
 	end
 
-PlayersHouseBathroom_EventScript_Toilet::
+PlayersHouseParentsRoom_EventScript_Toilet::
 	lock
-	msgbox PlayersHouseBathroom_Text_Toilet, MSGBOX_DEFAULT
+	msgbox PlayersHouseParentsBathroom_Text_Toilet, MSGBOX_DEFAULT
 	release
 	end
 
-PlayersHouseBathroom_Text_Toilet:
+PlayersHouseParentsBathroom_Text_Toilet:
 	.string "It's a toilet.\p"
 	.string "You don't have to go right now.$"
 

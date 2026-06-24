@@ -491,7 +491,7 @@ gSongTable::
 	song mus_vs_elite_four, MUSIC_PLAYER_BGM, 0
     song mus_vs_e4, MUSIC_PLAYER_BGM, 0
 	song mus_vs_aqua_magma_leader, MUSIC_PLAYER_BGM, 0
-    song mus_vs_zephyr, MUSIC_PLAYER_BGM, 0
+    song mus_zephyr, MUSIC_PLAYER_BGM, 0
 	song mus_rg_follow_me, MUSIC_PLAYER_BGM, 0
 	song mus_rg_game_corner, MUSIC_PLAYER_BGM, 0
 	song mus_rg_rocket_hideout, MUSIC_PLAYER_BGM, 0
