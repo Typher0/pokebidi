@@ -482,6 +482,7 @@
 #define METATILE_PlayersHouse_Laptop_Off         0x29E
 #define METATILE_PlayersHouse_Laptop_On          0x29F
 #define METATILE_PlayersHouse_Sink_Off_Left      0x2BE
+#define METATILE_PlayersHouse_Sink_Off_Right     0x2BF
 #define METATILE_PlayersHouse_Sink_On_Left       0x2AE
 #define METATILE_PlayersHouse_Sink_On_Right      0x2AF
 #define METATILE_PlayersHouse_TV_Off_Left        0x28B
