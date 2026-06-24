@@ -56,9 +56,7 @@ LittlerootTown_BrendansHouse_2F_EventScript_MeetBrendan::
 	msgbox BrendansHouse_2F_Text_CallOut, MSGBOX_DEFAULT
 	delay 10
 	addobject LOCALID_RIVALS_HOUSE_2F_RIVAL
-	addobject LOCALID_RIVALS_HOUSE_2F_MOM
 	applymovement LOCALID_RIVALS_HOUSE_2F_RIVAL, LittlerootTown_BrendansHouse_2F_Movement_BrendanEnters
-	applymovement LOCALID_RIVALS_HOUSE_2F_MOM, LittlerootTown_BrendansHouse_2F_Movement_BrendanEnters
 	waitmovement 0
 	playse SE_PIN
 	applymovement LOCALID_RIVALS_HOUSE_2F_RIVAL, Common_Movement_ExclamationMark
