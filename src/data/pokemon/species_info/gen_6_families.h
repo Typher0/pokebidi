@@ -5146,7 +5146,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .eggMoveLearnset = sGoomyEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 40, SPECIES_SLIGGOO, CONDITIONS({IF_NOT_REGION, REGION_HISUI})}
                             #if P_HISUIAN_FORMS
-                                ,{EVO_LEVEL, 40, SPECIES_SLIGGOO_HISUI, CONDITIONS({IF_REGION, REGION_HISUI})}
+                                ,{EVO_LEVEL, 40, SPECIES_SLIGGOO_HISUI, CONDITIONS({IF_HOLD_ITEM, ITEM_BLACK_AUGURITE})}
                             #endif
                             ),
     },
@@ -5219,7 +5219,8 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .teachableLearnset = sSliggooTeachableLearnset,
         .formSpeciesIdTable = sSliggooFormSpeciesIdTable,
         .evolutions = EVOLUTION({EVO_LEVEL, 50, SPECIES_GOODRA, CONDITIONS({IF_WEATHER, WEATHER_RAIN})},
-                                {EVO_LEVEL, 50, SPECIES_GOODRA, CONDITIONS({IF_WEATHER, WEATHER_FOG})}),
+                                {EVO_LEVEL, 50, SPECIES_GOODRA, CONDITIONS({IF_WEATHER, WEATHER_FOG})},
+                                {EVO_LEVEL, 50, SPECIES_GOODRA_HISUI, CONDITIONS({IF_HOLD_ITEM, ITEM_BLACK_AUGURITE})}),
     },
 
     [SPECIES_GOODRA] =
@@ -5359,7 +5360,8 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .teachableLearnset = sSliggooHisuiTeachableLearnset,
         .formSpeciesIdTable = sSliggooFormSpeciesIdTable,
         .evolutions = EVOLUTION({EVO_LEVEL, 50, SPECIES_GOODRA_HISUI, CONDITIONS({IF_WEATHER, WEATHER_RAIN})},
-                                {EVO_LEVEL, 50, SPECIES_GOODRA_HISUI, CONDITIONS({IF_WEATHER, WEATHER_FOG})}),
+                                {EVO_LEVEL, 50, SPECIES_GOODRA_HISUI, CONDITIONS({IF_WEATHER, WEATHER_FOG})},
+                                {EVO_LEVEL, 50, SPECIES_GOODRA, CONDITIONS({IF_HOLD_ITEM, ITEM_BLACK_AUGURITE})}),
 
     },
 
@@ -6255,7 +6257,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .eggMoveLearnset = sBergmiteEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 37, SPECIES_AVALUGG, CONDITIONS({IF_NOT_REGION, REGION_HISUI})}
                             #if P_HISUIAN_FORMS
-                                ,{EVO_LEVEL, 37, SPECIES_AVALUGG_HISUI, CONDITIONS({IF_REGION, REGION_HISUI})}
+                                ,{EVO_LEVEL, 37, SPECIES_AVALUGG_HISUI, CONDITIONS({IF_HOLD_ITEM, ITEM_BLACK_AUGURITE})}
                             #endif
                             ),
     },
@@ -6729,7 +6731,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
             gOverworldPalette_XerneasNeutral,
             gShinyOverworldPalette_XerneasNeutral
         )
-        .isLegendary = TRUE,
+        .isRestrictedLegendary = TRUE,
         .isFrontierBanned = TRUE,
         .perfectIVCount = LEGENDARY_PERFECT_IV_COUNT,
         .levelUpLearnset = sXerneasLevelUpLearnset,
@@ -6877,7 +6879,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
             gOverworldPalette_Yveltal,
             gShinyOverworldPalette_Yveltal
         )
-        .isLegendary = TRUE,
+        .isRestrictedLegendary = TRUE,
         .isFrontierBanned = TRUE,
         .perfectIVCount = LEGENDARY_PERFECT_IV_COUNT,
         .levelUpLearnset = sYveltalLevelUpLearnset,

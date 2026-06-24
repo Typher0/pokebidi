@@ -13454,14 +13454,6 @@ const u8 gMonIcon_Cacturado[] = INCGFX_U8("graphics/pokemon/cacturado/icon.png",
 #endif //OW_POKEMON_OBJECT_EVENTS && OW_BATTLE_ONLY_FORMS
 #endif //P_GEN_9_MEGA_EVOLUTIONS
 #endif //P_GEN_4_CROSS_EVOS
-
-#if P_MEGA_EVOLUTIONS
-    const u32 gMonFrontPic_FroslassMega[] = INCGFX_U32("graphics/pokemon/froslass/mega/front.png", ".4bpp.smol");
-    const u16 gMonPalette_FroslassMega[] = INCGFX_U16("graphics/pokemon/froslass/mega/normal.pal", ".gbapal");
-    const u32 gMonBackPic_FroslassMega[] = INCGFX_U32("graphics/pokemon/froslass/mega/back.png", ".4bpp.smol");
-    const u16 gMonShinyPalette_FroslassMega[] = INCGFX_U16("graphics/pokemon/froslass/mega/shiny.pal", ".gbapal");
-    const u8 gMonIcon_FroslassMega[] = INCGFX_U8("graphics/pokemon/froslass/mega/icon.png", ".4bpp");
-#endif //P_MEGA_EVOLUTIONS
 #endif //P_FAMILY_SNORUNT
 
 #if P_FAMILY_SPHEAL

@@ -720,7 +720,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .teachableLearnset = sDewottTeachableLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 36, SPECIES_SAMUROTT, CONDITIONS({IF_NOT_REGION, REGION_HISUI})}
                             #if P_HISUIAN_FORMS
-                                ,{EVO_LEVEL, 36, SPECIES_SAMUROTT_HISUI, CONDITIONS({IF_REGION, REGION_HISUI})}
+                                ,{EVO_LEVEL, 36, SPECIES_SAMUROTT_HISUI, CONDITIONS({IF_HOLD_ITEM, ITEM_BLACK_AUGURITE})}
                             #endif
                             ),
     },
@@ -4490,7 +4490,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .eggMoveLearnset = sPetililEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_ITEM, ITEM_SUN_STONE, SPECIES_LILLIGANT}
                             #if P_HISUIAN_FORMS
-                                ,{EVO_ITEM, ITEM_BLACK_AUGARITE, SPECIES_LILLIGANT_HISUI}
+                                ,{EVO_ITEM, ITEM_BLACK_AUGURITE, SPECIES_LILLIGANT_HISUI}
                             #endif
                             ),
     },
@@ -11980,7 +11980,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .teachableLearnset = sRuffletTeachableLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 54, SPECIES_BRAVIARY}
                             #if P_HISUIAN_FORMS
-                                ,{EVO_ITEM, ITEM_BLACK_AUGARITE, SPECIES_BRAVIARY_HISUI}
+                                ,{EVO_LEVEL, 54, SPECIES_BRAVIARY_HISUI, CONDITIONS({IF_HOLD_ITEM, ITEM_BLACK_AUGURITE})}
                             #endif
                             ),
     },

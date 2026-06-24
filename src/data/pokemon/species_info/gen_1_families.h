@@ -7949,7 +7949,8 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .teachableLearnset = sGrowlitheTeachableLearnset,
         .eggMoveLearnset = sGrowlitheEggMoveLearnset,
         .formSpeciesIdTable = sGrowlitheFormSpeciesIdTable,
-        .evolutions = EVOLUTION({EVO_ITEM, ITEM_FIRE_STONE, SPECIES_ARCANINE}),
+        .evolutions = EVOLUTION({EVO_ITEM, ITEM_FIRE_STONE, SPECIES_ARCANINE},
+                                {EVO_ITEM, ITEM_BLACK_AUGURITE, SPECIES_ARCANINE_HISUI}),
     },
 
     [SPECIES_ARCANINE] =
@@ -8085,7 +8086,8 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .teachableLearnset = sGrowlitheHisuiTeachableLearnset,
         .eggMoveLearnset = sGrowlitheHisuiEggMoveLearnset,
         .formSpeciesIdTable = sGrowlitheFormSpeciesIdTable,
-        .evolutions = EVOLUTION({EVO_ITEM, ITEM_FIRE_STONE, SPECIES_ARCANINE_HISUI}),
+        .evolutions = EVOLUTION({EVO_ITEM, ITEM_FIRE_STONE, SPECIES_ARCANINE_HISUI},
+                                {EVO_ITEM, ITEM_BLACK_AUGURITE, SPECIES_ARCANINE}),
     },
 
     [SPECIES_ARCANINE_HISUI] =
@@ -13045,7 +13047,8 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .levelUpLearnset = sVoltorbLevelUpLearnset,
         .teachableLearnset = sVoltorbTeachableLearnset,
         .formSpeciesIdTable = sVoltorbFormSpeciesIdTable,
-        .evolutions = EVOLUTION({EVO_LEVEL, 30, SPECIES_ELECTRODE}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 30, SPECIES_ELECTRODE},
+                                {EVO_ITEM, ITEM_LEAF_STONE, SPECIES_ELECTRODE_HISUI}),
     },
 
     [SPECIES_ELECTRODE] =
@@ -13188,7 +13191,8 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .levelUpLearnset = sVoltorbHisuiLevelUpLearnset,
         .teachableLearnset = sVoltorbHisuiTeachableLearnset,
         .formSpeciesIdTable = sVoltorbFormSpeciesIdTable,
-        .evolutions = EVOLUTION({EVO_ITEM, ITEM_LEAF_STONE, SPECIES_ELECTRODE_HISUI}),
+        .evolutions = EVOLUTION({EVO_ITEM, ITEM_LEAF_STONE, SPECIES_ELECTRODE_HISUI},
+                                {EVO_LEVEL, 30, SPECIES_ELECTRODE, CONDITIONS({IF_HOLD_ITEM, ITEM_BLACK_AUGURITE})}),
     },
 
     [SPECIES_ELECTRODE_HISUI] =

@@ -1003,7 +1003,7 @@ static const u16 sBanetteFormSpeciesIdTable[] = {
 #if P_FAMILY_DUSKULL
 #if P_GEN_4_CROSS_EVOS
 static const u16 sDusknoirFormSpeciesIdTable[] = {
-    SPECIES_DUSKNOIR
+    SPECIES_DUSKNOIR,
 #if P_MEGA_EVOLUTIONS
     SPECIES_DUSKNOIR_MEGA,
 #endif
@@ -1380,6 +1380,7 @@ static const u16 sMusharnaFormSpeciesIdTable[] = {
     SPECIES_MUSHARNA_MEGA,
 #endif
     FORM_SPECIES_END,
+};
 #endif // P_FAMILY_MUNNA
     
 #if P_FAMILY_ROGGENROLA
@@ -1389,6 +1390,7 @@ static const u16 sGigalithFormSpeciesIdTable[] = {
     SPECIES_GIGALITH_MEGA,
 #endif
     FORM_SPECIES_END,
+};
 #endif // P_FAMILY_ROGGENROLA
 
 #if P_FAMILY_DRILBUR

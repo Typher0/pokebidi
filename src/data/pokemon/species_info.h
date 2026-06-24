@@ -737,7 +737,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .iconPalIndex = 3,
         SHADOW(1, 5, SHADOW_SIZE_S)
         FOOTPRINT(Skullarva)
-        .tmIlliterate = TRUE,
+        .teachingType = TM_ILLITERATE,
         .levelUpLearnset = sSkullarvaLevelUpLearnset,
         .teachableLearnset = sSkullarvaTeachableLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 7, SPECIES_KAKONE}),
@@ -2184,7 +2184,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .iconPalIndex = 2,
         SHADOW(0, 3, SHADOW_SIZE_S)
         FOOTPRINT(Cuppy)
-        .tmIlliterate = TRUE,
+        .teachingType = TM_ILLITERATE,
         .levelUpLearnset = sCuppyLevelUpLearnset,
         .teachableLearnset = sCuppyTeachableLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 20, SPECIES_FETTLEKISH}),
@@ -6267,7 +6267,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .iconPalIndex = 0,
         SHADOW(0, 1, SHADOW_SIZE_S)
         FOOTPRINT(Wishp)
-        .tmIlliterate = TRUE,
+        .teachingType = TM_ILLITERATE,
         .levelUpLearnset = sWishpLevelUpLearnset,
         .teachableLearnset = sWishpTeachableLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 30, SPECIES_IGFRIT}),
@@ -6797,7 +6797,6 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
         .abilities = {ABILITY_MUMMY, ABILITY_NONE},
         .bodyColor = BODY_COLOR_BLACK,
-        .isLegendary = TRUE,
         .perfectIVCount = LEGENDARY_PERFECT_IV_COUNT,
         .speciesName = _("Hathrostus"),
         .cryId = CRY_HATHROSTUS,
@@ -6835,6 +6834,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .iconPalIndex = 1,
         SHADOW(2, 11, SHADOW_SIZE_M)
         FOOTPRINT(Hathrostus)
+        .isRestrictedLegendary = TRUE,
         .levelUpLearnset = sHathrostusLevelUpLearnset,
         .teachableLearnset = sHathrostusTeachableLearnset,
     },
@@ -6862,7 +6862,6 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
         .abilities = {ABILITY_MUMMY, ABILITY_NONE},
         .bodyColor = BODY_COLOR_BLUE,
-        .isLegendary = TRUE,
         .perfectIVCount = LEGENDARY_PERFECT_IV_COUNT,
         .speciesName = _("Babosiris"),
         .cryId = CRY_BABOSIRIS,
@@ -6894,6 +6893,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .iconPalIndex = 0,
         SHADOW(2, 9, SHADOW_SIZE_XL_BATTLE_ONLY)
         FOOTPRINT(Babosiris)
+        .isRestrictedLegendary = TRUE,
         .levelUpLearnset = sBabosirisLevelUpLearnset,
         .teachableLearnset = sBabosirisTeachableLearnset,
     },
@@ -6919,7 +6919,6 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
         .abilities = {ABILITY_LEVITATE, ABILITY_NONE},
         .bodyColor = BODY_COLOR_YELLOW,
-        .isLegendary = TRUE,
         .perfectIVCount = LEGENDARY_PERFECT_IV_COUNT,
         .speciesName = _("Hubriset"),
         .cryId = CRY_HUBRISET,
@@ -6956,6 +6955,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .iconPalIndex = 3,
         SHADOW(0, 10, SHADOW_SIZE_L)
         FOOTPRINT(Hubriset)
+        .isRestrictedLegendary = TRUE,
         .levelUpLearnset = sHubrisetLevelUpLearnset,
         .teachableLearnset = sHubrisetTeachableLearnset,
     },
@@ -7036,7 +7036,6 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
         .abilities = {ABILITY_PROTEAN, ABILITY_NONE, ABILITY_NONE},
         .bodyColor = BODY_COLOR_WHITE,
-        .isLegendary = TRUE,
         .perfectIVCount = LEGENDARY_PERFECT_IV_COUNT,
         .speciesName = _("Roygibiv"),
         .cryId = CRY_ROYGIBIV,
@@ -7068,6 +7067,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .iconPalIndex = 0,
         SHADOW(5, 11, SHADOW_SIZE_M)
         FOOTPRINT(Roygibiv)
+        .isRestrictedLegendary = TRUE,
         .levelUpLearnset = sRoygibivLevelUpLearnset,
         .teachableLearnset = sRoygibivTeachableLearnset,
    },

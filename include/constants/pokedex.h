@@ -1258,7 +1258,7 @@ enum NationalDexOrder
     F(PINGLOO) \
     F(PENGLACIER) \
     F(CABOB) \
-    F(LYNSKEW) \
+    F(LYNXSKEW) \
     F(HOOTHOOT) \
     F(NOCTOWL) \
     F(DOCTOWL) \
@@ -1506,7 +1506,6 @@ enum NationalDexOrder
     F(MARACTUS) \
     F(YAMASK) \
     F(COFAGRIGUS) \
-    F(RUNERIGUS) \
     F(VULLABY) \
     F(MANDIBUZZ) \
     F(RELLADUNE) \
@@ -1561,7 +1560,7 @@ enum NationalDexOrder
     F(BAZILISK) \
     F(ORNITHAUR) \
     F(DILOPHLORA) \
-    F(PETLIL) \
+    F(PETILIL) \
     F(LILLIGANT) \
     F(KARRABLAST) \
     F(ESCAVALIER) \
@@ -1587,7 +1586,7 @@ enum NationalDexOrder
     F(RELICANTH) \
     F(ALOMOMOLA) \
     F(BINACLE) \
-    F(BARBACLE) \
+    F(BARBARACLE) \
     F(FINIZEN) \
     F(PALAFIN) \
     F(DRAKNARR) \
@@ -1652,7 +1651,6 @@ enum NationalDexOrder
     F(BOAREALIS) \
     F(SNEASEL) \
     F(WEAVILE) \
-    F(SNEASLER) \
     F(SABLEYE) \
     F(MAWILE) \
     F(SAWK) \
@@ -1669,7 +1667,7 @@ enum NationalDexOrder
     F(DRAGONITE) \
     F(BAGON) \
     F(SHELGON) \
-    F(SALAMANCE) \
+    F(SALAMENCE) \
     F(AXEW) \
     F(FRAXURE) \
     F(HAXORUS) \
