@@ -4646,10 +4646,6 @@ BattleScript_SlanderActivates::
 	destroyabilitypopup
 	return
 
-BattleScript_SlanderWontDecrease:
-    printstring STRINGID_STATSWONTDECREASE
-    goto BattleScript_SlanderEffect_WaitString
-
 BattleScript_SupersweetSyrupActivates::
 	call BattleScript_AbilityPopUp
 	printstring STRINGID_SUPERSWEETAROMAWAFTS

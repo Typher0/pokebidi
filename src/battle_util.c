@@ -3585,7 +3585,7 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, enum BattlerId battler, enum
                  && !IsBattlerAtMaxHp(battler)
                  && !gBattleMons[battler].volatiles.healBlock)
                 {
-                    BattleScriptPushCursorAndCallback(BattleScript_VampirismActivates);
+                    BattleScriptPushCursorAndCallback(BattleScript_AbilityHpHeal);
                     gBattleStruct->moveDamage[battler] = GetNonDynamaxMaxHP(battler) / 16;
                     if (gBattleStruct->moveDamage[battler] == 0)
                         gBattleStruct->moveDamage[battler] = 1;
