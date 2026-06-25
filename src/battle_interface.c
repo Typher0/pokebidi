@@ -535,8 +535,8 @@ static const struct SpriteTemplate sStatusSummaryBallsSpriteTemplates[2] =
     }
 };
 
-static const u8 sEmptyWhiteText_GrayHighlight[] = __("{COLOR WHITE}{BACKGROUND DARK_GRAY}{ACCENT DARK_GRAY}              ");
-static const u8 sEmptyWhiteText_TransparentHighlight[] = __("{COLOR WHITE}{BACKGROUND TRANSPARENT}{ACCENT TRANSPARENT}              ");
+static const u8 sEmptyWhiteText_GrayHighlight[] = __("{COLOR TRANSPARENT}{BACKGROUND DARK_GRAY}{ACCENT DARK_GRAY}              ");
+static const u8 sEmptyWhiteText_TransparentHighlight[] = __("{COLOR TRANSPARENT}{BACKGROUND TRANSPARENT}{ACCENT TRANSPARENT}              ");
 
 enum
 {
@@ -569,8 +569,8 @@ static const struct WindowTemplate sHealthboxWindowTemplate = {
 static const union TextColor sHealthBoxTextColor =
 {
     .background = 0,
-    .foreground = 1,
-    .shadow = 3,
+    .foreground = 2,
+    .shadow = 7,
     .accent = 0
 };
 
