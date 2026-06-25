@@ -263,37 +263,37 @@ PlayersHouse_1F_Movement_MomNoticesLatiBroadcastFemale:
 	step_end
 
 PlayersHouse_1F_Movement_MomApproachPlayerAfterTVMale:
-	walk_up
-	walk_left
-	walk_left
-	step_end
-
-PlayersHouse_1F_Movement_MomApproachPlayerAfterTVFemale:
-	walk_up
-	walk_right
-	walk_right
-	step_end
-
-PlayersHouse_1F_Movement_MomMakeRoomToSeeTVMale:
-	walk_left
-	walk_in_place_faster_right
-	step_end
-
-PlayersHouse_1F_Movement_MomMakeRoomToSeeTVFemale:
-	walk_right
 	walk_in_place_faster_left
 	step_end
 
+PlayersHouse_1F_Movement_MomApproachPlayerAfterTVFemale:
+	walk_in_place_faster_left
+	step_end
+
+PlayersHouse_1F_Movement_MomMakeRoomToSeeTVMale:
+	walk_in_place_faster_up
+	step_end
+
+PlayersHouse_1F_Movement_MomMakeRoomToSeeTVFemale:
+	walk_in_place_faster_up
+	step_end
+
 PlayersHouse_1F_Movement_MomReturnToSeatMale:
-	walk_left
+	walk_right
+	walk_right
+	walk_right
+	walk_down
 	walk_down
 	walk_in_place_faster_right
 	step_end
 
 PlayersHouse_1F_Movement_MomReturnToSeatFemale:
 	walk_right
+	walk_right
+	walk_right
 	walk_down
-	walk_in_place_faster_left
+	walk_down
+	walk_in_place_faster_right
 	step_end
 
 PlayersHouse_1F_EventScript_Mom::
@@ -388,25 +388,25 @@ PlayersHouse_1F_EventScript_Vigoroth2::
 PlayersHouse_1F_Movement_PlayerApproachTVForGymMale:
 	walk_down
 	walk_down
-	walk_left
-	walk_left
-	walk_left
+	walk_down
+	walk_right
+	walk_right
 	step_end
 
 PlayersHouse_1F_Movement_PlayerMoveToTVMale:
-	walk_left
+	walk_in_place_faster_up
 	step_end
 
 PlayersHouse_1F_Movement_PlayerApproachTVForGymFemale:
 	walk_down
 	walk_down
-	walk_right
+	walk_down
 	walk_right
 	walk_right
 	step_end
 
 PlayersHouse_1F_Movement_PlayerMoveToTVFemale:
-	walk_right
+	walk_in_place_faster_up
 	step_end
 
 PlayersHouse_1F_Movement_MovePlayerAwayFromDoor:

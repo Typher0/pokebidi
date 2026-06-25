@@ -35,7 +35,7 @@ LittlerootTown_BrendansHouse_1F_EventScript_MoveMomToStairs::
 	return
 
 LittlerootTown_BrendansHouse_1F_EventScript_MoveMomToTV::
-	setobjectxyperm LOCALID_PLAYERS_HOUSE_1F_MOM, 4, 5
+	setobjectxyperm LOCALID_PLAYERS_HOUSE_1F_MOM, 5, 7
 	setobjectmovementtype LOCALID_PLAYERS_HOUSE_1F_MOM, MOVEMENT_TYPE_FACE_UP
 	return
 
