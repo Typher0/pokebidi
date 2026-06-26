@@ -99,6 +99,7 @@ bool8 MetatileBehavior_IsWestBlocked(u8 metatileBehavior);
 bool8 MetatileBehavior_IsNorthBlocked(u8 metatileBehavior);
 bool8 MetatileBehavior_IsSouthBlocked(u8 metatileBehavior);
 bool8 MetatileBehavior_IsShortGrass(u8 metatileBehavior);
+bool8 MetatileBehavior_IsSnowyGrass(u8 metatileBehavior);
 bool8 MetatileBehavior_IsHotSprings(u8 metatileBehavior);
 bool8 MetatileBehavior_IsWaterfall(u8 metatileBehavior);
 bool8 MetatileBehavior_IsFortreeBridge(u8 metatileBehavior);

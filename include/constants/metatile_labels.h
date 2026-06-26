@@ -603,6 +603,7 @@
 // gTileset_Primary_North
 #define METATILE_Primary_North_Door_Gym         0x08B
 #define METATILE_Primary_North_Door_PokeCenter  0x064
+#define METATILE_Primary_North_SnowyGrass       0x023
 
 // gTileset_Rustboro
 #define METATILE_Rustboro_Door_Gray  0x21F
