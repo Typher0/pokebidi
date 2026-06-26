@@ -3,11 +3,10 @@
   "name": "MtChimney",
   "layout": "LAYOUT_MT_CHIMNEY",
   "music": "MUS_MT_CHIMNEY",
-  "region": "REGION_HOENN",
   "region_map_section": "MAPSEC_MT_CHIMNEY",
   "requires_flash": true,
   "weather": "WEATHER_NONE",
-  "map_type": "MAP_TYPE_UNDERGROUND",
+  "map_type": "MAP_TYPE_UNDERGROUND_SNOWY",
   "allow_cycling": false,
   "allow_escaping": true,
   "allow_running": true,
@@ -473,5 +472,6 @@
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "MtChimney_EventScript_RouteSign"
     }
-  ]
+  ],
+  "region": "REGION_HOENN"
 }
