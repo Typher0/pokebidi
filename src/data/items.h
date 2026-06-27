@@ -1613,7 +1613,7 @@ const struct ItemInfo gItemsInfo[] =
     {
         .name = ITEM_NAME("Ability Capsule"),
     #if I_PRICE >= GEN_9
-        .price = 100000,
+        .price = 1000,
     #elif I_PRICE >= GEN_7
         .price = 10000,
     #else
