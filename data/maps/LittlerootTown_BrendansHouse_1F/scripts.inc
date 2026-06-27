@@ -307,39 +307,46 @@ PlayersHouse_1F_Text_GoSetTheClock:
 	.string "Go set the clock in your room, honey.$"
 
 PlayersHouse_1F_Text_OhComeQuickly:
-	.string "MOM: Oh! {PLAYER}, {PLAYER}!\n"
+	.string "Mom: Oh! {PLAYER}, {PLAYER}!\n"
 	.string "Quick! Come quickly!$"
 
 PlayersHouse_1F_Text_MaybeDadWillBeOn:
-	.string "MOM: Look! It's PETALBURG GYM!\n"
-	.string "Maybe DAD will be on!$"
+	.string "Mom: Look! There's my kiddo!\n"
+	.string "Come on over here!$"
 
 PlayersHouse_1F_Text_ItsOverWeMissedHim:
-	.string "MOM: Oh… It's over.\p"
-	.string "I think DAD was on, but we missed him.\n"
-	.string "Too bad.$"
+	.string "Mom: Wow…I can't believe it…\p"
+	.string "To think that my baby is going off on\n"
+	.string "their own to be a trainer.\p"
+	.string "It feels like just yesterday when I\n"
+	.string "met your father in Unova…\p"
+	.string "Well, Prof. Unicorn, Sean, and Amanda\n"
+	.string "Are waiting for you, honey!\p"
+	.string "Best not keep them waiting!$"
 
 PlayersHouse_1F_Text_GoIntroduceYourselfNextDoor:
 	.string "Oh, yes.\n"
-	.string "One of DAD's friends lives in town.\p"
-	.string "PROF. BIRCH is his name.\p"
-	.string "He lives right next door, so you should\n"
-	.string "go over and introduce yourself.$"
+	.string "Prof. Unicorn sent me something for you.\p"
+	.string "It's called a PokéNav.\p"
+	.string "It's a device that will help you\n"
+	.string "navigate around the region as a trainer.\p"
+	.string "Apparently, they're quite popular in\n"
+	.string "the Hoenn Region!$"
 
 PlayersHouse_1F_Text_SeeYouHoney:
-	.string "MOM: See you, honey!$"
+	.string "Mom: See you, honey!$"
 
 PlayersHouse_1F_Text_DidYouMeetProfBirch:
-	.string "MOM: Did you introduce yourself to\n"
-	.string "PROF. BIRCH?$"
+	.string "Mom: Did you find the lab on\n"
+	.string "Route 631?$"
 
 PlayersHouse_1F_Text_YouShouldRestABit:
-	.string "MOM: How are you doing, {PLAYER}?\n"
+	.string "Mom: How are you doing, {PLAYER}?\n"
 	.string "You look a little tired.\p"
 	.string "I think you should rest a bit.$"
 
 PlayersHouse_1F_Text_TakeCareHoney:
-	.string "MOM: Take care, honey!$"
+	.string "Mom: Take care, honey!$"
 
 PlayersHouse_1F_Text_GotDadsBadgeHeresSomethingFromMom:
 	.string "MOM: Oh? Did DAD give you that BADGE?\p"
@@ -358,8 +365,8 @@ PlayersHouse_1F_Text_IsThatAPokenav:
 	.string "… … …$"
 
 PlayersHouse_1F_Text_RegisteredMom:
-	.string "Registered MOM\n"
-	.string "in the POKéNAV.$"
+	.string "Registered Mom\n"
+	.string "in the PokéNav.$"
 
 PlayersHouse_1F_Text_Vigoroth1:
 	.string "Fugiiiiih!$"
