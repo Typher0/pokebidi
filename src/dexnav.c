@@ -642,6 +642,33 @@ static bool8 DexNavPickTile(enum EncounterType environment, u8 areaX, u8 areaY, 
                         scale = 440 - (smallScan * 200) - (GetPlayerDistance(topX, topY) / 2)  - (2 * (topX + topY));
                         weight = ((Random() % scale) < 1) && !MapGridGetCollisionAt(topX, topY);
                     }
+                    else if (currMapType == MAP_TYPE_UNDERGROUND_SNOWY)
+                    {
+                        // inside (cave)
+                        if (IsElevationMismatchAt(gObjectEvents[gPlayerAvatar.spriteId].currentElevation, topX, topY))
+                            break; //occurs at same z coord
+
+                        scale = 440 - (smallScan * 200) - (GetPlayerDistance(topX, topY) / 2)  - (2 * (topX + topY));
+                        weight = ((Random() % scale) < 1) && !MapGridGetCollisionAt(topX, topY);
+                    }
+                    else if (currMapType == MAP_TYPE_UNDERGROUND_MAGMA)
+                    {
+                        // inside (cave)
+                        if (IsElevationMismatchAt(gObjectEvents[gPlayerAvatar.spriteId].currentElevation, topX, topY))
+                            break; //occurs at same z coord
+
+                        scale = 440 - (smallScan * 200) - (GetPlayerDistance(topX, topY) / 2)  - (2 * (topX + topY));
+                        weight = ((Random() % scale) < 1) && !MapGridGetCollisionAt(topX, topY);
+                    }
+                    else if (currMapType == MAP_TYPE_UNDERGROUND_GRAY)
+                    {
+                        // inside (cave)
+                        if (IsElevationMismatchAt(gObjectEvents[gPlayerAvatar.spriteId].currentElevation, topX, topY))
+                            break; //occurs at same z coord
+
+                        scale = 440 - (smallScan * 200) - (GetPlayerDistance(topX, topY) / 2)  - (2 * (topX + topY));
+                        weight = ((Random() % scale) < 1) && !MapGridGetCollisionAt(topX, topY);
+                    }
                     else
                     {
                         // outdoors: grass

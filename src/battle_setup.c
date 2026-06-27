@@ -1012,6 +1012,12 @@ static enum TransitionType GetBattleTransitionTypeByMap(void)
     {
     case MAP_TYPE_UNDERGROUND:
         return TRANSITION_TYPE_CAVE;
+    case MAP_TYPE_UNDERGROUND_GRAY:
+        return TRANSITION_TYPE_CAVE;
+    case MAP_TYPE_UNDERGROUND_SNOWY:
+        return TRANSITION_TYPE_CAVE;
+    case MAP_TYPE_UNDERGROUND_MAGMA:
+        return TRANSITION_TYPE_CAVE;
     case MAP_TYPE_UNDERWATER:
         return TRANSITION_TYPE_WATER;
     default:
