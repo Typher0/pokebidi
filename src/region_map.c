@@ -1251,6 +1251,9 @@ static void InitMapBasedOnPlayerLocation(void)
             sRegionMap->playerIsInCave = TRUE;
         break;
     case MAP_TYPE_UNDERGROUND:
+    case MAP_TYPE_UNDERGROUND_GRAY:
+    case MAP_TYPE_UNDERGROUND_SNOWY:
+    case MAP_TYPE_UNDERGROUND_MAGMA:
     case MAP_TYPE_UNKNOWN:
         if (gMapHeader.allowEscaping)
         {
