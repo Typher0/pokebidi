@@ -2618,6 +2618,12 @@ static const u8 sDefaultDynamicWeathers[] =
     WEATHER_DROUGHT,
 };
 
+static const u8 sDynamicWeathers_SnowyAreas[] =
+{
+    WEATHER_SUNNY,
+    WEATHER_SNOW,
+};
+
 /*static const u8 sDynamicWeathers_DewfordTown[] =
 {
     WEATHER_SUNNY,
@@ -2628,6 +2634,13 @@ static const u8 sDefaultDynamicWeathers[] =
 static const struct DynamicWeatherPool sDynamicWeatherPools[] =
 {
     /*{ MAPSEC_DEWFORD_TOWN, DYNAMIC_WEATHER_POOL(sDynamicWeathers_DewfordTown) },*/
+    { MAPSEC_ROUTE_101, DYNAMIC_WEATHER_POOL(sDynamicWeathers_SnowyAreas)},
+    { MAPSEC_ROUTE_102, DYNAMIC_WEATHER_POOL(sDynamicWeathers_SnowyAreas)},
+    { MAPSEC_ROUTE_103, DYNAMIC_WEATHER_POOL(sDynamicWeathers_SnowyAreas)},
+    { MAPSEC_LITTLEROOT_TOWN, DYNAMIC_WEATHER_POOL(sDynamicWeathers_SnowyAreas)},
+    { MAPSEC_OLDALE_TOWN, DYNAMIC_WEATHER_POOL(sDynamicWeathers_SnowyAreas)},
+    { MAPSEC_PETALBURG_CITY, DYNAMIC_WEATHER_POOL(sDynamicWeathers_SnowyAreas)},
+    { MAPSEC_PETALBURG_WOODS, DYNAMIC_WEATHER_POOL(sDynamicWeathers_SnowyAreas)},
 };
 
 static const u8 *GetDynamicWeatherPool(u8 *count)
