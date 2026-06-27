@@ -242,12 +242,20 @@ RivalsHouse_2F_EventScript_Rival::
 	end
 
 RivalsHouse_2F_EventScript_May::
+	lockall
+	faceplayer
 	msgbox RivalsHouse_2F_Text_MayGettingReady, MSGBOX_DEFAULT
+	applymovement LOCALID_PLAYERS_BEDROOM_SEAN, Common_Movement_WalkInPlaceFasterUp
+	waitmovement 0
 	releaseall
 	end
 
 RivalsHouse_2F_EventScript_Brendan::
+	lockall
+	faceplayer
 	msgbox RivalsHouse_2F_Text_BrendanGettingReady, MSGBOX_DEFAULT
+	applymovement LOCALID_PLAYERS_BEDROOM_SEAN, Common_Movement_WalkInPlaceFasterUp
+	waitmovement 0
 	releaseall
 	end
 
@@ -332,10 +340,21 @@ RivalsHouse_2F_Text_MayWhoAreYou:
 	.string "{PLAYER}{KUN}, I'll catch you later!$"
 
 RivalsHouse_2F_Text_MayGettingReady:
-	.string "POKéMON fully restored!\n"
-	.string "Items ready, and…$"
+	.string "I know what you're thinking, what\n"
+	.string "kind of idiot doesn't know how to\l"
+	.string "set an analogue clock, right?\p"
+	.string "But before you talk crap, don't\n"
+	.string "forget whose clock this is that\l"
+	.string "isn't set in the first place.$"
 
 RivalsHouse_2F_Text_BrendanWhoAreYou:
+	.string "Hey!\n"
+	.string "You…\p"
+	.string "Who are you?\p"
+	.string "Oh, you're {PLAYER}, aren't you?\n"
+	.string "Moved in next door, right?\p"
+	.string "I didn't know that you're a girl.\p"
+	.string "Dad, PROF. BIRCH, said that our new\n"
 	.string "next-door neighbor is a GYM LEADER's\l"
 	.string "kid, so I assumed you'd be a guy.\p"
 	.string "My name's BRENDAN.\n"
@@ -349,8 +368,12 @@ RivalsHouse_2F_Text_BrendanWhoAreYou:
 	.string "Some other time, okay?$"
 
 RivalsHouse_2F_Text_BrendanGettingReady:
-	.string "POKéMON fully restored…\n"
-	.string "Items all packed, and…$"
+	.string "I know what you're thinking, what\n"
+	.string "kind of idiot doesn't know how to\l"
+	.string "set an analogue clock, right?\p"
+	.string "But before you talk crap, don't\n"
+	.string "forget whose clock this is that\l"
+	.string "isn't set in the first place.$"
 
 RivalsHouse_2F_Text_ItsRivalsPokeBall:
 	.string "It's {RIVAL}'s POKé BALL!\p"
