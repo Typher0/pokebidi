@@ -1542,6 +1542,16 @@ mapsec_u8_t GetLastUsedWarpMapSectionId(void)
 bool8 IsMapTypeOutdoors(enum MapType mapType)
 {
     if (mapType == MAP_TYPE_ROUTE
+     || mapType == MAP_TYPE_ROUTE_SNOWY
+     || mapType == MAP_TYPE_ROUTE_DESERT
+     || mapType == MAP_TYPE_SWAMP
+     || mapType == MAP_TYPE_SAFARI
+     || mapType == MAP_TYPE_CRAG
+     || mapType == MAP_TYPE_AUTUMN
+     || mapType == MAP_TYPE_MOUNTAIN_BROWN
+     || mapType == MAP_TYPE_MOUNTAIN_SNOWY
+     || mapType == MAP_TYPE_MOUNTAIN_GRAY
+     || mapType == MAP_TYPE_MOUNTAIN_VOLCANO
      || mapType == MAP_TYPE_TOWN
      || mapType == MAP_TYPE_UNDERWATER
      || mapType == MAP_TYPE_CITY
@@ -1554,6 +1564,16 @@ bool8 IsMapTypeOutdoors(enum MapType mapType)
 bool8 Overworld_MapTypeAllowsTeleportAndFly(enum MapType mapType)
 {
     if (mapType == MAP_TYPE_ROUTE
+     || mapType == MAP_TYPE_ROUTE_SNOWY
+     || mapType == MAP_TYPE_ROUTE_DESERT
+     || mapType == MAP_TYPE_SWAMP
+     || mapType == MAP_TYPE_SAFARI
+     || mapType == MAP_TYPE_CRAG
+     || mapType == MAP_TYPE_AUTUMN
+     || mapType == MAP_TYPE_MOUNTAIN_BROWN
+     || mapType == MAP_TYPE_MOUNTAIN_SNOWY
+     || mapType == MAP_TYPE_MOUNTAIN_GRAY
+     || mapType == MAP_TYPE_MOUNTAIN_VOLCANO
      || mapType == MAP_TYPE_TOWN
      || mapType == MAP_TYPE_OCEAN_ROUTE
      || mapType == MAP_TYPE_CITY)
@@ -1752,6 +1772,16 @@ bool32 MapHasNaturalLight(enum MapType mapType)
          && (mapType == MAP_TYPE_TOWN
           || mapType == MAP_TYPE_CITY
           || mapType == MAP_TYPE_ROUTE
+          || mapType == MAP_TYPE_ROUTE_SNOWY
+          || mapType == MAP_TYPE_ROUTE_DESERT
+          || mapType == MAP_TYPE_SWAMP
+          || mapType == MAP_TYPE_SAFARI
+          || mapType == MAP_TYPE_CRAG
+          || mapType == MAP_TYPE_AUTUMN
+          || mapType == MAP_TYPE_MOUNTAIN_BROWN
+          || mapType == MAP_TYPE_MOUNTAIN_SNOWY
+          || mapType == MAP_TYPE_MOUNTAIN_GRAY
+          || mapType == MAP_TYPE_MOUNTAIN_VOLCANO
           || mapType == MAP_TYPE_OCEAN_ROUTE));
 }
 
@@ -1760,6 +1790,9 @@ bool32 CurrentMapHasShadows(void)
     // Add all conditionals here for maps that shouldn't have shadows
     // By default only cave maps are excluded from having shadows under object events
     return (gMapHeader.mapType != MAP_TYPE_UNDERGROUND);
+    return (gMapHeader.mapType != MAP_TYPE_UNDERGROUND_SNOWY);
+    return (gMapHeader.mapType != MAP_TYPE_UNDERGROUND_MAGMA);
+    return (gMapHeader.mapType != MAP_TYPE_UNDERGROUND_GRAY);
 }
 
 // Update & mix day / night bg palettes (into unfaded)
