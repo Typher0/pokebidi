@@ -17,8 +17,8 @@
     {
       "local_id": "LOCALID_PLAYERS_HOUSE_1F_MOM",
       "graphics_id": "OBJ_EVENT_GFX_BW_MOM",
-      "x": 8,
-      "y": 9,
+      "x": 21,
+      "y": 11,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
@@ -31,8 +31,8 @@
     {
       "local_id": "LOCALID_PLAYERS_HOUSE_1F_DAD",
       "graphics_id": "OBJ_EVENT_GFX_NORMAN_1",
-      "x": 11,
-      "y": 9,
+      "x": 22,
+      "y": 11,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 1,
@@ -55,6 +55,32 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "0x0",
       "flag": "FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_BRENDAN"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BW_MOM",
+      "x": 8,
+      "y": 9,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "LittlerootTown_BrendansHouse_1F_EventScript_MomScript",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_CHEREN",
+      "x": 11,
+      "y": 9,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "LittlerootTown_BrendansHouse_1F_EventScript_DadScript",
+      "flag": "0"
     }
   ],
   "warp_events": [
@@ -84,7 +110,7 @@
     {
       "type": "trigger",
       "x": 2,
-      "y": 5,
+      "y": 1,
       "elevation": 0,
       "var": "VAR_LITTLEROOT_INTRO_STATE",
       "var_value": "4",
@@ -92,8 +118,8 @@
     },
     {
       "type": "trigger",
-      "x": 1,
-      "y": 4,
+      "x": 3,
+      "y": 1,
       "elevation": 0,
       "var": "VAR_LITTLEROOT_RIVAL_STATE",
       "var_value": "2",
@@ -101,8 +127,8 @@
     },
     {
       "type": "trigger",
-      "x": 2,
-      "y": 5,
+      "x": 1,
+      "y": 1,
       "elevation": 0,
       "var": "VAR_LITTLEROOT_RIVAL_STATE",
       "var_value": "2",
@@ -110,8 +136,8 @@
     },
     {
       "type": "trigger",
-      "x": 1,
-      "y": 5,
+      "x": 0,
+      "y": 1,
       "elevation": 0,
       "var": "VAR_LITTLEROOT_RIVAL_STATE",
       "var_value": "2",

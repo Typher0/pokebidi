@@ -5892,12 +5892,11 @@ Music: Twins
 Double Battle: No
 AI: Check Bad Move
 
-Munchlax @ Chople Berry
+Hamsnug @ Chople Berry
 Level: 8
-Ability: Pickup
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Ball: Luxury
-- Lick
+- Powder Snow
 - Tackle
 - Defense Curl
 - Odor Sleuth
@@ -11577,15 +11576,15 @@ Ball: Dusk
 - Confusion
 - Supersonic
 
-Roggenrola (F) @ Red Card
+Slowpoke (F) @ Red Card
 Level: 13
-Ability: Sturdy
+Ability: Unaware
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 Ball: Dusk
-- Sand Attack
+- Water Gun
 - Tackle
-- Harden
-- Rock Throw
+- Confusion
+- Curse
 
 Snorunt (F) @ Quick Claw
 Level: 15
@@ -11828,19 +11827,19 @@ Double Battle: No
 AI: Check Bad Move
 
 Kricketune
-Level: 12
+Level: 2
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Burmy Plant
-Level: 12
+Level: 2
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Burmy Sandy
-Level: 12
+Level: 2
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Burmy Trash
-Level: 12
+Level: 2
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_JOSE ===
@@ -11917,11 +11916,11 @@ Double Battle: No
 AI: Check Bad Move
 
 Skullarva
-Level: 13
+Level: 3
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Sewaddle
-Level: 13
+Level: 3
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_JAMES_2 ===

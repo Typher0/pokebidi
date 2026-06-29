@@ -36,6 +36,10 @@ Route101_EventScript_Boy::
 	msgbox Route101_Text_WildPokemonInTallGrass, MSGBOX_NPC
 	end
 
+Route101_EventScript_Scientist::
+	msgbox Route101_Text_LookAtTheLake, MSGBOX_NPC
+	end
+
 
 Route101_Text_TakeTiredPokemonToPokeCenter:
 	.string "You see that golden tree over there?\n"
@@ -46,9 +50,22 @@ Route101_Text_TakeTiredPokemonToPokeCenter:
 Route101_Text_WildPokemonInTallGrass:
 	.string "There are so many places you can find\n"
 	.string "wild Pokémon.\p"
-	.string "Climates like this tend to have Ice-types.\p"
+	.string "Climates like this tend to have\n"
+	.string "Ice-types, like Hamsnug.\p"
 	.string "If you want a variety of types,\n"
 	.string "You should go to different places.$"
+
+Route101_Text_LookAtTheLake:
+	.string "Take a look at that…\n"
+	.string "That lake is Lake Transcendence.\p"
+	.string "I must say, she's very aptly named…\p"
+	.string "Lake Transcendence is the largest\n"
+	.string "Lake in Banjime.\p"
+	.string "As such, Prof. Unicorn chose to\n"
+	.string "set up observation labs on either\l"
+	.string "side of the lake.\p"
+	.string "We've discovered many new species\n"
+	.string "of Pokémon here in the last few years.$"
 
 Route101_Text_RouteSign:
 	.string "Route 631\p"
@@ -57,10 +74,13 @@ Route101_Text_RouteSign:
 
 Route101_Text_Sign:
 	.string "Trainer Tips!\p"
-	.string "There are two kinds of icy status conditions.\p"
-	.string "A Pokémon will be Frozen by Special moves,\n"
-	.string "but it will only get Frostbite from Physicals.$"
+	.string "There are two kinds of icy\n"
+	.string "status conditions.\p"
+	.string "A Pokémon can be Frozen by Ice-type\n"
+	.string "Special moves, like Ice Beam.\p"
+	.string "If hit by a Physical move, like\n"
+	.string "Ice Punch, it could get Frostbite.$"
 
 Route101_Text_LabSign:
-	.string "Unicorn Research Facility and Laboratory\n"
+	.string "Unicorn Research Laboratory\n"
 	.string "Zephyr Town Branch$"

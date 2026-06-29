@@ -587,7 +587,7 @@
     {
       "id": "LAYOUT_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F",
       "name": "LittlerootTown_BrendansHouse_1F_Layout",
-      "width": 14,
+      "width": 23,
       "height": 12,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_PlayersHouse",

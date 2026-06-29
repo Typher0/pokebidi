@@ -236,13 +236,13 @@ LittlerootTown_Text_TownSign:
 	.string "“A town that can't be shaded any hue.”$"
 
 LittlerootTown_Text_ProfBirchsLab:
-	.string "PROF. BIRCH'S POKéMON LAB$"
+	.string "Sean's House$"
 
 LittlerootTown_Text_PlayersHouse:
-	.string "{PLAYER}'s HOUSE$"
+	.string "{PLAYER}'s House$"
 
 LittlerootTown_Text_ProfBirchsHouse:
-	.string "PROF. BIRCH'S HOUSE$"
+	.string "Amelia's House$"
 
 LittlerootTown_Text_BirchSomethingToShowYouAtLab:
 	.string "PROF. BIRCH: Well, well, {PLAYER}{KUN}!\n"

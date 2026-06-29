@@ -10,8 +10,6 @@ LittlerootTown_BrendansHouse_1F_OnLoad:
 	end
 
 LittlerootTown_BrendansHouse_1F_EventScript_SetMovingBoxes::
-	setmetatile 5, 4, METATILE_BrendansMaysHouse_MovingBox_Open, TRUE
-	setmetatile 5, 2, METATILE_BrendansMaysHouse_MovingBox_Closed, TRUE
 	return
 
 LittlerootTown_BrendansHouse_1F_EventScript_CheckShowShoesManual::
@@ -20,7 +18,6 @@ LittlerootTown_BrendansHouse_1F_EventScript_CheckShowShoesManual::
 	return
 
 LittlerootTown_BrendansHouse_1F_EventScript_ShowRunningShoesManual::
-	setmetatile 3, 7, METATILE_BrendansMaysHouse_BookOnTable, TRUE
 	return
 
 LittlerootTown_BrendansHouse_1F_OnTransition:
@@ -30,18 +27,18 @@ LittlerootTown_BrendansHouse_1F_OnTransition:
 	end
 
 LittlerootTown_BrendansHouse_1F_EventScript_MoveMomToStairs::
-	setobjectxyperm LOCALID_PLAYERS_HOUSE_1F_MOM, 8, 4
+	setobjectxyperm LOCALID_PLAYERS_HOUSE_1F_MOM, 21, 11
 	setobjectmovementtype LOCALID_PLAYERS_HOUSE_1F_MOM, MOVEMENT_TYPE_FACE_UP
 	return
 
 LittlerootTown_BrendansHouse_1F_EventScript_MoveMomToTV::
-	setobjectxyperm LOCALID_PLAYERS_HOUSE_1F_MOM, 5, 7
+	setobjectxyperm LOCALID_PLAYERS_HOUSE_1F_MOM, 21, 11
 	setobjectmovementtype LOCALID_PLAYERS_HOUSE_1F_MOM, MOVEMENT_TYPE_FACE_UP
 	return
 
 LittlerootTown_BrendansHouse_1F_EventScript_MoveMomToDoor::
-	setobjectxyperm LOCALID_PLAYERS_HOUSE_1F_MOM, 9, 8
-	setobjectmovementtype LOCALID_PLAYERS_HOUSE_1F_MOM, MOVEMENT_TYPE_FACE_UP
+	setobjectxyperm LOCALID_PLAYERS_HOUSE_1F_MOM, 21, 11
+	setobjectmovementtype LOCALID_PLAYERS_HOUSE_1F_MOM, MOVEMENT_TYPE_FACE_LEFT
 	return
 
 @ Many of the below scripts have no gender check because they assume youre in the correct house
@@ -73,7 +70,6 @@ LittlerootTown_BrendansHouse_1F_Movement_PushTowardStairs:
 LittlerootTown_BrendansHouse_1F_EventScript_EnterHouseMovingIn::
 	lockall
 	setvar VAR_0x8004, LOCALID_PLAYERS_HOUSE_1F_MOM
-	setvar VAR_0x8005, MALE
 	goto PlayersHouse_1F_EventScript_EnterHouseMovingIn
 	end
 
@@ -331,7 +327,8 @@ PlayersHouse_1F_Text_GoIntroduceYourselfNextDoor:
 	.string "It's a device that will help you\n"
 	.string "navigate around the region as a trainer.\p"
 	.string "Apparently, they're quite popular in\n"
-	.string "the Hoenn Region!$"
+	.string "the Hoenn Region!\p"
+	.string "Let me make sure you have my number…$"
 
 PlayersHouse_1F_Text_SeeYouHoney:
 	.string "Mom: See you, honey!$"
@@ -441,3 +438,51 @@ PlayersHouse_1F_Text_WhatColorDidTheySay:
 PlayersHouse_1F_Text_StillUnknownPokemon:
 	.string "MOM: Well, isn't that something!\n"
 	.string "There are still unknown POKéMON.$"
+
+LittlerootTown_BrendansHouse_1F_EventScript_MomScript::
+	lockall
+	faceplayer
+	goto_if_eq VAR_LITTLEROOT_INTRO_STATE, 2, LittlerootTown_BrendansHouse_1F_EventScript_HeresPokeNav
+	goto_if_eq VAR_LITTLEROOT_INTRO_STATE, 3, LittlerootTown_BrendansHouse_1F_EventScript_GoToLabHon
+	goto_if_eq VAR_LITTLEROOT_INTRO_STATE, 5, PlayersHouse_1F_EventScript_CheckGiveAmuletCoin
+	releaseall
+	end
+
+LittlerootTown_BrendansHouse_1F_EventScript_HeresPokeNav::
+	msgbox PlayersHouse_1F_Text_ItsOverWeMissedHim, MSGBOX_DEFAULT
+	closemessage
+	msgbox PlayersHouse_1F_Text_GoIntroduceYourselfNextDoor, MSGBOX_DEFAULT
+	closemessage
+	playfanfare MUS_OBTAIN_ITEM
+	message RustboroCity_DevonCorp_3F_Text_ReceivedPokenav
+	waitfanfare
+	setflag FLAG_SYS_POKENAV_GET
+	setflag FLAG_HAS_MATCH_CALL
+	setflag FLAG_ADDED_MATCH_CALL_TO_POKENAV 
+	delay 30
+	playfanfare MUS_REGISTER_MATCH_CALL
+	msgbox PlayersHouse_1F_Text_RegisteredMom, MSGBOX_DEFAULT
+	waitfanfare
+	closemessage
+	delay 30
+	setflag FLAG_ENABLE_MOM_MATCH_CALL
+	setvar VAR_LITTLEROOT_INTRO_STATE, 3
+	releaseall
+	end
+	
+LittlerootTown_BrendansHouse_1F_EventScript_GoToLabHon::
+	msgbox PlayersHouse_1F_Text_DidYouMeetProfBirch, MSGBOX_DEFAULT
+	closemessage
+	releaseall
+	end
+
+LittlerootTown_BrendansHouse_1F_EventScript_DadScript::
+	msgbox PlayersHouse_1F_Text_ProudOfYou, MSGBOX_NPC
+	release
+	end
+
+PlayersHouse_1F_Text_ProudOfYou:
+	.string "Dad: Hey there, kiddo!\p"
+	.string "How are you doing today?\n"
+	.string "Putting in your best effort?\l"
+	.string "I'm proud of you. Keep going!$"
