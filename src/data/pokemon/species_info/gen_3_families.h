@@ -7839,6 +7839,15 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .iconSprite = gMonIcon_Cacturado,
         .iconPalIndex = 1,
         SHADOW(2, 12, SHADOW_SIZE_M)
+        //OVERWORLD(
+        //    sPicTable_Cacturado,
+        //    SIZE_32x32,
+        //    SHADOW_SIZE_M,
+        //    TRACKS_FOOT,
+        //    sAnimTable_Following,
+        //    gOverworldPalette_Cacturado,
+        //    gShinyOverworldPalette_Cacturado
+        //)
         .levelUpLearnset = sCacturadoLevelUpLearnset,
         .teachableLearnset = sCacturadoTeachableLearnset,
 },

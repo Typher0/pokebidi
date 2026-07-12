@@ -1261,6 +1261,15 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .iconPalIndex = 5,
         SHADOW(6, 13, SHADOW_SIZE_L)
         FOOTPRINT(Noctowl)
+        //OVERWORLD(
+        //    sPicTable_Doctowl,
+        //    SIZE_32x32,
+        //    SHADOW_SIZE_M,
+        //    TRACKS_NONE,
+        //    sAnimTable_Following,
+        //    gOverworldPalette_Doctowl,
+        //    gShinyOverworldPalette_Doctowl
+        //)
         .levelUpLearnset = sDoctowlLevelUpLearnset,
         .teachableLearnset = sDoctowlTeachableLearnset,
     },
@@ -4312,10 +4321,19 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .iconSprite = gMonIcon_Esoterown,
         .iconPalIndex = 0,
         SHADOW(0, 11, SHADOW_SIZE_L)
+        //OVERWORLD(
+        //    sPicTable_Esoterown,
+        //    SIZE_32x32,
+        //    SHADOW_SIZE_M,
+        //    TRACKS_NONE,
+        //    sAnimTable_Following,
+        //    gOverworldPalette_Esoterown,
+        //    gShinyOverworldPalette_Esoterown
+        //)
         .levelUpLearnset = sEsoterownLevelUpLearnset,
         .teachableLearnset = sEsoterownTeachableLearnset,                            
     },
-#endif //GEN_9_CROSS_EVOS
+#endif // P_GEN_9_CROSS_EVOS
 #endif //P_FAMILY_UNOWN
 
 #if P_FAMILY_WOBBUFFET
