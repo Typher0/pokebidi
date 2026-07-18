@@ -65,7 +65,8 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_AMELIA",
+      "local_id": "LOCALID_ROUTE101_SEAN",
+      "graphics_id": "OBJ_EVENT_GFX_SEAN",
       "x": 26,
       "y": 12,
       "elevation": 0,
@@ -73,6 +74,45 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_SYS_POKEMON_GET"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(NONE)",
+      "x": 39,
+      "y": 9,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND_OWE",
+      "movement_range_x": 1,
+      "movement_range_y": 2,
+      "trainer_type": "TRAINER_TYPE_OW_WILD_ENCOUNTER",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(NONE)",
+      "x": 43,
+      "y": 18,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND_OWE",
+      "movement_range_x": 2,
+      "movement_range_y": 3,
+      "trainer_type": "TRAINER_TYPE_OW_WILD_ENCOUNTER",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(NONE)",
+      "x": 44,
+      "y": 25,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND_OWE",
+      "movement_range_x": 2,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_OW_WILD_ENCOUNTER",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
       "flag": "0"
@@ -83,7 +123,7 @@
       "x": 20,
       "y": 11,
       "elevation": 0,
-      "dest_map": "MAP_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB",
+      "dest_map": "MAP_LITTLEROOT_TOWN_UNICORN_LAB",
       "dest_warp_id": "0"
     }
   ],
@@ -93,18 +133,18 @@
       "x": 26,
       "y": 10,
       "elevation": 0,
-      "var": "VAR_LITTLEROOT_INTRO_STATE",
-      "var_value": "3",
-      "script": "NULL"
+      "var": "VAR_ROUTE101_STATE",
+      "var_value": "0",
+      "script": "Route101_EventScript_SeanLeft"
     },
     {
       "type": "trigger",
       "x": 27,
       "y": 10,
       "elevation": 0,
-      "var": "VAR_LITTLEROOT_INTRO_STATE",
-      "var_value": "3",
-      "script": "NULL"
+      "var": "VAR_ROUTE101_STATE",
+      "var_value": "0",
+      "script": "Route101_EventScript_SeanRight"
     }
   ],
   "bg_events": [

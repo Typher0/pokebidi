@@ -214,7 +214,7 @@
       "id": "LAYOUT_ROUTE104",
       "name": "Route104_Layout",
       "width": 100,
-      "height": 40,
+      "height": 42,
       "primary_tileset": "gTileset_Primary_North",
       "secondary_tileset": "gTileset_Zephyr",
       "border_filepath": "data/layouts/Route104/border.bin",
@@ -1479,7 +1479,7 @@
       "id": "LAYOUT_PETALBURG_WOODS",
       "name": "PetalburgWoods_Layout",
       "width": 48,
-      "height": 44,
+      "height": 48,
       "primary_tileset": "gTileset_Primary_North",
       "secondary_tileset": "gTileset_Route",
       "border_filepath": "data/layouts/PetalburgWoods/border.bin",
@@ -9415,6 +9415,47 @@
       "border_filepath": "data/layouts/PetalburgCity_OtnarsInn_3F/border.bin",
       "blockdata_filepath": "data/layouts/PetalburgCity_OtnarsInn_3F/map.bin",
       "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_LITTLEROOT_TOWN_SEANS_HOUSE",
+      "name": "LittlerootTown_SeansHouse_Layout",
+      "width": 11,
+      "height": 10,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PlayersHouse",
+      "border_filepath": "data/layouts/LittlerootTown_SeansHouse/border.bin",
+      "blockdata_filepath": "data/layouts/LittlerootTown_SeansHouse/map.bin"
+    },
+    {
+      "id": "LAYOUT_LITTLEROOT_TOWN_AMELIAS_HOUSE",
+      "name": "LittlerootTown_AmeliasHouse_Layout",
+      "width": 11,
+      "height": 10,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PlayersHouse",
+      "border_filepath": "data/layouts/LittlerootTown_AmeliasHouse/border.bin",
+      "blockdata_filepath": "data/layouts/LittlerootTown_AmeliasHouse/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE103_POKEMON_CENTER_1F",
+      "name": "Route103_PokemonCenter_1F_Layout",
+      "width": 14,
+      "height": 17,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PokemonCenter",
+      "border_filepath": "data/layouts/Route103_PokemonCenter_1F/border.bin",
+      "blockdata_filepath": "data/layouts/Route103_PokemonCenter_1F/map.bin",
+      "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_LITTLEROOT_TOWN_UNICORN_LAB",
+      "name": "LittlerootTown_UnicornLab_Layout",
+      "width": 23,
+      "height": 20,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PlayersHouse",
+      "border_filepath": "data/layouts/LittlerootTown_UnicornLab/border.bin",
+      "blockdata_filepath": "data/layouts/LittlerootTown_UnicornLab/map.bin"
     }
   ]
 }

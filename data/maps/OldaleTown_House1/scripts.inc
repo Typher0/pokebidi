@@ -6,7 +6,7 @@ OldaleTown_House1_EventScript_Woman::
 	faceplayer
 	goto_if_set FLAG_UNUSED_0x1DF, OldaleTown_House1_EventScript_Woman2
 	msgbox OldaleTown_House1_Text_LeftPokemonGoesOutFirst, MSGBOX_DEFAULT
-	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
+	closemessage
 	setflag FLAG_UNUSED_0x1DF
 	giveitem ITEM_HONEY
 	release

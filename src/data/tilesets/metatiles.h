@@ -423,3 +423,6 @@ const u16 gMetatileAttributes_HallOfFame[] = INCBIN_U16("data/tilesets/secondary
 
 const u16 gMetatiles_PlayersHouse[] = INCBIN_U16("data/tilesets/secondary/players_house/metatiles.bin");
 const u16 gMetatileAttributes_PlayersHouse[] = INCBIN_U16("data/tilesets/secondary/players_house/metatile_attributes.bin");
+
+const u16 gMetatiles_PapillysGym[] = INCBIN_U16("data/tilesets/secondary/papillys_gym/metatiles.bin");
+const u16 gMetatileAttributes_PapillysGym[] = INCBIN_U16("data/tilesets/secondary/papillys_gym/metatile_attributes.bin");

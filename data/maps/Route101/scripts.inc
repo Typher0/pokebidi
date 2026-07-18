@@ -12,8 +12,6 @@ Route101_OnFrame:
 	.2byte 0
 
 Route101_EventScript_HideMapNamePopup::
-	setflag FLAG_HIDE_MAP_NAME_POPUP
-	setvar VAR_ROUTE101_STATE, 1
 	end
 
 Route101_EventScript_RouteSign::
@@ -40,6 +38,122 @@ Route101_EventScript_Scientist::
 	msgbox Route101_Text_LookAtTheLake, MSGBOX_NPC
 	end
 
+Route101_EventScript_SeanLeft::
+	lockall
+	setvar VAR_ROUTE101_STATE, 1
+	playse SE_PIN
+	applymovement LOCALID_ROUTE101_SEAN, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement LOCALID_ROUTE101_SEAN, Common_Movement_Delay48
+	waitmovement 0
+	delay 10
+	playbgm MUS_ENCOUNTER_BRENDAN, TRUE
+	applymovement LOCALID_ROUTE101_SEAN, Route101_Movement_SeanLeft
+	waitmovement 0
+	msgbox Route101_Text_GoToLab, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_ROUTE101_SEAN, Route101_Movement_SeanLab
+	applymovement LOCALID_PLAYER, Route101_Movement_PlayerLab
+	waitmovement 0
+	savebgm MUS_DUMMY
+	fadedefaultbgm
+	delay 20
+	playse SE_EXIT
+	clearflag FLAG_HIDE_MAP_NAME_POPUP
+	warp MAP_LITTLEROOT_TOWN_UNICORN_LAB, 11, 11
+	waitstate
+	releaseall
+	end
+
+Route101_EventScript_SeanRight::
+	lockall
+	setvar VAR_ROUTE101_STATE, 1
+	playse SE_PIN
+	applymovement LOCALID_ROUTE101_SEAN, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement LOCALID_ROUTE101_SEAN, Common_Movement_Delay48
+	waitmovement 0
+	delay 10
+	playbgm MUS_ENCOUNTER_BRENDAN, TRUE
+	applymovement LOCALID_ROUTE101_SEAN, Route101_Movement_SeanRight
+	waitmovement 0
+	msgbox Route101_Text_GoToLab, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_ROUTE101_SEAN, Route101_Movement_SeanLabRight
+	applymovement LOCALID_PLAYER, Route101_Movement_PlayerLabRight
+	waitmovement 0
+	savebgm MUS_DUMMY
+	fadedefaultbgm
+	delay 20
+	playse SE_EXIT
+	clearflag FLAG_HIDE_MAP_NAME_POPUP
+	warp MAP_LITTLEROOT_TOWN_UNICORN_LAB, 11, 11
+	waitstate
+	releaseall
+	end
+
+Route101_Movement_SeanLeft:
+	walk_up
+	step_end
+
+Route101_Movement_SeanRight:
+	walk_right
+	walk_up
+	step_end
+
+Route101_Movement_SeanLab:
+	walk_down
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_in_place_faster_up
+	delay_16
+	step_end
+
+Route101_Movement_SeanLabRight:
+	walk_down
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_in_place_faster_up
+	delay_16
+	step_end
+
+Route101_Movement_PlayerLab:
+	walk_down
+	walk_down
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	delay_16
+	step_end
+
+Route101_Movement_PlayerLabRight:
+	walk_down
+	walk_down
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	delay_16
+	step_end
+
+Route101_Text_GoToLab:
+	.string "Sean: {PLAYER}!\n"
+	.string "There you are!\p"
+	.string "The Lab's right here, come with\n"
+	.string "me, and let's get our first Pokémon!$"
 
 Route101_Text_TakeTiredPokemonToPokeCenter:
 	.string "You see that golden tree over there?\n"

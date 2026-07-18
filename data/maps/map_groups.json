@@ -136,7 +136,8 @@
     "Underwater_Route125",
     "OcchitaVillage",
     "GanariaTown",
-    "KingstonCity"
+    "KingstonCity",
+    "LittlerootTown_UnicornLab"
   ],
   "gMapGroup_IndoorLittleroot": [
     "LittlerootTown_BrendansHouse_1F",
@@ -147,7 +148,9 @@
     "PlayersHouseHallway",
     "PlayersHouseBathroom",
     "PlayersHouseSistersRoom",
-    "PlayersHouseParentsRoom"
+    "PlayersHouseParentsRoom",
+    "LittlerootTown_SeansHouse",
+    "LittlerootTown_AmeliasHouse"
   ],
   "gMapGroup_IndoorOldale": [
     "OldaleTown_House1",
@@ -347,7 +350,8 @@
   ],
   "gMapGroup_IndoorRoute104": [
     "Route104_MrBrineysHouse",
-    "Route104_PrettyPetalFlowerShop"
+    "Route104_PrettyPetalFlowerShop",
+    "Route103_PokemonCenter_1F"
   ],
   "gMapGroup_IndoorRoute111": [
     "Route111_WinstrateFamilysHouse",

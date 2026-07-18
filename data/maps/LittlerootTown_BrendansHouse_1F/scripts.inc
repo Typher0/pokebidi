@@ -52,14 +52,6 @@ LittlerootTown_BrendansHouse_1F_OnFrame:
 	.2byte 0
 
 LittlerootTown_BrendansHouse_1F_EventScript_GoUpstairsToSetClock::
-	lockall
-	msgbox PlayersHouse_1F_Text_GoSetTheClock, MSGBOX_DEFAULT
-	closemessage
-	applymovement LOCALID_PLAYER, LittlerootTown_BrendansHouse_1F_Movement_PushTowardStairs
-	applymovement LOCALID_PLAYERS_HOUSE_1F_MOM, LittlerootTown_BrendansHouse_1F_Movement_PushTowardStairs
-	waitmovement 0
-	warp MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F, 7, 1
-	waitstate
 	releaseall
 	end
 
@@ -68,8 +60,6 @@ LittlerootTown_BrendansHouse_1F_Movement_PushTowardStairs:
 	step_end
 
 LittlerootTown_BrendansHouse_1F_EventScript_EnterHouseMovingIn::
-	lockall
-	setvar VAR_0x8004, LOCALID_PLAYERS_HOUSE_1F_MOM
 	goto PlayersHouse_1F_EventScript_EnterHouseMovingIn
 	end
 
@@ -443,8 +433,8 @@ LittlerootTown_BrendansHouse_1F_EventScript_MomScript::
 	lockall
 	faceplayer
 	goto_if_eq VAR_LITTLEROOT_INTRO_STATE, 2, LittlerootTown_BrendansHouse_1F_EventScript_HeresPokeNav
-	goto_if_eq VAR_LITTLEROOT_INTRO_STATE, 3, LittlerootTown_BrendansHouse_1F_EventScript_GoToLabHon
-	goto_if_eq VAR_LITTLEROOT_INTRO_STATE, 5, PlayersHouse_1F_EventScript_CheckGiveAmuletCoin
+	goto_if_eq VAR_LITTLEROOT_INTRO_STATE, 4, LittlerootTown_BrendansHouse_1F_EventScript_GoToLabHon
+	goto_if_eq VAR_LITTLEROOT_INTRO_STATE, 7, PlayersHouse_1F_EventScript_CheckGiveAmuletCoin
 	releaseall
 	end
 
@@ -459,6 +449,7 @@ LittlerootTown_BrendansHouse_1F_EventScript_HeresPokeNav::
 	setflag FLAG_SYS_POKENAV_GET
 	setflag FLAG_HAS_MATCH_CALL
 	setflag FLAG_ADDED_MATCH_CALL_TO_POKENAV 
+	setvar VAR_LITTLEROOT_INTRO_STATE, 4
 	delay 30
 	playfanfare MUS_REGISTER_MATCH_CALL
 	msgbox PlayersHouse_1F_Text_RegisteredMom, MSGBOX_DEFAULT
@@ -466,13 +457,21 @@ LittlerootTown_BrendansHouse_1F_EventScript_HeresPokeNav::
 	closemessage
 	delay 30
 	setflag FLAG_ENABLE_MOM_MATCH_CALL
-	setvar VAR_LITTLEROOT_INTRO_STATE, 3
 	releaseall
 	end
 	
 LittlerootTown_BrendansHouse_1F_EventScript_GoToLabHon::
 	msgbox PlayersHouse_1F_Text_DidYouMeetProfBirch, MSGBOX_DEFAULT
 	closemessage
+	releaseall
+	end
+
+LittlerootTown_BrendansHouse_1F_EventScript_ComeSeeMom::
+	lockall
+	msgbox PlayersHouse_1F_Text_ComeSeeMom, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_PLAYER, LittlerootTown_BrendansHouse_1F_Movement_GoUp
+	waitmovement 0
 	releaseall
 	end
 
@@ -486,3 +485,10 @@ PlayersHouse_1F_Text_ProudOfYou:
 	.string "How are you doing today?\n"
 	.string "Putting in your best effort?\l"
 	.string "I'm proud of you. Keep going!$"
+
+PlayersHouse_1F_Text_ComeSeeMom:
+	.string "Mom: {PLAYER}, come see Mom.$"
+
+LittlerootTown_BrendansHouse_1F_Movement_GoUp:
+	walk_up
+	step_end

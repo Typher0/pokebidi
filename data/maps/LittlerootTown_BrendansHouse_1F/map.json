@@ -142,6 +142,42 @@
       "var": "VAR_LITTLEROOT_RIVAL_STATE",
       "var_value": "2",
       "script": "LittlerootTown_BrendansHouse_1F_EventScript_MeetRival2"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_LITTLEROOT_INTRO_STATE",
+      "var_value": "2",
+      "script": "LittlerootTown_BrendansHouse_1F_EventScript_ComeSeeMom"
+    },
+    {
+      "type": "trigger",
+      "x": 4,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_LITTLEROOT_INTRO_STATE",
+      "var_value": "2",
+      "script": "LittlerootTown_BrendansHouse_1F_EventScript_ComeSeeMom"
+    },
+    {
+      "type": "trigger",
+      "x": 3,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_LITTLEROOT_INTRO_STATE",
+      "var_value": "2",
+      "script": "LittlerootTown_BrendansHouse_1F_EventScript_ComeSeeMom"
+    },
+    {
+      "type": "trigger",
+      "x": 2,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_LITTLEROOT_INTRO_STATE",
+      "var_value": "2",
+      "script": "LittlerootTown_BrendansHouse_1F_EventScript_ComeSeeMom"
     }
   ],
   "bg_events": [],

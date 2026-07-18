@@ -1747,3 +1747,11 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/scripts/battle_frontier.inc"
 	.include "data/scripts/apricorn_tree.inc"
 	.include "data/scripts/wild_encounter.inc"
+
+	.include "data/maps/LittlerootTown_SeansHouse/scripts.inc"
+
+	.include "data/maps/LittlerootTown_AmeliasHouse/scripts.inc"
+
+	.include "data/maps/Route103_PokemonCenter_1F/scripts.inc"
+
+	.include "data/maps/LittlerootTown_UnicornLab/scripts.inc"

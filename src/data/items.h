@@ -14517,9 +14517,9 @@ const struct ItemInfo gItemsInfo[] =
         .name = ITEM_NAME("Letter"),
         .price = 0,
         .description = COMPOUND_STRING(
-            "A letter to Steven\n"
-            "from the President\n"
-            "of the Devon Corp."),
+            "A letter from Anton\n"
+            "addressed to his wife\n"
+            "in Papillys City."),
         .importance = 2,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,

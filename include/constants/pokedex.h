@@ -1213,36 +1213,20 @@ enum NationalDexOrder
 #endif
 
 #define FOREACH_SPECIES_IN_HOENN_DEX_ORDER(F) \
-    F(TREECKO) \
-    F(GROVYLE) \
-    F(SCEPTILE) \
-    F(TURTWIG) \
-    F(GROTLE) \
-    F(TORTERRA) \
-    F(SNIVY) \
-    F(SERVINE) \
-    F(SERPERIOR) \
-    F(CHIMCHAR) \
-    F(MONFERNO) \
-    F(INFERNAPE) \
-    F(TEPIG) \
-    F(PIGNITE) \
-    F(EMBOAR) \
-    F(SCORBUNNY) \
-    F(RABOOT) \
-    F(CINDERACE) \
-    F(TOTODILE) \
-    F(CROCONAW) \
-    F(FERALIGATR) \
-    F(OSHAWOTT) \
-    F(DEWOTT) \
-    F(SAMUROTT) \
-    F(FROAKIE) \
-    F(FROGADIER) \
-    F(GRENINJA) \
+    F(ROWLET) \
+    F(DARTRIX) \
+    F(DECIDUEYE) \
+    F(CYNDAQUIL) \
+    F(QUILAVA) \
+    F(TYPHLOSION) \
+    F(SQUIRTLE) \
+    F(WARTORTLE) \
+    F(BLASTOISE) \
     F(SWINUB) \
     F(PILOSWINE) \
     F(MAMOSWINE) \
+    F(TAILLOW) \
+    F(SWELLOW) \
     F(SNORUNT) \
     F(GLALIE) \
     F(FROSLASS) \
@@ -1266,6 +1250,9 @@ enum NationalDexOrder
     F(SNORLAX) \
     F(PINECO) \
     F(FORRETRESS) \
+    F(BURMY) \
+    F(WORMADAM) \
+    F(MOTHIM) \
     F(COMBEE) \
     F(VESPIQUEN) \
     F(CHERUBI) \
@@ -1402,8 +1389,14 @@ enum NationalDexOrder
     F(ABRA) \
     F(KADABRA) \
     F(ALAKAZAM) \
+    F(BELLSPROUT) \
+    F(WEEPINBELL) \
+    F(VICTREEBEL) \
     F(PONYTA) \
     F(RAPIDASH) \
+    F(HAPPINY) \
+    F(CHANSEY) \
+    F(BLISSEY) \
     F(BOUFFALANT) \
     F(DITTO) \
     F(MAREEP) \
@@ -1415,6 +1408,7 @@ enum NationalDexOrder
     F(WOOPER) \
     F(QUAGSIRE) \
     F(CLODSIRE) \
+    F(HERACROSS) \
     F(MILTANK) \
     F(TROPIUS) \
     F(RIOLU) \
@@ -1704,6 +1698,15 @@ enum NationalDexOrder
     F(KINGAMBIT) \
     F(HEATMOR) \
     F(DURANT) \
+    F(SNIVY) \
+    F(SERVINE) \
+    F(SERPERIOR) \
+    F(TEPIG) \
+    F(PIGNITE) \
+    F(EMBOAR) \
+    F(OSHAWOTT) \
+    F(DEWOTT) \
+    F(SAMUROTT) \
     F(CHELONITE) \
     F(GALAXAGOS) \
     F(REGIROCK) \
@@ -1715,9 +1718,25 @@ enum NationalDexOrder
     F(XERNEAS) \
     F(YVELTAL) \
     F(ZYGARDE)\
+    F(DIANCIE) \
+    F(HOOPA) \
+    F(VOLCANION) \
+    F(COBALION) \
+    F(TERRAKION) \
+    F(VIRIZION) \
+    F(TORNADUS) \
+    F(THUNDURUS) \
+    F(RESHIRAM) \
+    F(ZEKROM) \
+    F(VICTINI) \
+    F(LANDORUS) \
+    F(KYUREM) \
     F(HATHROSTUS) \
     F(BABOSIRIS) \
     F(HUBRISET) \
+    F(KELDEO) \
+    F(MELOETTA) \
+    F(GENESECT) \
     F(ROYGIBIV) \
     F(WENDINGO)
 

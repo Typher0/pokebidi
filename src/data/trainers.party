@@ -2565,7 +2565,7 @@ Double Battle: No
 AI: Check Bad Move
 
 Zigzagoon @ Nugget
-Level: 7
+Level: 3
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_MOLLIE ===
@@ -6733,23 +6733,15 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_IVAN ===
 Name: Carl
-Class: Fisherman
-Pic: Fisherman
+Class: Bug Catcher
+Pic: Bug Catcher
 Gender: Male
-Music: Hiker
+Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Cuppy
-Level: 10
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Cuppy
-Level: 11
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Cuppy
-Level: 12
+Sewaddle
+Level: 3
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_CLAUDE ===
@@ -9931,17 +9923,18 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Thunderbolt
 
 === TRAINER_BRENDAN_ROUTE_103_MUDKIP ===
-Name: Brendan
+Name: Sean
 Class: Rival
-Pic: Style M Platinum
+Pic: Rival M Sean
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Basic Trainer
+AI: Force Setup First Turn
+Mugshot: Yellow
 
-Treecko
+Cyndaquil (M)
 Level: 5
-Ability: Shed Skin
+Ability: Blaze
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_BRENDAN_ROUTE_110_MUDKIP ===
@@ -10002,17 +9995,18 @@ Ability: Shed Skin
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 === TRAINER_BRENDAN_ROUTE_103_TREECKO ===
-Name: Brendan
+Name: Sean
 Class: Rival
-Pic: Style M Platinum
+Pic: Rival M Sean
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Force Setup First Turn
+AI: Force Setup First Turn
+Mugshot: Yellow
 
-Chimchar
+Squirtle (M)
 Level: 5
-Ability: Iron Fist
+Ability: Torrent
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_BRENDAN_ROUTE_110_TREECKO ===
@@ -10073,17 +10067,18 @@ Ability: Iron Fist
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 === TRAINER_BRENDAN_ROUTE_103_TORCHIC ===
-Name: Brendan
+Name: Sean
 Class: Rival
-Pic: Style M Platinum
+Pic: Rival M Sean
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Basic Trainer
+AI: Force Setup First Turn
+Mugshot: Yellow
 
-Totodile
+Rowlet (M)
 Level: 5
-Ability: Strong Jaw
+Ability: Overgrow
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_BRENDAN_ROUTE_110_TORCHIC ===
@@ -10144,41 +10139,54 @@ Ability: Strong Jaw
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 === TRAINER_MAY_ROUTE_103_MUDKIP ===
-Name: May
+Name: Amelia
 Class: Rival
-Pic: Style F Platinum
+Pic: Rival F Amelia
 Gender: Female
 Music: Female
 Double Battle: No
-AI: Basic Trainer
+AI: Force Setup First Turn
+Mugshot: Green
 
-Chikorita
+Rowlet (F)
 Level: 5
-Ability: Flower Veil
+Ability: Overgrow
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_MAY_ROUTE_110_MUDKIP ===
-Name: May
+Name: Amelia
 Class: Rival
-Pic: Style F Platinum
+Pic: Rival F Amelia
 Gender: Female
 Music: Female
 Double Battle: No
-AI: Smart Trainer
+AI: Smart Trainer / Ace Pokemon
+Mugshot: Green
 
-Marill
-Level: 20
-Ability: Huge Power
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Taillow (F)
+Level: 7
+Ability: Guts
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Fettlekish
-Level: 20
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Pikachu (F)
+Level: 7
+Ability: Static
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Bayleef @ Oran Berry
-Level: 22
-Ability: Flower Veil
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Swinub (F)
+Level: 8
+Ability: Snow Cloak
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Rowlet (F) @ Oran Berry
+Level: 9
+Ability: Overgrow
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Happiness: 175
+- Return
+- Growl
+- Peck
+- Leafage
 
 === TRAINER_MAY_ROUTE_119_MUDKIP ===
 Name: May
@@ -10217,41 +10225,54 @@ Ability: Flower Veil
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 === TRAINER_MAY_ROUTE_103_TREECKO ===
-Name: May
+Name: Amelia
 Class: Rival
-Pic: Style F Platinum
+Pic: Rival F Amelia
 Gender: Female
 Music: Female
 Double Battle: No
-AI: Basic Trainer
+AI: Force Setup First Turn
+Mugshot: Green
 
-Charmander
+Cyndaquil (F)
 Level: 5
-Ability: Tough Claws
+Ability: Blaze
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_MAY_ROUTE_110_TREECKO ===
-Name: May
+Name: Amelia
 Class: Rival
-Pic: Style F Platinum
+Pic: Rival F Amelia
 Gender: Female
 Music: Female
 Double Battle: No
-AI: Smart Trainer
+AI: Smart Trainer / Ace Pokemon
+Mugshot: Green
 
-Marill
-Level: 20
-Ability: Huge Power
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Taillow (F)
+Level: 7
+Ability: Guts
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Golterra
-Level: 20
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Pikachu (F)
+Level: 7
+Ability: Static
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Charmeleon @ Oran Berry
-Level: 22
-Ability: Tough Claws
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Swinub (F)
+Level: 8
+Ability: Snow Cloak
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Cyndaquil (F) @ Oran Berry
+Level: 9
+Ability: Blaze
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Happiness: 175
+- Return
+- Smokescreen
+- Leer
+- Ember
 
 === TRAINER_MAY_ROUTE_119_TREECKO ===
 Name: May
@@ -10290,40 +10311,54 @@ Ability: Tough Claws
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 === TRAINER_MAY_ROUTE_103_TORCHIC ===
-Name: May
+Name: Amelia
 Class: Rival
-Pic: Style F Platinum
+Pic: Rival F Amelia
 Gender: Female
 Music: Female
 Double Battle: No
-AI: Basic Trainer
+AI: Force Setup First Turn
+Mugshot: Green
 
-Froakie
+Squirtle (F)
 Level: 5
-Ability: Skill Link
+Ability: Torrent
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_MAY_ROUTE_110_TORCHIC ===
-Name: May
+Name: Amelia
 Class: Rival
-Pic: Style F Platinum
+Pic: Rival F Amelia
 Gender: Female
 Music: Female
 Double Battle: No
-AI: Smart Trainer
+AI: Smart Trainer / Ace Pokemon
+Mugshot: Green
 
-Golterra
-Level: 20
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Taillow (F)
+Level: 7
+Ability: Guts
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Fettlekish
-Level: 20
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Pikachu (F)
+Level: 7
+Ability: Static
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Frogadier @ Oran Berry
-Level: 22
-Ability: Skill Link
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Swinub (F)
+Level: 8
+Ability: Snow Cloak
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Squirtle (F) @ Oran Berry
+Level: 9
+Ability: Torrent
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Happiness: 175
+- Return
+- Tail Whip
+- Withdraw
+- Water Gun
 
 === TRAINER_MAY_ROUTE_119_TORCHIC ===
 Name: MAY
@@ -11826,7 +11861,7 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Kricketune
+Kricketot
 Level: 2
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -13569,15 +13604,15 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_DARIAN ===
 Name: Darian
-Class: Fisherman
-Pic: Fisherman
+Class: Bug Catcher
+Pic: Bug Catcher
 Gender: Male
-Music: Hiker
+Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Slowpoke
-Level: 13
+Snom
+Level: 2
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_HAILEY ===
@@ -17476,3 +17511,5 @@ Double Battle: No
 Kyogre
 Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+
