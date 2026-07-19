@@ -180,7 +180,7 @@ RustboroCity_Gym_Text_MarcPostBattle:
 
 RustboroCity_Gym_Text_RoxanneIntro:
 	.string "Wo-hohohohoho!\p"
-	.string "Hello! I am Otnar, the Papilys\n"
+	.string "Hello! I am Otnar, the Papilys City\n"
 	.string "Pokémon Gym Leader.\p"
 	.string "After decades of exploration of\n"
 	.string "Banjime's frigid landscape, I have\l"

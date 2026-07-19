@@ -6357,8 +6357,8 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_JOSH ===
 Name: Michael
-Class: Youngster
-Pic: Youngster
+Class: Expert
+Pic: Expert M
 Gender: Male
 Music: Male
 Double Battle: No
@@ -6367,12 +6367,11 @@ AI: Check Bad Move
 Snorunt (M)
 Level: 9
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Tackle
 
 === TRAINER_TOMMY ===
 Name: Tommy
-Class: Youngster
-Pic: Youngster
+Class: Expert
+Pic: Expert M
 Gender: Male
 Music: Male
 Double Battle: No
@@ -11124,7 +11123,7 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Cabob
+Swinub
 Level: 8
 IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
 
