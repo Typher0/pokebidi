@@ -11593,7 +11593,7 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 === TRAINER_MAXIE_MT_CHIMNEY ===
 Name: Bellis
-Class: Magma Admin
+Class: Singularity Admin
 Pic: singularity com bellis
 Gender: Female
 Music: Magma
@@ -11613,7 +11613,7 @@ Ball: Dusk
 
 Slowpoke (F) @ Red Card
 Level: 13
-Ability: Unaware
+Ability: Own Tempo
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 Ball: Dusk
 - Water Gun
