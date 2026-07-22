@@ -360,6 +360,7 @@ const u32 gObjectEventPic_Noland[] = INCGFX_U32("graphics/object_events/pics/peo
 const u32 gObjectEventPic_Lucy[] = INCGFX_U32("graphics/object_events/pics/people/frontier_brains/lucy.png", ".4bpp", "-mwidth 2 -mheight 4");
 const u32 gObjectEventPic_Brandon[] = INCGFX_U32("graphics/object_events/pics/people/frontier_brains/brandon.png", ".4bpp", "-mwidth 2 -mheight 4");
 const u32 gObjectEventPic_PokeBall[] = INCGFX_U32("graphics/object_events/pics/misc/ball_poke.png", ".4bpp", "-mwidth 2 -mheight 4");
+const u32 gObjectEventPic_TMBall[] = INCGFX_U32("graphics/object_events/pics/misc/ball_tm.png", ".4bpp", "-mwidth 2 -mheight 4");
 
 const u32 gObjectEventPic_DeoxysOld[] = INCGFX_U32("graphics/object_events/pics/pokemon_old/deoxys.png", ".4bpp", "-mwidth 4 -mheight 4");
 const u32 gObjectEventPic_MewOld[] = INCGFX_U32("graphics/object_events/pics/pokemon_old/mew.png", ".4bpp", "-mwidth 2 -mheight 4");
