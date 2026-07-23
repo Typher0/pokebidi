@@ -16,10 +16,10 @@
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_SUPERNERD",
-      "x": 11,
-      "y": 4,
+      "x": 2,
+      "y": 14,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -29,7 +29,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_NEO_ZINZOLIN",
-      "x": 17,
+      "x": 2,
       "y": 5,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
@@ -42,7 +42,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_NEO_PLASMA_F",
-      "x": 19,
+      "x": 1,
       "y": 2,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
@@ -55,8 +55,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_NEO_PLASMA_M",
-      "x": 22,
-      "y": 5,
+      "x": 7,
+      "y": 4,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 2,
@@ -69,7 +69,7 @@
   ],
   "warp_events": [
     {
-      "x": 4,
+      "x": 14,
       "y": 1,
       "elevation": 0,
       "dest_map": "MAP_PETALBURG_CITY_OTNARS_INN_2F",

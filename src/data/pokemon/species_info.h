@@ -884,7 +884,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         )
         .levelUpLearnset = sKakoneLevelUpLearnset,
         .teachableLearnset = sKakoneTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 23, SPECIES_MORTASQUE}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 16, SPECIES_MORTASQUE}),
 },
 
     [SPECIES_MORTASQUE] =

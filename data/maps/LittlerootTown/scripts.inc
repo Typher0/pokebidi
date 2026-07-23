@@ -144,6 +144,8 @@ LittlerootTown_EventScript_Gentleman::
 	giveitem ITEM_LETTER
 	waitfanfare
 	setflag FLAG_RECEIVED_LETTER
+	setflag FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG
+	setflag FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE
 	release
 	end
 
@@ -182,8 +184,6 @@ LittlerootTown_EventScript_ManSouth::
 	applymovement LOCALID_LITTLEROOTTOWN_ROADBLOCKMAN, LittlerootTown_Movement_MoveRight
 	applymovement LOCALID_PLAYER, LittlerootTown_Movement_MoveRight
 	waitmovement 0
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterDown
-	waitmovement 0
 	applymovement LOCALID_LITTLEROOTTOWN_ROADBLOCKMAN, LittlerootTown_Movement_BackToBenchSouth
 	waitmovement 0
 	releaseall
@@ -207,8 +207,6 @@ LittlerootTown_EventScript_ManMid::
 	applymovement LOCALID_LITTLEROOTTOWN_ROADBLOCKMAN, LittlerootTown_Movement_MoveRight
 	applymovement LOCALID_PLAYER, LittlerootTown_Movement_MoveRight
 	waitmovement 0
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterDown
-	waitmovement 0
 	applymovement LOCALID_LITTLEROOTTOWN_ROADBLOCKMAN, LittlerootTown_Movement_BackToBenchMid
 	waitmovement 0
 	releaseall
@@ -231,8 +229,6 @@ LittlerootTown_EventScript_ManNorth::
 	closemessage
 	applymovement LOCALID_LITTLEROOTTOWN_ROADBLOCKMAN, LittlerootTown_Movement_MoveRight
 	applymovement LOCALID_PLAYER, LittlerootTown_Movement_MoveRight
-	waitmovement 0
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterDown
 	waitmovement 0
 	applymovement LOCALID_LITTLEROOTTOWN_ROADBLOCKMAN, LittlerootTown_Movement_BackToBenchNorth
 	waitmovement 0

@@ -57,8 +57,15 @@ RustboroCity_Gym_EventScript_GymGuide::
 	lock
 	faceplayer
 	goto_if_set FLAG_DEFEATED_RUSTBORO_GYM, RustboroCity_Gym_EventScript_GymGuidePostVictory
+	goto_if_set FLAG_TEMP_1, RustboroCity_Gym_EventScript_GymGuideGotWater
 	msgbox RustboroCity_Gym_Text_GymGuideAdvice, MSGBOX_DEFAULT
 	giveitem ITEM_FRESH_WATER
+	setflag FLAG_TEMP_1
+	release
+	end
+
+RustboroCity_Gym_EventScript_GymGuideGotWater::
+	msgbox RustboroCity_Gym_Text_GymGuideAdviceNoWater, MSGBOX_DEFAULT
 	release
 	end
 
@@ -124,9 +131,15 @@ RustboroCity_Gym_Text_GymGuideAdvice:
 	.string "Rock-type moves.\p"
 	.string "Also, I'd like to give you this\n"
 	.string "Fresh Water to keep you and your\l"
-	.string "Pokémon hydrated!\p"
-	.string "{PLAYER} received a Fresh Water\n"
-	.string "from the friendly Gym Guide.$"
+	.string "Pokémon hydrated!$"
+
+RustboroCity_Gym_Text_GymGuideAdviceNoWater:
+	.string "I'm here to provide expert advice!\p"
+	.string "Otnar, the Gym Leader, is a user\n"
+	.string "of Ice-type Pokémon.\p"
+	.string "The Ice type is very powerful, but\n"
+	.string "it can't stand Fire-type and\l"
+	.string "Rock-type moves.$"
 
 RustboroCity_Gym_Text_GymGuidePostVictory:
 	.string "Whoa! What a breathtaking victory!\n"
@@ -164,8 +177,8 @@ RustboroCity_Gym_Text_TommyPostBattle:
 	.string "You'd better be on your guard!$"
 
 RustboroCity_Gym_Text_MarcIntro:
-	.string "We might be in the middle of town,\n"
-	.string "but so what?\p"
+	.string "Otnar always says I need to\n"
+	.string "keep my head cool, but so what?\p"
 	.string "My Ice Pokémon need room to\n"
 	.string "rampage!$"
 
@@ -224,10 +237,10 @@ RustboroCity_Gym_Text_ExplainRockTomb:
 	.string "and they'll learn the move instantly!$"
 
 RustboroCity_Gym_Text_RoxannePostBattle:
-	.string "Now that you have defeated me, you ought\n"
-	.string "to challenge other Gym Leaders.\p"
-	.string "The next Gym I recommend is in Joridan City,\n"
-	.string "which is to the West of Zephyr Town.$"
+	.string "Now that you have defeated me, you\n"
+	.string "ought to challenge other Gym Leaders.\p"
+	.string "The next Gym I recommend is in Joridan\n"
+	.string "City, to the West of Zephyr Town.$"
 
 RustboroCity_Gym_Text_GymStatue:
 	.string "Papilys City Pokémon Gym\p"

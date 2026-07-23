@@ -229,6 +229,10 @@ PetalburgCity_EventScript_CitySign::
 	msgbox PetalburgCity_Text_CitySign, MSGBOX_SIGN
 	end
 
+PetalburgCity_EventScript_TrainSign::
+	msgbox PetalburgCity_Text_TrainSign, MSGBOX_SIGN
+	end
+
 PetalburgCity_EventScript_Gentleman::
 	msgbox PetalburgCity_Text_FullPartyExplanation, MSGBOX_NPC
 	end
@@ -268,6 +272,7 @@ PetalburgCity_EventScript_ShowGymToPlayer3::
 PetalburgCity_EventScript_ShowGymToPlayer::
 	applymovement LOCALID_GYM_BOY, Common_Movement_FacePlayer
 	waitmovement 0
+	setvar VAR_PETALBURG_CITY_STATE, 1
 	playbgm MUS_FOLLOW_ME, FALSE
 	playse SE_PIN
 	applymovement LOCALID_GYM_BOY, Common_Movement_ExclamationMark
@@ -348,11 +353,167 @@ PetalburgCity_EventScript_LeadPlayerToGym3::
 	waitmovement 0
 	return
 
+PetalburgCity_EventScript_OldLady::
+	goto_if_set FLAG_BADGE01_GET, PetalburgCity_EventScript_CheckIfHasLetter
+	goto PetalburgCity_EventScript_DoesntHaveLetter
+	end
+
+PetalburgCity_EventScript_GiveLetterToOldLady::
+	lock
+	faceplayer
+	clearflag FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG
+	msgbox PetalburgCity_Text_OldLady, MSGBOX_DEFAULT
+	closemessage
+	removeitem ITEM_LETTER
+	playbgm MUS_FOLLOW_ME, FALSE
+	switch VAR_FACING
+	case DIR_SOUTH, PetalburgCity_EventScript_OldLadyTrainSouth
+	case DIR_NORTH, PetalburgCity_EventScript_OldLadyTrainNorth
+	case DIR_WEST, PetalburgCity_EventScript_OldLadyTrainWest
+	end
+
+PetalburgCity_EventScript_CheckIfHasLetter::
+	goto_if_set FLAG_RECEIVED_LETTER, PetalburgCity_EventScript_GiveLetterToOldLady
+	goto PetalburgCity_EventScript_DoesntHaveLetter
+	end
+
+PetalburgCity_EventScript_DoesntHaveLetter::
+	msgbox PetalburgCity_Text_OldLadyWhereHubby, MSGBOX_NPC
+	end
+
+PetalburgCity_EventScript_OldLadyTrainSouth::
+	applymovement LOCALID_PETALBURG_ANTONWIFE, PetalburgCity_Movement_OldLadyTrainSouth
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp
+	waitmovement 0
+	msgbox PetalburgCity_Text_OldLadyChewOut, MSGBOX_DEFAULT
+	closemessage
+	delay 10
+	applymovement LOCALID_PETALBURG_ANTONWIFE, PetalburgCity_Movement_OldLadyReturnSouth
+	waitmovement 0
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
+	waitmovement 0
+	goto PetalburgCity_EventScript_EndOldLady
+	end
+
+PetalburgCity_EventScript_OldLadyTrainNorth::
+	applymovement LOCALID_PETALBURG_ANTONWIFE, PetalburgCity_Movement_OldLadyTrainNorth
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp
+	waitmovement 0
+	msgbox PetalburgCity_Text_OldLadyChewOut, MSGBOX_DEFAULT
+	closemessage
+	delay 10
+	applymovement LOCALID_PETALBURG_ANTONWIFE, PetalburgCity_Movement_OldLadyReturnNorth
+	waitmovement 0
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
+	waitmovement 0
+	goto PetalburgCity_EventScript_EndOldLady
+	end
+
+PetalburgCity_EventScript_OldLadyTrainWest::
+	applymovement LOCALID_PETALBURG_ANTONWIFE, PetalburgCity_Movement_OldLadyTrainWest
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp
+	waitmovement 0
+	msgbox PetalburgCity_Text_OldLadyChewOut, MSGBOX_DEFAULT
+	closemessage
+	delay 10
+	applymovement LOCALID_PETALBURG_ANTONWIFE, PetalburgCity_Movement_OldLadyReturnWest
+	waitmovement 0
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
+	waitmovement 0
+	goto PetalburgCity_EventScript_EndOldLady
+	end
+
+PetalburgCity_EventScript_EndOldLady::
+	fadedefaultbgm
+	msgbox PetalburgCity_Text_ComeToHouse, MSGBOX_DEFAULT
+	closemessage
+	setflag FLAG_HIDE_PETALBURG_CITY_WALLYS_MOM
+	applymovement LOCALID_PETALBURG_ANTONWIFE, PetalburgCity_Movement_OldLadyGoHome
+	waitmovement 0
+	removeobject LOCALID_PETALBURG_ANTONWIFE
+	release
+	end
+
 @ Unused
 PetalburgCity_Movement_Delay48::
 	delay_16
 	delay_16
 	delay_16
+	step_end
+
+PetalburgCity_Movement_OldLadyTrainSouth:
+	walk_right
+	walk_right
+	walk_right
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_left
+	step_end
+
+PetalburgCity_Movement_OldLadyTrainNorth:
+	walk_right
+	walk_right
+	walk_right
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_left
+	step_end
+
+PetalburgCity_Movement_OldLadyTrainWest:
+	walk_up
+	walk_right
+	walk_right
+	walk_right
+	walk_up
+	walk_up
+	walk_up
+	walk_left
+	step_end
+
+PetalburgCity_Movement_OldLadyReturnSouth:
+	walk_right
+	walk_down
+	walk_down
+	walk_down
+	walk_left
+	walk_left
+	step_end
+
+PetalburgCity_Movement_OldLadyReturnWest:
+	walk_right
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_left
+	step_end
+
+PetalburgCity_Movement_OldLadyReturnNorth:
+	walk_right
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_left
+	walk_left
+	walk_down
+	walk_in_place_faster_left
+	step_end
+
+PetalburgCity_Movement_OldLadyGoHome:
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
 	step_end
 
 PetalburgCity_Movement_BoyApproachPlayer0:
@@ -854,3 +1015,126 @@ PetalburgCity_Text_PoliceMan:
 
 PetalburgCity_Text_HouseSign:
 	.string "Papilys Art Studio$"
+
+PetalburgCity_Text_OldLadyWhereHubby:
+	.string "Oh, Anton…\n"
+	.string "Where have you gone?\p"
+	.string "If only there were a strong trainer\n"
+	.string "around to help me…$"
+
+PetalburgCity_Text_OldLady:
+	.string "Is that letter for me?\n"
+	.string "Thank you.\p"
+	.string "Let's see…\n"
+	.string "So the train has been delayed, eh?\p"
+	.string "Well, that just won't do.\p"
+	.string "I ought to give the conductor a piece\n"
+	.string "of my mind!\p"
+	.string "Pardon me…$"
+
+PetalburgCity_Text_OldLadyChewOut:
+	.string "Listen here, Mr. Conductor…\p"
+	.string "You best bring my husband here,\n"
+	.string "or I'm going to REDACTED BY GAME DEV\l"
+	.string "to such a degree that you're going\l"
+	.string "to REDACTED!\p"
+	.string "REDACTED\n"
+	.string "REDACTED…EXTENDED…\p"
+	.string "…OH, YOU…YOU REALLY SHOULDN'T SAY\n"
+	.string "THAT TO ANOTHER HUMAN BEING…\p"
+	.string "THIS IS…\p"
+	.string "…YEAH, I'M JUST GOING TO SKIP\n"
+	.string "TO THE END OF HER DIALOGUE…\p"
+	.string "Old Woman: Good day to you, sir!$"
+
+PetalburgCity_Text_ComeToHouse:
+	.string "Okay, my husband should be in soon.\n"
+	.string "In the mean time, why don't you come\l"
+	.string "visit our beloved art studio?$"
+
+PetalburgCity_Text_TrainSign:
+	.string "Papillys City Train Station$"
+
+PetalburgCity_EventScript_N::
+	lockall
+	faceplayer
+	msgbox PetalburgCity_Text_NMayIJoin, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, PetalburgCity_EventScript_NNo
+	setfollowernpc LOCALID_PETALBURG_CITY_N, FNPC_ALL, PetalburgCity_EventScript_NFollower, PARTNER_N_PETALBURG
+	msgbox PetalburgCity_Text_GreatThanks, MSGBOX_DEFAULT
+	closemessage
+	msgbox PetalburgCity_Text_NJoined, MSGBOX_SIGN
+	closemessage
+	releaseall
+	end
+
+PetalburgCity_EventScript_NNo::
+	msgbox PetalburgCity_Text_ISee, MSGBOX_DEFAULT
+	closemessage
+	releaseall
+	end
+
+PetalburgCity_EventScript_NFollower::
+	msgbox PetalburgCity_Text_NFollowMessage, MSGBOX_NPC
+	end
+
+PetalburgCity_EventScript_DancingCrew::
+	lock
+	msgbox PetalburgCity_Text_NotNow, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+PetalburgCity_EventScript_Line::
+	msgbox PetalburgCity_Text_Line, MSGBOX_NPC
+	end
+
+PetalburgCity_Text_NMayIJoin:
+	.string "???: Ah, Hello there.\n"
+	.string "Who are you?\p"
+	.string "{PLAYER}?\n"
+	.string "Your Pokémon speak highly of you.\p"
+	.string "I am an agent for the International\n"
+	.string "Police.\p"
+	.string "My na-codename is N.\p"
+	.string "N: I'm currently working on a case,\n"
+	.string "but I'm not a particularly strong\l"
+	.string "trainer, you see.\p"
+	.string "Thus, I'm looking for someone who\n"
+	.string "could accompany me on this mission.\p"
+	.string "Just to fend off some wild Pokémon\n"
+	.string "in the cave, nothing more.\p"
+	.string "What do you say, {PLAYER}?\n"
+	.string "Would you be willing to lend a hand?$"
+
+PetalburgCity_Text_GreatThanks:
+	.string "N: Thank you, {PLAYER}.\p"
+	.string "I'll try to make this quick so I\n"
+	.string "don't take advantage of your time.$"
+
+PetalburgCity_Text_NJoined:
+	.string "{PLAYER} decided to go with N.\p"
+	.string "N will automatically heal {PLAYER}'s\n"
+	.string "party after each battle.$"
+
+PetalburgCity_Text_ISee:
+	.string "I see…\p"
+	.string "Well, I'll wait here for you in case\n"
+	.string "you change your mind.$"
+
+PetalburgCity_Text_NFollowMessage:
+	.string "N: The case?\n"
+	.string "I'm limited in how much I can say…\p"
+	.string "Let's just keep going, and let me\n"
+	.string "know if you need any healing.$"
+
+PetalburgCity_Text_NotNow:
+	.string "Not now, we're in the middle of\n"
+	.string "a shoot!$"
+
+PetalburgCity_Text_Line:
+	.string "The train's finally back in\n"
+	.string "working condition!\p"
+	.string "I have to board ASAP!$"
+
+

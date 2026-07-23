@@ -42,3 +42,45 @@ EVs: 252 Atk / 252 SpA / 6 SpD
 - Protect
 - Solar Beam
 - Dragon Claw
+
+=== PARTNER_N_PETALBURG ===
+Name: N
+Class: Rival
+Pic: Wally
+Gender: Male
+Music: Male
+AI: Smart Trainer
+
+Audino (M) @ Sitrus Berry
+Ability: Healer
+Impish Nature
+Level: 16
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 6 SpD
+Shiny: Yes
+- Helping Hand
+- Heal Bell
+- Wish
+- Last Resort
+
+Herdier (M) @ Sitrus Berry
+Ability: Intimidate
+Impish Nature
+Level: 16
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpD
+- Helping Hand
+- Roar
+- Yawn
+- Take Down
+
+Munchlax (M) @ Sitrus Berry
+Ability: Thick Fat
+Careful Nature
+Level: 16
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 6 Def / 252 SpD
+- Metronome
+- Rest
+- Snore
+- Recycle

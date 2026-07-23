@@ -3,7 +3,6 @@
   "name": "PetalburgCity_House1",
   "layout": "LAYOUT_HOUSE1",
   "music": "MUS_PETALBURG",
-  "region": "REGION_HOENN",
   "region_map_section": "MAPSEC_PETALBURG_CITY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -16,9 +15,9 @@
   "connections": null,
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_OLD_WOMAN_1",
-      "x": 7,
-      "y": 4,
+      "graphics_id": "OBJ_EVENT_GFX_SOCIALITE_2",
+      "x": 8,
+      "y": 6,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 2,
@@ -26,20 +25,34 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "PetalburgCity_House1_EventScript_Woman",
-      "flag": "0"
+      "flag": "FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_ARTIST_2",
+      "local_id": "LOCALID_PETALBURG_ANTON",
+      "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN_1",
       "x": 4,
-      "y": 4,
+      "y": 5,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "PetalburgCity_House1_EventScript_Man",
-      "flag": "0"
+      "flag": "FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BURGH",
+      "x": 4,
+      "y": 4,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "PetalburgCity_House1_EventScript_Burgh",
+      "flag": "FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG"
     }
   ],
   "warp_events": [
@@ -59,5 +72,6 @@
     }
   ],
   "coord_events": [],
-  "bg_events": []
+  "bg_events": [],
+  "region": "REGION_HOENN"
 }

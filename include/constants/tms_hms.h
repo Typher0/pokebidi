@@ -10,7 +10,7 @@
     F(TOXIC) \
     F(HAIL) \
     F(BULK_UP) \
-    F(BULLET_SEED) \
+    F(VENOSHOCK) \
     F(HIDDEN_POWER) \
     F(SUNNY_DAY) \
     F(TAUNT) \
@@ -20,11 +20,11 @@
     F(LIGHT_SCREEN) \
     F(PROTECT) \
     F(RAIN_DANCE) \
-    F(GIGA_DRAIN) \
+    F(IRON_TAIL) \
     F(SAFEGUARD) \
     F(FRUSTRATION) \
     F(SOLAR_BEAM) \
-    F(IRON_TAIL) \
+    F(SMACK_DOWN) \
     F(THUNDERBOLT) \
     F(THUNDER) \
     F(EARTHQUAKE) \
@@ -44,47 +44,47 @@
     F(AERIAL_ACE) \
     F(TORMENT) \
     F(FACADE) \
-    F(SECRET_POWER) \
+    F(FLAME_CHARGE) \
     F(REST) \
     F(ATTRACT) \
     F(THIEF) \
     F(STEEL_WING) \
-    F(SKILL_SWAP) \
-    F(SNATCH) \
+    F(ROUND) \
+    F(ECHOED_VOICE) \
     F(OVERHEAT) \
     F(ROOST) \
     F(FOCUS_BLAST) \
     F(ENERGY_BALL) \
     F(FALSE_SWIPE) \
-    F(BRINE) \
+    F(SCALD) \
     F(FLING) \
     F(CHARGE_BEAM) \
-    F(ENDURE) \
-    F(DRAGON_PULSE) \
+    F(SKY_DROP) \
+    F(INCINERATE) \
     F(DRAIN_PUNCH) \
     F(WILL_O_WISP) \
-    F(SILVER_WIND) \
+    F(ACROBATICS) \
     F(EMBARGO) \
     F(EXPLOSION) \
     F(SHADOW_CLAW) \
     F(PAYBACK) \
-    F(RECYCLE) \
+    F(RETALIATE) \
     F(GIGA_IMPACT) \
     F(ROCK_POLISH) \
     F(FLASH) \
     F(STONE_EDGE) \
-    F(AVALANCHE) \
+    F(VOLT_SWITCH) \
     F(THUNDER_WAVE) \
     F(GYRO_BALL) \
     F(SWORDS_DANCE) \
     F(STEALTH_ROCK) \
     F(PSYCH_UP) \
-    F(CAPTIVATE) \
-    F(DARK_PULSE) \
+    F(BULLDOZE) \
+    F(DRAGON_PULSE) \
     F(ROCK_SLIDE) \
     F(X_SCISSOR) \
     F(SLEEP_TALK) \
-    F(NATURAL_GIFT) \
+    F(WORK_UP) \
     F(POISON_JAB) \
     F(DREAM_EATER) \
     F(GRASS_KNOT) \
@@ -94,14 +94,14 @@
     F(SUBSTITUTE) \
     F(FLASH_CANNON) \
     F(TRICK_ROOM) \
-    F(VOLT_SWITCH) \
-    F(VENOSHOCK) \
+    F(PSYSHOCK) \
+    F(SECRET_POWER) \
     F(SNARL) \
-    F(INCINERATE) \
-    F(RETALIATE) \
+    F(INFESTATION) \
+    F(DARK_PULSE) \
     F(POWER_UP_PUNCH) \
     F(DAZZLING_GLEAM) \
-    F(ALLY_SWITCH)
+    F(TERA_BLAST)
 
 #define FOREACH_HM(F) \
     F(CUT) \

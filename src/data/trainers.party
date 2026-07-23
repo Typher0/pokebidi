@@ -2329,16 +2329,16 @@ Level: 21
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_SHEILA ===
-Name: SHEILA
-Class: Beauty
-Pic: Beauty
+Name: Grunt
+Class: Team Singularity
+Pic: Magma Grunt F
 Gender: Female
-Music: Female
+Music: Magma
 Double Battle: No
 AI: Check Bad Move
 
-Pingloo
-Level: 21
+Skwovet
+Level: 12
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_SHIRLEY ===
@@ -2642,22 +2642,39 @@ Level: 33
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_WINSTON_5 ===
-Name: WINSTON
-Class: Rich Boy
-Pic: Rich Boy
+Name: Burgh
+Class: Leader
+Pic: gym u burgh
 Gender: Male
-Music: Rich
-Items: Full Restore
+Music: Male
+Items: Potion
 Double Battle: No
-AI: Check Bad Move
+AI: Smart Trainer / AI_FLAG_ACE_POKEMON
+Mugshot: Green
 
-Obstagoon @ Nugget
-Level: 36
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Fury Swipes
-- Mud Sport
-- Odor Sleuth
-- Sand Attack
+Pineco @ Rawst Berry
+Level: 13
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Protect
+- Tackle
+- Bug Bite
+- Infestation
+
+Sewaddle @ Occa Berry
+Level: 13
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Tackle
+- Infestation
+- Bug Bite
+- String Shot
+
+Mortasque @ Oran Berry
+Level: 16
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Infestation
+- Gust
+- Buzzing Bustle
+- Pursuit
 
 === TRAINER_STEVE_1 ===
 Name: STEVE
@@ -2704,7 +2721,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_MT_CHIMNEY_1 ===
 Name: Grunt
-Class: Team Magma
+Class: Team Singularity
 Pic: Magma Grunt F
 Gender: Female
 Music: Magma
@@ -6553,25 +6570,39 @@ Level: 33
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
 === TRAINER_CALVIN_5 ===
-Name: CALVIN
-Class: Youngster
-Pic: Youngster
+Name: Cress
+Class: Leader
+Pic: gym u cress
 Gender: Male
 Music: Male
+Items: Potion
 Double Battle: No
-AI: Check Bad Move
+AI: Smart Trainer / AI_FLAG_ACE_POKEMON
+Mugshot: Blue
 
-Unfezant
-Level: 34
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Lillipup @ Rawst Berry
+Level: 12
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Tackle
+- Bite
+- Odor Sleuth
+- Work Up
 
-Linoone
-Level: 32
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Slowpoke @ Cheri Berry
+Level: 12
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Tackle
+- Water Gun
+- Yawn
+- Curse
 
-Raticate
-Level: 36
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Panpour @ Oran Berry
+Level: 14
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Fury Swipes
+- Lick
+- Water Gun
+- Work Up
 
 === TRAINER_EDDIE ===
 Name: EDDIE
@@ -6711,7 +6742,7 @@ Nature: Adamant
 
 === TRAINER_ANDREW ===
 Name: Andrew
-Class: Sailor
+Class: Roughneck
 Pic: Roughneck
 Gender: Male
 Music: Hiker
@@ -9928,7 +9959,7 @@ Pic: Rival M Sean
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Force Setup First Turn
+AI: Prefer Status Moves / Check Bad Move
 Mugshot: Yellow
 
 Cyndaquil (M)
@@ -10000,7 +10031,7 @@ Pic: Rival M Sean
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Force Setup First Turn
+AI: Prefer Status Moves / Check Bad Move
 Mugshot: Yellow
 
 Squirtle (M)
@@ -10072,7 +10103,7 @@ Pic: Rival M Sean
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Force Setup First Turn
+AI: Prefer Status Moves / Check Bad Move
 Mugshot: Yellow
 
 Rowlet (M)
@@ -10144,7 +10175,7 @@ Pic: Rival F Amelia
 Gender: Female
 Music: Female
 Double Battle: No
-AI: Force Setup First Turn
+AI: Prefer Status Moves / Check Bad Move
 Mugshot: Green
 
 Rowlet (F)
@@ -10230,7 +10261,7 @@ Pic: Rival F Amelia
 Gender: Female
 Music: Female
 Double Battle: No
-AI: Force Setup First Turn
+AI: Prefer Status Moves / Check Bad Move
 Mugshot: Green
 
 Cyndaquil (F)
@@ -10316,7 +10347,7 @@ Pic: Rival F Amelia
 Gender: Female
 Music: Female
 Double Battle: No
-AI: Force Setup First Turn
+AI: Prefer Status Moves / Check Bad Move
 Mugshot: Green
 
 Squirtle (F)
@@ -11597,11 +11628,11 @@ Pic: singularity com bellis
 Gender: Female
 Music: Magma
 Items: Potion / Ice Heal
-Double Battle: No
+Double Battle: Yes
 AI: Smart Trainer / AI_FLAG_ACE_POKEMON
 
 Woobat (F) @ Wide Lens
-Level: 13
+Level: 14
 Ability: Unaware
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 Ball: Dusk
@@ -11611,7 +11642,7 @@ Ball: Dusk
 - Supersonic
 
 Slowpoke (F) @ Red Card
-Level: 13
+Level: 14
 Ability: Own Tempo
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 Ball: Dusk
@@ -11620,8 +11651,18 @@ Ball: Dusk
 - Confusion
 - Curse
 
+Zigzagoon Galar (F) @ Ring Target
+Level: 16
+Ability: Reckless
+IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
+Ball: Luxury
+- Snarl
+- Tackle
+- Baby Doll Eyes
+- Sand Attack
+
 Snorunt (F) @ Quick Claw
-Level: 15
+Level: 16
 Ability: Inner Focus
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 Ball: Luxury
@@ -12009,29 +12050,39 @@ Level: 31
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
 === TRAINER_JAMES_5 ===
-Name: James
-Class: Bug Catcher
-Pic: Bug Catcher
+Name: Chili
+Class: Leader
+Pic: gym u chili
 Gender: Male
 Music: Male
+Items: Potion
 Double Battle: No
-AI: Check Bad Move
+AI: Smart Trainer / AI_FLAG_ACE_POKEMON
+Mugshot: Pink
 
-Leavanny
-Level: 33
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Lillipup @ Rawst Berry
+Level: 12
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Tackle
+- Bite
+- Odor Sleuth
+- Work Up
 
-Vespiquen
-Level: 33
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Taillow @ Yache Berry
+Level: 12
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Quick Attack
+- Cyclone Boost
+- Work Up
+- Focus Energy
 
-Mortasque
-Level: 33
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
-
-Frosmoth
-Level: 33
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Pansear @ Oran Berry
+Level: 14
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Fury Swipes
+- Lick
+- Ember
+- Work Up
 
 === TRAINER_BRICE ===
 Name: BRICE
