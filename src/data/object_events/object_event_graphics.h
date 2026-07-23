@@ -285,6 +285,7 @@ const u32 gObjectEventPic_MicleBerryTree[] = INCGFX_U32("graphics/object_events/
 const u32 gObjectEventPic_CustapBerryTree[] = INCGFX_U32("graphics/object_events/pics/berry_trees/custap.png", ".4bpp", "-mwidth 2 -mheight 4");
 const u32 gObjectEventPic_JabocaBerryTree[] = INCGFX_U32("graphics/object_events/pics/berry_trees/jaboca.png", ".4bpp", "-mwidth 2 -mheight 4");
 const u32 gObjectEventPic_RowapBerryTree[] = INCGFX_U32("graphics/object_events/pics/berry_trees/rowap.png", ".4bpp", "-mwidth 2 -mheight 4");
+const u32 gObjectEventPic_NinikuBerryTree[] = INCGFX_U32("graphics/object_events/pics/berry_trees/niniku.png", ".4bpp", "-mwidth 2 -mheight 4");
 const u32 gFieldEffectObjectPic_SurfBlob[] = INCGFX_U32("graphics/field_effects/pics/surf_blob.png", ".4bpp", "-mwidth 4 -mheight 4");
 const u32 gFieldEffectObjectPic_RockClimbBlob[] = INCGFX_U32("graphics/field_effects/pics/rock_climb_blob.png", ".4bpp", "-mwidth 4 -mheight 4");
 const u32 gFieldEffectObjectPic_RockClimbDust[] = INCGFX_U32("graphics/field_effects/pics/rock_climb_dust.png", ".4bpp", "-mwidth 4 -mheight 4");
