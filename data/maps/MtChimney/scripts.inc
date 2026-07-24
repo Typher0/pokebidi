@@ -52,34 +52,45 @@ MtChimney_EventScript_Maxie::
 	removeobject LOCALID_MT_CHIMNEY_MAGMA_GRUNT_1
 	removeobject LOCALID_MT_CHIMNEY_TABITHA
 	removeobject LOCALID_MT_CHIMNEY_MAGMA_GRUNT_2
+	removeobject LOCALID_MT_CHIMNEY_DELETE1
+	removeobject LOCALID_MT_CHIMNEY_DELETE2
+	removeobject LOCALID_MT_CHIMNEY_DELETE3
+	removeobject LOCALID_MT_CHIMNEY_DELETE4
+	removeobject LOCALID_MT_CHIMNEY_DELETE5
+	removeobject LOCALID_MT_CHIMNEY_DELETE6
+	removeobject LOCALID_MT_CHIMNEY_DELETE7
+	removeobject LOCALID_MT_CHIMNEY_DELETE8
+	removeobject LOCALID_MT_CHIMNEY_DELETE9
 	setflag FLAG_HIDE_MT_CHIMNEY_TEAM_MAGMA
 	fadescreenswapbuffers FADE_FROM_BLACK
 	setobjectxyperm LOCALID_MT_CHIMNEY_ARCHIE, 10, 12
 	addobject LOCALID_MT_CHIMNEY_ARCHIE
 	call_if_eq VAR_FACING, DIR_EAST, MtChimney_EventScript_ArchieApproachPlayerEast
 	call_if_eq VAR_FACING, DIR_NORTH, MtChimney_EventScript_ArchieApproachPlayerNorth
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
-	waitmovement 0
 	msgbox MtChimney_Text_ArchieThankYou, MSGBOX_DEFAULT
 	closemessage
 	call_if_eq VAR_FACING, DIR_EAST, MtChimney_EventScript_ArchieExitEast
 	call_if_eq VAR_FACING, DIR_NORTH, MtChimney_EventScript_ArchieExitNorth
+	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject LOCALID_MT_CHIMNEY_ARCHIE
+	destroyfollowernpc
 	setflag FLAG_HIDE_MT_CHIMNEY_TEAM_AQUA
 	setflag FLAG_DEFEATED_EVIL_TEAM_MT_CHIMNEY
-	clearflag FLAG_HIDE_PETALBURG_CITY_SCOTT
-	setflag FLAG_HIDE_METEOR_FALLS_1F_1R_COZMO
+	setflag FLAG_HIDE_PETALBURG_CITY_WALLYS_DAD
 	clearflag FLAG_HIDE_MT_CHIMNEY_TRAINERS
+	fadescreenswapbuffers FADE_FROM_BLACK
 	releaseall
 	end
 
 MtChimney_EventScript_ArchieApproachPlayerEast::
 	applymovement LOCALID_MT_CHIMNEY_ARCHIE, MtChimney_Movement_ArchieApproachPlayerEast
+	facefollowernpc
 	waitmovement 0
 	return
 
 MtChimney_EventScript_ArchieApproachPlayerNorth::
 	applymovement LOCALID_MT_CHIMNEY_ARCHIE, MtChimney_Movement_ArchieApproachPlayerNorth
+	facefollowernpc
 	waitmovement 0
 	return
 
@@ -148,46 +159,19 @@ MtChimney_EventScript_NotEnoughMoney::
 	end
 
 MtChimney_Movement_ArchieApproachPlayerEast:
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_right
+	delay_16
 	step_end
 
 MtChimney_Movement_ArchieExitEast:
-	walk_left
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
+	delay_16
 	step_end
 
 MtChimney_Movement_ArchieApproachPlayerNorth:
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_right
-	walk_right
+	delay_16
 	step_end
 
 MtChimney_Movement_ArchieExitNorth:
-	walk_left
-	walk_left
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
+	delay_16
 	step_end
 
 MtChimney_Movement_Unused1:
@@ -440,11 +424,17 @@ MtChimney_EventScript_BusyMagmaGrunt6::
 	end
 
 MtChimney_EventScript_MagmaPoochyena::
+	waitse
+	playmoncry SPECIES_CABOB, CRY_MODE_NORMAL
 	msgbox MtChimney_Text_Bufoh, MSGBOX_SIGN
+	waitmoncry
 	end
 
 MtChimney_EventScript_AquaPoochyena::
+	waitse
+	playmoncry SPECIES_LILLIPUP, CRY_MODE_NORMAL
 	msgbox MtChimney_Text_Bushaa, MSGBOX_SIGN
+	waitmoncry
 	end
 
 MtChimney_EventScript_MeteoriteMachine::
@@ -542,107 +532,113 @@ MtChimney_EventScript_SawyerRematch::
 	end
 
 MtChimney_Text_MeteoriteWillActivateVolcano:
-	.string "The power contained in the METEORITE…\p"
-	.string "By amplifying its power with this\n"
-	.string "machine, MT. CHIMNEY's volcanic\l"
-	.string "activity will instantly intensify…\p"
-	.string "Its energy will grow deep inside\n"
-	.string "the crater and…\l"
-	.string "Fufufu…$"
+	.string "How the hell am I supposed to get\n"
+	.string "up there?\p"
+	.string "I can't believe we made all this\n"
+	.string "commotion for nothing!\p"
+	.string "The boss is really not going to be\n"
+	.string "happy…$"
 
 MtChimney_Text_MaxieIntro:
-	.string "MAXIE: Hm?\n"
+	.string "Bellis: Hm?\n"
+	.string "Oh great, we've got company.\l"
 	.string "Who are you?\p"
-	.string "… … … … … …\n"
-	.string "… … … … … …\p"
-	.string "I'd heard ARCHIE bemoaning a child\n"
-	.string "who's been meddling in TEAM AQUA's\l"
-	.string "affairs.\p"
-	.string "It must be you he meant.\p"
-	.string "Humph! So you're thinking of\n"
-	.string "interfering with us, TEAM MAGMA?\p"
-	.string "Now you listen.\n"
-	.string "Long ago, living things used the\l"
-	.string "land to live and grow.\p"
-	.string "That is why land is all important!\n"
-	.string "It is the cradle of all!\p"
-	.string "That is why TEAM MAGMA is dedicated\n"
-	.string "to the expansion of the land mass.\p"
-	.string "It is for further advancement of\n"
-	.string "humankind and POKéMON!\p"
-	.string "And for that, we need the power of\n"
-	.string "what sleeps within this mountain…\p"
-	.string "Oh! There was no need for you to\n"
-	.string "learn that much.\p"
-	.string "But, no matter!\n"
-	.string "I'll teach you the consequences of\l"
-	.string "meddling in our grand design!$"
+	.string "N: I'm with the International Police,\n"
+	.string "and this is my assistant.\p"
+	.string "I'd like to take you in for questioning,\n"
+	.string "please don't resist.\p"
+	.string "Bellis: Humph! So you're thinking of\n"
+	.string "interfering with Team Singularity's\l"
+	.string "plans?\p"
+	.string "I really don't get what you police\n"
+	.string "officers have against us.\p"
+	.string "We haven't caused any disturbances\n"
+	.string "outside with civilians, nor have we\l"
+	.string "hurt any of the wild Pokémon in here.\p"
+	.string "We're just a group of people searching\n"
+	.string "for something interesting.\l"
+	.string "Is that so wrong?\p"
+	.string "N: That's what I'm concerned about.\p"
+	.string "It's not what you've done so far, it's\n"
+	.string "what you may do if you find what you're\l"
+	.string "looking for.\p"
+	.string "Bellis: So it is here!\p"
+	.string "Very well, we'll have to return later\n"
+	.string "with the ability to climb this rock\l"
+	.string "wall.\p"
+	.string "TEAM SINGULARITY, RETREAT!\p"
+	.string "Now, I just got to buy my subordinates\n"
+	.string "time to escape!$"
 
 MtChimney_Text_MaxieDefeat:
-	.string "What?!\p"
-	.string "I, MAXIE, was caught off guard?!$"
+	.string "I'd hoped to defeat you, but no\n"
+	.string "matter, I got the info I needed.$"
 
 MtChimney_Text_MaxieYouHaventSeenLastOfMagma:
-	.string "MAXIE: But, enough.\n"
+	.string "Bellis: Listen here, you dweebs.\n"
 	.string "I will back off this time.\p"
 	.string "But don't think that this is the last\n"
-	.string "you've seen of TEAM MAGMA.\p"
-	.string "Fufufu…\p"
-	.string "Even without the METEORITE, if we\n"
-	.string "obtain that ORB… Fufufu…$"
+	.string "you've seen of Team Singularity.\p"
+	.string "We will achieve our goal.\n"
+	.string "Our Boss will deliver justice…$"
 
 MtChimney_Text_TabithaIntro:
-	.string "Hehehe!\p"
-	.string "So you've come all the way here!\p"
-	.string "But you're too late!\n"
-	.string "I've already delivered the METEORITE\l"
-	.string "from METEOR FALLS to the BOSS!$"
+	.string "Oh heyyyyy there bud!\p"
+	.string "So you're trying to get in our way\n"
+	.string "here, eh?\n"
+	.string "Some kinda keener are yuh?\p"
+	.string "Well, I can't let yous stop us!$"
 
 MtChimney_Text_TabithaDefeat:
-	.string "Hehehe…\p"
-	.string "Even though I've lost, if our leader\n"
-	.string "awakens that thing…$"
+	.string "Well, I've gone and biffed it, eh?\p"
+	.string "Sorry about all that, I'm just\n"
+	.string "doin' my job.$"
 
 MtChimney_Text_TabithaPostBattle:
-	.string "BOSS, hurry!\n"
-	.string "Give it the METEORITE's energy!\p"
-	.string "Hehehe…$"
+	.string "My pops always said,\n"
+	.string "“Grunt, if yous gonna do somethin'\l"
+	.string "be sure to give'er!”\p"
+	.string "So even if I'm questioning my orders,\n"
+	.string "like to fend off the cops for instance,\l"
+	.string "I'm gonna do my best at my job.$"
 
 MtChimney_Text_Grunt2Intro:
-	.string "We of TEAM MAGMA are working hard for\n"
-	.string "everyone's sake.\p"
-	.string "Like, if that thing's power made more\n"
-	.string "land, there'd be more places to live.\p"
-	.string "Everyone'd be happy!$"
+	.string "Team Singularity's done nothing wrong!\p"
+	.string "What's got yous alls twisted up?\p"
+	.string "If you're looking for a kerfuffle,\n"
+	.string "you've got one coming!$"
 
 MtChimney_Text_Grunt2Defeat:
 	.string "Hunh?\n"
 	.string "What do you mean I lost?$"
 
 MtChimney_Text_Grunt2PostBattle:
-	.string "Our BOSS says, “It will make everyone\n"
-	.string "happy.”\p"
-	.string "But why does everyone keep getting\n"
-	.string "in our way?$"
+	.string "Our Admin says, “Cover for me, I'll\n"
+	.string "find our objective.”\p"
+	.string "But why does our objective have\n"
+	.string "the police after us?$"
 
 MtChimney_Text_Grunt1Intro:
-	.string "If there were more land, I'd be able\n"
-	.string "to get a big house of my own!\p"
-	.string "I'm going to build it on hardened lava!$"
+	.string "When I signed up for Team Singularity,\n"
+	.string "they were talkin' about injustices and\l"
+	.string "recompense.\p"
+	.string "I'm more interested in the 50 bucks an\n"
+	.string "hour!$"
 
 MtChimney_Text_Grunt1Defeat:
-	.string "My dream of a big house…$"
+	.string "Win? Lose? I still get paid"
 
 MtChimney_Text_Grunt1PostBattle:
-	.string "A kid like you, you ought to be\n"
-	.string "splashing about in the waves!$"
+	.string "The company better compensate me\n"
+	.string "for your prize money!$"
 
 MtChimney_Text_TeamAquaAlwaysMessingWithPlans:
-	.string "That annoying TEAM AQUA…\n"
-	.string "They always mess with our plans!$"
+	.string "Come on, Cabob!\n"
+	.string "Take this jerk out of the equation!\l"
+	.string "We need to reinforce our defenses!$"
 
 MtChimney_Text_MeteoritesPackAmazingPower:
-	.string "METEORITES pack amazing power!$"
+	.string "Come on, Cabob, Git'r done!$"
 
 MtChimney_Text_YouBetterNotMessWithUs:
 	.string "You'd better not mess with us!\p"
@@ -650,10 +646,10 @@ MtChimney_Text_YouBetterNotMessWithUs:
 	.string "for the benefit of everyone!$"
 
 MtChimney_Text_AquasNameSimilar:
-	.string "We're TEAM MAGMA!\p"
-	.string "They're TEAM AQUA!\p"
-	.string "It totally annoys me that they'd\n"
-	.string "use a name like ours!$"
+	.string "We're Team Singularity!\n"
+	.string "We're the true Banjimans!\p"
+	.string "Why can't the police see that?\n"
+	.string "How do we get them on our side?$"
 
 MtChimney_Text_DouseThemInFire:
 	.string "Yeah!\n"
@@ -663,7 +659,7 @@ MtChimney_Text_KeepMakingMoreLand:
 	.string "We're going to keep making more land!$"
 
 MtChimney_Text_Bufoh:
-	.string "Bufoh!$"
+	.string "Bwarow!$"
 
 MtChimney_Text_ArchieGoStopTeamMagma:
 	.string "ARCHIE: Grr, {PLAYER}!\n"
@@ -683,33 +679,41 @@ MtChimney_Text_ArchieIHaveMyHandsFull:
 	.string "three opponents at once!$"
 
 MtChimney_Text_ArchieThankYou:
-	.string "ARCHIE: {PLAYER}!\n"
-	.string "Thank you!\p"
-	.string "With your help, we thwarted TEAM\n"
-	.string "MAGMA's destructive plan!\p"
+	.string "N: {PLAYER}.\n"
+	.string "Thank you.\p"
+	.string "With your help, we thwarted Team\n"
+	.string "Singularity's plan.\p"
 	.string "But… You…\n"
-	.string "Whose side are you on?\p"
-	.string "Ah, it doesn't matter.\p"
-	.string "We will remain vigilant and keep up\n"
-	.string "our pursuit of TEAM MAGMA.\p"
+	.string "You're a civilian, but I got you\l"
+	.string "involved in this mess.\p"
+	.string "Now that you know that we're after\n"
+	.string "Team Singularity, perhaps we could\l"
+	.string "work together as partners…\p"
+	.string "… … … … … …\n"
+	.string "… … … … … …\l"
+	.string "… … … … … …\p"
 	.string "{PLAYER}, we shall meet again!$"
 
 MtChimney_Text_MagmaOutnumbersUs:
-	.string "Darn… TEAM MAGMA outnumbers us!\n"
-	.string "We can't keep up with them!$"
+	.string "Darn… Team Singularity outnumbers us!\n"
+	.string "We can't keep up with them!\p"
+	.string "Sorry, N, but you'll have to take on\n"
+	.string "a few of them yourself!\p"
+	.string "N: That's alright.\n"
+	.string "Thanks for lightening my load.$"
 
 MtChimney_Text_LessHabitatForWaterPokemon:
-	.string "If they expand the land, there'll be\n"
-	.string "less habitats for WATER POKéMON!$"
+	.string "Their leader is right up ahead, N!\p"
+	.string "N: Thank you, we'll end this soon!$"
 
 MtChimney_Text_MagmasNameSimilar:
-	.string "We're TEAM AQUA!\p"
-	.string "They're TEAM MAGMA!\p"
-	.string "It burns me up that they'd use such\n"
-	.string "a confusing name!$"
+	.string "I'm not sure what they're doing,\n"
+	.string "but I'm following your orders, N!\p"
+	.string "N: Thank you, sir.\n"
+	.string "You're helping keep this region safe.$"
 
 MtChimney_Text_Bushaa:
-	.string "Bushaa!$"
+	.string "Yap Yip!$"
 
 MtChimney_Text_LavaCookiesJust200:
 	.string "LAVA COOKIES are MT. CHIMNEY's local\n"
@@ -797,19 +801,22 @@ MtChimney_Text_MelissaPostBattle:
 	.string "me up, baby!$"
 
 MtChimney_Text_SheilaIntro:
-	.string "I've finally made it to MT. CHIMNEY.\n"
-	.string "I want to make my POKéMON battle!$"
+	.string "I don't know how, but I've been\n"
+	.string "selected as the last line of defense.\p"
+	.string "I won't let Admin Bellis down!$"
 
 MtChimney_Text_SheilaDefeat:
-	.string "The way you battle…\n"
-	.string "It's like a MT. CHIMNEY eruption!$"
+	.string "Bellis…\n"
+	.string "I'm sorry, but it's down to you!$"
 
 MtChimney_Text_SheilaPostBattle:
-	.string "Like I said, I've finally made it to\n"
-	.string "MT. CHIMNEY. It would be a shame if\l"
-	.string "I only do a little sightseeing…\p"
-	.string "I want to get in some battles and buy\n"
-	.string "COOKIES as souvenirs.$"
+	.string "Why am I so devoted to Bellis?\n"
+	.string "I mean, just look at her.\p"
+	.string "She's the strong, independent woman\n"
+	.string "we all aspire to be!\p"
+	.string "I even thought about getting her\n"
+	.string "haircut, but my girlfriend said I'd\l"
+	.string "just look like a female Wolverine.$"
 
 MtChimney_Text_ShirleyIntro:
 	.string "Since I bathed in the hot springs,\n"

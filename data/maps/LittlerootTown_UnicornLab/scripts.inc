@@ -157,13 +157,35 @@ LittlerootTown_UnicornLab_EventScript_CyndaquilCaught::
 	setvar VAR_CABLE_CLUB_TUTORIAL_STATE, 1
 	setvar VAR_STARTER_MON, 1
 	setvar VAR_0x8004, 0
-	applymovement LOCALID_PLAYER, LittlerootTown_UnicornLab_Movement_PlayerReturnCyndaquil
-	waitmovement 0
+	call_if_eq VAR_FACING, DIR_NORTH, LittlerootTown_UnicornLab_EventScript_PlayerReturnCyndaquilNorth
+	call_if_eq VAR_FACING, DIR_EAST, LittlerootTown_UnicornLab_EventScript_PlayerReturnCyndaquilEast
+	call_if_eq VAR_FACING, DIR_WEST, LittlerootTown_UnicornLab_EventScript_PlayerReturnCyndaquilWest
+	call_if_eq VAR_FACING, DIR_SOUTH, LittlerootTown_UnicornLab_EventScript_PlayerReturnCyndaquilSouth
 	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, LittlerootTown_UnicornLab_EventScript_StarterCaught
 	call Common_EventScript_NameReceivedPartyMon
 	goto LittlerootTown_UnicornLab_EventScript_StarterCaught
 	end
+
+LittlerootTown_UnicornLab_EventScript_PlayerReturnCyndaquilSouth::
+	applymovement LOCALID_PLAYER, LittlerootTown_UnicornLab_Movement_PlayerReturnCyndaquil
+	waitmovement 0
+	return
+
+LittlerootTown_UnicornLab_EventScript_PlayerReturnCyndaquilNorth::
+	applymovement LOCALID_PLAYER, LittlerootTown_UnicornLab_Movement_PlayerReturnCyndaquilNorth
+	waitmovement 0
+	return
+
+LittlerootTown_UnicornLab_EventScript_PlayerReturnCyndaquilEast::
+	applymovement LOCALID_PLAYER, LittlerootTown_UnicornLab_Movement_PlayerReturnCyndaquilEast
+	waitmovement 0
+	return
+
+LittlerootTown_UnicornLab_EventScript_PlayerReturnCyndaquilWest::
+	applymovement LOCALID_PLAYER, LittlerootTown_UnicornLab_Movement_PlayerReturnCyndaquilWest
+	waitmovement 0
+	return
 
 LittlerootTown_UnicornLab_EventScript_RowletCaught::
 	removeobject LOCALID_UNICORN_LAB_CYNDAQUIL
@@ -176,13 +198,35 @@ LittlerootTown_UnicornLab_EventScript_RowletCaught::
 	setvar VAR_CABLE_CLUB_TUTORIAL_STATE, 1
 	setvar VAR_STARTER_MON, 0
 	setvar VAR_0x8004, 0
-	applymovement LOCALID_PLAYER, LittlerootTown_UnicornLab_Movement_PlayerReturnRowlet
-	waitmovement 0
+	call_if_eq VAR_FACING, DIR_NORTH, LittlerootTown_UnicornLab_EventScript_PlayerReturnRowletNorth
+	call_if_eq VAR_FACING, DIR_EAST, LittlerootTown_UnicornLab_EventScript_PlayerReturnRowletEast
+	call_if_eq VAR_FACING, DIR_WEST, LittlerootTown_UnicornLab_EventScript_PlayerReturnRowletWest
+	call_if_eq VAR_FACING, DIR_SOUTH, LittlerootTown_UnicornLab_EventScript_PlayerReturnRowletSouth
 	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, LittlerootTown_UnicornLab_EventScript_StarterCaught
 	call Common_EventScript_NameReceivedPartyMon
 	goto LittlerootTown_UnicornLab_EventScript_StarterCaught
 	end
+
+LittlerootTown_UnicornLab_EventScript_PlayerReturnRowletSouth::
+	applymovement LOCALID_PLAYER, LittlerootTown_UnicornLab_Movement_PlayerReturnRowlet
+	waitmovement 0
+	return
+
+LittlerootTown_UnicornLab_EventScript_PlayerReturnRowletNorth::
+	applymovement LOCALID_PLAYER, LittlerootTown_UnicornLab_Movement_PlayerReturnRowletNorth
+	waitmovement 0
+	return
+
+LittlerootTown_UnicornLab_EventScript_PlayerReturnRowletEast::
+	applymovement LOCALID_PLAYER, LittlerootTown_UnicornLab_Movement_PlayerReturnRowletEast
+	waitmovement 0
+	return
+
+LittlerootTown_UnicornLab_EventScript_PlayerReturnRowletWest::
+	applymovement LOCALID_PLAYER, LittlerootTown_UnicornLab_Movement_PlayerReturnRowletWest
+	waitmovement 0
+	return
 
 LittlerootTown_UnicornLab_EventScript_SquirtleCaught::
 	removeobject LOCALID_UNICORN_LAB_CYNDAQUIL
@@ -195,13 +239,35 @@ LittlerootTown_UnicornLab_EventScript_SquirtleCaught::
 	setvar VAR_CABLE_CLUB_TUTORIAL_STATE, 1
 	setvar VAR_STARTER_MON, 2
 	setvar VAR_0x8004, 0
-	applymovement LOCALID_PLAYER, LittlerootTown_UnicornLab_Movement_PlayerReturnSquirtle
-	waitmovement 0
+	call_if_eq VAR_FACING, DIR_NORTH, LittlerootTown_UnicornLab_EventScript_PlayerReturnSquirtleNorth
+	call_if_eq VAR_FACING, DIR_EAST, LittlerootTown_UnicornLab_EventScript_PlayerReturnSquirtleEast
+	call_if_eq VAR_FACING, DIR_WEST, LittlerootTown_UnicornLab_EventScript_PlayerReturnSquirtleWest
+	call_if_eq VAR_FACING, DIR_SOUTH, LittlerootTown_UnicornLab_EventScript_PlayerReturnSquirtleSouth
 	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, LittlerootTown_UnicornLab_EventScript_StarterCaught
 	call Common_EventScript_NameReceivedPartyMon
 	goto LittlerootTown_UnicornLab_EventScript_StarterCaught
 	end
+
+LittlerootTown_UnicornLab_EventScript_PlayerReturnSquirtleSouth::
+	applymovement LOCALID_PLAYER, LittlerootTown_UnicornLab_Movement_PlayerReturnSquirtle
+	waitmovement 0
+	return
+
+LittlerootTown_UnicornLab_EventScript_PlayerReturnSquirtleNorth::
+	applymovement LOCALID_PLAYER, LittlerootTown_UnicornLab_Movement_PlayerReturnSquirtleNorth
+	waitmovement 0
+	return
+
+LittlerootTown_UnicornLab_EventScript_PlayerReturnSquirtleEast::
+	applymovement LOCALID_PLAYER, LittlerootTown_UnicornLab_Movement_PlayerReturnSquirtleEast
+	waitmovement 0
+	return
+
+LittlerootTown_UnicornLab_EventScript_PlayerReturnSquirtleWest::
+	applymovement LOCALID_PLAYER, LittlerootTown_UnicornLab_Movement_PlayerReturnSquirtleWest
+	waitmovement 0
+	return
 
 LittlerootTown_UnicornLab_EventScript_StarterCaught::
 	applymovement LOCALID_UNICORN_LAB_PROF_UNICORN, Common_Movement_WalkInPlaceFasterDown
@@ -401,6 +467,24 @@ LittlerootTown_UnicornLab_Movement_PlayerReturnCyndaquil:
 	walk_up
 	step_end
 
+LittlerootTown_UnicornLab_Movement_PlayerReturnCyndaquilNorth:
+	walk_up
+	walk_up
+	walk_up
+	step_end
+
+LittlerootTown_UnicornLab_Movement_PlayerReturnCyndaquilWest:
+	walk_up
+	walk_left
+	walk_up
+	step_end
+
+LittlerootTown_UnicornLab_Movement_PlayerReturnCyndaquilEast:
+	walk_up
+	walk_right
+	walk_up
+	step_end
+
 LittlerootTown_UnicornLab_Movement_PlayerReturnRowlet:
 	walk_right
 	walk_right
@@ -409,7 +493,63 @@ LittlerootTown_UnicornLab_Movement_PlayerReturnRowlet:
 	walk_up
 	step_end
 
+LittlerootTown_UnicornLab_Movement_PlayerReturnRowletWest:
+	walk_up
+	walk_right
+	walk_right
+	walk_right
+	walk_up
+	step_end
+
+LittlerootTown_UnicornLab_Movement_PlayerReturnRowletEast:
+	walk_up
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_up
+	step_end
+
+LittlerootTown_UnicornLab_Movement_PlayerReturnRowletNorth:
+	walk_up
+	walk_up
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_up
+	step_end
+
 LittlerootTown_UnicornLab_Movement_PlayerReturnSquirtle:
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_up
+	step_end
+
+LittlerootTown_UnicornLab_Movement_PlayerReturnSquirtleEast:
+	walk_up
+	walk_left
+	walk_left
+	walk_left
+	walk_up
+	step_end
+
+LittlerootTown_UnicornLab_Movement_PlayerReturnSquirtleWest:
+	walk_up
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_up
+	step_end
+
+LittlerootTown_UnicornLab_Movement_PlayerReturnSquirtleNorth:
+	walk_up
+	walk_up
 	walk_left
 	walk_left
 	walk_left

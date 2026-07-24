@@ -14433,10 +14433,10 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_SS_TICKET] =
     {
-        .name = ITEM_NAME("Train Ticket"),
+        .name = ITEM_NAME("Train Pass"),
         .price = 0,
         .description = COMPOUND_STRING(
-            "The ticket required\n"
+            "The pass required\n"
             "for riding on a\n"
             "train."),
         .importance = 1,

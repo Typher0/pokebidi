@@ -36,8 +36,8 @@
     {
       "local_id": "LOCALID_PETALBURG_WALLY",
       "graphics_id": "OBJ_EVENT_GFX_HUGH",
-      "x": 58,
-      "y": 12,
+      "x": 12,
+      "y": 5,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
@@ -77,8 +77,8 @@
     {
       "local_id": "LOCALID_PETALBURG_WALLYS_DAD",
       "graphics_id": "OBJ_EVENT_GFX_POKEFAN_M_1",
-      "x": 58,
-      "y": 12,
+      "x": 12,
+      "y": 5,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
@@ -425,7 +425,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "PetalburgCity_EventScript_TrainAgent",
       "flag": "0"
     },
     {
@@ -470,7 +470,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_TRUCK",
-      "x": 12,
+      "x": 10,
       "y": 16,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
@@ -506,7 +506,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "PetalburgCity_EventScript_Line",
-      "flag": "FLAG_HIDE_PETALBURG_CITY_SCOTT"
+      "flag": "FLAG_HIDE_PETALBURG_CITY_WALLYS_DAD"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_LADY_1",
@@ -519,7 +519,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "PetalburgCity_EventScript_Line",
-      "flag": "FLAG_HIDE_PETALBURG_CITY_SCOTT"
+      "flag": "FLAG_HIDE_PETALBURG_CITY_WALLYS_DAD"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SCHOOLKID_M_1",
@@ -532,7 +532,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "PetalburgCity_EventScript_Line",
-      "flag": "FLAG_HIDE_PETALBURG_CITY_SCOTT"
+      "flag": "FLAG_HIDE_PETALBURG_CITY_WALLYS_DAD"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_GUITARIST_1",
@@ -545,7 +545,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "PetalburgCity_EventScript_Line",
-      "flag": "FLAG_HIDE_PETALBURG_CITY_SCOTT"
+      "flag": "FLAG_HIDE_PETALBURG_CITY_WALLYS_DAD"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_COOLTRAINER_M_2",
@@ -558,7 +558,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "PetalburgCity_EventScript_Line",
-      "flag": "FLAG_HIDE_PETALBURG_CITY_SCOTT"
+      "flag": "FLAG_HIDE_PETALBURG_CITY_WALLYS_DAD"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CAMERAMAN_1",
@@ -571,7 +571,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "PetalburgCity_EventScript_DancingCrew",
-      "flag": "FLAG_HIDE_PETALBURG_CITY_SCOTT"
+      "flag": "FLAG_HIDE_PETALBURG_CITY_WALLYS_DAD"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_IDOL",
@@ -584,7 +584,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "PetalburgCity_EventScript_DancingCrew",
-      "flag": "FLAG_HIDE_PETALBURG_CITY_SCOTT"
+      "flag": "FLAG_HIDE_PETALBURG_CITY_WALLYS_DAD"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_IDOL",
@@ -597,7 +597,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "PetalburgCity_EventScript_DancingCrew",
-      "flag": "FLAG_HIDE_PETALBURG_CITY_SCOTT"
+      "flag": "FLAG_HIDE_PETALBURG_CITY_WALLYS_DAD"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_IDOL",
@@ -610,7 +610,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_HIDE_PETALBURG_CITY_SCOTT"
+      "flag": "FLAG_HIDE_PETALBURG_CITY_WALLYS_DAD"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_DANCER",
@@ -623,7 +623,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "PetalburgCity_EventScript_DancingCrew",
-      "flag": "FLAG_HIDE_PETALBURG_CITY_SCOTT"
+      "flag": "FLAG_HIDE_PETALBURG_CITY_WALLYS_DAD"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_DANCER",
@@ -636,7 +636,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "PetalburgCity_EventScript_DancingCrew",
-      "flag": "FLAG_HIDE_PETALBURG_CITY_SCOTT"
+      "flag": "FLAG_HIDE_PETALBURG_CITY_WALLYS_DAD"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CLERK_F",
@@ -649,7 +649,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "PetalburgCity_EventScript_DancingCrew",
-      "flag": "FLAG_HIDE_PETALBURG_CITY_SCOTT"
+      "flag": "FLAG_HIDE_PETALBURG_CITY_WALLYS_DAD"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_DANCER",
@@ -662,7 +662,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_HIDE_PETALBURG_CITY_SCOTT"
+      "flag": "FLAG_HIDE_PETALBURG_CITY_WALLYS_DAD"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_POKEKID",
@@ -675,7 +675,20 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "PetalburgCity_EventScript_Line",
-      "flag": "FLAG_HIDE_PETALBURG_CITY_SCOTT"
+      "flag": "FLAG_HIDE_PETALBURG_CITY_WALLYS_DAD"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ARTIST_2",
+      "x": 10,
+      "y": 18,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "PetalburgCity_EventScript_Line",
+      "flag": "FLAG_HIDE_PETALBURG_CITY_WALLYS_DAD"
     }
   ],
   "warp_events": [

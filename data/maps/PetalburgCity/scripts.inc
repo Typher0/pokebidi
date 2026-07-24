@@ -1063,6 +1063,7 @@ PetalburgCity_EventScript_N::
 	setfollowernpc LOCALID_PETALBURG_CITY_N, FNPC_ALL, PetalburgCity_EventScript_NFollower, PARTNER_N_PETALBURG
 	msgbox PetalburgCity_Text_GreatThanks, MSGBOX_DEFAULT
 	closemessage
+	clearflag FLAG_HIDE_PETALBURG_CITY_WALLYS_DAD
 	msgbox PetalburgCity_Text_NJoined, MSGBOX_SIGN
 	closemessage
 	releaseall
@@ -1137,4 +1138,88 @@ PetalburgCity_Text_Line:
 	.string "working condition!\p"
 	.string "I have to board ASAP!$"
 
+PetalburgCity_EventScript_TrainAgent::
+	lockall
+	faceplayer
+	msgbox PetalburgCity_Text_Welcome, MSGBOX_DEFAULT
+	closemessage
+	goto_if_set FLAG_HIDE_MT_CHIMNEY_TEAM_MAGMA, PetalburgCity_EventScript_TrainStation
+	msgbox PetalburgCity_Text_NotInOperation, MSGBOX_DEFAULT
+	closemessage
+	releaseall
+	end
+
+PetalburgCity_EventScript_TrainStation::
+	msgbox PetalburgCity_Text_TrainOptions, MSGBOX_DEFAULT
+	dynmultichoice 22, 2, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, PetalburgCity_Text_TrainChoice1, PetalburgCity_Text_TrainChoice2, PetalburgCity_Text_TrainChoice3
+	switch VAR_RESULT
+	case 0, PetalburgCity_EventScript_ToZephyr
+	case 1, PetalburgCity_EventScript_ToJoridan
+	case 2, PetalburgCity_EventScript_Exit
+	goto PetalburgCity_EventScript_Exit
+	end
+
+PetalburgCity_EventScript_ToZephyr::
+	call_if_eq VAR_FACING, DIR_WEST, PetalburgCity_EventScript_GetOnTrainWest
+	call_if_eq VAR_FACING, DIR_SOUTH, PetalburgCity_EventScript_GetOnTrainSouth
+	warp MAP_LITTLEROOT_TOWN, 23, 5
+	goto PetalburgCity_EventScript_Exit
+	end
+
+PetalburgCity_EventScript_ToJoridan::
+	call_if_eq VAR_FACING, DIR_WEST, PetalburgCity_EventScript_GetOnTrainWest
+	call_if_eq VAR_FACING, DIR_SOUTH, PetalburgCity_EventScript_GetOnTrainSouth
+	warp MAP_RUSTBORO_CITY, 15, 40
+	goto PetalburgCity_EventScript_Exit
+	end
+
+PetalburgCity_EventScript_Exit::
+	msgbox PetalburgCity_Text_ComeAgain, MSGBOX_DEFAULT
+	closemessage
+	releaseall
+	end
+
+PetalburgCity_EventScript_GetOnTrainWest::
+	applymovement LOCALID_PLAYER, PetalburgCity_Movement_GetOnTrainWest
+	waitmovement 0
+	return
+
+PetalburgCity_EventScript_GetOnTrainSouth::
+	applymovement LOCALID_PLAYER, PetalburgCity_Movement_GetOnTrainSouth
+	waitmovement 0
+	return
+
+PetalburgCity_Movement_GetOnTrainWest:
+	walk_up
+	walk_up
+	step_end
+
+PetalburgCity_Movement_GetOnTrainSouth:
+	walk_right
+	walk_up
+	step_end
+
+PetalburgCity_Text_Welcome:
+	.string "Hello, welcome to Papillys City Train\n"
+	.string "Station.$"
+
+PetalburgCity_Text_NotInOperation:
+	.string "The train is not currently operational\n"
+	.string "at the moment.\p"
+	.string "We apologize for the inconvenience.$"
+
+PetalburgCity_Text_TrainChoice1:
+	.string "Zephyr Town$"
+
+PetalburgCity_Text_TrainChoice2:
+	.string "Joridan City$"
+
+PetalburgCity_Text_TrainChoice3:
+	.string "Cancel$"
+
+PetalburgCity_Text_ComeAgain:
+	.string "We hope to see you again!$"
+
+PetalburgCity_Text_TrainOptions:
+	.string "Where would you like to go?$"
 

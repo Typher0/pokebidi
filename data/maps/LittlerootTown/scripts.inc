@@ -485,7 +485,7 @@ LittlerootTown_Text_MissedWife:
 LittlerootTown_Text_Lady:
 	.string "It's great that I can take this\n"
 	.string "train to Joridan City,\p"
-	.string "but who can I get back home to\n"
+	.string "but how can I get back home to\n"
 	.string "Arkane City?$"
 
 LittlerootTown_Text_NeedPokemon:
@@ -509,4 +509,39 @@ LittlerootTown_Text_YouHavePKMN:
 	.string "They're real cute, that's for sure!\n"
 	.string "You've made an excellent choice.$"
 
+LittlerootTown_EventScript_TrainAgent::
+	lockall
+	faceplayer
+	msgbox LittlerootTown_Text_Welcome, MSGBOX_DEFAULT
+	closemessage
+	goto_if_set FLAG_HIDE_MT_CHIMNEY_TEAM_MAGMA, LittlerootTown_EventScript_TrainStation
+	msgbox PetalburgCity_Text_NotInOperation, MSGBOX_DEFAULT
+	closemessage
+	releaseall
+	end
+
+LittlerootTown_EventScript_TrainStation::
+	msgbox PetalburgCity_Text_TrainOptions, MSGBOX_DEFAULT
+	dynmultichoice 22, 2, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, LittlerootTown_Text_TrainChoice1, PetalburgCity_Text_TrainChoice2, PetalburgCity_Text_TrainChoice3
+	switch VAR_RESULT
+	case 0, LittlerootTown_EventScript_ToPapillys
+	case 1, PetalburgCity_EventScript_ToJoridan
+	case 2, PetalburgCity_EventScript_Exit
+	goto PetalburgCity_EventScript_Exit
+	end
+
+LittlerootTown_EventScript_ToPapillys::
+	call_if_eq VAR_FACING, DIR_WEST, PetalburgCity_EventScript_GetOnTrainWest
+	call_if_eq VAR_FACING, DIR_SOUTH, PetalburgCity_EventScript_GetOnTrainSouth
+	warp MAP_PETALBURG_CITY, 10, 19
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
+	goto PetalburgCity_EventScript_Exit
+	end
+
+LittlerootTown_Text_Welcome:
+	.string "Hello, welcome to Zephyr Town Train\n"
+	.string "Station.$"
+
+LittlerootTown_Text_TrainChoice1:
+	.string "Papillys City$"
 

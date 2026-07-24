@@ -77,3 +77,33 @@ PetalburgCity_OtnarsInn_2F_Text_Grandma:
 Text_MonUsedSweetScent:
 	.string "Your Pokémon used Sweet Scent!"
 
+PetalburgCity_OtnarsInn_2F_EventScript_Dad::
+	msgbox PetalburgCity_OtnarsInn_2F_Text_Dad, MSGBOX_NPC
+	end
+
+PetalburgCity_OtnarsInn_2F_Text_Dad:
+	.string "That son of mine just won't sit still!$"
+
+PetalburgCity_OtnarsInn_2F_EventScript_Mom::
+	msgbox PetalburgCity_OtnarsInn_2F_Text_Mom, MSGBOX_NPC
+	end
+
+PetalburgCity_OtnarsInn_2F_Text_Mom:
+	.string "There's a lot of people out there\n"
+	.string "who get really upset hearing about kids\l"
+	.string "who aren't familiar with old technology.\p"
+	.string "Me?\n"
+	.string "I think it's fun.\p"
+	.string "I can talk about a VHS, and they've never\n"
+	.string "heard of it.\p"
+	.string "How would they know whether or not I'm\n"
+	.string "telling the truth when I say that it\l"
+	.string "stands for Vehicle Homing System?\p"
+	.string "It was what we had before GPS, I say.\p"
+	.string "It couldn't take you anywhere you want,\n"
+	.string "but you had one receiver in your home,\l"
+	.string "and one in your car.\p"
+	.string "It was used to get you home!\p"
+	.string "It's a harmless little thing that\n"
+	.string "gives me some amusement.$"
+
