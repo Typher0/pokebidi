@@ -98,6 +98,11 @@ static bool32 IsFieldMoveUnlocked_SweetScent(void)
     return TRUE;
 }
 
+static bool32 IsFieldMoveUnlocked_Headbutt(void)
+{
+    return TRUE;
+}
+
 static bool32 IsFieldMoveUnlocked_Defog(void)
 {
     return TRUE;
@@ -228,6 +233,13 @@ const struct FieldMoveInfo gFieldMoveInfo[FIELD_MOVES_COUNT] =
         .fieldMoveFunc = SetUpFieldMove_Defog,
         .isUnlockedFunc = IsFieldMoveUnlocked_Defog,
         .moveID = MOVE_DEFOG,
+        .partyMsgID = PARTY_MSG_CANT_USE_HERE,
+    },
+    [FIELD_MOVE_HEADBUTT] =
+    {
+        .fieldMoveFunc = SetUpFieldMove_Headbutt,
+        .isUnlockedFunc = IsFieldMoveUnlocked_Headbutt,
+        .moveID = MOVE_HEADBUTT,
         .partyMsgID = PARTY_MSG_CANT_USE_HERE,
     },
 };

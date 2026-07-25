@@ -369,6 +369,64 @@ EventScript_EndSurface::
 EventScript_NoSurface::
 	releaseall
 	end
+ 
+ @ Use headbutt from party menu
+EventScript_UseHeadbutt::
+    lockall
+    goto EventScript_HeadbuttCommon
+ 
+@ Interact with headbutt tree
+EventScript_Headbutt::
+    lockall
+    checkfieldmove FIELD_MOVE_HEADBUTT, TRUE
+    goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CantHeadbuttTree
+    setfieldeffectargument 0, VAR_RESULT
+    bufferpartymonnick STR_VAR_1, VAR_RESULT
+    buffermovename STR_VAR_2, MOVE_HEADBUTT
+    msgbox Text_WantToHeadbutt, MSGBOX_YESNO
+    goto_if_eq VAR_RESULT, NO, EventScript_CancelHeadbutt
+    msgbox Text_MonUsedFieldMove, MSGBOX_DEFAULT
+    closemessage
+EventScript_HeadbuttCommon:
+    @ check if follower should use the field move
+    isfollowerfieldmoveuser VAR_0x8004
+    setfieldeffectargument 3, VAR_0x8004 @ skip pose if so
+    dofieldeffect FLDEFF_USE_HEADBUTT
+    waitstate
+EventScript_HeadbuttTree:: @ fallthrough
+    setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+    call_if_eq VAR_0x8004, TRUE, EventScript_FollowerFieldMove
+    waitmovement 0
+    removeobject VAR_LAST_TALKED
+    specialvar VAR_RESULT, TryUpdateRusturfTunnelState
+    goto_if_eq VAR_RESULT, TRUE, EventScript_EndHeadbutt
+    special HeadbuttWildEncounter
+    goto_if_eq VAR_RESULT, FALSE, EventScript_EndHeadbutt
+    waitstate
+    releaseall
+    end
+
+EventScript_CantHeadbuttTree::
+    msgbox Text_CantHeadbuttTree, MSGBOX_DEFAULT
+    releaseall
+    end
+    
+EventScript_EndHeadbutt::
+    releaseall
+    end
+
+EventScript_CancelHeadbutt::
+    closemessage
+    releaseall
+    end
+    
+Text_WantToHeadbutt:
+    .string "It's a moderated sized tree.\n"
+    .string "Would you like to use HEADBUTT?$"
+
+Text_CantHeadbuttTree:
+    .string "There's a large, formidable tree.\n"
+    .string "It looks like it can be headbutted!$"
 
 EventScript_DigCommon:
 	isfollowerfieldmoveuser VAR_0x8004
