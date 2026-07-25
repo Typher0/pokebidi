@@ -3,6 +3,7 @@
   "name": "Route110",
   "layout": "LAYOUT_ROUTE110",
   "music": "MUS_ROUTE110",
+  "region": "REGION_HOENN",
   "region_map_section": "MAPSEC_ROUTE_110",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",
@@ -22,11 +23,6 @@
       "map": "MAP_SLATEPORT_CITY",
       "offset": 0,
       "direction": "down"
-    },
-    {
-      "map": "MAP_ROUTE103",
-      "offset": 60,
-      "direction": "left"
     }
   ],
   "object_events": [

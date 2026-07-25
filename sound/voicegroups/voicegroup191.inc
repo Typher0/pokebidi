@@ -10,14 +10,14 @@ voicegroup191::
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_fretless_bass, 255, 253, 0, 149
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_tuba_51, 255, 0, 255, 165
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_xylophone, 255, 235, 0, 204
-	voice_keysplit voicegroup005, KeySplitTable1
+	voice_keysplit voicegroup_trumpet_keysplit, keysplit_trumpet
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_glockenspiel, 255, 165, 51, 235
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_organ2, 255, 0, 255, 127
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_slap_bass, 255, 235, 128, 115
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_synth_bass, 255, 252, 0, 115
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_timpani, 255, 204, 193, 239
-	voice_keysplit voicegroup006, KeySplitTable2
-	voice_keysplit voicegroup007, KeySplitTable3
+	voice_keysplit voicegroup_french_horn_keysplit, keysplit_french_horn
+	voice_keysplit voicegroup_piano_keysplit, keysplit_piano
 	voice_directsound 60, 0, DirectSoundWaveData_classical_choir_voice_ahhs, 255, 0, 255, 0
 	voice_directsound 60, 0, DirectSoundWaveData_sd90_classical_oboe, 255, 165, 154, 127
 	voice_directsound 60, 0, DirectSoundWaveData_unused_sd90_oboe, 255, 165, 154, 127

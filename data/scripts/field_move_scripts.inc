@@ -45,15 +45,15 @@ EventScript_CancelCut::
 
 Text_WantToCut:
 	.string "This tree looks like it can be\n"
-	.string "CUT down!\p"
-	.string "Would you like to CUT it?$"
+	.string "Cut down!\p"
+	.string "Would you like to Cut it?$"
 
 Text_MonUsedFieldMove:
 	.string "{STR_VAR_1} used {STR_VAR_2}!$"
 
 Text_CantCut:
 	.string "This tree looks like it can be\n"
-	.string "CUT down!$"
+	.string "Cut down!$"
 
 @ Use rock smash from party menu
 EventScript_UseRockSmash::
@@ -215,10 +215,10 @@ EventScript_CancelSmash::
 
 Text_WantToSmash:
 	.string "This rock appears to be breakable.\n"
-	.string "Would you like to use ROCK SMASH?$"
+	.string "Would you like to use Rock Smash?$"
 
 Text_CantSmash:
-	.string "It's a rugged rock, but a POKéMON\n"
+	.string "It's a rugged rock, but a Pokémon\n"
 	.string "may be able to smash it.$"
 
 EventScript_StrengthBoulder::
@@ -264,21 +264,21 @@ EventScript_CancelStrength::
 	end
 
 Text_WantToStrength:
-	.string "It's a big boulder, but a POKéMON\n"
+	.string "It's a big boulder, but a Pokémon\n"
 	.string "may be able to push it aside.\p"
-	.string "Would you like to use STRENGTH?$"
+	.string "Would you like to use Strength?$"
 
 Text_MonUsedStrength:
-	.string "{STR_VAR_1} used STRENGTH!\p"
-	.string "{STR_VAR_1}'s STRENGTH made it\n"
+	.string "{STR_VAR_1} used Strength!\p"
+	.string "{STR_VAR_1}'s Strength made it\n"
 	.string "possible to move boulders around!$"
 
 Text_CantStrength:
-	.string "It's a big boulder, but a POKéMON\n"
+	.string "It's a big boulder, but a Pokémon\n"
 	.string "may be able to push it aside.$"
 
 Text_StrengthActivated:
-	.string "STRENGTH made it possible to move\n"
+	.string "Strength made it possible to move\n"
 	.string "boulders around.$"
 
 EventScript_UseWaterfall::
@@ -311,10 +311,10 @@ Text_CantWaterfall:
 
 Text_WantToWaterfall:
 	.string "It's a large waterfall.\n"
-	.string "Would you like to use WATERFALL?$"
+	.string "Would you like to use Waterfall?$"
 
 Text_MonUsedWaterfall:
-	.string "{STR_VAR_1} used WATERFALL.$"
+	.string "{STR_VAR_1} used Waterfall.$"
 
 EventScript_UseDive::
 	lockall
@@ -369,6 +369,64 @@ EventScript_EndSurface::
 EventScript_NoSurface::
 	releaseall
 	end
+ 
+ @ Use headbutt from party menu
+EventScript_UseHeadbutt::
+    lockall
+    goto EventScript_HeadbuttCommon
+ 
+@ Interact with headbutt tree
+EventScript_Headbutt::
+    lockall
+    checkfieldmove FIELD_MOVE_HEADBUTT, TRUE
+    goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CantHeadbuttTree
+    setfieldeffectargument 0, VAR_RESULT
+    bufferpartymonnick STR_VAR_1, VAR_RESULT
+    buffermovename STR_VAR_2, MOVE_HEADBUTT
+    msgbox Text_WantToHeadbutt, MSGBOX_YESNO
+    goto_if_eq VAR_RESULT, NO, EventScript_CancelHeadbutt
+    msgbox Text_MonUsedFieldMove, MSGBOX_DEFAULT
+    closemessage
+EventScript_HeadbuttCommon:
+    @ check if follower should use the field move
+    isfollowerfieldmoveuser VAR_0x8004
+    setfieldeffectargument 3, VAR_0x8004 @ skip pose if so
+    dofieldeffect FLDEFF_USE_HEADBUTT
+    waitstate
+EventScript_HeadbuttTree:: @ fallthrough
+    setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+    call_if_eq VAR_0x8004, TRUE, EventScript_FollowerFieldMove
+    waitmovement 0
+    removeobject VAR_LAST_TALKED
+    specialvar VAR_RESULT, TryUpdateRusturfTunnelState
+    goto_if_eq VAR_RESULT, TRUE, EventScript_EndHeadbutt
+    special HeadbuttWildEncounter
+    goto_if_eq VAR_RESULT, FALSE, EventScript_EndHeadbutt
+    waitstate
+    releaseall
+    end
+
+EventScript_CantHeadbuttTree::
+    msgbox Text_CantHeadbuttTree, MSGBOX_DEFAULT
+    releaseall
+    end
+    
+EventScript_EndHeadbutt::
+    releaseall
+    end
+
+EventScript_CancelHeadbutt::
+    closemessage
+    releaseall
+    end
+    
+Text_WantToHeadbutt:
+    .string "It's a moderated sized tree.\n"
+    .string "Would you like to use HEADBUTT?$"
+
+Text_CantHeadbuttTree:
+    .string "There's a large, formidable tree.\n"
+    .string "It looks like it can be headbutted!$"
 
 EventScript_DigCommon:
 	isfollowerfieldmoveuser VAR_0x8004
@@ -400,23 +458,23 @@ EventScript_UseCutGrass::
 	goto EventScript_CutGrassCommon
 
 Text_CantDive:
-	.string "The sea is deep here. A POKéMON\n"
+	.string "The sea is deep here. A Pokémon\n"
 	.string "may be able to go underwater.$"
 
 Text_WantToDive:
 	.string "The sea is deep here.\n"
-	.string "Would you like to use DIVE?$"
+	.string "Would you like to use Dive?$"
 
 Text_MonUsedDive:
-	.string "{STR_VAR_1} used DIVE.$"
+	.string "{STR_VAR_1} used Dive.$"
 
 Text_CantSurface:
 	.string "Light is filtering down from above.\n"
-	.string "A POKéMON may be able to surface.$"
+	.string "A Pokémon may be able to surface.$"
 
 Text_WantToSurface:
 	.string "Light is filtering down from above.\n"
-	.string "Would you like to use DIVE?$"
+	.string "Would you like to use Dive?$"
 
 EventScript_FailSweetScent::
 	msgbox Text_FailSweetScent, MSGBOX_SIGN
@@ -465,12 +523,12 @@ EventScript_EndRockClimb::
 	end
 
 Text_WantToRockClimb:
-    .string "The cliff is steep.\n"
-    .string "Would you like to use Rock Climb?$"
+	.string "The cliff is steep.\n"
+	.string "Would you like to use Rock Climb?$"
 
 Text_MonUsedRockClimb:
-    .string "{STR_VAR_1} used Rock Climb!$"
+	.string "{STR_VAR_1} used Rock Climb!$"
 
 Text_CantRockClimb:
-    .string "The cliff is steep.\n"
-    .string "A Pokémon may be able to climb it.$"
+	.string "The cliff is steep.\n"
+	.string "A Pokémon may be able to climb it.$"

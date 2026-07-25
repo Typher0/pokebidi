@@ -5,8 +5,8 @@
   "music": "MUS_ROUTE101",
   "region_map_section": "MAPSEC_ROUTE_101",
   "requires_flash": false,
-  "weather": "WEATHER_SUNNY",
-  "map_type": "MAP_TYPE_ROUTE",
+  "weather": "WEATHER_DYNAMIC",
+  "map_type": "MAP_TYPE_ROUTE_SNOWY",
   "allow_cycling": true,
   "allow_escaping": false,
   "allow_running": true,
@@ -15,189 +15,171 @@
   "connections": [
     {
       "map": "MAP_OLDALE_TOWN",
-      "offset": 0,
-      "direction": "up"
+      "offset": 24,
+      "direction": "down"
     },
     {
       "map": "MAP_LITTLEROOT_TOWN",
-      "offset": 0,
-      "direction": "down"
+      "offset": -6,
+      "direction": "up"
     }
   ],
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER_2",
-      "x": 16,
-      "y": 8,
+      "graphics_id": "OBJ_EVENT_GFX_SKIER_M",
+      "x": 49,
+      "y": 17,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 2,
+      "movement_range_y": 2,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route101_EventScript_Youngster",
       "flag": "0"
     },
     {
-      "local_id": "LOCALID_ROUTE101_BIRCH",
-      "graphics_id": "OBJ_EVENT_GFX_SAGE_ROOD",
-      "x": 9,
-      "y": 13,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_JOG_IN_PLACE_RIGHT",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "0x0",
-      "flag": "FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_BIRCHS_BAG",
-      "x": 7,
-      "y": 14,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route101_EventScript_BirchsBag",
-      "flag": "FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG"
-    },
-    {
-      "local_id": "LOCALID_ROUTE101_ZIGZAGOON",
-      "graphics_id": "OBJ_EVENT_GFX_ZIGZAGOON_1",
-      "x": 10,
-      "y": 13,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_JOG_IN_PLACE_LEFT",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "0x0",
-      "flag": "FLAG_HIDE_ROUTE_101_ZIGZAGOON"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_SAGE_ROOD",
-      "x": 5,
-      "y": 11,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "ProfBirch_EventScript_RatePokedexOrRegister",
-      "flag": "FLAG_HIDE_ROUTE_101_BIRCH"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_MAN_8",
-      "x": 2,
-      "y": 13,
+      "graphics_id": "OBJ_EVENT_GFX_SKIER_F_1",
+      "x": 36,
+      "y": 24,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
-      "movement_range_x": 1,
-      "movement_range_y": 1,
+      "movement_range_x": 3,
+      "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route101_EventScript_Boy",
-      "flag": "FLAG_HIDE_ROUTE_101_BOY"
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SCIENTIST_M_1",
+      "x": 17,
+      "y": 19,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 2,
+      "movement_range_y": 3,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route101_EventScript_Scientist",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_ROUTE101_SEAN",
+      "graphics_id": "OBJ_EVENT_GFX_SEAN",
+      "x": 26,
+      "y": 12,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_SYS_POKEMON_GET"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(NONE)",
+      "x": 39,
+      "y": 9,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND_OWE",
+      "movement_range_x": 1,
+      "movement_range_y": 2,
+      "trainer_type": "TRAINER_TYPE_OW_WILD_ENCOUNTER",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(NONE)",
+      "x": 43,
+      "y": 18,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND_OWE",
+      "movement_range_x": 2,
+      "movement_range_y": 3,
+      "trainer_type": "TRAINER_TYPE_OW_WILD_ENCOUNTER",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(NONE)",
+      "x": 44,
+      "y": 25,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND_OWE",
+      "movement_range_x": 2,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_OW_WILD_ENCOUNTER",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
     }
   ],
-  "warp_events": [],
+  "warp_events": [
+    {
+      "x": 20,
+      "y": 11,
+      "elevation": 0,
+      "dest_map": "MAP_LITTLEROOT_TOWN_UNICORN_LAB",
+      "dest_warp_id": "0"
+    }
+  ],
   "coord_events": [
     {
       "type": "trigger",
-      "x": 10,
-      "y": 19,
-      "elevation": 3,
+      "x": 26,
+      "y": 10,
+      "elevation": 0,
       "var": "VAR_ROUTE101_STATE",
-      "var_value": "1",
-      "script": "Route101_EventScript_StartBirchRescue"
+      "var_value": "0",
+      "script": "Route101_EventScript_SeanLeft"
     },
     {
       "type": "trigger",
-      "x": 11,
-      "y": 19,
-      "elevation": 3,
+      "x": 27,
+      "y": 10,
+      "elevation": 0,
       "var": "VAR_ROUTE101_STATE",
-      "var_value": "1",
-      "script": "Route101_EventScript_StartBirchRescue"
-    },
-    {
-      "type": "trigger",
-      "x": 10,
-      "y": 18,
-      "elevation": 3,
-      "var": "VAR_ROUTE101_STATE",
-      "var_value": "2",
-      "script": "Route101_EventScript_PreventExitSouth"
-    },
-    {
-      "type": "trigger",
-      "x": 11,
-      "y": 18,
-      "elevation": 3,
-      "var": "VAR_ROUTE101_STATE",
-      "var_value": "2",
-      "script": "Route101_EventScript_PreventExitSouth"
-    },
-    {
-      "type": "trigger",
-      "x": 6,
-      "y": 16,
-      "elevation": 3,
-      "var": "VAR_ROUTE101_STATE",
-      "var_value": "2",
-      "script": "Route101_EventScript_PreventExitWest"
-    },
-    {
-      "type": "trigger",
-      "x": 6,
-      "y": 15,
-      "elevation": 3,
-      "var": "VAR_ROUTE101_STATE",
-      "var_value": "2",
-      "script": "Route101_EventScript_PreventExitWest"
-    },
-    {
-      "type": "trigger",
-      "x": 6,
-      "y": 17,
-      "elevation": 3,
-      "var": "VAR_ROUTE101_STATE",
-      "var_value": "2",
-      "script": "Route101_EventScript_PreventExitWest"
-    },
-    {
-      "type": "trigger",
-      "x": 6,
-      "y": 18,
-      "elevation": 3,
-      "var": "VAR_ROUTE101_STATE",
-      "var_value": "2",
-      "script": "Route101_EventScript_PreventExitWest"
-    },
-    {
-      "type": "trigger",
-      "x": 7,
-      "y": 13,
-      "elevation": 3,
-      "var": "VAR_ROUTE101_STATE",
-      "var_value": "2",
-      "script": "Route101_EventScript_PreventExitNorth"
+      "var_value": "0",
+      "script": "Route101_EventScript_SeanRight"
     }
   ],
   "bg_events": [
     {
       "type": "sign",
-      "x": 5,
-      "y": 9,
+      "x": 33,
+      "y": 7,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "Route101_EventScript_RouteSign"
+    },
+    {
+      "type": "sign",
+      "x": 32,
+      "y": 7,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "Route101_EventScript_RouteSign"
+    },
+    {
+      "type": "sign",
+      "x": 40,
+      "y": 23,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Route101_EventScript_RouteSign"
+      "script": "Route101_EventScript_Sign"
+    },
+    {
+      "type": "sign",
+      "x": 25,
+      "y": 10,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Route101_EventScript_LabSign"
     }
-  ]
+  ],
+  "region": "REGION_HOENN"
 }

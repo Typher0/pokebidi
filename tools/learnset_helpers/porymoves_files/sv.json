@@ -105528,6 +105528,87 @@
     "EggMoves": [],
     "TutorMoves": []
   },
+  
+  "ROYGIBIV": {
+    "LevelMoves": [
+      {
+        "Level": 1,
+        "Move": "MOVE_DRAGON_RAGE"
+      },
+      {
+        "Level": 5,
+        "Move": "MOVE_LIGHT_SCREEN"
+      },
+      {
+        "Level": 10,
+        "Move": "MOVE_REFLECT"
+      },
+      {
+        "Level": 15,
+        "Move": "MOVE_DAZZLING_GLEAM"
+      },
+      {
+        "Level": 20,
+        "Move": "MOVE_CAMOFLAGE"
+      },
+      {
+        "Level": 25,
+        "Move": "MOVE_AURA_SPHERE"
+      },
+      {
+        "Level": 30,
+        "Move": "MOVE_IRRADIATE"
+      },
+      {
+        "Level": 35,
+        "Move": "MOVE_RISING_VOLTAGE"
+      },
+      {
+        "Level": 40,
+        "Move": "MOVE_LEECH_SEED"
+      },
+      {
+        "Level": 45,
+        "Move": "MOVE_AURORA_VEIL"
+      },
+      {
+        "Level": 50,
+        "Move": "MOVE_AQUA_RING"
+      },
+      {
+        "Level": 55,
+        "Move": "MOVE_DRAGON_DANCE"
+      },
+      {
+        "Level": 60,
+        "Move": "MOVE_OMINOUS_WIND"
+      },
+      {
+        "Level": 65,
+        "Move": "MOVE_COIL"
+      },
+      {
+        "Level": 70,
+        "Move": "MOVE_MOONBLAST"
+      },
+      {
+        "Level": 75,
+        "Move": "MOVE_MOONLIGHT"
+      },
+      {
+        "Level": 80,
+        "Move": "MOVE_DRACO_METEOR"
+      },
+      {
+        "Level": 90,
+        "Move": "MOVE_RECOVER"
+      }
+    ],
+    "PreEvoMoves": [],
+    "TMMoves": [],
+    "EggMoves": [],
+    "TutorMoves": []
+  },
 
   "RATTATA_ALOLA": {
     "LevelMoves": [],

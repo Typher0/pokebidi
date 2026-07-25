@@ -4,560 +4,801 @@
 #include "constants/global.h"
 #include "constants/map_event_ids.h"
 
-#define OBJ_EVENT_GFX_LUCAS_NORMAL                 0
-#define OBJ_EVENT_GFX_LUCAS_MACH_BIKE              1
-#define OBJ_EVENT_GFX_LUCAS_SURFING                2
-#define OBJ_EVENT_GFX_LUCAS_FIELD_MOVE             3
-#define OBJ_EVENT_GFX_QUINTY_PLUMP                 4
-#define OBJ_EVENT_GFX_NINJA_BOY                    5
-#define OBJ_EVENT_GFX_TWIN                         6
-#define OBJ_EVENT_GFX_BOY_1                        7
-#define OBJ_EVENT_GFX_GIRL_1                       8
-#define OBJ_EVENT_GFX_BOY_2                        9
-#define OBJ_EVENT_GFX_GIRL_2                      10
-#define OBJ_EVENT_GFX_LITTLE_BOY                  11
-#define OBJ_EVENT_GFX_LITTLE_GIRL                 12
-#define OBJ_EVENT_GFX_BOY_3                       13
-#define OBJ_EVENT_GFX_GIRL_3                      14
-#define OBJ_EVENT_GFX_RICH_BOY                    15
-#define OBJ_EVENT_GFX_WOMAN_1                     16
-#define OBJ_EVENT_GFX_FAT_MAN                     17
-#define OBJ_EVENT_GFX_POKEFAN_F                   18
-#define OBJ_EVENT_GFX_MAN_1                       19
-#define OBJ_EVENT_GFX_WOMAN_2                     20
-#define OBJ_EVENT_GFX_EXPERT_M                    21
-#define OBJ_EVENT_GFX_EXPERT_F                    22
-#define OBJ_EVENT_GFX_MAN_2                       23
-#define OBJ_EVENT_GFX_WOMAN_3                     24
-#define OBJ_EVENT_GFX_POKEFAN_M                   25
-#define OBJ_EVENT_GFX_WOMAN_4                     26
-#define OBJ_EVENT_GFX_COOK                        27
-#define OBJ_EVENT_GFX_LINK_RECEPTIONIST           28
-#define OBJ_EVENT_GFX_OLD_MAN                     29
-#define OBJ_EVENT_GFX_OLD_WOMAN                   30
-#define OBJ_EVENT_GFX_CAMPER                      31
-#define OBJ_EVENT_GFX_PICNICKER                   32
-#define OBJ_EVENT_GFX_MAN_3                       33
-#define OBJ_EVENT_GFX_WOMAN_5                     34
-#define OBJ_EVENT_GFX_YOUNGSTER                   35
-#define OBJ_EVENT_GFX_BUG_CATCHER                 36
-#define OBJ_EVENT_GFX_PSYCHIC_M                   37
-#define OBJ_EVENT_GFX_SCHOOL_KID_M                38
-#define OBJ_EVENT_GFX_MANIAC                      39
-#define OBJ_EVENT_GFX_HEX_MANIAC                  40
-#define OBJ_EVENT_GFX_RAYQUAZA_STILL              41
-#define OBJ_EVENT_GFX_SWIMMER_M                   42
-#define OBJ_EVENT_GFX_SWIMMER_F                   43
-#define OBJ_EVENT_GFX_BLACK_BELT                  44
-#define OBJ_EVENT_GFX_BEAUTY                      45
-#define OBJ_EVENT_GFX_SCIENTIST_1                 46
-#define OBJ_EVENT_GFX_LASS                        47
-#define OBJ_EVENT_GFX_GENTLEMAN                   48
-#define OBJ_EVENT_GFX_SAILOR                      49
-#define OBJ_EVENT_GFX_FISHERMAN                   50
-#define OBJ_EVENT_GFX_RUNNING_TRIATHLETE_M        51
-#define OBJ_EVENT_GFX_RUNNING_TRIATHLETE_F        52
-#define OBJ_EVENT_GFX_TUBER_F                     53
-#define OBJ_EVENT_GFX_TUBER_M                     54
-#define OBJ_EVENT_GFX_HIKER                       55
-#define OBJ_EVENT_GFX_CYCLING_TRIATHLETE_M        56
-#define OBJ_EVENT_GFX_CYCLING_TRIATHLETE_F        57
-#define OBJ_EVENT_GFX_NURSE                       58
-#define OBJ_EVENT_GFX_ITEM_BALL                   59
-#define OBJ_EVENT_GFX_BERRY_TREE                  60
-#define OBJ_EVENT_GFX_BERRY_TREE_EARLY_STAGES     61
-#define OBJ_EVENT_GFX_BERRY_TREE_LATE_STAGES      62
-#define OBJ_EVENT_GFX_LUCAS_ACRO_BIKE             63
-#define OBJ_EVENT_GFX_PROF_BIRCH                  64
-#define OBJ_EVENT_GFX_MAN_4                       65
-#define OBJ_EVENT_GFX_MAN_5                       66
-#define OBJ_EVENT_GFX_REPORTER_M                  67
-#define OBJ_EVENT_GFX_REPORTER_F                  68
-#define OBJ_EVENT_GFX_BARD                        69
-#define OBJ_EVENT_GFX_ANABEL                      70
-#define OBJ_EVENT_GFX_TUCKER                      71
-#define OBJ_EVENT_GFX_GRETA                       72
-#define OBJ_EVENT_GFX_SPENSER                     73
-#define OBJ_EVENT_GFX_NOLAND                      74
-#define OBJ_EVENT_GFX_LUCY                        75
-#define OBJ_EVENT_GFX_UNUSED_NATU_DOLL            76
-#define OBJ_EVENT_GFX_UNUSED_MAGNEMITE_DOLL       77
-#define OBJ_EVENT_GFX_UNUSED_SQUIRTLE_DOLL        78
-#define OBJ_EVENT_GFX_UNUSED_WOOPER_DOLL          79
-#define OBJ_EVENT_GFX_UNUSED_PIKACHU_DOLL         80
-#define OBJ_EVENT_GFX_UNUSED_PORYGON2_DOLL        81
-#define OBJ_EVENT_GFX_CUTTABLE_TREE               82
-#define OBJ_EVENT_GFX_MART_EMPLOYEE               83
-#define OBJ_EVENT_GFX_ROOFTOP_SALE_WOMAN          84
-#define OBJ_EVENT_GFX_TEALA                       85
-#define OBJ_EVENT_GFX_BREAKABLE_ROCK              86
-#define OBJ_EVENT_GFX_PUSHABLE_BOULDER            87
-#define OBJ_EVENT_GFX_MR_BRINEYS_BOAT             88
-#define OBJ_EVENT_GFX_DAWN_NORMAL                 89
-#define OBJ_EVENT_GFX_DAWN_MACH_BIKE              90
-#define OBJ_EVENT_GFX_DAWN_ACRO_BIKE              91
-#define OBJ_EVENT_GFX_DAWN_SURFING                92
-#define OBJ_EVENT_GFX_DAWN_FIELD_MOVE             93
-#define OBJ_EVENT_GFX_TRUCK                       94
-#define OBJ_EVENT_GFX_VIGOROTH_CARRYING_BOX       95
-#define OBJ_EVENT_GFX_VIGOROTH_FACING_AWAY        96
-#define OBJ_EVENT_GFX_BIRCHS_BAG                  97
-#define OBJ_EVENT_GFX_ZIGZAGOON_1                 98
-#define OBJ_EVENT_GFX_ARTIST                      99
-#define OBJ_EVENT_GFX_RIVAL_LUCAS_NORMAL         100
-#define OBJ_EVENT_GFX_RIVAL_LUCAS_MACH_BIKE      101
-#define OBJ_EVENT_GFX_RIVAL_LUCAS_ACRO_BIKE      102
-#define OBJ_EVENT_GFX_RIVAL_LUCAS_SURFING        103
-#define OBJ_EVENT_GFX_RIVAL_LUCAS_FIELD_MOVE     104
-#define OBJ_EVENT_GFX_RIVAL_DAWN_NORMAL          105
-#define OBJ_EVENT_GFX_RIVAL_DAWN_MACH_BIKE       106
-#define OBJ_EVENT_GFX_RIVAL_DAWN_ACRO_BIKE       107
-#define OBJ_EVENT_GFX_RIVAL_DAWN_SURFING         108
-#define OBJ_EVENT_GFX_RIVAL_DAWN_FIELD_MOVE      109
-#define OBJ_EVENT_GFX_CAMERAMAN                  110
-#define OBJ_EVENT_GFX_LUCAS_UNDERWATER           111
-#define OBJ_EVENT_GFX_DAWN_UNDERWATER            112
-#define OBJ_EVENT_GFX_MOVING_BOX                 113
-#define OBJ_EVENT_GFX_CABLE_CAR                  114
-#define OBJ_EVENT_GFX_SCIENTIST_2                115
-#define OBJ_EVENT_GFX_DEVON_EMPLOYEE             116
-#define OBJ_EVENT_GFX_AQUA_MEMBER_M              117
-#define OBJ_EVENT_GFX_AQUA_MEMBER_F              118
-#define OBJ_EVENT_GFX_MAGMA_MEMBER_M             119
-#define OBJ_EVENT_GFX_MAGMA_MEMBER_F             120
-#define OBJ_EVENT_GFX_SIDNEY                     121
-#define OBJ_EVENT_GFX_PHOEBE                     122
-#define OBJ_EVENT_GFX_GLACIA                     123
-#define OBJ_EVENT_GFX_DRAKE                      124
-#define OBJ_EVENT_GFX_ROXANNE                    125
-#define OBJ_EVENT_GFX_BRAWLY                     126
-#define OBJ_EVENT_GFX_WATTSON                    127
-#define OBJ_EVENT_GFX_FLANNERY                   128
-#define OBJ_EVENT_GFX_NORMAN                     129
-#define OBJ_EVENT_GFX_WINONA                     130
-#define OBJ_EVENT_GFX_LIZA                       131
-#define OBJ_EVENT_GFX_TATE                       132
-#define OBJ_EVENT_GFX_WALLACE                    133
-#define OBJ_EVENT_GFX_STEVEN                     134
-#define OBJ_EVENT_GFX_WALLY                      135
-#define OBJ_EVENT_GFX_LITTLE_BOY_3               136
-#define OBJ_EVENT_GFX_LUCAS_FISHING              137
-#define OBJ_EVENT_GFX_DAWN_FISHING               138
-#define OBJ_EVENT_GFX_HOT_SPRINGS_OLD_WOMAN      139
-#define OBJ_EVENT_GFX_SS_TIDAL                   140
-#define OBJ_EVENT_GFX_SUBMARINE_SHADOW           141
-#define OBJ_EVENT_GFX_PICHU_DOLL                 142
-#define OBJ_EVENT_GFX_PIKACHU_DOLL               143
-#define OBJ_EVENT_GFX_MARILL_DOLL                144
-#define OBJ_EVENT_GFX_TOGEPI_DOLL                145
-#define OBJ_EVENT_GFX_CYNDAQUIL_DOLL             146
-#define OBJ_EVENT_GFX_CHIKORITA_DOLL             147
-#define OBJ_EVENT_GFX_TOTODILE_DOLL              148
-#define OBJ_EVENT_GFX_JIGGLYPUFF_DOLL            149
-#define OBJ_EVENT_GFX_MEOWTH_DOLL                150
-#define OBJ_EVENT_GFX_CLEFAIRY_DOLL              151
-#define OBJ_EVENT_GFX_DITTO_DOLL                 152
-#define OBJ_EVENT_GFX_SMOOCHUM_DOLL              153
-#define OBJ_EVENT_GFX_TREECKO_DOLL               154
-#define OBJ_EVENT_GFX_TORCHIC_DOLL               155
-#define OBJ_EVENT_GFX_MUDKIP_DOLL                156
-#define OBJ_EVENT_GFX_DUSKULL_DOLL               157
-#define OBJ_EVENT_GFX_WYNAUT_DOLL                158
-#define OBJ_EVENT_GFX_BALTOY_DOLL                159
-#define OBJ_EVENT_GFX_KECLEON_DOLL               160
-#define OBJ_EVENT_GFX_AZURILL_DOLL               161
-#define OBJ_EVENT_GFX_SKITTY_DOLL                162
-#define OBJ_EVENT_GFX_SWABLU_DOLL                163
-#define OBJ_EVENT_GFX_GULPIN_DOLL                164
-#define OBJ_EVENT_GFX_LOTAD_DOLL                 165
-#define OBJ_EVENT_GFX_SEEDOT_DOLL                166
-#define OBJ_EVENT_GFX_PIKA_CUSHION               167
-#define OBJ_EVENT_GFX_ROUND_CUSHION              168
-#define OBJ_EVENT_GFX_KISS_CUSHION               169
-#define OBJ_EVENT_GFX_ZIGZAG_CUSHION             170
-#define OBJ_EVENT_GFX_SPIN_CUSHION               171
-#define OBJ_EVENT_GFX_DIAMOND_CUSHION            172
-#define OBJ_EVENT_GFX_BALL_CUSHION               173
-#define OBJ_EVENT_GFX_GRASS_CUSHION              174
-#define OBJ_EVENT_GFX_FIRE_CUSHION               175
-#define OBJ_EVENT_GFX_WATER_CUSHION              176
-#define OBJ_EVENT_GFX_BIG_SNORLAX_DOLL           177
-#define OBJ_EVENT_GFX_BIG_RHYDON_DOLL            178
-#define OBJ_EVENT_GFX_BIG_LAPRAS_DOLL            179
-#define OBJ_EVENT_GFX_BIG_VENUSAUR_DOLL          180
-#define OBJ_EVENT_GFX_BIG_CHARIZARD_DOLL         181
-#define OBJ_EVENT_GFX_BIG_BLASTOISE_DOLL         182
-#define OBJ_EVENT_GFX_BIG_WAILMER_DOLL           183
-#define OBJ_EVENT_GFX_BIG_REGIROCK_DOLL          184
-#define OBJ_EVENT_GFX_BIG_REGICE_DOLL            185
-#define OBJ_EVENT_GFX_BIG_REGISTEEL_DOLL         186
-#define OBJ_EVENT_GFX_LATIAS                     187
-#define OBJ_EVENT_GFX_LATIOS                     188
-#define OBJ_EVENT_GFX_GAMEBOY_KID                189
-#define OBJ_EVENT_GFX_CONTEST_JUDGE              190
-#define OBJ_EVENT_GFX_LUCAS_WATERING             191
-#define OBJ_EVENT_GFX_DAWN_WATERING              192
-#define OBJ_EVENT_GFX_LUCAS_DECORATING           193
-#define OBJ_EVENT_GFX_DAWN_DECORATING            194
-#define OBJ_EVENT_GFX_ARCHIE                     195
-#define OBJ_EVENT_GFX_MAXIE                      196
-#define OBJ_EVENT_GFX_KYOGRE_FRONT               197
-#define OBJ_EVENT_GFX_GROUDON_FRONT              198
-#define OBJ_EVENT_GFX_FOSSIL                     199
-#define OBJ_EVENT_GFX_REGIROCK                   200
-#define OBJ_EVENT_GFX_REGICE                     201
-#define OBJ_EVENT_GFX_REGISTEEL                  202
-#define OBJ_EVENT_GFX_SKITTY                     203
-#define OBJ_EVENT_GFX_KECLEON                    204
-#define OBJ_EVENT_GFX_KYOGRE_ASLEEP              205
-#define OBJ_EVENT_GFX_GROUDON_ASLEEP             206
-#define OBJ_EVENT_GFX_RAYQUAZA                   207
-#define OBJ_EVENT_GFX_ZIGZAGOON_2                208
-#define OBJ_EVENT_GFX_PIKACHU                    209
-#define OBJ_EVENT_GFX_AZUMARILL                  210
-#define OBJ_EVENT_GFX_WINGULL                    211
-#define OBJ_EVENT_GFX_KECLEON_BRIDGE_SHADOW      212
-#define OBJ_EVENT_GFX_TUBER_M_SWIMMING           213
-#define OBJ_EVENT_GFX_AZURILL                    214
-#define OBJ_EVENT_GFX_MOM                        215
-#define OBJ_EVENT_GFX_LINK_LUCAS                 216
-#define OBJ_EVENT_GFX_LINK_DAWN                  217
-#define OBJ_EVENT_GFX_JUAN                       218
-#define OBJ_EVENT_GFX_SCOTT                      219
-#define OBJ_EVENT_GFX_POOCHYENA                  220
-#define OBJ_EVENT_GFX_KYOGRE_SIDE                221
-#define OBJ_EVENT_GFX_GROUDON_SIDE               222
-#define OBJ_EVENT_GFX_MYSTERY_GIFT_MAN           223
-#define OBJ_EVENT_GFX_TRICK_HOUSE_STATUE         224
-#define OBJ_EVENT_GFX_KIRLIA                     225
-#define OBJ_EVENT_GFX_DUSCLOPS                   226
-#define OBJ_EVENT_GFX_UNION_ROOM_NURSE           227
-#define OBJ_EVENT_GFX_SUDOWOODO                  228
-#define OBJ_EVENT_GFX_MEW                        229
-#define OBJ_EVENT_GFX_RED                        230
-#define OBJ_EVENT_GFX_LEAF                       231
-#define OBJ_EVENT_GFX_DEOXYS                     232
-#define OBJ_EVENT_GFX_DEOXYS_TRIANGLE            233
-#define OBJ_EVENT_GFX_BRANDON                    234
-#define OBJ_EVENT_GFX_LINK_RS_BRENDAN            235
-#define OBJ_EVENT_GFX_LINK_RS_MAY                236
-#define OBJ_EVENT_GFX_LUGIA                      237
-#define OBJ_EVENT_GFX_HOOH                       238
-#define OBJ_EVENT_GFX_ACCORDIANIST               239
-#define OBJ_EVENT_GFX_ACTOR                      240
-#define OBJ_EVENT_GFX_ALDER                      241
-#define OBJ_EVENT_GFX_ANTHEA                     242
-#define OBJ_EVENT_GFX_AROMA_LADY                 243
-#define OBJ_EVENT_GFX_ARTIST_1                   244
-#define OBJ_EVENT_GFX_ARTIST_2                   245
-#define OBJ_EVENT_GFX_ARTIST_3                   246
-#define OBJ_EVENT_GFX_BACKPACKER_F               247
-#define OBJ_EVENT_GFX_BACKPACKER_M               248
-#define OBJ_EVENT_GFX_BAKER                      249
-#define OBJ_EVENT_GFX_BATTLEGIRL_1               250
-#define OBJ_EVENT_GFX_BATTLEGIRL_2               251
-#define OBJ_EVENT_GFX_BEAUTY_1                   252
-#define OBJ_EVENT_GFX_BEAUTY_2                   253
-#define OBJ_EVENT_GFX_BEAUTY_3                   254
-#define OBJ_EVENT_GFX_BEAUTY_4                   255
-#define OBJ_EVENT_GFX_BENGA                      256
-#define OBJ_EVENT_GFX_BIANCA                     257
-#define OBJ_EVENT_GFX_BIKER_1                    258
-#define OBJ_EVENT_GFX_BIKER_2                    259
-#define OBJ_EVENT_GFX_BIRDKEEPER_F_1             260
-#define OBJ_EVENT_GFX_BIRDKEEPER_F_2             261
-#define OBJ_EVENT_GFX_BIRDKEEPER_M               262
-#define OBJ_EVENT_GFX_BLACKBELT_1                263
-#define OBJ_EVENT_GFX_BLACKBELT_2                264
-#define OBJ_EVENT_GFX_BLACKBELT_3                265
-#define OBJ_EVENT_GFX_BLAINE                     266
-#define OBJ_EVENT_GFX_BOARDER                    267
-#define OBJ_EVENT_GFX_BOY                        268
-#define OBJ_EVENT_GFX_BRAWLY_1                   269
-#define OBJ_EVENT_GFX_BROCK                      270
-#define OBJ_EVENT_GFX_BRYCEN                     271
-#define OBJ_EVENT_GFX_BUG_CATCHER_1              272
-#define OBJ_EVENT_GFX_BURGH                      273
-#define OBJ_EVENT_GFX_BURGLAR                    274
-#define OBJ_EVENT_GFX_BW_MOM                     275
-#define OBJ_EVENT_GFX_BW2_MOM                    276
-#define OBJ_EVENT_GFX_CAITLIN                    277
-#define OBJ_EVENT_GFX_CAMERAMAN_1                278
-#define OBJ_EVENT_GFX_CAMPER_1                   279
-#define OBJ_EVENT_GFX_CAPTAIN                    280
-#define OBJ_EVENT_GFX_CEDRIC                     281
-#define OBJ_EVENT_GFX_CHANNELLER                 282
-#define OBJ_EVENT_GFX_CHEREN                     283
-#define OBJ_EVENT_GFX_CHILI                      284
-#define OBJ_EVENT_GFX_CILAN                      285
-#define OBJ_EVENT_GFX_CLAY                       286
-#define OBJ_EVENT_GFX_CLERK_F                    287
-#define OBJ_EVENT_GFX_CLERK_M_1                  288
-#define OBJ_EVENT_GFX_CLERK_M_2                  289
-#define OBJ_EVENT_GFX_CLOWN                      290
-#define OBJ_EVENT_GFX_COLLECTOR                  291
-#define OBJ_EVENT_GFX_COLRESS                    292
-#define OBJ_EVENT_GFX_CONCORDIA                  293
-#define OBJ_EVENT_GFX_COOLTRAINER_F_1            294
-#define OBJ_EVENT_GFX_COOLTRAINER_F_2            295
-#define OBJ_EVENT_GFX_COOLTRAINER_F_3            296
-#define OBJ_EVENT_GFX_COOLTRAINER_F_4            297
-#define OBJ_EVENT_GFX_COOLTRAINER_M_1            298
-#define OBJ_EVENT_GFX_COOLTRAINER_M_2            299
-#define OBJ_EVENT_GFX_COOLTRAINER_M_3            300
-#define OBJ_EVENT_GFX_COOLTRAINER_M_4            301
-#define OBJ_EVENT_GFX_COWGIRL                    302
-#define OBJ_EVENT_GFX_CRESS                      303
-#define OBJ_EVENT_GFX_CURTIS_1                   304
-#define OBJ_EVENT_GFX_CURTIS_2                   305
-#define OBJ_EVENT_GFX_CYCLIST_F_1                306
-#define OBJ_EVENT_GFX_CYCLIST_F_2                307
-#define OBJ_EVENT_GFX_CYCLIST_M_1                308
-#define OBJ_EVENT_GFX_CYCLIST_M_2                309
-#define OBJ_EVENT_GFX_DANCER                     310
-#define OBJ_EVENT_GFX_DEPOTAGENT                 311
-#define OBJ_EVENT_GFX_DOCTOR                     312
-#define OBJ_EVENT_GFX_DRAGONTAMER                313
-#define OBJ_EVENT_GFX_DRAYDEN                    314
-#define OBJ_EVENT_GFX_ELDER                      315
-#define OBJ_EVENT_GFX_ELISA                      316
-#define OBJ_EVENT_GFX_EMMET                      317
-#define OBJ_EVENT_GFX_ERICA                      318
-#define OBJ_EVENT_GFX_FAT_MAN_1                  319
-#define OBJ_EVENT_GFX_FAT_MAN_2                  320
-#define OBJ_EVENT_GFX_FAT_MAN_3                  321
-#define OBJ_EVENT_GFX_FENNEL                     322
-#define OBJ_EVENT_GFX_FIREBREATHER               323
-#define OBJ_EVENT_GFX_FISHERMAN_1                324
-#define OBJ_EVENT_GFX_FISHERMAN_2                325
-#define OBJ_EVENT_GFX_FLANNERY_1                 326
-#define OBJ_EVENT_GFX_FLAUTIST                   327
-#define OBJ_EVENT_GFX_GAMBLER                    328
-#define OBJ_EVENT_GFX_GENTLEMAN_1                329
-#define OBJ_EVENT_GFX_GENTLEMAN_2                330
-#define OBJ_EVENT_GFX_GENTLEMAN_3                331
-#define OBJ_EVENT_GFX_GRIMSLEY                   332
-#define OBJ_EVENT_GFX_GUIDE_F                    333
-#define OBJ_EVENT_GFX_GUIDE_M                    334
-#define OBJ_EVENT_GFX_GUITARIST_1                335
-#define OBJ_EVENT_GFX_GUITARIST_2                336
-#define OBJ_EVENT_GFX_GUITARIST_3                337
-#define OBJ_EVENT_GFX_GUITARIST_F_1              338
-#define OBJ_EVENT_GFX_GUITARIST_F_2              339
-#define OBJ_EVENT_GFX_GYM_GUIDE                  340
-#define OBJ_EVENT_GFX_HARLEQUIN                  341
-#define OBJ_EVENT_GFX_HARMONICA                  342
-#define OBJ_EVENT_GFX_HIKER_1                    343
-#define OBJ_EVENT_GFX_HIKER_2                    344
-#define OBJ_EVENT_GFX_HOOPSTER                   345
-#define OBJ_EVENT_GFX_HUGH                       346
-#define OBJ_EVENT_GFX_IDOL                       347
-#define OBJ_EVENT_GFX_INFIELDER                  348
-#define OBJ_EVENT_GFX_INGO                       349
-#define OBJ_EVENT_GFX_IRIS                       350
-#define OBJ_EVENT_GFX_JANITOR                    351
-#define OBJ_EVENT_GFX_JOGGER_1                   352
-#define OBJ_EVENT_GFX_JOGGER_2                   353
-#define OBJ_EVENT_GFX_JOGGER_3                   354
-#define OBJ_EVENT_GFX_JUGGLER                    355
-#define OBJ_EVENT_GFX_KEYTAURIST                 356
-#define OBJ_EVENT_GFX_KOGA                       357
-#define OBJ_EVENT_GFX_LADY_1                     358
-#define OBJ_EVENT_GFX_LADY_2                     359
-#define OBJ_EVENT_GFX_LASS_1                     360
-#define OBJ_EVENT_GFX_LASS_2                     361
-#define OBJ_EVENT_GFX_LASS_3                     362
-#define OBJ_EVENT_GFX_LEONORA                    363
-#define OBJ_EVENT_GFX_LINEBACKER                 364
-#define OBJ_EVENT_GFX_LIZA_1                     365
-#define OBJ_EVENT_GFX_LT_SURGE                   366
-#define OBJ_EVENT_GFX_MAID_1                     367
-#define OBJ_EVENT_GFX_MAID_2                     368
-#define OBJ_EVENT_GFX_MAN_6                      369
-#define OBJ_EVENT_GFX_MAN_7                      370
-#define OBJ_EVENT_GFX_MAN_8                      371
-#define OBJ_EVENT_GFX_MARLIN_SWIM                372
-#define OBJ_EVENT_GFX_MARLIN                     373
-#define OBJ_EVENT_GFX_MARSHALL                   374
-#define OBJ_EVENT_GFX_MEDAL_GUY                  375
-#define OBJ_EVENT_GFX_MEDIUM                     376
-#define OBJ_EVENT_GFX_MISTY                      377
-#define OBJ_EVENT_GFX_N                          378
-#define OBJ_EVENT_GFX_NEO_GHETHIS_CANE           379
-#define OBJ_EVENT_GFX_NEO_GHETHIS                380
-#define OBJ_EVENT_GFX_NEO_PLASMA_F               381
-#define OBJ_EVENT_GFX_NEO_PLASMA_M               382
-#define OBJ_EVENT_GFX_NEO_ZINZOLIN               383
-#define OBJ_EVENT_GFX_NINJA_BOY_1                384
-#define OBJ_EVENT_GFX_NORMAN_1                   385
-#define OBJ_EVENT_GFX_NURSE_1                    386
-#define OBJ_EVENT_GFX_NURSE_JOY                  387
-#define OBJ_EVENT_GFX_NURSERY_AIDE               388
-#define OBJ_EVENT_GFX_OLD_WOMAN_1                389
-#define OBJ_EVENT_GFX_PARASOL_LADY_1             390
-#define OBJ_EVENT_GFX_PARASOL_LADY_2             391
-#define OBJ_EVENT_GFX_PICNICKER_1                392
-#define OBJ_EVENT_GFX_PIERS                      393
-#define OBJ_EVENT_GFX_PILOT                      394
-#define OBJ_EVENT_GFX_POKEFAN_F_1                395
-#define OBJ_EVENT_GFX_POKEFAN_F_2                396
-#define OBJ_EVENT_GFX_POKEFAN_M_1                397
-#define OBJ_EVENT_GFX_POKEFAN_M_2                398
-#define OBJ_EVENT_GFX_POKEKID                    399
-#define OBJ_EVENT_GFX_POKEMANIAC                 400
-#define OBJ_EVENT_GFX_POKEMART                   401
-#define OBJ_EVENT_GFX_BREEDER_F_1                402
-#define OBJ_EVENT_GFX_BREEDER_F_2                403
-#define OBJ_EVENT_GFX_BREEDER_M_1                404
-#define OBJ_EVENT_GFX_BREEDER_M_2                405
-#define OBJ_EVENT_GFX_RANGER_F_1                 406
-#define OBJ_EVENT_GFX_RANGER_F_2                 407
-#define OBJ_EVENT_GFX_RANGER_M_1                 408
-#define OBJ_EVENT_GFX_RANGER_M_2                 409
-#define OBJ_EVENT_GFX_POLICEMAN_1                410
-#define OBJ_EVENT_GFX_POLICEMAN_2                411
-#define OBJ_EVENT_GFX_POSTMAN                    412
-#define OBJ_EVENT_GFX_PRESCHOOLER_F              413
-#define OBJ_EVENT_GFX_PRESCHOOLER_M              414
-#define OBJ_EVENT_GFX_JUNIPER                    415
-#define OBJ_EVENT_GFX_OAK                        416
-#define OBJ_EVENT_GFX_PSYCHIC_F_1                417
-#define OBJ_EVENT_GFX_PSYCHIC_F_2                418
-#define OBJ_EVENT_GFX_PSYCHIC_M_1                419
-#define OBJ_EVENT_GFX_PSYCHIC_M_2                420
-#define OBJ_EVENT_GFX_RANCHER                    421
-#define OBJ_EVENT_GFX_RECEPTIONIST_1             422
-#define OBJ_EVENT_GFX_RECEPTIONIST_2             423
-#define OBJ_EVENT_GFX_RECEPTIONIST_3             424
-#define OBJ_EVENT_GFX_RECEPTIONIST_4             425
-#define OBJ_EVENT_GFX_REPORTER                   426
-#define OBJ_EVENT_GFX_RICH_BOY_1                 427
-#define OBJ_EVENT_GFX_RICH_BOY_2                 428
-#define OBJ_EVENT_GFX_RICH_MAN                   429
-#define OBJ_EVENT_GFX_ROUGHNECK_1                430
-#define OBJ_EVENT_GFX_ROUGHNECK_2                431
-#define OBJ_EVENT_GFX_ROUGHNECK_2_FIGHT          432
-#define OBJ_EVENT_GFX_ROXANNE_1                  433
-#define OBJ_EVENT_GFX_ROXIE_GUITAR               434
-#define OBJ_EVENT_GFX_ROXIE                      435
-#define OBJ_EVENT_GFX_RUIN_MANIAC                436
-#define OBJ_EVENT_GFX_SABRINA                    437
-#define OBJ_EVENT_GFX_SAGE_BRONIUS               438
-#define OBJ_EVENT_GFX_SAGE_GIALLO                439
-#define OBJ_EVENT_GFX_SAGE_GORM                  440
-#define OBJ_EVENT_GFX_SAGE_ROOD                  441
-#define OBJ_EVENT_GFX_SAGE_RYOKU                 442
-#define OBJ_EVENT_GFX_SAGE                       443
-#define OBJ_EVENT_GFX_SAILOR_1                   444
-#define OBJ_EVENT_GFX_SCHOOLKID_F                445
-#define OBJ_EVENT_GFX_SCHOOLKID_M_1              446
-#define OBJ_EVENT_GFX_SCIENTIST_F                447
-#define OBJ_EVENT_GFX_SCIENTIST_M_1              448
-#define OBJ_EVENT_GFX_SCIENTIST_M_2              449
-#define OBJ_EVENT_GFX_SCIENTIST_M_3              450
-#define OBJ_EVENT_GFX_SHADOW_TRIAD               451
-#define OBJ_EVENT_GFX_SHADY_GUY                  452
-#define OBJ_EVENT_GFX_SHAUNTAL                   453
-#define OBJ_EVENT_GFX_SINGER                     454
-#define OBJ_EVENT_GFX_SKIER_F_1                  455
-#define OBJ_EVENT_GFX_SKIER_F_2                  456
-#define OBJ_EVENT_GFX_SKIER_M                    457
-#define OBJ_EVENT_GFX_SKYLA                      458
-#define OBJ_EVENT_GFX_SMASHER                    459
-#define OBJ_EVENT_GFX_SOCIALITE_1                460
-#define OBJ_EVENT_GFX_SOCIALITE_2                461
-#define OBJ_EVENT_GFX_STRIKER                    462
-#define OBJ_EVENT_GFX_SUPERNERD                  463
-#define OBJ_EVENT_GFX_SWIMMER_F_1                464
-#define OBJ_EVENT_GFX_SWIMMER_F_2                465
-#define OBJ_EVENT_GFX_SWIMMER_F_3                466
-#define OBJ_EVENT_GFX_SWIMMER_M_1                467
-#define OBJ_EVENT_GFX_SWIMMER_M_2                468
-#define OBJ_EVENT_GFX_SWIMMER_M_3                469
-#define OBJ_EVENT_GFX_TATE_1                     470
-#define OBJ_EVENT_GFX_TEACHER                    471
-#define OBJ_EVENT_GFX_TEAM_PLASMA_F              472
-#define OBJ_EVENT_GFX_TEAM_PLASMA_M              473
-#define OBJ_EVENT_GFX_TRUMPETER                  474
-#define OBJ_EVENT_GFX_TUBER_F_1                  475
-#define OBJ_EVENT_GFX_TUBER_M_1                  476
-#define OBJ_EVENT_GFX_TWINS_1                    477
-#define OBJ_EVENT_GFX_TWINS_2                    478
-#define OBJ_EVENT_GFX_TWINS_3                    479
-#define OBJ_EVENT_GFX_ULTIMA                     480
-#define OBJ_EVENT_GFX_VETRAN_F                   481
-#define OBJ_EVENT_GFX_VETRAN_M_1                 482
-#define OBJ_EVENT_GFX_VETRAN_M_2                 483
-#define OBJ_EVENT_GFX_WAITER_1                   484
-#define OBJ_EVENT_GFX_WAITER_2                   485
-#define OBJ_EVENT_GFX_WAITRESS_1                 486
-#define OBJ_EVENT_GFX_WAITRESS_2                 487
-#define OBJ_EVENT_GFX_WALLACE_1                  488
-#define OBJ_EVENT_GFX_WATTSON_1                  489
-#define OBJ_EVENT_GFX_WINONA_1                   490
-#define OBJ_EVENT_GFX_WOMAN_6                    491
-#define OBJ_EVENT_GFX_WOMAN_7                    492
-#define OBJ_EVENT_GFX_WOMAN_8                    493
-#define OBJ_EVENT_GFX_WOMAN_9                    494
-#define OBJ_EVENT_GFX_WOMAN_10                   495
-#define OBJ_EVENT_GFX_WOMAN_11                   496
-#define OBJ_EVENT_GFX_WORKER_1                   497
-#define OBJ_EVENT_GFX_WORKER_2                   498
-#define OBJ_EVENT_GFX_WORKER_3                   499
-#define OBJ_EVENT_GFX_YANCY_1                    500
-#define OBJ_EVENT_GFX_YANCY_2                    501
-#define OBJ_EVENT_GFX_YOUNGSTER_1                502
-#define OBJ_EVENT_GFX_YOUNGSTER_2                503
-#define OBJ_EVENT_GFX_YOUNGSTER_3                504
-#define OBJ_EVENT_GFX_NURSE_JOY_WALK             505
-#define OBJ_EVENT_GFX_MAY_NORMAL                 506
-#define OBJ_EVENT_GFX_MAY_MACH_BIKE              507
-#define OBJ_EVENT_GFX_MAY_SURFING                508
-#define OBJ_EVENT_GFX_MAY_FIELD_MOVE             509
-#define OBJ_EVENT_GFX_MAY_ACRO_BIKE              510
-#define OBJ_EVENT_GFX_MAY_UNDERWATER             511
-#define OBJ_EVENT_GFX_MAY_FISHING                512
-#define OBJ_EVENT_GFX_MAY_WATERING               513
-#define OBJ_EVENT_GFX_MAY_DECORATING             514
-#define OBJ_EVENT_GFX_BRENDAN_NORMAL             515
-#define OBJ_EVENT_GFX_BRENDAN_MACH_BIKE          516
-#define OBJ_EVENT_GFX_BRENDAN_SURFING            517
-#define OBJ_EVENT_GFX_BRENDAN_FIELD_MOVE         518
-#define OBJ_EVENT_GFX_BRENDAN_ACRO_BIKE          519
-#define OBJ_EVENT_GFX_BRENDAN_UNDERWATER         520
-#define OBJ_EVENT_GFX_BRENDAN_FISHING            521
-#define OBJ_EVENT_GFX_BRENDAN_WATERING           522
-#define OBJ_EVENT_GFX_BRENDAN_DECORATING         523
-#define OBJ_EVENT_GFX_RIVAL_MAY_NORMAL           524
-#define OBJ_EVENT_GFX_RIVAL_MAY_MACH_BIKE        525
-#define OBJ_EVENT_GFX_RIVAL_MAY_ACRO_BIKE        526
-#define OBJ_EVENT_GFX_RIVAL_MAY_SURFING          527
-#define OBJ_EVENT_GFX_RIVAL_MAY_FIELD_MOVE       528
-#define OBJ_EVENT_GFX_LINK_MAY                   529
-#define OBJ_EVENT_GFX_RIVAL_BRENDAN_NORMAL       530
-#define OBJ_EVENT_GFX_RIVAL_BRENDAN_MACH_BIKE    531
-#define OBJ_EVENT_GFX_RIVAL_BRENDAN_ACRO_BIKE    532
-#define OBJ_EVENT_GFX_RIVAL_BRENDAN_SURFING      533
-#define OBJ_EVENT_GFX_RIVAL_BRENDAN_FIELD_MOVE   534
-#define OBJ_EVENT_GFX_LINK_BRENDAN               535
-#define OBJ_EVENT_GFX_ADHIRA                     536
-#define OBJ_EVENT_GFX_AHAB                       537
-#define OBJ_EVENT_GFX_CARLY                      538
-#define OBJ_EVENT_GFX_ISRAEL                     539
-#define OBJ_EVENT_GFX_JELISSA                    540
-#define OBJ_EVENT_GFX_JOSH                       541
-#define OBJ_EVENT_GFX_OTNAR                      542
-#define OBJ_EVENT_GFX_PETER                      543
-#define OBJ_EVENT_GFX_TOXIANNA                   544
-#define OBJ_EVENT_GFX_POKE_BALL                  545
-#define OBJ_EVENT_GFX_OW_MON                     546
-#define OBJ_EVENT_GFX_LIGHT_SPRITE               547
+#define PLAYER_AVATAR_GFX_MALE_NORMAL     (IS_FRLG ? OBJ_EVENT_GFX_RED_NORMAL     : OBJ_EVENT_GFX_LUCAS_NORMAL)
+#define PLAYER_AVATAR_GFX_MALE_MACH_BIKE  (IS_FRLG ? OBJ_EVENT_GFX_RED_BIKE       : OBJ_EVENT_GFX_LUCAS_MACH_BIKE)
+#define PLAYER_AVATAR_GFX_MALE_ACRO_BIKE  (IS_FRLG ? OBJ_EVENT_GFX_RED_BIKE       : OBJ_EVENT_GFX_LUCAS_ACRO_BIKE)
+#define PLAYER_AVATAR_GFX_MALE_SURFING    (IS_FRLG ? OBJ_EVENT_GFX_RED_SURF       : OBJ_EVENT_GFX_LUCAS_SURFING)
+#define PLAYER_AVATAR_GFX_MALE_UNDERWATER (IS_FRLG ? OBJ_EVENT_GFX_RED_SURF       : OBJ_EVENT_GFX_LUCAS_UNDERWATER)
+#define PLAYER_AVATAR_GFX_MALE_FIELD_MOVE (IS_FRLG ? OBJ_EVENT_GFX_RED_FIELD_MOVE : OBJ_EVENT_GFX_LUCAS_FIELD_MOVE)
+#define PLAYER_AVATAR_GFX_MALE_FISHING    (IS_FRLG ? OBJ_EVENT_GFX_RED_FISH       : OBJ_EVENT_GFX_LUCAS_FISHING)
+#define PLAYER_AVATAR_GFX_MALE_WATERING   (IS_FRLG ? OBJ_EVENT_GFX_RED_FIELD_MOVE : OBJ_EVENT_GFX_LUCAS_WATERING)
+#define PLAYER_AVATAR_GFX_MALE_VSSEEKER   (IS_FRLG ? OBJ_EVENT_GFX_RED_VS_SEEKER  : OBJ_EVENT_GFX_LUCAS_FIELD_MOVE)
+#define PLAYER_AVATAR_GFX_FEMALE_NORMAL     (IS_FRLG ? OBJ_EVENT_GFX_GREEN_NORMAL     : OBJ_EVENT_GFX_DAWN_NORMAL)
+#define PLAYER_AVATAR_GFX_FEMALE_MACH_BIKE  (IS_FRLG ? OBJ_EVENT_GFX_GREEN_BIKE       : OBJ_EVENT_GFX_DAWN_MACH_BIKE)
+#define PLAYER_AVATAR_GFX_FEMALE_ACRO_BIKE  (IS_FRLG ? OBJ_EVENT_GFX_GREEN_BIKE       : OBJ_EVENT_GFX_DAWN_ACRO_BIKE)
+#define PLAYER_AVATAR_GFX_FEMALE_SURFING    (IS_FRLG ? OBJ_EVENT_GFX_GREEN_SURF       : OBJ_EVENT_GFX_DAWN_SURFING)
+#define PLAYER_AVATAR_GFX_FEMALE_UNDERWATER (IS_FRLG ? OBJ_EVENT_GFX_GREEN_SURF       : OBJ_EVENT_GFX_DAWN_UNDERWATER)
+#define PLAYER_AVATAR_GFX_FEMALE_FIELD_MOVE (IS_FRLG ? OBJ_EVENT_GFX_GREEN_FIELD_MOVE : OBJ_EVENT_GFX_DAWN_FIELD_MOVE)
+#define PLAYER_AVATAR_GFX_FEMALE_FISHING    (IS_FRLG ? OBJ_EVENT_GFX_GREEN_FISH       : OBJ_EVENT_GFX_DAWN_FISHING)
+#define PLAYER_AVATAR_GFX_FEMALE_WATERING   (IS_FRLG ? OBJ_EVENT_GFX_GREEN_FIELD_MOVE : OBJ_EVENT_GFX_DAWN_WATERING)
+#define PLAYER_AVATAR_GFX_FEMALE_VSSEEKER   (IS_FRLG ? OBJ_EVENT_GFX_GREEN_VS_SEEKER  : OBJ_EVENT_GFX_DAWN_FIELD_MOVE)
 
+enum
+{
+    OBJ_EVENT_GFX_BRENDAN_NORMAL,
+    OBJ_EVENT_GFX_BRENDAN_MACH_BIKE,
+    OBJ_EVENT_GFX_BRENDAN_SURFING,
+    OBJ_EVENT_GFX_BRENDAN_FIELD_MOVE,
+    OBJ_EVENT_GFX_QUINTY_PLUMP,
+    OBJ_EVENT_GFX_NINJA_BOY,
+    OBJ_EVENT_GFX_TWIN,
+    OBJ_EVENT_GFX_BOY_1,
+    OBJ_EVENT_GFX_GIRL_1,
+    OBJ_EVENT_GFX_BOY_2,
+    OBJ_EVENT_GFX_GIRL_2,
+    OBJ_EVENT_GFX_LITTLE_BOY,
+    OBJ_EVENT_GFX_LITTLE_GIRL,
+    OBJ_EVENT_GFX_BOY_3,
+    OBJ_EVENT_GFX_GIRL_3,
+    OBJ_EVENT_GFX_RICH_BOY,
+    OBJ_EVENT_GFX_WOMAN_1,
+    OBJ_EVENT_GFX_FAT_MAN,
+    OBJ_EVENT_GFX_POKEFAN_F,
+    OBJ_EVENT_GFX_MAN_1,
+    OBJ_EVENT_GFX_WOMAN_2,
+    OBJ_EVENT_GFX_EXPERT_M,
+    OBJ_EVENT_GFX_EXPERT_F,
+    OBJ_EVENT_GFX_MAN_2,
+    OBJ_EVENT_GFX_WOMAN_3,
+    OBJ_EVENT_GFX_POKEFAN_M,
+    OBJ_EVENT_GFX_WOMAN_4,
+    OBJ_EVENT_GFX_COOK,
+    OBJ_EVENT_GFX_LINK_RECEPTIONIST,
+    OBJ_EVENT_GFX_OLD_MAN,
+    OBJ_EVENT_GFX_OLD_WOMAN,
+    OBJ_EVENT_GFX_CAMPER,
+    OBJ_EVENT_GFX_PICNICKER,
+    OBJ_EVENT_GFX_MAN_3,
+    OBJ_EVENT_GFX_WOMAN_5,
+    OBJ_EVENT_GFX_YOUNGSTER,
+    OBJ_EVENT_GFX_BUG_CATCHER,
+    OBJ_EVENT_GFX_PSYCHIC_M,
+    OBJ_EVENT_GFX_SCHOOL_KID_M,
+    OBJ_EVENT_GFX_MANIAC,
+    OBJ_EVENT_GFX_HEX_MANIAC,
+    OBJ_EVENT_GFX_RAYQUAZA_STILL,
+    OBJ_EVENT_GFX_SWIMMER_M,
+    OBJ_EVENT_GFX_SWIMMER_F,
+    OBJ_EVENT_GFX_BLACK_BELT,
+    OBJ_EVENT_GFX_BEAUTY,
+    OBJ_EVENT_GFX_SCIENTIST_1,
+    OBJ_EVENT_GFX_LASS,
+    OBJ_EVENT_GFX_GENTLEMAN,
+    OBJ_EVENT_GFX_SAILOR,
+    OBJ_EVENT_GFX_FISHERMAN,
+    OBJ_EVENT_GFX_RUNNING_TRIATHLETE_M,
+    OBJ_EVENT_GFX_RUNNING_TRIATHLETE_F,
+    OBJ_EVENT_GFX_TUBER_F,
+    OBJ_EVENT_GFX_TUBER_M,
+    OBJ_EVENT_GFX_HIKER,
+    OBJ_EVENT_GFX_CYCLING_TRIATHLETE_M,
+    OBJ_EVENT_GFX_CYCLING_TRIATHLETE_F,
+    OBJ_EVENT_GFX_NURSE,
+    OBJ_EVENT_GFX_ITEM_BALL,
+    OBJ_EVENT_GFX_TM_BALL,
+    OBJ_EVENT_GFX_BERRY_TREE,
+    OBJ_EVENT_GFX_BERRY_TREE_EARLY_STAGES,
+    OBJ_EVENT_GFX_BERRY_TREE_LATE_STAGES,
+    OBJ_EVENT_GFX_BRENDAN_ACRO_BIKE,
+    OBJ_EVENT_GFX_PROF_BIRCH,
+    OBJ_EVENT_GFX_MAN_4,
+    OBJ_EVENT_GFX_MAN_5,
+    OBJ_EVENT_GFX_REPORTER_M,
+    OBJ_EVENT_GFX_REPORTER_F,
+    OBJ_EVENT_GFX_BARD,
+    OBJ_EVENT_GFX_ANABEL,
+    OBJ_EVENT_GFX_TUCKER,
+    OBJ_EVENT_GFX_GRETA,
+    OBJ_EVENT_GFX_SPENSER,
+    OBJ_EVENT_GFX_NOLAND,
+    OBJ_EVENT_GFX_LUCY,
+    OBJ_EVENT_GFX_UNUSED_NATU_DOLL,
+    OBJ_EVENT_GFX_UNUSED_MAGNEMITE_DOLL,
+    OBJ_EVENT_GFX_UNUSED_SQUIRTLE_DOLL,
+    OBJ_EVENT_GFX_UNUSED_WOOPER_DOLL,
+    OBJ_EVENT_GFX_UNUSED_PIKACHU_DOLL,
+    OBJ_EVENT_GFX_UNUSED_PORYGON2_DOLL,
+    OBJ_EVENT_GFX_CUTTABLE_TREE,
+    OBJ_EVENT_GFX_MART_EMPLOYEE,
+    OBJ_EVENT_GFX_ROOFTOP_SALE_WOMAN,
+    OBJ_EVENT_GFX_TEALA,
+    OBJ_EVENT_GFX_BREAKABLE_ROCK,
+    OBJ_EVENT_GFX_PUSHABLE_BOULDER,
+    OBJ_EVENT_GFX_MR_BRINEYS_BOAT,
+    OBJ_EVENT_GFX_MAY_NORMAL,
+    OBJ_EVENT_GFX_MAY_MACH_BIKE,
+    OBJ_EVENT_GFX_MAY_ACRO_BIKE,
+    OBJ_EVENT_GFX_MAY_SURFING,
+    OBJ_EVENT_GFX_MAY_FIELD_MOVE,
+    OBJ_EVENT_GFX_TRUCK,
+    OBJ_EVENT_GFX_VIGOROTH_CARRYING_BOX,
+    OBJ_EVENT_GFX_VIGOROTH_FACING_AWAY,
+    OBJ_EVENT_GFX_BIRCHS_BAG,
+    OBJ_EVENT_GFX_ZIGZAGOON_1,
+    OBJ_EVENT_GFX_ARTIST,
+    OBJ_EVENT_GFX_RIVAL_LUCAS_NORMAL,
+    OBJ_EVENT_GFX_RIVAL_LUCAS_MACH_BIKE,
+    OBJ_EVENT_GFX_RIVAL_LUCAS_ACRO_BIKE,
+    OBJ_EVENT_GFX_RIVAL_LUCAS_SURFING,
+    OBJ_EVENT_GFX_RIVAL_LUCAS_FIELD_MOVE,
+    OBJ_EVENT_GFX_RIVAL_DAWN_NORMAL,
+    OBJ_EVENT_GFX_RIVAL_DAWN_MACH_BIKE,
+    OBJ_EVENT_GFX_RIVAL_DAWN_ACRO_BIKE,
+    OBJ_EVENT_GFX_RIVAL_DAWN_SURFING,
+    OBJ_EVENT_GFX_RIVAL_DAWN_FIELD_MOVE,
+    OBJ_EVENT_GFX_CAMERAMAN,
+    OBJ_EVENT_GFX_LUCAS_UNDERWATER,
+    OBJ_EVENT_GFX_DAWN_UNDERWATER,
+    OBJ_EVENT_GFX_MOVING_BOX,
+    OBJ_EVENT_GFX_CABLE_CAR,
+    OBJ_EVENT_GFX_SCIENTIST_2,
+    OBJ_EVENT_GFX_DEVON_EMPLOYEE,
+    OBJ_EVENT_GFX_AQUA_MEMBER_M,
+    OBJ_EVENT_GFX_AQUA_MEMBER_F,
+    OBJ_EVENT_GFX_MAGMA_MEMBER_M,
+    OBJ_EVENT_GFX_MAGMA_MEMBER_F,
+    OBJ_EVENT_GFX_SIDNEY,
+    OBJ_EVENT_GFX_PHOEBE,
+    OBJ_EVENT_GFX_GLACIA,
+    OBJ_EVENT_GFX_DRAKE,
+    OBJ_EVENT_GFX_ROXANNE,
+    OBJ_EVENT_GFX_BRAWLY,
+    OBJ_EVENT_GFX_WATTSON,
+    OBJ_EVENT_GFX_FLANNERY,
+    OBJ_EVENT_GFX_NORMAN,
+    OBJ_EVENT_GFX_WINONA,
+    OBJ_EVENT_GFX_LIZA,
+    OBJ_EVENT_GFX_TATE,
+    OBJ_EVENT_GFX_WALLACE,
+    OBJ_EVENT_GFX_STEVEN,
+    OBJ_EVENT_GFX_WALLY,
+    OBJ_EVENT_GFX_LITTLE_BOY_3,
+    OBJ_EVENT_GFX_LUCAS_FISHING,
+    OBJ_EVENT_GFX_DAWN_FISHING,
+    OBJ_EVENT_GFX_HOT_SPRINGS_OLD_WOMAN,
+    OBJ_EVENT_GFX_SS_TIDAL,
+    OBJ_EVENT_GFX_SUBMARINE_SHADOW,
+    OBJ_EVENT_GFX_PICHU_DOLL,
+    OBJ_EVENT_GFX_PIKACHU_DOLL,
+    OBJ_EVENT_GFX_MARILL_DOLL,
+    OBJ_EVENT_GFX_TOGEPI_DOLL,
+    OBJ_EVENT_GFX_CYNDAQUIL_DOLL,
+    OBJ_EVENT_GFX_CHIKORITA_DOLL,
+    OBJ_EVENT_GFX_TOTODILE_DOLL,
+    OBJ_EVENT_GFX_JIGGLYPUFF_DOLL,
+    OBJ_EVENT_GFX_MEOWTH_DOLL,
+    OBJ_EVENT_GFX_CLEFAIRY_DOLL,
+    OBJ_EVENT_GFX_DITTO_DOLL,
+    OBJ_EVENT_GFX_SMOOCHUM_DOLL,
+    OBJ_EVENT_GFX_TREECKO_DOLL,
+    OBJ_EVENT_GFX_TORCHIC_DOLL,
+    OBJ_EVENT_GFX_MUDKIP_DOLL,
+    OBJ_EVENT_GFX_DUSKULL_DOLL,
+    OBJ_EVENT_GFX_WYNAUT_DOLL,
+    OBJ_EVENT_GFX_BALTOY_DOLL,
+    OBJ_EVENT_GFX_KECLEON_DOLL,
+    OBJ_EVENT_GFX_AZURILL_DOLL,
+    OBJ_EVENT_GFX_SKITTY_DOLL,
+    OBJ_EVENT_GFX_SWABLU_DOLL,
+    OBJ_EVENT_GFX_GULPIN_DOLL,
+    OBJ_EVENT_GFX_LOTAD_DOLL,
+    OBJ_EVENT_GFX_SEEDOT_DOLL,
+    OBJ_EVENT_GFX_PIKA_CUSHION,
+    OBJ_EVENT_GFX_ROUND_CUSHION,
+    OBJ_EVENT_GFX_KISS_CUSHION,
+    OBJ_EVENT_GFX_ZIGZAG_CUSHION,
+    OBJ_EVENT_GFX_SPIN_CUSHION,
+    OBJ_EVENT_GFX_DIAMOND_CUSHION,
+    OBJ_EVENT_GFX_BALL_CUSHION,
+    OBJ_EVENT_GFX_GRASS_CUSHION,
+    OBJ_EVENT_GFX_FIRE_CUSHION,
+    OBJ_EVENT_GFX_WATER_CUSHION,
+    OBJ_EVENT_GFX_BIG_SNORLAX_DOLL,
+    OBJ_EVENT_GFX_BIG_RHYDON_DOLL,
+    OBJ_EVENT_GFX_BIG_LAPRAS_DOLL,
+    OBJ_EVENT_GFX_BIG_VENUSAUR_DOLL,
+    OBJ_EVENT_GFX_BIG_CHARIZARD_DOLL,
+    OBJ_EVENT_GFX_BIG_BLASTOISE_DOLL,
+    OBJ_EVENT_GFX_BIG_WAILMER_DOLL,
+    OBJ_EVENT_GFX_BIG_REGIROCK_DOLL,
+    OBJ_EVENT_GFX_BIG_REGICE_DOLL,
+    OBJ_EVENT_GFX_BIG_REGISTEEL_DOLL,
+    OBJ_EVENT_GFX_LATIAS,
+    OBJ_EVENT_GFX_LATIOS,
+    OBJ_EVENT_GFX_GAMEBOY_KID,
+    OBJ_EVENT_GFX_CONTEST_JUDGE,
+    OBJ_EVENT_GFX_LUCAS_WATERING,
+    OBJ_EVENT_GFX_DAWN_WATERING,
+    OBJ_EVENT_GFX_BRENDAN_DECORATING,
+    OBJ_EVENT_GFX_MAY_DECORATING,
+    OBJ_EVENT_GFX_ARCHIE,
+    OBJ_EVENT_GFX_MAXIE,
+    OBJ_EVENT_GFX_KYOGRE_FRONT,
+    OBJ_EVENT_GFX_GROUDON_FRONT,
+    OBJ_EVENT_GFX_FOSSIL,
+    OBJ_EVENT_GFX_REGIROCK,
+    OBJ_EVENT_GFX_REGICE,
+    OBJ_EVENT_GFX_REGISTEEL,
+    OBJ_EVENT_GFX_SKITTY,
+    OBJ_EVENT_GFX_KECLEON,
+    OBJ_EVENT_GFX_KYOGRE_ASLEEP,
+    OBJ_EVENT_GFX_GROUDON_ASLEEP,
+    OBJ_EVENT_GFX_RAYQUAZA,
+    OBJ_EVENT_GFX_ZIGZAGOON_2,
+    OBJ_EVENT_GFX_PIKACHU,
+    OBJ_EVENT_GFX_AZUMARILL,
+    OBJ_EVENT_GFX_WINGULL,
+    OBJ_EVENT_GFX_KECLEON_BRIDGE_SHADOW,
+    OBJ_EVENT_GFX_TUBER_M_SWIMMING,
+    OBJ_EVENT_GFX_AZURILL,
+    OBJ_EVENT_GFX_MOM,
+    OBJ_EVENT_GFX_LINK_LUCAS,
+    OBJ_EVENT_GFX_LINK_DAWN,
+    OBJ_EVENT_GFX_JUAN,
+    OBJ_EVENT_GFX_SCOTT,
+    OBJ_EVENT_GFX_POOCHYENA,
+    OBJ_EVENT_GFX_KYOGRE_SIDE,
+    OBJ_EVENT_GFX_GROUDON_SIDE,
+    OBJ_EVENT_GFX_MYSTERY_GIFT_MAN,
+    OBJ_EVENT_GFX_TRICK_HOUSE_STATUE,
+    OBJ_EVENT_GFX_KIRLIA,
+    OBJ_EVENT_GFX_DUSCLOPS,
+    OBJ_EVENT_GFX_UNION_ROOM_NURSE,
+    OBJ_EVENT_GFX_SUDOWOODO,
+    OBJ_EVENT_GFX_MEW,
+    OBJ_EVENT_GFX_RED,
+    OBJ_EVENT_GFX_LEAF,
+    OBJ_EVENT_GFX_DEOXYS,
+    OBJ_EVENT_GFX_DEOXYS_TRIANGLE,
+    OBJ_EVENT_GFX_BRANDON,
+    OBJ_EVENT_GFX_LINK_RS_BRENDAN,
+    OBJ_EVENT_GFX_LINK_RS_MAY,
+    OBJ_EVENT_GFX_LUGIA,
+    OBJ_EVENT_GFX_HOOH,
+    OBJ_EVENT_GFX_POKE_BALL,
+    OBJ_EVENT_GFX_OW_MON,
+    OBJ_EVENT_GFX_LIGHT_SPRITE,
+    OBJ_EVENT_GFX_APRICORN_TREE,
+    OBJ_EVENT_GFX_RED_NORMAL, // FRLG objects
+    OBJ_EVENT_GFX_RED_BIKE,
+    OBJ_EVENT_GFX_RED_SURF,
+    OBJ_EVENT_GFX_RED_FIELD_MOVE,
+    OBJ_EVENT_GFX_RED_FISH,
+    OBJ_EVENT_GFX_RED_VS_SEEKER,
+    OBJ_EVENT_GFX_RED_VS_SEEKER_BIKE,
+    OBJ_EVENT_GFX_UNUSED_250,
+    OBJ_EVENT_GFX_GREEN_NORMAL,
+    OBJ_EVENT_GFX_GREEN_BIKE,
+    OBJ_EVENT_GFX_GREEN_SURF,
+    OBJ_EVENT_GFX_GREEN_FIELD_MOVE,
+    OBJ_EVENT_GFX_GREEN_FISH,
+    OBJ_EVENT_GFX_GREEN_VS_SEEKER,
+    OBJ_EVENT_GFX_GREEN_VS_SEEKER_BIKE,
+    OBJ_EVENT_GFX_BOY,
+    OBJ_EVENT_GFX_CRUSH_GIRL,
+    OBJ_EVENT_GFX_MAN,
+    OBJ_EVENT_GFX_ROCKER,
+    OBJ_EVENT_GFX_BALDING_MAN,
+    OBJ_EVENT_GFX_OLD_MAN_1,
+    OBJ_EVENT_GFX_OLD_MAN_2,
+    OBJ_EVENT_GFX_OLD_MAN_LYING_DOWN,
+    OBJ_EVENT_GFX_TUBER_M_WATER,
+    OBJ_EVENT_GFX_TUBER_M_LAND,
+    OBJ_EVENT_GFX_COOLTRAINER_M,
+    OBJ_EVENT_GFX_COOLTRAINER_F,
+    OBJ_EVENT_GFX_SWIMMER_M_WATER,
+    OBJ_EVENT_GFX_SWIMMER_F_WATER,
+    OBJ_EVENT_GFX_SWIMMER_M_LAND,
+    OBJ_EVENT_GFX_SWIMMER_F_LAND,
+    OBJ_EVENT_GFX_WORKER_M,
+    OBJ_EVENT_GFX_WORKER_F,
+    OBJ_EVENT_GFX_ROCKET_M,
+    OBJ_EVENT_GFX_ROCKET_F,
+    OBJ_EVENT_GFX_GBA_KID,
+    OBJ_EVENT_GFX_POKE_MANIAC_FRLG,
+    OBJ_EVENT_GFX_BIKER,
+    OBJ_EVENT_GFX_BLACK_BELT_FRLG,
+    OBJ_EVENT_GFX_SCIENTIST,
+    OBJ_EVENT_GFX_FISHER,
+    OBJ_EVENT_GFX_CHANNELER,
+    OBJ_EVENT_GFX_CHEF,
+    OBJ_EVENT_GFX_POLICEMAN,
+    OBJ_EVENT_GFX_CAPTAIN,
+    OBJ_EVENT_GFX_CABLE_CLUB_RECEPTIONIST,
+    OBJ_EVENT_GFX_UNION_ROOM_RECEPTIONIST,
+    OBJ_EVENT_GFX_CLERK,
+    OBJ_EVENT_GFX_MG_DELIVERYMAN,
+    OBJ_EVENT_GFX_TRAINER_TOWER_DUDE,
+    OBJ_EVENT_GFX_PROF_OAK,
+    OBJ_EVENT_GFX_BLUE,
+    OBJ_EVENT_GFX_BILL,
+    OBJ_EVENT_GFX_LANCE,
+    OBJ_EVENT_GFX_AGATHA,
+    OBJ_EVENT_GFX_DAISY,
+    OBJ_EVENT_GFX_LORELEI,
+    OBJ_EVENT_GFX_MR_FUJI,
+    OBJ_EVENT_GFX_BRUNO,
+    OBJ_EVENT_GFX_BROCK,
+    OBJ_EVENT_GFX_MISTY,
+    OBJ_EVENT_GFX_LT_SURGE,
+    OBJ_EVENT_GFX_ERIKA,
+    OBJ_EVENT_GFX_KOGA,
+    OBJ_EVENT_GFX_SABRINA,
+    OBJ_EVENT_GFX_BLAINE,
+    OBJ_EVENT_GFX_GIOVANNI,
+    OBJ_EVENT_GFX_CELIO,
+    OBJ_EVENT_GFX_TEACHY_TV_HOST,
+    OBJ_EVENT_GFX_GYM_GUY,
+    OBJ_EVENT_GFX_TOWN_MAP,
+    OBJ_EVENT_GFX_POKEDEX,
+    OBJ_EVENT_GFX_LITTLE_BOY_FRLG,
+    OBJ_EVENT_GFX_LITTLE_GIRL_FRLG,
+    OBJ_EVENT_GFX_YOUNGSTER_FRLG,
+    OBJ_EVENT_GFX_BUG_CATCHER_FRLG,
+    OBJ_EVENT_GFX_LASS_FRLG,
+    OBJ_EVENT_GFX_WOMAN_1_FRLG,
+    OBJ_EVENT_GFX_FAT_MAN_FRLG,
+    OBJ_EVENT_GFX_WOMAN_2_FRLG,
+    OBJ_EVENT_GFX_BEAUTY_FRLG,
+    OBJ_EVENT_GFX_WOMAN_3_FRLG,
+    OBJ_EVENT_GFX_OLD_WOMAN_FRLG,
+    OBJ_EVENT_GFX_CAMPER_FRLG,
+    OBJ_EVENT_GFX_PICNICKER_FRLG,
+    OBJ_EVENT_GFX_MOM_FRLG,
+    OBJ_EVENT_GFX_TUBER_F_FRLG,
+    OBJ_EVENT_GFX_HIKER_FRLG,
+    OBJ_EVENT_GFX_GENTLEMAN_FRLG,
+    OBJ_EVENT_GFX_SAILOR_FRLG,
+    OBJ_EVENT_GFX_NURSE_FRLG,
+    OBJ_EVENT_GFX_FOSSIL_FRLG,
+    OBJ_EVENT_GFX_RUBY,
+    OBJ_EVENT_GFX_SAPPHIRE,
+    OBJ_EVENT_GFX_OLD_AMBER,
+    OBJ_EVENT_GFX_GYM_SIGN,
+    OBJ_EVENT_GFX_SIGN,
+    OBJ_EVENT_GFX_TRAINER_TIPS,
+    OBJ_EVENT_GFX_CLIPBOARD,
+    OBJ_EVENT_GFX_METEORITE,
+    OBJ_EVENT_GFX_LAPRAS_DOLL,
+    OBJ_EVENT_GFX_SEAGALLOP,
+    OBJ_EVENT_GFX_SNORLAX,
+    OBJ_EVENT_GFX_SPEAROW,
+    OBJ_EVENT_GFX_CUBONE,
+    OBJ_EVENT_GFX_POLIWRATH,
+    OBJ_EVENT_GFX_CLEFAIRY,
+    OBJ_EVENT_GFX_PIDGEOT,
+    OBJ_EVENT_GFX_JIGGLYPUFF,
+    OBJ_EVENT_GFX_PIDGEY,
+    OBJ_EVENT_GFX_CHANSEY,
+    OBJ_EVENT_GFX_OMANYTE,
+    OBJ_EVENT_GFX_KANGASKHAN,
+    OBJ_EVENT_GFX_PIKACHU_FRLG,
+    OBJ_EVENT_GFX_PSYDUCK,
+    OBJ_EVENT_GFX_NIDORAN_F,
+    OBJ_EVENT_GFX_NIDORAN_M,
+    OBJ_EVENT_GFX_NIDORINO,
+    OBJ_EVENT_GFX_MEOWTH,
+    OBJ_EVENT_GFX_SEEL,
+    OBJ_EVENT_GFX_VOLTORB,
+    OBJ_EVENT_GFX_SLOWPOKE,
+    OBJ_EVENT_GFX_SLOWBRO,
+    OBJ_EVENT_GFX_MACHOP,
+    OBJ_EVENT_GFX_WIGGLYTUFF,
+    OBJ_EVENT_GFX_DODUO,
+    OBJ_EVENT_GFX_FEAROW,
+    OBJ_EVENT_GFX_MACHOKE,
+    OBJ_EVENT_GFX_LAPRAS,
+    OBJ_EVENT_GFX_ZAPDOS,
+    OBJ_EVENT_GFX_MOLTRES,
+    OBJ_EVENT_GFX_ARTICUNO,
+    OBJ_EVENT_GFX_MEWTWO,
+    OBJ_EVENT_GFX_ENTEI,
+    OBJ_EVENT_GFX_SUICUNE,
+    OBJ_EVENT_GFX_RAIKOU,
+    OBJ_EVENT_GFX_CELEBI,
+    OBJ_EVENT_GFX_KABUTO,
+    OBJ_EVENT_GFX_DEOXYS_D,
+    OBJ_EVENT_GFX_DEOXYS_A,
+    OBJ_EVENT_GFX_DEOXYS_N,
+    OBJ_EVENT_GFX_SS_ANNE,
+    OBJ_EVENT_GFX_AARON,
+    OBJ_EVENT_GFX_ACCORDIANIST,
+    OBJ_EVENT_GFX_ACTOR,
+    OBJ_EVENT_GFX_ADHIRA,
+    OBJ_EVENT_GFX_AGATHA_1,
+    OBJ_EVENT_GFX_AHAB,
+    OBJ_EVENT_GFX_AKARI,
+    OBJ_EVENT_GFX_ALDER,
+    OBJ_EVENT_GFX_AMELIA,
+    OBJ_EVENT_GFX_ANTHEA,
+    OBJ_EVENT_GFX_AROMA_LADY,
+    OBJ_EVENT_GFX_ARTIST_1,
+    OBJ_EVENT_GFX_ARTIST_2,
+    OBJ_EVENT_GFX_ARTIST_3,
+    OBJ_EVENT_GFX_AUDREY,
+    OBJ_EVENT_GFX_BACKPACKER_F,
+    OBJ_EVENT_GFX_BACKPACKER_M,
+    OBJ_EVENT_GFX_BAKER,
+    OBJ_EVENT_GFX_BATTLEGIRL_1,
+    OBJ_EVENT_GFX_BATTLEGIRL_2,
+    OBJ_EVENT_GFX_BEAUTY_1,
+    OBJ_EVENT_GFX_BEAUTY_2,
+    OBJ_EVENT_GFX_BEAUTY_3,
+    OBJ_EVENT_GFX_BEAUTY_4,
+    OBJ_EVENT_GFX_BELLIS,
+    OBJ_EVENT_GFX_BENGA,
+    OBJ_EVENT_GFX_BERTHA,
+    OBJ_EVENT_GFX_BIANCA,
+    OBJ_EVENT_GFX_BIKER_1,
+    OBJ_EVENT_GFX_BIKER_2,
+    OBJ_EVENT_GFX_BIRDKEEPER_F_1,
+    OBJ_EVENT_GFX_BIRDKEEPER_F_2,
+    OBJ_EVENT_GFX_BIRDKEEPER_M,
+    OBJ_EVENT_GFX_BLACKBELT_1,
+    OBJ_EVENT_GFX_BLACKBELT_2,
+    OBJ_EVENT_GFX_BLACKBELT_3,
+    OBJ_EVENT_GFX_BLAINE_1,
+    OBJ_EVENT_GFX_BOARDER,
+    OBJ_EVENT_GFX_BOY_4,
+    OBJ_EVENT_GFX_BRAWLY_1,
+    OBJ_EVENT_GFX_BREEDER_F_1,
+    OBJ_EVENT_GFX_BREEDER_F_2,
+    OBJ_EVENT_GFX_BREEDER_M_1,
+    OBJ_EVENT_GFX_BREEDER_M_2,
+    OBJ_EVENT_GFX_BROCK_1,
+    OBJ_EVENT_GFX_BRUNO_1,
+    OBJ_EVENT_GFX_BRYCEN,
+    OBJ_EVENT_GFX_BUG_CATCHER_1,
+    OBJ_EVENT_GFX_BUGSY,
+    OBJ_EVENT_GFX_BURGH,
+    OBJ_EVENT_GFX_BURGLAR,
+    OBJ_EVENT_GFX_BW_MOM,
+    OBJ_EVENT_GFX_BW2_MOM,
+    OBJ_EVENT_GFX_BYRON,
+    OBJ_EVENT_GFX_CAITLIN,
+    OBJ_EVENT_GFX_CALEM,
+    OBJ_EVENT_GFX_CAMERAMAN_1,
+    OBJ_EVENT_GFX_CAMPER_1,
+    OBJ_EVENT_GFX_CANDICE,
+    OBJ_EVENT_GFX_CAPTAIN_1,
+    OBJ_EVENT_GFX_CARLY,
+    OBJ_EVENT_GFX_CARMINE,
+    OBJ_EVENT_GFX_CARTER,
+    OBJ_EVENT_GFX_CEDRIC,
+    OBJ_EVENT_GFX_CHANNELLER,
+    OBJ_EVENT_GFX_CHEREN,
+    OBJ_EVENT_GFX_CHILI,
+    OBJ_EVENT_GFX_CHUCK,
+    OBJ_EVENT_GFX_CILAN,
+    OBJ_EVENT_GFX_CLAIRE,
+    OBJ_EVENT_GFX_CLAY,
+    OBJ_EVENT_GFX_CLERK_F,
+    OBJ_EVENT_GFX_CLERK_M_1,
+    OBJ_EVENT_GFX_CLERK_M_2,
+    OBJ_EVENT_GFX_CLOWN,
+    OBJ_EVENT_GFX_COLLECTOR,
+    OBJ_EVENT_GFX_COLRESS,
+    OBJ_EVENT_GFX_CONCORDIA,
+    OBJ_EVENT_GFX_COOLTRAINER_F_1,
+    OBJ_EVENT_GFX_COOLTRAINER_F_2,
+    OBJ_EVENT_GFX_COOLTRAINER_F_3,
+    OBJ_EVENT_GFX_COOLTRAINER_F_4,
+    OBJ_EVENT_GFX_COOLTRAINER_M_1,
+    OBJ_EVENT_GFX_COOLTRAINER_M_2,
+    OBJ_EVENT_GFX_COOLTRAINER_M_3,
+    OBJ_EVENT_GFX_COOLTRAINER_M_4,
+    OBJ_EVENT_GFX_COWGIRL,
+    OBJ_EVENT_GFX_CRASHER_WAKE,
+    OBJ_EVENT_GFX_CRESS,
+    OBJ_EVENT_GFX_CURTIS_1,
+    OBJ_EVENT_GFX_CURTIS_2,
+    OBJ_EVENT_GFX_CYCLIST_F_1,
+    OBJ_EVENT_GFX_CYCLIST_F_2,
+    OBJ_EVENT_GFX_CYCLIST_M_1,
+    OBJ_EVENT_GFX_CYCLIST_M_2,
+    OBJ_EVENT_GFX_CYNTHIA,
+    OBJ_EVENT_GFX_DANCER,
+    OBJ_EVENT_GFX_DEPOTAGENT,
+    OBJ_EVENT_GFX_DIANTHA,
+    OBJ_EVENT_GFX_DIVER,
+    OBJ_EVENT_GFX_DOCTOR,
+    OBJ_EVENT_GFX_DRAGONTAMER,
+    OBJ_EVENT_GFX_DRAYDEN,
+    OBJ_EVENT_GFX_ELDER,
+    OBJ_EVENT_GFX_ELISA,
+    OBJ_EVENT_GFX_EMMET,
+    OBJ_EVENT_GFX_ERICA_1,
+    OBJ_EVENT_GFX_ETHAN_RUN,
+    OBJ_EVENT_GFX_ETHAN,
+    OBJ_EVENT_GFX_FALKNER,
+    OBJ_EVENT_GFX_FANTINA,
+    OBJ_EVENT_GFX_FAT_MAN_1,
+    OBJ_EVENT_GFX_FAT_MAN_2,
+    OBJ_EVENT_GFX_FAT_MAN_3,
+    OBJ_EVENT_GFX_FENNEL,
+    OBJ_EVENT_GFX_FIREBREATHER,
+    OBJ_EVENT_GFX_FISHERMAN_1,
+    OBJ_EVENT_GFX_FISHERMAN_2,
+    OBJ_EVENT_GFX_FLANNERY_1,
+    OBJ_EVENT_GFX_FLAUTIST,
+    OBJ_EVENT_GFX_FLINT,
+    OBJ_EVENT_GFX_GAMBLER,
+    OBJ_EVENT_GFX_GARDENIA,
+    OBJ_EVENT_GFX_GEETA,
+    OBJ_EVENT_GFX_GENTLEMAN_1,
+    OBJ_EVENT_GFX_GENTLEMAN_2,
+    OBJ_EVENT_GFX_GENTLEMAN_3,
+    OBJ_EVENT_GFX_GLORIA,
+    OBJ_EVENT_GFX_GRIMSLEY,
+    OBJ_EVENT_GFX_GUIDE_F,
+    OBJ_EVENT_GFX_GUIDE_M,
+    OBJ_EVENT_GFX_GUITARIST_1,
+    OBJ_EVENT_GFX_GUITARIST_2,
+    OBJ_EVENT_GFX_GUITARIST_3,
+    OBJ_EVENT_GFX_GUITARIST_F_1,
+    OBJ_EVENT_GFX_GUITARIST_F_2,
+    OBJ_EVENT_GFX_GUZMA,
+    OBJ_EVENT_GFX_GYM_GUIDE,
+    OBJ_EVENT_GFX_HARLEQUIN,
+    OBJ_EVENT_GFX_HARMONICA,
+    OBJ_EVENT_GFX_HEX_MANIAC_1,
+    OBJ_EVENT_GFX_HIKER_1,
+    OBJ_EVENT_GFX_HIKER_2,
+    OBJ_EVENT_GFX_HILDA,
+    OBJ_EVENT_GFX_HOBIE,
+    OBJ_EVENT_GFX_HOOPSTER,
+    OBJ_EVENT_GFX_HUGH,
+    OBJ_EVENT_GFX_IDOL,
+    OBJ_EVENT_GFX_INFIELDER,
+    OBJ_EVENT_GFX_INGO,
+    OBJ_EVENT_GFX_IRIS,
+    OBJ_EVENT_GFX_ISRAEL,
+    OBJ_EVENT_GFX_JANINE,
+    OBJ_EVENT_GFX_JANITOR,
+    OBJ_EVENT_GFX_JASMINE,
+    OBJ_EVENT_GFX_JELISSA,
+    OBJ_EVENT_GFX_JOGGER_1,
+    OBJ_EVENT_GFX_JOGGER_2,
+    OBJ_EVENT_GFX_JOGGER_3,
+    OBJ_EVENT_GFX_JOSH,
+    OBJ_EVENT_GFX_JUAN_1,
+    OBJ_EVENT_GFX_JUGGLER,
+    OBJ_EVENT_GFX_JUNIPER,
+    OBJ_EVENT_GFX_JUNKO,
+    OBJ_EVENT_GFX_KAHILI,
+    OBJ_EVENT_GFX_KAREN_1,
+    OBJ_EVENT_GFX_KEYTAURIST,
+    OBJ_EVENT_GFX_KIERAN,
+    OBJ_EVENT_GFX_KOGA_1,
+    OBJ_EVENT_GFX_LADY_1,
+    OBJ_EVENT_GFX_LADY_2,
+    OBJ_EVENT_GFX_LANCE_1,
+    OBJ_EVENT_GFX_LASS_1,
+    OBJ_EVENT_GFX_LASS_2,
+    OBJ_EVENT_GFX_LASS_3,
+    OBJ_EVENT_GFX_LEAF_1,
+    OBJ_EVENT_GFX_LEON,
+    OBJ_EVENT_GFX_LEONORA,
+    OBJ_EVENT_GFX_LINEBACKER,
+    OBJ_EVENT_GFX_LIZA_1,
+    OBJ_EVENT_GFX_LORELAI_1,
+    OBJ_EVENT_GFX_LORETTA,
+    OBJ_EVENT_GFX_LT_SURGE_1,
+    OBJ_EVENT_GFX_LUCIAN,
+    OBJ_EVENT_GFX_LYRA,
+    OBJ_EVENT_GFX_MAID_1,
+    OBJ_EVENT_GFX_MAID_2,
+    OBJ_EVENT_GFX_MAN_6,
+    OBJ_EVENT_GFX_MAN_7,
+    OBJ_EVENT_GFX_MAN_8,
+    OBJ_EVENT_GFX_MARLIN_SWIM,
+    OBJ_EVENT_GFX_MARLIN,
+    OBJ_EVENT_GFX_MARNIE,
+    OBJ_EVENT_GFX_MARSHALL,
+    OBJ_EVENT_GFX_MAYLENE,
+    OBJ_EVENT_GFX_MEDAL_GUY,
+    OBJ_EVENT_GFX_MEDIUM,
+    OBJ_EVENT_GFX_MISTY_1,
+    OBJ_EVENT_GFX_MORTY,
+    OBJ_EVENT_GFX_N,
+    OBJ_EVENT_GFX_NEMONA,
+    OBJ_EVENT_GFX_NEO_GHETHIS_CANE,
+    OBJ_EVENT_GFX_NEO_GHETHIS,
+    OBJ_EVENT_GFX_NEO_PLASMA_F,
+    OBJ_EVENT_GFX_NEO_PLASMA_M,
+    OBJ_EVENT_GFX_NEO_ZINZOLIN,
+    OBJ_EVENT_GFX_NESSA,
+    OBJ_EVENT_GFX_NINJA_BOY_1,
+    OBJ_EVENT_GFX_NORMAN_1,
+    OBJ_EVENT_GFX_NURSE_1,
+    OBJ_EVENT_GFX_NURSE_JOY,
+    OBJ_EVENT_GFX_NURSE_JOY_WALK,
+    OBJ_EVENT_GFX_NURSERY_AIDE,
+    OBJ_EVENT_GFX_OAK,
+    OBJ_EVENT_GFX_OLD_WOMAN_1,
+    OBJ_EVENT_GFX_OTNAR,
+    OBJ_EVENT_GFX_PARASOL_LADY_1,
+    OBJ_EVENT_GFX_PARASOL_LADY_2,
+    OBJ_EVENT_GFX_PERRIN,
+    OBJ_EVENT_GFX_PETER,
+    OBJ_EVENT_GFX_PICNICKER_1,
+    OBJ_EVENT_GFX_PIERS,
+    OBJ_EVENT_GFX_PILOT,
+    OBJ_EVENT_GFX_POKEFAN_F_1,
+    OBJ_EVENT_GFX_POKEFAN_F_2,
+    OBJ_EVENT_GFX_POKEFAN_M_1,
+    OBJ_EVENT_GFX_POKEFAN_M_2,
+    OBJ_EVENT_GFX_POKEKID,
+    OBJ_EVENT_GFX_POKEMANIAC,
+    OBJ_EVENT_GFX_POKEMART,
+    OBJ_EVENT_GFX_POLICEMAN_1,
+    OBJ_EVENT_GFX_POLICEMAN_2,
+    OBJ_EVENT_GFX_POSTMAN,
+    OBJ_EVENT_GFX_PRESCHOOLER_F,
+    OBJ_EVENT_GFX_PRESCHOOLER_M,
+    OBJ_EVENT_GFX_PROF_UNICORN,
+    OBJ_EVENT_GFX_PRYCE,
+    OBJ_EVENT_GFX_PSYCHIC_F_1,
+    OBJ_EVENT_GFX_PSYCHIC_F_2,
+    OBJ_EVENT_GFX_PSYCHIC_M_1,
+    OBJ_EVENT_GFX_PSYCHIC_M_2,
+    OBJ_EVENT_GFX_PUNK_GUY,
+    OBJ_EVENT_GFX_RANCHER,
+    OBJ_EVENT_GFX_RANGER_F_1,
+    OBJ_EVENT_GFX_RANGER_F_2,
+    OBJ_EVENT_GFX_RANGER_M_1,
+    OBJ_EVENT_GFX_RANGER_M_2,
+    OBJ_EVENT_GFX_RECEPTIONIST_1,
+    OBJ_EVENT_GFX_RECEPTIONIST_2,
+    OBJ_EVENT_GFX_RECEPTIONIST_3,
+    OBJ_EVENT_GFX_RECEPTIONIST_4,
+    OBJ_EVENT_GFX_REPORTER,
+    OBJ_EVENT_GFX_RICH_BOY_1,
+    OBJ_EVENT_GFX_RICH_BOY_2,
+    OBJ_EVENT_GFX_RICH_MAN,
+    OBJ_EVENT_GFX_ROARK,
+    OBJ_EVENT_GFX_ROUGHNECK_1,
+    OBJ_EVENT_GFX_ROUGHNECK_2,
+    OBJ_EVENT_GFX_ROUGHNECK_2_FIGHT,
+    OBJ_EVENT_GFX_ROXANNE_1,
+    OBJ_EVENT_GFX_ROXIE,
+    OBJ_EVENT_GFX_ROXIE_GUITAR,
+    OBJ_EVENT_GFX_RUIN_MANIAC,
+    OBJ_EVENT_GFX_RYME,
+    OBJ_EVENT_GFX_SABRINA_1,
+    OBJ_EVENT_GFX_SAGE_BRONIUS,
+    OBJ_EVENT_GFX_SAGE_GIALLO,
+    OBJ_EVENT_GFX_SAGE_GORM,
+    OBJ_EVENT_GFX_SAGE_ROOD,
+    OBJ_EVENT_GFX_SAGE_RYOKU,
+    OBJ_EVENT_GFX_SAGE,
+    OBJ_EVENT_GFX_SAILOR_1,
+    OBJ_EVENT_GFX_SCHOOLKID_F,
+    OBJ_EVENT_GFX_SCHOOLKID_M_1,
+    OBJ_EVENT_GFX_SCIENTIST_F,
+    OBJ_EVENT_GFX_SCIENTIST_M_1,
+    OBJ_EVENT_GFX_SCIENTIST_M_2,
+    OBJ_EVENT_GFX_SCIENTIST_M_3,
+    OBJ_EVENT_GFX_SEAN,
+    OBJ_EVENT_GFX_SERENA,
+    OBJ_EVENT_GFX_SHADOW_TRIAD,
+    OBJ_EVENT_GFX_SHADY_GUY,
+    OBJ_EVENT_GFX_SHAUNTAL,
+    OBJ_EVENT_GFX_SIDNEY_1,
+    OBJ_EVENT_GFX_SINGER,
+    OBJ_EVENT_GFX_SKIER_F_1,
+    OBJ_EVENT_GFX_SKIER_F_2,
+    OBJ_EVENT_GFX_SKIER_M,
+    OBJ_EVENT_GFX_SKYLA,
+    OBJ_EVENT_GFX_SMASHER,
+    OBJ_EVENT_GFX_SOCIALITE_1,
+    OBJ_EVENT_GFX_SOCIALITE_2,
+    OBJ_EVENT_GFX_STRIKER,
+    OBJ_EVENT_GFX_SUPERNERD,
+    OBJ_EVENT_GFX_SWIMMER_F_1,
+    OBJ_EVENT_GFX_SWIMMER_F_2,
+    OBJ_EVENT_GFX_SWIMMER_F_3,
+    OBJ_EVENT_GFX_SWIMMER_M_1,
+    OBJ_EVENT_GFX_SWIMMER_M_2,
+    OBJ_EVENT_GFX_SWIMMER_M_3,
+    OBJ_EVENT_GFX_TATE_1,
+    OBJ_EVENT_GFX_TEACHER,
+    OBJ_EVENT_GFX_TEAM_PLASMA_F,
+    OBJ_EVENT_GFX_TEAM_PLASMA_M,
+    OBJ_EVENT_GFX_TOXIANNA,
+    OBJ_EVENT_GFX_TRUMPETER,
+    OBJ_EVENT_GFX_TUBER_F_1,
+    OBJ_EVENT_GFX_TUBER_M_1,
+    OBJ_EVENT_GFX_TWINS_1,
+    OBJ_EVENT_GFX_TWINS_2,
+    OBJ_EVENT_GFX_TWINS_3,
+    OBJ_EVENT_GFX_ULTIMA,
+    OBJ_EVENT_GFX_VETRAN_F,
+    OBJ_EVENT_GFX_VETRAN_M_1,
+    OBJ_EVENT_GFX_VETRAN_M_2,
+    OBJ_EVENT_GFX_VICTOR,
+    OBJ_EVENT_GFX_VIOLA,
+    OBJ_EVENT_GFX_VOLKNER,
+    OBJ_EVENT_GFX_WAITER_1,
+    OBJ_EVENT_GFX_WAITER_2,
+    OBJ_EVENT_GFX_WAITRESS_1,
+    OBJ_EVENT_GFX_WAITRESS_2,
+    OBJ_EVENT_GFX_WALLACE_1,
+    OBJ_EVENT_GFX_WATTSON_1,
+    OBJ_EVENT_GFX_WHITNEY,
+    OBJ_EVENT_GFX_WILL,
+    OBJ_EVENT_GFX_WINONA_1,
+    OBJ_EVENT_GFX_WOMAN_6,
+    OBJ_EVENT_GFX_WOMAN_7,
+    OBJ_EVENT_GFX_WOMAN_8,
+    OBJ_EVENT_GFX_WOMAN_9,
+    OBJ_EVENT_GFX_WOMAN_10,
+    OBJ_EVENT_GFX_WOMAN_11,
+    OBJ_EVENT_GFX_WORKER_1,
+    OBJ_EVENT_GFX_WORKER_2,
+    OBJ_EVENT_GFX_WORKER_3,
+    OBJ_EVENT_GFX_YANCY_1,
+    OBJ_EVENT_GFX_YANCY_2,
+    OBJ_EVENT_GFX_YOUNGSTER_1,
+    OBJ_EVENT_GFX_YOUNGSTER_2,
+    OBJ_EVENT_GFX_YOUNGSTER_3,
+    OBJ_EVENT_GFX_LUCAS_NORMAL,
+    OBJ_EVENT_GFX_LUCAS_MACH_BIKE,
+    OBJ_EVENT_GFX_LUCAS_ACRO_BIKE,
+    OBJ_EVENT_GFX_LUCAS_SURFING,
+    OBJ_EVENT_GFX_LUCAS_FIELD_MOVE,
+    OBJ_EVENT_GFX_BRENDAN_FISHING,
+    OBJ_EVENT_GFX_BRENDAN_WATERING,
+    OBJ_EVENT_GFX_LUCAS_DECORATING,
+    OBJ_EVENT_GFX_BRENDAN_UNDERWATER,
+    OBJ_EVENT_GFX_LUCAS_VS_SEEKER,
+    OBJ_EVENT_GFX_LUCAS_VS_SEEKER_BIKE,
+    OBJ_EVENT_GFX_DAWN_NORMAL,
+    OBJ_EVENT_GFX_DAWN_MACH_BIKE,
+    OBJ_EVENT_GFX_DAWN_ACRO_BIKE,
+    OBJ_EVENT_GFX_DAWN_SURFING,
+    OBJ_EVENT_GFX_DAWN_FIELD_MOVE,
+    OBJ_EVENT_GFX_MAY_FISHING,
+    OBJ_EVENT_GFX_MAY_WATERING,
+    OBJ_EVENT_GFX_DAWN_DECORATING,
+    OBJ_EVENT_GFX_MAY_UNDERWATER,
+    OBJ_EVENT_GFX_DAWN_VS_SEEKER,
+    OBJ_EVENT_GFX_DAWN_VS_SEEKER_BIKE,
+    OBJ_EVENT_GFX_RIVAL_BRENDAN_NORMAL,
+    OBJ_EVENT_GFX_RIVAL_BRENDAN_MACH_BIKE,
+    OBJ_EVENT_GFX_RIVAL_BRENDAN_ACRO_BIKE,
+    OBJ_EVENT_GFX_RIVAL_BRENDAN_SURFING,
+    OBJ_EVENT_GFX_RIVAL_BRENDAN_FIELD_MOVE,
+    OBJ_EVENT_GFX_RIVAL_MAY_NORMAL,
+    OBJ_EVENT_GFX_RIVAL_MAY_MACH_BIKE,
+    OBJ_EVENT_GFX_RIVAL_MAY_ACRO_BIKE,
+    OBJ_EVENT_GFX_RIVAL_MAY_SURFING,
+    OBJ_EVENT_GFX_RIVAL_MAY_FIELD_MOVE,
+    OBJ_EVENT_GFX_LINK_BRENDAN,
+    OBJ_EVENT_GFX_LINK_MAY,
+    OBJ_EVENT_GFX_PUSHABLE_BOULDER_FRLG,
+    OBJ_EVENT_GFX_CUTTABLE_TREE_FRLG,
+    OBJ_EVENT_GFX_BREAKABLE_ROCK_FRLG,
+    NUM_OBJ_EVENT_GFX,
+};
+
+// FRLG equivalents
+// #define OBJ_EVENT_GFX_MEW OBJ_EVENT_GFX_NINJA_BOY
+// #define OBJ_EVENT_GFX_LUGIA OBJ_EVENT_GFX_NINJA_BOY
 
 // NOTE: The maximum amount of object events has been expanded from 255 to 65535.
 // Since dynamic graphics ids still require at least 16 free values, the actual limit
 // is 65519, but even considering follower Pokémon, this should be more than enough :)
-#define NUM_OBJ_EVENT_GFX                        548
 
 
 // These are dynamic object gfx ids.
@@ -597,7 +838,7 @@
 #define OW_SHINY(x) ((x)->graphicsId & OBJ_EVENT_MON_SHINY)
 #define OW_FEMALE(x) ((x)->graphicsId & OBJ_EVENT_MON_FEMALE)
 
-// Whether Object Event is an OW pokemon
+// Whether Object Event is an OW Pokémon
 #define IS_OW_MON_OBJ(obj) ((obj)->graphicsId & OBJ_EVENT_MON)
 
 #define SHADOW_SIZE_S       0
@@ -626,28 +867,29 @@
 #define OBJ_KIND_NORMAL 0
 #define OBJ_KIND_CLONE  255 // Exclusive to FRLG
 
-// Special object event local ids
-// Used for link player OWs in CreateLinkPlayerSprite
-#define OBJ_EVENT_ID_DYNAMIC_BASE 0xF0
 
 // Each object event template gets an ID that can be used to refer to it in scripts and elsewhere.
 // This is referred to as the "local id" (and it's really just 1 + its index in the templates array).
 // There are a few special IDs reserved for objects that don't have templates in the map data -- one for the player
 // in regular offline play, five for linked players while playing Berry Blender, and one for an invisible object that
 // can be spawned for the camera to track instead of the player. Additionally, the value 0 is reserved as an "empty" indicator.
-#define LOCALID_NONE                         0
-#define LOCALID_CAMERA                     127
-#define LOCALID_BERRY_BLENDER_PLAYER_END   240 // This will use 5 (MAX_RFU_PLAYERS) IDs ending at 240, i.e. 236-240
-#define LOCALID_FOLLOWING_POKEMON          254
-#define LOCALID_PLAYER                     255
-#define OBJ_EVENT_ID_FOLLOWER              0xFE
-#define OBJ_EVENT_ID_NPC_FOLLOWER          0xFD
+#define LOCALID_NONE                              0
+#define LOCALID_CAMERA                          127
+#define LOCALID_BERRY_BLENDER_PLAYER_END        240 // This will use 5 (MAX_RFU_PLAYERS) IDs ending at 240, i.e. 236-240
+#define LOCALID_OW_ENCOUNTER_END                252 // This will use 4 (OWE_SPAWNS_MAX) IDs ending at 252, i.e. 249-252
+#define LOCALID_FOLLOWING_POKEMON               254
+#define LOCALID_PLAYER                          255
+#define OBJ_EVENT_ID_FOLLOWER                   0xFE
+#define OBJ_EVENT_ID_NPC_FOLLOWER               0xFD
+
+#define IS_LOCALID_GENERATED_OWE(localId)       (localId <= LOCALID_OW_ENCOUNTER_END \
+                                                 && localId > (LOCALID_OW_ENCOUNTER_END - OWE_SPAWNS_MAX))
 
 // Aliases for old names. "object event id" normally refers to an index into gObjectEvents, which these are not.
 // Used for link player OWs in CreateLinkPlayerSprite
-#define OBJ_EVENT_ID_DYNAMIC_BASE 0xF0
 #define OBJ_EVENT_ID_CAMERA LOCALID_CAMERA
 #define OBJ_EVENT_ID_PLAYER LOCALID_PLAYER
+#define OBJ_EVENT_ID_DYNAMIC_BASE 0xF0
 
 // Moved from src/event_object_movement.c so that they're accesible from other files.
 #define OBJ_EVENT_PAL_TAG_BRENDAN                 0x1100
@@ -686,19 +928,43 @@
 #define OBJ_EVENT_PAL_TAG_LUGIA                   0x1121
 #define OBJ_EVENT_PAL_TAG_RS_BRENDAN              0x1122
 #define OBJ_EVENT_PAL_TAG_RS_MAY                  0x1123
-#define OBJ_EVENT_PAL_TAG_DAWN                    0x1124
-#define OBJ_EVENT_PAL_TAG_LUCAS                   0x1125
-#define OBJ_EVENT_PAL_TAG_ADHIRA                  0X1126
-#define OBJ_EVENT_PAL_TAG_AHAB                    0X1127
-#define OBJ_EVENT_PAL_TAG_CARLY                   0X1128
-#define OBJ_EVENT_PAL_TAG_ISRAEL                  0X1129
-#define OBJ_EVENT_PAL_TAG_JELISSA                 0X112A
-#define OBJ_EVENT_PAL_TAG_JOSH                    0X112B
-#define OBJ_EVENT_PAL_TAG_OTNAR                   0X112C
-#define OBJ_EVENT_PAL_TAG_PETER                   0X112D
-#define OBJ_EVENT_PAL_TAG_TOXIANNA                0X112E
-#define OBJ_EVENT_PAL_TAG_DAWN_LUCAS_UNDERWATER   0x112F
-#define OBJ_EVENT_PAL_TAG_DYNAMIC                 0x1130
+#define OBJ_EVENT_PAL_TAG_DYNAMIC                 0x1124
+#define OBJ_EVENT_PAL_TAG_PLAYER_RED              0x1125
+#define OBJ_EVENT_PAL_TAG_PLAYER_RED_REFLECTION   0x1126
+#define OBJ_EVENT_PAL_TAG_PLAYER_GREEN            0x1127
+#define OBJ_EVENT_PAL_TAG_PLAYER_GREEN_REFLECTION 0x1128
+#define OBJ_EVENT_PAL_TAG_NPC_BLUE                0x1129
+#define OBJ_EVENT_PAL_TAG_NPC_PINK                0x112A
+#define OBJ_EVENT_PAL_TAG_NPC_GREEN               0x112B
+#define OBJ_EVENT_PAL_TAG_NPC_WHITE               0x112C
+#define OBJ_EVENT_PAL_TAG_NPC_BLUE_REFLECTION     0x112D
+#define OBJ_EVENT_PAL_TAG_NPC_PINK_REFLECTION     0x112E
+#define OBJ_EVENT_PAL_TAG_NPC_GREEN_REFLECTION    0x112F
+#define OBJ_EVENT_PAL_TAG_NPC_WHITE_REFLECTION    0x1130
+#define OBJ_EVENT_PAL_TAG_METEORITE               0x1131
+#define OBJ_EVENT_PAL_TAG_SEAGALLOP               0x1132
+#define OBJ_EVENT_PAL_TAG_SS_ANNE                 0x1133
+#define OBJ_EVENT_PAL_TAG_DAWN                    0x1134
+#define OBJ_EVENT_PAL_TAG_LUCAS                   0x1135
+#define OBJ_EVENT_PAL_TAG_DAWN_LUCAS_UNDERWATER   0x1136
+#define OBJ_EVENT_PAL_TAG_ADHIRA                  0x1137
+#define OBJ_EVENT_PAL_TAG_AHAB                    0x1138
+#define OBJ_EVENT_PAL_TAG_CARLY                   0x1139
+#define OBJ_EVENT_PAL_TAG_ISRAEL                  0x1140
+#define OBJ_EVENT_PAL_TAG_JELISSA                 0x1141
+#define OBJ_EVENT_PAL_TAG_JOSH                    0x1142
+#define OBJ_EVENT_PAL_TAG_OTNAR                   0x1143
+#define OBJ_EVENT_PAL_TAG_PETER                   0x1144
+#define OBJ_EVENT_PAL_TAG_TOXIANNA                0x1145
+#define OBJ_EVENT_PAL_TAG_AMELIA                  0x1146
+#define OBJ_EVENT_PAL_TAG_AUDREY                  0x1147
+#define OBJ_EVENT_PAL_TAG_BELLIS                  0x1148
+#define OBJ_EVENT_PAL_TAG_CARTER                  0x1149
+#define OBJ_EVENT_PAL_TAG_HOBIE                   0x1150
+#define OBJ_EVENT_PAL_TAG_JUNKO                   0x1151
+#define OBJ_EVENT_PAL_TAG_LORETTA                 0x1152
+#define OBJ_EVENT_PAL_TAG_PROF_UNICORN            0x1153
+#define OBJ_EVENT_PAL_TAG_SEAN                    0x1154
 
 #if OW_FOLLOWERS_POKEBALLS
 // Vanilla

@@ -1,746 +1,864 @@
-const u32 gBattleEnvironmentTiles_Arena[] = INCBIN_U32("graphics/battle_environment/arena/tiles.4bpp.smol");
-const u16 gBattleEnvironmentPalette_Arena[] = INCBIN_U16("graphics/battle_environment/arena/palette.gbapal");
-const u32 gBattleEnvironmentTilemap_Arena[] = INCBIN_U32("graphics/battle_environment/arena/map.bin.smolTM");
+#include "battle_anim_scripts.h"
 
-const u32 gBattleEnvironmentTiles_AutumnForest[] = INCBIN_U32("graphics/battle_environment/autumn_forest/tiles.4bpp.smol");
-const u16 gBattleEnvironmentPalette_AutumnForest[] = INCBIN_U16("graphics/battle_environment/autumn_forest/palette.gbapal");
-const u32 gBattleEnvironmentTilemap_AutumnForest[] = INCBIN_U32("graphics/battle_environment/autumn_forest/map.bin.smolTM");
-
-const u32 gBattleEnvironmentTiles_AutumnForestE[] = INCBIN_U32("graphics/battle_environment/autumn_forest_evening/tiles.4bpp.smol");
-const u16 gBattleEnvironmentPalette_AutumnForestE[] = INCBIN_U16("graphics/battle_environment/autumn_forest_evening/palette.gbapal");
-const u32 gBattleEnvironmentTilemap_AutumnForestE[] = INCBIN_U32("graphics/battle_environment/autumn_forest_evening/map.bin.smolTM");
-
-const u32 gBattleEnvironmentTiles_AutumnForestN[] = INCBIN_U32("graphics/battle_environment/autumn_forest_night/tiles.4bpp.smol");
-const u16 gBattleEnvironmentPalette_AutumnForestN[] = INCBIN_U16("graphics/battle_environment/autumn_forest_night/palette.gbapal");
-const u32 gBattleEnvironmentTilemap_AutumnForestN[] = INCBIN_U32("graphics/battle_environment/autumn_forest_night/map.bin.smolTM");
-
-const u32 gBattleEnvironmentTiles_Beach[] = INCBIN_U32("graphics/battle_environment/beach/tiles.4bpp.smol");
-const u16 gBattleEnvironmentPalette_Beach[] = INCBIN_U16("graphics/battle_environment/beach/palette.gbapal");
-const u32 gBattleEnvironmentTilemap_Beach[] = INCBIN_U32("graphics/battle_environment/beach/map.bin.smolTM");
-
-const u32 gBattleEnvironmentTiles_BeachE[] = INCBIN_U32("graphics/battle_environment/beach_evening/tiles.4bpp.smol");
-const u16 gBattleEnvironmentPalette_BeachE[] = INCBIN_U16("graphics/battle_environment/beach_evening/palette.gbapal");
-const u32 gBattleEnvironmentTilemap_BeachE[] = INCBIN_U32("graphics/battle_environment/beach_evening/map.bin.smolTM");
-
-const u32 gBattleEnvironmentTiles_BeachN[] = INCBIN_U32("graphics/battle_environment/beach_night/tiles.4bpp.smol");
-const u16 gBattleEnvironmentPalette_BeachN[] = INCBIN_U16("graphics/battle_environment/beach_night/palette.gbapal");
-const u32 gBattleEnvironmentTilemap_BeachN[] = INCBIN_U32("graphics/battle_environment/beach_night/map.bin.smolTM");
-
-const u32 gBattleEnvironmentTiles_Bridge[] = INCBIN_U32("graphics/battle_environment/bridge/tiles.4bpp.smol");
-const u16 gBattleEnvironmentPalette_Bridge[] = INCBIN_U16("graphics/battle_environment/bridge/palette.gbapal");
-const u32 gBattleEnvironmentTilemap_Bridge[] = INCBIN_U32("graphics/battle_environment/bridge/map.bin.smolTM");
-
-const u32 gBattleEnvironmentTiles_BridgeE[] = INCBIN_U32("graphics/battle_environment/bridge_evening/tiles.4bpp.smol");
-const u16 gBattleEnvironmentPalette_BridgeE[] = INCBIN_U16("graphics/battle_environment/bridge_evening/palette.gbapal");
-const u32 gBattleEnvironmentTilemap_BridgeE[] = INCBIN_U32("graphics/battle_environment/bridge_evening/map.bin.smolTM");
-
-const u32 gBattleEnvironmentTiles_BridgeN[] = INCBIN_U32("graphics/battle_environment/bridge_night/tiles.4bpp.smol");
-const u16 gBattleEnvironmentPalette_BridgeN[] = INCBIN_U16("graphics/battle_environment/bridge_night/palette.gbapal");
-const u32 gBattleEnvironmentTilemap_BridgeN[] = INCBIN_U32("graphics/battle_environment/bridge_night/map.bin.smolTM");
-
-const u32 gBattleEnvironmentTiles_Cave[] = INCBIN_U32("graphics/battle_environment/cave/tiles.4bpp.smol");
-const u16 gBattleEnvironmentPalette_Cave[] = INCBIN_U16("graphics/battle_environment/cave/palette.gbapal");
-const u32 gBattleEnvironmentTilemap_Cave[] = INCBIN_U32("graphics/battle_environment/cave/map.bin.smolTM");
-
-const u32 gBattleEnvironmentTiles_CaveDark[] = INCBIN_U32("graphics/battle_environment/cave_dark/tiles.4bpp.smol");
-const u16 gBattleEnvironmentPalette_CaveDark[] = INCBIN_U16("graphics/battle_environment/cave_dark/palette.gbapal");
-const u32 gBattleEnvironmentTilemap_CaveDark[] = INCBIN_U32("graphics/battle_environment/cave_dark/map.bin.smolTM");
-
-const u32 gBattleEnvironmentTiles_CaveMagma[] = INCBIN_U32("graphics/battle_environment/cave_magma/tiles.4bpp.smol");
-const u16 gBattleEnvironmentPalette_CaveMagma[] = INCBIN_U16("graphics/battle_environment/cave_magma/palette.gbapal");
-const u32 gBattleEnvironmentTilemap_CaveMagma[] = INCBIN_U32("graphics/battle_environment/cave_magma/map.bin.smolTM");
-
-const u32 gBattleEnvironmentTiles_CaveSnow[] = INCBIN_U32("graphics/battle_environment/cave_snow/tiles.4bpp.smol");
-const u16 gBattleEnvironmentPalette_CaveSnow[] = INCBIN_U16("graphics/battle_environment/cave_snow/palette.gbapal");
-const u32 gBattleEnvironmentTilemap_CaveSnow[] = INCBIN_U32("graphics/battle_environment/cave_snow/map.bin.smolTM");
-
-const u32 gBattleEnvironmentTiles_City[] = INCBIN_U32("graphics/battle_environment/city/tiles.4bpp.smol");
-const u16 gBattleEnvironmentPalette_City[] = INCBIN_U16("graphics/battle_environment/city/palette.gbapal");
-const u32 gBattleEnvironmentTilemap_City[] = INCBIN_U32("graphics/battle_environment/city/map.bin.smolTM");
-
-const u32 gBattleEnvironmentTiles_CityE[] = INCBIN_U32("graphics/battle_environment/city_evening/tiles.4bpp.smol");
-const u16 gBattleEnvironmentPalette_CityE[] = INCBIN_U16("graphics/battle_environment/city_evening/palette.gbapal");
-const u32 gBattleEnvironmentTilemap_CityE[] = INCBIN_U32("graphics/battle_environment/city_evening/map.bin.smolTM");
-
-const u32 gBattleEnvironmentTiles_CityN[] = INCBIN_U32("graphics/battle_environment/city_night/tiles.4bpp.smol");
-const u16 gBattleEnvironmentPalette_CityN[] = INCBIN_U16("graphics/battle_environment/city_night/palette.gbapal");
-const u32 gBattleEnvironmentTilemap_CityN[] = INCBIN_U32("graphics/battle_environment/city_night/map.bin.smolTM");
-
-const u32 gBattleEnvironmentTiles_Crag[] = INCBIN_U32("graphics/battle_environment/crag/tiles.4bpp.smol");
-const u16 gBattleEnvironmentPalette_Crag[] = INCBIN_U16("graphics/battle_environment/crag/palette.gbapal");
-const u32 gBattleEnvironmentTilemap_Crag[] = INCBIN_U32("graphics/battle_environment/crag/map.bin.smolTM");
-
-const u32 gBattleEnvironmentTiles_CragE[] = INCBIN_U32("graphics/battle_environment/crag_evening/tiles.4bpp.smol");
-const u16 gBattleEnvironmentPalette_CragE[] = INCBIN_U16("graphics/battle_environment/crag_evening/palette.gbapal");
-const u32 gBattleEnvironmentTilemap_CragE[] = INCBIN_U32("graphics/battle_environment/crag_evening/map.bin.smolTM");
-
-const u32 gBattleEnvironmentTiles_CragN[] = INCBIN_U32("graphics/battle_environment/crag_night/tiles.4bpp.smol");
-const u16 gBattleEnvironmentPalette_CragN[] = INCBIN_U16("graphics/battle_environment/crag_night/palette.gbapal");
-const u32 gBattleEnvironmentTilemap_CragN[] = INCBIN_U32("graphics/battle_environment/crag_night/map.bin.smolTM");
-
-const u32 gBattleEnvironmentTiles_Desert[] = INCBIN_U32("graphics/battle_environment/desert/tiles.4bpp.smol");
-const u16 gBattleEnvironmentPalette_Desert[] = INCBIN_U16("graphics/battle_environment/desert/palette.gbapal");
-const u32 gBattleEnvironmentTilemap_Desert[] = INCBIN_U32("graphics/battle_environment/desert/map.bin.smolTM");
-
-const u32 gBattleEnvironmentTiles_DesertE[] = INCBIN_U32("graphics/battle_environment/desert_evening/tiles.4bpp.smol");
-const u16 gBattleEnvironmentPalette_DesertE[] = INCBIN_U16("graphics/battle_environment/desert_evening/palette.gbapal");
-const u32 gBattleEnvironmentTilemap_DesertE[] = INCBIN_U32("graphics/battle_environment/desert_evening/map.bin.smolTM");
-
-const u32 gBattleEnvironmentTiles_DesertN[] = INCBIN_U32("graphics/battle_environment/desert_night/tiles.4bpp.smol");
-const u16 gBattleEnvironmentPalette_DesertN[] = INCBIN_U16("graphics/battle_environment/desert_night/palette.gbapal");
-const u32 gBattleEnvironmentTilemap_DesertN[] = INCBIN_U32("graphics/battle_environment/desert_night/map.bin.smolTM");
-
-const u32 gBattleEnvironmentTiles_Gym[] = INCBIN_U32("graphics/battle_environment/gym/tiles.4bpp.smol");
-const u16 gBattleEnvironmentPalette_Gym[] = INCBIN_U16("graphics/battle_environment/gym/palette.gbapal");
-const u32 gBattleEnvironmentTilemap_Gym[] = INCBIN_U32("graphics/battle_environment/gym/map.bin.smolTM");
-
-const u32 gBattleEnvironmentTiles_Indoor[] = INCBIN_U32("graphics/battle_environment/indoor/tiles.4bpp.smol");
-const u16 gBattleEnvironmentPalette_Indoor[] = INCBIN_U16("graphics/battle_environment/indoor/palette.gbapal");
-const u32 gBattleEnvironmentTilemap_Indoor[] = INCBIN_U32("graphics/battle_environment/indoor/map.bin.smolTM");
-
-const u32 gBattleEnvironmentTiles_Lab[] = INCBIN_U32("graphics/battle_environment/lab/tiles.4bpp.smol");
-const u16 gBattleEnvironmentPalette_Lab[] = INCBIN_U16("graphics/battle_environment/lab/palette.gbapal");
-const u32 gBattleEnvironmentTilemap_Lab[] = INCBIN_U32("graphics/battle_environment/lab/map.bin.smolTM");
-
-const u32 gBattleEnvironmentTiles_Mountain[] = INCBIN_U32("graphics/battle_environment/mountain/tiles.4bpp.smol");
-const u16 gBattleEnvironmentPalette_Mountain[] = INCBIN_U16("graphics/battle_environment/mountain/palette.gbapal");
-const u32 gBattleEnvironmentTilemap_Mountain[] = INCBIN_U32("graphics/battle_environment/mountain/map.bin.smolTM");
-
-const u32 gBattleEnvironmentTiles_MountainE[] = INCBIN_U32("graphics/battle_environment/mountain_evening/tiles.4bpp.smol");
-const u16 gBattleEnvironmentPalette_MountainE[] = INCBIN_U16("graphics/battle_environment/mountain_evening/palette.gbapal");
-const u32 gBattleEnvironmentTilemap_MountainE[] = INCBIN_U32("graphics/battle_environment/mountain_evening/map.bin.smolTM");
-
-const u32 gBattleEnvironmentTiles_MountainN[] = INCBIN_U32("graphics/battle_environment/mountain_night/tiles.4bpp.smol");
-const u16 gBattleEnvironmentPalette_MountainN[] = INCBIN_U16("graphics/battle_environment/mountain_night/palette.gbapal");
-const u32 gBattleEnvironmentTilemap_MountainN[] = INCBIN_U32("graphics/battle_environment/mountain_night/map.bin.smolTM");
-
-const u32 gBattleEnvironmentTiles_MountainSnow[] = INCBIN_U32("graphics/battle_environment/mountain_snow/tiles.4bpp.smol");
-const u16 gBattleEnvironmentPalette_MountainSnow[] = INCBIN_U16("graphics/battle_environment/mountain_snow/palette.gbapal");
-const u32 gBattleEnvironmentTilemap_MountainSnow[] = INCBIN_U32("graphics/battle_environment/mountain_snow/map.bin.smolTM");
-
-const u32 gBattleEnvironmentTiles_MountainSnowE[] = INCBIN_U32("graphics/battle_environment/mountain_snow_evening/tiles.4bpp.smol");
-const u16 gBattleEnvironmentPalette_MountainSnowE[] = INCBIN_U16("graphics/battle_environment/mountain_snow_evening/palette.gbapal");
-const u32 gBattleEnvironmentTilemap_MountainSnowE[] = INCBIN_U32("graphics/battle_environment/mountain_snow_evening/map.bin.smolTM");
-
-const u32 gBattleEnvironmentTiles_MountainSnowN[] = INCBIN_U32("graphics/battle_environment/mountain_snow_night/tiles.4bpp.smol");
-const u16 gBattleEnvironmentPalette_MountainSnowN[] = INCBIN_U16("graphics/battle_environment/mountain_snow_night/palette.gbapal");
-const u32 gBattleEnvironmentTilemap_MountainSnowN[] = INCBIN_U32("graphics/battle_environment/mountain_snow_night/map.bin.smolTM");
-
-const u32 gBattleEnvironmentTiles_Rocky[] = INCBIN_U32("graphics/battle_environment/rocky/tiles.4bpp.smol");
-const u16 gBattleEnvironmentPalette_Rocky[] = INCBIN_U16("graphics/battle_environment/rocky/palette.gbapal");
-const u32 gBattleEnvironmentTilemap_Rocky[] = INCBIN_U32("graphics/battle_environment/rocky/map.bin.smolTM");
-
-const u32 gBattleEnvironmentTiles_RockyE[] = INCBIN_U32("graphics/battle_environment/rocky_evening/tiles.4bpp.smol");
-const u16 gBattleEnvironmentPalette_RockyE[] = INCBIN_U16("graphics/battle_environment/rocky_evening/palette.gbapal");
-const u32 gBattleEnvironmentTilemap_RockyE[] = INCBIN_U32("graphics/battle_environment/rocky_evening/map.bin.smolTM");
-
-const u32 gBattleEnvironmentTiles_RockyN[] = INCBIN_U32("graphics/battle_environment/rocky_night/tiles.4bpp.smol");
-const u16 gBattleEnvironmentPalette_RockyN[] = INCBIN_U16("graphics/battle_environment/rocky_night/palette.gbapal");
-const u32 gBattleEnvironmentTilemap_RockyN[] = INCBIN_U32("graphics/battle_environment/rocky_night/map.bin.smolTM");
-
-const u32 gBattleEnvironmentTiles_Route[] = INCBIN_U32("graphics/battle_environment/route/tiles.4bpp.smol");
-const u16 gBattleEnvironmentPalette_Route[] = INCBIN_U16("graphics/battle_environment/route/palette.gbapal");
-const u32 gBattleEnvironmentTilemap_Route[] = INCBIN_U32("graphics/battle_environment/route/map.bin.smolTM");
-
-const u32 gBattleEnvironmentTiles_RouteE[] = INCBIN_U32("graphics/battle_environment/route_evening/tiles.4bpp.smol");
-const u16 gBattleEnvironmentPalette_RouteE[] = INCBIN_U16("graphics/battle_environment/route_evening/palette.gbapal");
-const u32 gBattleEnvironmentTilemap_RouteE[] = INCBIN_U32("graphics/battle_environment/route_evening/map.bin.smolTM");
-
-const u32 gBattleEnvironmentTiles_RouteN[] = INCBIN_U32("graphics/battle_environment/route_night/tiles.4bpp.smol");
-const u16 gBattleEnvironmentPalette_RouteN[] = INCBIN_U16("graphics/battle_environment/route_night/palette.gbapal");
-const u32 gBattleEnvironmentTilemap_RouteN[] = INCBIN_U32("graphics/battle_environment/route_night/map.bin.smolTM");
-
-const u32 gBattleEnvironmentTiles_Safari[] = INCBIN_U32("graphics/battle_environment/safari/tiles.4bpp.smol");
-const u16 gBattleEnvironmentPalette_Safari[] = INCBIN_U16("graphics/battle_environment/safari/palette.gbapal");
-const u32 gBattleEnvironmentTilemap_Safari[] = INCBIN_U32("graphics/battle_environment/safari/map.bin.smolTM");
-
-const u32 gBattleEnvironmentTiles_SafariE[] = INCBIN_U32("graphics/battle_environment/safari_evening/tiles.4bpp.smol");
-const u16 gBattleEnvironmentPalette_SafariE[] = INCBIN_U16("graphics/battle_environment/safari_evening/palette.gbapal");
-const u32 gBattleEnvironmentTilemap_SafariE[] = INCBIN_U32("graphics/battle_environment/safari_evening/map.bin.smolTM");
-
-const u32 gBattleEnvironmentTiles_SafariN[] = INCBIN_U32("graphics/battle_environment/safari_night/tiles.4bpp.smol");
-const u16 gBattleEnvironmentPalette_SafariN[] = INCBIN_U16("graphics/battle_environment/safari_night/palette.gbapal");
-const u32 gBattleEnvironmentTilemap_SafariN[] = INCBIN_U32("graphics/battle_environment/safari_night/map.bin.smolTM");
-
-const u32 gBattleEnvironmentTiles_Sea[] = INCBIN_U32("graphics/battle_environment/sea/tiles.4bpp.smol");
-const u16 gBattleEnvironmentPalette_Sea[] = INCBIN_U16("graphics/battle_environment/sea/palette.gbapal");
-const u32 gBattleEnvironmentTilemap_Sea[] = INCBIN_U32("graphics/battle_environment/sea/map.bin.smolTM");
-
-const u32 gBattleEnvironmentTiles_SeaE[] = INCBIN_U32("graphics/battle_environment/sea_evening/tiles.4bpp.smol");
-const u16 gBattleEnvironmentPalette_SeaE[] = INCBIN_U16("graphics/battle_environment/sea_evening/palette.gbapal");
-const u32 gBattleEnvironmentTilemap_SeaE[] = INCBIN_U32("graphics/battle_environment/sea_evening/map.bin.smolTM");
-
-const u32 gBattleEnvironmentTiles_SeaN[] = INCBIN_U32("graphics/battle_environment/sea_night/tiles.4bpp.smol");
-const u16 gBattleEnvironmentPalette_SeaN[] = INCBIN_U16("graphics/battle_environment/sea_night/palette.gbapal");
-const u32 gBattleEnvironmentTilemap_SeaN[] = INCBIN_U32("graphics/battle_environment/sea_night/map.bin.smolTM");
-
-const u32 gBattleEnvironmentTiles_Snow[] = INCBIN_U32("graphics/battle_environment/snow/tiles.4bpp.smol");
-const u16 gBattleEnvironmentPalette_Snow[] = INCBIN_U16("graphics/battle_environment/snow/palette.gbapal");
-const u32 gBattleEnvironmentTilemap_Snow[] = INCBIN_U32("graphics/battle_environment/snow/map.bin.smolTM");
-
-const u32 gBattleEnvironmentTiles_SnowE[] = INCBIN_U32("graphics/battle_environment/snow_evening/tiles.4bpp.smol");
-const u16 gBattleEnvironmentPalette_SnowE[] = INCBIN_U16("graphics/battle_environment/snow_evening/palette.gbapal");
-const u32 gBattleEnvironmentTilemap_SnowE[] = INCBIN_U32("graphics/battle_environment/snow_evening/map.bin.smolTM");
-
-const u32 gBattleEnvironmentTiles_SnowN[] = INCBIN_U32("graphics/battle_environment/snow_night/tiles.4bpp.smol");
-const u16 gBattleEnvironmentPalette_SnowN[] = INCBIN_U16("graphics/battle_environment/snow_night/palette.gbapal");
-const u32 gBattleEnvironmentTilemap_SnowN[] = INCBIN_U32("graphics/battle_environment/snow_night/map.bin.smolTM");
-
-const u32 gBattleEnvironmentTiles_Swamp[] = INCBIN_U32("graphics/battle_environment/swamp/tiles.4bpp.smol");
-const u16 gBattleEnvironmentPalette_Swamp[] = INCBIN_U16("graphics/battle_environment/swamp/palette.gbapal");
-const u32 gBattleEnvironmentTilemap_Swamp[] = INCBIN_U32("graphics/battle_environment/swamp/map.bin.smolTM");
-
-const u32 gBattleEnvironmentTiles_SwampE[] = INCBIN_U32("graphics/battle_environment/swamp_evening/tiles.4bpp.smol");
-const u16 gBattleEnvironmentPalette_SwampE[] = INCBIN_U16("graphics/battle_environment/swamp_evening/palette.gbapal");
-const u32 gBattleEnvironmentTilemap_SwampE[] = INCBIN_U32("graphics/battle_environment/swamp_evening/map.bin.smolTM");
-
-const u32 gBattleEnvironmentTiles_SwampN[] = INCBIN_U32("graphics/battle_environment/swamp_night/tiles.4bpp.smol");
-const u16 gBattleEnvironmentPalette_SwampN[] = INCBIN_U16("graphics/battle_environment/swamp_night/palette.gbapal");
-const u32 gBattleEnvironmentTilemap_SwampN[] = INCBIN_U32("graphics/battle_environment/swamp_night/map.bin.smolTM");
-
-const u32 gBattleEnvironmentTiles_Underwater[] = INCBIN_U32("graphics/battle_environment/underwater/tiles.4bpp.smol");
-const u16 gBattleEnvironmentPalette_Underwater[] = INCBIN_U16("graphics/battle_environment/underwater/palette.gbapal");
-const u32 gBattleEnvironmentTilemap_Underwater[] = INCBIN_U32("graphics/battle_environment/underwater/map.bin.smolTM");
-
-const u32 gBattleEnvironmentTiles_UnderwaterE[] = INCBIN_U32("graphics/battle_environment/underwater_evening/tiles.4bpp.smol");
-const u16 gBattleEnvironmentPalette_UnderwaterE[] = INCBIN_U16("graphics/battle_environment/underwater_evening/palette.gbapal");
-const u32 gBattleEnvironmentTilemap_UnderwaterE[] = INCBIN_U32("graphics/battle_environment/underwater_evening/map.bin.smolTM");
-
-const u32 gBattleEnvironmentTiles_UnderwaterN[] = INCBIN_U32("graphics/battle_environment/underwater_night/tiles.4bpp.smol");
-const u16 gBattleEnvironmentPalette_UnderwaterN[] = INCBIN_U16("graphics/battle_environment/underwater_night/palette.gbapal");
-const u32 gBattleEnvironmentTilemap_UnderwaterN[] = INCBIN_U32("graphics/battle_environment/underwater_night/map.bin.smolTM");
-
-const u32 gBattleEnvironmentTiles_Volcano[] = INCBIN_U32("graphics/battle_environment/volcano/tiles.4bpp.smol");
-const u16 gBattleEnvironmentPalette_Volcano[] = INCBIN_U16("graphics/battle_environment/volcano/palette.gbapal");
-const u32 gBattleEnvironmentTilemap_Volcano[] = INCBIN_U32("graphics/battle_environment/volcano/map.bin.smolTM");
-
-const u32 gBattleEnvironmentTiles_VolcanoE[] = INCBIN_U32("graphics/battle_environment/volcano_evening/tiles.4bpp.smol");
-const u16 gBattleEnvironmentPalette_VolcanoE[] = INCBIN_U16("graphics/battle_environment/volcano_evening/palette.gbapal");
-const u32 gBattleEnvironmentTilemap_VolcanoE[] = INCBIN_U32("graphics/battle_environment/volcano_evening/map.bin.smolTM");
-
-const u32 gBattleEnvironmentTiles_VolcanoN[] = INCBIN_U32("graphics/battle_environment/volcano_night/tiles.4bpp.smol");
-const u16 gBattleEnvironmentPalette_VolcanoN[] = INCBIN_U16("graphics/battle_environment/volcano_night/palette.gbapal");
-const u32 gBattleEnvironmentTilemap_VolcanoN[] = INCBIN_U32("graphics/battle_environment/volcano_night/map.bin.smolTM");
-
-const u32 gBattleEnvironmentTiles_Moose[] = INCBIN_U32("graphics/battle_environment/moose/tiles.4bpp.smol");
-const u16 gBattleEnvironmentPalette_Moose[] = INCBIN_U16("graphics/battle_environment/moose/palette.gbapal");
-const u32 gBattleEnvironmentTilemap_Moose[] = INCBIN_U32("graphics/battle_environment/moose/map.bin.smolTM");
-
-const u32 gBattleEnvironmentTiles_Thomas[] = INCBIN_U32("graphics/battle_environment/thomas/tiles.4bpp.smol");
-const u16 gBattleEnvironmentPalette_Thomas[] = INCBIN_U16("graphics/battle_environment/thomas/palette.gbapal");
-const u32 gBattleEnvironmentTilemap_Thomas[] = INCBIN_U32("graphics/battle_environment/thomas/map.bin.smolTM");
-
-const u32 gBattleEnvironmentTiles_Tinker[] = INCBIN_U32("graphics/battle_environment/tinker/tiles.4bpp.smol");
-const u16 gBattleEnvironmentPalette_Tinker[] = INCBIN_U16("graphics/battle_environment/tinker/palette.gbapal");
-const u32 gBattleEnvironmentTilemap_Tinker[] = INCBIN_U32("graphics/battle_environment/tinker/map.bin.smolTM");
-
-const u32 gBattleEnvironmentTiles_Tobias[] = INCBIN_U32("graphics/battle_environment/tobias/tiles.4bpp.smol");
-const u16 gBattleEnvironmentPalette_Tobias[] = INCBIN_U16("graphics/battle_environment/tobias/palette.gbapal");
-const u32 gBattleEnvironmentTilemap_Tobias[] = INCBIN_U32("graphics/battle_environment/tobias/map.bin.smolTM");
-
-const u32 gBattleEnvironmentTiles_Gwen[] = INCBIN_U32("graphics/battle_environment/gwen/tiles.4bpp.smol");
-const u16 gBattleEnvironmentPalette_Gwen[] = INCBIN_U16("graphics/battle_environment/gwen/palette.gbapal");
-const u32 gBattleEnvironmentTilemap_Gwen[] = INCBIN_U32("graphics/battle_environment/gwen/map.bin.smolTM");
-
-
-#define ENVIRONMENT_BACKGROUND(background)                      \
-{                                                               \
-    .tileset = gBattleEnvironmentTiles_##background,            \
-    .tilemap = gBattleEnvironmentTilemap_##background,          \
-    .entryTileset = gBattleEnvironmentTiles_##background,   \
-    .entryTilemap = gBattleEnvironmentTilemap_##background, \
-    .palette = gBattleEnvironmentPalette_##background,          \
+#define ENVIRONMENT_BACKGROUND(Background)             \
+{                                                      \
+    .tileset = gBattleEnvironmentTiles_##Background,   \
+    .tilemap = gBattleEnvironmentTilemap_##Background, \
 }
+
+#define ENVIRONMENT_ENTRY(Background)                      \
+{                                                          \
+    .tileset = gBattleEnvironmentAnimTiles_##Background,   \
+    .tilemap = gBattleEnvironmentAnimTilemap_##Background, \
+}
+
+#define DEFAULT_CAMOUFLAGE_BLEND RGB_WHITE
+
+// Cave values. Used for BATTLE_ENVIRONMENT_CAVE as well as BATTLE_ENVIRONMENT_GROUDON and BATTLE_ENVIRONMENT_KYOGRE
+#if B_NATURE_POWER_MOVES >= GEN_6
+    #define CAVE_NATURE_POWER MOVE_POWER_GEM
+#elif B_NATURE_POWER_MOVES >= GEN_4
+    #define CAVE_NATURE_POWER MOVE_ROCK_SLIDE
+#else
+    #define CAVE_NATURE_POWER MOVE_SHADOW_BALL
+#endif
+#define CAVE_SECRET_POWER_ANIMATION B_SECRET_POWER_ANIMATION >= GEN_4 ? gBattleAnimMove_RockThrow : gBattleAnimMove_Bite
+#define CAVE_SECRET_POWER_EFFECT    MOVE_EFFECT_FLINCH
+#define CAVE_CAMOUFLAGE_TYPE        TYPE_ROCK
+#define CAVE_CAMOUFLAGE_BLEND       RGB(14, 9, 3)
+#define CAVE_BATTLE_INTRO_SLIDE     BattleIntroSlide1
+
+// Building values. Used for BATTLE_ENVIRONMENT_BUILDING as well as the environments that come from the vanilla MAP_BATTLE_SCENEs: BATTLE_ENVIRONMENT_PLAIN, BATTLE_ENVIRONMENT_FRONTIER, BATTLE_ENVIRONMENT_GYM, BATTLE_ENVIRONMENT_LEADER, BATTLE_ENVIRONMENT_MAGMA, BATTLE_ENVIRONMENT_AQUA, BATTLE_ENVIRONMENT_SIDNEY, BATTLE_ENVIRONMENT_PHOEBE, BATTLE_ENVIRONMENT_GLACIA, BATTLE_ENVIRONMENT_DRAKE, BATTLE_ENVIRONMENT_CHAMPION
+#define BUILDING_NATURE_POWER        B_NATURE_POWER_MOVES >= GEN_4 ? MOVE_TRI_ATTACK : MOVE_SWIFT
+#if B_SECRET_POWER_ANIMATION >= GEN_7
+    #define BUILDING_SECRET_POWER_ANIMATION gBattleAnimMove_SpitUp
+#elif B_SECRET_POWER_ANIMATION >= GEN_4
+    #define BUILDING_SECRET_POWER_ANIMATION gBattleAnimMove_BodySlam
+#else
+    #define BUILDING_SECRET_POWER_ANIMATION gBattleAnimMove_Strength
+#endif
+#define BUILDING_SECRET_POWER_EFFECT MOVE_EFFECT_PARALYSIS
+#define BUILDING_CAMOUFLAGE_TYPE     TYPE_NORMAL
+#define BUILDING_CAMOUFLAGE_BLEND    RGB_WHITE
+#define BUILDING_BATTLE_INTRO_SLIDE  BattleIntroSlide3
+
+// Plain values. USED for BATTLE_ENVIRONMENT_PLAIN as well as BATTLE_ENVIRONMENT_RAYQUAZA
+// (BATTLE_ENVIRONMENT_SKY_PILLAR wasn't introduced until Gen6, so Sky Pillar's roof counts as a Route which uses Plain)
+#if B_NATURE_POWER_MOVES >= GEN_6
+    #define PLAIN_NATURE_POWER MOVE_TRI_ATTACK
+#elif B_NATURE_POWER_MOVES >= GEN_4
+    #define PLAIN_NATURE_POWER MOVE_EARTHQUAKE
+#else
+    #define PLAIN_NATURE_POWER MOVE_SWIFT
+#endif
+#if B_SECRET_POWER_ANIMATION >= GEN_7
+    #define PLAIN_SECRET_POWER_ANIMATION gBattleAnimMove_SpitUp
+#elif B_SECRET_POWER_ANIMATION == GEN_6
+    #define PLAIN_SECRET_POWER_ANIMATION gBattleAnimMove_BodySlam
+#elif B_SECRET_POWER_ANIMATION >= GEN_4
+    #define PLAIN_SECRET_POWER_ANIMATION gBattleAnimMove_MudSlap
+#else
+    #define PLAIN_SECRET_POWER_ANIMATION gBattleAnimMove_Slam
+#endif
+#define PLAIN_SECRET_POWER_EFFECT (B_SECRET_POWER_EFFECT == GEN_4 || B_SECRET_POWER_EFFECT == GEN_5) ? SECRET_POWER_ACC_MINUS_1 : MOVE_EFFECT_PARALYSIS
+#define PLAIN_CAMOUFLAGE_TYPE     (B_CAMOUFLAGE_TYPES == GEN_4 || B_CAMOUFLAGE_TYPES == GEN_5) ? TYPE_GROUND : TYPE_NORMAL
+#define PLAIN_CAMOUFLAGE_BLEND    RGB_WHITE
+#define PLAIN_BATTLE_INTRO_SLIDE  BattleIntroSlide3
 
 const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] =
 {
-
+    
     [BATTLE_ENVIRONMENT_ARENA] =
     {
+        .name = _("Arena"),
         .naturePower = MOVE_TRI_ATTACK,
-        .secretPowerEffect = MOVE_EFFECT_SLEEP,
+        .secretPowerAnimation = B_SECRET_POWER_ANIMATION >= GEN_4 ? gBattleAnimMove_SpitUp : gBattleAnimMove_SpitUp,
+        .secretPowerEffect = MOVE_EFFECT_PARALYSIS,
         .camouflageType = TYPE_NORMAL,
+        .camouflageBlend = RGB(0, 15, 2),
         .background = ENVIRONMENT_BACKGROUND(Arena),
+        .palette = gBattleEnvironmentPalette_Arena,
+        .battleIntroSlide = BattleIntroSlide1,
     },
     
     [BATTLE_ENVIRONMENT_AUTUMN_FOREST] =
     {
-        .naturePower = MOVE_ENERGY_BALL,
-        .secretPowerEffect = MOVE_EFFECT_ATK_MINUS_1,
+        .name = _("Autumn Forest"),
+        .naturePower = MOVE_MAGICAL_LEAF,
+        .secretPowerAnimation = B_SECRET_POWER_ANIMATION >= GEN_4 ? gBattleAnimMove_NeedleArm : gBattleAnimMove_NeedleArm,
+        .secretPowerEffect = MOVE_EFFECT_SLEEP,
         .camouflageType = TYPE_GRASS,
+        .camouflageBlend = RGB(30, 24, 11),
         .background = ENVIRONMENT_BACKGROUND(AutumnForest),
+        .palette = gBattleEnvironmentPalette_AutumnForest,
+        .battleIntroSlide = BattleIntroSlide2,
     },
     
     [BATTLE_ENVIRONMENT_AUTUMN_FOREST_E] =
     {
-        .naturePower = MOVE_ENERGY_BALL,
-        .secretPowerEffect = MOVE_EFFECT_ATK_MINUS_1,
+        .name = _("Autumn Forest"),
+        .naturePower = MOVE_MAGICAL_LEAF,
+        .secretPowerAnimation = B_SECRET_POWER_ANIMATION >= GEN_4 ? gBattleAnimMove_NeedleArm : gBattleAnimMove_NeedleArm,
+        .secretPowerEffect = MOVE_EFFECT_SLEEP,
         .camouflageType = TYPE_GRASS,
+        .camouflageBlend = RGB(30, 24, 11),
         .background = ENVIRONMENT_BACKGROUND(AutumnForestE),
+        .palette = gBattleEnvironmentPalette_AutumnForestE,
+        .battleIntroSlide = BattleIntroSlide2,
     },
     
     [BATTLE_ENVIRONMENT_AUTUMN_FOREST_N] =
     {
-        .naturePower = MOVE_ENERGY_BALL,
-        .secretPowerEffect = MOVE_EFFECT_ATK_MINUS_1,
+        .name = _("Autumn Forest"),
+        .naturePower = MOVE_MAGICAL_LEAF,
+        .secretPowerAnimation = B_SECRET_POWER_ANIMATION >= GEN_4 ? gBattleAnimMove_NeedleArm : gBattleAnimMove_NeedleArm,
+        .secretPowerEffect = MOVE_EFFECT_SLEEP,
         .camouflageType = TYPE_GRASS,
+        .camouflageBlend = RGB(30, 24, 11),
         .background = ENVIRONMENT_BACKGROUND(AutumnForestN),
+        .palette = gBattleEnvironmentPalette_AutumnForestN,
+        .battleIntroSlide = BattleIntroSlide2,
     },
     
     [BATTLE_ENVIRONMENT_BEACH] =
     {
-        .naturePower = MOVE_MUDDY_WATER,
-        .secretPowerEffect = MOVE_EFFECT_SP_ATK_MINUS_1,
+        .name = _("Beach"),
+        .naturePower = MOVE_SURF,
+        .secretPowerAnimation = B_SECRET_POWER_ANIMATION >= GEN_4 ? gBattleAnimMove_WaterPulse : gBattleAnimMove_WaterPulse,
+        .secretPowerEffect = SECRET_POWER_ATK_MINUS_1,
         .camouflageType = TYPE_WATER,
+        .camouflageBlend = RGB(30, 24, 11),
         .background = ENVIRONMENT_BACKGROUND(Beach),
+        .palette = gBattleEnvironmentPalette_Beach,
+        .battleIntroSlide = BattleIntroSlide2,
     },
     
     [BATTLE_ENVIRONMENT_BEACH_E] =
     {
-        .naturePower = MOVE_MUDDY_WATER,
-        .secretPowerEffect = MOVE_EFFECT_SP_ATK_MINUS_1,
+        .name = _("Beach"),
+        .naturePower = MOVE_SURF,
+        .secretPowerAnimation = B_SECRET_POWER_ANIMATION >= GEN_4 ? gBattleAnimMove_WaterPulse : gBattleAnimMove_WaterPulse,
+        .secretPowerEffect = SECRET_POWER_ATK_MINUS_1,
         .camouflageType = TYPE_WATER,
+        .camouflageBlend = RGB(30, 24, 11),
         .background = ENVIRONMENT_BACKGROUND(BeachE),
+        .palette = gBattleEnvironmentPalette_BeachE,
+        .battleIntroSlide = BattleIntroSlide2,
     },
     
     [BATTLE_ENVIRONMENT_BEACH_N] =
     {
-        .naturePower = MOVE_MUDDY_WATER,
-        .secretPowerEffect = MOVE_EFFECT_SP_ATK_MINUS_1,
+        .name = _("Beach"),
+        .naturePower = MOVE_SURF,
+        .secretPowerAnimation = B_SECRET_POWER_ANIMATION >= GEN_4 ? gBattleAnimMove_WaterPulse : gBattleAnimMove_WaterPulse,
+        .secretPowerEffect = SECRET_POWER_ATK_MINUS_1,
         .camouflageType = TYPE_WATER,
+        .camouflageBlend = RGB(30, 24, 11),
         .background = ENVIRONMENT_BACKGROUND(BeachN),
+        .palette = gBattleEnvironmentPalette_BeachN,
+        .battleIntroSlide = BattleIntroSlide2,
     },
     
     [BATTLE_ENVIRONMENT_BRIDGE] =
     {
-        .naturePower = MOVE_BRICK_BREAK,
-        .secretPowerEffect = MOVE_EFFECT_ACC_MINUS_1,
-        .camouflageType = TYPE_WATER,
+        .name = _("Bridge"),
+        .naturePower = MOVE_VACUUM_WAVE,
+        .secretPowerAnimation = B_SECRET_POWER_ANIMATION >= GEN_4 ? gBattleAnimMove_KarateChop : gBattleAnimMove_KarateChop,
+        .secretPowerEffect = MOVE_EFFECT_PARALYSIS,
+        .camouflageType = TYPE_FIGHTING,
+        .camouflageBlend = RGB(30, 24, 11),
         .background = ENVIRONMENT_BACKGROUND(Bridge),
+        .palette = gBattleEnvironmentPalette_Bridge,
+        .battleIntroSlide = BattleIntroSlide2,
     },
     
     [BATTLE_ENVIRONMENT_BRIDGE_E] =
     {
-        .naturePower = MOVE_BRICK_BREAK,
-        .secretPowerEffect = MOVE_EFFECT_ACC_MINUS_1,
-        .camouflageType = TYPE_WATER,
+        .name = _("Bridge"),
+        .naturePower = MOVE_VACUUM_WAVE,
+        .secretPowerAnimation = B_SECRET_POWER_ANIMATION >= GEN_4 ? gBattleAnimMove_KarateChop : gBattleAnimMove_KarateChop,
+        .secretPowerEffect = MOVE_EFFECT_PARALYSIS,
+        .camouflageType = TYPE_FIGHTING,
+        .camouflageBlend = RGB(30, 24, 11),
         .background = ENVIRONMENT_BACKGROUND(BridgeE),
+        .palette = gBattleEnvironmentPalette_BridgeE,
+        .battleIntroSlide = BattleIntroSlide2,
     },
     
     [BATTLE_ENVIRONMENT_BRIDGE_N] =
     {
-        .naturePower = MOVE_BRICK_BREAK,
-        .secretPowerEffect = MOVE_EFFECT_ACC_MINUS_1,
-        .camouflageType = TYPE_WATER,
+        .name = _("Bridge"),
+        .naturePower = MOVE_VACUUM_WAVE,
+        .secretPowerAnimation = B_SECRET_POWER_ANIMATION >= GEN_4 ? gBattleAnimMove_KarateChop : gBattleAnimMove_KarateChop,
+        .secretPowerEffect = MOVE_EFFECT_PARALYSIS,
+        .camouflageType = TYPE_FIGHTING,
+        .camouflageBlend = RGB(30, 24, 11),
         .background = ENVIRONMENT_BACKGROUND(BridgeN),
+        .palette = gBattleEnvironmentPalette_BridgeN,
+        .battleIntroSlide = BattleIntroSlide2,
     },
     
     [BATTLE_ENVIRONMENT_CAVE] =
     {
+        .name = _("Cave"),
         .naturePower = MOVE_POWER_GEM,
+        .secretPowerAnimation = B_SECRET_POWER_ANIMATION >= GEN_4 ? gBattleAnimMove_RockThrow : gBattleAnimMove_RockThrow,
         .secretPowerEffect = MOVE_EFFECT_FLINCH,
         .camouflageType = TYPE_ROCK,
+        .camouflageBlend = RGB(30, 24, 11),
         .background = ENVIRONMENT_BACKGROUND(Cave),
+        .palette = gBattleEnvironmentPalette_Cave,
+        .battleIntroSlide = BattleIntroSlide2,
     },
     
     [BATTLE_ENVIRONMENT_CAVE_DARK] =
     {
+        .name = _("Cave Dark"),
         .naturePower = MOVE_ANCIENT_POWER,
+        .secretPowerAnimation = B_SECRET_POWER_ANIMATION >= GEN_4 ? gBattleAnimMove_RockThrow : gBattleAnimMove_RockThrow,
         .secretPowerEffect = MOVE_EFFECT_FLINCH,
         .camouflageType = TYPE_ROCK,
+        .camouflageBlend = RGB(30, 24, 11),
         .background = ENVIRONMENT_BACKGROUND(CaveDark),
+        .palette = gBattleEnvironmentPalette_CaveDark,
+        .battleIntroSlide = BattleIntroSlide2,
     },
     
     [BATTLE_ENVIRONMENT_CAVE_MAGMA] =
     {
-        .naturePower = MOVE_ERUPTION,
+        .name = _("Cave Magma"),
+        .naturePower = MOVE_LAVA_PLUME,
+        .secretPowerAnimation = B_SECRET_POWER_ANIMATION >= GEN_4 ? gBattleAnimMove_Incinerate : gBattleAnimMove_Incinerate,
         .secretPowerEffect = MOVE_EFFECT_BURN,
         .camouflageType = TYPE_FIRE,
+        .camouflageBlend = RGB(30, 24, 11),
         .background = ENVIRONMENT_BACKGROUND(CaveMagma),
+        .palette = gBattleEnvironmentPalette_CaveMagma,
+        .battleIntroSlide = BattleIntroSlide2,
     },
     
     [BATTLE_ENVIRONMENT_CAVE_SNOW] =
     {
-        .naturePower = MOVE_ICICLE_CRASH,
-        .secretPowerEffect = MOVE_EFFECT_FROSTBITE,
+        .name = _("Cave Snow"),
+        .naturePower = MOVE_FROST_BREATH,
+        .secretPowerAnimation = B_SECRET_POWER_ANIMATION >= GEN_4 ? gBattleAnimMove_IceShard : gBattleAnimMove_IceShard,
+        .secretPowerEffect = MOVE_EFFECT_FREEZE,
         .camouflageType = TYPE_ICE,
+        .camouflageBlend = RGB(30, 24, 11),
         .background = ENVIRONMENT_BACKGROUND(CaveSnow),
+        .palette = gBattleEnvironmentPalette_CaveSnow,
+        .battleIntroSlide = BattleIntroSlide2,
     },
     
     [BATTLE_ENVIRONMENT_CITY] =
     {
-        .naturePower = MOVE_BODY_SLAM,
+        .name = _("City"),
+        .naturePower = MOVE_WRING_OUT,
+        .secretPowerAnimation = B_SECRET_POWER_ANIMATION >= GEN_4 ? gBattleAnimMove_SpitUp : gBattleAnimMove_SpitUp,
         .secretPowerEffect = MOVE_EFFECT_PARALYSIS,
         .camouflageType = TYPE_NORMAL,
+        .camouflageBlend = RGB(30, 24, 11),
         .background = ENVIRONMENT_BACKGROUND(City),
+        .palette = gBattleEnvironmentPalette_City,
+        .battleIntroSlide = BattleIntroSlide2,
     },
-    
+
     [BATTLE_ENVIRONMENT_CITY_E] =
     {
-        .naturePower = MOVE_BODY_SLAM,
+        .name = _("City"),
+        .naturePower = MOVE_WRING_OUT,
+        .secretPowerAnimation = B_SECRET_POWER_ANIMATION >= GEN_4 ? gBattleAnimMove_SpitUp : gBattleAnimMove_SpitUp,
         .secretPowerEffect = MOVE_EFFECT_PARALYSIS,
         .camouflageType = TYPE_NORMAL,
+        .camouflageBlend = RGB(30, 24, 11),
         .background = ENVIRONMENT_BACKGROUND(CityE),
+        .palette = gBattleEnvironmentPalette_CityE,
+        .battleIntroSlide = BattleIntroSlide2,
     },
     
     [BATTLE_ENVIRONMENT_CITY_N] =
     {
-        .naturePower = MOVE_BODY_SLAM,
+        .name = _("City"),
+        .naturePower = MOVE_WRING_OUT,
+        .secretPowerAnimation = B_SECRET_POWER_ANIMATION >= GEN_4 ? gBattleAnimMove_SpitUp : gBattleAnimMove_SpitUp,
         .secretPowerEffect = MOVE_EFFECT_PARALYSIS,
         .camouflageType = TYPE_NORMAL,
+        .camouflageBlend = RGB(30, 24, 11),
         .background = ENVIRONMENT_BACKGROUND(CityN),
+        .palette = gBattleEnvironmentPalette_CityN,
+        .battleIntroSlide = BattleIntroSlide2,
     },
     
     [BATTLE_ENVIRONMENT_CRAG] =
     {
+        .name = _("Crag"),
         .naturePower = MOVE_AIR_SLASH,
+        .secretPowerAnimation = B_SECRET_POWER_ANIMATION >= GEN_4 ? gBattleAnimMove_AirCutter : gBattleAnimMove_AirCutter,
         .secretPowerEffect = MOVE_EFFECT_FLINCH,
         .camouflageType = TYPE_FLYING,
+        .camouflageBlend = RGB(30, 24, 11),
         .background = ENVIRONMENT_BACKGROUND(Crag),
+        .palette = gBattleEnvironmentPalette_Crag,
+        .battleIntroSlide = BattleIntroSlide2,
     },
     
     [BATTLE_ENVIRONMENT_CRAG_E] =
     {
+        .name = _("Crag"),
         .naturePower = MOVE_AIR_SLASH,
+        .secretPowerAnimation = B_SECRET_POWER_ANIMATION >= GEN_4 ? gBattleAnimMove_AirCutter : gBattleAnimMove_AirCutter,
         .secretPowerEffect = MOVE_EFFECT_FLINCH,
         .camouflageType = TYPE_FLYING,
+        .camouflageBlend = RGB(30, 24, 11),
         .background = ENVIRONMENT_BACKGROUND(CragE),
+        .palette = gBattleEnvironmentPalette_CragE,
+        .battleIntroSlide = BattleIntroSlide2,
     },
     
     [BATTLE_ENVIRONMENT_CRAG_N] =
     {
+        .name = _("Crag"),
         .naturePower = MOVE_AIR_SLASH,
+        .secretPowerAnimation = B_SECRET_POWER_ANIMATION >= GEN_4 ? gBattleAnimMove_AirCutter : gBattleAnimMove_AirCutter,
         .secretPowerEffect = MOVE_EFFECT_FLINCH,
         .camouflageType = TYPE_FLYING,
+        .camouflageBlend = RGB(30, 24, 11),
         .background = ENVIRONMENT_BACKGROUND(CragN),
+        .palette = gBattleEnvironmentPalette_CragN,
+        .battleIntroSlide = BattleIntroSlide2,
     },
     
     [BATTLE_ENVIRONMENT_DESERT] =
     {
+        .name = _("Desert"),
         .naturePower = MOVE_SCORCHING_SANDS,
-        .secretPowerEffect = MOVE_EFFECT_BURN,
+        .secretPowerAnimation = B_SECRET_POWER_ANIMATION >= GEN_4 ? gBattleAnimMove_MudSlap : gBattleAnimMove_MudSlap,
+        .secretPowerEffect = SECRET_POWER_ACC_MINUS_1,
         .camouflageType = TYPE_GROUND,
+        .camouflageBlend = RGB(30, 24, 11),
         .background = ENVIRONMENT_BACKGROUND(Desert),
+        .palette = gBattleEnvironmentPalette_Desert,
+        .battleIntroSlide = BattleIntroSlide2,
     },
     
     [BATTLE_ENVIRONMENT_DESERT_E] =
     {
+        .name = _("Desert"),
         .naturePower = MOVE_SCORCHING_SANDS,
-        .secretPowerEffect = MOVE_EFFECT_BURN,
+        .secretPowerAnimation = B_SECRET_POWER_ANIMATION >= GEN_4 ? gBattleAnimMove_MudSlap : gBattleAnimMove_MudSlap,
+        .secretPowerEffect = SECRET_POWER_ACC_MINUS_1,
         .camouflageType = TYPE_GROUND,
+        .camouflageBlend = RGB(30, 24, 11),
         .background = ENVIRONMENT_BACKGROUND(DesertE),
+        .palette = gBattleEnvironmentPalette_DesertE,
+        .battleIntroSlide = BattleIntroSlide2,
     },
     
     [BATTLE_ENVIRONMENT_DESERT_N] =
     {
+        .name = _("Desert"),
         .naturePower = MOVE_SCORCHING_SANDS,
-        .secretPowerEffect = MOVE_EFFECT_BURN,
+        .secretPowerAnimation = B_SECRET_POWER_ANIMATION >= GEN_4 ? gBattleAnimMove_MudSlap : gBattleAnimMove_MudSlap,
+        .secretPowerEffect = SECRET_POWER_ACC_MINUS_1,
         .camouflageType = TYPE_GROUND,
+        .camouflageBlend = RGB(30, 24, 11),
         .background = ENVIRONMENT_BACKGROUND(DesertN),
+        .palette = gBattleEnvironmentPalette_DesertN,
+        .battleIntroSlide = BattleIntroSlide2,
     },
     
     [BATTLE_ENVIRONMENT_GYM] =
     {
-        .naturePower = MOVE_CHIP_AWAY,
-        .secretPowerEffect = MOVE_EFFECT_DEF_MINUS_1,
+        .name = _("Gym"),
+        .naturePower = MOVE_TRI_ATTACK,
+        .secretPowerAnimation = B_SECRET_POWER_ANIMATION >= GEN_4 ? gBattleAnimMove_SpitUp : gBattleAnimMove_SpitUp,
+        .secretPowerEffect = MOVE_EFFECT_PARALYSIS,
         .camouflageType = TYPE_NORMAL,
+        .camouflageBlend = RGB(30, 24, 11),
         .background = ENVIRONMENT_BACKGROUND(Gym),
+        .palette = gBattleEnvironmentPalette_Gym,
+        .battleIntroSlide = BattleIntroSlide2,
     },
     
     [BATTLE_ENVIRONMENT_INDOOR] =
     {
+        .name = _("Indoor"),
         .naturePower = MOVE_TRI_ATTACK,
-        .secretPowerEffect = MOVE_EFFECT_SPD_MINUS_1,
+        .secretPowerAnimation = B_SECRET_POWER_ANIMATION >= GEN_4 ? gBattleAnimMove_SpitUp : gBattleAnimMove_SpitUp,
+        .secretPowerEffect = MOVE_EFFECT_PARALYSIS,
         .camouflageType = TYPE_NORMAL,
+        .camouflageBlend = RGB(30, 24, 11),
         .background = ENVIRONMENT_BACKGROUND(Indoor),
+        .palette = gBattleEnvironmentPalette_Indoor,
+        .battleIntroSlide = BattleIntroSlide2,
     },
     
     [BATTLE_ENVIRONMENT_LAB] =
     {
-        .naturePower = MOVE_SLUDGE_BOMB,
-        .secretPowerEffect = MOVE_EFFECT_POISON,
+        .name = _("Lab"),
+        .naturePower = MOVE_CHARGE_BEAM,
+        .secretPowerAnimation = B_SECRET_POWER_ANIMATION >= GEN_4 ? gBattleAnimMove_ThunderShock : gBattleAnimMove_ThunderShock,
+        .secretPowerEffect = MOVE_EFFECT_PARALYSIS,
         .camouflageType = TYPE_NORMAL,
+        .camouflageBlend = RGB(30, 24, 11),
         .background = ENVIRONMENT_BACKGROUND(Lab),
+        .palette = gBattleEnvironmentPalette_Lab,
+        .battleIntroSlide = BattleIntroSlide2,
     },
     
     [BATTLE_ENVIRONMENT_MOUNTAIN] =
     {
+        .name = _("Mountain"),
         .naturePower = MOVE_ROCK_SLIDE,
-        .secretPowerEffect = MOVE_EFFECT_DEF_MINUS_1,
+        .secretPowerAnimation = B_SECRET_POWER_ANIMATION >= GEN_4 ? gBattleAnimMove_RockThrow : gBattleAnimMove_RockThrow,
+        .secretPowerEffect = MOVE_EFFECT_FLINCH,
         .camouflageType = TYPE_ROCK,
+        .camouflageBlend = RGB(30, 24, 11),
         .background = ENVIRONMENT_BACKGROUND(Mountain),
+        .palette = gBattleEnvironmentPalette_Mountain,
+        .battleIntroSlide = BattleIntroSlide2,
     },
     
     [BATTLE_ENVIRONMENT_MOUNTAIN_E] =
     {
+        .name = _("Mountain"),
         .naturePower = MOVE_ROCK_SLIDE,
-        .secretPowerEffect = MOVE_EFFECT_DEF_MINUS_1,
+        .secretPowerAnimation = B_SECRET_POWER_ANIMATION >= GEN_4 ? gBattleAnimMove_RockThrow : gBattleAnimMove_RockThrow,
+        .secretPowerEffect = MOVE_EFFECT_FLINCH,
         .camouflageType = TYPE_ROCK,
+        .camouflageBlend = RGB(30, 24, 11),
         .background = ENVIRONMENT_BACKGROUND(MountainE),
+        .palette = gBattleEnvironmentPalette_MountainE,
+        .battleIntroSlide = BattleIntroSlide2,
     },
     
     [BATTLE_ENVIRONMENT_MOUNTAIN_N] =
     {
+        .name = _("Mountain"),
         .naturePower = MOVE_ROCK_SLIDE,
-        .secretPowerEffect = MOVE_EFFECT_DEF_MINUS_1,
+        .secretPowerAnimation = B_SECRET_POWER_ANIMATION >= GEN_4 ? gBattleAnimMove_RockThrow : gBattleAnimMove_RockThrow,
+        .secretPowerEffect = MOVE_EFFECT_FLINCH,
         .camouflageType = TYPE_ROCK,
+        .camouflageBlend = RGB(30, 24, 11),
         .background = ENVIRONMENT_BACKGROUND(MountainN),
+        .palette = gBattleEnvironmentPalette_MountainN,
+        .battleIntroSlide = BattleIntroSlide2,
     },
     
     [BATTLE_ENVIRONMENT_MOUNTAIN_SNOW] =
     {
+        .name = _("Mountain Snow"),
         .naturePower = MOVE_AVALANCHE,
+        .secretPowerAnimation = B_SECRET_POWER_ANIMATION >= GEN_4 ? gBattleAnimMove_IceShard : gBattleAnimMove_IceShard,
         .secretPowerEffect = MOVE_EFFECT_FREEZE,
         .camouflageType = TYPE_ICE,
+        .camouflageBlend = RGB(30, 24, 11),
         .background = ENVIRONMENT_BACKGROUND(MountainSnow),
+        .palette = gBattleEnvironmentPalette_MountainSnow,
+        .battleIntroSlide = BattleIntroSlide2,
     },
     
     [BATTLE_ENVIRONMENT_MOUNTAIN_SNOW_E] =
     {
+        .name = _("Mountain Snow"),
         .naturePower = MOVE_AVALANCHE,
+        .secretPowerAnimation = B_SECRET_POWER_ANIMATION >= GEN_4 ? gBattleAnimMove_IceShard : gBattleAnimMove_IceShard,
         .secretPowerEffect = MOVE_EFFECT_FREEZE,
         .camouflageType = TYPE_ICE,
+        .camouflageBlend = RGB(30, 24, 11),
         .background = ENVIRONMENT_BACKGROUND(MountainSnowE),
+        .palette = gBattleEnvironmentPalette_MountainSnowE,
+        .battleIntroSlide = BattleIntroSlide2,
     },
     
     [BATTLE_ENVIRONMENT_MOUNTAIN_SNOW_N] =
     {
+        .name = _("Mountain Snow"),
         .naturePower = MOVE_AVALANCHE,
+        .secretPowerAnimation = B_SECRET_POWER_ANIMATION >= GEN_4 ? gBattleAnimMove_IceShard : gBattleAnimMove_IceShard,
         .secretPowerEffect = MOVE_EFFECT_FREEZE,
         .camouflageType = TYPE_ICE,
+        .camouflageBlend = RGB(30, 24, 11),
         .background = ENVIRONMENT_BACKGROUND(MountainSnowN),
+        .palette = gBattleEnvironmentPalette_MountainSnowN,
+        .battleIntroSlide = BattleIntroSlide2,
     },
     
     [BATTLE_ENVIRONMENT_ROCKY] =
     {
+        .name = _("Rocky"),
         .naturePower = MOVE_STONE_EDGE,
-        .secretPowerEffect = MOVE_EFFECT_FLINCH,
+        .secretPowerAnimation = B_SECRET_POWER_ANIMATION >= GEN_4 ? gBattleAnimMove_RockSlide : gBattleAnimMove_RockSlide,
+        .secretPowerEffect = SECRET_POWER_DEF_MINUS_1,
         .camouflageType = TYPE_ROCK,
+        .camouflageBlend = RGB(30, 24, 11),
         .background = ENVIRONMENT_BACKGROUND(Rocky),
+        .palette = gBattleEnvironmentPalette_Rocky,
+        .battleIntroSlide = BattleIntroSlide2,
     },
     
     [BATTLE_ENVIRONMENT_ROCKY_E] =
     {
+        .name = _("Rocky"),
         .naturePower = MOVE_STONE_EDGE,
-        .secretPowerEffect = MOVE_EFFECT_FLINCH,
+        .secretPowerAnimation = B_SECRET_POWER_ANIMATION >= GEN_4 ? gBattleAnimMove_RockSlide : gBattleAnimMove_RockSlide,
+        .secretPowerEffect = SECRET_POWER_DEF_MINUS_1,
         .camouflageType = TYPE_ROCK,
+        .camouflageBlend = RGB(30, 24, 11),
         .background = ENVIRONMENT_BACKGROUND(RockyE),
+        .palette = gBattleEnvironmentPalette_RockyE,
+        .battleIntroSlide = BattleIntroSlide2,
     },
     
     [BATTLE_ENVIRONMENT_ROCKY_N] =
     {
+        .name = _("Rocky"),
         .naturePower = MOVE_STONE_EDGE,
-        .secretPowerEffect = MOVE_EFFECT_FLINCH,
+        .secretPowerAnimation = B_SECRET_POWER_ANIMATION >= GEN_4 ? gBattleAnimMove_SpitUp : gBattleAnimMove_SpitUp,
+        .secretPowerEffect = SECRET_POWER_DEF_MINUS_1,
         .camouflageType = TYPE_ROCK,
+        .camouflageBlend = RGB(30, 24, 11),
         .background = ENVIRONMENT_BACKGROUND(RockyN),
+        .palette = gBattleEnvironmentPalette_RockyN,
+        .battleIntroSlide = BattleIntroSlide2,
     },
     
     [BATTLE_ENVIRONMENT_ROUTE] =
     {
+        .name = _("Route"),
         .naturePower = MOVE_TRAILBLAZE,
-        .secretPowerEffect = MOVE_EFFECT_SPD_MINUS_1,
+        .secretPowerAnimation = B_SECRET_POWER_ANIMATION >= GEN_4 ? gBattleAnimMove_SpitUp : gBattleAnimMove_SpitUp,
+        .secretPowerEffect = MOVE_EFFECT_PARALYSIS,
         .camouflageType = TYPE_GRASS,
+        .camouflageBlend = RGB(30, 24, 11),
         .background = ENVIRONMENT_BACKGROUND(Route),
+        .palette = gBattleEnvironmentPalette_Route,
+        .battleIntroSlide = BattleIntroSlide2,
     },
     
     [BATTLE_ENVIRONMENT_ROUTE_E] =
     {
+        .name = _("Route"),
         .naturePower = MOVE_TRAILBLAZE,
-        .secretPowerEffect = MOVE_EFFECT_SPD_MINUS_1,
+        .secretPowerAnimation = B_SECRET_POWER_ANIMATION >= GEN_4 ? gBattleAnimMove_SpitUp : gBattleAnimMove_SpitUp,
+        .secretPowerEffect = MOVE_EFFECT_PARALYSIS,
         .camouflageType = TYPE_GRASS,
+        .camouflageBlend = RGB(30, 24, 11),
         .background = ENVIRONMENT_BACKGROUND(RouteE),
+        .palette = gBattleEnvironmentPalette_RouteE,
+        .battleIntroSlide = BattleIntroSlide2,
     },
     
     [BATTLE_ENVIRONMENT_ROUTE_N] =
     {
+        .name = _("Route"),
         .naturePower = MOVE_TRAILBLAZE,
-        .secretPowerEffect = MOVE_EFFECT_SPD_MINUS_1,
+        .secretPowerAnimation = B_SECRET_POWER_ANIMATION >= GEN_4 ? gBattleAnimMove_SpitUp : gBattleAnimMove_SpitUp,
+        .secretPowerEffect = MOVE_EFFECT_PARALYSIS,
         .camouflageType = TYPE_GRASS,
+        .camouflageBlend = RGB(30, 24, 11),
         .background = ENVIRONMENT_BACKGROUND(RouteN),
+        .palette = gBattleEnvironmentPalette_RouteN,
+        .battleIntroSlide = BattleIntroSlide2,
     },
     
     [BATTLE_ENVIRONMENT_SAFARI] =
     {
+        .name = _("Safari"),
         .naturePower = MOVE_GRASSY_GLIDE,
-        .secretPowerEffect = MOVE_EFFECT_SP_DEF_MINUS_1,
+        .secretPowerAnimation = B_SECRET_POWER_ANIMATION >= GEN_4 ? gBattleAnimMove_SpitUp : gBattleAnimMove_SpitUp,
+        .secretPowerEffect = MOVE_EFFECT_PARALYSIS,
         .camouflageType = TYPE_GRASS,
+        .camouflageBlend = RGB(30, 24, 11),
         .background = ENVIRONMENT_BACKGROUND(Safari),
+        .palette = gBattleEnvironmentPalette_Safari,
+        .battleIntroSlide = BattleIntroSlide2,
     },
     
     [BATTLE_ENVIRONMENT_SAFARI_E] =
     {
+        .name = _("Safari"),
         .naturePower = MOVE_GRASSY_GLIDE,
-        .secretPowerEffect = MOVE_EFFECT_SP_DEF_MINUS_1,
+        .secretPowerAnimation = B_SECRET_POWER_ANIMATION >= GEN_4 ? gBattleAnimMove_SpitUp : gBattleAnimMove_SpitUp,
+        .secretPowerEffect = MOVE_EFFECT_PARALYSIS,
         .camouflageType = TYPE_GRASS,
+        .camouflageBlend = RGB(30, 24, 11),
         .background = ENVIRONMENT_BACKGROUND(SafariE),
+        .palette = gBattleEnvironmentPalette_SafariE,
+        .battleIntroSlide = BattleIntroSlide2,
     },
     
     [BATTLE_ENVIRONMENT_SAFARI_N] =
     {
+        .name = _("Safari"),
         .naturePower = MOVE_GRASSY_GLIDE,
-        .secretPowerEffect = MOVE_EFFECT_SP_DEF_MINUS_1,
+        .secretPowerAnimation = B_SECRET_POWER_ANIMATION >= GEN_4 ? gBattleAnimMove_SpitUp : gBattleAnimMove_SpitUp,
+        .secretPowerEffect = MOVE_EFFECT_PARALYSIS,
         .camouflageType = TYPE_GRASS,
+        .camouflageBlend = RGB(30, 24, 11),
         .background = ENVIRONMENT_BACKGROUND(SafariN),
+        .palette = gBattleEnvironmentPalette_SafariN,
+        .battleIntroSlide = BattleIntroSlide2,
     },
     
     [BATTLE_ENVIRONMENT_SEA] =
     {
+        .name = _("Sea"),
         .naturePower = MOVE_SURF,
-        .secretPowerEffect = MOVE_EFFECT_SP_ATK_MINUS_1,
+        .secretPowerAnimation = B_SECRET_POWER_ANIMATION >= GEN_4 ? gBattleAnimMove_WaterPulse : gBattleAnimMove_WaterPulse,
+        .secretPowerEffect = SECRET_POWER_ATK_MINUS_1,
         .camouflageType = TYPE_WATER,
+        .camouflageBlend = RGB(30, 24, 11),
         .background = ENVIRONMENT_BACKGROUND(Sea),
+        .palette = gBattleEnvironmentPalette_Sea,
+        .battleIntroSlide = BattleIntroSlide2,
     },
     
     [BATTLE_ENVIRONMENT_SEA_E] =
     {
+        .name = _("Sea"),
         .naturePower = MOVE_SURF,
-        .secretPowerEffect = MOVE_EFFECT_SP_ATK_MINUS_1,
+        .secretPowerAnimation = B_SECRET_POWER_ANIMATION >= GEN_4 ? gBattleAnimMove_WaterPulse : gBattleAnimMove_WaterPulse,
+        .secretPowerEffect = SECRET_POWER_ATK_MINUS_1,
         .camouflageType = TYPE_WATER,
+        .camouflageBlend = RGB(30, 24, 11),
         .background = ENVIRONMENT_BACKGROUND(SeaE),
+        .palette = gBattleEnvironmentPalette_SeaE,
+        .battleIntroSlide = BattleIntroSlide2,
     },
     
     [BATTLE_ENVIRONMENT_SEA_N] =
     {
+        .name = _("Sea"),
         .naturePower = MOVE_SURF,
-        .secretPowerEffect = MOVE_EFFECT_SP_ATK_MINUS_1,
+        .secretPowerAnimation = B_SECRET_POWER_ANIMATION >= GEN_4 ? gBattleAnimMove_WaterPulse : gBattleAnimMove_WaterPulse,
+        .secretPowerEffect = SECRET_POWER_ATK_MINUS_1,
         .camouflageType = TYPE_WATER,
+        .camouflageBlend = RGB(30, 24, 11),
         .background = ENVIRONMENT_BACKGROUND(SeaN),
+        .palette = gBattleEnvironmentPalette_SeaN,
+        .battleIntroSlide = BattleIntroSlide2,
     },
     
     [BATTLE_ENVIRONMENT_SNOW] =
     {
+        .name = _("Snow"),
         .naturePower = MOVE_BLIZZARD,
+        .secretPowerAnimation = B_SECRET_POWER_ANIMATION >= GEN_4 ? gBattleAnimMove_IcyWind : gBattleAnimMove_IcyWind,
         .secretPowerEffect = MOVE_EFFECT_FROSTBITE,
         .camouflageType = TYPE_ICE,
+        .camouflageBlend = RGB(30, 24, 11),
         .background = ENVIRONMENT_BACKGROUND(Snow),
+        .palette = gBattleEnvironmentPalette_Snow,
+        .battleIntroSlide = BattleIntroSlide2,
     },
     
     [BATTLE_ENVIRONMENT_SNOW_E] =
     {
+        .name = _("Snow"),
         .naturePower = MOVE_BLIZZARD,
+        .secretPowerAnimation = B_SECRET_POWER_ANIMATION >= GEN_4 ? gBattleAnimMove_IcyWind : gBattleAnimMove_IcyWind,
         .secretPowerEffect = MOVE_EFFECT_FROSTBITE,
         .camouflageType = TYPE_ICE,
+        .camouflageBlend = RGB(30, 24, 11),
         .background = ENVIRONMENT_BACKGROUND(SnowE),
+        .palette = gBattleEnvironmentPalette_SnowE,
+        .battleIntroSlide = BattleIntroSlide2,
     },
     
     [BATTLE_ENVIRONMENT_SNOW_N] =
     {
+        .name = _("Snow"),
         .naturePower = MOVE_BLIZZARD,
+        .secretPowerAnimation = B_SECRET_POWER_ANIMATION >= GEN_4 ? gBattleAnimMove_IcyWind : gBattleAnimMove_IcyWind,
         .secretPowerEffect = MOVE_EFFECT_FROSTBITE,
         .camouflageType = TYPE_ICE,
+        .camouflageBlend = RGB(30, 24, 11),
         .background = ENVIRONMENT_BACKGROUND(SnowN),
+        .palette = gBattleEnvironmentPalette_SnowN,
+        .battleIntroSlide = BattleIntroSlide2,
     },
     
     [BATTLE_ENVIRONMENT_SWAMP] =
     {
+        .name = _("Swamp"),
         .naturePower = MOVE_MUD_BOMB,
-        .secretPowerEffect = MOVE_EFFECT_ACC_MINUS_1,
+        .secretPowerAnimation = B_SECRET_POWER_ANIMATION >= GEN_4 ? gBattleAnimMove_SludgeBomb : gBattleAnimMove_SludgeBomb,
+        .secretPowerEffect = MOVE_EFFECT_POISON,
         .camouflageType = TYPE_GROUND,
+        .camouflageBlend = RGB(30, 24, 11),
         .background = ENVIRONMENT_BACKGROUND(Swamp),
+        .palette = gBattleEnvironmentPalette_Swamp,
+        .battleIntroSlide = BattleIntroSlide2,
     },
     
     [BATTLE_ENVIRONMENT_SWAMP_E] =
     {
+        .name = _("Swamp"),
         .naturePower = MOVE_MUD_BOMB,
-        .secretPowerEffect = MOVE_EFFECT_ACC_MINUS_1,
+        .secretPowerAnimation = B_SECRET_POWER_ANIMATION >= GEN_4 ? gBattleAnimMove_SludgeBomb : gBattleAnimMove_SludgeBomb,
+        .secretPowerEffect = MOVE_EFFECT_POISON,
         .camouflageType = TYPE_GROUND,
+        .camouflageBlend = RGB(30, 24, 11),
         .background = ENVIRONMENT_BACKGROUND(SwampE),
+        .palette = gBattleEnvironmentPalette_SwampE,
+        .battleIntroSlide = BattleIntroSlide2,
     },
     
     [BATTLE_ENVIRONMENT_SWAMP_N] =
     {
+        .name = _("Swamp"),
         .naturePower = MOVE_MUD_BOMB,
-        .secretPowerEffect = MOVE_EFFECT_ACC_MINUS_1,
+        .secretPowerAnimation = B_SECRET_POWER_ANIMATION >= GEN_4 ? gBattleAnimMove_SludgeBomb : gBattleAnimMove_SludgeBomb,
+        .secretPowerEffect = MOVE_EFFECT_POISON,
         .camouflageType = TYPE_GROUND,
+        .camouflageBlend = RGB(30, 24, 11),
         .background = ENVIRONMENT_BACKGROUND(SwampN),
+        .palette = gBattleEnvironmentPalette_SwampN,
+        .battleIntroSlide = BattleIntroSlide2,
     },
     
     [BATTLE_ENVIRONMENT_UNDERWATER] =
     {
+        .name = _("Underwater"),
         .naturePower = MOVE_HYDRO_PUMP,
-        .secretPowerEffect = MOVE_EFFECT_SP_DEF_MINUS_1,
+        .secretPowerAnimation = B_SECRET_POWER_ANIMATION >= GEN_4 ? gBattleAnimMove_WaterPulse : gBattleAnimMove_WaterPulse,
+        .secretPowerEffect = SECRET_POWER_ATK_MINUS_1,
         .camouflageType = TYPE_WATER,
+        .camouflageBlend = RGB(30, 24, 11),
         .background = ENVIRONMENT_BACKGROUND(Underwater),
+        .palette = gBattleEnvironmentPalette_Underwater,
+        .battleIntroSlide = BattleIntroSlide2,
     },
     
     [BATTLE_ENVIRONMENT_UNDERWATER_E] =
     {
+        .name = _("Underwater"),
         .naturePower = MOVE_HYDRO_PUMP,
-        .secretPowerEffect = MOVE_EFFECT_SP_DEF_MINUS_1,
+        .secretPowerAnimation = B_SECRET_POWER_ANIMATION >= GEN_4 ? gBattleAnimMove_WaterPulse : gBattleAnimMove_WaterPulse,
+        .secretPowerEffect = SECRET_POWER_ATK_MINUS_1,
         .camouflageType = TYPE_WATER,
+        .camouflageBlend = RGB(30, 24, 11),
         .background = ENVIRONMENT_BACKGROUND(UnderwaterE),
+        .palette = gBattleEnvironmentPalette_UnderwaterE,
+        .battleIntroSlide = BattleIntroSlide2,
     },
     
     [BATTLE_ENVIRONMENT_UNDERWATER_N] =
     {
+        .name = _("Underwater"),
         .naturePower = MOVE_HYDRO_PUMP,
-        .secretPowerEffect = MOVE_EFFECT_SP_DEF_MINUS_1,
+        .secretPowerAnimation = B_SECRET_POWER_ANIMATION >= GEN_4 ? gBattleAnimMove_WaterPulse : gBattleAnimMove_WaterPulse,
+        .secretPowerEffect = SECRET_POWER_ATK_MINUS_1,
         .camouflageType = TYPE_WATER,
+        .camouflageBlend = RGB(30, 24, 11),
         .background = ENVIRONMENT_BACKGROUND(UnderwaterN),
+        .palette = gBattleEnvironmentPalette_UnderwaterN,
+        .battleIntroSlide = BattleIntroSlide2,
     },
     
     [BATTLE_ENVIRONMENT_VOLCANO] =
     {
-        .naturePower = MOVE_LAVA_PLUME,
+        .name = _("Volcano"),
+        .naturePower = MOVE_ERUPTION,
+        .secretPowerAnimation = B_SECRET_POWER_ANIMATION >= GEN_4 ? gBattleAnimMove_Incinerate : gBattleAnimMove_Incinerate,
         .secretPowerEffect = MOVE_EFFECT_BURN,
         .camouflageType = TYPE_FIRE,
+        .camouflageBlend = RGB(30, 24, 11),
         .background = ENVIRONMENT_BACKGROUND(Volcano),
+        .palette = gBattleEnvironmentPalette_Volcano,
+        .battleIntroSlide = BattleIntroSlide2,
     },
     
     [BATTLE_ENVIRONMENT_VOLCANO_E] =
     {
-        .naturePower = MOVE_LAVA_PLUME,
+        .name = _("Volcano"),
+        .naturePower = MOVE_ERUPTION,
+        .secretPowerAnimation = B_SECRET_POWER_ANIMATION >= GEN_4 ? gBattleAnimMove_Incinerate : gBattleAnimMove_Incinerate,
         .secretPowerEffect = MOVE_EFFECT_BURN,
         .camouflageType = TYPE_FIRE,
+        .camouflageBlend = RGB(30, 24, 11),
         .background = ENVIRONMENT_BACKGROUND(VolcanoE),
+        .palette = gBattleEnvironmentPalette_VolcanoE,
+        .battleIntroSlide = BattleIntroSlide2,
     },
     
     [BATTLE_ENVIRONMENT_VOLCANO_N] =
     {
-        .naturePower = MOVE_LAVA_PLUME,
+        .name = _("Volcano"),
+        .naturePower = MOVE_ERUPTION,
+        .secretPowerAnimation = B_SECRET_POWER_ANIMATION >= GEN_4 ? gBattleAnimMove_Incinerate : gBattleAnimMove_Incinerate,
         .secretPowerEffect = MOVE_EFFECT_BURN,
         .camouflageType = TYPE_FIRE,
+        .camouflageBlend = RGB(30, 24, 11),
         .background = ENVIRONMENT_BACKGROUND(VolcanoN),
+        .palette = gBattleEnvironmentPalette_VolcanoN,
+        .battleIntroSlide = BattleIntroSlide2,
     },
     
     [BATTLE_ENVIRONMENT_MOOSE] =
     {
-        .naturePower = MOVE_DRACO_METEOR,
-        .secretPowerEffect = MOVE_EFFECT_DEF_MINUS_1,
-        .camouflageType = TYPE_DRAGON,
+        .name = _("Moose"),
+        .naturePower = MOVE_AURA_SPHERE,
+        .secretPowerAnimation = B_SECRET_POWER_ANIMATION >= GEN_4 ? gBattleAnimMove_MegaPunch : gBattleAnimMove_MegaPunch,
+        .secretPowerEffect = MOVE_EFFECT_BURN,
+        .camouflageType = TYPE_FIGHTING,
+        .camouflageBlend = RGB(30, 24, 11),
         .background = ENVIRONMENT_BACKGROUND(Moose),
+        .palette = gBattleEnvironmentPalette_Moose,
+        .battleIntroSlide = BattleIntroSlide2,
     },
     
     [BATTLE_ENVIRONMENT_THOMAS] =
     {
+        .name = _("Tiffany"),
         .naturePower = MOVE_AERIAL_ACE,
-        .secretPowerEffect = MOVE_EFFECT_SPD_MINUS_1,
+        .secretPowerAnimation = B_SECRET_POWER_ANIMATION >= GEN_4 ? gBattleAnimMove_Gust : gBattleAnimMove_Gust,
+        .secretPowerEffect = MOVE_EFFECT_PARALYSIS,
         .camouflageType = TYPE_FLYING,
+        .camouflageBlend = RGB(30, 24, 11),
         .background = ENVIRONMENT_BACKGROUND(Thomas),
+        .palette = gBattleEnvironmentPalette_Thomas,
+        .battleIntroSlide = BattleIntroSlide2,
     },
     
     [BATTLE_ENVIRONMENT_TINKER] =
     {
+        .name = _("Tinker"),
         .naturePower = MOVE_FLASH_CANNON,
-        .secretPowerEffect = MOVE_EFFECT_ATK_MINUS_1,
+        .secretPowerAnimation = B_SECRET_POWER_ANIMATION >= GEN_4 ? gBattleAnimMove_GearGrind : gBattleAnimMove_GearGrind,
+        .secretPowerEffect = MOVE_EFFECT_CONFUSION,
         .camouflageType = TYPE_STEEL,
+        .camouflageBlend = RGB(30, 24, 11),
         .background = ENVIRONMENT_BACKGROUND(Tinker),
+        .palette = gBattleEnvironmentPalette_Tinker,
+        .battleIntroSlide = BattleIntroSlide2,
     },
     
     [BATTLE_ENVIRONMENT_TOBIAS] =
     {
+        .name = _("Tobias"),
         .naturePower = MOVE_FOUL_PLAY,
-        .secretPowerEffect = MOVE_EFFECT_ACC_MINUS_1,
+        .secretPowerAnimation = B_SECRET_POWER_ANIMATION >= GEN_4 ? gBattleAnimMove_NightShade : gBattleAnimMove_NightShade,
+        .secretPowerEffect = MOVE_EFFECT_SLEEP,
         .camouflageType = TYPE_GHOST,
+        .camouflageBlend = RGB(30, 24, 11),
         .background = ENVIRONMENT_BACKGROUND(Tobias),
+        .palette = gBattleEnvironmentPalette_Tobias,
+        .battleIntroSlide = BattleIntroSlide2,
     },
     
     [BATTLE_ENVIRONMENT_GWEN] =
     {
-        .naturePower = MOVE_TERA_BLAST,
-        .secretPowerEffect = MOVE_EFFECT_FLINCH,
-        .camouflageType = TYPE_NORMAL,
+        .name = _("Gwen"),
+        .naturePower = MOVE_DRACO_METEOR,
+        .secretPowerAnimation = B_SECRET_POWER_ANIMATION >= GEN_4 ? gBattleAnimMove_NightDaze : gBattleAnimMove_NightDaze,
+        .secretPowerEffect = SECRET_POWER_DEF_MINUS_1,
+        .camouflageType = TYPE_DRAGON,
+        .camouflageBlend = RGB(30, 24, 11),
         .background = ENVIRONMENT_BACKGROUND(Gwen),
+        .palette = gBattleEnvironmentPalette_Gwen,
+        .battleIntroSlide = BattleIntroSlide2,
     },
 };
 
@@ -749,6 +867,7 @@ static const struct {
     u8 battleEnvironment;
 } sMapBattleSceneMapping[] = {
     {MAP_BATTLE_SCENE_GYM,           BATTLE_ENVIRONMENT_GYM},
+    {MAP_BATTLE_SCENE_LAB,	     BATTLE_ENVIRONMENT_LAB},
     {MAP_BATTLE_SCENE_SIDNEY,        BATTLE_ENVIRONMENT_THOMAS},
     {MAP_BATTLE_SCENE_PHOEBE,        BATTLE_ENVIRONMENT_TOBIAS},
     {MAP_BATTLE_SCENE_GLACIA,        BATTLE_ENVIRONMENT_TINKER},

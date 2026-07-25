@@ -90,20 +90,22 @@ Route102_Text_LetsGoBack:
 	.string "Let's go back to the GYM!$"
 
 Route102_Text_ImNotVeryTall:
-	.string "I'm…not very tall, so I sink right\n"
-	.string "into tall grass.\p"
-	.string "The grass goes up my nose and…\n"
-	.string "Fwafwafwafwafwa…\p"
-	.string "Fwatchoo!$"
+	.string "If you go through this gate,\n"
+	.string "you can go to South Banjime.\p"
+	.string "I'm pretty sure you need to\n"
+	.string "have a valid passport in order\l"
+	.string "to enter the country, though…$"
 
 Route102_Text_CatchWholeBunchOfPokemon:
 	.string "I'm going to catch a whole bunch of\n"
-	.string "POKéMON!$"
+	.string "Pokémon!$"
 
 Route102_Text_RouteSignOldale:
-	.string "ROUTE 102\n"
-	.string "{RIGHT_ARROW} OLDALE TOWN$"
+	.string "Route 632\p"
+	.string "{UP_ARROW} Albatross Town\n"
+	.string "{RIGHT_ARROW} Route 633$"
 
 Route102_Text_RouteSignPetalburg:
-	.string "ROUTE 102\n"
-	.string "{LEFT_ARROW} PETALBURG CITY$"
+	.string "Route 632\p"
+	.string "{UP_ARROW} Albatross Town\n"
+	.string "{RIGHT_ARROW} Route 633$"

@@ -15,12 +15,12 @@
   "connections": null,
   "object_events": [
     {
-      "local_id": "LOCALID_RIVALS_HOUSE_2F_RIVAL",
-      "graphics_id": "OBJ_EVENT_GFX_RIVAL_LUCAS_NORMAL",
-      "x": 7,
-      "y": 1,
+      "local_id": "LOCALID_PLAYERS_BEDROOM_SEAN",
+      "graphics_id": "OBJ_EVENT_GFX_SEAN",
+      "x": 10,
+      "y": 7,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 1,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -185,56 +185,83 @@
       "flag": "FLAG_DECORATION_12"
     },
     {
-      "local_id": "LOCALID_PLAYERS_HOUSE_2F_MOM",
-      "graphics_id": "OBJ_EVENT_GFX_BW_MOM",
-      "x": 7,
-      "y": 1,
+      "local_id": "LOCALID_PLAYERS_BEDROOM_AMELIA",
+      "graphics_id": "OBJ_EVENT_GFX_AMELIA",
+      "x": 11,
+      "y": 7,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 1,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "0x0",
       "flag": "FLAG_HIDE_LITTLEROOT_TOWN_PLAYERS_BEDROOM_MOM"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 3,
-      "y": 4,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
-      "movement_range_x": 1,
-      "movement_range_y": 1,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "LittlerootTown_BrendansHouse_2F_EventScript_RivalsPokeBall",
-      "flag": "FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F_POKE_BALL"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_SWABLU_DOLL",
-      "x": 5,
-      "y": 5,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
-      "movement_range_x": 1,
-      "movement_range_y": 1,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "0x0",
-      "flag": "FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F_SWABLU_DOLL"
     }
   ],
   "warp_events": [
     {
-      "x": 7,
-      "y": 1,
+      "x": 10,
+      "y": 7,
       "elevation": 0,
-      "dest_map": "MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F",
-      "dest_warp_id": "2"
+      "dest_map": "MAP_PLAYERS_HOUSE_HALLWAY",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 11,
+      "y": 7,
+      "elevation": 0,
+      "dest_map": "MAP_PLAYERS_HOUSE_HALLWAY",
+      "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_LITTLEROOT_INTRO_STATE",
+      "var_value": "1",
+      "script": "LittlerootTown_BrendansHouse_2F_EventScript_ComeSetClock"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_LITTLEROOT_INTRO_STATE",
+      "var_value": "1",
+      "script": "LittlerootTown_BrendansHouse_2F_EventScript_ComeSetClock"
+    },
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_LITTLEROOT_INTRO_STATE",
+      "var_value": "1",
+      "script": "LittlerootTown_BrendansHouse_2F_EventScript_ComeSetClock"
+    },
+    {
+      "type": "trigger",
+      "x": 12,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_LITTLEROOT_INTRO_STATE",
+      "var_value": "1",
+      "script": "LittlerootTown_BrendansHouse_2F_EventScript_ComeSetClock"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_LITTLEROOT_INTRO_STATE",
+      "var_value": "0",
+      "script": "LittlerootTown_BrendansHouse_2F_EventScript_CheckGender"
+    }
+  ],
   "bg_events": [
     {
       "type": "sign",
@@ -246,15 +273,7 @@
     },
     {
       "type": "sign",
-      "x": 1,
-      "y": 1,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "PlayersHouse_2F_EventScript_Notebook"
-    },
-    {
-      "type": "sign",
-      "x": 5,
+      "x": 3,
       "y": 1,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
@@ -262,11 +281,12 @@
     },
     {
       "type": "sign",
-      "x": 3,
-      "y": 1,
+      "x": 10,
+      "y": 2,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "PlayersHouse_2F_EventScript_GameCube"
     }
-  ]
+  ],
+  "region": "REGION_HOENN"
 }

@@ -1,5 +1,6 @@
 #include "global.h"
 #include "battle_anim.h"
+#include "battle_environment.h"
 #include "contest.h"
 #include "gpu_regs.h"
 #include "graphics.h"
@@ -14,11 +15,11 @@
 
 struct AnimStatsChangeData
 {
-    u8 battler1;
-    u8 battler2;
+    enum BattlerId battler1;
+    enum BattlerId battler2;
     bool8 hidBattler2;
     s16 data[8];
-    u16 species;
+    enum Species species;
 };
 
 static EWRAM_DATA struct AnimStatsChangeData *sAnimStatsChangeData = {0};
@@ -52,15 +53,16 @@ void AnimTask_BlendBattleAnimPal(u8 taskId)
 
 void AnimTask_BlendBattleAnimPalExclude(u8 taskId)
 {
-    u8 battler;
+    enum BattlerId battler;
     u32 selectedPalettes;
-    u8 animBattlers[2];
+    enum BattlerId animBattlers[2];
 
     animBattlers[1] = 0xFF;
     selectedPalettes = UnpackSelectedBattlePalettes(F_PAL_BG);
-    switch (gBattleAnimArgs[0])
+    enum AnimBattler animBattler = gBattleAnimArgs[0];
+    switch (animBattler)
     {
-    case 2:
+    case ANIM_ATK_PARTNER:
         selectedPalettes = 0;
         // fall through
     case ANIM_ATTACKER:
@@ -69,24 +71,24 @@ void AnimTask_BlendBattleAnimPalExclude(u8 taskId)
 #endif
         animBattlers[0] = gBattleAnimAttacker;
         break;
-    case 3:
+    case ANIM_DEF_PARTNER:
         selectedPalettes = 0;
         // fall through
     case ANIM_TARGET:
         animBattlers[0] = gBattleAnimTarget;
         break;
-    case 4:
+    case ANIM_PLAYER_LEFT:
         animBattlers[0] = gBattleAnimAttacker;
         animBattlers[1] = gBattleAnimTarget;
         break;
-    case 5:
+    case ANIM_OPPONENT_LEFT:
         animBattlers[0] = 0xFF;
         break;
-    case 6:
+    case ANIM_PLAYER_RIGHT:
         selectedPalettes = 0;
         animBattlers[0] = BATTLE_PARTNER(gBattleAnimAttacker);
         break;
-    case 7:
+    case ANIM_OPPONENT_RIGHT:
         selectedPalettes = 0;
         animBattlers[0] = BATTLE_PARTNER(gBattleAnimTarget);
         break;
@@ -104,198 +106,18 @@ void AnimTask_BlendBattleAnimPalExclude(u8 taskId)
 void AnimTask_SetCamouflageBlend(u8 taskId)
 {
     u32 selectedPalettes = UnpackSelectedBattlePalettes(gBattleAnimArgs[0]);
-    switch (gBattleEnvironment)
-{
-    case BATTLE_ENVIRONMENT_ARENA:
-        gBattleAnimArgs[4] = RGB_WHITE;
-        break;
-    case BATTLE_ENVIRONMENT_AUTUMN_FOREST:
-        gBattleAnimArgs[4] = RGB_WHITE;
-        break;
-    case BATTLE_ENVIRONMENT_AUTUMN_FOREST_E:
-        gBattleAnimArgs[4] = RGB_WHITE;
-        break;
-    case BATTLE_ENVIRONMENT_AUTUMN_FOREST_N:
-        gBattleAnimArgs[4] = RGB_WHITE;
-        break;
-    case BATTLE_ENVIRONMENT_BEACH:
-        gBattleAnimArgs[4] = RGB_WHITE;
-        break;
-    case BATTLE_ENVIRONMENT_BEACH_E:
-        gBattleAnimArgs[4] = RGB_WHITE;
-        break;
-    case BATTLE_ENVIRONMENT_BEACH_N:
-        gBattleAnimArgs[4] = RGB_WHITE;
-        break;
-    case BATTLE_ENVIRONMENT_BRIDGE:
-        gBattleAnimArgs[4] = RGB_WHITE;
-        break;
-    case BATTLE_ENVIRONMENT_BRIDGE_E:
-        gBattleAnimArgs[4] = RGB_WHITE;
-        break;
-    case BATTLE_ENVIRONMENT_BRIDGE_N:
-        gBattleAnimArgs[4] = RGB_WHITE;
-        break;
-    case BATTLE_ENVIRONMENT_CAVE:
-        gBattleAnimArgs[4] = RGB_WHITE;
-        break;
-    case BATTLE_ENVIRONMENT_CAVE_DARK:
-        gBattleAnimArgs[4] = RGB_WHITE;
-        break;
-    case BATTLE_ENVIRONMENT_CAVE_MAGMA:
-        gBattleAnimArgs[4] = RGB_WHITE;
-        break;
-    case BATTLE_ENVIRONMENT_CAVE_SNOW:
-        gBattleAnimArgs[4] = RGB_WHITE;
-        break;
-    case BATTLE_ENVIRONMENT_CITY:
-        gBattleAnimArgs[4] = RGB_WHITE;
-        break;
-    case BATTLE_ENVIRONMENT_CITY_E:
-        gBattleAnimArgs[4] = RGB_WHITE;
-        break;
-    case BATTLE_ENVIRONMENT_CITY_N:
-        gBattleAnimArgs[4] = RGB_WHITE;
-        break;
-    case BATTLE_ENVIRONMENT_CRAG:
-        gBattleAnimArgs[4] = RGB_WHITE;
-        break;
-    case BATTLE_ENVIRONMENT_CRAG_E:
-        gBattleAnimArgs[4] = RGB_WHITE;
-        break;
-    case BATTLE_ENVIRONMENT_CRAG_N:
-        gBattleAnimArgs[4] = RGB_WHITE;
-        break;
-    case BATTLE_ENVIRONMENT_DESERT:
-        gBattleAnimArgs[4] = RGB_WHITE;
-        break;
-    case BATTLE_ENVIRONMENT_DESERT_E:
-        gBattleAnimArgs[4] = RGB_WHITE;
-        break;
-    case BATTLE_ENVIRONMENT_DESERT_N:
-        gBattleAnimArgs[4] = RGB_WHITE;
-        break;
-    case BATTLE_ENVIRONMENT_GYM:
-        gBattleAnimArgs[4] = RGB_WHITE;
-        break;
-    case BATTLE_ENVIRONMENT_INDOOR:
-        gBattleAnimArgs[4] = RGB_WHITE;
-        break;
-    case BATTLE_ENVIRONMENT_LAB:
-        gBattleAnimArgs[4] = RGB_WHITE;
-        break;
-    case BATTLE_ENVIRONMENT_MOUNTAIN:
-        gBattleAnimArgs[4] = RGB_WHITE;
-        break;
-    case BATTLE_ENVIRONMENT_MOUNTAIN_E:
-        gBattleAnimArgs[4] = RGB_WHITE;
-        break;
-    case BATTLE_ENVIRONMENT_MOUNTAIN_N:
-        gBattleAnimArgs[4] = RGB_WHITE;
-        break;
-    case BATTLE_ENVIRONMENT_MOUNTAIN_SNOW:
-        gBattleAnimArgs[4] = RGB_WHITE;
-        break;
-    case BATTLE_ENVIRONMENT_MOUNTAIN_SNOW_E:
-        gBattleAnimArgs[4] = RGB_WHITE;
-        break;
-    case BATTLE_ENVIRONMENT_MOUNTAIN_SNOW_N:
-        gBattleAnimArgs[4] = RGB_WHITE;
-        break;
-    case BATTLE_ENVIRONMENT_ROCKY:
-        gBattleAnimArgs[4] = RGB_WHITE;
-        break;
-    case BATTLE_ENVIRONMENT_ROCKY_E:
-        gBattleAnimArgs[4] = RGB_WHITE;
-        break;
-    case BATTLE_ENVIRONMENT_ROCKY_N:
-        gBattleAnimArgs[4] = RGB_WHITE;
-        break;
-    case BATTLE_ENVIRONMENT_ROUTE:
-        gBattleAnimArgs[4] = RGB_WHITE;
-        break;
-    case BATTLE_ENVIRONMENT_ROUTE_E:
-        gBattleAnimArgs[4] = RGB_WHITE;
-        break;
-    case BATTLE_ENVIRONMENT_ROUTE_N:
-        gBattleAnimArgs[4] = RGB_WHITE;
-        break;
-    case BATTLE_ENVIRONMENT_SAFARI:
-        gBattleAnimArgs[4] = RGB_WHITE;
-        break;
-    case BATTLE_ENVIRONMENT_SAFARI_E:
-        gBattleAnimArgs[4] = RGB_WHITE;
-        break;
-    case BATTLE_ENVIRONMENT_SAFARI_N:
-        gBattleAnimArgs[4] = RGB_WHITE;
-        break;
-    case BATTLE_ENVIRONMENT_SEA:
-        gBattleAnimArgs[4] = RGB_WHITE;
-        break;
-    case BATTLE_ENVIRONMENT_SEA_E:
-        gBattleAnimArgs[4] = RGB_WHITE;
-        break;
-    case BATTLE_ENVIRONMENT_SEA_N:
-        gBattleAnimArgs[4] = RGB_WHITE;
-        break;
-    case BATTLE_ENVIRONMENT_SNOW:
-        gBattleAnimArgs[4] = RGB_WHITE;
-        break;
-    case BATTLE_ENVIRONMENT_SNOW_E:
-        gBattleAnimArgs[4] = RGB_WHITE;
-        break;
-    case BATTLE_ENVIRONMENT_SNOW_N:
-        gBattleAnimArgs[4] = RGB_WHITE;
-        break;
-    case BATTLE_ENVIRONMENT_SWAMP:
-        gBattleAnimArgs[4] = RGB_WHITE;
-        break;
-    case BATTLE_ENVIRONMENT_SWAMP_E:
-        gBattleAnimArgs[4] = RGB_WHITE;
-        break;
-    case BATTLE_ENVIRONMENT_SWAMP_N:
-        gBattleAnimArgs[4] = RGB_WHITE;
-        break;
-    case BATTLE_ENVIRONMENT_UNDERWATER:
-        gBattleAnimArgs[4] = RGB_WHITE;
-        break;
-    case BATTLE_ENVIRONMENT_UNDERWATER_E:
-        gBattleAnimArgs[4] = RGB_WHITE;
-        break;
-    case BATTLE_ENVIRONMENT_UNDERWATER_N:
-        gBattleAnimArgs[4] = RGB_WHITE;
-        break;
-    case BATTLE_ENVIRONMENT_VOLCANO:
-        gBattleAnimArgs[4] = RGB_WHITE;
-        break;
-    case BATTLE_ENVIRONMENT_VOLCANO_E:
-        gBattleAnimArgs[4] = RGB_WHITE;
-        break;
-    case BATTLE_ENVIRONMENT_VOLCANO_N:
-        gBattleAnimArgs[4] = RGB_WHITE;
-        break;
-    case BATTLE_ENVIRONMENT_MOOSE:
-        gBattleAnimArgs[4] = RGB_WHITE;
-        break;
-    case BATTLE_ENVIRONMENT_THOMAS:
-        gBattleAnimArgs[4] = RGB_WHITE;
-        break;
-    case BATTLE_ENVIRONMENT_TINKER:
-        gBattleAnimArgs[4] = RGB_WHITE;
-        break;
-    case BATTLE_ENVIRONMENT_TOBIAS:
-        gBattleAnimArgs[4] = RGB_WHITE;
-        break;
-    case BATTLE_ENVIRONMENT_GWEN:
-        gBattleAnimArgs[4] = RGB_WHITE;
-        break;
-    }
-
+    gBattleAnimArgs[4] = gBattleEnvironmentInfo[gBattleEnvironment].camouflageBlend;
     StartBlendAnimSpriteColor(taskId, selectedPalettes);
 }
 
 void AnimTask_BlendParticle(u8 taskId)
 {
+    if (!TryLoadPal(gBattleAnimArgs[0]))
+    {
+        DestroyTask(taskId);
+        return;
+    }
+
     u8 paletteIndex = IndexOfSpritePaletteTag(gBattleAnimArgs[0]);
     u32 selectedPalettes = 1 << (paletteIndex + 16);
     StartBlendAnimSpriteColor(taskId, selectedPalettes);
@@ -388,10 +210,11 @@ static void AnimTask_TraceMonBlended_Step(u8 taskId)
         }
         else
         {
-            task->data[6] = CloneBattlerSpriteWithBlend(task->data[0]);
+            enum AnimBattler animBattler = task->data[0];
+            task->data[6] = CloneBattlerSpriteWithBlend(animBattler);
             if (task->data[6] >= 0)
             {
-                gSprites[task->data[6]].oam.priority = task->data[0] ? 1 : 2;
+                gSprites[task->data[6]].oam.priority = animBattler != ANIM_ATTACKER ? 1 : 2;
                 gSprites[task->data[6]].data[0] = task->data[3];
                 gSprites[task->data[6]].data[1] = taskId;
                 gSprites[task->data[6]].data[2] = 5;
@@ -425,7 +248,7 @@ static void AnimMonTrace(struct Sprite *sprite)
 // Only used by Curse for non-Ghost mons
 void AnimTask_DrawFallingWhiteLinesOnAttacker(u8 taskId)
 {
-    u16 species;
+    enum Species species;
     int spriteId, newSpriteId;
     u16 var0;
     u32 bg1Cnt;
@@ -517,7 +340,7 @@ static void AnimTask_DrawFallingWhiteLinesOnAttacker_Step(u8 taskId)
             SetGpuReg(REG_OFFSET_DISPCNT, GetGpuReg(REG_OFFSET_DISPCNT) ^ DISPCNT_OBJWIN_ON);
             SetGpuReg(REG_OFFSET_BLDCNT, 0);
             SetGpuReg(REG_OFFSET_BLDALPHA, 0);
-            sprite = &gSprites[GetAnimBattlerSpriteId(0)]; // unused
+            sprite = &gSprites[GetAnimBattlerSpriteId(ANIM_ATTACKER)]; // unused
             sprite = &gSprites[gTasks[taskId].data[0]];
             DestroySprite(sprite);
 
@@ -632,7 +455,7 @@ static void StatsChangeAnimation_Step2(u8 taskId)
         AnimLoadCompressedBgTilemapHandleContest(&animBgData, gStatAnim_Decrease_Tilemap, FALSE);
 
     AnimLoadCompressedBgGfx(animBgData.bgId, gStatAnim_Gfx, animBgData.tilesOffset);
-    switch (sAnimStatsChangeData->aAnimStatId)
+    switch ((enum StatAnimPal)sAnimStatsChangeData->aAnimStatId)
     {
     case STAT_ANIM_PAL_ATK:
         LoadPalette(gStatAnim_Attack_Pal, BG_PLTT_ID(animBgData.paletteId), PLTT_SIZE_4BPP);
@@ -656,7 +479,7 @@ static void StatsChangeAnimation_Step2(u8 taskId)
         LoadPalette(gStatAnim_SpDefense_Pal, BG_PLTT_ID(animBgData.paletteId), PLTT_SIZE_4BPP);
         break;
     default:
- // case STAT_ANIM_PAL_MULTIPLE:
+    // case STAT_ANIM_PAL_MULTIPLE:
         LoadPalette(gStatAnim_Multiple_Pal, BG_PLTT_ID(animBgData.paletteId), PLTT_SIZE_4BPP);
         break;
     }
@@ -858,7 +681,7 @@ static void SetPalettesToColor(u32 selectedPalettes, u16 color)
 
 void AnimTask_BlendNonAttackerPalettes(u8 taskId)
 {
-    u32 battler;
+    enum BattlerId battler;
     int j;
     u32 selectedPalettes = 0;
 
@@ -936,9 +759,7 @@ void AnimTask_GetTargetIsAttackerPartner(u8 taskId)
 // For hiding or subsequently revealing all other battlers
 void AnimTask_SetAllNonAttackersInvisiblity(u8 taskId)
 {
-    u16 battler;
-
-    for (battler = 0; battler < MAX_BATTLERS_COUNT; battler++)
+    for (enum BattlerId battler = 0; battler < MAX_BATTLERS_COUNT; battler++)
     {
         if (battler != gBattleAnimAttacker && IsBattlerSpriteVisible(battler))
             gSprites[gBattlerSpriteIds[battler]].invisible = gBattleAnimArgs[0];
@@ -947,13 +768,13 @@ void AnimTask_SetAllNonAttackersInvisiblity(u8 taskId)
     DestroyAnimVisualTask(taskId);
 }
 
-void StartMonScrollingBgMask(u8 taskId, int UNUSED unused, u16 scrollSpeed, u8 battler, bool8 includePartner, u8 numFadeSteps, u8 fadeStepDelay, u8 duration, const u32 *gfx, const u32 *tilemap, const u16 *palette)
+void StartMonScrollingBgMask(u8 taskId, int UNUSED unused, u16 scrollSpeed, enum BattlerId battler, bool8 includePartner, u8 numFadeSteps, u8 fadeStepDelay, u8 duration, const u32 *gfx, const u32 *tilemap, const u16 *palette)
 {
-    u16 species;
+    enum Species species;
     u8 spriteId, spriteId2;
     u32 bg1Cnt;
     struct BattleAnimBgData animBgData;
-    u8 battler2;
+    enum BattlerId battler2;
 
     spriteId2 = 0;
     battler2 = BATTLE_PARTNER(battler);
@@ -1254,7 +1075,7 @@ void AnimTask_CanBattlerSwitch(u8 taskId)
 
 void AnimTask_SetInvisible(u8 taskId)
 {
-    u32 battlerId = GetAnimBattlerId(gBattleAnimArgs[0]);
+    enum BattlerId battlerId = GetAnimBattlerId(gBattleAnimArgs[0]);
     u32 spriteId = gBattlerSpriteIds[battlerId];
 
     gSprites[spriteId].invisible = gBattleSpritesDataPtr->battlerData[battlerId].invisible = gBattleAnimArgs[1];

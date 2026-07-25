@@ -133,3 +133,46 @@ PetalburgCity_WallysHouse_Text_WallyLeftWithoutTelling:
 	.string "I'm sure that he'll come back safe\n"
 	.string "and sound one day!$"
 
+PetalburgCity_WallysHouse_EventScript_HotelManager::
+	msgbox PetalburgCity_WallysHouse_Text_HotelManager, MSGBOX_NPC
+	end
+
+PetalburgCity_WallysHouse_Text_HotelManager:
+	.string "Hello, welcome to Otnar's Inn!\p"
+	.string "Unfortunately, we're all booked\n"
+	.string "at the moment.\p"
+	.string "Please visit us in the future!$"
+
+PetalburgCity_WallysHouse_EventScript_Socialite::
+	msgbox PetalburgCity_WallysHouse_Text_Socialite, MSGBOX_NPC
+	end
+
+PetalburgCity_WallysHouse_Text_Socialite:
+	.string "Otnar's Inn makes the absolute best\n"
+	.string "coffee in town.\p"
+	.string "There's nothing more important than\n"
+	.string "good coffee in a town full of artists!$"
+
+PetalburgCity_WallysHouse_EventScript_Artist::
+	msgbox PetalburgCity_WallysHouse_Text_Artist, MSGBOX_NPC
+	end
+
+PetalburgCity_WallysHouse_Text_Artist:
+	.string "I came to Papilys City for inspiration\n"
+	.string "for the painting I'm working on.\p"
+	.string "They call this town The City of\n"
+	.string "Cliffside Artists, so I thought it\l"
+	.string "would be the perfect place for me.\p"
+	.string "Little did I know, this place is\n"
+	.string "incredibly cold!\p"
+	.string "I'm not sure how much of this I can take…$"
+
+PetalburgCity_WallysHouse_EventScript_Youngster::
+	msgbox PetalburgCity_WallysHouse_Text_Youngster, MSGBOX_NPC
+	end
+
+PetalburgCity_WallysHouse_Text_Youngster:
+	.string "My mom made me come out here to take\n"
+	.string "an art course with Anton DeRoux.\p"
+	.string "I'm honored he was willing to take\n"
+	.string "me as an intern, but man is it tough!$"

@@ -3,6 +3,7 @@
   "name": "Route116",
   "layout": "LAYOUT_ROUTE116",
   "music": "MUS_ROUTE104",
+  "region": "REGION_HOENN",
   "region_map_section": "MAPSEC_ROUTE_116",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",
@@ -17,11 +18,6 @@
       "map": "MAP_VERDANTURF_TOWN",
       "offset": 80,
       "direction": "down"
-    },
-    {
-      "map": "MAP_RUSTBORO_CITY",
-      "offset": 0,
-      "direction": "left"
     }
   ],
   "object_events": [

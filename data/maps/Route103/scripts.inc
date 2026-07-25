@@ -60,32 +60,32 @@ Route103_EventScript_RivalBrendan::
 
 Route103_EventScript_StartMayBattleTreecko::
 	trainerbattle_no_intro TRAINER_MAY_ROUTE_103_TREECKO, Route103_Text_MayDefeated
-	goto Route103_EventScript_AfterMayBattle
+	goto LittlerootTown_UnicornLab_EventScript_TimeToLeave
 	end
 
 Route103_EventScript_StartMayBattleTorchic::
 	trainerbattle_no_intro TRAINER_MAY_ROUTE_103_TORCHIC, Route103_Text_MayDefeated
-	goto Route103_EventScript_AfterMayBattle
+	goto LittlerootTown_UnicornLab_EventScript_TimeToLeave
 	end
 
 Route103_EventScript_StartMayBattleMudkip::
 	trainerbattle_no_intro TRAINER_MAY_ROUTE_103_MUDKIP, Route103_Text_MayDefeated
-	goto Route103_EventScript_AfterMayBattle
+	goto LittlerootTown_UnicornLab_EventScript_TimeToLeave
 	end
 
 Route103_EventScript_StartBrendanBattleTreecko::
 	trainerbattle_no_intro TRAINER_BRENDAN_ROUTE_103_TREECKO, Route103_Text_BrendanDefeated
-	goto Route103_EventScript_AfterBrendanBattle
+	goto LittlerootTown_UnicornLab_EventScript_AmeliaWantBattle
 	end
 
 Route103_EventScript_StartBrendanBattleTorchic::
 	trainerbattle_no_intro TRAINER_BRENDAN_ROUTE_103_TORCHIC, Route103_Text_BrendanDefeated
-	goto Route103_EventScript_AfterBrendanBattle
+	goto LittlerootTown_UnicornLab_EventScript_AmeliaWantBattle
 	end
 
 Route103_EventScript_StartBrendanBattleMudkip::
 	trainerbattle_no_intro TRAINER_BRENDAN_ROUTE_103_MUDKIP, Route103_Text_BrendanDefeated
-	goto Route103_EventScript_AfterBrendanBattle
+	goto LittlerootTown_UnicornLab_EventScript_AmeliaWantBattle
 	end
 
 Route103_EventScript_AfterMayBattle::
@@ -339,15 +339,16 @@ Route103_Text_BrendanTimeToHeadBack:
 	.string "We should head back to the LAB.$"
 
 Route103_Text_ShouldHaveBroughtPotion:
-	.string "My POKéMON is staggeringly tired…\n"
-	.string "I should have brought a POTION…$"
+	.string "My Pokémon is staggeringly tired…\n"
+	.string "I should have brought a Potion…$"
 
 Route103_Text_ShortcutToOldale:
-	.string "If you cross the sea from here,\n"
-	.string "it'll be a shortcut to OLDALE TOWN.\p"
-	.string "Fufufu, that's useful, isn't it?$"
+	.string "If you scale that rock wall,\n"
+	.string "I think you can enter Mt. Eleny.\p"
+	.string "What's hidden in that entrance?$"
 
 Route103_Text_RouteSign:
-	.string "ROUTE 103\n"
-	.string "{DOWN_ARROW} OLDALE TOWN$"
+	.string "Route 633\l"
+	.string "{LEFT_ARROW} Route 632\n"
+	.string "{UP_ARROW} Papilys City$"
 

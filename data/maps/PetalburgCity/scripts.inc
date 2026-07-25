@@ -12,7 +12,7 @@ PetalburgCity_OnTransition:
 	end
 
 PetalburgCity_EventScript_MoveGymBoyToWestEntrance::
-	setobjectxyperm LOCALID_GYM_BOY, 5, 11
+	setobjectxyperm LOCALID_GYM_BOY, 38, 12
 	return
 
 PetalburgCity_EventScript_DisableMapNameAndMusic::
@@ -38,7 +38,6 @@ PetalburgCity_EventScript_WallyTutorial::
 	waitmovement 0
 	msgbox Route102_Text_WatchMeCatchPokemon, MSGBOX_DEFAULT
 	special StartWallyTutorialBattle
-	waitstate
 	msgbox Route102_Text_WallyIDidIt, MSGBOX_DEFAULT
 	applymovement LOCALID_PETALBURG_WALLY, Common_Movement_WalkInPlaceFasterLeft, MAP_PETALBURG_CITY
 	waitmovement LOCALID_PETALBURG_WALLY, MAP_PETALBURG_CITY
@@ -92,6 +91,10 @@ PetalburgCity_EventScript_Boy::
 
 PetalburgCity_EventScript_WallysMom::
 	msgbox PetalburgCity_Text_WhereIsWally, MSGBOX_NPC
+	end
+
+PetalburgCity_EventScript_PoliceMan::
+	msgbox PetalburgCity_Text_PoliceMan, MSGBOX_NPC
 	end
 
 PetalburgCity_Movement_WalkToWallyHousePlayer:
@@ -226,12 +229,20 @@ PetalburgCity_EventScript_CitySign::
 	msgbox PetalburgCity_Text_CitySign, MSGBOX_SIGN
 	end
 
+PetalburgCity_EventScript_TrainSign::
+	msgbox PetalburgCity_Text_TrainSign, MSGBOX_SIGN
+	end
+
 PetalburgCity_EventScript_Gentleman::
 	msgbox PetalburgCity_Text_FullPartyExplanation, MSGBOX_NPC
 	end
 
 PetalburgCity_EventScript_WallyHouseSign::
 	msgbox PetalburgCity_Text_WallyHouseSign, MSGBOX_SIGN
+	end
+
+PetalburgCity_EventScript_HouseSign::
+	msgbox PetalburgCity_Text_HouseSign, MSGBOX_SIGN
 	end
 
 PetalburgCity_EventScript_ShowGymToPlayer0::
@@ -261,6 +272,7 @@ PetalburgCity_EventScript_ShowGymToPlayer3::
 PetalburgCity_EventScript_ShowGymToPlayer::
 	applymovement LOCALID_GYM_BOY, Common_Movement_FacePlayer
 	waitmovement 0
+	setvar VAR_PETALBURG_CITY_STATE, 1
 	playbgm MUS_FOLLOW_ME, FALSE
 	playse SE_PIN
 	applymovement LOCALID_GYM_BOY, Common_Movement_ExclamationMark
@@ -298,6 +310,8 @@ PetalburgCity_EventScript_BoyApproachPlayer0::
 
 PetalburgCity_EventScript_BoyApproachPlayer1::
 	applymovement LOCALID_GYM_BOY, PetalburgCity_Movement_BoyApproachPlayer1
+	waitmovement 0
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
 	waitmovement 0
 	return
 
@@ -339,6 +353,87 @@ PetalburgCity_EventScript_LeadPlayerToGym3::
 	waitmovement 0
 	return
 
+PetalburgCity_EventScript_OldLady::
+	goto_if_set FLAG_BADGE01_GET, PetalburgCity_EventScript_CheckIfHasLetter
+	goto PetalburgCity_EventScript_DoesntHaveLetter
+	end
+
+PetalburgCity_EventScript_GiveLetterToOldLady::
+	lock
+	faceplayer
+	clearflag FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG
+	msgbox PetalburgCity_Text_OldLady, MSGBOX_DEFAULT
+	closemessage
+	removeitem ITEM_LETTER
+	playbgm MUS_FOLLOW_ME, FALSE
+	switch VAR_FACING
+	case DIR_SOUTH, PetalburgCity_EventScript_OldLadyTrainSouth
+	case DIR_NORTH, PetalburgCity_EventScript_OldLadyTrainNorth
+	case DIR_WEST, PetalburgCity_EventScript_OldLadyTrainWest
+	end
+
+PetalburgCity_EventScript_CheckIfHasLetter::
+	goto_if_set FLAG_RECEIVED_LETTER, PetalburgCity_EventScript_GiveLetterToOldLady
+	goto PetalburgCity_EventScript_DoesntHaveLetter
+	end
+
+PetalburgCity_EventScript_DoesntHaveLetter::
+	msgbox PetalburgCity_Text_OldLadyWhereHubby, MSGBOX_NPC
+	end
+
+PetalburgCity_EventScript_OldLadyTrainSouth::
+	applymovement LOCALID_PETALBURG_ANTONWIFE, PetalburgCity_Movement_OldLadyTrainSouth
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp
+	waitmovement 0
+	msgbox PetalburgCity_Text_OldLadyChewOut, MSGBOX_DEFAULT
+	closemessage
+	delay 10
+	applymovement LOCALID_PETALBURG_ANTONWIFE, PetalburgCity_Movement_OldLadyReturnSouth
+	waitmovement 0
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
+	waitmovement 0
+	goto PetalburgCity_EventScript_EndOldLady
+	end
+
+PetalburgCity_EventScript_OldLadyTrainNorth::
+	applymovement LOCALID_PETALBURG_ANTONWIFE, PetalburgCity_Movement_OldLadyTrainNorth
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp
+	waitmovement 0
+	msgbox PetalburgCity_Text_OldLadyChewOut, MSGBOX_DEFAULT
+	closemessage
+	delay 10
+	applymovement LOCALID_PETALBURG_ANTONWIFE, PetalburgCity_Movement_OldLadyReturnNorth
+	waitmovement 0
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
+	waitmovement 0
+	goto PetalburgCity_EventScript_EndOldLady
+	end
+
+PetalburgCity_EventScript_OldLadyTrainWest::
+	applymovement LOCALID_PETALBURG_ANTONWIFE, PetalburgCity_Movement_OldLadyTrainWest
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp
+	waitmovement 0
+	msgbox PetalburgCity_Text_OldLadyChewOut, MSGBOX_DEFAULT
+	closemessage
+	delay 10
+	applymovement LOCALID_PETALBURG_ANTONWIFE, PetalburgCity_Movement_OldLadyReturnWest
+	waitmovement 0
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
+	waitmovement 0
+	goto PetalburgCity_EventScript_EndOldLady
+	end
+
+PetalburgCity_EventScript_EndOldLady::
+	fadedefaultbgm
+	msgbox PetalburgCity_Text_ComeToHouse, MSGBOX_DEFAULT
+	closemessage
+	setflag FLAG_HIDE_PETALBURG_CITY_WALLYS_MOM
+	applymovement LOCALID_PETALBURG_ANTONWIFE, PetalburgCity_Movement_OldLadyGoHome
+	waitmovement 0
+	removeobject LOCALID_PETALBURG_ANTONWIFE
+	release
+	end
+
 @ Unused
 PetalburgCity_Movement_Delay48::
 	delay_16
@@ -346,7 +441,84 @@ PetalburgCity_Movement_Delay48::
 	delay_16
 	step_end
 
+PetalburgCity_Movement_OldLadyTrainSouth:
+	walk_right
+	walk_right
+	walk_right
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_left
+	step_end
+
+PetalburgCity_Movement_OldLadyTrainNorth:
+	walk_right
+	walk_right
+	walk_right
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_left
+	step_end
+
+PetalburgCity_Movement_OldLadyTrainWest:
+	walk_up
+	walk_right
+	walk_right
+	walk_right
+	walk_up
+	walk_up
+	walk_up
+	walk_left
+	step_end
+
+PetalburgCity_Movement_OldLadyReturnSouth:
+	walk_right
+	walk_down
+	walk_down
+	walk_down
+	walk_left
+	walk_left
+	step_end
+
+PetalburgCity_Movement_OldLadyReturnWest:
+	walk_right
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_left
+	step_end
+
+PetalburgCity_Movement_OldLadyReturnNorth:
+	walk_right
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_left
+	walk_left
+	walk_down
+	walk_in_place_faster_left
+	step_end
+
+PetalburgCity_Movement_OldLadyGoHome:
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
 PetalburgCity_Movement_BoyApproachPlayer0:
+	walk_right
+	walk_right
 	walk_right
 	walk_right
 	walk_right
@@ -356,9 +528,13 @@ PetalburgCity_Movement_BoyApproachPlayer0:
 PetalburgCity_Movement_BoyApproachPlayer1:
 	walk_right
 	walk_right
+	walk_right
+	walk_right
 	step_end
 
 PetalburgCity_Movement_BoyApproachPlayer2:
+	walk_right
+	walk_right
 	walk_right
 	walk_right
 	walk_right
@@ -381,15 +557,33 @@ PetalburgCity_Movement_BoyWalkToGym0:
 	walk_right
 	walk_right
 	walk_right
-	walk_up
 	walk_right
-	walk_in_place_faster_up
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_up
+	walk_in_place_faster_left
 	step_end
 
 PetalburgCity_Movement_BoyWalkToGym1:
 	walk_down
 	walk_right
 	walk_right
+	walk_up
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
 	walk_right
 	walk_right
 	walk_right
@@ -397,9 +591,7 @@ PetalburgCity_Movement_BoyWalkToGym1:
 	walk_right
 	walk_right
 	walk_up
-	walk_up
-	walk_right
-	walk_in_place_faster_up
+	walk_in_place_faster_left
 	step_end
 
 PetalburgCity_Movement_BoyWalkToGym2:
@@ -410,9 +602,17 @@ PetalburgCity_Movement_BoyWalkToGym2:
 	walk_right
 	walk_right
 	walk_right
-	walk_up
 	walk_right
-	walk_in_place_faster_up
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_up
+	walk_in_place_faster_left
 	step_end
 
 PetalburgCity_Movement_BoyWalkToGym3:
@@ -442,6 +642,15 @@ PetalburgCity_Movement_BoyWalkAway:
 	walk_left
 	walk_left
 	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
 	step_end
 
 PetalburgCity_Movement_PlayerWalkToGym0:
@@ -453,13 +662,31 @@ PetalburgCity_Movement_PlayerWalkToGym0:
 	walk_right
 	walk_right
 	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
 	walk_up
+	walk_in_place_faster_right
 	step_end
 
 PetalburgCity_Movement_PlayerWalkToGym1:
 	delay_16
 	delay_16
-	walk_down
+	walk_in_place_down
+	delay_16
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
 	walk_right
 	walk_right
 	walk_right
@@ -468,7 +695,7 @@ PetalburgCity_Movement_PlayerWalkToGym1:
 	walk_right
 	walk_right
 	walk_up
-	walk_up
+	walk_in_place_faster_right
 	step_end
 
 PetalburgCity_Movement_PlayerWalkToGym2:
@@ -480,7 +707,16 @@ PetalburgCity_Movement_PlayerWalkToGym2:
 	walk_right
 	walk_right
 	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
 	walk_up
+	walk_in_place_faster_right
 	step_end
 
 PetalburgCity_Movement_PlayerWalkToGym3:
@@ -699,49 +935,62 @@ PetalburgCity_EventScript_GymBoy::
 	end
 
 PetalburgCity_Text_WhereIsWally:
-	.string "Where has our WALLY gone?\p"
-	.string "We have to leave for VERDANTURF TOWN\n"
-	.string "very soon…$"
+	.string "I am the mayor and Otnar's wife.\p"
+	.string "In my younger days, I traveled with\n"
+	.string "my husband, painting the scenes we\l"
+	.string "saw along our many travels.\p"
+	.string "Now, I help fund other artists who\n"
+	.string "wish to pursue a career in art.$"
 
 PetalburgCity_Text_AreYouRookieTrainer:
 	.string "Hiya! Are you maybe…\n"
-	.string "A rookie TRAINER?\p"
-	.string "Do you know what POKéMON TRAINERS\n"
+	.string "A rookie Trainer?\p"
+	.string "Do you know what Pokémon Trainers\n"
 	.string "do when they reach a new town?\p"
-	.string "They first check what kind of GYM\n"
+	.string "They first check what kind of Gym\n"
 	.string "is in the town.$"
 
 PetalburgCity_Text_ThisIsPetalburgGym:
-	.string "See? This is PETALBURG CITY's GYM.$"
+	.string "See? This is Papilys City's Gym.$"
 
 PetalburgCity_Text_ThisIsGymSign:
-	.string "This is the GYM's sign. Look for it\n"
-	.string "whenever you're looking for a GYM.$"
+	.string "This is the Gym's sign. Look for it\n"
+	.string "whenever you're looking for a Gym.$"
 
 PetalburgCity_Text_WaterReflection:
-	.string "My face is reflected in the water.\p"
-	.string "It's a shining grin full of hope…\p"
-	.string "Or it could be a look of somber silence\n"
-	.string "struggling with fear…\p"
-	.string "What do you see reflected in your face?$"
+	.string "Most people come here as aspiring\n"
+	.string "painters or sculptors.\p"
+	.string "Me?\p"
+	.string "I came here because I'm a fan of Otnar.\p"
+	.string "He's an adventurer who has traversed\n"
+	.string "across a multitude of terrains.\p"
+	.string "From the frigid tundras around here\n"
+	.string "to the scorching deserts of Redburro,\l"
+	.string "Otnar's conquered it all!\p"
+	.string "I hope to be a trainer like him\n"
+	.string "who inspires young men to take on the\l"
+	.string "treacherous world of the unknown!$"
 
 PetalburgCity_Text_FullPartyExplanation:
-	.string "Let's say you have six POKéMON.\n"
-	.string "If you catch another one…\p"
-	.string "It is automatically sent to a STORAGE\n"
-	.string "BOX over a PC connection.$"
+	.string "Back in my day, this town was a\n"
+	.string "mining town.\p"
+	.string "We carved these buildings out of the\n"
+	.string "mountain with our own two hands.\p"
+	.string "Later, artists like Anton DeRoux\n"
+	.string "came in and made our crude buildings\l"
+	.string "into beautiful works of art.$"
 
 PetalburgCity_Text_GymSign:
-	.string "PETALBURG CITY POKéMON GYM\n"
-	.string "LEADER: NORMAN\l"
-	.string "“A man in pursuit of power!”$"
+	.string "Papilys City Pokémon Gym\n"
+	.string "Leader: Otnar\l"
+	.string "“The cool-headed warrior!”$"
 
 PetalburgCity_Text_CitySign:
-	.string "PETALBURG CITY\n"
-	.string "“Where people mingle with nature.”$"
+	.string "Papilys City\n"
+	.string "“Home of cliffside artists.”$"
 
 PetalburgCity_Text_WallyHouseSign:
-	.string "WALLY'S HOUSE$"
+	.string "Otnar's Inn$"
 
 PetalburgCity_Text_AreYouATrainer:
 	.string "Excuse me!\p"
@@ -759,3 +1008,218 @@ PetalburgCity_Text_ImLookingForTalentedTrainers:
 	.string "I'm roaming the land in search of\n"
 	.string "talented TRAINERS.\p"
 	.string "I'm sorry to have taken your time.$"
+
+PetalburgCity_Text_PoliceMan:
+	.string "Sorry, but you can't enter here\n"
+	.string "without a gym badge.$"
+
+PetalburgCity_Text_HouseSign:
+	.string "Papilys Art Studio$"
+
+PetalburgCity_Text_OldLadyWhereHubby:
+	.string "Oh, Anton…\n"
+	.string "Where have you gone?\p"
+	.string "If only there were a strong trainer\n"
+	.string "around to help me…$"
+
+PetalburgCity_Text_OldLady:
+	.string "Is that letter for me?\n"
+	.string "Thank you.\p"
+	.string "Let's see…\n"
+	.string "So the train has been delayed, eh?\p"
+	.string "Well, that just won't do.\p"
+	.string "I ought to give the conductor a piece\n"
+	.string "of my mind!\p"
+	.string "Pardon me…$"
+
+PetalburgCity_Text_OldLadyChewOut:
+	.string "Listen here, Mr. Conductor…\p"
+	.string "You best bring my husband here,\n"
+	.string "or I'm going to REDACTED BY GAME DEV\l"
+	.string "to such a degree that you're going\l"
+	.string "to REDACTED!\p"
+	.string "REDACTED\n"
+	.string "REDACTED…EXTENDED…\p"
+	.string "…OH, YOU…YOU REALLY SHOULDN'T SAY\n"
+	.string "THAT TO ANOTHER HUMAN BEING…\p"
+	.string "THIS IS…\p"
+	.string "…YEAH, I'M JUST GOING TO SKIP\n"
+	.string "TO THE END OF HER DIALOGUE…\p"
+	.string "Old Woman: Good day to you, sir!$"
+
+PetalburgCity_Text_ComeToHouse:
+	.string "Okay, my husband should be in soon.\n"
+	.string "In the mean time, why don't you come\l"
+	.string "visit our beloved art studio?$"
+
+PetalburgCity_Text_TrainSign:
+	.string "Papillys City Train Station$"
+
+PetalburgCity_EventScript_N::
+	lockall
+	faceplayer
+	msgbox PetalburgCity_Text_NMayIJoin, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, PetalburgCity_EventScript_NNo
+	setfollowernpc LOCALID_PETALBURG_CITY_N, FNPC_ALL, PetalburgCity_EventScript_NFollower, PARTNER_N_PETALBURG
+	msgbox PetalburgCity_Text_GreatThanks, MSGBOX_DEFAULT
+	closemessage
+	clearflag FLAG_HIDE_PETALBURG_CITY_WALLYS_DAD
+	msgbox PetalburgCity_Text_NJoined, MSGBOX_SIGN
+	closemessage
+	releaseall
+	end
+
+PetalburgCity_EventScript_NNo::
+	msgbox PetalburgCity_Text_ISee, MSGBOX_DEFAULT
+	closemessage
+	releaseall
+	end
+
+PetalburgCity_EventScript_NFollower::
+	msgbox PetalburgCity_Text_NFollowMessage, MSGBOX_NPC
+	end
+
+PetalburgCity_EventScript_DancingCrew::
+	lock
+	msgbox PetalburgCity_Text_NotNow, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+PetalburgCity_EventScript_Line::
+	msgbox PetalburgCity_Text_Line, MSGBOX_NPC
+	end
+
+PetalburgCity_Text_NMayIJoin:
+	.string "???: Ah, Hello there.\n"
+	.string "Who are you?\p"
+	.string "{PLAYER}?\n"
+	.string "Your Pokémon speak highly of you.\p"
+	.string "I am an agent for the International\n"
+	.string "Police.\p"
+	.string "My na-codename is N.\p"
+	.string "N: I'm currently working on a case,\n"
+	.string "but I'm not a particularly strong\l"
+	.string "trainer, you see.\p"
+	.string "Thus, I'm looking for someone who\n"
+	.string "could accompany me on this mission.\p"
+	.string "Just to fend off some wild Pokémon\n"
+	.string "in the cave, nothing more.\p"
+	.string "What do you say, {PLAYER}?\n"
+	.string "Would you be willing to lend a hand?$"
+
+PetalburgCity_Text_GreatThanks:
+	.string "N: Thank you, {PLAYER}.\p"
+	.string "I'll try to make this quick so I\n"
+	.string "don't take advantage of your time.$"
+
+PetalburgCity_Text_NJoined:
+	.string "{PLAYER} decided to go with N.\p"
+	.string "N will automatically heal {PLAYER}'s\n"
+	.string "party after each battle.$"
+
+PetalburgCity_Text_ISee:
+	.string "I see…\p"
+	.string "Well, I'll wait here for you in case\n"
+	.string "you change your mind.$"
+
+PetalburgCity_Text_NFollowMessage:
+	.string "N: The case?\n"
+	.string "I'm limited in how much I can say…\p"
+	.string "Let's just keep going, and let me\n"
+	.string "know if you need any healing.$"
+
+PetalburgCity_Text_NotNow:
+	.string "Not now, we're in the middle of\n"
+	.string "a shoot!$"
+
+PetalburgCity_Text_Line:
+	.string "The train's finally back in\n"
+	.string "working condition!\p"
+	.string "I have to board ASAP!$"
+
+PetalburgCity_EventScript_TrainAgent::
+	lockall
+	faceplayer
+	msgbox PetalburgCity_Text_Welcome, MSGBOX_DEFAULT
+	closemessage
+	goto_if_set FLAG_HIDE_MT_CHIMNEY_TEAM_MAGMA, PetalburgCity_EventScript_TrainStation
+	msgbox PetalburgCity_Text_NotInOperation, MSGBOX_DEFAULT
+	closemessage
+	releaseall
+	end
+
+PetalburgCity_EventScript_TrainStation::
+	msgbox PetalburgCity_Text_TrainOptions, MSGBOX_DEFAULT
+	dynmultichoice 22, 2, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, PetalburgCity_Text_TrainChoice1, PetalburgCity_Text_TrainChoice2, PetalburgCity_Text_TrainChoice3
+	switch VAR_RESULT
+	case 0, PetalburgCity_EventScript_ToZephyr
+	case 1, PetalburgCity_EventScript_ToJoridan
+	case 2, PetalburgCity_EventScript_Exit
+	goto PetalburgCity_EventScript_Exit
+	end
+
+PetalburgCity_EventScript_ToZephyr::
+	call_if_eq VAR_FACING, DIR_WEST, PetalburgCity_EventScript_GetOnTrainWest
+	call_if_eq VAR_FACING, DIR_SOUTH, PetalburgCity_EventScript_GetOnTrainSouth
+	warp MAP_LITTLEROOT_TOWN, 23, 5
+	goto PetalburgCity_EventScript_Exit
+	end
+
+PetalburgCity_EventScript_ToJoridan::
+	call_if_eq VAR_FACING, DIR_WEST, PetalburgCity_EventScript_GetOnTrainWest
+	call_if_eq VAR_FACING, DIR_SOUTH, PetalburgCity_EventScript_GetOnTrainSouth
+	warp MAP_RUSTBORO_CITY, 15, 40
+	goto PetalburgCity_EventScript_Exit
+	end
+
+PetalburgCity_EventScript_Exit::
+	msgbox PetalburgCity_Text_ComeAgain, MSGBOX_DEFAULT
+	closemessage
+	releaseall
+	end
+
+PetalburgCity_EventScript_GetOnTrainWest::
+	applymovement LOCALID_PLAYER, PetalburgCity_Movement_GetOnTrainWest
+	waitmovement 0
+	return
+
+PetalburgCity_EventScript_GetOnTrainSouth::
+	applymovement LOCALID_PLAYER, PetalburgCity_Movement_GetOnTrainSouth
+	waitmovement 0
+	return
+
+PetalburgCity_Movement_GetOnTrainWest:
+	walk_up
+	walk_up
+	step_end
+
+PetalburgCity_Movement_GetOnTrainSouth:
+	walk_right
+	walk_up
+	step_end
+
+PetalburgCity_Text_Welcome:
+	.string "Hello, welcome to Papillys City Train\n"
+	.string "Station.$"
+
+PetalburgCity_Text_NotInOperation:
+	.string "The train is not currently operational\n"
+	.string "at the moment.\p"
+	.string "We apologize for the inconvenience.$"
+
+PetalburgCity_Text_TrainChoice1:
+	.string "Zephyr Town$"
+
+PetalburgCity_Text_TrainChoice2:
+	.string "Joridan City$"
+
+PetalburgCity_Text_TrainChoice3:
+	.string "Cancel$"
+
+PetalburgCity_Text_ComeAgain:
+	.string "We hope to see you again!$"
+
+PetalburgCity_Text_TrainOptions:
+	.string "Where would you like to go?$"
+

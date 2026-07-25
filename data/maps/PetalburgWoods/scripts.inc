@@ -315,6 +315,350 @@ PetalburgWoods_EventScript_JamesRematch::
 	msgbox PetalburgWoods_Text_IveBeenTrainingHard, MSGBOX_AUTOCLOSE
 	end
 
+Route104_EventScript_Winston::
+	trainerbattle_single TRAINER_WINSTON_1, Route104_Text_WinstonIntro, Route104_Text_WinstonDefeat, Route104_EventScript_TryRegisterWinstonAfterBattle
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, Route104_EventScript_RematchWinston
+	setvar VAR_0x8004, TRAINER_WINSTON_1
+	specialvar VAR_RESULT, IsTrainerRegistered
+	goto_if_eq VAR_RESULT, FALSE, Route104_EventScript_TryRegisterWinston
+	msgbox Route104_Text_WinstonPostBattle, MSGBOX_DEFAULT
+	release
+	end
+
+Route104_EventScript_TryRegisterWinstonAfterBattle::
+	special PlayerFaceTrainerAfterBattle
+	waitmovement 0
+	goto_if_set FLAG_HAS_MATCH_CALL, Route104_EventScript_RegisterWinstonAfterBattle
+	release
+	end
+
+Route104_EventScript_RegisterWinstonAfterBattle::
+	msgbox Route104_Text_WinstonRegister2, MSGBOX_DEFAULT
+	register_matchcall TRAINER_WINSTON_1
+	release
+	end
+
+Route104_EventScript_TryRegisterWinston::
+	goto_if_set FLAG_HAS_MATCH_CALL, Route104_EventScript_RegisterWinston
+	msgbox Route104_Text_WinstonPostBattle, MSGBOX_DEFAULT
+	release
+	end
+
+Route104_EventScript_RegisterWinston::
+	msgbox Route104_Text_WinstonRegister1, MSGBOX_DEFAULT
+	register_matchcall TRAINER_WINSTON_1
+	release
+	end
+
+Route104_EventScript_RematchWinston::
+	trainerbattle_rematch TRAINER_WINSTON_1, Route104_Text_WinstonRematchIntro, Route104_Text_WinstonRematchDefeat
+	msgbox Route104_Text_WinstonPostRematch, MSGBOX_AUTOCLOSE
+	end
+
+Route104_EventScript_Ivan::
+	trainerbattle_single TRAINER_IVAN, Route104_Text_IvanIntro, Route104_Text_IvanDefeat
+	msgbox Route104_Text_IvanPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+PetalburgWoods_EventScript_AmeliaLeft::
+	lockall
+	applymovement LOCALID_BLOOMNGROVE_WOODS_AMELIA, PetalburgWoods_Movement_DevonResearcherLookAround
+	waitmovement 0
+	msgbox PetalburgWoods_Text_NotAOneToBeFound, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_BLOOMNGROVE_WOODS_AMELIA, Common_Movement_WalkInPlaceFasterDown
+	waitmovement 0
+	playse SE_PIN
+	applymovement LOCALID_BLOOMNGROVE_WOODS_AMELIA, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement LOCALID_BLOOMNGROVE_WOODS_AMELIA, Common_Movement_Delay48
+	waitmovement 0
+	playbgm MUS_ENCOUNTER_MAY, TRUE
+	delay 10
+	msgbox PetalburgWoods_Text_OhHiMark, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_BLOOMNGROVE_WOODS_AMELIA, PetalburgWoods_Movement_AmeliaApproachLeft
+	waitmovement 0
+	msgbox PetalburgWoods_Text_LookingForAPan, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_BLOOMNGROVE_WOODS_AMELIA, PetalburgWoods_Movement_LookAroundAmelia
+	applymovement LOCALID_PLAYER, PetalburgWoods_Movement_LookAroundPlayer
+	waitmovement 0
+	msgbox PetalburgWoods_Text_DontSeeOne, MSGBOX_DEFAULT
+	closemessage
+	switch VAR_STARTER_MON
+	case 0, PetalburgWoods_EventScript_StartAmeliaBattleRowlet
+	case 1, PetalburgWoods_EventScript_StartAmeliaBattleCyndaquil
+	case 2, PetalburgWoods_EventScript_StartAmeliaBattleSquirtle
+	end
+
+PetalburgWoods_EventScript_AmeliaMid::
+	lockall
+	applymovement LOCALID_BLOOMNGROVE_WOODS_AMELIA, PetalburgWoods_Movement_DevonResearcherLookAround
+	waitmovement 0
+	msgbox PetalburgWoods_Text_NotAOneToBeFound, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_BLOOMNGROVE_WOODS_AMELIA, Common_Movement_WalkInPlaceFasterDown
+	waitmovement 0
+	playse SE_PIN
+	applymovement LOCALID_BLOOMNGROVE_WOODS_AMELIA, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement LOCALID_BLOOMNGROVE_WOODS_AMELIA, Common_Movement_Delay48
+	waitmovement 0
+	playbgm MUS_ENCOUNTER_MAY, TRUE
+	delay 10
+	msgbox PetalburgWoods_Text_OhHiMark, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_BLOOMNGROVE_WOODS_AMELIA, PetalburgWoods_Movement_AmeliaApproach
+	waitmovement 0
+	msgbox PetalburgWoods_Text_LookingForAPan, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_BLOOMNGROVE_WOODS_AMELIA, PetalburgWoods_Movement_LookAroundAmelia
+	applymovement LOCALID_PLAYER, PetalburgWoods_Movement_LookAroundPlayer
+	waitmovement 0
+	msgbox PetalburgWoods_Text_DontSeeOne, MSGBOX_DEFAULT
+	closemessage
+	switch VAR_STARTER_MON
+	case 0, PetalburgWoods_EventScript_StartAmeliaBattleRowlet
+	case 1, PetalburgWoods_EventScript_StartAmeliaBattleCyndaquil
+	case 2, PetalburgWoods_EventScript_StartAmeliaBattleSquirtle
+	end
+
+PetalburgWoods_EventScript_AmeliaRight::
+	lockall
+	applymovement LOCALID_BLOOMNGROVE_WOODS_AMELIA, PetalburgWoods_Movement_DevonResearcherLookAround
+	waitmovement 0
+	msgbox PetalburgWoods_Text_NotAOneToBeFound, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_BLOOMNGROVE_WOODS_AMELIA, Common_Movement_WalkInPlaceFasterDown
+	waitmovement 0
+	playse SE_PIN
+	applymovement LOCALID_BLOOMNGROVE_WOODS_AMELIA, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement LOCALID_BLOOMNGROVE_WOODS_AMELIA, Common_Movement_Delay48
+	waitmovement 0
+	playbgm MUS_ENCOUNTER_MAY, TRUE
+	delay 10
+	msgbox PetalburgWoods_Text_OhHiMark, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_BLOOMNGROVE_WOODS_AMELIA, PetalburgWoods_Movement_AmeliaApproachRight
+	waitmovement 0
+	msgbox PetalburgWoods_Text_LookingForAPan, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_BLOOMNGROVE_WOODS_AMELIA, PetalburgWoods_Movement_LookAroundAmelia
+	applymovement LOCALID_PLAYER, PetalburgWoods_Movement_LookAroundPlayer
+	waitmovement 0
+	msgbox PetalburgWoods_Text_DontSeeOne, MSGBOX_DEFAULT
+	closemessage
+	switch VAR_STARTER_MON
+	case 0, PetalburgWoods_EventScript_StartAmeliaBattleRowlet
+	case 1, PetalburgWoods_EventScript_StartAmeliaBattleCyndaquil
+	case 2, PetalburgWoods_EventScript_StartAmeliaBattleSquirtle
+	end
+
+PetalburgWoods_EventScript_AmeliaFarRight::
+	lockall
+	applymovement LOCALID_BLOOMNGROVE_WOODS_AMELIA, PetalburgWoods_Movement_DevonResearcherLookAround
+	waitmovement 0
+	msgbox PetalburgWoods_Text_NotAOneToBeFound, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_BLOOMNGROVE_WOODS_AMELIA, Common_Movement_WalkInPlaceFasterDown
+	waitmovement 0
+	playse SE_PIN
+	applymovement LOCALID_BLOOMNGROVE_WOODS_AMELIA, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement LOCALID_BLOOMNGROVE_WOODS_AMELIA, Common_Movement_Delay48
+	waitmovement 0
+	playbgm MUS_ENCOUNTER_MAY, TRUE
+	delay 10
+	msgbox PetalburgWoods_Text_OhHiMark, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_BLOOMNGROVE_WOODS_AMELIA, PetalburgWoods_Movement_AmeliaApproachFarRight
+	waitmovement 0
+	msgbox PetalburgWoods_Text_LookingForAPan, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_BLOOMNGROVE_WOODS_AMELIA, PetalburgWoods_Movement_LookAroundAmelia
+	applymovement LOCALID_PLAYER, PetalburgWoods_Movement_LookAroundPlayer
+	waitmovement 0
+	msgbox PetalburgWoods_Text_DontSeeOne, MSGBOX_DEFAULT
+	closemessage
+	switch VAR_STARTER_MON
+	case 0, PetalburgWoods_EventScript_StartAmeliaBattleRowletRight
+	case 1, PetalburgWoods_EventScript_StartAmeliaBattleCyndaquilRight
+	case 2, PetalburgWoods_EventScript_StartAmeliaBattleSquirtleRight
+	end
+
+PetalburgWoods_EventScript_StartAmeliaBattleRowlet:
+	trainerbattle_no_intro TRAINER_MAY_ROUTE_110_TREECKO, PetalburgWoods_Text_AmeliaDefeated
+	goto PetalburgWoods_EventScript_AmeliaDefeated
+	end
+
+PetalburgWoods_EventScript_StartAmeliaBattleCyndaquil:
+	trainerbattle_no_intro TRAINER_MAY_ROUTE_110_TORCHIC, PetalburgWoods_Text_AmeliaDefeated
+	goto PetalburgWoods_EventScript_AmeliaDefeated
+	end
+
+PetalburgWoods_EventScript_StartAmeliaBattleSquirtle:
+	trainerbattle_no_intro TRAINER_MAY_ROUTE_110_MUDKIP, PetalburgWoods_Text_AmeliaDefeated
+	goto PetalburgWoods_EventScript_AmeliaDefeated
+	end
+
+PetalburgWoods_EventScript_StartAmeliaBattleRowletRight:
+	trainerbattle_no_intro TRAINER_MAY_ROUTE_110_TREECKO, PetalburgWoods_Text_AmeliaDefeated
+	goto PetalburgWoods_EventScript_AmeliaDefeatedRight
+	end
+
+PetalburgWoods_EventScript_StartAmeliaBattleCyndaquilRight:
+	trainerbattle_no_intro TRAINER_MAY_ROUTE_110_TORCHIC, PetalburgWoods_Text_AmeliaDefeated
+	goto PetalburgWoods_EventScript_AmeliaDefeatedRight
+	end
+
+PetalburgWoods_EventScript_StartAmeliaBattleSquirtleRight:
+	trainerbattle_no_intro TRAINER_MAY_ROUTE_110_MUDKIP, PetalburgWoods_Text_AmeliaDefeated
+	goto PetalburgWoods_EventScript_AmeliaDefeatedRight
+	end
+
+PetalburgWoods_EventScript_AmeliaDefeated:
+	msgbox PetalburgWoods_Text_TakeThese, MSGBOX_DEFAULT
+	closemessage
+	giveitem ITEM_NET_BALL, 5
+	msgbox PetalburgWoods_Text_AmeliaLeave, MSGBOX_DEFAULT
+	closemessage
+	setflag FLAG_HIDE_PETALBURG_WOODS_DEVON_EMPLOYEE
+	setvar VAR_PETALBURG_WOODS_STATE, 1
+	applymovement LOCALID_BLOOMNGROVE_WOODS_AMELIA, PetalburgWoods_Movement_AmeliaExit
+	applymovement LOCALID_PLAYER, PetalburgWoods_Movement_PlayerWatchAmeliaExit
+	waitmovement 0
+	savebgm MUS_DUMMY
+	fadedefaultbgm
+	removeobject LOCALID_BLOOMNGROVE_WOODS_AMELIA
+	releaseall
+	end
+
+PetalburgWoods_EventScript_AmeliaDefeatedRight:
+	msgbox PetalburgWoods_Text_TakeThese, MSGBOX_DEFAULT
+	closemessage
+	giveitem ITEM_NET_BALL, 5
+	msgbox PetalburgWoods_Text_AmeliaLeave, MSGBOX_DEFAULT
+	closemessage
+	setflag FLAG_HIDE_PETALBURG_WOODS_DEVON_EMPLOYEE
+	setvar VAR_PETALBURG_WOODS_STATE, 1
+	applymovement LOCALID_BLOOMNGROVE_WOODS_AMELIA, PetalburgWoods_Movement_AmeliaExitRight
+	applymovement LOCALID_PLAYER, PetalburgWoods_Movement_PlayerWatchAmeliaExitRight
+	waitmovement 0
+	savebgm MUS_DUMMY
+	fadedefaultbgm
+	removeobject LOCALID_BLOOMNGROVE_WOODS_AMELIA
+	releaseall
+	end
+
+PetalburgWoods_Movement_AmeliaApproachLeft:
+	walk_left
+	walk_down
+	walk_down
+	step_end
+
+PetalburgWoods_Movement_AmeliaApproach:
+	walk_down
+	walk_down
+	step_end
+
+PetalburgWoods_Movement_AmeliaApproachRight:
+	walk_right
+	walk_down
+	walk_down
+	step_end
+
+PetalburgWoods_Movement_AmeliaApproachFarRight:
+	walk_right
+	walk_right
+	walk_down
+	walk_down
+	step_end
+
+PetalburgWoods_Movement_LookAroundAmelia:
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_in_place_faster_right
+	delay_16
+	walk_in_place_faster_up
+	delay_16
+	walk_in_place_faster_left
+	delay_16
+	walk_in_place_faster_down
+	step_end
+
+PetalburgWoods_Movement_LookAroundPlayer:
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	step_end
+
+PetalburgWoods_Movement_AmeliaExit:
+	walk_right
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+PetalburgWoods_Movement_PlayerWatchAmeliaExit:
+	delay_16
+	walk_in_place_faster_right
+	delay_16
+	walk_in_place_faster_down
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	step_end
+
+PetalburgWoods_Movement_AmeliaExitRight:
+	walk_left
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+PetalburgWoods_Movement_PlayerWatchAmeliaExitRight:
+	delay_16
+	walk_in_place_faster_left
+	delay_16
+	walk_in_place_faster_down
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	step_end
+
 PetalburgWoods_Text_NotAOneToBeFound:
 	.string "Hmmm…\n"
 	.string "Not a one to be found…$"
@@ -378,44 +722,44 @@ PetalburgWoods_Text_ICantBeWastingTime:
 
 PetalburgWoods_Text_YoureLoadedWithItems:
 	.string "You're loaded with items.\n"
-	.string "I can't give you this GREAT BALL.$"
+	.string "I can't give you this Great Ball.$"
 
 PetalburgWoods_Text_GoBugPokemonTeam:
-	.string "I caught a whole bunch of POKéMON!\p"
+	.string "I caught a whole bunch of Pokémon!\p"
 	.string "Go, go, go!\n"
-	.string "My BUG POKéMON team!$"
+	.string "My Bug Pokémon team!$"
 
 PetalburgWoods_Text_ICouldntWin:
-	.string "I have all these POKéMON,\n"
+	.string "I have all these Pokémon,\n"
 	.string "but I couldn't win…$"
 
 PetalburgWoods_Text_ImOutOfPokeBalls:
-	.string "I caught a bunch of POKéMON.\n"
-	.string "Now I'm out of POKé BALLS.$"
+	.string "I caught a bunch of Pokémon.\n"
+	.string "Now I'm out of Poké Balls.$"
 
 PetalburgWoods_Text_InstantlyPopularWithBugPokemon:
-	.string "If you take BUG POKéMON to school,\n"
+	.string "If you take Bug Pokémon to school,\n"
 	.string "you get to be instantly popular!$"
 
 PetalburgWoods_Text_CantBePopularIfILose:
 	.string "I can't be popular if I lose.$"
 
 PetalburgWoods_Text_PeopleRespectYou:
-	.string "If you have a big BUG POKéMON,\n"
+	.string "If you have a big Bug Pokémon,\n"
 	.string "people respect you for it.$"
 
 PetalburgWoods_Text_IWantRematch1:
-	.string "I want a rematch when my BUG\n"
-	.string "POKéMON grow up!\p"
-	.string "I'm registering you in my POKéNAV!$"
+	.string "I want a rematch when my Bug\n"
+	.string "Pokémon grow up!\p"
+	.string "I'm registering you in my PokéNav!$"
 
 PetalburgWoods_Text_IWantRematch2:
-	.string "I want a rematch when my BUG \n"
-	.string "POKéMON grow up!\p"
-	.string "I'm registering you in my POKéNAV!$"
+	.string "I want a rematch when my Bug \n"
+	.string "Pokémon grow up!\p"
+	.string "I'm registering you in my PokéNav!$"
 
 PetalburgWoods_Text_MyPokemonHaveGrown:
-	.string "My BUG POKéMON have grown.\n"
+	.string "My Bug Pokémon have grown.\n"
 	.string "I'll be popular again.$"
 
 PetalburgWoods_Text_CantBePopularIfLose:
@@ -428,8 +772,8 @@ PetalburgWoods_Text_IveBeenTrainingHard:
 
 PetalburgWoods_Text_StayOutOfTallGrass:
 	.string "Yo, there!\n"
-	.string "Your POKéMON doing okay?\p"
-	.string "If your POKéMON are weak and you want\n"
+	.string "Your Pokémon doing okay?\p"
+	.string "If your Pokémon are weak and you want\n"
 	.string "to avoid battles, you should stay out\l"
 	.string "of tall grass.$"
 
@@ -441,33 +785,65 @@ PetalburgWoods_Text_HiddenItemsExplanation:
 
 PetalburgWoods_Text_TryUsingThisItem:
 	.string "Oh, neat!\n"
-	.string "That's the BADGE from RUSTBORO GYM!\p"
-	.string "You must be a TRAINER.\n"
+	.string "That's the Badge from Papillys Gym!\p"
+	.string "You must be a trainer.\n"
 	.string "You should try using this item.$"
 
 PetalburgWoods_Text_MiracleSeedExplanation:
-	.string "It's a MIRACLE SEED.\n"
-	.string "If a POKéMON holds that item, its\l"
-	.string "GRASS-type moves become stronger.\p"
-	.string "Besides MIRACLE SEED, I think there are\n"
-	.string "other convenient items for POKéMON\l"
+	.string "It's a Miracle Seed.\n"
+	.string "If a Pokémon holds that item, its\l"
+	.string "Grass-type moves become stronger.\p"
+	.string "Besides Miracle Seed, I think there are\n"
+	.string "other convenient items for Pokémon\l"
 	.string "to hold.$"
 
 PetalburgWoods_Text_TrainerTipsExperience:
-	.string "TRAINER TIPS\p"
-	.string "Any POKéMON that appears even once\n"
-	.string "in a battle is awarded EXP Points.\p"
-	.string "To raise a weak POKéMON, put it at the\n"
-	.string "left of the team list.\p"
-	.string "As soon as a battle starts, switch it\n"
-	.string "out. It will earn EXP Points without\l"
-	.string "being exposed to any harm.$"
+	.string "Bloomngrove Woods\p"
+	.string "{RIGHT_ARROW} Zephyr Town\n"
+	.string "{LEFT_ARROW} Lake Transcendence$"
 
 PetalburgWoods_Text_TrainerTipsPP:
-	.string "TRAINER TIPS\p"
-	.string "In addition to Hit Points (HP), POKéMON\n"
-	.string "have Power Points (PP) that are used to\l"
-	.string "make moves during battle.\p"
-	.string "If a POKéMON runs out of PP, it must be\n"
-	.string "taken to a POKéMON CENTER.$"
+	.string "Bloomngrove Woods\p"
+	.string "{RIGHT_ARROW} Zephyr Town\n"
+	.string "{LEFT_ARROW} Lake Transcendence$"
+
+PetalburgWoods_Text_OhHiMark:
+	.string "Amelia: {PLAYER}!$"
+
+PetalburgWoods_Text_LookingForAPan:
+	.string "Glad to see you followed my suggestion\n"
+	.string "and came out here to the woods!\p"
+	.string "I'm looking for a Pokémon called Pansear.\p"
+	.string "It's a Fire-type, which would give me\n"
+	.string "an advantage against Otnar's Ice-types.\p"
+	.string "I heard that you could find one in\n"
+	.string "these woods, but I haven't had any luck.\p"
+	.string "Perhaps it could be found deeper?$"
+
+PetalburgWoods_Text_DontSeeOne:
+	.string "No dice…where could it be?\p"
+	.string "Well, I guess not all is lost.\p"
+	.string "Now that you're here, perhaps you could\n"
+	.string "help me test some battle strategies\l"
+	.string "I've come up with on my way here?$"
+
+PetalburgWoods_Text_AmeliaDefeated:
+	.string "Hmm…It seems there were flaws in\n"
+	.string "my strategy…\p"
+	.string "I lost, fair and square.\n"
+	.string "Good, match, {PLAYER}!$"
+
+PetalburgWoods_Text_TakeThese:
+	.string "Amelia: It looks like I still have\n"
+	.string "some training to do before I'm ready\l"
+	.string "to take on Otnar.\p"
+	.string "{PLAYER}, if you're looking to catch\n"
+	.string "some Pokémon in these woods, perhaps\l"
+	.string "these would help.$"
+
+PetalburgWoods_Text_AmeliaLeave:
+	.string "With that taken care of, I'm going\n"
+	.string "to have a look around elsewhere.\p"
+	.string "I'll see you around, {PLAYER}!$"
+
 

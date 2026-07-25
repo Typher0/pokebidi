@@ -1,6 +1,7 @@
 #include "global.h"
 #include "battle.h"
 #include "battle_anim.h"
+#include "battle_environment.h"
 #include "battle_main.h"
 #include "battle_setup.h"
 #include "bg.h"
@@ -13,79 +14,14 @@
 #include "constants/battle_partner.h"
 #include "constants/trainers.h"
 
-static void BattleIntroSlide1(u8);
-static void BattleIntroSlide2(u8);
-static void BattleIntroSlide3(u8);
+void BattleIntroSlide1(u8);
+void BattleIntroSlide2(u8);
+void BattleIntroSlide3(u8);
 static void BattleIntroSlideLink(u8);
 static void BattleIntroSlidePartner(u8);
 static void BattleIntroNoSlide(u8);
 
 static const u8 sBattleAnimBgCnts[] = {REG_OFFSET_BG0CNT, REG_OFFSET_BG1CNT, REG_OFFSET_BG2CNT, REG_OFFSET_BG3CNT};
-
-static const TaskFunc sBattleIntroSlideFuncs[] =
-{
-    [BATTLE_ENVIRONMENT_ARENA]              = BattleIntroSlide3,
-    [BATTLE_ENVIRONMENT_AUTUMN_FOREST]      = BattleIntroSlide1,
-    [BATTLE_ENVIRONMENT_AUTUMN_FOREST_E]    = BattleIntroSlide1,
-    [BATTLE_ENVIRONMENT_AUTUMN_FOREST_N]    = BattleIntroSlide1,
-    [BATTLE_ENVIRONMENT_BEACH]              = BattleIntroSlide2,
-    [BATTLE_ENVIRONMENT_BEACH_E]            = BattleIntroSlide2,
-    [BATTLE_ENVIRONMENT_BEACH_N]            = BattleIntroSlide2,
-    [BATTLE_ENVIRONMENT_BRIDGE]             = BattleIntroSlide3,
-    [BATTLE_ENVIRONMENT_BRIDGE_E]           = BattleIntroSlide3,
-    [BATTLE_ENVIRONMENT_BRIDGE_N]           = BattleIntroSlide3,
-    [BATTLE_ENVIRONMENT_CAVE]               = BattleIntroSlide1,
-    [BATTLE_ENVIRONMENT_CAVE_DARK]          = BattleIntroSlide1,
-    [BATTLE_ENVIRONMENT_CAVE_MAGMA]         = BattleIntroSlide1,
-    [BATTLE_ENVIRONMENT_CAVE_SNOW]          = BattleIntroSlide1,
-    [BATTLE_ENVIRONMENT_CITY]               = BattleIntroSlide3,
-    [BATTLE_ENVIRONMENT_CITY_E]             = BattleIntroSlide3,
-    [BATTLE_ENVIRONMENT_CITY_N]             = BattleIntroSlide3,
-    [BATTLE_ENVIRONMENT_CRAG]               = BattleIntroSlide1,
-    [BATTLE_ENVIRONMENT_CRAG_E]             = BattleIntroSlide1,
-    [BATTLE_ENVIRONMENT_CRAG_N]             = BattleIntroSlide1,
-    [BATTLE_ENVIRONMENT_DESERT]             = BattleIntroSlide2,
-    [BATTLE_ENVIRONMENT_DESERT_E]           = BattleIntroSlide2,
-    [BATTLE_ENVIRONMENT_DESERT_N]           = BattleIntroSlide2,
-    [BATTLE_ENVIRONMENT_GYM]                = BattleIntroSlide3,
-    [BATTLE_ENVIRONMENT_INDOOR]             = BattleIntroSlide3,
-    [BATTLE_ENVIRONMENT_LAB]                = BattleIntroSlide3,
-    [BATTLE_ENVIRONMENT_MOUNTAIN]           = BattleIntroSlide2,
-    [BATTLE_ENVIRONMENT_MOUNTAIN_E]         = BattleIntroSlide2,
-    [BATTLE_ENVIRONMENT_MOUNTAIN_N]         = BattleIntroSlide2,
-    [BATTLE_ENVIRONMENT_MOUNTAIN_SNOW]      = BattleIntroSlide2,
-    [BATTLE_ENVIRONMENT_MOUNTAIN_SNOW_E]    = BattleIntroSlide2,
-    [BATTLE_ENVIRONMENT_MOUNTAIN_SNOW_N]    = BattleIntroSlide2,
-    [BATTLE_ENVIRONMENT_ROCKY]              = BattleIntroSlide2,
-    [BATTLE_ENVIRONMENT_ROCKY_E]            = BattleIntroSlide2,
-    [BATTLE_ENVIRONMENT_ROCKY_N]            = BattleIntroSlide2,
-    [BATTLE_ENVIRONMENT_ROUTE]              = BattleIntroSlide1,
-    [BATTLE_ENVIRONMENT_ROUTE_E]            = BattleIntroSlide1,
-    [BATTLE_ENVIRONMENT_ROUTE_N]            = BattleIntroSlide1,
-    [BATTLE_ENVIRONMENT_SAFARI]             = BattleIntroSlide1,
-    [BATTLE_ENVIRONMENT_SAFARI_E]           = BattleIntroSlide1,
-    [BATTLE_ENVIRONMENT_SAFARI_N]           = BattleIntroSlide1,
-    [BATTLE_ENVIRONMENT_SEA]                = BattleIntroSlide2,
-    [BATTLE_ENVIRONMENT_SEA_E]              = BattleIntroSlide2,
-    [BATTLE_ENVIRONMENT_SEA_N]              = BattleIntroSlide2,
-    [BATTLE_ENVIRONMENT_SNOW]               = BattleIntroSlide1,
-    [BATTLE_ENVIRONMENT_SWAMP]              = BattleIntroSlide2,
-    [BATTLE_ENVIRONMENT_SWAMP_E]            = BattleIntroSlide2,
-    [BATTLE_ENVIRONMENT_SWAMP_N]            = BattleIntroSlide2,
-    [BATTLE_ENVIRONMENT_SNOW_E]             = BattleIntroSlide1,
-    [BATTLE_ENVIRONMENT_SNOW_N]             = BattleIntroSlide1,
-    [BATTLE_ENVIRONMENT_UNDERWATER]         = BattleIntroSlide2,
-    [BATTLE_ENVIRONMENT_VOLCANO]            = BattleIntroSlide2,
-    [BATTLE_ENVIRONMENT_VOLCANO_E]          = BattleIntroSlide2,
-    [BATTLE_ENVIRONMENT_VOLCANO_N]          = BattleIntroSlide2,
-    [BATTLE_ENVIRONMENT_UNDERWATER_E]       = BattleIntroSlide2,
-    [BATTLE_ENVIRONMENT_UNDERWATER_N]       = BattleIntroSlide2,
-    [BATTLE_ENVIRONMENT_MOOSE]              = BattleIntroSlide3,
-    [BATTLE_ENVIRONMENT_THOMAS]             = BattleIntroSlide3,
-    [BATTLE_ENVIRONMENT_TINKER]             = BattleIntroSlide3,
-    [BATTLE_ENVIRONMENT_TOBIAS]             = BattleIntroSlide3,
-    [BATTLE_ENVIRONMENT_GWEN]               = BattleIntroSlide3,
-};
 
 void SetAnimBgAttribute(u8 bgId, u8 attributeId, u8 value)
 {
@@ -169,13 +105,12 @@ void HandleIntroSlide(u8 environment)
     {
         taskId = CreateTask(BattleIntroSlide3, 0);
     }
-    else if (GetMonData(&gEnemyParty[0], MON_DATA_SPECIES, NULL) == SPECIES_KYOGRE)
-    {
-        taskId = CreateTask(BattleIntroSlide2, 0);
-    }
     else
     {
-        taskId = CreateTask(sBattleIntroSlideFuncs[environment], 0);
+        if (environment >= NELEMS(gBattleEnvironmentInfo)
+         || gBattleEnvironmentInfo[environment].battleIntroSlide == NULL)
+            environment = BATTLE_ENVIRONMENT_ROUTE;
+        taskId = CreateTask(gBattleEnvironmentInfo[environment].battleIntroSlide, 0);
     }
 
     gTasks[taskId].tState = 0;
@@ -249,7 +184,7 @@ static void BattleIntroNoSlide(u8 taskId)
     }
 }
 
-static void BattleIntroSlide1(u8 taskId)
+void BattleIntroSlide1(u8 taskId)
 {
     int i;
     if (B_FAST_INTRO_NO_SLIDE || gTestRunnerHeadless)
@@ -336,7 +271,7 @@ static void BattleIntroSlide1(u8 taskId)
     }
 }
 
-static void BattleIntroSlide2(u8 taskId)
+void BattleIntroSlide2(u8 taskId)
 {
     int i;
     if (B_FAST_INTRO_NO_SLIDE || gTestRunnerHeadless)
@@ -349,6 +284,7 @@ static void BattleIntroSlide2(u8 taskId)
         gBattle_BG1_X += 8;
         break;
     case BATTLE_ENVIRONMENT_UNDERWATER:
+    case BATTLE_ENVIRONMENT_BEACH:
         gBattle_BG1_X += 6;
         break;
     }
@@ -450,7 +386,7 @@ static void BattleIntroSlide2(u8 taskId)
         SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(gTasks[taskId].data[4], 0));
 }
 
-static void BattleIntroSlide3(u8 taskId)
+void BattleIntroSlide3(u8 taskId)
 {
     int i;
     if (B_FAST_INTRO_NO_SLIDE || gTestRunnerHeadless)
@@ -688,7 +624,7 @@ static void BattleIntroSlidePartner(u8 taskId)
     }
 }
 
-void DrawBattlerOnBg(int bgId, u8 x, u8 y, u8 battlerPosition, u8 paletteId, u8 *tiles, u16 *tilemap, u16 tilesOffset)
+void DrawBattlerOnBg(int bgId, u8 x, u8 y, enum BattlerPosition battlerPosition, u8 paletteId, u8 *tiles, u16 *tilemap, u16 tilesOffset)
 {
     int i, j;
     int offset = tilesOffset;
@@ -705,7 +641,7 @@ void DrawBattlerOnBg(int bgId, u8 x, u8 y, u8 battlerPosition, u8 paletteId, u8 
     LoadBgTilemap(bgId, tilemap, BG_SCREEN_SIZE, 0);
 }
 
-static void UNUSED DrawBattlerOnBgDMA(u8 x, u8 y, u8 battlerPosition, u8 arg3, u8 paletteId, u16 arg5, u8 arg6, u8 arg7)
+static void UNUSED DrawBattlerOnBgDMA(u8 x, u8 y, enum BattlerPosition battlerPosition, u8 arg3, u8 paletteId, u16 arg5, u8 arg6, u8 arg7)
 {
     int i, j, offset;
 
