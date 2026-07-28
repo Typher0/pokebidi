@@ -398,6 +398,12 @@ EventScript_HeadbuttTree:: @ fallthrough
     call_if_eq VAR_0x8004, TRUE, EventScript_FollowerFieldMove
     waitmovement 0
     removeobject VAR_LAST_TALKED
+    setvar VAR_0x8004, 1  @ vertical pan
+    setvar VAR_0x8005, 1  @ horizontal pan
+    setvar VAR_0x8006, 8  @ num shakes
+    setvar VAR_0x8007, 5  @ shake delay
+    special ShakeCamera
+    waitstate
     specialvar VAR_RESULT, TryUpdateRusturfTunnelState
     goto_if_eq VAR_RESULT, TRUE, EventScript_EndHeadbutt
     special HeadbuttWildEncounter
@@ -421,8 +427,8 @@ EventScript_CancelHeadbutt::
     end
     
 Text_WantToHeadbutt:
-    .string "It's a moderated sized tree.\n"
-    .string "Would you like to use HEADBUTT?$"
+    .string "It's a moderately sized tree.\n"
+    .string "Would you like to use Headbutt?$"
 
 Text_CantHeadbuttTree:
     .string "There's a large, formidable tree.\n"
