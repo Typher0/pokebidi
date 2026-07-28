@@ -550,10 +550,12 @@ bool8 TryGenerateWildMon(const struct WildPokemonInfo *wildMonInfo, enum WildPok
     case WILD_AREA_ROCKS:
         wildMonIndex = ChooseWildMonIndex_Rocks();
         break;
+    case WILD_AREA_HEADBUTT:
+        wildMonIndex = ChooseWildMonIndex_Rocks();
+        break;
     default:
     case WILD_AREA_FISHING:
     case WILD_AREA_HIDDEN:
-    case WILD_AREA_HEADBUTT:
         break;
     }
 
