@@ -1116,6 +1116,8 @@ gBattleAnimMove_MagnetRise::
 
 gBattleAnimMove_FlareBlitz::
 	monbg ANIM_TARGET
+	call SetHighSpeedBg
+	waitforvisualfinish
 	splitbgprio_foes ANIM_TARGET
 	setalpha 12, 8
 	createsprite gFireSpiralOutwardSpriteTemplate, ANIM_ATTACKER, 3, 0, 0, 56, 0
@@ -1144,6 +1146,7 @@ gBattleAnimMove_FlareBlitz::
 	waitforvisualfinish
 	createsprite gSlideMonToOffsetSpriteTemplate, ANIM_ATTACKER, 2, ANIM_ATTACKER, 24, 0, 0, 6
 	waitforvisualfinish
+	setarg 7, -1
 	call SetImpactBackground
 	createvisualtask AnimTask_ShakeMon2, 2, ANIM_TARGET, 4, 0, 22, 1
 	createvisualtask AnimTask_BlendMonInAndOut, 3, ANIM_TARGET, RGB_RED, 12, 1, 1

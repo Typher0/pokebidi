@@ -9,7 +9,7 @@ gText_PkmnTransferredLanettesPC::
 #if IS_FRLG
 	.string "BILL'S PC.\p"
 #else
-	.string "LANETTE'S PC.\p"
+	.string "Amanita's PC.\p"
 #endif
 	.string "It was placed in \n"
 	.string "Box “{STR_VAR_1}.”$"
@@ -21,11 +21,11 @@ gText_PkmnTransferredSomeonesPCBoxFull::
 	.string "Box “{STR_VAR_1}.”$"
 
 gText_PkmnTransferredLanettesPCBoxFull::
-	.string "BOX “{STR_VAR_3}” on\n"
+	.string "Box “{STR_VAR_3}” on\n"
 #if IS_FRLG
 	.string "BILL'S PC was full.\p"
 #else
-	.string "LANETTE'S PC was full.\p"
+	.string "Amanita's PC was full.\p"
 #endif
 	.string "{STR_VAR_2} was transferred to\n"
 	.string "Box “{STR_VAR_1}.”$"
