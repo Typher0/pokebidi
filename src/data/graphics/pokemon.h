@@ -29234,7 +29234,7 @@ const u8 gMonIcon_Cacturado[] = INCGFX_U8("graphics/pokemon/cacturado/icon.png",
 
     const u32 gMonFrontPic_Mandalloy[] = INCGFX_U32("graphics/pokemon/mandalloy/front.png", ".4bpp.smol");
     const u16 gMonPalette_Mandalloy[] = INCGFX_U16("graphics/pokemon/mandalloy/normal.pal", ".gbapal");
-    const u32 gMonBackPic_Mandalloy[] = INCGFX_U16("graphics/pokemon/mandalloy/back.png", ".4bpp.smol");
+    const u32 gMonBackPic_Mandalloy[] = INCGFX_U32("graphics/pokemon/mandalloy/back.png", ".4bpp.smol");
     const u16 gMonShinyPalette_Mandalloy[] = INCGFX_U16("graphics/pokemon/mandalloy/shiny.pal", ".gbapal");
     const u8 gMonIcon_Mandalloy[] = INCGFX_U8("graphics/pokemon/mandalloy/icon.png", ".4bpp");
 #if P_FOOTPRINTS
@@ -29395,7 +29395,7 @@ const u8 gMonIcon_Cacturado[] = INCGFX_U8("graphics/pokemon/cacturado/icon.png",
 
     const u32 gMonFrontPic_Taomarin[] = INCGFX_U32("graphics/pokemon/taomarin/front.png", ".4bpp.smol");
     const u16 gMonPalette_Taomarin[] = INCGFX_U16("graphics/pokemon/taomarin/normal.pal", ".gbapal");
-    const u32 gMonBackPic_Taomarin[] = INCGFX_U16("graphics/pokemon/taomarin/back.png", ".4bpp.smol");
+    const u32 gMonBackPic_Taomarin[] = INCGFX_U32("graphics/pokemon/taomarin/back.png", ".4bpp.smol");
     const u16 gMonShinyPalette_Taomarin[] = INCGFX_U16("graphics/pokemon/taomarin/shiny.pal", ".gbapal");
     const u8 gMonIcon_Taomarin[] = INCGFX_U8("graphics/pokemon/taomarin/icon.png", ".4bpp");
 #if P_FOOTPRINTS
