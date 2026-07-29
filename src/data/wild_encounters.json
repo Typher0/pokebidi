@@ -252,7 +252,7 @@
             ]
           },
           "honey_mons": {
-            "encounter_rate": 1,
+            "encounter_rate": 100,
             "mons": [
               {
                 "min_level": 3,
@@ -3681,7 +3681,7 @@
             ]
           },
           "honey_mons": {
-            "encounter_rate": 1,
+            "encounter_rate": 100,
             "mons": [
               {
                 "min_level": 2,

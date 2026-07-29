@@ -1599,6 +1599,14 @@ bool8 MetatileBehavior_IsHeadbuttTree(u8 metatileBehavior)
         return FALSE;
 }
 
+bool8 MetatileBehavior_IsHoneyTree(u8 metatileBehavior)
+{
+    if (metatileBehavior == MB_HONEY)
+        return TRUE;
+    else
+        return FALSE;
+}
+
 bool8 MetatileBehavior_IsSpinRight(u8 metatileBehavior)
 {
     if (metatileBehavior == MB_SPIN_RIGHT)
