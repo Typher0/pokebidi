@@ -771,10 +771,10 @@ static const u8 sText_Relearn[] = _("{START_BUTTON} RELEARN"); // future note: d
 
 static const u8 *const sRelearnTexts[MOVE_RELEARNER_COUNT] =
 {
-    [MOVE_RELEARNER_LEVEL_UP_MOVES] = COMPOUND_STRING("{START_BUTTON} RELEARN LEVEL"),
-    [MOVE_RELEARNER_EGG_MOVES] =      COMPOUND_STRING("{START_BUTTON} RELEARN EGG"),
-    [MOVE_RELEARNER_TM_MOVES] =       COMPOUND_STRING("{START_BUTTON} RELEARN TM"),
-    [MOVE_RELEARNER_TUTOR_MOVES] =    COMPOUND_STRING("{START_BUTTON} RELEARN TUTOR"),
+    [MOVE_RELEARNER_LEVEL_UP_MOVES] = COMPOUND_STRING("{START_BUTTON} Relearn Level"),
+    [MOVE_RELEARNER_EGG_MOVES] =      COMPOUND_STRING("{START_BUTTON} Relearn Egg"),
+    [MOVE_RELEARNER_TM_MOVES] =       COMPOUND_STRING("{START_BUTTON} Relearn TM"),
+    [MOVE_RELEARNER_TUTOR_MOVES] =    COMPOUND_STRING("{START_BUTTON} Relearn Tutor"),
 };
 
 static const u8 sMemoNatureTextColor[] = _("{COLOR LIGHT_RED}{SHADOW GREEN}");
@@ -4801,8 +4801,8 @@ static inline void ShowUtilityPrompt(s16 mode)
     const u8* promptText = NULL;
     const u8* gText_SkillPageIvs = COMPOUND_STRING("IVs");
     const u8* gText_SkillPageEvs = COMPOUND_STRING("EVs");
-    const u8* gText_SkillPageStats = COMPOUND_STRING("STATS");
-    const u8* gText_Rename = COMPOUND_STRING("RENAME");
+    const u8* gText_SkillPageStats = COMPOUND_STRING("Stats");
+    const u8* gText_Rename = COMPOUND_STRING("Rename");
 
     if (sMonSummaryScreen->currPageIndex == PSS_PAGE_INFO)
     {

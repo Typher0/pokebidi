@@ -818,8 +818,8 @@ static bool32 CreateEnemyPartyOWE(struct InfoOWE *info, s32 x, s32 y)
         if (gMapHeader.mapLayoutId == LAYOUT_BATTLE_FRONTIER_BATTLE_PIKE_ROOM_WILD_MONS)
         {
             headerId = GetBattlePikeWildMonHeaderId();
-            timeOfDay = GetTimeOfDayForEncounters(headerId, WILD_AREA_LAND);
-            if (TryGenerateWildMon(gBattlePikeWildMonHeaders[headerId].encounterTypes[timeOfDay].landMonsInfo, WILD_AREA_LAND, 0) != TRUE)
+            timeOfDay = GetTimeOfDayForEncounters(headerId, WILD_AREA_LAND_OWE);
+            if (TryGenerateWildMon(gBattlePikeWildMonHeaders[headerId].encounterTypes[timeOfDay].landOweMonsInfo, WILD_AREA_LAND_OWE, 0) != TRUE)
                 return FALSE;
             else if (!TryGenerateBattlePikeWildMon(TRUE))
                 return FALSE;
@@ -829,8 +829,8 @@ static bool32 CreateEnemyPartyOWE(struct InfoOWE *info, s32 x, s32 y)
         if (gMapHeader.mapLayoutId == LAYOUT_BATTLE_FRONTIER_BATTLE_PYRAMID_FLOOR)
         {
             headerId = gSaveBlock2Ptr->frontier.curChallengeBattleNum;
-            timeOfDay = GetTimeOfDayForEncounters(headerId, WILD_AREA_LAND);
-            if (TryGenerateWildMon(gBattlePyramidWildMonHeaders[headerId].encounterTypes[timeOfDay].landMonsInfo, WILD_AREA_LAND, 0) != TRUE)
+            timeOfDay = GetTimeOfDayForEncounters(headerId, WILD_AREA_LAND_OWE);
+            if (TryGenerateWildMon(gBattlePyramidWildMonHeaders[headerId].encounterTypes[timeOfDay].landOweMonsInfo, WILD_AREA_LAND_OWE, 0) != TRUE)
                 return FALSE;
 
             u32 id = GetMonData(&gParties[B_TRAINER_OPPONENT_A][0], MON_DATA_SPECIES);
@@ -844,15 +844,39 @@ static bool32 CreateEnemyPartyOWE(struct InfoOWE *info, s32 x, s32 y)
 
     if (MetatileBehavior_IsWaterWildEncounter(metatileBehavior))
     {
-        wildArea = WILD_AREA_WATER;
+        wildArea = WILD_AREA_WATER_OWE;
         timeOfDay = GetTimeOfDayForEncounters(headerId, wildArea);
-        wildMonInfo = gWildMonHeaders[headerId].encounterTypes[timeOfDay].waterMonsInfo;
+        wildMonInfo = gWildMonHeaders[headerId].encounterTypes[timeOfDay].waterOweMonsInfo;
+            if (wildMonInfo == NULL)
+            {
+                wildArea = WILD_AREA_WATER;
+                timeOfDay = GetTimeOfDayForEncounters(headerId, wildArea);
+                wildMonInfo = gWildMonHeaders[headerId].encounterTypes[timeOfDay].waterMonsInfo;
+            }
+            else
+            {
+                wildArea = WILD_AREA_WATER_OWE;
+                timeOfDay = GetTimeOfDayForEncounters(headerId, wildArea);
+                wildMonInfo = gWildMonHeaders[headerId].encounterTypes[timeOfDay].waterOweMonsInfo;
+            }
     }
     else
     {
-        wildArea = WILD_AREA_LAND;
+        wildArea = WILD_AREA_LAND_OWE;
         timeOfDay = GetTimeOfDayForEncounters(headerId, wildArea);
-        wildMonInfo = gWildMonHeaders[headerId].encounterTypes[timeOfDay].landMonsInfo;
+        wildMonInfo = gWildMonHeaders[headerId].encounterTypes[timeOfDay].landOweMonsInfo;
+            if (wildMonInfo == NULL)
+            {
+                wildArea = WILD_AREA_LAND;
+                timeOfDay = GetTimeOfDayForEncounters(headerId, wildArea);
+                wildMonInfo = gWildMonHeaders[headerId].encounterTypes[timeOfDay].landMonsInfo;
+            }
+            else
+            {
+                wildArea = WILD_AREA_LAND_OWE;
+                timeOfDay = GetTimeOfDayForEncounters(headerId, wildArea);
+                wildMonInfo = gWildMonHeaders[headerId].encounterTypes[timeOfDay].landOweMonsInfo;
+            }
     }
 
     if (wildMonInfo == NULL)
@@ -980,15 +1004,23 @@ static bool32 StartWildBattleWithOWE_CheckDoubleBattle(struct ObjectEvent *owe, 
 
         if (MetatileBehavior_IsWaterWildEncounter(metatileBehavior))
         {
-            wildArea = WILD_AREA_WATER;
+            wildArea = WILD_AREA_WATER_OWE;
             timeOfDay = GetTimeOfDayForEncounters(headerId, wildArea);
-            wildMonInfo = gWildMonHeaders[headerId].encounterTypes[timeOfDay].waterMonsInfo;
+            wildMonInfo = gWildMonHeaders[headerId].encounterTypes[timeOfDay].waterOweMonsInfo;
+            if (wildMonInfo == NULL)
+                wildArea = WILD_AREA_WATER;
+                timeOfDay = GetTimeOfDayForEncounters(headerId, wildArea);
+                wildMonInfo = gWildMonHeaders[headerId].encounterTypes[timeOfDay].waterMonsInfo;
         }
         else
         {
-            wildArea = WILD_AREA_LAND;
+            wildArea = WILD_AREA_LAND_OWE;
             timeOfDay = GetTimeOfDayForEncounters(headerId, wildArea);
-            wildMonInfo = gWildMonHeaders[headerId].encounterTypes[timeOfDay].landMonsInfo;
+            wildMonInfo = gWildMonHeaders[headerId].encounterTypes[timeOfDay].landOweMonsInfo;
+            if (wildMonInfo == NULL)
+                wildArea = WILD_AREA_LAND;
+                timeOfDay = GetTimeOfDayForEncounters(headerId, wildArea);
+                wildMonInfo = gWildMonHeaders[headerId].encounterTypes[timeOfDay].landMonsInfo;
         }
 
         if (TryGenerateWildMon(wildMonInfo, wildArea, WILD_CHECK_REPEL | WILD_CHECK_KEEN_EYE))
@@ -1072,13 +1104,13 @@ static bool32 CheckCurrentWildMonHeaderForOWE(bool32 shouldSpawnWaterMons)
         if (gMapHeader.mapLayoutId == LAYOUT_BATTLE_FRONTIER_BATTLE_PIKE_ROOM_WILD_MONS)
         {
             headerId = GetBattlePikeWildMonHeaderId();
-            timeOfDay = GetTimeOfDayForEncounters(headerId, WILD_AREA_LAND);
+            timeOfDay = GetTimeOfDayForEncounters(headerId, WILD_AREA_LAND_OWE);
             return gBattlePikeWildMonHeaders[headerId].encounterTypes[timeOfDay].landMonsInfo != NULL;
         }
         if (gMapHeader.mapLayoutId == LAYOUT_BATTLE_FRONTIER_BATTLE_PYRAMID_FLOOR)
         {
             headerId = gSaveBlock2Ptr->frontier.curChallengeBattleNum;
-            timeOfDay = GetTimeOfDayForEncounters(headerId, WILD_AREA_LAND);
+            timeOfDay = GetTimeOfDayForEncounters(headerId, WILD_AREA_LAND_OWE);
             return gBattlePyramidWildMonHeaders[headerId].encounterTypes[timeOfDay].landMonsInfo != NULL;
         }
         return FALSE;
@@ -1086,12 +1118,12 @@ static bool32 CheckCurrentWildMonHeaderForOWE(bool32 shouldSpawnWaterMons)
 
     if (shouldSpawnWaterMons)
     {
-        timeOfDay = GetTimeOfDayForEncounters(headerId, WILD_AREA_WATER);
-        return gWildMonHeaders[headerId].encounterTypes[timeOfDay].waterMonsInfo != NULL;
+        timeOfDay = GetTimeOfDayForEncounters(headerId, WILD_AREA_WATER_OWE);
+        return gWildMonHeaders[headerId].encounterTypes[timeOfDay].waterOweMonsInfo != NULL;
     }
 
-    timeOfDay = GetTimeOfDayForEncounters(headerId, WILD_AREA_LAND);
-    return gWildMonHeaders[headerId].encounterTypes[timeOfDay].landMonsInfo != NULL;
+    timeOfDay = GetTimeOfDayForEncounters(headerId, WILD_AREA_LAND_OWE);
+    return gWildMonHeaders[headerId].encounterTypes[timeOfDay].landOweMonsInfo != NULL;
 }
 
 static u32 GetOldestActiveOWESlot(bool32 forceRemove)
