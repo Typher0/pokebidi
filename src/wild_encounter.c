@@ -257,6 +257,31 @@ u32 ChooseWildMonIndex_LandOwe(void)
     return wildMonIndex;
 }
 
+// LAND_DOUBLE_WILD_COUNT
+u32 ChooseWildMonIndex_LandDouble(void)
+{
+    u8 wildMonIndex = 0;
+    bool8 swap = FALSE;
+    u8 rand = Random() % ENCOUNTER_CHANCE_LAND_DOUBLE_MONS_TOTAL;
+
+    if (rand < ENCOUNTER_CHANCE_LAND_DOUBLE_MONS_SLOT_0)
+        wildMonIndex = 0;
+    else if (rand >= ENCOUNTER_CHANCE_LAND_DOUBLE_MONS_SLOT_0 && rand < ENCOUNTER_CHANCE_LAND_DOUBLE_MONS_SLOT_1)
+        wildMonIndex = 1;
+    else if (rand >= ENCOUNTER_CHANCE_LAND_DOUBLE_MONS_SLOT_1 && rand < ENCOUNTER_CHANCE_LAND_DOUBLE_MONS_SLOT_2)
+        wildMonIndex = 2;
+    else
+        wildMonIndex = 3;
+
+    if (LURE_STEP_COUNT != 0 && (Random() % 10 < 2))
+        swap = TRUE;
+
+    if (swap)
+        wildMonIndex = 4 - wildMonIndex;
+
+    return wildMonIndex;
+}
+
 // WATER_WILD_COUNT
 u32 ChooseWildMonIndex_Water(void)
 {
@@ -301,6 +326,31 @@ u32 ChooseWildMonIndex_WaterOwe(void)
         wildMonIndex = 3;
     else
         wildMonIndex = 4;
+
+    if (LURE_STEP_COUNT != 0 && (Random() % 10 < 2))
+        swap = TRUE;
+
+    if (swap)
+        wildMonIndex = 4 - wildMonIndex;
+
+    return wildMonIndex;
+}
+
+// WATER_DOUBLE_WILD_COUNT
+u32 ChooseWildMonIndex_WaterDouble(void)
+{
+    u32 wildMonIndex = 0;
+    bool8 swap = FALSE;
+    u8 rand = Random() % ENCOUNTER_CHANCE_WATER_DOUBLE_MONS_TOTAL;
+
+    if (rand < ENCOUNTER_CHANCE_WATER_DOUBLE_MONS_SLOT_0)
+        wildMonIndex = 0;
+    else if (rand >= ENCOUNTER_CHANCE_WATER_DOUBLE_MONS_SLOT_0 && rand < ENCOUNTER_CHANCE_WATER_DOUBLE_MONS_SLOT_1)
+        wildMonIndex = 1;
+    else if (rand >= ENCOUNTER_CHANCE_WATER_DOUBLE_MONS_SLOT_1 && rand < ENCOUNTER_CHANCE_WATER_DOUBLE_MONS_SLOT_2)
+        wildMonIndex = 2;
+    else
+        wildMonIndex = 3;
 
     if (LURE_STEP_COUNT != 0 && (Random() % 10 < 2))
         swap = TRUE;
@@ -566,6 +616,12 @@ enum TimeOfDay GetTimeOfDayForEncounters(u32 headerId, enum WildPokemonArea area
     case WILD_AREA_WATER_OWE:
         wildMonInfo = gWildMonHeaders[headerId].encounterTypes[timeOfDay].waterOweMonsInfo;
         break;
+    case WILD_AREA_LAND_DOUBLE:
+        wildMonInfo = gWildMonHeaders[headerId].encounterTypes[timeOfDay].landDoubleMonsInfo;
+        break;
+    case WILD_AREA_WATER_DOUBLE:
+        wildMonInfo = gWildMonHeaders[headerId].encounterTypes[timeOfDay].waterDoubleMonsInfo;
+        break;
     }
 
     if (wildMonInfo == NULL && !OW_TIME_OF_DAY_DISABLE_FALLBACK)
@@ -660,6 +716,12 @@ bool8 TryGenerateWildMon(const struct WildPokemonInfo *wildMonInfo, enum WildPok
         break;
     case WILD_AREA_HONEY:
         wildMonIndex = ChooseWildMonIndex_Honey();
+        break;
+    case WILD_AREA_LAND_DOUBLE:
+        wildMonIndex = ChooseWildMonIndex_LandDouble();
+        break;
+    case WILD_AREA_WATER_DOUBLE:
+        wildMonIndex = ChooseWildMonIndex_WaterDouble();
         break;
     case WILD_AREA_LAND_OWE:
         if (TRY_GET_ABILITY_INFLUENCED_WILD_MON_INDEX(wildMonInfo->wildPokemon, TYPE_STEEL, ABILITY_MAGNET_PULL, &wildMonIndex, LAND_OWE_WILD_COUNT))
@@ -892,14 +954,26 @@ bool8 StandardWildEncounter(u16 curMetatileBehavior, u16 prevMetatileBehavior)
                 }
 
                 // try a regular wild land encounter
-                if (TryGenerateWildMon(gWildMonHeaders[headerId].encounterTypes[timeOfDay].landMonsInfo, WILD_AREA_LAND, WILD_CHECK_REPEL | WILD_CHECK_KEEN_EYE) == TRUE)
+                if (TryGenerateWildMon(gWildMonHeaders[headerId].encounterTypes[timeOfDay].landMonsInfo, WILD_AREA_LAND, WILD_CHECK_REPEL | WILD_CHECK_KEEN_EYE) == TRUE || TryGenerateWildMon(gWildMonHeaders[headerId].encounterTypes[timeOfDay].landDoubleMonsInfo, WILD_AREA_LAND_DOUBLE, WILD_CHECK_REPEL | WILD_CHECK_KEEN_EYE) == TRUE)
                 {
                     if (TryDoDoubleWildBattle())
                     {
-                        struct Pokemon mon1 = gParties[B_TRAINER_OPPONENT_A][0];
-                        TryGenerateWildMon(gWildMonHeaders[headerId].encounterTypes[timeOfDay].landMonsInfo, WILD_AREA_LAND, WILD_CHECK_KEEN_EYE);
-                        gParties[B_TRAINER_OPPONENT_A][1] = mon1;
-                        BattleSetup_StartDoubleWildBattle();
+                        timeOfDay = GetTimeOfDayForEncounters(headerId, WILD_AREA_LAND);
+                        timeOfDay = GetTimeOfDayForEncounters(headerId, WILD_AREA_LAND_DOUBLE);
+                        if (gWildMonHeaders[headerId].encounterTypes[timeOfDay].landDoubleMonsInfo == NULL)
+                        {
+                            struct Pokemon mon1 = gParties[B_TRAINER_OPPONENT_A][0];
+                            TryGenerateWildMon(gWildMonHeaders[headerId].encounterTypes[timeOfDay].landMonsInfo, WILD_AREA_LAND, WILD_CHECK_KEEN_EYE);
+                            gParties[B_TRAINER_OPPONENT_A][1] = mon1;
+                            BattleSetup_StartDoubleWildBattle();
+                        }
+                        else
+                        {
+                            struct Pokemon mon1 = gParties[B_TRAINER_OPPONENT_A][0];
+                            TryGenerateWildMon(gWildMonHeaders[headerId].encounterTypes[timeOfDay].landDoubleMonsInfo, WILD_AREA_LAND_DOUBLE, WILD_CHECK_KEEN_EYE);
+                            gParties[B_TRAINER_OPPONENT_A][1] = mon1;
+                            BattleSetup_StartDoubleWildBattle();
+                        }
                     }
                     else
                     {
@@ -936,16 +1010,26 @@ bool8 StandardWildEncounter(u16 curMetatileBehavior, u16 prevMetatileBehavior)
             }
             else // try a regular surfing encounter
             {
-                if (TryGenerateWildMon(gWildMonHeaders[headerId].encounterTypes[timeOfDay].waterMonsInfo, WILD_AREA_WATER, WILD_CHECK_REPEL | WILD_CHECK_KEEN_EYE) == TRUE)
+                if (TryGenerateWildMon(gWildMonHeaders[headerId].encounterTypes[timeOfDay].waterMonsInfo, WILD_AREA_WATER, WILD_CHECK_REPEL | WILD_CHECK_KEEN_EYE) == TRUE || TryGenerateWildMon(gWildMonHeaders[headerId].encounterTypes[timeOfDay].waterDoubleMonsInfo, WILD_AREA_WATER_DOUBLE, WILD_CHECK_REPEL | WILD_CHECK_KEEN_EYE) == TRUE)
                 {
-                    gIsSurfingEncounter = TRUE;
                     if (TryDoDoubleWildBattle())
                     {
-                        struct Pokemon mon1 = gParties[B_TRAINER_OPPONENT_A][0];
-                        TryGenerateWildMon(gWildMonHeaders[headerId].encounterTypes[timeOfDay].waterMonsInfo, WILD_AREA_WATER, WILD_CHECK_KEEN_EYE);
-                        gParties[B_TRAINER_OPPONENT_A][1] = mon1;
-                        BattleSetup_StartDoubleWildBattle();
-                    }
+                        timeOfDay = GetTimeOfDayForEncounters(headerId, WILD_AREA_WATER);
+                        timeOfDay = GetTimeOfDayForEncounters(headerId, WILD_AREA_WATER_DOUBLE);
+                        if (gWildMonHeaders[headerId].encounterTypes[timeOfDay].waterDoubleMonsInfo == NULL)
+                        {
+                            struct Pokemon mon1 = gParties[B_TRAINER_OPPONENT_A][0];
+                            TryGenerateWildMon(gWildMonHeaders[headerId].encounterTypes[timeOfDay].waterMonsInfo, WILD_AREA_WATER, WILD_CHECK_KEEN_EYE);
+                            gParties[B_TRAINER_OPPONENT_A][1] = mon1;
+                            BattleSetup_StartDoubleWildBattle();
+                        }
+                        else
+                        {
+                            struct Pokemon mon1 = gParties[B_TRAINER_OPPONENT_A][0];
+                            TryGenerateWildMon(gWildMonHeaders[headerId].encounterTypes[timeOfDay].waterDoubleMonsInfo, WILD_AREA_WATER_DOUBLE, WILD_CHECK_KEEN_EYE);
+                            gParties[B_TRAINER_OPPONENT_A][1] = mon1;
+                            BattleSetup_StartDoubleWildBattle();
+                        }
                     else
                     {
                         BattleSetup_StartWildBattle();

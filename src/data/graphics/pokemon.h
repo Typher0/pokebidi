@@ -25777,7 +25777,7 @@ const u8 gMonIcon_BanetteIlatia[] = INCBIN_U8("graphics/pokemon/banette/ilatia/i
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS
 
-    const u32 gMonFrontPic_Lokix[] = INCGFX_U32("graphics/pokemon/lokix/front.png", ".4bpp.smol");
+    const u32 gMonFrontPic_Lokix[] = INCGFX_U32("graphics/pokemon/lokix/anim_front.png", ".4bpp.smol");
     const u16 gMonPalette_Lokix[] = INCGFX_U16("graphics/pokemon/lokix/normal.pal", ".gbapal");
     const u32 gMonBackPic_Lokix[] = INCGFX_U32("graphics/pokemon/lokix/back.png", ".4bpp.smol");
     const u16 gMonShinyPalette_Lokix[] = INCGFX_U16("graphics/pokemon/lokix/shiny.pal", ".gbapal");
@@ -29329,7 +29329,7 @@ const u8 gMonIcon_BanetteIlatia[] = INCBIN_U8("graphics/pokemon/banette/ilatia/i
 
     const u32 gMonFrontPic_Mandalloy[] = INCGFX_U32("graphics/pokemon/mandalloy/front.png", ".4bpp.smol");
     const u16 gMonPalette_Mandalloy[] = INCGFX_U16("graphics/pokemon/mandalloy/normal.pal", ".gbapal");
-    const u32 gMonBackPic_Mandalloy[] = INCGFX_U16("graphics/pokemon/mandalloy/back.png", ".4bpp.smol");
+    const u32 gMonBackPic_Mandalloy[] = INCGFX_U32("graphics/pokemon/mandalloy/back.png", ".4bpp.smol");
     const u16 gMonShinyPalette_Mandalloy[] = INCGFX_U16("graphics/pokemon/mandalloy/shiny.pal", ".gbapal");
     const u8 gMonIcon_Mandalloy[] = INCGFX_U8("graphics/pokemon/mandalloy/icon.png", ".4bpp");
 #if P_FOOTPRINTS
@@ -29490,7 +29490,7 @@ const u8 gMonIcon_BanetteIlatia[] = INCBIN_U8("graphics/pokemon/banette/ilatia/i
 
     const u32 gMonFrontPic_Taomarin[] = INCGFX_U32("graphics/pokemon/taomarin/front.png", ".4bpp.smol");
     const u16 gMonPalette_Taomarin[] = INCGFX_U16("graphics/pokemon/taomarin/normal.pal", ".gbapal");
-    const u32 gMonBackPic_Taomarin[] = INCGFX_U16("graphics/pokemon/taomarin/back.png", ".4bpp.smol");
+    const u32 gMonBackPic_Taomarin[] = INCGFX_U32("graphics/pokemon/taomarin/back.png", ".4bpp.smol");
     const u16 gMonShinyPalette_Taomarin[] = INCGFX_U16("graphics/pokemon/taomarin/shiny.pal", ".gbapal");
     const u8 gMonIcon_Taomarin[] = INCGFX_U8("graphics/pokemon/taomarin/icon.png", ".4bpp");
 #if P_FOOTPRINTS
