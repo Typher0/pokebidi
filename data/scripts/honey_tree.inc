@@ -32,4 +32,4 @@ Text_WantToHoney:
     .string "Slather the bark with honey?$"
 
 Text_CantHoneyTree:
-    .string "There's a sweet scent in the air."
+    .string "There's a sweet scent in the air.$"
