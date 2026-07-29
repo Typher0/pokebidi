@@ -25682,7 +25682,7 @@ const u8 gMonIcon_Cacturado[] = INCGFX_U8("graphics/pokemon/cacturado/icon.png",
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS
 
-    const u32 gMonFrontPic_Lokix[] = INCGFX_U32("graphics/pokemon/lokix/front.png", ".4bpp.smol");
+    const u32 gMonFrontPic_Lokix[] = INCGFX_U32("graphics/pokemon/lokix/anim_front.png", ".4bpp.smol");
     const u16 gMonPalette_Lokix[] = INCGFX_U16("graphics/pokemon/lokix/normal.pal", ".gbapal");
     const u32 gMonBackPic_Lokix[] = INCGFX_U32("graphics/pokemon/lokix/back.png", ".4bpp.smol");
     const u16 gMonShinyPalette_Lokix[] = INCGFX_U16("graphics/pokemon/lokix/shiny.pal", ".gbapal");

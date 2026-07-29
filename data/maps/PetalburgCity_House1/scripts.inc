@@ -57,8 +57,9 @@ PetalburgCity_House1_EventScript_GiveStruggleBug::
 	playse SE_EXIT
 	clearflag FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE
 	clearflag FLAG_HIDE_PETALBURG_CITY_SCOTT
+	setflag FLAG_ZEPHYR_GENTLEMAN
 	addobject LOCALID_PETALBURG_ANTON
-	delay 10
+	delay 30
 	delay 10
 	msgbox PetalburgCity_House1_Text_AntonEnters, MSGBOX_DEFAULT
 	closemessage
