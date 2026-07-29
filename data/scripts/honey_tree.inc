@@ -7,6 +7,8 @@ EventScript_Honey::
     msgbox Text_WantToHoney, MSGBOX_YESNO
     goto_if_eq VAR_RESULT, NO, EventScript_CancelHoney
     removeitem ITEM_HONEY
+    playse SE_M_SWEET_SCENT
+    delay 180
     special HoneyWildEncounter
     goto EventScript_EndHoney
     waitstate

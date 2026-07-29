@@ -75,6 +75,14 @@
           }
         },
         {
+          "type": "hidden_mons",
+          "encounter_rates": [
+            34,
+            33,
+            33
+          ]
+        },
+        {
           "type": "honey_mons",
           "encounter_rates": [
             30,
@@ -94,6 +102,51 @@
             25,
             25,
             10
+          ]
+        },
+        {
+          "type": "land_owe_mons",
+          "encounter_rates": [
+            20,
+            20,
+            10,
+            10,
+            10,
+            10,
+            5,
+            5,
+            4,
+            4,
+            1,
+            1
+          ]
+        },
+        {
+          "type": "water_owe_mons",
+          "encounter_rates": [
+            60,
+            30,
+            5,
+            4,
+            1
+          ]
+        },
+        {
+          "type": "land_double_mons",
+          "encounter_rates": [
+            25,
+            25,
+            25,
+            25
+          ]
+        },
+        {
+          "type": "water_double_mons",
+          "encounter_rates": [
+            25,
+            25,
+            25,
+            25
           ]
         }
       ],
