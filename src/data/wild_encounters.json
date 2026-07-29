@@ -252,7 +252,7 @@
             ]
           },
           "honey_mons": {
-            "encounter_rate": 100,
+            "encounter_rate": 180,
             "mons": [
               {
                 "min_level": 3,
@@ -297,7 +297,7 @@
             ]
           },
           "headbutt_mons": {
-            "encounter_rate": 100,
+            "encounter_rate": 180,
             "mons": [
               {
                 "min_level": 2,
@@ -938,7 +938,7 @@
             ]
           },
           "headbutt_mons": {
-            "encounter_rate": 100,
+            "encounter_rate": 180,
             "mons": [
               {
                 "min_level": 2,
@@ -1524,7 +1524,7 @@
             ]
           },
           "headbutt_mons": {
-            "encounter_rate": 100,
+            "encounter_rate": 180,
             "mons": [
               {
                 "min_level": 2,
@@ -1910,7 +1910,7 @@
             ]
           },
           "headbutt_mons": {
-            "encounter_rate": 100,
+            "encounter_rate": 180,
             "mons": [
               {
                 "min_level": 2,
@@ -3681,7 +3681,7 @@
             ]
           },
           "honey_mons": {
-            "encounter_rate": 100,
+            "encounter_rate": 180,
             "mons": [
               {
                 "min_level": 2,
@@ -3726,7 +3726,7 @@
             ]
           },
           "headbutt_mons": {
-            "encounter_rate": 1,
+            "encounter_rate": 180,
             "mons": [
               {
                 "min_level": 2,
