@@ -640,3 +640,4 @@ gSpecials::
 	def_special StickerManGetBragFlags
 	def_special CheckAddCoins
     def_special HeadbuttWildEncounter
+    def_special HoneyWildEncounter

@@ -526,6 +526,8 @@ static const u8 *GetInteractedMetatileScript(struct MapPosition *position, u8 me
         return EventScript_TrainerHillTimer;
     if (MetatileBehavior_IsHeadbuttTree(metatileBehavior) == TRUE)
         return EventScript_Headbutt;
+    if (MetatileBehavior_IsHoneyTree(metatileBehavior) == TRUE)
+        return EventScript_Honey;
     if (IS_FRLG)
     {
         if (MetatileBehavior_IsFood(metatileBehavior) == TRUE)

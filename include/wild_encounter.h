@@ -13,7 +13,8 @@ enum WildPokemonArea {
     WILD_AREA_ROCKS,
     WILD_AREA_FISHING,
     WILD_AREA_HIDDEN,
-    WILD_AREA_HEADBUTT
+    WILD_AREA_HEADBUTT,
+    WILD_AREA_HONEY
 };
 
 struct WildPokemon
