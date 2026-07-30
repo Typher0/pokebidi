@@ -1030,6 +1030,7 @@ bool8 StandardWildEncounter(u16 curMetatileBehavior, u16 prevMetatileBehavior)
                             gParties[B_TRAINER_OPPONENT_A][1] = mon1;
                             BattleSetup_StartDoubleWildBattle();
                         }
+                    }
                     else
                     {
                         BattleSetup_StartWildBattle();
