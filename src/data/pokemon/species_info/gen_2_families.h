@@ -6967,7 +6967,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
             ANIMCMD_FRAME(0, 30),
         ),
         .frontAnimId = ANIM_BACK_AND_LUNGE,
-        .backPic = gMonBackPic_Mamoswine,
+        .backPic = gMonBackPic_MamoswineMega,
         .backPicSize = MON_COORDS_SIZE(64, 56),
         .backPicYOffset = 6,
         .backAnimId = BACK_ANIM_V_SHAKE_LOW,
