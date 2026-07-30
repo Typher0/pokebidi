@@ -998,7 +998,7 @@ static bool32 StartWildBattleWithOWE_CheckDoubleBattle(struct ObjectEvent *owe, 
     const struct WildPokemonInfo *wildMonInfo;
     u32 metatileBehavior = MapGridGetMetatileBehaviorAt(owe->currentCoords.x, owe->currentCoords.y);
 
-    if (TryDoDoubleWildBattle())
+    if (TryDoDoubleWildBattle(TRUE))
     {
         struct Pokemon mon1 = gParties[B_TRAINER_OPPONENT_A][0];
 
