@@ -63,8 +63,11 @@
 #define MAX_POCKET_ITEMS  ((max(BAG_TMHM_COUNT,              \
                             max(BAG_BERRIES_COUNT,           \
                             max(BAG_ITEMS_COUNT,             \
+                            max(BAG_MEDICINE_COUNT,          \
+                            max(BAG_BATTLE_COUNT,            \
+                            max(BAG_SPECIAL_COUNT,           \
                             max(BAG_KEYITEMS_COUNT,          \
-                                BAG_POKEBALLS_COUNT))))) + 1)
+                                BAG_POKEBALLS_COUNT)))))))) + 1)
 
 // Up to 8 item slots can be visible at a time
 #define MAX_ITEMS_SHOWN 8
@@ -317,6 +320,21 @@ static const struct MenuAction sItemMenuActions[] = {
 // ACTION_DUMMY is used to represent blank spaces
 static const u8 sContextMenuItems_ItemsPocket[] = {
     ACTION_USE,         ACTION_GIVE,
+    ACTION_TOSS,        ACTION_CANCEL
+};
+
+static const u8 sContextMenuItems_MedicinePocket[] = {
+    ACTION_USE,         ACTION_GIVE,
+    ACTION_TOSS,        ACTION_CANCEL
+};
+
+static const u8 sContextMenuItems_BattlePocket[] = {
+    ACTION_GIVE,        ACTION_DUMMY,
+    ACTION_TOSS,        ACTION_CANCEL
+};
+
+static const u8 sContextMenuItems_SpecialPocket[] = {
+    ACTION_GIVE,        ACTION_DUMMY,
     ACTION_TOSS,        ACTION_CANCEL
 };
 
@@ -1705,9 +1723,17 @@ static void OpenContextMenu(u8 taskId)
                         gBagMenu->contextMenuItemsBuffer[0] = ACTION_WALK;
                 }
                 break;
+            case POCKET_MEDICINE:
+                gBagMenu->contextMenuItemsPtr = sContextMenuItems_MedicinePocket;
+                gBagMenu->contextMenuNumItems = ARRAY_COUNT(sContextMenuItems_MedicinePocket);
+                break;
             case POCKET_POKE_BALLS:
                 gBagMenu->contextMenuItemsPtr = sContextMenuItems_BallsPocket;
                 gBagMenu->contextMenuNumItems = ARRAY_COUNT(sContextMenuItems_BallsPocket);
+                break;
+            case POCKET_BATTLE:
+                gBagMenu->contextMenuItemsPtr = sContextMenuItems_BattlePocket;
+                gBagMenu->contextMenuNumItems = ARRAY_COUNT(sContextMenuItems_BattlePocket);
                 break;
             case POCKET_TM_HM:
                 gBagMenu->contextMenuItemsPtr = sContextMenuItems_TmHmPocket;
@@ -1716,6 +1742,10 @@ static void OpenContextMenu(u8 taskId)
             case POCKET_BERRIES:
                 gBagMenu->contextMenuItemsPtr = sContextMenuItems_BerriesPocket;
                 gBagMenu->contextMenuNumItems = ARRAY_COUNT(sContextMenuItems_BerriesPocket);
+                break;
+            case POCKET_SPECIAL:
+                gBagMenu->contextMenuItemsPtr = sContextMenuItems_SpecialPocket;
+                gBagMenu->contextMenuNumItems = ARRAY_COUNT(sContextMenuItems_SpecialPocket);
                 break;
             }
         }
@@ -2759,6 +2789,30 @@ static const u8 sBagMenuSortPokeBalls[] =
     ACTION_CANCEL,
 };
 
+static const u8 sBagMenuSortMedicine[] =
+{
+    ACTION_BY_NAME,
+    ACTION_BY_AMOUNT,
+    ACTION_DUMMY,
+    ACTION_CANCEL,
+};
+
+static const u8 sBagMenuSortBattle[] =
+{
+    ACTION_BY_NAME,
+    ACTION_BY_AMOUNT,
+    ACTION_DUMMY,
+    ACTION_CANCEL,
+};
+
+static const u8 sBagMenuSortSpecial[] =
+{
+    ACTION_BY_NAME,
+    ACTION_BY_AMOUNT,
+    ACTION_DUMMY,
+    ACTION_CANCEL,
+};
+
 static const u8 sBagMenuSortBerriesTMsHMs[] =
 {
     ACTION_BY_NAME,
@@ -2780,6 +2834,21 @@ static void AddBagSortSubMenu(void)
         gBagMenu->contextMenuItemsPtr = sBagMenuSortPokeBalls;
         memcpy(&gBagMenu->contextMenuItemsBuffer, &sBagMenuSortPokeBalls, NELEMS(sBagMenuSortPokeBalls));
         gBagMenu->contextMenuNumItems = NELEMS(sBagMenuSortPokeBalls);
+        break;
+    case POCKET_MEDICINE:
+        gBagMenu->contextMenuItemsPtr = sBagMenuSortMedicine;
+        memcpy(&gBagMenu->contextMenuItemsBuffer, &sBagMenuSortMedicine, NELEMS(sBagMenuSortMedicine));
+        gBagMenu->contextMenuNumItems = NELEMS(sBagMenuSortMedicine);
+        break;
+    case POCKET_BATTLE:
+        gBagMenu->contextMenuItemsPtr = sBagMenuSortBattle;
+        memcpy(&gBagMenu->contextMenuItemsBuffer, &sBagMenuSortBattle, NELEMS(sBagMenuSortBattle));
+        gBagMenu->contextMenuNumItems = NELEMS(sBagMenuSortBattle);
+        break;
+    case POCKET_SPECIAL:
+        gBagMenu->contextMenuItemsPtr = sBagMenuSortSpecial;
+        memcpy(&gBagMenu->contextMenuItemsBuffer, &sBagMenuSortSpecial, NELEMS(sBagMenuSortSpecial));
+        gBagMenu->contextMenuNumItems = NELEMS(sBagMenuSortSpecial);
         break;
     case POCKET_BERRIES:
     case POCKET_TM_HM:
