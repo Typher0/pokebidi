@@ -57,6 +57,7 @@ LittlerootTown_BrendansHouse_2F_EventScript_EveryoneEnters::
 	waitmovement 0
 	delay 10
 	playbgm MUS_ENCOUNTER_BRENDAN, TRUE
+    setrespawn HEAL_LOCATION_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F
 	applymovement LOCALID_PLAYER, LittlerootTown_BrendansHouse_2F_Movement_PlayerApproachFriends
 	applymovement LOCALID_PLAYERS_BEDROOM_SEAN, Common_Movement_WalkInPlaceFasterUp
 	applymovement LOCALID_PLAYERS_BEDROOM_AMELIA, Common_Movement_WalkInPlaceFasterUp
