@@ -61,6 +61,52 @@ static const u8* const sTrainerSlides[DIFFICULTY_COUNT][TRAINER_PARTNER(PARTNER_
 {
     [DIFFICULTY_NORMAL] =
     {
+        [TRAINER_BRENDAN_ROUTE_103_MUDKIP] =
+        {
+            [TRAINER_SLIDE_LAST_HALF_HP] = COMPOUND_STRING("Come on Cyndaquil, you can do it! {PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_LAST_LOW_HP] = COMPOUND_STRING("I believe in you, Cyndaquil! {PAUSE_UNTIL_PRESS}"),
+        },
+        [TRAINER_BRENDAN_ROUTE_103_TREECKO] =
+        {
+            [TRAINER_SLIDE_LAST_HALF_HP] = COMPOUND_STRING("Come on Squirtle, you can do it!{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_LAST_LOW_HP] = COMPOUND_STRING("I believe in you, Squirtle!{PAUSE_UNTIL_PRESS}"),
+        },
+        [TRAINER_BRENDAN_ROUTE_103_TORCHIC] =
+        {
+            [TRAINER_SLIDE_LAST_HALF_HP] = COMPOUND_STRING("Come on Rowlet, you can do it!{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_LAST_LOW_HP] = COMPOUND_STRING("I believe in you, Rowlet!{PAUSE_UNTIL_PRESS}"),
+        },
+        [TRAINER_MAY_ROUTE_103_MUDKIP] =
+        {
+            [TRAINER_SLIDE_LAST_HALF_HP] = COMPOUND_STRING("Almost there, don't give up Rowlet!{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_LAST_LOW_HP] = COMPOUND_STRING("You can do it, Rowlet!{PAUSE_UNTIL_PRESS}"),
+        },
+        [TRAINER_MAY_ROUTE_103_TREECKO] =
+        {
+            [TRAINER_SLIDE_LAST_HALF_HP] = COMPOUND_STRING("Almost there, don't give up Cyndaquil!{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_LAST_LOW_HP] = COMPOUND_STRING("You can do it, Cyndaquil!{PAUSE_UNTIL_PRESS}"),
+        },
+        [TRAINER_MAY_ROUTE_103_TORCHIC] =
+        {
+            [TRAINER_SLIDE_LAST_HALF_HP] = COMPOUND_STRING("Almost there, don't give up Squirtle!{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_LAST_LOW_HP] = COMPOUND_STRING("You can do it, Squirtle!{PAUSE_UNTIL_PRESS}"),
+        },
+        [TRAINER_MAY_ROUTE_110_MUDKIP] =
+        {
+            [TRAINER_SLIDE_LAST_SWITCHIN] = COMPOUND_STRING("That's the way, Gallade! Go!{PAUSE_UNTIL_PRESS}"),
+        },
+        [TRAINER_MAY_ROUTE_110_TREECKO] =
+        {
+            [TRAINER_SLIDE_LAST_SWITCHIN] = COMPOUND_STRING("That's the way, Gallade! Go!{PAUSE_UNTIL_PRESS}"),
+        },
+        [TRAINER_MAY_ROUTE_110_TORCHIC] =
+        {
+            [TRAINER_SLIDE_LAST_SWITCHIN] = COMPOUND_STRING("That's the way, Gallade! Go!{PAUSE_UNTIL_PRESS}"),
+        },
+        [TRAINER_ROXANNE_1] =
+        {
+            [TRAINER_SLIDE_LAST_SWITCHIN] = COMPOUND_STRING("We're not done yet!{PAUSE_UNTIL_PRESS}"),
+        },
     },
 };
 
