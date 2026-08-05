@@ -20076,7 +20076,6 @@ gBattleAnimMove_TwistedHaste::
 gBattleAnimMove_SpeedRoot::
 	unloadspritegfx ANIM_TAG_IMPACT
 	unloadspritegfx ANIM_TAG_ROOTS
-	monbg ANIM_TARGET
 	splitbgprio ANIM_TARGET
 	setalpha 12, 8
 	createsprite gSimplePaletteBlendSpriteTemplate, ANIM_ATTACKER, 2, F_PAL_BG, 1, 0, 12, RGB(13, 31, 12)
@@ -20106,7 +20105,6 @@ gBattleAnimMove_SpeedRoot::
 	delay 0
 	createsprite gSimplePaletteBlendSpriteTemplate, ANIM_ATTACKER, 2, F_PAL_BG, 1, 12, 0, RGB(13, 31, 12)
 	waitforvisualfinish
-	clearmonbg ANIM_DEF_PARTNER
 	end
 
 gBattleAnimMove_CycloneBoost::
@@ -20203,8 +20201,6 @@ gBattleAnimMove_BuzzingBustle::
 	createvisualtask AnimTask_TraceMonBlended, 2, 0, 4, 7, 3
 	playsewithpan SE_M_JUMP_KICK, SOUND_PAN_ATTACKER
 	delay 4
-	monbg ANIM_DEF_PARTNER
-	splitbgprio ANIM_TARGET
 	playsewithpan SE_M_SWEET_SCENT, SOUND_PAN_TARGET
 	createsprite gAttackOrderParticleSpriteTemplate, ANIM_TARGET, 2, 120, 70, 5, 70, 30
 	playsewithpan SE_M_VITAL_THROW2, SOUND_PAN_TARGET
@@ -20263,14 +20259,12 @@ gBattleAnimMove_SaberThrust::
 	clearmonbg ANIM_ATTACKER
 	blendoff
 	delay 9
-	monbg ANIM_TARGET
 	playsewithpan SE_M_RAZOR_WIND, SOUND_PAN_TARGET
 	createsprite gSacredSwordBladesTemplate, ANIM_TARGET, 1, 0x0, 0xa, 0x0, 0xFF00, 0xA
 	createsprite gSacredSwordCutTemplate, ANIM_ATTACKER, 2, 0x28, 0xffe0, 0x0
 	delay 0x5
 	createvisualtask AnimTask_ShakeMon, 2, ANIM_TARGET, 0, 3, 10, 1
 	waitforvisualfinish
-	clearmonbg ANIM_TARGET
 	blendoff
 	waitforvisualfinish
 	end
@@ -20280,7 +20274,6 @@ gBattleAnimMove_VibrantArrow::
 	unloadspritegfx ANIM_TAG_IMPACT
 	unloadspritegfx ANIM_TAG_AIR_WAVE
 	unloadspritegfx ANIM_TAG_HORN_HIT
-	monbg ANIM_DEF_PARTNER
 	call SetSkyBg
 	splitbgprio ANIM_TARGET
 	setalpha 12, 8
@@ -20317,13 +20310,6 @@ gBattleAnimMove_GaiaHammer::
 	unloadspritegfx ANIM_TAG_WOOD_HAMMER
 	unloadspritegfx ANIM_TAG_WOOD_HAMMER_HAMMER
 	unloadspritegfx ANIM_TAG_IMPACT
-	createvisualtask AnimTask_HorizontalShake, 5, (MAX_BATTLERS_COUNT + 1), 10, 50
-	createvisualtask AnimTask_HorizontalShake, 5, MAX_BATTLERS_COUNT, 10, 50
-	playsewithpan SE_M_EARTHQUAKE, 0
-	delay 10
-	createvisualtask AnimTask_CreateSurfWave, 2, ANIM_SURF_PAL_SURF
-	panse SE_M_SURF, SOUND_PAN_ATTACKER, SOUND_PAN_TARGET, +2, 0
-	waitforvisualfinish
 	playsewithpan SE_M_SWAGGER, SOUND_PAN_ATTACKER
 	createvisualtask AnimTask_TranslateMonEllipticalRespectSide, 2, ANIM_ATTACKER, 12, 4, 2, 4
 	createsprite gWoodHammerHammerSpriteTemplate, ANIM_TARGET, 2
@@ -20336,6 +20322,13 @@ gBattleAnimMove_GaiaHammer::
 	createsprite gComplexPaletteBlendSpriteTemplate, ANIM_ATTACKER, 2, F_PAL_BG, 3, 1, RGB_BLACK, 14, RGB_WHITE, 14
 	delay 16
 	createsprite gComplexPaletteBlendSpriteTemplate, ANIM_ATTACKER, 2, F_PAL_BG, 3, 1, RGB_BLACK, 14, RGB_WHITE, 14
+	waitforvisualfinish
+	createvisualtask AnimTask_HorizontalShake, 5, (MAX_BATTLERS_COUNT + 1), 10, 50
+	createvisualtask AnimTask_HorizontalShake, 5, MAX_BATTLERS_COUNT, 10, 50
+	playsewithpan SE_M_EARTHQUAKE, 0
+	delay 10
+	createvisualtask AnimTask_CreateSurfWave, 2, ANIM_SURF_PAL_SURF
+	panse SE_M_SURF, SOUND_PAN_ATTACKER, SOUND_PAN_TARGET, +2, 0
 	waitforvisualfinish
 	end
 
@@ -20477,10 +20470,8 @@ gBattleAnimMove_Cannibalize::
 	unloadspritegfx ANIM_TAG_BLUE_STAR
 	unloadspritegfx ANIM_TAG_IMPACT
 	unloadspritegfx ANIM_TAG_SHARP_TEETH
-	monbg ANIM_TARGET
 	fadetobg BG_DARK
 	waitbgfadein
-	monbg ANIM_DEF_PARTNER
 	splitbgprio_foes ANIM_TARGET
 	setalpha 12, 8
 	delay 1
@@ -20513,7 +20504,6 @@ gBattleAnimMove_Cannibalize::
 	waitforvisualfinish
 	createsprite gSimplePaletteBlendSpriteTemplate, ANIM_ATTACKER, 2, F_PAL_BG, 1, 7, 0, RGB_BLACK
 	waitforvisualfinish
-	clearmonbg ANIM_DEF_PARTNER
 	blendoff
 	restorebg
 	end
@@ -20524,7 +20514,6 @@ gBattleAnimMove_Exorcism::
 	createsprite gSimplePaletteBlendSpriteTemplate, ANIM_ATTACKER, 2, F_PAL_BG, 4, 0, 16, RGB_BLACK
 	waitforvisualfinish
 	delay 10
-	monbg ANIM_DEF_PARTNER
 	setalpha 12, 8
 	createsprite gSaltCureCrystalSpriteTemplate, ANIM_TARGET, 2, -10, -10, 1
 	playsewithpan SE_M_ICY_WIND, SOUND_PAN_TARGET
@@ -20571,7 +20560,6 @@ gBattleAnimMove_Exorcism::
 	playsewithpan SE_M_LEER, SOUND_PAN_ATTACKER
 	waitforvisualfinish
 	blendoff
-	clearmonbg ANIM_DEF_PARTNER
 	waitforvisualfinish
 	clearmonbg ANIM_TARGET
 	blendoff
@@ -20624,7 +20612,6 @@ gBattleAnimMove_Insecticide::
 
 gBattleAnimMove_DracoDrive::
 	unloadspritegfx ANIM_TAG_HOLLOW_ORB
-	monbg ANIM_ATTACKER
 	splitbgprio ANIM_ATTACKER
 	playsewithpan SE_M_TELEPORT, SOUND_PAN_ATTACKER
 	delay 8

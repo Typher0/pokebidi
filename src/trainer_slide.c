@@ -93,19 +93,19 @@ static const u8* const sTrainerSlides[DIFFICULTY_COUNT][TRAINER_PARTNER(PARTNER_
         },
         [TRAINER_MAY_ROUTE_110_MUDKIP] =
         {
-            [TRAINER_SLIDE_LAST_SWITCHIN] = COMPOUND_STRING("That's the way, Gallade! Go!{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_LAST_SWITCHIN] = COMPOUND_STRING("It's not over yet!\nYou can do it, Rowlet!{PAUSE_UNTIL_PRESS}"),
         },
         [TRAINER_MAY_ROUTE_110_TREECKO] =
         {
-            [TRAINER_SLIDE_LAST_SWITCHIN] = COMPOUND_STRING("That's the way, Gallade! Go!{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_LAST_SWITCHIN] = COMPOUND_STRING("It's not over yet!\nYou can do it, Cyndaquil!{PAUSE_UNTIL_PRESS}"),
         },
         [TRAINER_MAY_ROUTE_110_TORCHIC] =
         {
-            [TRAINER_SLIDE_LAST_SWITCHIN] = COMPOUND_STRING("That's the way, Gallade! Go!{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_LAST_SWITCHIN] = COMPOUND_STRING("It's not over yet!\nYou can do it, Squirtle!{PAUSE_UNTIL_PRESS}"),
         },
         [TRAINER_ROXANNE_1] =
         {
-            [TRAINER_SLIDE_LAST_SWITCHIN] = COMPOUND_STRING("We're not done yet!{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_LAST_SWITCHIN] = COMPOUND_STRING("To think I'd be backed into a corner!\nHere's the ace in the hole!{PAUSE_UNTIL_PRESS}"),
         },
     },
 };

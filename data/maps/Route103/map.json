@@ -335,7 +335,7 @@
       "x": 50,
       "y": 27,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_CHASE_PLAYER_OWE",
+      "movement_type": "MOVEMENT_TYPE_WATCH_PLAYER_OWE",
       "movement_range_x": 3,
       "movement_range_y": 3,
       "trainer_type": "TRAINER_TYPE_OW_WILD_ENCOUNTER",
