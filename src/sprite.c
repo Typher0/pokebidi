@@ -89,7 +89,6 @@ static void ApplyAffineAnimFrame(u8 matrixNum, struct AffineAnimFrameCmd *frameC
 static void AllocSpriteTileRange(u16 tag, u16 start, u16 count);
 static void DoLoadSpritePalette(const u16 *src, u16 paletteOffset);
 static void UpdateSpriteMatrixAnchorPos(struct Sprite *, s32, s32);
-static bool8 AddObjWinMaskToOamBuffer(struct Sprite *sprite, u8 *oamIndex);
 
 typedef void (*AnimFunc)(struct Sprite *);
 typedef void (*AnimCmdFunc)(struct Sprite *);
@@ -1744,35 +1743,17 @@ void SetSubspriteTables(struct Sprite *sprite, const struct SubspriteTable *subs
 bool8 AddSpriteToOamBuffer(struct Sprite *sprite, u8 *oamIndex)
 {
     if (*oamIndex >= gOamLimit)
-        return 1;
+        return TRUE;
 
     if (!sprite->subspriteTables || sprite->subspriteMode == SUBSPRITES_OFF)
     {
         gMain.oamBuffer[*oamIndex] = sprite->oam;
         (*oamIndex)++;
-        if (sprite->objWinMask)
-            return AddObjWinMaskToOamBuffer(sprite, oamIndex);
-        return 0;
+        return FALSE;
     }
     else
     {
         return AddSubspritesToOamBuffer(sprite, &gMain.oamBuffer[*oamIndex], oamIndex);
-    }
-}
-
-static bool8 AddObjWinMaskToOamBuffer(struct Sprite *sprite, u8 *oamIndex)
-{
-    if (*oamIndex >= gOamLimit)
-    {
-        return 1;
-    }
-
-    else
-    {
-        struct OamData oam = sprite->oam;
-        oam.objMode = ST_OAM_OBJ_WINDOW;
-        gMain.oamBuffer[(*oamIndex)++] = oam;
-        return 0;
     }
 }
 
@@ -1782,7 +1763,7 @@ bool8 AddSubspritesToOamBuffer(struct Sprite *sprite, struct OamData *destOam, u
     struct OamData *oam;
 
     if (*oamIndex >= gOamLimit)
-        return 1;
+        return TRUE;
 
     subspriteTable = &sprite->subspriteTables[sprite->subspriteTableNum];
     oam = &sprite->oam;
@@ -1791,7 +1772,7 @@ bool8 AddSubspritesToOamBuffer(struct Sprite *sprite, struct OamData *destOam, u
     {
         *destOam = *oam;
         (*oamIndex)++;
-        return 0;
+        return FALSE;
     }
     else
     {
@@ -1816,7 +1797,7 @@ bool8 AddSubspritesToOamBuffer(struct Sprite *sprite, struct OamData *destOam, u
             u16 y;
 
             if (*oamIndex >= gOamLimit)
-                return 1;
+                return TRUE;
 
             x = subspriteTable->subsprites[i].x;
             y = subspriteTable->subsprites[i].y;
@@ -1851,7 +1832,7 @@ bool8 AddSubspritesToOamBuffer(struct Sprite *sprite, struct OamData *destOam, u
         }
     }
 
-    return 0;
+    return FALSE;
 }
 
 static const u8 sSpanPerImage[4][4] =
