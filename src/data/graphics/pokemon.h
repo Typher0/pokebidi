@@ -14565,7 +14565,7 @@ const u8 gMonIcon_Cacturado[] = INCGFX_U8("graphics/pokemon/cacturado/icon.png",
     const u16 gMonPalette_StaraptorMega[] = INCGFX_U16("graphics/pokemon/staraptor/mega/normal.pal", ".gbapal");
     const u32 gMonBackPic_StaraptorMega[] = INCGFX_U32("graphics/pokemon/staraptor/mega/back.png", ".4bpp.smol");
     const u16 gMonShinyPalette_StaraptorMega[] = INCGFX_U16("graphics/pokemon/staraptor/mega/shiny.pal", ".gbapal");
-//    const u8 gMonIcon_StaraptorMega[] = INCGFX_U8("graphics/pokemon/staraptor/mega/icon.png", ".4bpp");
+    const u8 gMonIcon_StaraptorMega[] = INCGFX_U8("graphics/pokemon/staraptor/mega/icon.png", ".4bpp");
 #if OW_POKEMON_OBJECT_EVENTS && OW_BATTLE_ONLY_FORMS
 //    const u32 gObjectEventPic_StaraptorMega[] = INCGFX_COMP("graphics/pokemon/staraptor/mega/overworld.png", ".4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
