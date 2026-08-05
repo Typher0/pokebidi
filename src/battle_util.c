@@ -66,7 +66,7 @@ static void ResetParadoxTerrainStat(enum BattlerId battler);
 static bool32 CanBattlerFormChange(enum BattlerId battler, enum FormChanges method);
 const u8 *AbsorbedByDrainHpAbility(enum BattlerId battlerDef);
 const u8 *AbsorbedByStatIncreaseAbility(struct DamageContext *ctx, enum Stat statId, u32 statAmount);
-const u8 *AbsorbedByFlashFire(enum BattlerId battlerDef);
+const u8 *AbsorbedByFlashFire(struct DamageContext *ctx);
 static bool32 IsCriticalHit(struct DamageContext *ctx);
 
 ARM_FUNC NOINLINE static uq4_12_t PercentToUQ4_12(u32 percent);
@@ -2249,7 +2249,7 @@ bool32 CanAbilityAbsorbMove(struct DamageContext *ctx)
         break;
     case ABILITY_FLASH_FIRE:
         if (ctx->moveType == TYPE_FIRE && (B_FLASH_FIRE_FROZEN >= GEN_5 || !(gBattleMons[ctx->battlerDef].status1 & STATUS1_FREEZE)))
-            battleScript = AbsorbedByFlashFire(ctx->battlerDef);
+            battleScript = AbsorbedByFlashFire(ctx);
         break;
     case ABILITY_SOUNDPROOF:
         if (IsSoundMove(ctx->move))
@@ -2311,12 +2311,13 @@ const u8 *AbsorbedByStatIncreaseAbility(struct DamageContext *ctx, enum Stat sta
     }
 }
 
-const u8 *AbsorbedByFlashFire(enum BattlerId battlerDef)
+const u8 *AbsorbedByFlashFire(struct DamageContext *ctx)
 {
-    if (!gBattleMons[battlerDef].volatiles.flashFireBoosted)
+    if (!gBattleMons[ctx->battlerDef].volatiles.flashFireBoosted)
     {
         gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_FLASH_FIRE_BOOST;
-        gBattleMons[battlerDef].volatiles.flashFireBoosted = TRUE;
+        if (ctx->runScript)
+            gBattleMons[ctx->battlerDef].volatiles.flashFireBoosted = TRUE;
         return BattleScript_FlashFireBoost;
     }
     else
@@ -3368,7 +3369,7 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, enum BattlerId battler, enum
         case ABILITY_INTREPID_SWORD:
             if (shouldAbilityTrigger && !GetBattlerPartyState(battler)->intrepidSwordBoost)
             {
-                if (GetConfig(B_INTREPID_SWORD) == GEN_9)
+                if (GetConfig(B_INTREPID_SWORD) >= GEN_9)
                     GetBattlerPartyState(battler)->intrepidSwordBoost = TRUE;
 
                 if (CompareStat(battler, STAT_ATK, MAX_STAT_STAGE, CMP_LESS_THAN, gLastUsedAbility))
@@ -3383,7 +3384,7 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, enum BattlerId battler, enum
         case ABILITY_DAUNTLESS_SHIELD:
             if (shouldAbilityTrigger && !GetBattlerPartyState(battler)->dauntlessShieldBoost)
             {
-                if (GetConfig(B_DAUNTLESS_SHIELD) == GEN_9)
+                if (GetConfig(B_DAUNTLESS_SHIELD) >= GEN_9)
                     GetBattlerPartyState(battler)->dauntlessShieldBoost = TRUE;
 
                 if (CompareStat(battler, STAT_DEF, MAX_STAT_STAGE, CMP_LESS_THAN, gLastUsedAbility))
@@ -6485,7 +6486,7 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageContext *ctx)
         modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
     if (IsGrassyTerrainAffected(battlerAtk, ctx->abilities[battlerAtk], ctx->holdEffects[battlerAtk], ctx->fieldStatuses) && moveType == TYPE_GRASS)
         modifier = uq4_12_multiply(modifier, (B_TERRAIN_TYPE_BOOST >= GEN_8 ? UQ_4_12(1.3) : UQ_4_12(1.5)));
-    if (IsMistyTerrainAffected(battlerDef, ctx->abilities[battlerAtk], ctx->holdEffects[battlerDef], ctx->fieldStatuses) && moveType == TYPE_DRAGON)
+    if (IsMistyTerrainAffected(battlerDef, ctx->abilities[battlerDef], ctx->holdEffects[battlerDef], ctx->fieldStatuses) && moveType == TYPE_DRAGON)
         modifier = uq4_12_multiply(modifier, UQ_4_12(0.5));
     if (IsElectricTerrainAffected(battlerAtk, ctx->abilities[battlerAtk], ctx->holdEffects[battlerAtk], ctx->fieldStatuses) && moveType == TYPE_ELECTRIC)
         modifier = uq4_12_multiply(modifier, (B_TERRAIN_TYPE_BOOST >= GEN_8 ? UQ_4_12(1.3) : UQ_4_12(1.5)));
@@ -8828,27 +8829,8 @@ enum Species GetIllusionMonSpecies(enum BattlerId battler)
 
 u32 GetIllusionMonPartyId(struct Pokemon *party, struct Pokemon *mon, struct Pokemon *partnerMon, enum BattlerId battler)
 {
-    s32 partyEnd=6;
-    s32 partyStart=0;
-
-    // Adjust party search range for Multibattles and Player vs two-trainers
-    if ((GetBattlerSide(battler) == B_SIDE_PLAYER && (gBattleTypeFlags & BATTLE_TYPE_MULTI))
-        || (GetBattlerSide(battler) == B_SIDE_OPPONENT && (gBattleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS)))
-        {
-            if ((GetBattlerPosition(battler) == B_POSITION_PLAYER_LEFT) || (GetBattlerPosition(battler) == B_POSITION_OPPONENT_LEFT))
-            {
-                partyEnd = 3;
-                partyStart = 0;
-            }
-            else
-            {
-                partyEnd = 6;
-                partyStart = 3;
-            }
-        }
-
     // Find last alive non-egg Pokémon.
-    for (s32 id = partyEnd - 1; id >= partyStart; id--)
+    for (s32 id = PARTY_SIZE - 1; id >= 0; id--)
     {
         if (GetMonData(&party[id], MON_DATA_SANITY_HAS_SPECIES)
             && GetMonData(&party[id], MON_DATA_HP)
