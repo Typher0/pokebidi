@@ -544,6 +544,8 @@
 #define PH_NURSE_SOLO               609
 #define MUS_NOSTALGIA_INCARNATE_ZEPHYR_TOWN 610
 #define MUS_OCEAN_SIDE_THEME        611
+#define MUS_CABRILLO_CITY           612
+#define MUS_ROUTE_648               613
 
 #define MUS_ROUTE118                0x7FFF  // Map is split into 2 music sections. controlled by GetCurrLocationDefaultMusic().
 

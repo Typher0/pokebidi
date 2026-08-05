@@ -618,6 +618,8 @@ gSongTable::
 	song ph_nurse_solo, MUSIC_PLAYER_SE2, 2
 	song mus_nostalgia_incarnate_zephyr_town, MUSIC_PLAYER_BGM, 0
 	song mus_ocean_side_theme, MUSIC_PLAYER_BGM, 0
+	song mus_cabrillo_city, MUSIC_PLAYER_BGM, 0
+	song mus_route_648, MUSIC_PLAYER_BGM, 0
 
 	.align 2
 dummy_song_header:
