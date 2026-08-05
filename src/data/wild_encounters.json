@@ -1962,31 +1962,6 @@
               }
             ]
           },
-          "headbutt_mons": {
-            "encounter_rate": 180,
-            "mons": [
-              {
-                "min_level": 2,
-                "max_level": 3,
-                "species": "SPECIES_SKWOVET"
-              },
-              {
-                "min_level": 2,
-                "max_level": 3,
-                "species": "SPECIES_SKWOVET"
-              },
-              {
-                "min_level": 2,
-                "max_level": 3,
-                "species": "SPECIES_BURMY_PLANT"
-              },
-              {
-                "min_level": 2,
-                "max_level": 4,
-                "species": "SPECIES_PINECO"
-              }
-            ]
-          },
           "honey_mons": {
             "encounter_rate": 180,
             "mons": [
@@ -2029,6 +2004,31 @@
                 "min_level": 13,
                 "max_level": 15,
                 "species": "SPECIES_MUNCHLAX"
+              }
+            ]
+          },
+          "headbutt_mons": {
+            "encounter_rate": 180,
+            "mons": [
+              {
+                "min_level": 2,
+                "max_level": 3,
+                "species": "SPECIES_SKWOVET"
+              },
+              {
+                "min_level": 2,
+                "max_level": 3,
+                "species": "SPECIES_SKWOVET"
+              },
+              {
+                "min_level": 2,
+                "max_level": 3,
+                "species": "SPECIES_BURMY_PLANT"
+              },
+              {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_PINECO"
               }
             ]
           }
@@ -3778,6 +3778,26 @@
               }
             ]
           },
+          "hidden_mons": {
+            "encounter_rate": 70,
+            "mons": [
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_PANSAGE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_PANPOUR"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_PANSEAR"
+              }
+            ]
+          },
           "honey_mons": {
             "encounter_rate": 180,
             "mons": [
@@ -3845,26 +3865,6 @@
                 "min_level": 2,
                 "max_level": 4,
                 "species": "SPECIES_PINECO"
-              }
-            ]
-          },
-          "hidden_mons": {
-            "encounter_rate": 70,
-            "mons": [
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_PANSAGE"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_PANPOUR"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_PANSEAR"
               }
             ]
           }

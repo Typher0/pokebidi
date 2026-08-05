@@ -202,3 +202,4 @@
 .include "sound/voicegroups/rg_sevii_67.inc"
 .include "sound/voicegroups/drumsets/rg_credits.inc"
 .include "sound/voicegroups/mus_nostalgia_incarnate_zephyr_town.inc"
+.include "sound/voicegroups/mus_ocean_side_theme.inc"
