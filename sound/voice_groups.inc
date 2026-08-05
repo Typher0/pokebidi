@@ -131,7 +131,6 @@
 .include "sound/voicegroups/vs_rival.inc"
 .include "sound/voicegroups/vs_elite_four.inc"
 .include "sound/voicegroups/vs_aqua_magma_leader.inc"
-.include "sound/voicegroups/voicegroup191.inc"
 .include "sound/voicegroups/rs_sfx_1.inc"
 .include "sound/voicegroups/rs_sfx_2.inc"
 .include "sound/cry_tables.inc"
@@ -202,3 +201,4 @@
 .include "sound/voicegroups/rg_sevii_45.inc"
 .include "sound/voicegroups/rg_sevii_67.inc"
 .include "sound/voicegroups/drumsets/rg_credits.inc"
+.include "sound/voicegroups/mus_nostalgia_incarnate_zephyr_town.inc"
