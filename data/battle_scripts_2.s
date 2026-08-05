@@ -174,7 +174,7 @@ BattleScript_BallThrow::
 	handleballthrow
 
 BattleScript_BallThrowByWally::
-	printstring STRINGID_TRAINER1USEDITEM
+	printstring STRINGID_WALLYUSEDITEM
 	handleballthrow
 
 BattleScript_SafariBallThrow::

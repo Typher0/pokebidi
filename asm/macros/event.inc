@@ -370,7 +370,8 @@
 	.byte SCR_OP_GETTIME
 	.endm
 
-	@ Sets the values of variable VAR_0x8000 to the time of day according to those found in include/constants/rtc.h.
+	@ Sets the values of variable VAR_0x8000 to the time of day according to those found in rtc.h.
+	@ 0 = MORNING, 1 = DAY, 2 = EVENING, 3 = NIGHT
 	.macro gettimeofday
 	callnative ScrCmd_gettimeofday, requests_effects=1
 	.endm

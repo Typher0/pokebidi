@@ -1352,10 +1352,8 @@ static u16 RenderText(struct TextPrinter *textPrinter)
         else
             textPrinter->delayCounter = textPrinter->textSpeed;
 
-        do {
-            currChar = *textPrinter->printerTemplate.currentChar;
-            textPrinter->printerTemplate.currentChar++;
-        } while (currChar == CHAR_ZWS);
+        currChar = *textPrinter->printerTemplate.currentChar;
+        textPrinter->printerTemplate.currentChar++;
 
         switch (currChar)
         {
@@ -1803,9 +1801,6 @@ static u32 (*GetFontWidthFunc(u8 fontId))(u16, bool32)
 
 s32 GetGlyphWidth(u16 glyphId, bool32 isJapanese, u8 fontId)
 {
-    if (!isJapanese && glyphId == CHAR_ZWS)
-        return 0;
-
     u32 (*func)(u16 fontId, bool32 isJapanese);
 
     func = GetFontWidthFunc(fontId);
