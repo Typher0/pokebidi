@@ -4053,6 +4053,7 @@ static void DebugAction_DestroyFollowerNPC(u8 taskId)
 
 
 #define SOUND_LIST_BGM              \
+    X(MUS_DUMMY) \
     X(MUS_DP_AMITY_SQUARE) \
     X(MUS_DP_AZURE_FLUTE) \
     X(MUS_DP_B_TOWER) \
@@ -4211,6 +4212,23 @@ static void DebugAction_DestroyFollowerNPC(u8 taskId)
     X(MUS_DP_VS_WILD) \
     X(MUS_DP_WFC) \
     X(MUS_HG_AZALEA) \
+    X(PH_TRAP_BLEND) \
+    X(PH_TRAP_HELD) \
+    X(PH_TRAP_SOLO) \
+    X(PH_FACE_BLEND) \
+    X(PH_FACE_HELD) \
+    X(PH_FACE_SOLO) \
+    X(PH_CLOTH_BLEND) \
+    X(PH_CLOTH_HELD) \
+    X(PH_CLOTH_SOLO) \
+    X(PH_DRESS_BLEND) \
+    X(PH_DRESS_HELD) \
+    X(PH_DRESS_SOLO) \
+    X(PH_FLEECE_BLEND) \
+    X(PH_FLEECE_HELD) \
+    X(PH_FLEECE_SOLO) \
+    X(PH_KIT_BLEND) \
+    X(PH_KIT_HELD) \
     X(MUS_HG_B_ARCADE) \
     X(MUS_HG_B_CASTLE) \
     X(MUS_HG_B_FACTORY) \
@@ -4228,6 +4246,7 @@ static void DebugAction_DestroyFollowerNPC(u8 taskId)
     X(MUS_HG_CARD_FLIP) \
     X(MUS_HG_CAUGHT) \
     X(MUS_HG_CELADON) \
+    X(PH_KIT_SOLO) \
     X(MUS_HG_CERULEAN) \
     X(MUS_HG_CHERRYGROVE) \
     X(MUS_HG_CIANWOOD) \
@@ -4244,6 +4263,39 @@ static void DebugAction_DestroyFollowerNPC(u8 taskId)
     X(MUS_HG_DEX_RATING_6) \
     X(MUS_HG_DRAGONS_DEN) \
     X(MUS_HG_ECRUTEAK) \
+    X(PH_PRICE_BLEND) \
+    X(PH_PRICE_HELD) \
+    X(PH_PRICE_SOLO) \
+    X(PH_LOT_BLEND) \
+    X(PH_LOT_HELD) \
+    X(PH_LOT_SOLO) \
+    X(PH_GOAT_BLEND) \
+    X(PH_GOAT_HELD) \
+    X(PH_GOAT_SOLO) \
+    X(PH_THOUGHT_BLEND) \
+    X(PH_THOUGHT_HELD) \
+    X(PH_THOUGHT_SOLO) \
+    X(PH_CHOICE_BLEND) \
+    X(PH_CHOICE_HELD) \
+    X(PH_CHOICE_SOLO) \
+    X(PH_MOUTH_BLEND) \
+    X(PH_MOUTH_HELD) \
+    X(PH_MOUTH_SOLO) \
+    X(PH_FOOT_BLEND) \
+    X(PH_FOOT_HELD) \
+    X(PH_FOOT_SOLO) \
+    X(PH_GOOSE_BLEND) \
+    X(PH_GOOSE_HELD) \
+    X(PH_GOOSE_SOLO) \
+    X(PH_STRUT_BLEND) \
+    X(PH_STRUT_HELD) \
+    X(PH_STRUT_SOLO) \
+    X(PH_CURE_BLEND) \
+    X(PH_CURE_HELD) \
+    X(PH_CURE_SOLO) \
+    X(PH_NURSE_BLEND) \
+    X(PH_NURSE_HELD) \
+    X(PH_NURSE_SOLO) \
     X(MUS_HG_ELM_LAB) \
     X(MUS_HG_ENCOUNTER_BOY_1) \
     X(MUS_HG_ENCOUNTER_BOY_2) \
@@ -4271,8 +4323,28 @@ static void DebugAction_DestroyFollowerNPC(u8 taskId)
     X(MUS_HG_GYM) \
     X(MUS_HG_HALL_OF_FAME) \
     X(MUS_HG_HEAL) \
-    X(MUS_CABRILLO_CITY) \
-    X(MUS_ROUTE_648)
+    X(MUS_HG_VS_HO_OH) \
+    X(MUS_HG_VS_KYOGRE_GROUDON) \
+    X(MUS_HG_VS_LUGIA) \
+    X(MUS_PL_VS_REGI) \
+    X(MUS_PL_MYSTERY_GIFT) \
+    X(MUS_HG_MT_MOON_SQUARE) \
+    X(MUS_PL_B_CASTLE) \
+    X(MUS_PL_INTRO) \
+    X(MUS_HG_ROUTE30) \
+    X(MUS_HG_SURF) \
+    X(MUS_HG_VS_FRONTIER_BRAIN) \
+    X(MUS_HG_VS_GYM_LEADER) \
+    X(MUS_HG_VS_TRAINER) \
+    X(MUS_HG_VS_CHAMPION) \
+    X(MUS_HG_VS_WILD) \
+    X(MUS_HG_RADIO_POKE_FLUTE) \
+    X(MUS_HG_OBTAIN_KEY_ITEM) \
+    X(MUS_HG_OBTAIN_ARCADE_POINTS) \
+    X(MUS_HG_POKEGEAR_REGISTERED) \
+    X(MUS_PL_OBTAIN_B_POINTS) \
+    X(MUS_HG_SPIN_TRADE) \
+    X(MUS_PL_VS_FRONTIER_BRAIN)
 
 #define SOUND_LIST_SE               \
     X(SE_USE_ITEM)                  \
