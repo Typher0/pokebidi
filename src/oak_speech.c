@@ -789,7 +789,7 @@ static void Task_NewGameScene(u8 taskId)
         ShowBg(0);
         ShowBg(1);
         SetVBlankCallback(VBlankCB_NewGameScene);
-        PlayBGM(MUS_RG_NEW_GAME_INSTRUCT);
+        PlayBGM(MUS_HG_OAK);
         gTasks[taskId].func = Task_ControlsGuide_HandleInput;
         gMain.state = 0;
         return;

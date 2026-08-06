@@ -625,11 +625,11 @@ static void Task_EggHatchPlayBGM(u8 taskId)
     }
 
     if (gTasks[taskId].tTimer == 1)
-        PlayBGM(MUS_EVOLUTION_INTRO);
+        PlayBGM(MUS_HG_EVOLUTION);
 
     if (gTasks[taskId].tTimer > 60)
     {
-        PlayBGM(MUS_EVOLUTION);
+        PlayBGM(MUS_HG_EVOLUTION_NO_INTRO);
         DestroyTask(taskId);
     }
     gTasks[taskId].tTimer++;

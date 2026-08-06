@@ -1224,11 +1224,11 @@ u16 GetLocationMusic(struct WarpData *warp)
     if (NoMusicInSootopolisWithLegendaries(warp) == TRUE)
         return MUS_NONE;
     else if (ShouldLegendaryMusicPlayAtLocation(warp) == TRUE)
-        return MUS_ABNORMAL_WEATHER;
+        return MUS_DP_CATASTROPHE;
     else if (IsInfiltratedSpaceCenter(warp) == TRUE)
-        return MUS_ENCOUNTER_MAGMA;
+        return MUS_DP_ENCOUNTER_GALACTIC;
     else if (IsInfiltratedWeatherInstitute(warp) == TRUE)
-        return MUS_MT_CHIMNEY;
+        return MUS_HG_MT_MOON_SQUARE;
     else
         return Overworld_GetMapHeaderByGroupAndId(warp->mapGroup, warp->mapNum)->music;
 }
@@ -1241,26 +1241,26 @@ u16 GetCurrLocationDefaultMusic(void)
     if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ROUTE111)
      && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ROUTE111)
      && GetSavedWeather() == WEATHER_SANDSTORM)
-        return MUS_DESERT;
+        return MUS_HG_ROUTE30;
 
     music = GetLocationMusic(&gSaveBlock1Ptr->location);
-    if (music != MUS_ROUTE118)
+    if (music != MUS_DP_ROUTE201_DAY)
     {
         return music;
     }
     else
     {
         if (gSaveBlock1Ptr->pos.x < 24)
-            return MUS_ROUTE110;
+            return MUS_DP_ROUTE201_DAY;
         else
-            return MUS_ROUTE119;
+            return MUS_DP_ROUTE216_DAY;
     }
 }
 
 u16 GetWarpDestinationMusic(void)
 {
     u16 music = GetLocationMusic(&sWarpDestination);
-    if (music != MUS_ROUTE118)
+    if (music != MUS_DP_ROUTE228_DAY)
     {
         return music;
     }
@@ -1268,9 +1268,9 @@ u16 GetWarpDestinationMusic(void)
     {
         if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_MAUVILLE_CITY)
          && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_MAUVILLE_CITY))
-            return MUS_ROUTE110;
+            return MUS_DP_ROUTE201_DAY;
         else
-            return MUS_ROUTE119;
+            return MUS_DP_ROUTE216_DAY;
     }
 }
 
@@ -1291,14 +1291,14 @@ void Overworld_PlaySpecialMapMusic(void)
     if (gDisableMapMusicChangeOnMapLoad == MUSIC_DISABLE_KEEP)
         return;
 
-    if (music != MUS_ABNORMAL_WEATHER && music != MUS_NONE)
+    if (music != MUS_DP_CATASTROPHE && music != MUS_NONE)
     {
         if (gSaveBlock1Ptr->savedMusic)
             music = gSaveBlock1Ptr->savedMusic;
         else if (GetCurrentMapType() == MAP_TYPE_UNDERWATER)
-            music = MUS_UNDERWATER;
+            music = MUS_DP_ROUTE210_DAY;
         else if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING))
-            music = (IS_FRLG ? MUS_RG_SURF : MUS_SURF);
+            music = (IS_FRLG ? MUS_HG_SURF : MUS_DP_SURF);
     }
 
     if (music != GetCurrentMapMusic())
@@ -1329,12 +1329,12 @@ static void TransitionMapMusic(void)
     {
         u16 newMusic = GetWarpDestinationMusic();
         u16 currentMusic = GetCurrentMapMusic();
-        if (newMusic != MUS_ABNORMAL_WEATHER && newMusic != MUS_NONE)
+        if (newMusic != MUS_DP_CATASTROPHE && newMusic != MUS_NONE)
         {
-            if (currentMusic == MUS_UNDERWATER || currentMusic == (IS_FRLG ? MUS_RG_SURF : MUS_SURF))
+            if (currentMusic == MUS_DP_ROUTE210_DAY || currentMusic == (IS_FRLG ? MUS_HG_SURF : MUS_DP_SURF))
                 return;
             if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING))
-                newMusic = (IS_FRLG ? MUS_RG_SURF : MUS_SURF);
+                newMusic = (IS_FRLG ? MUS_HG_SURF : MUS_DP_SURF);
         }
         if (newMusic != currentMusic)
         {
@@ -1356,7 +1356,7 @@ void Overworld_ChangeMusicToDefault(void)
 void Overworld_ChangeMusicTo(u16 newMusic)
 {
     u16 currentMusic = GetCurrentMapMusic();
-    if (currentMusic != newMusic && currentMusic != MUS_ABNORMAL_WEATHER)
+    if (currentMusic != newMusic && currentMusic != MUS_DP_CATASTROPHE)
         FadeOutAndPlayNewMapMusic(newMusic, 8);
 }
 
@@ -1375,7 +1375,7 @@ void TryFadeOutOldMapMusic(void)
     u16 warpMusic = GetWarpDestinationMusic();
     if (FlagGet(FLAG_DONT_TRANSITION_MUSIC) != TRUE && warpMusic != GetCurrentMapMusic())
     {
-        if (currentMusic == MUS_SURF
+        if (currentMusic == MUS_DP_SURF
             && VarGet(VAR_SKY_PILLAR_STATE) == 2
             && gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_SOOTOPOLIS_CITY)
             && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_SOOTOPOLIS_CITY)

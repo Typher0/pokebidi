@@ -1268,7 +1268,7 @@ EventScript_RegionMap::
 
 Common_EventScript_PlayBrineysBoatMusic::
 	setflag FLAG_DONT_TRANSITION_MUSIC
-	playbgm MUS_SAILING, FALSE
+	playbgm MUS_HG_NATIONAL_PARK, FALSE
 	return
 
 Common_EventScript_StopBrineysBoatMusic::

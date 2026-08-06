@@ -324,96 +324,97 @@
 #define MUS_LINK_CONTEST_P1         393 // MUS_TEST1
 #define MUS_LINK_CONTEST_P2         394 // MUS_TEST2
 #define MUS_LINK_CONTEST_P3         395 // MUS_TEST3
-#define MUS_LINK_CONTEST_P4         396 // MUS_TEST4
-#define MUS_ENCOUNTER_RICH          397 // MUS_TEST
-#define MUS_VERDANTURF              398 // MUS_GOMACHI0
-#define MUS_RUSTBORO                399 // MUS_GOTOWN           // Also used in Mauville City, Mossdeep City, Daycare, Weather Institute and several Route houses.
-#define MUS_POKE_CENTER             400 // MUS_POKECEN          // Also used in the Pokémon League's lobby.
-#define MUS_ROUTE104                401 // MUS_NEXTROAD         // Also used in Routes 105, 106, 107, 108, 109, 115 and 116.
-#define MUS_ROUTE119                402 // MUS_GRANROAD         // Also used in Routes 129, 130, 131, 132, 133, 134 and 118's east half.
-#define MUS_CYCLING                 403 // MUS_CYCLING
-#define MUS_POKE_MART               404 // MUS_FRIENDLY         // Also used in Lilycove's Department Store.
-#define MUS_LITTLEROOT              405 // MUS_MISHIRO
-#define MUS_MT_CHIMNEY              406 // MUS_TOZAN            // Also used in Desert Underpass, Mirage Tower, Seafloor Cavern and Sky Pillar.
-#define MUS_ENCOUNTER_FEMALE        407 // MUS_GIRLEYE
-#define MUS_LILYCOVE                408 // MUS_MINAMO           // Also used in Pacifidlog Town and the Diving Treasure Hunter's house.
+#define MUS_DP_AMITY_SQUARE         396
+#define MUS_DP_AZURE_FLUTE          397
+#define MUS_DP_B_TOWER              398
+#define MUS_DP_CANALAVE_DAY         399
+#define MUS_DP_CANALAVE_NIGHT       400
+#define MUS_DP_CATASTROPHE          401
+#define MUS_DP_CAUGHT_INTRO         402
+#define MUS_DP_CONTEST_DRESS_UP     403
+#define MUS_DP_CONTEST_LOBBY        404
+#define MUS_DP_CONTEST_RESULTS      405
+#define MUS_DP_CONTEST_WINNER       406
+#define MUS_DP_CONTEST              407
+#define MUS_DP_CREDITS              408
+#define MUS_DP_CYCLING              409
 #define MUS_DESERT                  409 // MUS_ASHROAD
-#define MUS_HELP                    410 // MUS_EVENT0
-#define MUS_UNDERWATER              411 // MUS_DEEPDEEP
-#define MUS_VICTORY_TRAINER         412 // MUS_KACHI1
-#define MUS_TITLE                   413 // MUS_TITLE3
-#define MUS_INTRO                   414 // MUS_DEMO1
-#define MUS_ENCOUNTER_MAY           415 // MUS_GIRL_SUP
-#define MUS_ENCOUNTER_INTENSE       416 // MUS_HAGESHII
-#define MUS_ENCOUNTER_COOL          417 // MUS_KAKKOII
-#define MUS_ROUTE113                418 // MUS_KAZANBAI
-#define MUS_ENCOUNTER_AQUA          419 // MUS_AQA_0
-#define MUS_FOLLOW_ME               420 // MUS_TSURETEK
-#define MUS_ENCOUNTER_BRENDAN       421 // MUS_BOY_SUP
-#define MUS_EVER_GRANDE             422 // MUS_RAINBOW          // Also used in link rooms.
-#define MUS_ENCOUNTER_SUSPICIOUS    423 // MUS_AYASII
-#define MUS_VICTORY_AQUA_MAGMA      424 // MUS_KACHI4
-#define MUS_CABLE_CAR               425 // MUS_ROPEWAY
-#define MUS_GAME_CORNER             426 // MUS_CASINO
-#define MUS_DEWFORD                 427 // MUS_HIGHTOWN         // Also used in Route 109's Seashore house.
-#define MUS_SAFARI_ZONE             428 // MUS_SAFARI
-#define MUS_VICTORY_ROAD            429 // MUS_C_ROAD           // Also used in Pokémon League's E4/Champion rooms and halls.
-#define MUS_AQUA_MAGMA_HIDEOUT      430 // MUS_AJITO
-#define MUS_SAILING                 431 // MUS_M_BOAT
-#define MUS_MT_PYRE                 432 // MUS_M_DUNGON         // Also used in New Mauville and Shoal Cave.
-#define MUS_SLATEPORT               433 // MUS_FINECITY         // Also used in Cycling Road's entrances.
-#define MUS_MT_PYRE_EXTERIOR        434 // MUS_MACHUPI
-#define MUS_SCHOOL                  435 // MUS_P_SCHOOL
-#define MUS_HALL_OF_FAME            436 // MUS_DENDOU
-#define MUS_FALLARBOR               437 // MUS_TONEKUSA         // Also used in Route 114's houses.
-#define MUS_SEALED_CHAMBER          438 // MUS_MABOROSI         // Also used in Ancient Tomb, Desert Ruins and Island Cave.
-#define MUS_CONTEST_WINNER          439 // MUS_CON_FAN
-#define MUS_CONTEST                 440 // MUS_CONTEST0
-#define MUS_ENCOUNTER_MAGMA         441 // MUS_MGM0
-#define MUS_INTRO_BATTLE            442 // MUS_T_BATTLE
-#define MUS_ABNORMAL_WEATHER        443 // MUS_OOAME            // Replaces MUS_WEATHER_KYOGRE from R/S.
-#define MUS_WEATHER_GROUDON         444 // MUS_HIDERI           // Unused, from R/S.
-#define MUS_SOOTOPOLIS              445 // MUS_RUNECITY
-#define MUS_CONTEST_RESULTS         446 // MUS_CON_K
-#define MUS_HALL_OF_FAME_ROOM       447 // MUS_EIKOU_R
-#define MUS_TRICK_HOUSE             448 // MUS_KARAKURI
-#define MUS_ENCOUNTER_TWINS         449 // MUS_HUTAGO
-#define MUS_ENCOUNTER_ELITE_FOUR    450 // MUS_SITENNOU
-#define MUS_ENCOUNTER_HIKER         451 // MUS_YAMA_EYE
-#define MUS_CONTEST_LOBBY           452 // MUS_CONLOBBY
-#define MUS_ENCOUNTER_INTERVIEWER   453 // MUS_INTER_V          // Also used during Petalburg City report at the beginning of the game.
-#define MUS_ENCOUNTER_CHAMPION      454 // MUS_DAIGO
-#define MUS_CREDITS                 455 // MUS_THANKFOR
-#define MUS_END                     456 // MUS_END
-#define MUS_B_FRONTIER              457 // MUS_B_FRONTIER
-#define MUS_B_ARENA                 458 // MUS_B_ARENA
-#define MUS_OBTAIN_B_POINTS         459 // MUS_ME_POINTGET
-#define MUS_REGISTER_MATCH_CALL     460 // MUS_ME_TORE_EYE
-#define MUS_B_PYRAMID               461 // MUS_PYRAMID
-#define MUS_B_PYRAMID_TOP           462 // MUS_PYRAMID_TOP
-#define MUS_B_PALACE                463 // MUS_B_PALACE
-#define MUS_RAYQUAZA_APPEARS        464 // MUS_REKKUU_KOURIN
-#define MUS_B_TOWER                 465 // MUS_SATTOWER
-#define MUS_OBTAIN_SYMBOL           466 // MUS_ME_SYMBOLGET
-#define MUS_B_DOME                  467 // MUS_B_DOME
-#define MUS_B_PIKE                  468 // MUS_B_TUBE
-#define MUS_B_FACTORY               469 // MUS_B_FACTORY
-#define MUS_VS_RAYQUAZA             470 // MUS_VS_REKKU         // Identical to MUS_VS_KYOGRE_GROUDON.
-#define MUS_VS_FRONTIER_BRAIN       471 // MUS_VS_FRONT
-#define MUS_VS_MEW                  472 // MUS_VS_MEW
-#define MUS_B_DOME_LOBBY            473 // MUS_B_DOME1
-#define MUS_VS_WILD                 474 // MUS_BATTLE27
-#define MUS_VS_AQUA_MAGMA           475 // MUS_BATTLE31
-#define MUS_VS_TRAINER              476 // MUS_BATTLE20
-#define MUS_VS_GYM_LEADER           477 // MUS_BATTLE32
-#define MUS_VS_CHAMPION             478 // MUS_BATTLE33
-#define MUS_VS_REGI                 479 // MUS_BATTLE36
-#define MUS_VS_KYOGRE_GROUDON       480 // MUS_BATTLE34
-#define MUS_VS_RIVAL                481 // MUS_BATTLE35
-#define MUS_VS_ELITE_FOUR           482 // MUS_BATTLE38
-#define MUS_VS_AQUA_MAGMA_LEADER    483 // MUS_BATTLE30
+#define MUS_DP_DANCE_DIFFICULT      410
+#define MUS_DP_DANCE_EASY           411
+#define MUS_DP_DAWN                 412
+#define MUS_DP_DEX_RATING           413
+#define MUS_DP_ENCOUNTER_ACE_TRAINER 414
+#define MUS_DP_ENCOUNTER_ARTIST     415
+#define MUS_DP_ENCOUNTER_BOY        416
+#define MUS_DP_ENCOUNTER_CHAMPION   417
+#define MUS_DP_ENCOUNTER_CYCLIST    418
+#define MUS_DP_ENCOUNTER_ELITE_FOUR 419
+#define MUS_DP_ENCOUNTER_GALACTIC   420
+#define MUS_DP_ENCOUNTER_GIRL       421
+#define MUS_DP_ENCOUNTER_HIKER      422
+#define MUS_DP_ENCOUNTER_INTENSE    423
+#define MUS_DP_ENCOUNTER_LADY       424
+#define MUS_DP_ENCOUNTER_RICH       425
+#define MUS_DP_ENCOUNTER_SAILOR     426
+#define MUS_DP_ENCOUNTER_SUSPICIOUS 427
+#define MUS_DP_ENCOUNTER_TWINS      428
+#define MUS_DP_ETERNA_DAY           429
+#define MUS_DP_ETERNA_FOREST        430
+#define MUS_DP_ETERNA_NIGHT         431
+#define MUS_DP_EVOLUTION            432
+#define MUS_DP_EVOLVED              433
+#define MUS_DP_FIGHT_AREA_DAY       434
+#define MUS_DP_FIGHT_AREA_NIGHT     435
+#define MUS_DP_FLAG_CAPTURED        436
+#define MUS_DP_FLOAROMA_DAY         437
+#define MUS_DP_FLOAROMA_NIGHT       438
+#define MUS_DP_FOLLOW_ME            439
+#define MUS_DP_GALACTIC_ETERNA_BUILDING 440
+#define MUS_DP_GALACTIC_HQ_BASEMENT 441
+#define MUS_DP_GALACTIC_HQ          442
+#define MUS_DP_GAME_CORNER          443
+#define MUS_DP_GREAT_MARSH          444
+#define MUS_DP_GTS                  445
+#define MUS_DP_GYM                  446
+#define MUS_DP_HALL_OF_FAME_ROOM    447
+#define MUS_DP_HALL_OF_FAME         448
+#define MUS_DP_HALL_OF_ORIGIN       449
+#define MUS_DP_HEAL                 450
+#define MUS_DP_HEARTHOME_DAY        451
+#define MUS_DP_HEARTHOME_NIGHT      452
+#define MUS_DP_INSIDE_POKEMON_LEAGUE 453
+#define MUS_DP_INTRO                454
+#define MUS_DP_JUBILIFE_DAY         455
+#define MUS_DP_JUBILIFE_NIGHT       456
+#define MUS_DP_LAKE_CAVERNS         457
+#define MUS_DP_LAKE_EVENT           458
+#define MUS_DP_LAKE                 459
+#define MUS_DP_LEGEND_APPEARS       460
+#define MUS_DP_LETS_GO_TOGETHER     461
+#define MUS_DP_LEVEL_UP             462
+#define MUS_DP_LUCAS                463
+#define MUS_DP_MOVE_DELETED         464
+#define MUS_DP_MT_CORONET           465
+#define MUS_DP_MYSTERY_GIFT         466
+#define MUS_DP_OBTAIN_ACCESSORY     467
+#define MUS_DP_OBTAIN_BADGE         468
+#define MUS_DP_OBTAIN_BERRY         469
+#define MUS_DP_OBTAIN_ITEM          470
+#define MUS_DP_OBTAIN_KEY_ITEM      471
+#define MUS_DP_OBTAIN_TMHM          472
+#define MUS_DP_OLD_CHATEAU          473
+#define MUS_DP_OREBURGH_DAY         474
+#define MUS_DP_OREBURGH_GATE        475
+#define MUS_DP_OREBURGH_MINE        476
+#define MUS_DP_OREBURGH_NIGHT       477
+#define MUS_DP_POFFINS              478
+#define MUS_DP_POKE_CENTER_DAY      479
+#define MUS_DP_POKE_CENTER_NIGHT    480
+#define MUS_DP_POKE_MART            481
+#define MUS_DP_POKE_RADAR           482
+#define MUS_DP_POKEMON_LEAGUE_DAY   483
+#define MUS_DP_POKEMON_LEAGUE_NIGHT 484
 // FRLG Music
-#define MUS_RG_FOLLOW_ME            484 // MUS_RG_ANNAI
 #define MUS_RG_GAME_CORNER          485 // MUS_RG_SLOT
 #define MUS_RG_ROCKET_HIDEOUT       486 // MUS_RG_AJITO
 #define MUS_RG_GYM                  487 // MUS_RG_GYM
@@ -542,10 +543,137 @@
 #define PH_NURSE_BLEND              607
 #define PH_NURSE_HELD               608
 #define PH_NURSE_SOLO               609
-#define MUS_NOSTALGIA_INCARNATE_ZEPHYR_TOWN 610
-#define MUS_OCEAN_SIDE_THEME        611
-#define MUS_CABRILLO_CITY           612
-#define MUS_ROUTE_648               613
+#define MUS_DP_POKETCH              610
+#define MUS_DP_RIVAL                611
+#define MUS_DP_ROUTE201_DAY         612
+#define MUS_DP_ROUTE201_NIGHT       613
+#define MUS_DP_ROUTE203_DAY         614
+#define MUS_DP_ROUTE203_NIGHT       615
+#define MUS_DP_ROUTE205_DAY         616
+#define MUS_DP_ROUTE205_NIGHT       617
+#define MUS_DP_ROUTE206_DAY         618
+#define MUS_DP_ROUTE206_NIGHT       619
+#define MUS_DP_ROUTE209_DAY         620
+#define MUS_DP_ROUTE209_NIGHT       621
+#define MUS_DP_ROUTE210_DAY         622
+#define MUS_DP_ROUTE210_NIGHT       623
+#define MUS_DP_ROUTE216_DAY         624
+#define MUS_DP_ROUTE216_NIGHT       625
+#define MUS_DP_ROUTE225_DAY         626
+#define MUS_DP_ROUTE225_NIGHT       627
+#define MUS_DP_ROUTE228_DAY         628
+#define MUS_DP_ROUTE228_NIGHT       629
+#define MUS_DP_ROWAN_LAB            630
+#define MUS_DP_ROWAN                631
+#define MUS_DP_SANDGEM_DAY          632
+#define MUS_DP_SANDGEM_NIGHT        633
+#define MUS_DP_SLOTS_JACKPOT        634
+#define MUS_DP_SLOTS_UNUSED         635
+#define MUS_DP_SLOTS_WIN            636
+#define MUS_DP_SNOWPOINT_DAY        637
+#define MUS_DP_SNOWPOINT_NIGHT      638
+#define MUS_DP_SOLACEON_DAY         639
+#define MUS_DP_SOLACEON_NIGHT       640
+#define MUS_DP_SPEAR_PILLAR         641
+#define MUS_DP_STARK_MOUNTAIN       642
+#define MUS_DP_SUNYSHORE_DAY        643
+#define MUS_DP_SUNYSHORE_NIGHT      644
+#define MUS_DP_SURF                 645
+#define MUS_DP_TITLE                646
+#define MUS_DP_TV_BROADCAST         647
+#define MUS_DP_TV_END               648
+#define MUS_DP_TV_STATION           649
+#define MUS_DP_TWINLEAF_DAY         650
+#define MUS_DP_TWINLEAF_NIGHT       651
+#define MUS_DP_UNDERGROUND          652
+#define MUS_DP_VALOR_LAKEFRONT_DAY  653
+#define MUS_DP_VALOR_LAKEFRONT_NIGHT 654
+#define MUS_DP_VEILSTONE_DAY        655
+#define MUS_DP_VEILSTONE_NIGHT      656
+#define MUS_DP_VICTORY_CHAMPION     657
+#define MUS_DP_VICTORY_ELITE_FOUR   658
+#define MUS_DP_VICTORY_GALACTIC     659
+#define MUS_DP_VICTORY_GYM_LEADER   660
+#define MUS_DP_VICTORY_ROAD         661
+#define MUS_DP_VICTORY_TRAINER      662
+#define MUS_DP_VICTORY_WILD         663
+#define MUS_DP_VS_ARCEUS            664
+#define MUS_DP_VS_CHAMPION          665
+#define MUS_DP_VS_DIALGA_PALKIA     666
+#define MUS_DP_VS_ELITE_FOUR        667
+#define MUS_DP_VS_GALACTIC_BOSS     668
+#define MUS_DP_VS_GALACTIC_COMMANDER 669
+#define MUS_DP_VS_GALACTIC          670
+#define MUS_DP_VS_GYM_LEADER        671
+#define MUS_DP_VS_LEGEND            672
+#define MUS_DP_VS_RIVAL             673
+#define MUS_DP_VS_TRAINER           674
+#define MUS_DP_VS_UXIE_MESPRIT_AZELF 675
+#define MUS_DP_VS_WILD              676
+#define MUS_DP_WFC                  677
+#define MUS_HG_AZALEA               678
+#define MUS_HG_B_ARCADE             679
+#define MUS_HG_B_CASTLE             680
+#define MUS_HG_B_FACTORY            681
+#define MUS_HG_B_HALL               682
+#define MUS_HG_B_TOWER_RECEPTION    683
+#define MUS_HG_B_TOWER              684
+#define MUS_HG_BELL_TOWER           685
+#define MUS_HG_BUG_CATCHING_CONTEST 686
+#define MUS_HG_BUG_CONTEST_1ST_PLACE 687
+#define MUS_HG_BUG_CONTEST_2ND_PLACE 688
+#define MUS_HG_BUG_CONTEST_3RD_PLACE 689
+#define MUS_HG_BUG_CONTEST_PREP     690
+#define MUS_HG_BURNED_TOWER         691
+#define MUS_HG_CARD_FLIP_GAME_OVER  692
+#define MUS_HG_CARD_FLIP            693
+#define MUS_HG_CAUGHT               694
+#define MUS_HG_CELADON              695
+#define MUS_HG_CERULEAN             696
+#define MUS_HG_CHERRYGROVE          697
+#define MUS_HG_CIANWOOD             698
+#define MUS_HG_CINNABAR             699
+#define MUS_HG_CLAIR                700
+#define MUS_HG_CREDITS              701
+#define MUS_HG_CYCLING              702
+#define MUS_HG_DANCE_THEATER        703
+#define MUS_HG_DEX_RATING_1         704
+#define MUS_HG_DEX_RATING_2         705
+#define MUS_HG_DEX_RATING_3         706
+#define MUS_HG_DEX_RATING_4         707
+#define MUS_HG_DEX_RATING_5         708
+#define MUS_HG_DEX_RATING_6         709
+#define MUS_HG_DRAGONS_DEN          710
+#define MUS_HG_ECRUTEAK             711
+#define MUS_HG_ELM_LAB              712
+#define MUS_HG_ENCOUNTER_BOY_1      713
+#define MUS_HG_ENCOUNTER_BOY_2      714
+#define MUS_HG_ENCOUNTER_GIRL_1     715
+#define MUS_HG_ENCOUNTER_GIRL_2     716
+#define MUS_HG_ENCOUNTER_KIMONO_GIRL 717
+#define MUS_HG_ENCOUNTER_RIVAL      718
+#define MUS_HG_ENCOUNTER_ROCKET     719
+#define MUS_HG_ENCOUNTER_SAGE       720
+#define MUS_HG_ENCOUNTER_SUSPICIOUS_1 721
+#define MUS_HG_ENCOUNTER_SUSPICIOUS_2 722
+#define MUS_HG_END                  723
+#define MUS_HG_ETHAN                724
+#define MUS_HG_EUSINE               725
+#define MUS_HG_EVOLUTION_NO_INTRO   726
+#define MUS_HG_EVOLUTION            727
+#define MUS_HG_EVOLVED              728
+#define MUS_HG_FOLLOW_ME_1          729
+#define MUS_HG_FOLLOW_ME_2          730
+#define MUS_HG_GAME_CORNER_WIN      731
+#define MUS_HG_GAME_CORNER          732
+#define MUS_HG_GLOBAL_TERMINAL      733
+#define MUS_HG_GOLDENROD            734
+#define MUS_HG_GTS                  735
+#define MUS_HG_GYM                  736
+#define MUS_HG_HALL_OF_FAME         737
+#define MUS_HG_HEAL                 738
+#define MUS_CABRILLO_CITY           890
+#define MUS_ROUTE_648               891
 
 #define MUS_ROUTE118                0x7FFF  // Map is split into 2 music sections. controlled by GetCurrLocationDefaultMusic().
 
