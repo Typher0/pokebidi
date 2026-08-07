@@ -493,7 +493,7 @@ EventScript_RegisterProfBirch::
 	msgbox MatchCall_Text_BirchRegisterCall, MSGBOX_DEFAULT
 	closemessage
 	delay 30
-	playfanfare MUS_DP_POKE_RADAR
+	playfanfare MUS_HG_POKEGEAR_REGISTERED
 	msgbox MatchCall_Text_RegisteredBirch, MSGBOX_DEFAULT
 	waitfanfare
 	closemessage

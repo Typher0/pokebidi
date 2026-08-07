@@ -451,7 +451,7 @@ LittlerootTown_BrendansHouse_1F_EventScript_HeresPokeNav::
 	setflag FLAG_ADDED_MATCH_CALL_TO_POKENAV 
 	setvar VAR_LITTLEROOT_INTRO_STATE, 4
 	delay 30
-	playfanfare MUS_DP_POKE_RADAR
+	playfanfare MUS_HG_POKEGEAR_REGISTERED
 	msgbox PlayersHouse_1F_Text_RegisteredMom, MSGBOX_DEFAULT
 	waitfanfare
 	closemessage

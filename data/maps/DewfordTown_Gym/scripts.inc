@@ -156,7 +156,7 @@ DewfordTown_Gym_EventScript_BrawlyDefeated::
 	call DewfordTown_Gym_EventScript_GiveBulkUp
 	closemessage
 	delay 30
-	playfanfare MUS_DP_POKE_RADAR
+	playfanfare MUS_HG_POKEGEAR_REGISTERED
 	msgbox DewfordTown_Gym_Text_RegisteredBrawly, MSGBOX_DEFAULT
 	waitfanfare
 	closemessage

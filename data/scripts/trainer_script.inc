@@ -3,7 +3,7 @@ Std_RegisteredInMatchCall::
 	buffertrainername STR_VAR_2, VAR_0x8000
 	closemessage
 	delay 30
-	playfanfare MUS_DP_POKE_RADAR
+	playfanfare MUS_HG_POKEGEAR_REGISTERED
 	msgbox gText_RegisteredTrainerinPokeNav, MSGBOX_DEFAULT
 	waitfanfare
 	closemessage
