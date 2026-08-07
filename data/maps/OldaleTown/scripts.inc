@@ -39,7 +39,7 @@ OldaleTown_EventScript_MartEmployee::
 	goto_if_set FLAG_RECEIVED_POTION_OLDALE, OldaleTown_EventScript_ExplainPotion
 	goto_if_set FLAG_TEMP_1, OldaleTown_EventScript_ExplainPotion
 	setflag FLAG_TEMP_1
-	playbgm MUS_FOLLOW_ME, FALSE
+	playbgm MUS_HG_FOLLOW_ME_1, FALSE
 	msgbox OldaleTown_Text_IWorkAtPokemonMart, MSGBOX_DEFAULT
 	closemessage
 	switch VAR_FACING

@@ -219,7 +219,7 @@ BattleFrontier_BattleDomePreBattleRoom_EventScript_ReturnFromBattle::
 	msgbox BattleFrontier_BattleDomePreBattleRoom_Text_RestoreMonsToFullHealth, MSGBOX_DEFAULT
 	special LoadPlayerParty
 	frontier_setpartyorder FRONTIER_PARTY_SIZE
-	playfanfare MUS_HEAL
+	playfanfare MUS_DP_HEAL
 	waitfanfare
 	special HealPlayerParty
 	call BattleFrontier_BattleDomePreBattleRoom_EventScript_RoundCompleteMessage

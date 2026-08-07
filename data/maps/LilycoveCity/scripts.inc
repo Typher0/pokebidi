@@ -233,7 +233,7 @@ LilycoveCity_EventScript_Rival::
 	end
 
 LilycoveCity_EventScript_May::
-	playbgm MUS_ENCOUNTER_MAY, TRUE
+	playbgm MUS_DP_DAWN, TRUE
 	call_if_set FLAG_DECLINED_RIVAL_BATTLE_LILYCOVE, LilycoveCity_EventScript_MayAskToBattleAgain
 	call_if_unset FLAG_DECLINED_RIVAL_BATTLE_LILYCOVE, LilycoveCity_EventScript_MayAskToBattle
 	goto_if_eq VAR_RESULT, NO, LilycoveCity_EventScript_DeclineMayBattle
@@ -261,7 +261,7 @@ LilycoveCity_EventScript_DeclineMayBattle::
 	end
 
 LilycoveCity_EventScript_Brendan::
-	playbgm MUS_ENCOUNTER_BRENDAN, TRUE
+	playbgm MUS_DP_LUCAS, TRUE
 	call_if_set FLAG_DECLINED_RIVAL_BATTLE_LILYCOVE, LilycoveCity_EventScript_BrendanAskToBattleAgain
 	call_if_unset FLAG_DECLINED_RIVAL_BATTLE_LILYCOVE, LilycoveCity_EventScript_BrendanAskToBattle
 	goto_if_eq VAR_RESULT, NO, LilycoveCity_EventScript_DeclineBrendanBattle

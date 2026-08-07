@@ -2,7 +2,7 @@
   "id": "MAP_PETALBURG_CITY_OTNARS_INN_2F",
   "name": "PetalburgCity_OtnarsInn_2F",
   "layout": "LAYOUT_PETALBURG_CITY_OTNARS_INN_2F",
-  "music": "MUS_PETALBURG",
+  "music": "MUS_DP_JUBILIFE_DAY",
   "region_map_section": "MAPSEC_PETALBURG_CITY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

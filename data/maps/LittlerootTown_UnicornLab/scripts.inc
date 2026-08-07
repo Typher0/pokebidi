@@ -284,7 +284,7 @@ LittlerootTown_UnicornLab_EventScript_StarterCaught::
 	waitmovement 0
 	msgbox LittlerootTown_UnicornLab_Text_HereDex, MSGBOX_DEFAULT
 	closemessage
-	playfanfare MUS_OBTAIN_ITEM
+	playfanfare MUS_DP_OBTAIN_ITEM
 	message LittlerootTown_UnicornLab_Text_DexGet
 	waitmessage
 	waitfanfare

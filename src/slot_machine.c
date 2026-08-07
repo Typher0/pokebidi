@@ -1530,17 +1530,17 @@ static bool8 SlotTask_CheckMatches(struct Task *task)
         }
         if (sSlotMachine->matches & ((1 << MATCH_BLUE_7) | (1 << MATCH_RED_7)))
         {
-            PlayFanfare(MUS_SLOTS_JACKPOT);
+            PlayFanfare(MUS_DP_SLOTS_JACKPOT);
             CreateDigitalDisplayScene(DIG_DISPLAY_BONUS_BIG);
         }
         else if (sSlotMachine->matches & (1 << MATCH_MIXED_7))
         {
-            PlayFanfare(MUS_SLOTS_JACKPOT);
+            PlayFanfare(MUS_DP_SLOTS_JACKPOT);
             CreateDigitalDisplayScene(DIG_DISPLAY_BONUS_REG);
         }
         else
         {
-            PlayFanfare(MUS_SLOTS_WIN);
+            PlayFanfare(MUS_DP_SLOTS_WIN);
             CreateDigitalDisplayScene(DIG_DISPLAY_WIN);
         }
 
@@ -3579,7 +3579,7 @@ static void ReelTime_Init(struct Task *task)
     CreateReelTimeNumberGapSprite();
     GetReelTimeDraw();
     StopMapMusic();
-    PlayNewMapMusic(MUS_ROULETTE);
+    PlayNewMapMusic(MUS_DP_SLOTS_UNUSED);
 }
 
 static void ReelTime_WindowEnter(struct Task *task)
@@ -3732,7 +3732,7 @@ static void ReelTime_PikachuReact(struct Task *task)
         {
             task->tTimer2 = 0xa0;
             StartSpriteAnimIfDifferent(&gSprites[sSlotMachine->reelTimePikachuSpriteId], 5);
-            PlayFanfare(MUS_TOO_BAD);
+            PlayFanfare(MUS_HG_DEX_RATING_1);
         }
         else
         {
@@ -3744,7 +3744,7 @@ static void ReelTime_PikachuReact(struct Task *task)
                 ResetPikaPowerBolts();
                 sSlotMachine->pikaPowerBolts = 0;
             }
-            PlayFanfare(MUS_SLOTS_WIN);
+            PlayFanfare(MUS_DP_SLOTS_WIN);
         }
     }
 }
@@ -3825,7 +3825,7 @@ static void ReelTime_ExplodeMachine(struct Task *task)
     task->data[4] = 4;
     task->tTimer1 = 0;
     StopMapMusic();
-    PlayFanfare(MUS_TOO_BAD);
+    PlayFanfare(MUS_HG_DEX_RATING_1);
     PlaySE(SE_M_EXPLOSION);
 }
 

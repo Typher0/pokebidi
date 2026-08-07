@@ -449,7 +449,7 @@ MauvilleCity_EventScript_RegisterWallyCall::
 	pokenavcall MauvilleCity_Text_WallyPokenavCall
 	waitmessage
 	delay 30
-	playfanfare MUS_REGISTER_MATCH_CALL
+	playfanfare MUS_DP_POKE_RADAR
 	msgbox MauvilleCity_Text_RegisteredWally, MSGBOX_DEFAULT
 	waitfanfare
 	closemessage

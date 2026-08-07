@@ -74,7 +74,7 @@ BattleFrontier_BattlePikeRoomNormal_EventScript_WonHardBattle::
 	lock
 	faceplayer
 	msgbox BattleFrontier_BattlePikeRoomNormal_Text_RestoreToFullHealth, MSGBOX_DEFAULT
-	playfanfare MUS_HEAL
+	playfanfare MUS_DP_HEAL
 	waitfanfare
 	special HealPlayerParty
 	msgbox BattleFrontier_BattlePikeRoomNormal_Text_EnjoyRestOfChallenge2, MSGBOX_DEFAULT
@@ -142,7 +142,7 @@ BattleFrontier_BattlePikeRoomNormal_EventScript_DefeatedLucySilver::
 	goto_if_ne VAR_RESULT, 0, BattleFrontier_BattlePikeRoomNormal_EventScript_DefeatedLucy
 	msgbox BattleFrontier_BattlePikeRoomNormal_Text_LucyShowMeFrontierPass, MSGBOX_DEFAULT
 	waitmessage
-	playfanfare MUS_OBTAIN_SYMBOL
+	playfanfare MUS_DP_OBTAIN_ACCESSORY
 	message BattleFrontier_BattlePikeRoomNormal_Text_ReceivedLuckSymbol
 	waitmessage
 	waitfanfare
@@ -167,7 +167,7 @@ BattleFrontier_BattlePikeRoomNormal_EventScript_DefeatedLucyGold::
 	goto_if_eq VAR_RESULT, 2, BattleFrontier_BattlePikeRoomNormal_EventScript_DefeatedLucy
 	msgbox BattleFrontier_BattlePikeRoomNormal_Text_LucyFrontierPass, MSGBOX_DEFAULT
 	waitmessage
-	playfanfare MUS_OBTAIN_SYMBOL
+	playfanfare MUS_DP_OBTAIN_ACCESSORY
 	message BattleFrontier_BattlePikeRoomNormal_Text_LuckSymbolTookGoldenShine
 	waitmessage
 	waitfanfare
@@ -196,14 +196,14 @@ BattleFrontier_BattlePikeRoomNormal_EventScript_PreQueenNoHeal::
 
 BattleFrontier_BattlePikeRoomNormal_EventScript_PreQueenHealOneMon::
 	msgbox BattleFrontier_BattlePikeRoomNormal_Text_ChoseRoomHealOne, MSGBOX_DEFAULT
-	playfanfare MUS_HEAL
+	playfanfare MUS_DP_HEAL
 	waitfanfare
 	goto BattleFrontier_BattlePikeRoomNormal_EventScript_LucyEnter
 	end
 
 BattleFrontier_BattlePikeRoomNormal_EventScript_PreQueenHealTwoMons::
 	msgbox BattleFrontier_BattlePikeRoomNormal_Text_ChoseRoomHealTwo, MSGBOX_DEFAULT
-	playfanfare MUS_HEAL
+	playfanfare MUS_DP_HEAL
 	waitfanfare
 	goto BattleFrontier_BattlePikeRoomNormal_EventScript_LucyEnter
 	end
@@ -215,7 +215,7 @@ BattleFrontier_BattlePikeRoomNormal_EventScript_EnterFullHealRoom::
 	waitmovement 0
 	message BattleFrontier_BattlePikeRoomNormal_Text_WillRestoreToFullHealth
 	waitmessage
-	playfanfare MUS_HEAL
+	playfanfare MUS_DP_HEAL
 	waitfanfare
 	special HealPlayerParty
 	msgbox BattleFrontier_BattlePikeRoomNormal_Text_EnjoyRestOfChallenge, MSGBOX_DEFAULT
@@ -544,7 +544,7 @@ BattleFrontier_BattlePikeRoomNormal_EventScript_HealNPC::
 	pike_healonetwomons
 	call_if_eq VAR_RESULT, 2, BattleFrontier_BattlePikeRoomNormal_EventScript_WillRestoreTwoMons
 	call_if_eq VAR_RESULT, 1, BattleFrontier_BattlePikeRoomNormal_EventScript_WillRestoreOneMon
-	playfanfare MUS_HEAL
+	playfanfare MUS_DP_HEAL
 	waitfanfare
 	msgbox BattleFrontier_BattlePikeRoomNormal_Text_BestOfLuckFarewell, MSGBOX_DEFAULT
 	closemessage

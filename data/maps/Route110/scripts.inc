@@ -15,7 +15,7 @@ Route110_OnTransition:
 	end
 
 Route110_EventScript_SaveCyclingMusic::
-	savebgm MUS_CYCLING
+	savebgm MUS_DP_CYCLING
 	return
 
 Route110_OnFrame:
@@ -390,11 +390,11 @@ Route110_EventScript_RivalScene::
 	end
 
 Route110_EventScript_PlayMayMusic::
-	playbgm MUS_ENCOUNTER_MAY, TRUE
+	playbgm MUS_DP_DAWN, TRUE
 	return
 
 Route110_EventScript_PlayBrendanMusic::
-	playbgm MUS_ENCOUNTER_BRENDAN, TRUE
+	playbgm MUS_DP_LUCAS, TRUE
 	return
 
 Route110_EventScript_MayBattle::
@@ -618,7 +618,7 @@ Route110_EventScript_BirchScene::
 	msgbox Route110_Text_HeardYouInstallMatchCall, MSGBOX_DEFAULT
 	closemessage
 	delay 30
-	playfanfare MUS_REGISTER_MATCH_CALL
+	playfanfare MUS_DP_POKE_RADAR
 	msgbox Route110_Text_RegisteredBirchInPokenav, MSGBOX_DEFAULT
 	waitfanfare
 	closemessage

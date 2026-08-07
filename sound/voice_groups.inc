@@ -104,3 +104,7 @@
 .include "sound/voicegroups/voicegroup271.inc"
 .include "sound/voicegroups/voicegroup272.inc"
 .include "sound/voicegroups/voicegroup273.inc"
+.include "sound/voicegroups/mus_zephyr_town.inc"
+.include "sound/voicegroups/mus_redburro_city.inc"
+.include "sound/voicegroups/mus_cabrillo_city.inc"
+.include "sound/voicegroups/mus_route_648.inc"

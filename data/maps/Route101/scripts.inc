@@ -47,7 +47,7 @@ Route101_EventScript_SeanLeft::
 	applymovement LOCALID_ROUTE101_SEAN, Common_Movement_Delay48
 	waitmovement 0
 	delay 10
-	playbgm MUS_ENCOUNTER_BRENDAN, TRUE
+	playbgm MUS_DP_LUCAS, TRUE
 	applymovement LOCALID_ROUTE101_SEAN, Route101_Movement_SeanLeft
 	waitmovement 0
 	msgbox Route101_Text_GoToLab, MSGBOX_DEFAULT
@@ -74,7 +74,7 @@ Route101_EventScript_SeanRight::
 	applymovement LOCALID_ROUTE101_SEAN, Common_Movement_Delay48
 	waitmovement 0
 	delay 10
-	playbgm MUS_ENCOUNTER_BRENDAN, TRUE
+	playbgm MUS_DP_LUCAS, TRUE
 	applymovement LOCALID_ROUTE101_SEAN, Route101_Movement_SeanRight
 	waitmovement 0
 	msgbox Route101_Text_GoToLab, MSGBOX_DEFAULT

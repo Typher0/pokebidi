@@ -33,7 +33,7 @@ ApricornTree_EventScript_PickApricorn::
 .if OW_SHOW_ITEM_DESCRIPTIONS != OW_ITEM_DESCRIPTIONS_OFF
     showberrydescription
 .endif
-    playfanfare MUS_OBTAIN_BERRY
+    playfanfare MUS_DP_OBTAIN_BERRY
     waitmessage
     waitfanfare
     waitbuttonpress

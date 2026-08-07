@@ -91,7 +91,7 @@ FallarborTown_BattleTentBattleRoom_EventScript_IncrementBattleNum::
 	special LoadPlayerParty
 	special SavePlayerParty
 	frontier_setpartyorder FRONTIER_PARTY_SIZE
-	playfanfare MUS_HEAL
+	playfanfare MUS_DP_HEAL
 	waitfanfare
 	special HealPlayerParty
 FallarborTown_BattleTentBattleRoom_EventScript_AskContinueChallenge::

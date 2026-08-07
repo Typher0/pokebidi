@@ -17,7 +17,7 @@ PetalburgCity_EventScript_MoveGymBoyToWestEntrance::
 
 PetalburgCity_EventScript_DisableMapNameAndMusic::
 	setflag FLAG_HIDE_MAP_NAME_POPUP
-	savebgm MUS_FOLLOW_ME
+	savebgm MUS_HG_FOLLOW_ME_1
 	return
 
 PetalburgCity_EventScript_SetGymDoorsUnlocked::
@@ -273,7 +273,7 @@ PetalburgCity_EventScript_ShowGymToPlayer::
 	applymovement LOCALID_GYM_BOY, Common_Movement_FacePlayer
 	waitmovement 0
 	setvar VAR_PETALBURG_CITY_STATE, 1
-	playbgm MUS_FOLLOW_ME, FALSE
+	playbgm MUS_HG_FOLLOW_ME_1, FALSE
 	playse SE_PIN
 	applymovement LOCALID_GYM_BOY, Common_Movement_ExclamationMark
 	waitmovement 0
@@ -365,7 +365,7 @@ PetalburgCity_EventScript_GiveLetterToOldLady::
 	msgbox PetalburgCity_Text_OldLady, MSGBOX_DEFAULT
 	closemessage
 	removeitem ITEM_LETTER
-	playbgm MUS_FOLLOW_ME, FALSE
+	playbgm MUS_HG_FOLLOW_ME_1, FALSE
 	switch VAR_FACING
 	case DIR_SOUTH, PetalburgCity_EventScript_OldLadyTrainSouth
 	case DIR_NORTH, PetalburgCity_EventScript_OldLadyTrainNorth

@@ -2,7 +2,7 @@
   "id": "MAP_OCCHITA_VILLAGE",
   "name": "OcchitaVillage",
   "layout": "LAYOUT_OCCHITA_VILLAGE",
-  "music": "MUS_DUMMY",
+  "music": "MUS_HG_ECRUTEAK",
   "region_map_section": "MAPSEC_PALLET_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

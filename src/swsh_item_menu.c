@@ -7250,7 +7250,7 @@ static void BagMenu_RareCandyDoLearnMoveStep(u8 taskId)
 
 static void Task_BagMenu_MoveLearnFanfare(u8 taskId)
 {
-    PlayFanfare(MUS_LEVEL_UP);
+    PlayFanfare(MUS_DP_LEVEL_UP);
     gTasks[taskId].func = Task_BagMenu_MoveLearnFanfareWait;
 }
 

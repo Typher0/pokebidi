@@ -31,22 +31,22 @@ Std_MsgboxYesNo:
 
 Std_ReceivedItem::
 	textcolor NPC_TEXT_COLOR_NEUTRAL
-	call_if_eq VAR_0x8002, MUS_LEVEL_UP, EventScript_ReceivedItemFanfare1
-	call_if_eq VAR_0x8002, MUS_RG_OBTAIN_KEY_ITEM, EventScript_ReceivedItemFanfare2
+	call_if_eq VAR_0x8002, MUS_DP_LEVEL_UP, EventScript_ReceivedItemFanfare1
+	call_if_eq VAR_0x8002, MUS_HG_OBTAIN_KEY_ITEM, EventScript_ReceivedItemFanfare2
 	message NULL
 	waitmessage
 	waitfanfare
-	call_if_eq VAR_0x8002, MUS_LEVEL_UP, EventScript_ReceivedItemWaitFanfare
+	call_if_eq VAR_0x8002, MUS_DP_LEVEL_UP, EventScript_ReceivedItemWaitFanfare
 	putitemaway VAR_0x8000, VAR_0x8001
 	call EventScript_RestorePrevTextColor
 	return
 
 EventScript_ReceivedItemFanfare1::
-	playfanfare MUS_LEVEL_UP
+	playfanfare MUS_DP_LEVEL_UP
 	return
 
 EventScript_ReceivedItemFanfare2::
-	playfanfare MUS_RG_OBTAIN_KEY_ITEM
+	playfanfare MUS_HG_OBTAIN_KEY_ITEM
 	return
 
 EventScript_ReceivedItemWaitFanfare::
@@ -55,7 +55,7 @@ EventScript_ReceivedItemWaitFanfare::
 
 Std_MsgboxGetPoints:
 	message NULL
-	playfanfare MUS_OBTAIN_B_POINTS
+	playfanfare MUS_PL_OBTAIN_B_POINTS
 	waitfanfare
 	waitmessage
 	return

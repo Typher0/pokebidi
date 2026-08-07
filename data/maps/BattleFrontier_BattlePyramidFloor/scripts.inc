@@ -32,7 +32,7 @@ BattleFrontier_BattlePyramidFloor_EventScript_ShowMapName::
 	end
 
 BattleFrontier_BattlePyramidFloor_EventScript_PlayPyramidMusic::
-	playbgm MUS_B_PYRAMID, FALSE
+	playbgm MUS_DP_B_TOWER, FALSE
 	setvar VAR_TEMP_PLAYING_PYRAMID_MUSIC, 1
 	end
 

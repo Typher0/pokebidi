@@ -27,23 +27,23 @@ ContestHall_EventScript_ReadyContestMusic::
 	return
 
 ContestHall_EventScript_SaveContestMusicPlayer1::
-	savebgm MUS_LINK_CONTEST_P1
+	savebgm MUS_DP_CONTEST
 	return
 
 ContestHall_EventScript_SaveContestMusicPlayer2::
-	savebgm MUS_LINK_CONTEST_P2
+	savebgm MUS_DP_CONTEST
 	return
 
 ContestHall_EventScript_SaveContestMusicPlayer3::
-	savebgm MUS_LINK_CONTEST_P3
+	savebgm MUS_DP_CONTEST
 	return
 
 ContestHall_EventScript_SaveContestMusicPlayer4::
-	savebgm MUS_LINK_CONTEST_P4
+	savebgm MUS_DP_CONTEST
 	return
 
 ContestHall_EventScript_SaveContestMusic::
-	savebgm MUS_CONTEST
+	savebgm MUS_DP_CONTEST
 	return
 
 ContestHall_OnResume:

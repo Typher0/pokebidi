@@ -2,7 +2,7 @@
   "id": "MAP_GANARIA_TOWN",
   "name": "GanariaTown",
   "layout": "LAYOUT_GANARIA_TOWN",
-  "music": "MUS_DUMMY",
+  "music": "MUS_HG_AZALEA",
   "region_map_section": "MAPSEC_VIRIDIAN_CITY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

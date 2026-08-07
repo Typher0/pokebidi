@@ -2,7 +2,7 @@
   "id": "MAP_MT_CHIMNEY",
   "name": "MtChimney",
   "layout": "LAYOUT_MT_CHIMNEY",
-  "music": "MUS_RG_VIRIDIAN_FOREST",
+  "music": "MUS_DP_MT_CORONET",
   "region_map_section": "MAPSEC_MT_CHIMNEY",
   "requires_flash": false,
   "weather": "WEATHER_SHADE",

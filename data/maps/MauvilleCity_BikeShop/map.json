@@ -2,8 +2,7 @@
   "id": "MAP_MAUVILLE_CITY_BIKE_SHOP",
   "name": "MauvilleCity_BikeShop",
   "layout": "LAYOUT_MAUVILLE_CITY_BIKE_SHOP",
-  "music": "MUS_RUSTBORO",
-  "region": "REGION_HOENN",
+  "music": "MUS_DP_SOLACEON_DAY",
   "region_map_section": "MAPSEC_MAUVILLE_CITY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -76,5 +75,6 @@
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "MauvilleCity_BikeShop_EventScript_AcroBikeHandbook"
     }
-  ]
+  ],
+  "region": "REGION_HOENN"
 }

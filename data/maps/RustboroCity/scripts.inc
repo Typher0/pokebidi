@@ -282,7 +282,7 @@ RustboroCity_EventScript_StolenGoodsTrigger4::
 RustboroCity_EventScript_StolenGoodsScene::
 	msgbox RustboroCity_Text_OutOfTheWay, MSGBOX_DEFAULT
 	closemessage
-	playbgm MUS_ENCOUNTER_AQUA, FALSE
+	playbgm MUS_DP_ENCOUNTER_GALACTIC, FALSE
 	addobject LOCALID_RUSTBORO_GRUNT
 	addobject LOCALID_RUSTBORO_DEVON_EMPLOYEE
 	applymovement LOCALID_RUSTBORO_GRUNT, RustboroCity_Movement_GruntEscape
@@ -682,11 +682,11 @@ RustboroCity_EventScript_PlayRivalMusic::
 	return
 
 RustboroCity_EventScript_PlayMayMusic::
-	playbgm MUS_ENCOUNTER_MAY, TRUE
+	playbgm MUS_DP_DAWN, TRUE
 	return
 
 RustboroCity_EventScript_PlayBrendanMusic::
-	playbgm MUS_ENCOUNTER_BRENDAN, TRUE
+	playbgm MUS_DP_LUCAS, TRUE
 	return
 
 RustboroCity_EventScript_RivalTrigger0::
@@ -830,7 +830,7 @@ RustboroCity_EventScript_MayEncounter::
 	msgbox RustboroCity_Text_MayHiLetsRegister, MSGBOX_DEFAULT
 	closemessage
 	delay 30
-	playfanfare MUS_REGISTER_MATCH_CALL
+	playfanfare MUS_DP_POKE_RADAR
 	msgbox RustboroCity_Text_RegisteredMay, MSGBOX_DEFAULT
 	waitfanfare
 	closemessage
@@ -898,7 +898,7 @@ RustboroCity_EventScript_BrendanEncounter::
 	msgbox RustboroCity_Text_BrendanHiLetsRegister, MSGBOX_DEFAULT
 	closemessage
 	delay 30
-	playfanfare MUS_REGISTER_MATCH_CALL
+	playfanfare MUS_DP_POKE_RADAR
 	msgbox RustboroCity_Text_RegisteredBrendan, MSGBOX_DEFAULT
 	waitfanfare
 	closemessage

@@ -101,7 +101,7 @@ PokemonLeague_LoreleisRoom_Text_Intro::
 	.string "Your POKéMON will be at my mercy\n"
 	.string "when they are frozen solid.\p"
 	.string "Hahaha!\n"
-	.string "Are you ready?{PLAY_BGM}{MUS_RG_ENCOUNTER_GYM_LEADER}$"
+	.string "Are you ready?{PLAY_BGM}{MUS_DP_ENCOUNTER_ELITE_FOUR}$"
 
 PokemonLeague_LoreleisRoom_Text_RematchIntro::
 	.string "Welcome to the POKéMON LEAGUE.\p"
@@ -114,7 +114,7 @@ PokemonLeague_LoreleisRoom_Text_RematchIntro::
 	.string "Your POKéMON will be at my mercy\n"
 	.string "when they are frozen solid.\p"
 	.string "Hahaha!\n"
-	.string "Are you ready?{PLAY_BGM}{MUS_RG_ENCOUNTER_GYM_LEADER}$"
+	.string "Are you ready?{PLAY_BGM}{MUS_DP_ENCOUNTER_ELITE_FOUR}$"
 
 PokemonLeague_LoreleisRoom_Text_Defeat::
 	.string "…Things shouldn't be this way!$"

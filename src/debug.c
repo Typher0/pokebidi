@@ -4344,7 +4344,11 @@ static void DebugAction_DestroyFollowerNPC(u8 taskId)
     X(MUS_HG_POKEGEAR_REGISTERED) \
     X(MUS_PL_OBTAIN_B_POINTS) \
     X(MUS_HG_SPIN_TRADE) \
-    X(MUS_PL_VS_FRONTIER_BRAIN)
+    X(MUS_PL_VS_FRONTIER_BRAIN) \
+    X(MUS_ZEPHYR_TOWN) \
+    X(MUS_REDBURRO_CITY) \
+    X(MUS_CABRILLO_CITY) \
+    X(MUS_ROUTE_648)
 
 #define SOUND_LIST_SE               \
     X(SE_USE_ITEM)                  \
