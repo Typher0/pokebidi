@@ -1253,7 +1253,7 @@ u16 GetCurrLocationDefaultMusic(void)
         if (gSaveBlock1Ptr->pos.x < 24)
             return MUS_DP_ROUTE201_DAY;
         else
-            return MUS_DP_ROUTE216_DAY;
+            return MUS_DP_ROUTE201_DAY;
     }
 }
 
@@ -1270,7 +1270,7 @@ u16 GetWarpDestinationMusic(void)
          && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_MAUVILLE_CITY))
             return MUS_DP_ROUTE201_DAY;
         else
-            return MUS_DP_ROUTE216_DAY;
+            return MUS_DP_ROUTE201_DAY;
     }
 }
 

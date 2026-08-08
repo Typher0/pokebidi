@@ -373,18 +373,18 @@ gSongTable::
     song mus_dp_dance_difficult, MUSIC_PLAYER_BGM, 0
     song mus_dp_dance_easy, MUSIC_PLAYER_BGM, 0
     song mus_dp_dawn, MUSIC_PLAYER_BGM, 0
-    song mus_dp_level_up, MUSIC_PLAYER_BGM, 0
-    song mus_dp_heal, MUSIC_PLAYER_BGM, 0
-    song mus_dp_obtain_badge, MUSIC_PLAYER_BGM, 0
-    song mus_dp_obtain_item, MUSIC_PLAYER_BGM, 0
-    song mus_dp_evolved, MUSIC_PLAYER_BGM, 0
-    song mus_dp_obtain_tmhm, MUSIC_PLAYER_BGM, 0
+    song mus_dp_level_up, MUSIC_PLAYER_SE2, 2
+    song mus_dp_heal, MUSIC_PLAYER_SE2, 2
+    song mus_dp_obtain_badge, MUSIC_PLAYER_SE2, 2
+    song mus_dp_obtain_item, MUSIC_PLAYER_SE2, 2
+    song mus_dp_evolved, MUSIC_PLAYER_SE2, 2
+    song mus_dp_obtain_tmhm, MUSIC_PLAYER_SE2, 2
     song mus_dp_encounter_elite_four, MUSIC_PLAYER_BGM, 0
     song mus_dp_encounter_galactic, MUSIC_PLAYER_BGM, 0
     song mus_dp_encounter_girl, MUSIC_PLAYER_BGM, 0
     song mus_dp_encounter_hiker, MUSIC_PLAYER_BGM, 0
     song mus_dp_encounter_intense, MUSIC_PLAYER_BGM, 0
-    song mus_dp_move_deleted, MUSIC_PLAYER_BGM, 0
+    song mus_dp_move_deleted, MUSIC_PLAYER_SE2, 2
     song mus_dp_encounter_rich, MUSIC_PLAYER_BGM, 0
     song mus_dp_encounter_sailor, MUSIC_PLAYER_BGM, 0
     song mus_dp_encounter_suspicious, MUSIC_PLAYER_BGM, 0
@@ -393,11 +393,11 @@ gSongTable::
     song mus_dp_eterna_forest, MUSIC_PLAYER_BGM, 0
     song mus_dp_eterna_night, MUSIC_PLAYER_BGM, 0
     song mus_dp_evolution, MUSIC_PLAYER_BGM, 0
-    song mus_dp_obtain_berry, MUSIC_PLAYER_BGM, 0
-    song mus_dp_legend_appears, MUSIC_PLAYER_BGM, 0
-    song mus_dp_slots_jackpot, MUSIC_PLAYER_BGM, 0
-    song mus_dp_slots_win, MUSIC_PLAYER_BGM, 0
-    song mus_dp_tv_end, MUSIC_PLAYER_BGM, 0
+    song mus_dp_obtain_berry, MUSIC_PLAYER_SE2, 2
+    song mus_dp_legend_appears, MUSIC_PLAYER_SE2, 2
+    song mus_dp_slots_jackpot, MUSIC_PLAYER_SE2, 2
+    song mus_dp_slots_win, MUSIC_PLAYER_SE2, 2
+    song mus_dp_tv_end, MUSIC_PLAYER_SE2, 2
     song mus_dp_floaroma_night, MUSIC_PLAYER_BGM, 0
     song mus_dp_follow_me, MUSIC_PLAYER_BGM, 0
     song mus_dp_galactic_eterna_building, MUSIC_PLAYER_BGM, 0
@@ -431,7 +431,7 @@ gSongTable::
     song mus_dp_encounter_artist, MUSIC_PLAYER_BGM, 0
     song mus_dp_encounter_champion, MUSIC_PLAYER_BGM, 0
     song mus_dp_victory_galactic, MUSIC_PLAYER_BGM, 0
-    song mus_dp_obtain_key_item, MUSIC_PLAYER_BGM, 0
+    song mus_dp_obtain_key_item, MUSIC_PLAYER_SE2, 2
     song mus_dp_encounter_cyclist, MUSIC_PLAYER_BGM, 0
     song mus_dp_old_chateau, MUSIC_PLAYER_BGM, 0
     song mus_dp_oreburgh_day, MUSIC_PLAYER_BGM, 0
@@ -465,8 +465,8 @@ gSongTable::
     song mus_dp_route225_night, MUSIC_PLAYER_BGM, 0
     song mus_dp_route228_day, MUSIC_PLAYER_BGM, 0
     song mus_dp_route228_night, MUSIC_PLAYER_BGM, 0
-    song mus_pl_obtain_b_points, MUSIC_PLAYER_BGM, 0
-    song mus_hg_pokegear_registered, MUSIC_PLAYER_BGM, 0
+    song mus_pl_obtain_b_points, MUSIC_PLAYER_SE2, 2
+    song mus_hg_pokegear_registered, MUSIC_PLAYER_SE2, 2
     song mus_dp_sandgem_day, MUSIC_PLAYER_BGM, 0
     song mus_dp_sandgem_night, MUSIC_PLAYER_BGM, 0
     song mus_dp_fight_area_night, MUSIC_PLAYER_BGM, 0
@@ -535,8 +535,8 @@ gSongTable::
     song mus_hg_cherrygrove, MUSIC_PLAYER_BGM, 0
     song mus_hg_cianwood, MUSIC_PLAYER_BGM, 0
     song mus_hg_cinnabar, MUSIC_PLAYER_BGM, 0
-    song mus_dp_dex_rating, MUSIC_PLAYER_BGM, 0
-    song mus_hg_obtain_key_item, MUSIC_PLAYER_BGM, 0
+    song mus_dp_dex_rating, MUSIC_PLAYER_SE2, 2
+    song mus_hg_obtain_key_item, MUSIC_PLAYER_SE2, 2
     song mus_hg_cycling, MUSIC_PLAYER_BGM, 0
     song mus_hg_dance_theater, MUSIC_PLAYER_BGM, 0
     song mus_hg_dex_rating_1, MUSIC_PLAYER_BGM, 0
@@ -614,7 +614,7 @@ gSongTable::
     song mus_hg_eusine, MUSIC_PLAYER_BGM, 0
     song mus_hg_evolution_no_intro, MUSIC_PLAYER_BGM, 0
     song mus_hg_evolution, MUSIC_PLAYER_BGM, 0
-    song mus_hg_evolved, MUSIC_PLAYER_BGM, 0
+    song mus_hg_evolved, MUSIC_PLAYER_SE2, 2
     song mus_hg_follow_me_1, MUSIC_PLAYER_BGM, 0
     song mus_hg_follow_me_2, MUSIC_PLAYER_BGM, 0
     song mus_hg_game_corner_win, MUSIC_PLAYER_BGM, 0
@@ -624,7 +624,7 @@ gSongTable::
     song mus_hg_gts, MUSIC_PLAYER_BGM, 0
     song mus_hg_gym, MUSIC_PLAYER_BGM, 0
     song mus_hg_hall_of_fame, MUSIC_PLAYER_BGM, 0
-    song mus_hg_heal, MUSIC_PLAYER_BGM, 0
+    song mus_hg_heal, MUSIC_PLAYER_SE2, 2
     song mus_hg_vs_ho_oh, MUSIC_PLAYER_BGM, 0
     song mus_hg_vs_kyogre_groudon, MUSIC_PLAYER_BGM, 0
     song mus_hg_vs_lugia, MUSIC_PLAYER_BGM, 0
