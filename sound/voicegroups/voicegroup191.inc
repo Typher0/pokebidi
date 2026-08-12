@@ -62,7 +62,7 @@ voicegroup191:: @ DPPt main
 	voice_keysplit voicegroup222, KeySplitTable29    @ trumpets 2
 	voice_keysplit voicegroup223, KeySplitTable9     @ french horns
 	voice_keysplit voicegroup224, KeySplitTable32    @ distortion guitar 2
-	voice_directsound 60, 0, DirectSoundWaveData_puresquare_25, 224, 242, 101, 220
+	voice_directsound 60, 0, DirectSoundWaveData_dp_flute_c4_16, 224, 242, 101, 220
 	voice_directsound 60, 0, DirectSoundWaveData_puresquare_12, 224, 242, 101, 220
 	voice_directsound 60, 0, DirectSoundWaveData_dp_synbass_c1_16, 255, 42, 255, 216
 	voice_directsound 60, 0, DirectSoundWaveData_dp_altosax_c3_16, 255, 219, 252, 196
