@@ -1148,6 +1148,7 @@ static void Cmd_damagecalc(void)
     ctx.battlerAtk = gBattlerAttacker;
     ctx.move = gCurrentMove;
     ctx.chosenMove = gChosenMove;
+    ctx.baseMove = gBattleStruct->baseMove;
     ctx.moveType = GetBattleMoveType(gCurrentMove);
     ctx.weather = GetWeather();
     ctx.fieldStatuses = gFieldStatuses;
@@ -1198,6 +1199,7 @@ static void Cmd_typecalc(void)
     ctx.battlerDef = gBattlerTarget;
     ctx.move = gCurrentMove;
     ctx.chosenMove = gChosenMove;
+    ctx.baseMove = gBattleStruct->baseMove;
     ctx.moveType = GetBattleMoveType(gCurrentMove);
     ctx.updateFlags = TRUE;
     ctx.abilities[ctx.battlerAtk] = GetBattlerAbility(gBattlerAttacker);
@@ -3287,7 +3289,7 @@ void SetMoveEffect(enum BattlerId battlerAtk, enum BattlerId effectBattler, enum
                 gBattlescriptCurrInstr = BattleScript_TargetPRLZHeal;
                 break;
             case STATUS1_SLEEP:
-                TryDeactivateSleepClause(GetBattlerSide(effectBattler), gBattlerPartyIndexes[effectBattler]);
+                TryDeactivateSleepClause(effectBattler, gBattlerPartyIndexes[effectBattler]);
                 gBattlescriptCurrInstr = BattleScript_TargetWokeUp;
                 break;
             case STATUS1_BURN:
@@ -5970,6 +5972,7 @@ static void Cmd_jumptocalledmove(void)
     else
         gChosenMove = gCurrentMove = gCalledMove;
 
+    gBattleStruct->baseMove = gCurrentMove;
     ResetValuesForCalledMove();
 
     gBattlescriptCurrInstr = GetMoveBattleScript(gCurrentMove);
@@ -7851,7 +7854,7 @@ static void Cmd_mimicattackcopy(void)
 static void Cmd_setcalledmove(void)
 {
     CMD_ARGS();
-    gCurrentMove = gCalledMove;
+    gCurrentMove = gBattleStruct->baseMove = gCalledMove;
     gBattlescriptCurrInstr = cmd->nextInstr;
 }
 
@@ -8299,7 +8302,7 @@ static void Cmd_healpartystatus(void)
             if (!(isSoundMove && ability == ABILITY_SOUNDPROOF))
             {
                 toHeal |= (1 << i);
-                TryDeactivateSleepClause(GetBattlerSide(gBattlerAttacker), i);
+                TryDeactivateSleepClause(gBattlerAttacker, i);
             }
         }
     }
@@ -8724,7 +8727,7 @@ static void Cmd_curestatuswithmove(void)
     if (shouldHeal)
     {
         if (status & STATUS1_SLEEP)
-            TryDeactivateSleepClause(GetBattlerSide(gBattlerAttacker), gBattlerPartyIndexes[gBattlerAttacker]);
+            TryDeactivateSleepClause(gBattlerAttacker, gBattlerPartyIndexes[gBattlerAttacker]);
 
         if (status & STATUS1_PARALYSIS)
             gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_CURED_PARALYSIS;
@@ -9300,7 +9303,7 @@ static void Cmd_switchoutabilities(void)
     {
     case ABILITY_NATURAL_CURE:
         if (gBattleMons[battler].status1 & STATUS1_SLEEP)
-            TryDeactivateSleepClause(GetBattlerSide(battler), gBattlerPartyIndexes[battler]);
+            TryDeactivateSleepClause(battler, gBattlerPartyIndexes[battler]);
 
         gBattleMons[battler].status1 = 0;
         BtlController_EmitSetMonData(battler, B_COMM_TO_CONTROLLER, REQUEST_STATUS_BATTLE,
@@ -13209,7 +13212,7 @@ void BS_CureStatus(void)
     u32 status = gBattleMons[battler].status1;
 
     if (status & STATUS1_SLEEP)
-        TryDeactivateSleepClause(GetBattlerSide(battler), gBattlerPartyIndexes[battler]);
+        TryDeactivateSleepClause(battler, gBattlerPartyIndexes[battler]);
 
     if (status & STATUS1_PARALYSIS)
         gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_CURED_PARALYSIS;
@@ -13786,7 +13789,7 @@ void BS_TryWakeBattlersUproar(void)
 
         if (IsBattlerAlive(battler) && gBattleMons[battler].status1 & STATUS1_SLEEP && !hasSoundproof)
         {
-            TryDeactivateSleepClause(GetBattlerSide(battler), gBattlerPartyIndexes[battler]);
+            TryDeactivateSleepClause(battler, gBattlerPartyIndexes[battler]);
             gBattleMons[battler].status1 = 0;
             gEffectBattler = battler;
             BtlController_EmitSetMonData(battler, B_COMM_TO_CONTROLLER, REQUEST_STATUS_BATTLE, 0, sizeof(gBattleMons[battler].status1), &gBattleMons[battler].status1);
