@@ -16164,6 +16164,9 @@ const u8 gMonIcon_Cacturado[] = INCGFX_U8("graphics/pokemon/cacturado/icon.png",
     const u16 gMonPalette_ArceusFairy[] = INCGFX_U16("graphics/pokemon/arceus/fairy/normal.pal", ".gbapal");
     const u16 gMonShinyPalette_ArceusFairy[] = INCGFX_U16("graphics/pokemon/arceus/fairy/shiny.pal", ".gbapal");
 
+    const u16 gMonPalette_ArceusSound[] = INCGFX_U16("graphics/pokemon/arceus/sound/normal.pal", ".gbapal");
+    const u16 gMonShinyPalette_ArceusSound[] = INCGFX_U16("graphics/pokemon/arceus/sound/shiny.pal", ".gbapal");
+
 #if P_ARCEUS_UNIQUE_FORM_ICONS >= GEN_9
     const u8 gMonIcon_ArceusFighting[] = INCGFX_U8("graphics/pokemon/arceus/fighting/icon.png", ".4bpp");
     const u8 gMonIcon_ArceusFlying[] = INCGFX_U8("graphics/pokemon/arceus/flying/icon.png", ".4bpp");
@@ -16182,6 +16185,7 @@ const u8 gMonIcon_Cacturado[] = INCGFX_U8("graphics/pokemon/cacturado/icon.png",
     const u8 gMonIcon_ArceusDragon[] = INCGFX_U8("graphics/pokemon/arceus/dragon/icon.png", ".4bpp");
     const u8 gMonIcon_ArceusDark[] = INCGFX_U8("graphics/pokemon/arceus/dark/icon.png", ".4bpp");
     const u8 gMonIcon_ArceusFairy[] = INCGFX_U8("graphics/pokemon/arceus/fairy/icon.png", ".4bpp");
+    const u8 gMonIcon_ArceusSound[] = INCGFX_U8("graphics/pokemon/arceus/sound/icon.png", ".4bpp");
 #endif //P_ARCEUS_UNIQUE_FORM_ICONS
 #if OW_POKEMON_OBJECT_EVENTS
     const u32 gObjectEventPic_ArceusNormal[] = INCGFX_COMP("graphics/pokemon/arceus/overworld.png", ".4bpp", "-mwidth 8 -mheight 8");
@@ -16202,6 +16206,7 @@ const u8 gMonIcon_Cacturado[] = INCGFX_U8("graphics/pokemon/cacturado/icon.png",
     const u32 gObjectEventPic_ArceusDragon[] = INCGFX_COMP("graphics/pokemon/arceus/overworld.png", ".4bpp", "-mwidth 8 -mheight 8");
     const u32 gObjectEventPic_ArceusDark[] = INCGFX_COMP("graphics/pokemon/arceus/overworld.png", ".4bpp", "-mwidth 8 -mheight 8");
     const u32 gObjectEventPic_ArceusFairy[] = INCGFX_COMP("graphics/pokemon/arceus/overworld.png", ".4bpp", "-mwidth 8 -mheight 8");
+    const u32 gObjectEventPic_ArceusSound[] = INCGFX_COMP("graphics/pokemon/arceus/overworld.png", ".4bpp", "-mwidth 8 -mheight 8");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
     const u16 gOverworldPalette_ArceusNormal[] = INCGFX_U16("graphics/pokemon/arceus/overworld_normal.pal", ".gbapal");
     const u16 gOverworldPalette_ArceusFighting[] = INCGFX_U16("graphics/pokemon/arceus/fighting/overworld_normal.pal", ".gbapal");
@@ -16221,6 +16226,7 @@ const u8 gMonIcon_Cacturado[] = INCGFX_U8("graphics/pokemon/cacturado/icon.png",
     const u16 gOverworldPalette_ArceusDragon[] = INCGFX_U16("graphics/pokemon/arceus/dragon/overworld_normal.pal", ".gbapal");
     const u16 gOverworldPalette_ArceusDark[] = INCGFX_U16("graphics/pokemon/arceus/dark/overworld_normal.pal", ".gbapal");
     const u16 gOverworldPalette_ArceusFairy[] = INCGFX_U16("graphics/pokemon/arceus/fairy/overworld_normal.pal", ".gbapal");
+    const u16 gOverworldPalette_ArceusSound[] = INCGFX_U16("graphics/pokemon/arceus/sound/overworld_normal.pal", ".gbapal");
     const u16 gShinyOverworldPalette_ArceusNormal[] = INCGFX_U16("graphics/pokemon/arceus/overworld_shiny.pal", ".gbapal");
     const u16 gShinyOverworldPalette_ArceusFighting[] = INCGFX_U16("graphics/pokemon/arceus/fighting/overworld_shiny.pal", ".gbapal");
     const u16 gShinyOverworldPalette_ArceusFlying[] = INCGFX_U16("graphics/pokemon/arceus/flying/overworld_shiny.pal", ".gbapal");
@@ -16239,6 +16245,7 @@ const u8 gMonIcon_Cacturado[] = INCGFX_U8("graphics/pokemon/cacturado/icon.png",
     const u16 gShinyOverworldPalette_ArceusDragon[] = INCGFX_U16("graphics/pokemon/arceus/dragon/overworld_shiny.pal", ".gbapal");
     const u16 gShinyOverworldPalette_ArceusDark[] = INCGFX_U16("graphics/pokemon/arceus/dark/overworld_shiny.pal", ".gbapal");
     const u16 gShinyOverworldPalette_ArceusFairy[] = INCGFX_U16("graphics/pokemon/arceus/fairy/overworld_shiny.pal", ".gbapal");
+    const u16 gShinyOverworldPalette_ArceusSound[] = INCGFX_U16("graphics/pokemon/arceus/sound/overworld_shiny.pal", ".gbapal");
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS
 #endif //P_FAMILY_ARCEUS
@@ -22489,6 +22496,9 @@ const u8 gMonIcon_Cacturado[] = INCGFX_U8("graphics/pokemon/cacturado/icon.png",
 
     const u16 gMonPalette_SilvallyFairy[] = INCGFX_U16("graphics/pokemon/silvally/fairy/normal.pal", ".gbapal");
     const u16 gMonShinyPalette_SilvallyFairy[] = INCGFX_U16("graphics/pokemon/silvally/fairy/shiny.pal", ".gbapal");
+
+    const u16 gMonPalette_SilvallySound[] = INCGFX_U16("graphics/pokemon/silvally/sound/normal.pal", ".gbapal");
+    const u16 gMonShinyPalette_SilvallySound[] = INCGFX_U16("graphics/pokemon/silvally/sound/shiny.pal", ".gbapal");
 #endif //P_FAMILY_TYPE_NULL
 
 #if P_FAMILY_MINIOR
