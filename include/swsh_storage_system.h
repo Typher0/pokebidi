@@ -4,7 +4,7 @@
 #include "constants/form_change_types.h"
 #include "pokemon_storage_system.h"
 
-#define SWSH_STORAGE_SYSTEM           TRUE
+#define SWSH_STORAGE_SYSTEM           FALSE
 
 #if TOTAL_BOXES_COUNT > 15
 #define SWSH_STORAGE_CHOOSE_BOX_GRID  FALSE // fits only 5×3 grid; auto disable if > 15 boxes

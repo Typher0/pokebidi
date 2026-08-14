@@ -2,8 +2,7 @@
   "id": "MAP_MT_CHIMNEY_CABLE_CAR_STATION",
   "name": "MtChimney_CableCarStation",
   "layout": "LAYOUT_CABLE_CAR_STATION",
-  "music": "MUS_ROUTE110",
-  "region": "REGION_HOENN",
+  "music": "MUS_DP_ROUTE206_DAY",
   "region_map_section": "MAPSEC_MT_CHIMNEY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -60,5 +59,6 @@
     }
   ],
   "coord_events": [],
-  "bg_events": []
+  "bg_events": [],
+  "region": "REGION_HOENN"
 }

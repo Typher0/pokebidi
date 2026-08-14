@@ -114,7 +114,7 @@ MossdeepCity_StevensHouse_EventScript_BeldumTransferredToPC::
 MossdeepCity_StevensHouse_EventScript_ReceivedBeldumFanfare::
 	bufferspeciesname STR_VAR_2, SPECIES_BELDUM
 	removeobject LOCALID_STEVENS_HOUSE_BALL
-	playfanfare MUS_OBTAIN_ITEM
+	playfanfare MUS_DP_OBTAIN_ITEM
 	message MossdeepCity_StevensHouse_Text_ObtainedBeldum
 	waitmessage
 	waitfanfare

@@ -697,7 +697,7 @@ static void Task_EvolutionScene(u8 taskId)
     case EVOSTATE_INTRO_SOUND:
         if (EvoScene_IsMonAnimFinished(sEvoStructPtr->preEvoSpriteId))
         {
-            PlaySE(MUS_EVOLUTION_INTRO);
+            PlaySE(MUS_DP_EVOLUTION);
             gTasks[taskId].tState++;
         }
         break;
@@ -705,7 +705,7 @@ static void Task_EvolutionScene(u8 taskId)
         if (!IsSEPlaying())
         {
             // Start music, fade background to black
-            PlayNewMapMusic(MUS_EVOLUTION);
+            PlayNewMapMusic(MUS_DP_EVOLUTION);
             gTasks[taskId].tState++;
             BeginNormalPaletteFade(0x1C, 4, 0, 0x10, RGB_BLACK);
         }
@@ -782,7 +782,7 @@ static void Task_EvolutionScene(u8 taskId)
             u32 zero = 0;
             StringExpandPlaceholders(gStringVar4, gText_CongratsPkmnEvolved);
             BattlePutTextOnWindow(gStringVar4, B_WIN_MSG);
-            PlayBGM(MUS_EVOLVED);
+            PlayBGM(MUS_DP_EVOLUTION);
             gTasks[taskId].tState++;
             SetMonData(mon, MON_DATA_SPECIES, (void *)(&gTasks[taskId].tPostEvoSpecies));
             SetMonData(mon, MON_DATA_EVOLUTION_TRACKER, &zero);
@@ -878,7 +878,7 @@ static void Task_EvolutionScene(u8 taskId)
         if (!IsTextPrinterActiveOnWindow(0) && !IsSEPlaying())
         {
             BufferMoveToLearnIntoBattleTextBuff2();
-            PlayFanfare(MUS_LEVEL_UP);
+            PlayFanfare(MUS_DP_LEVEL_UP);
             BattleStringExpandPlaceholdersToDisplayedString(gBattleStringsTable[STRINGID_PKMNLEARNEDMOVE]);
             BattlePutTextOnWindow(gDisplayedStringBattle, B_WIN_MSG);
             gTasks[taskId].tLearnsFirstMove = 0x40; // re-used as a counter
@@ -1129,15 +1129,15 @@ static void Task_TradeEvolutionScene(u8 taskId)
     case T_EVOSTATE_INTRO_SOUND:
         if (IsCryFinished())
         {
-            m4aSongNumStop(MUS_EVOLUTION);
-            PlaySE(MUS_EVOLUTION_INTRO);
+            m4aSongNumStop(MUS_DP_EVOLUTION);
+            PlaySE(MUS_DP_EVOLUTION);
             gTasks[taskId].tState++;
         }
         break;
     case T_EVOSTATE_START_MUSIC:
         if (!IsSEPlaying())
         {
-            PlayBGM(MUS_EVOLUTION);
+            PlayBGM(MUS_DP_EVOLUTION);
             gTasks[taskId].tState++;
             BeginNormalPaletteFade(0x1C, 4, 0, 0x10, RGB_BLACK);
         }
@@ -1209,7 +1209,7 @@ static void Task_TradeEvolutionScene(u8 taskId)
             u32 zero = 0;
             StringExpandPlaceholders(gStringVar4, gText_CongratsPkmnEvolved);
             DrawTextOnTradeWindow(0, gStringVar4, 1);
-            PlayFanfare(MUS_EVOLVED);
+            PlayFanfare(MUS_DP_EVOLVED);
             gTasks[taskId].tState++;
             SetMonData(mon, MON_DATA_SPECIES, (&gTasks[taskId].tPostEvoSpecies));
             SetMonData(mon, MON_DATA_EVOLUTION_TRACKER, &zero);
@@ -1242,7 +1242,7 @@ static void Task_TradeEvolutionScene(u8 taskId)
             }
             else
             {
-                PlayBGM(MUS_EVOLUTION);
+                PlayBGM(MUS_DP_EVOLUTION);
                 DrawTextOnTradeWindow(0, gText_CommunicationStandby5, 1);
                 gTasks[taskId].tState++;
             }
@@ -1285,7 +1285,7 @@ static void Task_TradeEvolutionScene(u8 taskId)
         if (!IsTextPrinterActiveOnWindow(0) && !IsSEPlaying())
         {
             BufferMoveToLearnIntoBattleTextBuff2();
-            PlayFanfare(MUS_LEVEL_UP);
+            PlayFanfare(MUS_DP_LEVEL_UP);
             BattleStringExpandPlaceholdersToDisplayedString(gBattleStringsTable[STRINGID_PKMNLEARNEDMOVE]);
             DrawTextOnTradeWindow(0, gDisplayedStringBattle, 1);
             gTasks[taskId].tLearnsFirstMove = 0x40; // re-used as a counter

@@ -101,7 +101,7 @@ RustboroCity_Gym_EventScript_RegisterRoxanne::
 	pokenavcall RustboroCity_Gym_Text_RoxanneRegisterCall
 	waitmessage
 	delay 30
-	playfanfare MUS_REGISTER_MATCH_CALL
+	playfanfare MUS_HG_POKEGEAR_REGISTERED
 	msgbox RustboroCity_Gym_Text_RegisteredRoxanne, MSGBOX_DEFAULT
 	waitfanfare
 	closemessage
@@ -245,16 +245,18 @@ RustboroCity_Gym_Text_RoxannePostBattle:
 RustboroCity_Gym_Text_GymStatue:
 	.string "Papilys City Pokémon Gym\p"
 	.string "Certified Trainers in order of completion:\n"
-	.string "Peter, Ahab, Jelissa, Toxiana, Tinker\p"
-	.string "Moose, Gwen, Tobias, Ishmael, Josh, Adhira\n"
-	.string "Amanda, Sean$"
+	.string "Peter, Ahab, Jelissa, Toxiana,\p"
+	.string "Tinker, Moose, Gwen, Tobias,\n"
+	.string "Ishmael, Josh, Adhira, Tiffany,\l"
+	.string "Amelia, Sean$"
 
 RustboroCity_Gym_Text_GymStatueCertified:
 	.string "Papilys City Pokémon Gym\p"
 	.string "Certified Trainers in order of completion:\n"
-	.string "Peter, Ahab, Jelissa, Toxiana, Tinker\p"
-	.string "Moose, Gwen, Tobias, Ishmael, Josh, Adhira\n"
-	.string "Amanda, Sean, {PLAYER}$"
+	.string "Peter, Ahab, Jelissa, Toxiana,\p"
+	.string "Tinker, Moose, Gwen, Tobias,\n"
+	.string "Ishmael, Josh, Adhira, Tiffany,\l"
+	.string "Amelia, Sean, {PLAYER}$"
 
 RustboroCity_Gym_Text_RoxanneRegisterCall:
 	.string "… … … … … …\n"

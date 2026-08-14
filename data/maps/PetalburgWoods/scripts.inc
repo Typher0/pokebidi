@@ -8,7 +8,7 @@ PetalburgWoods_EventScript_DevonResearcherLeft::
 	waitmovement 0
 	msgbox PetalburgWoods_Text_HaveYouSeenShroomish, MSGBOX_DEFAULT
 	closemessage
-	playbgm MUS_ENCOUNTER_AQUA, FALSE
+	playbgm MUS_DP_ENCOUNTER_GALACTIC, FALSE
 	applymovement LOCALID_PETALBURG_WOODS_GRUNT, PetalburgWoods_Movement_AquaEntrance
 	waitmovement 0
 	msgbox PetalburgWoods_Text_IWasGoingToAmbushYou, MSGBOX_DEFAULT
@@ -45,7 +45,7 @@ PetalburgWoods_EventScript_DevonResearcherRight::
 	waitmovement 0
 	msgbox PetalburgWoods_Text_HaveYouSeenShroomish, MSGBOX_DEFAULT
 	closemessage
-	playbgm MUS_ENCOUNTER_AQUA, FALSE
+	playbgm MUS_DP_ENCOUNTER_GALACTIC, FALSE
 	applymovement LOCALID_PETALBURG_WOODS_GRUNT, PetalburgWoods_Movement_AquaEntrance
 	waitmovement 0
 	msgbox PetalburgWoods_Text_IWasGoingToAmbushYou, MSGBOX_DEFAULT
@@ -374,7 +374,7 @@ PetalburgWoods_EventScript_AmeliaLeft::
 	waitmovement 0
 	applymovement LOCALID_BLOOMNGROVE_WOODS_AMELIA, Common_Movement_Delay48
 	waitmovement 0
-	playbgm MUS_ENCOUNTER_MAY, TRUE
+	playbgm MUS_DP_DAWN, TRUE
 	delay 10
 	msgbox PetalburgWoods_Text_OhHiMark, MSGBOX_DEFAULT
 	closemessage
@@ -406,7 +406,7 @@ PetalburgWoods_EventScript_AmeliaMid::
 	waitmovement 0
 	applymovement LOCALID_BLOOMNGROVE_WOODS_AMELIA, Common_Movement_Delay48
 	waitmovement 0
-	playbgm MUS_ENCOUNTER_MAY, TRUE
+	playbgm MUS_DP_DAWN, TRUE
 	delay 10
 	msgbox PetalburgWoods_Text_OhHiMark, MSGBOX_DEFAULT
 	closemessage
@@ -438,7 +438,7 @@ PetalburgWoods_EventScript_AmeliaRight::
 	waitmovement 0
 	applymovement LOCALID_BLOOMNGROVE_WOODS_AMELIA, Common_Movement_Delay48
 	waitmovement 0
-	playbgm MUS_ENCOUNTER_MAY, TRUE
+	playbgm MUS_DP_DAWN, TRUE
 	delay 10
 	msgbox PetalburgWoods_Text_OhHiMark, MSGBOX_DEFAULT
 	closemessage
@@ -470,7 +470,7 @@ PetalburgWoods_EventScript_AmeliaFarRight::
 	waitmovement 0
 	applymovement LOCALID_BLOOMNGROVE_WOODS_AMELIA, Common_Movement_Delay48
 	waitmovement 0
-	playbgm MUS_ENCOUNTER_MAY, TRUE
+	playbgm MUS_DP_DAWN, TRUE
 	delay 10
 	msgbox PetalburgWoods_Text_OhHiMark, MSGBOX_DEFAULT
 	closemessage

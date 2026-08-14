@@ -2,7 +2,7 @@
   "id": "MAP_KINGSTON_CITY",
   "name": "KingstonCity",
   "layout": "LAYOUT_KINGSTON_CITY",
-  "music": "MUS_DUMMY",
+  "music": "MUS_DP_JUBILIFE_DAY",
   "region_map_section": "MAPSEC_PEWTER_CITY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

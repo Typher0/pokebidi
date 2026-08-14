@@ -63,7 +63,7 @@ BattleFrontier_BattleTowerBattleRoom_EventScript_DefeatedOpponent::
 	applymovement LOCALID_PLAYER, BattleFrontier_BattleTowerBattleRoom_Movement_PlayerFaceAttendant
 	waitmovement 0
 	msgbox BattleFrontier_BattleTowerBattleRoom_Text_RestoreMonsToFullHealth, MSGBOX_DEFAULT
-	playfanfare MUS_HEAL
+	playfanfare MUS_DP_HEAL
 	waitfanfare
 	special HealPlayerParty
 BattleFrontier_BattleTowerBattleRoom_EventScript_AskReadyForOpponent::
@@ -259,7 +259,7 @@ BattleFrontier_BattleTowerBattleRoom_EventScript_DefeatedAnabelSilver::
 	frontier_getsymbols
 	goto_if_ne VAR_RESULT, 0, BattleFrontier_BattleTowerBattleRoom_EventScript_WarpToLobbyWon
 	msgbox BattleFrontier_BattleTowerBattleRoom_Text_AnabelTalentShallBeRecognized, MSGBOX_DEFAULT
-	playfanfare MUS_OBTAIN_SYMBOL
+	playfanfare MUS_DP_OBTAIN_ACCESSORY
 	message BattleFrontier_BattleTowerBattleRoom_Text_ReceivedAbilitySymbol
 	waitmessage
 	waitfanfare
@@ -283,7 +283,7 @@ BattleFrontier_BattleTowerBattleRoom_EventScript_DefeatedAnabelGold::
 	frontier_getsymbols
 	goto_if_eq VAR_RESULT, 2, BattleFrontier_BattleTowerBattleRoom_EventScript_WarpToLobbyWon
 	msgbox BattleFrontier_BattleTowerBattleRoom_Text_AnabelCongratsYourPassPlease, MSGBOX_DEFAULT
-	playfanfare MUS_OBTAIN_SYMBOL
+	playfanfare MUS_DP_OBTAIN_ACCESSORY
 	message BattleFrontier_BattleTowerBattleRoom_Text_AbilitySymbolTookGoldenShine
 	waitmessage
 	waitfanfare

@@ -386,7 +386,7 @@ BattleFrontier_BattleDomeBattleRoom_EventScript_BattleTuckerSilver::
 	applymovement LOCALID_DOME_OPPONENT, BattleFrontier_BattleDomeBattleRoom_Movement_TuckerApproachPlayer
 	waitmovement 0
 	msgbox BattleFrontier_BattleDomeBattleRoom_Text_SeeYourFrontierPass, MSGBOX_DEFAULT
-	playfanfare MUS_OBTAIN_SYMBOL
+	playfanfare MUS_DP_OBTAIN_ACCESSORY
 	message BattleFrontier_BattleDomeBattleRoom_Text_ReceivedTacticsSymbol
 	waitmessage
 	waitfanfare
@@ -414,7 +414,7 @@ BattleFrontier_BattleDomeBattleRoom_EventScript_BattleTuckerGold::
 	applymovement LOCALID_DOME_OPPONENT, BattleFrontier_BattleDomeBattleRoom_Movement_TuckerApproachPlayer
 	waitmovement 0
 	msgbox BattleFrontier_BattleDomeBattleRoom_Text_NeverLostWhenPowerUnleashed, MSGBOX_DEFAULT
-	playfanfare MUS_OBTAIN_SYMBOL
+	playfanfare MUS_DP_OBTAIN_ACCESSORY
 	message BattleFrontier_BattleDomeBattleRoom_Text_TacticsSymbolTookGoldenShine
 	waitmessage
 	waitfanfare

@@ -11,7 +11,7 @@ SeafloorCavern_Room9_EventScript_ArchieAwakenKyogre::
 	waitmovement 0
 	applymovement LOCALID_PLAYER, SeafloorCavern_Room9_Movement_Delay32
 	waitmovement 0
-	playbgm MUS_ENCOUNTER_AQUA, FALSE
+	playbgm MUS_DP_ENCOUNTER_GALACTIC, FALSE
 	msgbox SeafloorCavern_Room9_Text_ArchieHoldItRightThere, MSGBOX_DEFAULT
 	closemessage
 	addobject VAR_0x8004
@@ -39,7 +39,7 @@ SeafloorCavern_Room9_EventScript_ArchieAwakenKyogre::
 	waitfieldeffect FLDEFF_SPARKLE
 	closemessage
 	setvar VAR_RESULT, 0
-	playfanfare MUS_AWAKEN_LEGEND
+	playfanfare MUS_DP_LEGEND_APPEARS
 	playse SE_ORB
 	special DoOrbEffect
 	applymovement VAR_0x8004, Common_Movement_WalkInPlaceFasterUp

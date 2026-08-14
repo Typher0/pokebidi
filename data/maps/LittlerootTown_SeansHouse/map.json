@@ -2,7 +2,7 @@
   "id": "MAP_LITTLEROOT_TOWN_SEANS_HOUSE",
   "name": "LittlerootTown_SeansHouse",
   "layout": "LAYOUT_LITTLEROOT_TOWN_SEANS_HOUSE",
-  "music": "MUS_LITTLEROOT",
+  "music": "MUS_ZEPHYR_TOWN",
   "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

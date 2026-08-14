@@ -30,7 +30,7 @@ Route117_EventScript_DaycareAcceptEgg::
 
 Route117_EventScript_DaycareReceiveEgg::
 	message Route117_Text_ReceivedEgg
-	playfanfare MUS_LEVEL_UP
+	playfanfare MUS_DP_LEVEL_UP
 	waitfanfare
 	waitbuttonpress
 	msgbox Route117_Text_TakeGoodCareOfIt, MSGBOX_DEFAULT
@@ -171,7 +171,7 @@ Route117_PokemonDayCare_EventScript_TryRetrieveMon::
 	end
 
 Route117_PokemonDayCare_EventScript_CostPrompt::
-	special GetDaycareCost
+	special GetDaycareCostAndPrepareString
 	msgbox Route117_PokemonDayCare_Text_ItWillCostX, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, YES, Route117_PokemonDayCare_EventScript_CheckEnoughMoney
 	goto Route117_PokemonDayCare_EventScript_ComeAgain

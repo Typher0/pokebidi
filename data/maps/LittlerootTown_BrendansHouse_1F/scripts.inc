@@ -134,7 +134,7 @@ LittlerootTown_BrendansHouse_1F_EventScript_MeetRival::
 	applymovement LOCALID_RIVALS_HOUSE_1F_RIVAL, Common_Movement_Delay48
 	waitmovement 0
 	call_if_ne VAR_0x8008, 1, LittlerootTown_BrendansHouse_1F_EventScript_PlayerFaceBrendan
-	playbgm MUS_ENCOUNTER_BRENDAN, TRUE
+	playbgm MUS_DP_LUCAS, TRUE
 	call_if_eq VAR_0x8008, 0, LittlerootTown_BrendansHouse_1F_EventScript_BrendanApproachPlayer0
 	call_if_eq VAR_0x8008, 1, LittlerootTown_BrendansHouse_1F_EventScript_BrendanApproachPlayer1
 	call_if_eq VAR_0x8008, 2, LittlerootTown_BrendansHouse_1F_EventScript_BrendanApproachPlayer2
@@ -443,7 +443,7 @@ LittlerootTown_BrendansHouse_1F_EventScript_HeresPokeNav::
 	closemessage
 	msgbox PlayersHouse_1F_Text_GoIntroduceYourselfNextDoor, MSGBOX_DEFAULT
 	closemessage
-	playfanfare MUS_OBTAIN_ITEM
+	playfanfare MUS_DP_OBTAIN_ITEM
 	message RustboroCity_DevonCorp_3F_Text_ReceivedPokenav
 	waitfanfare
 	setflag FLAG_SYS_POKENAV_GET
@@ -451,7 +451,7 @@ LittlerootTown_BrendansHouse_1F_EventScript_HeresPokeNav::
 	setflag FLAG_ADDED_MATCH_CALL_TO_POKENAV 
 	setvar VAR_LITTLEROOT_INTRO_STATE, 4
 	delay 30
-	playfanfare MUS_REGISTER_MATCH_CALL
+	playfanfare MUS_HG_POKEGEAR_REGISTERED
 	msgbox PlayersHouse_1F_Text_RegisteredMom, MSGBOX_DEFAULT
 	waitfanfare
 	closemessage

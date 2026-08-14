@@ -578,7 +578,7 @@ static void Task_StartPokemonJump(u8 taskId)
     case 2:
         if (!IsPokeJumpGfxFuncFinished() && IsNotWaitingForBGMStop() == TRUE)
         {
-            FadeOutAndPlayNewMapMusic(MUS_RG_POKE_JUMP, 8);
+            FadeOutAndPlayNewMapMusic(MUS_DP_POKE_RADAR, 8);
             sPokemonJump->mainState++;
         }
         break;
@@ -3342,7 +3342,7 @@ static void PrintPrizeMessage(enum Item itemId, u16 quantity)
     sPokemonJumpGfx->msgWindowId = AddMessageWindow(4, 8, 22, 4);
     AddTextPrinterParameterized(sPokemonJumpGfx->msgWindowId, FONT_NORMAL, sPokemonJumpGfx->prizeMsg, 0, 1, TEXT_SKIP_DRAW, NULL);
     CopyWindowToVram(sPokemonJumpGfx->msgWindowId, COPYWIN_GFX);
-    sPokemonJumpGfx->fanfare = MUS_LEVEL_UP;
+    sPokemonJumpGfx->fanfare = MUS_DP_LEVEL_UP;
     sPokemonJumpGfx->msgWindowState = 0;
 }
 

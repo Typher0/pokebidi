@@ -14,7 +14,7 @@ GraniteCave_StevensRoom_EventScript_Steven::
 	msgbox GraniteCave_StevensRoom_Text_CouldBecomeChampionLetsRegister, MSGBOX_DEFAULT
 	closemessage
 	delay 30
-	playfanfare MUS_REGISTER_MATCH_CALL
+	playfanfare MUS_HG_POKEGEAR_REGISTERED
 	msgbox GraniteCave_StevensRoom_Text_RegisteredSteven, MSGBOX_DEFAULT
 	waitfanfare
 	closemessage

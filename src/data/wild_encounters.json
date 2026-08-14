@@ -1962,6 +1962,51 @@
               }
             ]
           },
+          "honey_mons": {
+            "encounter_rate": 180,
+            "mons": [
+              {
+                "min_level": 13,
+                "max_level": 15,
+                "species": "SPECIES_COMBEE"
+              },
+              {
+                "min_level": 13,
+                "max_level": 15,
+                "species": "SPECIES_CHERUBI"
+              },
+              {
+                "min_level": 13,
+                "max_level": 15,
+                "species": "SPECIES_PANSAGE"
+              },
+              {
+                "min_level": 13,
+                "max_level": 15,
+                "species": "SPECIES_PANSEAR"
+              },
+              {
+                "min_level": 13,
+                "max_level": 15,
+                "species": "SPECIES_PANPOUR"
+              },
+              {
+                "min_level": 13,
+                "max_level": 15,
+                "species": "SPECIES_MUNCHLAX"
+              },
+              {
+                "min_level": 13,
+                "max_level": 15,
+                "species": "SPECIES_MUNCHLAX"
+              },
+              {
+                "min_level": 13,
+                "max_level": 15,
+                "species": "SPECIES_MUNCHLAX"
+              }
+            ]
+          },
           "headbutt_mons": {
             "encounter_rate": 180,
             "mons": [
@@ -3730,6 +3775,26 @@
                 "min_level": 5,
                 "max_level": 5,
                 "species": "SPECIES_AUDINO"
+              }
+            ]
+          },
+          "hidden_mons": {
+            "encounter_rate": 70,
+            "mons": [
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_PANSAGE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_PANPOUR"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_PANSEAR"
               }
             ]
           },
@@ -38743,6 +38808,35 @@
                 "min_level": 2,
                 "max_level": 3,
                 "species": "SPECIES_SNOM"
+              },
+              {
+                "min_level": 2,
+                "max_level": 3,
+                "species": "SPECIES_PINECO"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_OLDALE_TOWN",
+          "base_label": "gOldaleTown",
+          "headbutt_mons": {
+            "encounter_rate": 180,
+            "mons": [
+              {
+                "min_level": 2,
+                "max_level": 3,
+                "species": "SPECIES_SKWOVET"
+              },
+              {
+                "min_level": 2,
+                "max_level": 3,
+                "species": "SPECIES_BURMY"
+              },
+              {
+                "min_level": 2,
+                "max_level": 3,
+                "species": "SPECIES_HOOTHOOT"
               },
               {
                 "min_level": 2,

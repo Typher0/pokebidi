@@ -1552,7 +1552,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .height = 5,
         .weight = 115,
         .description = COMPOUND_STRING(
-            "Chihaha loves to make laugh.\n"
+            "Chihaha loves to make people laugh.\n"
             "It will spend its entire day\n"
             "doing its best to earn even\n"
             "a single chuckle."),

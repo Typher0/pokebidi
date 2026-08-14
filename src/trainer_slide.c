@@ -61,6 +61,52 @@ static const u8* const sTrainerSlides[DIFFICULTY_COUNT][TRAINER_PARTNER(PARTNER_
 {
     [DIFFICULTY_NORMAL] =
     {
+        [TRAINER_BRENDAN_ROUTE_103_MUDKIP] =
+        {
+            [TRAINER_SLIDE_LAST_HALF_HP] = COMPOUND_STRING("Come on Cyndaquil, you can do it! {PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_LAST_LOW_HP] = COMPOUND_STRING("I believe in you, Cyndaquil! {PAUSE_UNTIL_PRESS}"),
+        },
+        [TRAINER_BRENDAN_ROUTE_103_TREECKO] =
+        {
+            [TRAINER_SLIDE_LAST_HALF_HP] = COMPOUND_STRING("Come on Squirtle, you can do it!{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_LAST_LOW_HP] = COMPOUND_STRING("I believe in you, Squirtle!{PAUSE_UNTIL_PRESS}"),
+        },
+        [TRAINER_BRENDAN_ROUTE_103_TORCHIC] =
+        {
+            [TRAINER_SLIDE_LAST_HALF_HP] = COMPOUND_STRING("Come on Rowlet, you can do it!{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_LAST_LOW_HP] = COMPOUND_STRING("I believe in you, Rowlet!{PAUSE_UNTIL_PRESS}"),
+        },
+        [TRAINER_MAY_ROUTE_103_MUDKIP] =
+        {
+            [TRAINER_SLIDE_LAST_HALF_HP] = COMPOUND_STRING("Almost there, don't give up Rowlet!{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_LAST_LOW_HP] = COMPOUND_STRING("You can do it, Rowlet!{PAUSE_UNTIL_PRESS}"),
+        },
+        [TRAINER_MAY_ROUTE_103_TREECKO] =
+        {
+            [TRAINER_SLIDE_LAST_HALF_HP] = COMPOUND_STRING("Almost there, don't give up Cyndaquil!{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_LAST_LOW_HP] = COMPOUND_STRING("You can do it, Cyndaquil!{PAUSE_UNTIL_PRESS}"),
+        },
+        [TRAINER_MAY_ROUTE_103_TORCHIC] =
+        {
+            [TRAINER_SLIDE_LAST_HALF_HP] = COMPOUND_STRING("Almost there, don't give up Squirtle!{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_LAST_LOW_HP] = COMPOUND_STRING("You can do it, Squirtle!{PAUSE_UNTIL_PRESS}"),
+        },
+        [TRAINER_MAY_ROUTE_110_MUDKIP] =
+        {
+            [TRAINER_SLIDE_LAST_SWITCHIN] = COMPOUND_STRING("It's not over yet!\nYou can do it, Rowlet!{PAUSE_UNTIL_PRESS}"),
+        },
+        [TRAINER_MAY_ROUTE_110_TREECKO] =
+        {
+            [TRAINER_SLIDE_LAST_SWITCHIN] = COMPOUND_STRING("It's not over yet!\nYou can do it, Cyndaquil!{PAUSE_UNTIL_PRESS}"),
+        },
+        [TRAINER_MAY_ROUTE_110_TORCHIC] =
+        {
+            [TRAINER_SLIDE_LAST_SWITCHIN] = COMPOUND_STRING("It's not over yet!\nYou can do it, Squirtle!{PAUSE_UNTIL_PRESS}"),
+        },
+        [TRAINER_ROXANNE_1] =
+        {
+            [TRAINER_SLIDE_LAST_SWITCHIN] = COMPOUND_STRING("To think I'd be backed into a corner!\nHere's the ace in the hole!{PAUSE_UNTIL_PRESS}"),
+        },
     },
 };
 
@@ -276,6 +322,9 @@ enum TrainerSlideTargets ShouldDoTrainerSlide(enum BattlerId battler, enum Train
     if (!IsDoubleBattle() && (battler > B_BATTLER_1))
         return TRAINER_SLIDE_TARGET_NONE;
 
+    if (GetBattlerTrainer(battler) == B_TRAINER_PLAYER)
+        return TRAINER_SLIDE_TARGET_NONE;
+
     SetTrainerSlideParameters(battler, &lastId, &trainerId, &retValue);
     if (IsSpecialTrainer(trainerId))
         return TRAINER_SLIDE_TARGET_NONE;
@@ -331,13 +380,9 @@ enum TrainerSlideTargets ShouldDoTrainerSlide(enum BattlerId battler, enum Train
     if (shouldRun == FALSE)
         return TRAINER_SLIDE_TARGET_NONE;
 
-    // Prevents slides triggering twice in single-trainer doubles (B == A / B == TRAINER_NONE) and 2v1 multibattles (B == 0xFFFF)
-    if (((TRAINER_BATTLE_PARAM.opponentB == TRAINER_BATTLE_PARAM.opponentA)
-     || (TRAINER_BATTLE_PARAM.opponentB == TRAINER_NONE)
-     || (TRAINER_BATTLE_PARAM.opponentB == 0xFFFF)))
-    {
-        MarkTrainerSlideAsPlayed(BATTLE_PARTNER(battler), slideId);
-    }
+    // Prevents slides triggering twice in single-trainer doubles
+    if (GetBattlerTrainer(battler) == GetBattlerTrainer(GetPartnerBattler(battler)))
+        MarkTrainerSlideAsPlayed(GetPartnerBattler(battler), slideId);
 
     MarkTrainerSlideAsPlayed(battler, slideId);
     SetTrainerSlideMessage(difficulty,trainerId,slideId);

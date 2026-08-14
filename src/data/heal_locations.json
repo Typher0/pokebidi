@@ -6,9 +6,9 @@
       "x": 4,
       "y": 5,
       "respawn_map": "MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F",
-      "respawn_npc": "LOCALID_PLAYERS_HOUSE_1F_MOM",
-      "respawn_x": 2,
-      "respawn_y": 7
+      "respawn_npc": "LOCALID_PLAYERS_HOUSE_1F_PLAYERS_MOM",
+      "respawn_x": 8,
+      "respawn_y": 10
     },
     {
       "id": "HEAL_LOCATION_LITTLEROOT_TOWN_MAYS_HOUSE_2F",
@@ -98,7 +98,7 @@
       "x": 13,
       "y": 16,
       "respawn_map": "MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F",
-      "respawn_npc": "LOCALID_PLAYERS_HOUSE_1F_MOM",
+      "respawn_npc": "LOCALID_PLAYERS_HOUSE_1F_PLAYERS_MOM",
       "respawn_x": 2,
       "respawn_y": 7
     },
@@ -108,7 +108,7 @@
       "x": 13,
       "y": 16,
       "respawn_map": "MAP_LITTLEROOT_TOWN_MAYS_HOUSE_1F",
-      "respawn_npc": "LOCALID_PLAYERS_HOUSE_1F_MOM",
+      "respawn_npc": "LOCALID_PLAYERS_HOUSE_1F_PLAYERS_MOM",
       "respawn_x": 8,
       "respawn_y": 7
     },
@@ -354,7 +354,9 @@
       "id": "HEAL_LOCATION_ROUTE103",
       "map": "MAP_ROUTE103",
       "x": 21,
-      "y": 37
+      "y": 37,
+      "respawn_map": "MAP_ROUTE103_POKEMON_CENTER_1F",
+      "respawn_npc": "LOCALID_ROUTE103_NURSE"
     }
   ]
 }

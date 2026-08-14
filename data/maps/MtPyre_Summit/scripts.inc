@@ -30,7 +30,7 @@ MtPyre_Summit_EventScript_TeamAquaTrigger2::
 	end
 
 MtPyre_Summit_EventScript_TeamAquaExits::
-	playbgm MUS_ENCOUNTER_AQUA, FALSE
+	playbgm MUS_DP_ENCOUNTER_GALACTIC, FALSE
 	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
 	waitmovement 0
 	applymovement LOCALID_MT_PYRE_SUMMIT_ARCHIE, Common_Movement_WalkInPlaceFasterDown

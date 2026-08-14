@@ -31,7 +31,7 @@ PetalburgCity_House1_Text_GoOnAdventure:
 PetalburgCity_House1_EventScript_Burgh::
 	lock
 	faceplayer
-	playbgm MUS_GYM, FALSE
+	playbgm MUS_DP_GYM, FALSE
 	trainerbattle_single TRAINER_WINSTON_5, PetalburgCity_House1_Text_BurghIntro, PetalburgCity_House1_Text_BurghDefeat, PetalburgCity_House1_EventScript_BurghDefeated, NO_MUSIC
 	goto_if_unset FLAG_UNUSED_0x2BB, PetalburgCity_House1_EventScript_GiveStruggleBug
 	msgbox PetalburgCity_House1_Text_BurghPostBattle, MSGBOX_DEFAULT
@@ -41,7 +41,7 @@ PetalburgCity_House1_EventScript_Burgh::
 	end
 
 PetalburgCity_House1_EventScript_BurghDefeated::
-	playbgm MUS_GYM, FALSE
+	playbgm MUS_DP_GYM, FALSE
 	setobjectxyperm LOCALID_PETALBURG_ANTON, 4, 8
 	msgbox PetalburgCity_House1_Text_GiveYouThis, MSGBOX_DEFAULT
 	closemessage

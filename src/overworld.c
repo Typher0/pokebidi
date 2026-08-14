@@ -32,6 +32,7 @@
 #include "io_reg.h"
 #include "item.h"
 #include "item_icon.h"
+#include "line_break.h"
 #include "link.h"
 #include "link_rfu.h"
 #include "load_save.h"
@@ -1223,11 +1224,11 @@ u16 GetLocationMusic(struct WarpData *warp)
     if (NoMusicInSootopolisWithLegendaries(warp) == TRUE)
         return MUS_NONE;
     else if (ShouldLegendaryMusicPlayAtLocation(warp) == TRUE)
-        return MUS_ABNORMAL_WEATHER;
+        return MUS_DP_CATASTROPHE;
     else if (IsInfiltratedSpaceCenter(warp) == TRUE)
-        return MUS_ENCOUNTER_MAGMA;
+        return MUS_DP_ENCOUNTER_GALACTIC;
     else if (IsInfiltratedWeatherInstitute(warp) == TRUE)
-        return MUS_MT_CHIMNEY;
+        return MUS_HG_MT_MOON_SQUARE;
     else
         return Overworld_GetMapHeaderByGroupAndId(warp->mapGroup, warp->mapNum)->music;
 }
@@ -1240,26 +1241,26 @@ u16 GetCurrLocationDefaultMusic(void)
     if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ROUTE111)
      && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ROUTE111)
      && GetSavedWeather() == WEATHER_SANDSTORM)
-        return MUS_DESERT;
+        return MUS_HG_ROUTE30;
 
     music = GetLocationMusic(&gSaveBlock1Ptr->location);
-    if (music != MUS_ROUTE118)
+    if (music != MUS_DP_ROUTE201_DAY)
     {
         return music;
     }
     else
     {
         if (gSaveBlock1Ptr->pos.x < 24)
-            return MUS_ROUTE110;
+            return MUS_DP_ROUTE201_DAY;
         else
-            return MUS_ROUTE119;
+            return MUS_DP_ROUTE201_DAY;
     }
 }
 
 u16 GetWarpDestinationMusic(void)
 {
     u16 music = GetLocationMusic(&sWarpDestination);
-    if (music != MUS_ROUTE118)
+    if (music != MUS_DP_ROUTE228_DAY)
     {
         return music;
     }
@@ -1267,9 +1268,9 @@ u16 GetWarpDestinationMusic(void)
     {
         if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_MAUVILLE_CITY)
          && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_MAUVILLE_CITY))
-            return MUS_ROUTE110;
+            return MUS_DP_ROUTE201_DAY;
         else
-            return MUS_ROUTE119;
+            return MUS_DP_ROUTE201_DAY;
     }
 }
 
@@ -1290,14 +1291,14 @@ void Overworld_PlaySpecialMapMusic(void)
     if (gDisableMapMusicChangeOnMapLoad == MUSIC_DISABLE_KEEP)
         return;
 
-    if (music != MUS_ABNORMAL_WEATHER && music != MUS_NONE)
+    if (music != MUS_DP_CATASTROPHE && music != MUS_NONE)
     {
         if (gSaveBlock1Ptr->savedMusic)
             music = gSaveBlock1Ptr->savedMusic;
         else if (GetCurrentMapType() == MAP_TYPE_UNDERWATER)
-            music = MUS_UNDERWATER;
+            music = MUS_DP_ROUTE210_DAY;
         else if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING))
-            music = (IS_FRLG ? MUS_RG_SURF : MUS_SURF);
+            music = (IS_FRLG ? MUS_HG_SURF : MUS_DP_SURF);
     }
 
     if (music != GetCurrentMapMusic())
@@ -1328,12 +1329,12 @@ static void TransitionMapMusic(void)
     {
         u16 newMusic = GetWarpDestinationMusic();
         u16 currentMusic = GetCurrentMapMusic();
-        if (newMusic != MUS_ABNORMAL_WEATHER && newMusic != MUS_NONE)
+        if (newMusic != MUS_DP_CATASTROPHE && newMusic != MUS_NONE)
         {
-            if (currentMusic == MUS_UNDERWATER || currentMusic == (IS_FRLG ? MUS_RG_SURF : MUS_SURF))
+            if (currentMusic == MUS_DP_ROUTE210_DAY || currentMusic == (IS_FRLG ? MUS_HG_SURF : MUS_DP_SURF))
                 return;
             if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING))
-                newMusic = (IS_FRLG ? MUS_RG_SURF : MUS_SURF);
+                newMusic = (IS_FRLG ? MUS_HG_SURF : MUS_DP_SURF);
         }
         if (newMusic != currentMusic)
         {
@@ -1355,7 +1356,7 @@ void Overworld_ChangeMusicToDefault(void)
 void Overworld_ChangeMusicTo(u16 newMusic)
 {
     u16 currentMusic = GetCurrentMapMusic();
-    if (currentMusic != newMusic && currentMusic != MUS_ABNORMAL_WEATHER)
+    if (currentMusic != newMusic && currentMusic != MUS_DP_CATASTROPHE)
         FadeOutAndPlayNewMapMusic(newMusic, 8);
 }
 
@@ -1374,7 +1375,7 @@ void TryFadeOutOldMapMusic(void)
     u16 warpMusic = GetWarpDestinationMusic();
     if (FlagGet(FLAG_DONT_TRANSITION_MUSIC) != TRUE && warpMusic != GetCurrentMapMusic())
     {
-        if (currentMusic == MUS_SURF
+        if (currentMusic == MUS_DP_SURF
             && VarGet(VAR_SKY_PILLAR_STATE) == 2
             && gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_SOOTOPOLIS_CITY)
             && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_SOOTOPOLIS_CITY)
@@ -1708,7 +1709,7 @@ const struct BlendSettings gTimeOfDayBlend[] =
 
 #define MORNING_HOUR_MIDDLE (MORNING_HOUR_BEGIN + ((MORNING_HOUR_END - MORNING_HOUR_BEGIN) / 2))
 
-void UpdateTimeOfDay(void)
+void UpdateTimeOfDay(bool32 updateBlend)
 {
     s32 hours, minutes;
     RtcCalcLocalTime();
@@ -1717,47 +1718,65 @@ void UpdateTimeOfDay(void)
 
     if (IsBetweenHours(hours, MORNING_HOUR_BEGIN, MORNING_HOUR_MIDDLE)) // night->morning
     {
-        gTimeBlend.startBlend = gTimeOfDayBlend[TIME_NIGHT];
-        gTimeBlend.endBlend = gTimeOfDayBlend[TIME_MORNING];
-        gTimeBlend.weight = TIME_BLEND_WEIGHT(MORNING_HOUR_BEGIN, MORNING_HOUR_MIDDLE);
-        gTimeBlend.altWeight = (DEFAULT_WEIGHT - gTimeBlend.weight) / 2;
+        if (updateBlend)
+        {
+            gTimeBlend.startBlend = gTimeOfDayBlend[TIME_NIGHT];
+            gTimeBlend.endBlend = gTimeOfDayBlend[TIME_MORNING];
+            gTimeBlend.weight = TIME_BLEND_WEIGHT(MORNING_HOUR_BEGIN, MORNING_HOUR_MIDDLE);
+            gTimeBlend.altWeight = (DEFAULT_WEIGHT - gTimeBlend.weight) / 2;
+        }
         gTimeOfDay = TIME_MORNING;
     }
     else if (IsBetweenHours(hours, MORNING_HOUR_MIDDLE, MORNING_HOUR_END)) // morning->day
     {
-        gTimeBlend.startBlend = gTimeOfDayBlend[TIME_MORNING];
-        gTimeBlend.endBlend = gTimeOfDayBlend[TIME_DAY];
-        gTimeBlend.weight = TIME_BLEND_WEIGHT(MORNING_HOUR_MIDDLE, MORNING_HOUR_END);
-        gTimeBlend.altWeight = (DEFAULT_WEIGHT - gTimeBlend.weight) / 2 + (DEFAULT_WEIGHT / 2);
+        if (updateBlend)
+        {
+            gTimeBlend.startBlend = gTimeOfDayBlend[TIME_MORNING];
+            gTimeBlend.endBlend = gTimeOfDayBlend[TIME_DAY];
+            gTimeBlend.weight = TIME_BLEND_WEIGHT(MORNING_HOUR_MIDDLE, MORNING_HOUR_END);
+            gTimeBlend.altWeight = (DEFAULT_WEIGHT - gTimeBlend.weight) / 2 + (DEFAULT_WEIGHT / 2);
+        }
         gTimeOfDay = TIME_MORNING;
     }
     else if (IsBetweenHours(hours, EVENING_HOUR_BEGIN, EVENING_HOUR_END)) // evening
     {
-        gTimeBlend.startBlend = gTimeOfDayBlend[TIME_DAY];
-        gTimeBlend.endBlend = gTimeOfDayBlend[TIME_EVENING];
-        gTimeBlend.weight = TIME_BLEND_WEIGHT(EVENING_HOUR_BEGIN, EVENING_HOUR_END);
-        gTimeBlend.altWeight = gTimeBlend.weight / 2 + (DEFAULT_WEIGHT / 2);
+        if (updateBlend)
+        {
+            gTimeBlend.startBlend = gTimeOfDayBlend[TIME_DAY];
+            gTimeBlend.endBlend = gTimeOfDayBlend[TIME_EVENING];
+            gTimeBlend.weight = TIME_BLEND_WEIGHT(EVENING_HOUR_BEGIN, EVENING_HOUR_END);
+            gTimeBlend.altWeight = gTimeBlend.weight / 2 + (DEFAULT_WEIGHT / 2);
+        }
         gTimeOfDay = TIME_EVENING;
     }
     else if (IsBetweenHours(hours, NIGHT_HOUR_BEGIN, NIGHT_HOUR_BEGIN + 1)) // evening->night
     {
-        gTimeBlend.startBlend = gTimeOfDayBlend[TIME_EVENING];
-        gTimeBlend.endBlend = gTimeOfDayBlend[TIME_NIGHT];
-        gTimeBlend.weight = TIME_BLEND_WEIGHT(NIGHT_HOUR_BEGIN, NIGHT_HOUR_BEGIN + 1);
-        gTimeBlend.altWeight = gTimeBlend.weight / 2;
+        if (updateBlend)
+        {
+            gTimeBlend.startBlend = gTimeOfDayBlend[TIME_EVENING];
+            gTimeBlend.endBlend = gTimeOfDayBlend[TIME_NIGHT];
+            gTimeBlend.weight = TIME_BLEND_WEIGHT(NIGHT_HOUR_BEGIN, NIGHT_HOUR_BEGIN + 1);
+            gTimeBlend.altWeight = gTimeBlend.weight / 2;
+        }
         gTimeOfDay = TIME_NIGHT;
     }
     else if (IsBetweenHours(hours, NIGHT_HOUR_BEGIN, NIGHT_HOUR_END)) // night
     {
-        gTimeBlend.weight = DEFAULT_WEIGHT;
-        gTimeBlend.altWeight = 0;
-        gTimeBlend.startBlend = gTimeBlend.endBlend = gTimeOfDayBlend[TIME_NIGHT];
+        if (updateBlend)
+        {
+            gTimeBlend.weight = DEFAULT_WEIGHT;
+            gTimeBlend.altWeight = 0;
+            gTimeBlend.startBlend = gTimeBlend.endBlend = gTimeOfDayBlend[TIME_NIGHT];
+        }
         gTimeOfDay = TIME_NIGHT;
     }
     else // day
     {
-        gTimeBlend.weight = gTimeBlend.altWeight = DEFAULT_WEIGHT;
-        gTimeBlend.startBlend = gTimeBlend.endBlend = gTimeOfDayBlend[TIME_DAY];
+        if (updateBlend)
+        {
+            gTimeBlend.weight = gTimeBlend.altWeight = DEFAULT_WEIGHT;
+            gTimeBlend.startBlend = gTimeBlend.endBlend = gTimeOfDayBlend[TIME_DAY];
+        }
         gTimeOfDay = TIME_DAY;
     }
 }
@@ -1869,7 +1888,7 @@ static void OverworldBasic(void)
         u32 *bld0 = (u32*)&cachedBlend;
         u32 *bld1 = (u32*)&gTimeBlend;
         gTimeUpdateCounter = (SECONDS_PER_MINUTE * 60 / FakeRtc_GetSecondsRatio());
-        UpdateTimeOfDay();
+        UpdateTimeOfDay(TRUE);
         FormChangeTimeUpdate();
         if (MapHasNaturalLight(gMapHeader.mapType) &&
            (bld0[0] != bld1[0]
@@ -2511,7 +2530,7 @@ static void ResetScreenForMapLoad(void)
     ScanlineEffect_Stop();
 
     DmaClear16(3, PLTT + 2, PLTT_SIZE - 2);
-    DmaFillLarge16(3, 0, (void *)VRAM, VRAM_SIZE, 0x1000);
+    DmaClearLarge16(3, (void *)VRAM, VRAM_SIZE, 0x1000);
     ResetOamRange(0, 128);
     LoadOam();
 }
@@ -3479,7 +3498,7 @@ static u8 GetLinkPlayerElevation(u8 linkPlayerId)
     return objEvent->currentElevation;
 }
 
-static s32 UNUSED GetLinkPlayerObjectStepTimer(u8 linkPlayerId)
+static s16 UNUSED GetLinkPlayerObjectStepTimer(u8 linkPlayerId)
 {
     u8 objEventId = gLinkPlayerObjectEvents[linkPlayerId].objEventId;
     struct ObjectEvent *objEvent = &gObjectEvents[objEventId];
@@ -3508,26 +3527,18 @@ static void SetPlayerFacingDirection(u8 linkPlayerId, u8 facing)
     u8 objEventId = linkPlayerObjEvent->objEventId;
     struct ObjectEvent *objEvent = &gObjectEvents[objEventId];
 
-    if (linkPlayerObjEvent->active)
+    if (!linkPlayerObjEvent->active)
+        return;
+
+    if (facing > FACING_FORCED_RIGHT)
     {
-        if (facing > FACING_FORCED_RIGHT)
-        {
-            objEvent->triggerGroundEffectsOnMove = TRUE;
-        }
-        else
-        {
-            // This is a hack to split this code onto two separate lines, without declaring a local variable.
-            // C++ style inline variables would be nice here.
-            #define TEMP sLinkPlayerMovementModes[linkPlayerObjEvent->movementMode](linkPlayerObjEvent, objEvent, facing)
-
-            sMovementStatusHandler[TEMP](linkPlayerObjEvent, objEvent);
-
-            // Clean up the hack.
-            #undef TEMP
-        }
+        objEvent->triggerGroundEffectsOnMove = TRUE;
+        return;
     }
-}
 
+    sMovementStatusHandler[sLinkPlayerMovementModes[linkPlayerObjEvent->movementMode](
+        linkPlayerObjEvent, objEvent, facing)](linkPlayerObjEvent, objEvent);
+}
 
 static u8 MovementEventModeCB_Normal(struct LinkPlayerObjectEvent *linkPlayerObjEvent, struct ObjectEvent *objEvent, enum Direction dir)
 {
@@ -3726,44 +3737,10 @@ static void DestroyItemIconSprite(void);
 
 static u8 ReformatItemDescription(enum Item item, u8 *dest)
 {
-    u8 count = 0;
-    u8 numLines = 1;
-    u8 maxChars = 32;
-    u8 *desc = (u8 *)GetItemDescription(item);
-
-    while (*desc != EOS)
-    {
-        if (count >= maxChars)
-        {
-            while (*desc != CHAR_SPACE && *desc != CHAR_NEWLINE)
-            {
-                *dest = *desc;  //finish word
-                dest++;
-                desc++;
-            }
-
-            *dest = CHAR_NEWLINE;
-            count = 0;
-            numLines++;
-            dest++;
-            desc++;
-            continue;
-        }
-
-        *dest = *desc;
-        if (*desc == CHAR_NEWLINE)
-        {
-            *dest = CHAR_SPACE;
-        }
-
-        dest++;
-        desc++;
-        count++;
-    }
-
-    // finish string
-    *dest = EOS;
-    return numLines;
+    StringCopy(dest, GetItemDescription(item));
+    StripLineBreaks(dest);
+    BreakStringAutomatic(dest, 196, 2, FONT_SMALL, HIDE_SCROLL_PROMPT);
+    return CountLineBreaks(dest) + 1;
 }
 
 void ScriptShowItemDescription(struct ScriptContext *ctx)

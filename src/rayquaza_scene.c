@@ -1989,7 +1989,7 @@ static void LoadTakesFlightSceneGfx(void)
 static void Task_RayTakesFlightAnim(u8 taskId)
 {
     s16 *data = gTasks[taskId].data;
-    PlayNewMapMusic(MUS_RAYQUAZA_APPEARS);
+    PlayNewMapMusic(MUS_DP_ENCOUNTER_INTENSE);
     InitTakesFlightSceneBgs();
     LoadTakesFlightSceneGfx();
     SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_TGT1_OBJ | BLDCNT_TGT2_BG1 | BLDCNT_EFFECT_BLEND);

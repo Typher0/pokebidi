@@ -33,7 +33,7 @@ MtChimney_EventScript_ArchieBusyFighting::
 
 MtChimney_EventScript_Maxie::
 	lockall
-	playbgm MUS_ENCOUNTER_MAGMA, FALSE
+	playbgm MUS_HG_ENCOUNTER_ROCKET, FALSE
 	msgbox MtChimney_Text_MeteoriteWillActivateVolcano, MSGBOX_DEFAULT
 	applymovement LOCALID_MT_CHIMNEY_MAXIE, Common_Movement_FacePlayer
 	waitmovement 0

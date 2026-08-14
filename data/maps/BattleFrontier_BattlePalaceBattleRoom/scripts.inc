@@ -81,7 +81,7 @@ BattleFrontier_BattlePalaceBattleRoom_EventScript_DefeatedOpponent::
 	special LoadPlayerParty
 	special SavePlayerParty
 	frontier_setpartyorder FRONTIER_PARTY_SIZE
-	playfanfare MUS_HEAL
+	playfanfare MUS_DP_HEAL
 	waitfanfare
 	special HealPlayerParty
 BattleFrontier_BattlePalaceBattleRoom_EventScript_AskReadyForOpponent::
@@ -224,7 +224,7 @@ BattleFrontier_BattlePalaceBattleRoom_EventScript_DefeatedSpenserSilver::
 	applymovement LOCALID_PALACE_BATTLE_PLAYER, BattleFrontier_BattlePalaceBattleRoom_Movement_FaceUp
 	applymovement LOCALID_PALACE_BATTLE_ATTENDANT, BattleFrontier_BattlePalaceBattleRoom_Movement_FaceDown
 	msgbox BattleFrontier_BattlePalaceBattleRoom_Text_LetsSeeFrontierPass, MSGBOX_DEFAULT
-	playfanfare MUS_OBTAIN_SYMBOL
+	playfanfare MUS_DP_OBTAIN_ACCESSORY
 	message BattleFrontier_BattlePalaceBattleRoom_Text_ReceivedSpiritsSymbol
 	waitmessage
 	waitfanfare
@@ -256,7 +256,7 @@ BattleFrontier_BattlePalaceBattleRoom_EventScript_DefeatedSpenserGold::
 	applymovement LOCALID_PALACE_BATTLE_PLAYER, BattleFrontier_BattlePalaceBattleRoom_Movement_FaceUp
 	applymovement LOCALID_PALACE_BATTLE_ATTENDANT, BattleFrontier_BattlePalaceBattleRoom_Movement_FaceDown
 	msgbox BattleFrontier_BattlePalaceBattleRoom_Text_HurryWithFrontierPass, MSGBOX_DEFAULT
-	playfanfare MUS_OBTAIN_SYMBOL
+	playfanfare MUS_DP_OBTAIN_ACCESSORY
 	message BattleFrontier_BattlePalaceBattleRoom_Text_SpiritsSymbolTookGoldenShine
 	waitmessage
 	waitfanfare

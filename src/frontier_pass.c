@@ -911,10 +911,10 @@ static void CB2_ReturnFromRecord(void)
     switch (CurrentBattlePyramidLocation())
     {
     case PYRAMID_LOCATION_FLOOR:
-        PlayBGM(MUS_B_PYRAMID);
+        PlayBGM(MUS_PL_B_CASTLE);
         break;
     case PYRAMID_LOCATION_TOP:
-        PlayBGM(MUS_B_PYRAMID_TOP);
+        PlayBGM(MUS_PL_B_CASTLE);
         break;
     default:
         Overworld_PlaySpecialMapMusic();

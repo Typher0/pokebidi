@@ -131,7 +131,7 @@ BattleFrontier_BattleFactoryBattleRoom_EventScript_DefeatedNolandSilver::
 	closemessage
 	applymovement LOCALID_FACTORY_BATTLE_PLAYER, BattleFrontier_BattleFactoryBattleRoom_Movement_PlayerApproachNoland
 	waitmovement 0
-	playfanfare MUS_OBTAIN_SYMBOL
+	playfanfare MUS_DP_OBTAIN_ACCESSORY
 	message BattleFrontier_BattleFactoryBattleRoom_Text_ReceivedKnowledgeSymbol
 	waitmessage
 	waitfanfare
@@ -157,7 +157,7 @@ BattleFrontier_BattleFactoryBattleRoom_EventScript_DefeatedNolandGold::
 	waitmessage
 	applymovement LOCALID_FACTORY_BATTLE_PLAYER, BattleFrontier_BattleFactoryBattleRoom_Movement_PlayerApproachNoland
 	waitmovement 0
-	playfanfare MUS_OBTAIN_SYMBOL
+	playfanfare MUS_DP_OBTAIN_ACCESSORY
 	message BattleFrontier_BattleFactoryBattleRoom_Text_KnowledgeSymbolTookGoldenShine
 	waitmessage
 	waitfanfare
