@@ -4348,7 +4348,10 @@ static void DebugAction_DestroyFollowerNPC(u8 taskId)
     X(MUS_ZEPHYR_TOWN) \
     X(MUS_REDBURRO_CITY) \
     X(MUS_CABRILLO_CITY) \
-    X(MUS_ROUTE_648)
+    X(MUS_ROUTE_648) \
+    X(MUS_VS_BANJIME_RIVAL) \
+    X(MUS_VS_SINGULARITY_ADMIN) \
+    X(MUS_ARKANE_CITY)
 
 #define SOUND_LIST_SE               \
     X(SE_USE_ITEM)                  \

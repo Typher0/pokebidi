@@ -108,3 +108,4 @@
 .include "sound/voicegroups/mus_redburro_city.inc"
 .include "sound/voicegroups/mus_cabrillo_city.inc"
 .include "sound/voicegroups/mus_route_648.inc"
+.include "sound/voicegroups/mus_vs_banjime_rival.inc"
