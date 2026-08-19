@@ -581,6 +581,7 @@
 #define MUS_DESERT                  645 // MUS_ASHROAD -- NOTE: not yet present in song_table.inc, must be added there before this ID will play anything
 #define MUS_VS_SINGULARITY_ADMIN    646
 #define MUS_ARKANE_CITY             647
+#define MUS_PAPILLYS_CITY           648
 
 #define MUS_ROUTE118                0x7FFF  // Map is split into 2 music sections. controlled by GetCurrLocationDefaultMusic().
 
