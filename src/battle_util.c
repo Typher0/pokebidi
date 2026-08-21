@@ -10,6 +10,8 @@
 #include "battle_setup.h"
 #include "battle_z_move.h"
 #include "battle_gimmick.h"
+#include "passive_pools.h"
+#include "data/passive_pools.h" // NEW - the actual sWildPassivePool/sBreedingPassivePool/sRaidPassivePool table data, not just declarations; must exist at src/data/passive_pools.h per section 1's guidance - this is the one part that's genuinely your own balance data to author, not something I can generate
 #include "battle_hold_effects.h"
 #include "battle_stat_change.h"
 #include "config_changes.h"
@@ -48,6 +50,7 @@
 #include "constants/items.h"
 #include "constants/item_effects.h"
 #include "constants/moves.h"
+#include "constants/passive.h"
 #include "constants/songs.h"
 #include "constants/species.h"
 #include "constants/trainers.h"
@@ -68,6 +71,7 @@ const u8 *AbsorbedByDrainHpAbility(enum BattlerId battlerDef);
 const u8 *AbsorbedByStatIncreaseAbility(struct DamageContext *ctx, enum Stat statId, u32 statAmount);
 const u8 *AbsorbedByFlashFire(struct DamageContext *ctx);
 static bool32 IsCriticalHit(struct DamageContext *ctx);
+bool32 IsImmuneToPassiveDamage(enum BattlerId battler, enum Ability ability);
 
 ARM_FUNC NOINLINE static uq4_12_t PercentToUQ4_12(u32 percent);
 ARM_FUNC NOINLINE static uq4_12_t PercentToUQ4_12_Floored(u32 percent);
@@ -2871,6 +2875,15 @@ bool32 TryFieldEffects(enum FieldEffectCases caseId)
     return effect;
 }
 
+bool32 IsImmuneToPassiveDamage(enum BattlerId battler, enum Ability ability)
+{
+    if (IsAbilityAndRecord(battler, ability, ABILITY_MAGIC_GUARD))
+        return TRUE;
+    if (GetActiveGimmick(battler) == GIMMICK_PASSIVE && GetBattlerPassive(battler) == PASSIVE_NULL_PD)
+        return TRUE;
+    return FALSE;
+}
+
 static bool32 IsRestrictedAbility(enum BattlerId battler, enum Ability ability)
 {
     return GetSpeciesAbility(gBattleMons[battler].species, 0) == ability
@@ -4048,7 +4061,7 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, enum BattlerId battler, enum
              && IsBattlerTurnDamaged(gBattlerTarget, EXCLUDING_SUBSTITUTES)
              && !CanBattlerAvoidContactEffects(gBattlerAttacker, gBattlerTarget, GetBattlerAbility(gBattlerAttacker), GetBattlerHoldEffect(gBattlerAttacker), move))
             {
-                if (!IsAbilityAndRecord(gBattlerAttacker, GetBattlerAbility(gBattlerAttacker), ABILITY_MAGIC_GUARD))
+                if (!IsImmuneToPassiveDamage(battler, ability))
                 {
                     PREPARE_ABILITY_BUFFER(gBattleTextBuff1, gLastUsedAbility);
                     SetPassiveDamageAmount(gBattlerAttacker, GetNonDynamaxMaxHP(gBattlerAttacker) / (B_ROUGH_SKIN_DMG >= GEN_4 ? 8 : 16));
@@ -4440,7 +4453,7 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, enum BattlerId battler, enum
             if (!IsBattlerAlive(gBattlerAttacker))
                 break;
 
-            if (!IsAbilityAndRecord(gBattlerAttacker, GetBattlerAbility(gBattlerAttacker), ABILITY_MAGIC_GUARD))
+            if (!IsImmuneToPassiveDamage(battler, ability))
                 SetPassiveDamageAmount(gBattlerAttacker, GetNonDynamaxMaxHP(gBattlerAttacker) / 4);
 
             switch (speciesForm)
@@ -4930,6 +4943,13 @@ enum Ability GetBattlerAbilityInternal(enum BattlerId battler, bool32 ignoreMold
 
     if (gBattleStruct->battlerState[battler].notOnField || gSpecialStatuses[battler].attackerInParty)
         return ABILITY_NONE;
+    
+    // Passive replaces the ability slot entirely, except for abilities that
+    // can't be suppressed at all (the same flag Gastro Acid/Neutralizing Gas
+    // already respect - form-changing abilities like Battle Bond, Stance
+    // Change, Comatose, etc. are marked cantBeSuppressed for that reason).
+    if (GetActiveGimmick(battler) == GIMMICK_PASSIVE && !abilityCantBeSuppressed)
+        return ABILITY_NONE;
 
     if (abilityCantBeSuppressed)
     {
@@ -4957,6 +4977,54 @@ enum Ability GetBattlerAbilityInternal(enum BattlerId battler, bool32 ignoreMold
         return ABILITY_NONE;
 
     return gBattleMons[battler].ability;
+}
+
+bool32 IsPassiveBannedForSpecies(enum Species species, enum Passive passive)
+{
+    const enum Passive *banned = gSpeciesInfo[species].bannedPassives;
+
+    if (banned == NULL || passive == PASSIVE_NONE)
+        return FALSE;
+
+    for (u32 i = 0; banned[i] != PASSIVE_NONE; i++)
+    {
+        if (banned[i] == passive)
+            return TRUE;
+    }
+    return FALSE;
+}
+
+enum BattlerId GetCopyPassiveSourceBattler(enum BattlerId battler)
+{
+    // Same pattern ABILITY_TRACE already uses to find both opposing
+    // battlers - BATTLE_OPPOSITE isn't a real macro in this fork.
+    u32 side = (GetBattlerSide(battler) ^ BIT_SIDE);
+    enum BattlerId opponent1 = GetBattlerAtPosition(side);
+    enum BattlerId opponent2 = GetBattlerAtPosition(side + BIT_FLANK);
+
+    bool32 opponent1Present = IsBattlerPresent(opponent1);
+    bool32 opponent2Present = IsDoubleBattle() && opponent2 != opponent1 && IsBattlerPresent(opponent2);
+
+    if (!opponent1Present && !opponent2Present)
+        return MAX_BATTLERS_COUNT; // nothing on the opposing side to copy from
+
+    // Prioritize whichever opposing battler currently has their own Passive
+    // active - the only way to actually find out a wild mon's Passive,
+    // since wild Pokémon never hold a Passive Ring and can't self-activate.
+    bool32 opponent1Active = opponent1Present && GetActiveGimmick(opponent1) == GIMMICK_PASSIVE;
+    bool32 opponent2Active = opponent2Present && GetActiveGimmick(opponent2) == GIMMICK_PASSIVE;
+
+    if (opponent1Active)
+        return opponent1;
+    if (opponent2Active)
+        return opponent2;
+
+    // Neither opponent has theirs active (or it's a singles battle) - copy
+    // from whichever is present, regardless of activation state, since a
+    // stored-but-inactive Passive is still legal to copy per your rule.
+    if (opponent1Present)
+        return opponent1;
+    return opponent2;
 }
 
 u32 IsAbilityOnSide(enum BattlerId battler, enum Ability ability)
@@ -5445,6 +5513,16 @@ bool32 CanSetNonVolatileStatus(enum BattlerId battlerAtk, enum BattlerId battler
         abilityAffected = TRUE;
         battleScript = BattleScript_AbilityProtectsDoesntAffect;
     }
+    else if (GetActiveGimmick(battlerDef) == GIMMICK_PASSIVE && GetBattlerPassive(battlerDef) == PASSIVE_STATUS_CLEAR) // NEW
+    {
+        // Deliberately NOT setting abilityAffected here - that flag drives
+        // IsNonVolatileStatusBlocked's RecordAbilityBattle/gLastUsedAbility
+        // logic below, and abilityDef at this point may already be
+        // ABILITY_NONE (Passive activation suppresses the real ability per
+        // section 3), which would record the wrong thing. A dedicated message
+        // script sidesteps needing ability-attribution machinery at all.
+        battleScript = BattleScript_PassiveStatusClearProtected; // new script, modeled on BattleScript_AbilityProtectsDoesntAffect but without the ability-name line
+    }
     else if (IsMistyTerrainAffected(battlerDef, abilityDef, GetBattlerHoldEffect(battlerDef), gFieldStatuses))
     {
         battleScript = BattleScript_MistyTerrainPrevents;
@@ -5526,6 +5604,11 @@ static bool32 CanSleepDueToSleepClause(enum BattlerId battlerAtk, enum BattlerId
     return FALSE;
 }
 
+bool32 IsStatusClearActive(enum BattlerId battler)
+{
+    return GetActiveGimmick(battler) == GIMMICK_PASSIVE && GetBattlerPassive(battler) == PASSIVE_STATUS_CLEAR;
+}
+
 bool32 CanBeConfused(enum BattlerId battlerAtk, enum BattlerId effectBattler)
 {
     enum Ability effectAbility = GetBattlerAbility(effectBattler);
@@ -5533,7 +5616,8 @@ bool32 CanBeConfused(enum BattlerId battlerAtk, enum BattlerId effectBattler)
     if (gBattleMons[effectBattler].volatiles.confusionTurns > 0
      || IsSafeguardProtected(battlerAtk, effectBattler, GetBattlerAbility(battlerAtk))
      || IsMistyTerrainAffected(effectBattler, effectAbility, GetBattlerHoldEffect(effectBattler), gFieldStatuses)
-     || IsAbilityAndRecord(effectBattler, effectAbility, ABILITY_OWN_TEMPO))
+     || IsAbilityAndRecord(effectBattler, effectAbility, ABILITY_OWN_TEMPO)
+     || IsStatusClearActive(effectBattler))
         return FALSE;
 
     return TRUE;
@@ -5853,10 +5937,71 @@ static bool32 IsCraftyShieldProtected(u32 battlerAtk, u32 battlerDef, u32 move)
     return FALSE;
 }
 
+static inline bool32 IsPassiveTypeProtect(enum Passive passive, enum Type moveType, enum Passive base)
+{
+    return passive == base + moveType;
+}
+
+// Null SE/AE/NVE aren't type-keyed like Null <type> - they block based on
+// the move's *effectiveness tier* against this defender, regardless of
+// which type triggered it. The only way to know that tier before damage
+// calc has actually run is to run the real type-effectiveness calculation
+// early, speculatively, with updateFlags = FALSE so it doesn't trigger any
+// of the message/ability-reveal side effects a real calculation would.
+static inline bool32 DoesMoveMatchNullTierPassive(struct BattleCalcValues *cv, enum Passive passive)
+{
+    if (passive != PASSIVE_NULL_SE && passive != PASSIVE_NULL_AE && passive != PASSIVE_NULL_NVE)
+        return FALSE;
+
+    // Null AE only cares about neutral *damaging* hits. Status moves get
+    // forced to an exact 1.0 type modifier by the type-effectiveness
+    // calculation regardless of their actual type, so without this guard
+    // every status move would read as "Average Effect" and get blocked too.
+    // SE/NVE don't need the same guard - a status move's forced 1.0 modifier
+    // never satisfies either of those tiers in the first place.
+    if (passive == PASSIVE_NULL_AE && GetMoveCategory(cv->move) == DAMAGE_CATEGORY_STATUS)
+        return FALSE;
+
+    struct DamageContext dmgCtx = {0};
+    dmgCtx.battlerAtk = cv->battlerAtk;
+    dmgCtx.battlerDef = cv->battlerDef;
+    dmgCtx.move = dmgCtx.chosenMove = cv->move;
+    dmgCtx.moveType = GetBattleMoveType(cv->move);
+    dmgCtx.updateFlags = FALSE; // speculative check only - no messages, no ability reveals
+    dmgCtx.abilities[cv->battlerAtk] = cv->abilities[cv->battlerAtk];
+    dmgCtx.abilities[cv->battlerDef] = cv->abilities[cv->battlerDef];
+    dmgCtx.holdEffects[cv->battlerAtk] = cv->holdEffects[cv->battlerAtk];
+    dmgCtx.holdEffects[cv->battlerDef] = cv->holdEffects[cv->battlerDef];
+
+    uq4_12_t modifier = CalcTypeEffectivenessMultiplier(&dmgCtx);
+
+    switch (passive)
+    {
+    case PASSIVE_NULL_SE:
+        return modifier > UQ_4_12(1.0);
+    case PASSIVE_NULL_AE:
+        return modifier == UQ_4_12(1.0);
+    case PASSIVE_NULL_NVE:
+        return modifier < UQ_4_12(1.0) && modifier != UQ_4_12(0.0); // NVE tier, not full immunity
+    default:
+        return FALSE;
+    }
+}
+
 bool32 IsBattlerProtected(struct BattleCalcValues *cv)
 {
-    if (gProtectStructs[cv->battlerDef].protected == PROTECT_NONE
-     && gProtectStructs[GetPartnerBattler(cv->battlerDef)].protected == PROTECT_NONE)
+    enum Type moveType = GetBattleMoveType(cv->move);
+    bool32 hasNormalProtect = gProtectStructs[cv->battlerDef].protected != PROTECT_NONE
+                            || gProtectStructs[GetPartnerBattler(cv->battlerDef)].protected != PROTECT_NONE;
+
+    enum Passive passiveDef = GetActiveGimmick(cv->battlerDef) == GIMMICK_PASSIVE
+                             ? GetBattlerPassive(cv->battlerDef) : PASSIVE_NONE;
+    bool32 hasPassiveProtect = IsPassiveTypeProtect(passiveDef, moveType, PASSIVE_NULL_NORMAL)
+                             || IsPassiveTypeProtect(passiveDef, moveType, PASSIVE_DRAIN_NORMAL)
+                             || IsPassiveTypeProtect(passiveDef, moveType, PASSIVE_REPEL_NORMAL)
+                             || DoesMoveMatchNullTierPassive(cv, passiveDef); // NEW - Null SE/AE/NVE
+
+    if (!hasNormalProtect && !hasPassiveProtect)
         return FALSE;
 
     if (GetMoveEffect(cv->move) == EFFECT_CURSE && !IS_BATTLER_OF_TYPE(cv->battlerAtk, TYPE_GHOST))
@@ -5867,8 +6012,16 @@ bool32 IsBattlerProtected(struct BattleCalcValues *cv)
         if (IsZMove(cv->move) || IsMaxMove(cv->move))
             return FALSE; // Z-Moves and Max Moves bypass protection (except Max Guard).
 
-        if ((cv->abilities[cv->battlerAtk] == ABILITY_UNSEEN_FIST || cv->abilities[cv->battlerAtk] == ABILITY_PIERCING_DRILL)
-         && IsMoveMakingContact(cv->battlerAtk, cv->battlerDef, cv->abilities[cv->battlerAtk], cv->holdEffects[cv->battlerAtk], cv->move))
+        bool32 unseenFistBypass = (cv->abilities[cv->battlerAtk] == ABILITY_UNSEEN_FIST || cv->abilities[cv->battlerAtk] == ABILITY_PIERCING_DRILL)
+                                 && IsMoveMakingContact(cv->battlerAtk, cv->battlerDef, cv->abilities[cv->battlerAtk], cv->holdEffects[cv->battlerAtk], cv->move);
+
+        // Pierce Passive: same idea as Unseen Fist/Piercing Drill, but not
+        // limited to contact moves - it punches through everything short of
+        // Max Guard, same as those abilities do for contact moves.
+        bool32 piercePassive = GetActiveGimmick(cv->battlerAtk) == GIMMICK_PASSIVE
+                             && GetBattlerPassive(cv->battlerAtk) == PASSIVE_PIERCE;
+
+        if (unseenFistBypass || piercePassive)
         {
             gSpecialStatuses[cv->battlerAtk].breaksThroughProtectFully = TRUE;
             return FALSE;
@@ -5885,6 +6038,8 @@ bool32 IsBattlerProtected(struct BattleCalcValues *cv)
     else if (MoveIgnoresProtect(cv->move))
         isProtected = FALSE;
     else if (IsSideProtected(cv->battlerDef, PROTECT_WIDE_GUARD) && IsSpreadMove(GetBattlerMoveTargetType(cv->battlerAtk, cv->move)))
+        isProtected = TRUE;
+    else if (hasPassiveProtect)
         isProtected = TRUE;
     else if (gProtectStructs[cv->battlerDef].protected == PROTECT_NORMAL)
         isProtected = TRUE;
@@ -6457,6 +6612,74 @@ static inline u32 CalcMoveBasePower(struct DamageContext *ctx)
     return basePower;
 }
 
+static enum Passive ResolvePassivePoolEntry(const struct PassivePoolEntry *entry, enum Species species)
+{
+    switch (entry->kind)
+    {
+    case POOL_ENTRY_TYPE1:
+        return entry->archetypeBase + GetSpeciesType(species, 0);
+    case POOL_ENTRY_TYPE2:
+        return entry->archetypeBase + GetSpeciesType(species, 1);
+    default:
+        return entry->passive;
+    }
+}
+
+static const struct PassivePoolEntry *GetPassivePoolForMethod(enum PassiveObtainMethod method)
+{
+    switch (method)
+    {
+    case PASSIVE_OBTAIN_BRED:
+        return sBreedingPassivePool;
+    case PASSIVE_OBTAIN_RAID:
+        return sRaidPassivePool;
+    case PASSIVE_OBTAIN_WILD:
+    default:
+        return sWildPassivePool;
+    }
+}
+
+static enum Passive RollFromWeightedPoolExcludingBanned(const struct PassivePoolEntry *pool, enum Species species)
+{
+    u32 totalWeight = 0;
+    for (u32 i = 0; pool[i].kind != POOL_ENTRY_END; i++)
+    {
+        if (pool[i].kind == POOL_ENTRY_TYPE2 && GetSpeciesType(species, 1) == GetSpeciesType(species, 0))
+            continue; // mono-type species don't get a second roll at the same type
+
+        if (!IsPassiveBannedForSpecies(species, ResolvePassivePoolEntry(&pool[i], species))) // was missing the species argument
+            totalWeight += pool[i].weight;
+    }
+
+    u32 roll = Random() % totalWeight;
+    u32 accum = 0;
+    for (u32 i = 0; pool[i].kind != POOL_ENTRY_END; i++)
+    {
+        if (pool[i].kind == POOL_ENTRY_TYPE2 && GetSpeciesType(species, 1) == GetSpeciesType(species, 0))
+            continue;
+
+        enum Passive resolved = ResolvePassivePoolEntry(&pool[i], species);
+        if (IsPassiveBannedForSpecies(species, resolved))
+            continue;
+        accum += pool[i].weight;
+        if (roll < accum)
+            return resolved;
+    }
+    return PASSIVE_NONE; // only reachable if every pool entry is banned for this species
+}
+
+enum Passive RollPassiveForMon(enum Species species, u32 obtainMethod)
+{
+    if (gSpeciesInfo[species].forcePassive != PASSIVE_NONE)
+        return gSpeciesInfo[species].forcePassive;
+    return RollFromWeightedPoolExcludingBanned(GetPassivePoolForMethod(obtainMethod), species);
+}
+
+bool32 CanSpeciesHavePassive(enum Species species, enum Passive passive)
+{
+    return !IsPassiveBannedForSpecies(species, passive);
+}
+
 static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageContext *ctx)
 {
     u32 holdEffectParamAtk;
@@ -6656,6 +6879,36 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageContext *ctx)
         break;
     default:
         break;
+    }
+    
+    if (GetActiveGimmick(battlerAtk) == GIMMICK_PASSIVE)
+    {
+        enum Passive passive = GetBattlerPassive(battlerAtk);
+        if (passive == PASSIVE_BOOST_NORMAL + moveType)
+            modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
+        else if (passive == PASSIVE_BOOST_PHYS && IsBattleMovePhysical(move))
+            modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
+        else if (passive == PASSIVE_BOOST_SPEC && IsBattleMoveSpecial(move))
+            modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
+        // NEW - Mastery offensive halves
+        else if (passive == PASSIVE_PHYS_MASTERY)
+        {
+            if (IsBattleMovePhysical(move))
+                modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));   // deals more with physical...
+            else if (IsBattleMoveSpecial(move))
+                modifier = uq4_12_multiply(modifier, UQ_4_12(0.5));   // ...and less with special (inverted)
+        }
+        else if (passive == PASSIVE_SPEC_MASTERY)
+        {
+            if (IsBattleMoveSpecial(move))
+                modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
+            else if (IsBattleMovePhysical(move))
+                modifier = uq4_12_multiply(modifier, UQ_4_12(0.5));
+        }
+        else if (passive == PASSIVE_ATK_MASTERY && (IsBattleMovePhysical(move) || IsBattleMoveSpecial(move)))
+            modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));       // deals more with both
+        else if (passive == PASSIVE_DEF_MASTERY && (IsBattleMovePhysical(move) || IsBattleMoveSpecial(move)))
+            modifier = uq4_12_multiply(modifier, UQ_4_12(0.5));       // deals less with both
     }
 
     // field abilities
@@ -7299,14 +7552,14 @@ static inline u32 CalcDefenseStat(struct DamageContext *ctx)
 
     // sandstorm sp.def boost for rock types
     if (GetConfig(B_SANDSTORM_SPDEF_BOOST) >= GEN_4
-	 && IS_BATTLER_OF_TYPE(battlerDef, TYPE_ROCK)
-	 && GetAttackerWeather(ctx->holdEffects[ctx->battlerAtk], ctx->abilities[ctx->battlerAtk], ctx->weather) & B_WEATHER_SANDSTORM
-	 && !usesDefStat)
+     && IS_BATTLER_OF_TYPE(battlerDef, TYPE_ROCK)
+     && GetAttackerWeather(ctx->holdEffects[ctx->battlerAtk], ctx->abilities[ctx->battlerAtk], ctx->weather) & B_WEATHER_SANDSTORM
+     && !usesDefStat)
         modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
     // snow def boost for ice types
     if (IS_BATTLER_OF_TYPE(battlerDef, TYPE_ICE)
-	 && GetAttackerWeather(ctx->holdEffects[ctx->battlerAtk], ctx->abilities[ctx->battlerAtk], ctx->weather) & B_WEATHER_SNOW
-	 && usesDefStat)
+     && GetAttackerWeather(ctx->holdEffects[ctx->battlerAtk], ctx->abilities[ctx->battlerAtk], ctx->weather) & B_WEATHER_SNOW
+     && usesDefStat)
             modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
 
     modifier = ApplyDefensiveBadgeBoost(modifier, battlerDef, move);
@@ -7671,6 +7924,54 @@ static inline uq4_12_t GetOtherModifiers(struct DamageContext *ctx)
     return finalModifier;
 }
 
+static inline uq4_12_t GetPassiveDefensiveModifier(struct DamageContext *ctx)
+{
+    uq4_12_t modifier = UQ_4_12(1.0);
+
+    if (GetActiveGimmick(ctx->battlerDef) != GIMMICK_PASSIVE)
+        return modifier;
+
+    enum Passive passiveDef = GetBattlerPassive(ctx->battlerDef);
+    bool32 isPhysical = IsBattleMovePhysical(ctx->move);
+    bool32 isSpecial = IsBattleMoveSpecial(ctx->move);
+
+    switch (passiveDef)
+    {
+    case PASSIVE_RESIST_PHYS:
+        if (isPhysical)
+            modifier = uq4_12_multiply(modifier, UQ_4_12(0.5));
+        break;
+    case PASSIVE_RESIST_SPEC:
+        if (isSpecial)
+            modifier = uq4_12_multiply(modifier, UQ_4_12(0.5));
+        break;
+    case PASSIVE_PHYS_MASTERY:
+        if (isPhysical)
+            modifier = uq4_12_multiply(modifier, UQ_4_12(0.5));   // takes less from physical...
+        else if (isSpecial)
+            modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));   // ...and MORE from special (inverted, per your doc)
+        break;
+    case PASSIVE_SPEC_MASTERY:
+        if (isSpecial)
+            modifier = uq4_12_multiply(modifier, UQ_4_12(0.5));
+        else if (isPhysical)
+            modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
+        break;
+    case PASSIVE_ATK_MASTERY:
+        if (isPhysical || isSpecial)
+            modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));   // takes MORE from both - no discrimination by category
+        break;
+    case PASSIVE_DEF_MASTERY:
+        if (isPhysical || isSpecial)
+            modifier = uq4_12_multiply(modifier, UQ_4_12(0.5));   // takes less from both
+        break;
+    default:
+        break;
+    }
+
+    return modifier;
+}
+
 #undef DAMAGE_ACCUMULATE_MULTIPLIER
 
 #define DAMAGE_APPLY_MODIFIER(modifier) do {               \
@@ -7942,6 +8243,7 @@ s32 CalcCritChanceStage(struct DamageContext *ctx)
                     + GetHoldEffectCritChanceIncrease(ctx->battlerAtk, ctx->holdEffects[ctx->battlerAtk])
                     + ((B_AFFECTION_MECHANICS == TRUE && GetBattlerAffectionHearts(ctx->battlerAtk) == AFFECTION_FIVE_HEARTS) ? 2 : 0)
                     + (ctx->abilities[ctx->battlerAtk] == ABILITY_SUPER_LUCK ? 1 : 0)
+                    + (GetActiveGimmick(ctx->battlerAtk) == GIMMICK_PASSIVE && GetBattlerPassive(ctx->battlerAtk) == PASSIVE_BOOST_CRIT ? 1 : 0)
                     + gBattleMons[ctx->battlerAtk].volatiles.bonusCritStages;
 
         if (critChance >= ARRAY_COUNT(sCriticalHitOdds))
@@ -8344,6 +8646,23 @@ uq4_12_t CalcTypeEffectivenessMultiplier(struct DamageContext *ctx)
             modifier = CalcTypeEffectivenessMultiplierInternal(ctx, modifier);
             ctx->moveType = primaryType;
         }
+        
+        // Passive: Resist <type> - remaps the fully combined effectiveness
+        // tier exactly once, after both/all defending types are already
+        // factored in. Immunity (0x, from Levitate/Wonder Guard/no-effect
+        // typing/etc.) is left alone - there's nothing to "resist" about a
+        // hit that already deals no damage.
+        if (GetActiveGimmick(ctx->battlerDef) == GIMMICK_PASSIVE && modifier != UQ_4_12(0.0))
+        {
+            enum Passive passiveDef = GetBattlerPassive(ctx->battlerDef);
+            if (passiveDef == PASSIVE_RESIST_NORMAL + ctx->moveType)
+            {
+                if (modifier >= UQ_4_12(1.0))
+                    modifier = UQ_4_12(0.5); // Super Effective and Average Effect both become regular Not Very Effective
+                else
+                    modifier = uq4_12_multiply(modifier, UQ_4_12(0.5)); // already Not Very Effective - cut in half again
+            }
+        }
     }
 
     if (ctx->updateFlags)
@@ -8558,6 +8877,166 @@ bool32 CanMegaEvolve(enum BattlerId battler)
 
     // No checks passed, the mon CAN'T mega evolve.
     return FALSE;
+}
+
+bool32 CanActivatePassive(enum BattlerId battler)
+{
+    enum BattlerPosition position = GetBattlerPosition(battler);
+    struct Pokemon *party = GetBattlerParty(battler);
+    struct Pokemon *mon = &party[gBattlerPartyIndexes[battler]];
+
+    // Check if Player has a Passive Ring.
+    if (!TESTING
+        && (position == B_POSITION_PLAYER_LEFT || (!(gBattleTypeFlags & BATTLE_TYPE_MULTI) && position == B_POSITION_PLAYER_RIGHT))
+        && !CheckBagHasItem(ITEM_PASSIVE_RING, 1))
+        return FALSE;
+    
+    u16 species = GetMonData(mon, MON_DATA_SPECIES, NULL);
+    u16 passive = GetMonData(mon, MON_DATA_PASSIVE, NULL);
+
+    if (passive == PASSIVE_NONE)
+        return FALSE;
+    if (IsPassiveBannedForSpecies(species, passive)) // NEW
+        return FALSE;
+
+    // Check if Trainer has already used Passive this battle.
+    if (HasTrainerUsedGimmick(battler, GIMMICK_PASSIVE))
+        return FALSE;
+
+    // Check if battler has another gimmick active.
+    if (GetActiveGimmick(battler) != GIMMICK_NONE)
+        return FALSE;
+
+    // Check the mon actually has a Passive set.
+    if (GetMonData(mon, MON_DATA_PASSIVE, NULL) == PASSIVE_NONE)
+        return FALSE;
+
+    if (!ShouldTrainerBattlerUseGimmick(battler, GIMMICK_PASSIVE))
+        return FALSE;
+
+    return TRUE;
+}
+
+void ActivatePassive(enum BattlerId battler)
+{
+    SetActiveGimmick(battler, GIMMICK_PASSIVE);
+    SetGimmickAsActivated(battler, GIMMICK_PASSIVE);
+
+    struct Pokemon *party = GetBattlerParty(battler);
+    enum Passive passive = GetMonData(&party[gBattlerPartyIndexes[battler]], MON_DATA_PASSIVE, NULL);
+
+    if (passive == PASSIVE_COPY)
+    {
+        enum BattlerId source = GetCopyPassiveSourceBattler(battler);
+        gBattleStruct->copiedPassive[battler] = (source == MAX_BATTLERS_COUNT) ? PASSIVE_NONE : GetBattlerPassive(source);
+    }
+    else if (passive == PASSIVE_STATUS_CLEAR) // NEW - now clears volatile statuses too
+    {
+        bool32 hadStatus = gBattleMons[battler].status1 != 0
+                         || gBattleMons[battler].volatiles.confusionTurns > 0
+                         || gBattleMons[battler].volatiles.infatuation
+                         || gBattleMons[battler].volatiles.tauntTimer != 0
+                         || gBattleMons[battler].volatiles.torment
+                         || gBattleMons[battler].volatiles.disabledMove != MOVE_NONE
+                         || gBattleMons[battler].volatiles.encoredMove != MOVE_NONE;
+
+        if (hadStatus)
+        {
+            gBattleMons[battler].status1 = 0;
+            RemoveConfusionStatus(battler); // the proper confusion-clear helper - handles confusionTurns/infiniteConfusion together, same one TryImmunityAbilityHealStatus's Own Tempo case already calls
+            gBattleMons[battler].volatiles.infatuation = 0;
+            gBattleMons[battler].volatiles.tauntTimer = 0;
+            gBattleMons[battler].volatiles.torment = FALSE;
+            gBattleMons[battler].volatiles.disabledMove = MOVE_NONE;
+            gBattleMons[battler].volatiles.disableTimer = 0;
+            gBattleMons[battler].volatiles.encoredMove = MOVE_NONE;
+            gBattleMons[battler].volatiles.encoredMovePos = 0;
+            gBattleMons[battler].volatiles.encoreTimer = 0;
+            BattleScriptCall(BattleScript_PassiveStatusClearCuresStatus); // new script, modeled on Rest/Refresh's status-cure message
+        }
+    }
+}
+
+enum Passive GetBattlerPassive(enum BattlerId battler)
+{
+    struct Pokemon *party = GetBattlerParty(battler);
+    enum Passive stored = GetMonData(&party[gBattlerPartyIndexes[battler]], MON_DATA_PASSIVE, NULL);
+
+    if (stored == PASSIVE_COPY && GetActiveGimmick(battler) == GIMMICK_PASSIVE)
+        return gBattleStruct->copiedPassive[battler];
+
+    return stored;
+}
+
+static u32 GetPassiveWeightInPool(const struct PassivePoolEntry *pool, enum Passive passive, enum Species species)
+{
+    for (u32 i = 0; pool[i].kind != POOL_ENTRY_END; i++)
+    {
+        if (ResolvePassivePoolEntry(&pool[i], species) == passive)
+            return pool[i].weight;
+    }
+    return 0; // not found - the mon's Passive didn't actually come from this pool
+}
+
+static enum Passive RollFromPoolAtWeightExcludingBanned(const struct PassivePoolEntry *pool, u32 weight, enum Species species)
+{
+    enum Passive candidates[PASSIVES_COUNT];
+    u32 count = 0;
+
+    for (u32 i = 0; pool[i].kind != POOL_ENTRY_END; i++)
+    {
+        if (pool[i].weight != weight)
+            continue;
+        if (pool[i].kind == POOL_ENTRY_TYPE2 && GetSpeciesType(species, 1) == GetSpeciesType(species, 0))
+            continue; // mono-type species don't get a second roll at the same type
+
+        enum Passive resolved = ResolvePassivePoolEntry(&pool[i], species);
+        if (!IsPassiveBannedForSpecies(species, resolved))
+            candidates[count++] = resolved;
+    }
+
+    if (count == 0)
+        return PASSIVE_NONE;
+
+    return candidates[Random() % count]; // uniform pick among the same-odds alternatives
+}
+
+enum Passive RerollPassiveForEvolution(struct Pokemon *mon, enum Species oldSpecies, enum Species newSpecies)
+{
+    enum Passive current = GetMonData(mon, MON_DATA_PASSIVE, NULL);
+    enum Passive forced = gSpeciesInfo[newSpecies].forcePassive;
+
+    if (forced != PASSIVE_NONE && current != forced)
+    {
+        u8 obtainMethod = PASSIVE_OBTAIN_SCRIPTED;
+        SetMonData(mon, MON_DATA_PASSIVE, &forced);
+        SetMonData(mon, MON_DATA_PASSIVE_OBTAIN_METHOD, &obtainMethod);
+        return forced;
+    }
+
+    if (current == PASSIVE_NONE || !IsPassiveBannedForSpecies(newSpecies, current))
+        return current; // nothing to do - no Passive yet, or still legal on the new species
+
+    u32 obtainMethod = GetMonData(mon, MON_DATA_PASSIVE_OBTAIN_METHOD, NULL);
+    enum Passive newPassive = PASSIVE_NONE;
+
+    if (obtainMethod == PASSIVE_OBTAIN_WILD || obtainMethod == PASSIVE_OBTAIN_BRED || obtainMethod == PASSIVE_OBTAIN_RAID)
+    {
+        const struct PassivePoolEntry *pool = GetPassivePoolForMethod(obtainMethod);
+        u32 weight = GetPassiveWeightInPool(pool, current, oldSpecies); // resolve against the species that actually rolled it
+        newPassive = RollFromPoolAtWeightExcludingBanned(pool, weight, newSpecies); // pick the replacement using the *new* species' types
+
+        if (newPassive == PASSIVE_NONE) // no other entry shared that exact weight, or they were all banned too
+            newPassive = RollFromWeightedPoolExcludingBanned(pool, newSpecies); // fall back to a normal weighted roll in the same pool
+    }
+    else
+    {
+        newPassive = RollFromWeightedPoolExcludingBanned(GetPassivePoolForMethod(PASSIVE_OBTAIN_WILD), newSpecies);
+    }
+
+    SetMonData(mon, MON_DATA_PASSIVE, &newPassive);
+    SetMonData(mon, MON_DATA_PASSIVE_OBTAIN_METHOD, &(u8){PASSIVE_OBTAIN_WILD}); // or leave the original method tag alone if you'd rather a chain of rerolls keep tracing back to its true origin
+    return newPassive;
 }
 
 bool32 CanUltraBurst(enum BattlerId battler)
@@ -9563,7 +10042,7 @@ u32 CalcSecondaryEffectChance(enum BattlerId battler, enum Ability battlerAbilit
 
     if (hasSereneGrace)
         secondaryEffectChance *= 2;
-    if (hasVampirism && additionalEffect->moveEffect != MOVE_EFFECT_FLINCH) 
+    if (hasVampirism && additionalEffect->moveEffect != MOVE_EFFECT_FLINCH)
         secondaryEffectChance *= 3;
     if (hasVampirism && additionalEffect->moveEffect != MOVE_EFFECT_STAT_MINUS)
         secondaryEffectChance *= 3;

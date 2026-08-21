@@ -1,4 +1,6 @@
 #include "global.h"
+#include "constants/passive.h"
+#include "passive_pools.h"
 #include "pokemon.h"
 #include "egg_hatch.h"
 #include "pokedex.h"
@@ -336,6 +338,14 @@ static void CreateHatchedMon(struct Pokemon *egg, struct Pokemon *temp)
 
     CreateMonWithIVs(temp, species, EGG_HATCH_LEVEL, personality, OTID_STRUCT_PLAYER_ID, USE_RANDOM_IVS);
     SetMonData(temp, MON_DATA_IS_SHINY, &isShiny);
+
+    // NEW - roll and set this hatched mon's Passive
+    {
+        enum Passive passive = RollPassiveForMon(species, PASSIVE_OBTAIN_BRED);
+        u8 obtainMethod = PASSIVE_OBTAIN_BRED;
+        SetMonData(temp, MON_DATA_PASSIVE, &passive);
+        SetMonData(temp, MON_DATA_PASSIVE_OBTAIN_METHOD, &obtainMethod);
+    }
 
     for (i = 0; i < MAX_MON_MOVES; i++)
         SetMonData(temp, MON_DATA_MOVE1 + i,  &moves[i]);

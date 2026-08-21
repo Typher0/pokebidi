@@ -1,4 +1,6 @@
 #include "global.h"
+#include "constants/passive.h"
+#include "passive_pools.h"
 #include "wild_encounter_ow.h"
 #include "battle_setup.h"
 #include "battle_main.h"
@@ -396,6 +398,12 @@ void StartWildBattleWithOWE(struct ScriptContext *ctx)
     CreateMonWithIVs(&gParties[B_TRAINER_OPPONENT_A][0], speciesId, level, personality, OTID_STRUCT_PLAYER_ID, USE_RANDOM_IVS);
     GiveMonInitialMoveset(&gParties[B_TRAINER_OPPONENT_A][0]);
     SetMonData(&gParties[B_TRAINER_OPPONENT_A][0], MON_DATA_IS_SHINY, &shiny);
+    
+    // NEW - roll and set this wild mon's Passive
+    enum Passive passive = RollPassiveForMon(speciesId, PASSIVE_OBTAIN_WILD);
+    u8 obtainMethod = PASSIVE_OBTAIN_WILD;
+    SetMonData(&gParties[B_TRAINER_OPPONENT_A][0], MON_DATA_PASSIVE, &passive);
+    SetMonData(&gParties[B_TRAINER_OPPONENT_A][0], MON_DATA_PASSIVE_OBTAIN_METHOD, &obtainMethod);
     
     if (StartWildBattleWithOWE_CheckBattleFrontier(headerId))
         return;

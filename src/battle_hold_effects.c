@@ -11,6 +11,7 @@
 #include "string_util.h"
 #include "data/hold_effects.h"
 #include "constants/berry.h"
+#include "constants/passive.h"
 
 bool32 IsOnSwitchInActivation(enum HoldEffect holdEffect)          { return gHoldEffectsInfo[holdEffect].onSwitchIn; }
 bool32 IsMirrorHerbActivation(enum HoldEffect holdEffect)          { return gHoldEffectsInfo[holdEffect].mirrorHerb; }
@@ -29,6 +30,7 @@ bool32 IsOnBerryActivation(enum HoldEffect holdEffect)             { return GetI
 bool32 IsOnFlingActivation(enum HoldEffect holdEffect)             { return gHoldEffectsInfo[holdEffect].onFling; }
 bool32 IsBoosterEnergyActivation(enum HoldEffect holdEffect)       { return gHoldEffectsInfo[holdEffect].boosterEnergy; }
 bool32 IsOrbsWhiteHerbActivation(enum HoldEffect holdEffect)       { return gHoldEffectsInfo[holdEffect].orbsWhiteHerbActivation; }
+bool32 IsImmuneToPassiveDamage(enum BattlerId battler, enum Ability ability);
 
 bool32 IsForceTriggerItemActivation(enum HoldEffect holdEffect)
 {
@@ -241,7 +243,7 @@ static enum ItemEffect TryRockyHelmet(enum BattlerId battlerDef, enum BattlerId 
     if (IsBattlerTurnDamaged(battlerDef, EXCLUDING_SUBSTITUTES)
      && IsBattlerAlive(battlerAtk)
      && !CanBattlerAvoidContactEffects(battlerAtk, battlerDef, ability, GetBattlerHoldEffect(battlerAtk), gCurrentMove)
-     && !IsAbilityAndRecord(battlerAtk, ability, ABILITY_MAGIC_GUARD))
+     && !IsImmuneToPassiveDamage(battlerAtk, ability))
     {
         SetPassiveDamageAmount(battlerAtk, GetNonDynamaxMaxHP(battlerAtk) / 6);
         PREPARE_ITEM_BUFFER(gBattleTextBuff1, item);
@@ -338,7 +340,7 @@ static enum ItemEffect TryJabocaBerry(enum BattlerId battlerDef, enum BattlerId 
      && GetMoveEffect(gCurrentMove) != EFFECT_FUTURE_SIGHT
      && !DoesSubstituteBlockMove(battlerAtk, battlerDef, gCurrentMove)
      && IsBattleMovePhysical(gCurrentMove)
-     && !IsAbilityAndRecord(battlerAtk, GetBattlerAbility(battlerAtk), ABILITY_MAGIC_GUARD))
+     && !IsImmuneToPassiveDamage(battlerAtk, GetBattlerAbility(battlerAtk)))
     {
         s32 jabocaDamage = GetNonDynamaxMaxHP(battlerAtk) / 8;
         if (GetBattlerAbility(battlerDef) == ABILITY_RIPEN)
@@ -362,7 +364,7 @@ static enum ItemEffect TryRowapBerry(enum BattlerId battlerDef, enum BattlerId b
      && GetMoveEffect(gCurrentMove) != EFFECT_FUTURE_SIGHT
      && !DoesSubstituteBlockMove(battlerAtk, battlerDef, gCurrentMove)
      && IsBattleMoveSpecial(gCurrentMove)
-     && !IsAbilityAndRecord(battlerAtk, GetBattlerAbility(battlerAtk), ABILITY_MAGIC_GUARD))
+     && !IsImmuneToPassiveDamage(battlerAtk, GetBattlerAbility(battlerAtk)))
     {
         s32 rowapDamage = GetNonDynamaxMaxHP(battlerAtk) / 8;
         if (GetBattlerAbility(battlerDef) == ABILITY_RIPEN)
@@ -553,7 +555,7 @@ static enum ItemEffect TryLifeOrb(enum BattlerId battlerAtk)
     if (!gBattleStruct->unableToUseMove
      && !gBattleStruct->battlerState[battlerAtk].redCardSwitched
      && (IsAnyTargetTurnDamaged(battlerAtk, INCLUDING_SUBSTITUTES) || gBattleScripting.savedDmg > 0)
-     && !IsAbilityAndRecord(battlerAtk, GetBattlerAbility(battlerAtk), ABILITY_MAGIC_GUARD))
+     && !IsImmuneToPassiveDamage(battlerAtk, GetBattlerAbility(battlerAtk)))
     {
         SetPassiveDamageAmount(battlerAtk, GetNonDynamaxMaxHP(battlerAtk) / 10);
         BattleScriptCall(BattleScript_ItemHurtRet);
@@ -588,7 +590,7 @@ static enum ItemEffect TryStickyBarbOnEndTurn(enum BattlerId battler, enum Item 
 {
     enum ItemEffect effect = ITEM_NO_EFFECT;
 
-    if (!IsAbilityAndRecord(battler, GetBattlerAbility(battler), ABILITY_MAGIC_GUARD))
+    if (!IsImmuneToPassiveDamage(battler, GetBattlerAbility(battler)))
     {
         SetPassiveDamageAmount(battler, GetNonDynamaxMaxHP(battler) / 8);
         PREPARE_ITEM_BUFFER(gBattleTextBuff1, item);
@@ -653,7 +655,7 @@ static enum ItemEffect TryBlackSludgeDamage(enum BattlerId battler, enum HoldEff
 {
     enum ItemEffect effect = ITEM_NO_EFFECT;
 
-    if (!IsAbilityAndRecord(battler, GetBattlerAbility(battler), ABILITY_MAGIC_GUARD))
+    if (!IsImmuneToPassiveDamage(battler, GetBattlerAbility(battler)))
     {
         SetPassiveDamageAmount(battler, GetNonDynamaxMaxHP(battler) / 8);
         RecordItemEffectBattle(battler, holdEffect);

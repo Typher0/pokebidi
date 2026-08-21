@@ -288,6 +288,7 @@ LittlerootTown_UnicornLab_EventScript_StarterCaught::
 	message LittlerootTown_UnicornLab_Text_DexGet
 	waitmessage
 	waitfanfare
+    giveitem ITEM_PASSIVE_RING, 1
 	setvar VAR_ROUTE101_STATE, 1
 	setvar VAR_LITTLEROOT_INTRO_STATE, 7
 	msgbox LittlerootTown_UnicornLab_Text_FinishIt, MSGBOX_DEFAULT

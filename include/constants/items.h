@@ -1073,6 +1073,9 @@ enum __attribute__((packed)) Item
     ITEM_BAXCALIBRITE = 893,
     ITEM_TATSUGIRINITE = 894,
     ITEM_GLIMMORANITE = 895,
+    
+    // New Items
+    ITEM_PASSIVE_RING = 896,
 
     ITEMS_COUNT,
     ITEM_FIELD_ARROW = ITEMS_COUNT,

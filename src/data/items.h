@@ -14079,6 +14079,22 @@ const struct ItemInfo gItemsInfo[] =
         .iconPic = gItemIcon_DynamaxBand,
         .iconPalette = gItemIconPalette_DynamaxBand,
     },
+    
+    [ITEM_PASSIVE_RING] =
+    {
+        .name = ITEM_NAME("Passive Ring"),
+        .price = 0,
+        .importance = 1,
+        .description = COMPOUND_STRING(
+            "Enables {PKMN} to\n"
+            "use their Passive in\n"
+            "battle."),
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_PassiveRing,
+        .iconPalette = gItemIconPalette_PassiveRing,
+    },
 
 // Misc. Key Items
 

@@ -167,6 +167,7 @@ static EWRAM_DATA struct PokemonSummaryScreenData
         u32 OTID; // 0x48
         enum Type teraType;
         u8 mintNature;
+        enum Passive passive; // NEW - see swsh_summary_screen.c's PrintMonPassiveName/SetMonTypeIcons
     } summary;
     u16 bgTilemapBuffers[PSS_PAGE_COUNT][2][0x400];
     u8 mode;
@@ -1590,6 +1591,7 @@ static bool8 ExtractMonDataToSummaryStruct(struct Pokemon *mon)
     default:
         sum->ribbonCount = GetMonData(mon, MON_DATA_RIBBON_COUNT);
         sum->teraType = GetMonData(mon, MON_DATA_TERA_TYPE);
+        sum->passive = GetMonData(mon, MON_DATA_PASSIVE); // NEW
         sum->isShiny = GetMonData(mon, MON_DATA_IS_SHINY);
         return TRUE;
     }

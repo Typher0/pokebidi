@@ -11,6 +11,7 @@
 #include "constants/hold_effects.h"
 #include "constants/items.h"
 #include "constants/map_groups.h"
+#include "constants/passive.h"
 #include "constants/regions.h"
 #include "constants/region_map_sections.h"
 #include "constants/map_groups.h"
@@ -124,15 +125,17 @@ enum MonData {
     MON_DATA_DYNAMAX_LEVEL,
     MON_DATA_GIGANTAMAX_FACTOR,
     MON_DATA_TERA_TYPE,
+    MON_DATA_PASSIVE,                 // NEW
+    MON_DATA_PASSIVE_OBTAIN_METHOD,   // NEW
     MON_DATA_EVOLUTION_TRACKER,
 };
 
 struct PokemonSubstruct0
 {
-    u16 species:11; // 2047 species.
-    enum Type teraType:5; // 30 types.
-    u16 heldItem:10; // 1023 items.
-    u16 unused_02:6;
+    u16 species:11;
+    enum Type teraType:5;
+    u16 heldItem:10;
+    u16 passiveLow:6;   // CHANGED from unused_02:6 - low 6 bits of the Passive value (bits 0-5)
     u32 experience:21;
     u32 nickname11:8; // 11th character of nickname.
     u32 unused_04:3;
@@ -149,9 +152,11 @@ struct PokemonSubstruct1
     u16 evolutionTracker1:5;
     enum Move move2:11; // 2047 moves.
     u16 evolutionTracker2:5;
-    enum Move move3:11; // 2047 moves.
-    u16 unused_04:5;
-    enum Move move4:11; // 2047 moves.
+    enum Move move3:11;
+    u16 passiveHigh:1;          // CHANGED from part of unused_04:5 - high bit of the Passive value (bit 6)
+    u16 passiveObtainMethod:3;  // CHANGED from part of unused_04:5 - which pool it was rolled from (see section 7)
+    u16 unused_04b:1;           // 1 bit still genuinely free
+    enum Move move4:11;
     u16 unused_06:3;
     u16 hyperTrainedHP:1;
     u16 hyperTrainedAttack:1;
@@ -400,6 +405,8 @@ struct SpeciesInfo /*0xC4*/
     enum Type types[2];
     u8 catchRate;
     u8 forceTeraType;
+    enum Passive forcePassive;
+    const enum Passive *bannedPassives; // PASSIVE_NONE-terminated; NULL if nothing's banned
     u16 expYield; // expYield was changed from u8 to u16 for the new Exp System.
     u16 evYield_HP:2;
     u16 evYield_Attack:2;
@@ -560,6 +567,15 @@ enum {
     AFFINE_UNUSED_2,
     AFFINE_UNUSED_3,
     NUM_MON_AFFINES,
+};
+
+enum PassiveObtainMethod
+{
+    PASSIVE_OBTAIN_WILD,
+    PASSIVE_OBTAIN_BRED,
+    PASSIVE_OBTAIN_RAID,
+    PASSIVE_OBTAIN_TUTOR,     // player deliberately chose it - no pool/odds to preserve
+    PASSIVE_OBTAIN_SCRIPTED,  // came from species' forcePassive - also no pool/odds
 };
 
 // The animation the Pokémon does during the feeding scene depends on their nature.

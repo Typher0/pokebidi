@@ -73,6 +73,7 @@
 #include "constants/items.h"
 #include "constants/moves.h"
 #include "constants/party_menu.h"
+#include "constants/passive.h"
 #include "constants/rgb.h"
 #include "constants/songs.h"
 #include "constants/trainer_slide.h"
@@ -4763,6 +4764,9 @@ u32 GetBattlerTotalSpeedStat(enum BattlerId battler, enum Ability ability, enum 
         speed *= 2;
 
     // various effects
+    if (GetActiveGimmick(battler) == GIMMICK_PASSIVE && GetBattlerPassive(battler) == PASSIVE_BOOST_SPEED)
+        speed = (speed * 150) / 100;
+    
     if (gSideStatuses[GetBattlerSide(battler)] & SIDE_STATUS_TAILWIND)
         speed *= 2;
 

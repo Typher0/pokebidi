@@ -2460,6 +2460,12 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
                 }
             }
             break;
+        case MON_DATA_PASSIVE:
+            retVal = GetSubstruct0(boxMon)->passiveLow | (GetSubstruct1(boxMon)->passiveHigh << 6);
+            break;
+        case MON_DATA_PASSIVE_OBTAIN_METHOD:
+            retVal = GetSubstruct1(boxMon)->passiveObtainMethod;
+            break;
         case MON_DATA_EVOLUTION_TRACKER:
             {
                 struct PokemonSubstruct1 *substruct1 = GetSubstruct1(boxMon);
@@ -2891,6 +2897,17 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
             break;
         case MON_DATA_TERA_TYPE:
             SET8(GetSubstruct0(boxMon)->teraType);
+            break;
+        case MON_DATA_PASSIVE:
+        {
+            u16 passive;
+            SET16(passive);
+            GetSubstruct0(boxMon)->passiveLow = passive & 0x3F;
+            GetSubstruct1(boxMon)->passiveHigh = (passive >> 6) & 0x1;
+            break;
+        }
+        case MON_DATA_PASSIVE_OBTAIN_METHOD:
+            SET8(GetSubstruct1(boxMon)->passiveObtainMethod);
             break;
         case MON_DATA_EVOLUTION_TRACKER:
         {

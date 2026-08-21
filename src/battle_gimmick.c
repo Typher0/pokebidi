@@ -9,6 +9,7 @@
 #include "battle_util.h"
 #include "item.h"
 #include "palette.h"
+#include "passive_indicators.h"
 #include "pokemon.h"
 #include "sprite.h"
 #include "util.h"
@@ -269,6 +270,7 @@ void LoadIndicatorSpritesGfx(void)
     LoadSpritePalette(&sSpritePalette_MiscIndicator);
     LoadSpritePalette(&sSpritePalette_MegaIndicator);
     LoadSpritePalette(&sSpritePalette_TeraIndicator);
+    LoadSpritePalette(&sSpritePalette_PassiveIndicator);
 }
 
 static void SpriteCb_GimmickIndicator(struct Sprite *sprite)
@@ -300,6 +302,10 @@ const u32 *GetIndicatorSpriteSrc(enum BattlerId battler)
     {
         return (u32 *)sTeraIndicatorDataPtrs[GetBattlerTeraType(battler)];
     }
+    else if (gimmick == GIMMICK_PASSIVE) // NEW - special case, same shape as Tera
+    {
+        return (u32 *)gPassiveIndicatorGfx[GetBattlerPassive(battler)];
+    }
     else if (gGimmicksInfo[gimmick].indicatorData != NULL)
     {
         return (u32 *)gGimmicksInfo[gimmick].indicatorData;
@@ -315,6 +321,8 @@ u32 GetIndicatorPalTag(enum BattlerId battler)
     u32 gimmick = GetActiveGimmick(battler);
     if (IsBattlerPrimalReverted(battler))
         return TAG_MISC_INDICATOR_PAL;
+    else if (gimmick == GIMMICK_PASSIVE) // NEW
+        return TAG_PASSIVE_INDICATOR_PAL;
     else if (gGimmicksInfo[gimmick].indicatorPalTag != 0)
         return gGimmicksInfo[gimmick].indicatorPalTag;
     else

@@ -1,6 +1,9 @@
 #ifndef GUARD_BATTLE_GIMMICK_H
 #define GUARD_BATTLE_GIMMICK_H
 
+#include "passive_indicators.h"
+#include "constants/passive.h"
+
 enum Gimmick
 {
     GIMMICK_NONE,
@@ -9,6 +12,7 @@ enum Gimmick
     GIMMICK_Z_MOVE,
     GIMMICK_DYNAMAX,
     GIMMICK_TERA,
+    GIMMICK_PASSIVE,
     GIMMICKS_COUNT,
 };
 
@@ -21,6 +25,7 @@ struct GimmickInfo
     const u8 *indicatorData;
     bool32 (*CanActivate)(enum BattlerId battler);
     void (*ActivateGimmick)(enum BattlerId battler);
+    enum Passive copiedPassive[MAX_BATTLERS_COUNT]; // NEW - see section 12
 };
 
 void AssignUsableGimmicks(void);
@@ -38,6 +43,11 @@ bool32 IsGimmickTriggerSpriteActive(void);
 bool32 IsGimmickTriggerSpriteMatchingBattler(enum BattlerId battler);
 void HideGimmickTriggerSprite(void);
 void DestroyGimmickTriggerSprite(void);
+enum Passive GetBattlerPassive(enum BattlerId battler);
+enum BattlerId GetCopyPassiveSourceBattler(enum BattlerId battler); // section 12
+bool32 IsStatusClearActive(enum BattlerId battler); // section 13 - shared by every volatile/non-volatile status gate
+bool32 CanActivatePassive(enum BattlerId battler); // NEW - referenced by gGimmicksInfo[GIMMICK_PASSIVE] below; must be declared here, not just defined in the .c file, since data/gimmicks.h is #included before these functions are defined
+void ActivatePassive(enum BattlerId battler); // NEW - same reason
 
 void LoadIndicatorSpritesGfx(void);
 u32 GetIndicatorPalTag(enum BattlerId battler);

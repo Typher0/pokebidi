@@ -582,6 +582,7 @@ struct BattleStruct
     struct FutureSight futureSight[MAX_BATTLERS_COUNT];
     struct Wish wish[MAX_BATTLERS_COUNT];
     u16 moveTarget[MAX_BATTLERS_COUNT];
+    enum Passive copiedPassive[MAX_BATTLERS_COUNT]; // NEW - Copy Passive's resolved-at-activation cache (section 12)
     u8 faintCounter[MAX_BATTLE_TRAINERS]; // Supreme Overload / Last Respects
     u32 expShareExpValue;
     u32 expValue;
@@ -1178,6 +1179,9 @@ static inline void SetPassiveDamageAmount(enum BattlerId battler, s32 value)
 
 static inline void SetHealAmount(enum BattlerId battler, s32 value)
 {
+    if (GetActiveGimmick(battler) == GIMMICK_PASSIVE && GetBattlerPassive(battler) == PASSIVE_BOOST_HEAL)
+        value = value * 3 / 2;
+    
     if (value == 0)
         value = 1;
     gBattleStruct->passiveHpUpdate[battler] = -1 * value;

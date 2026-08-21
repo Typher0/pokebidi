@@ -6351,6 +6351,55 @@ BattleScript_SwapToSubstituteContinue:
 	waitanimation
 BattleScript_SwapToSubstituteReturn:
 	return
+ 
+ BattleScript_PassiveDrainEffect::
+    pause B_WAIT_TIME_SHORT
+    printstring STRINGID_PASSIVEDRAINABSORBED    @ "The Drain Passive soaked up the attack!"
+    waitmessage B_WAIT_TIME_LONG
+    healthbarupdate BS_TARGET, PASSIVE_HP_UPDATE
+    datahpupdate BS_TARGET, PASSIVE_HP_UPDATE
+    return
+    
+BattleScript_PassiveRepelEffect::
+    jumpifabsent BS_ATTACKER, BattleScript_PassiveRepelEffectRet
+    clearmoveresultflags MOVE_RESULT_NO_EFFECT
+    pause B_WAIT_TIME_SHORT
+    printstring STRINGID_PASSIVEREPELREFLECTED    @ "The attack was reflected right back!"
+    waitmessage B_WAIT_TIME_LONG
+    healthbarupdate BS_ATTACKER, PASSIVE_HP_UPDATE
+    datahpupdate BS_ATTACKER, PASSIVE_HP_UPDATE
+    tryfaintmon BS_ATTACKER
+    setmoveresultflags MOVE_RESULT_MISSED
+BattleScript_PassiveRepelEffectRet::
+    return
+    
+BattleScript_PassiveSteadyHeal::
+    playanimation BS_ATTACKER, B_ANIM_INGRAIN_HEAL    @ placeholder anim reuse - swap for dedicated Passive art if you make any
+    printstring STRINGID_PASSIVESTEADYHEAL    @ "It regained health from its Passive!"
+    waitmessage B_WAIT_TIME_LONG
+    healthbarupdate BS_ATTACKER, PASSIVE_HP_UPDATE
+    datahpupdate BS_ATTACKER, PASSIVE_HP_UPDATE
+    return
+    
+BattleScript_PassiveNoStatLoss::
+    pause B_WAIT_TIME_SHORT
+    printstring STRINGID_PASSIVEPREVENTSSTATLOSS    @ "Its Passive won't let its stats be lowered!"
+    waitmessage B_WAIT_TIME_LONG
+    return
+    
+BattleScript_PassiveStatusClearProtected::
+    pause B_WAIT_TIME_SHORT
+    printstring STRINGID_PASSIVEBLOCKEDSTATUS    @ "It's protected against status conditions!"
+    waitmessage B_WAIT_TIME_LONG
+    setmoveresultflags MOVE_RESULT_FAILED
+    goto BattleScript_MoveEnd
+    
+BattleScript_PassiveStatusClearCuresStatus::
+    pause B_WAIT_TIME_SHORT
+    printstring STRINGID_PASSIVECUREDSTATUS    @ "It was cured of all its status conditions!"
+    waitmessage B_WAIT_TIME_LONG
+    updatestatusicon BS_ATTACKER
+    return
 
 BattleScript_TooScaredToMove::
 	printstring STRINGID_MONTOOSCAREDTOMOVE

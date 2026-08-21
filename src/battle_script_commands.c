@@ -62,6 +62,7 @@
 #include "constants/item_effects.h"
 #include "constants/moves.h"
 #include "constants/party_menu.h"
+#include "constants/passive.h"
 #include "constants/rgb.h"
 #include "constants/songs.h"
 #include "constants/trainer_slide.h"
@@ -7597,6 +7598,11 @@ static void Cmd_tryinfatuating(void)
         gLastUsedAbility = ABILITY_OBLIVIOUS;
         RecordAbilityBattle(gBattlerTarget, ABILITY_OBLIVIOUS);
     }
+    else if (IsStatusClearActive(gBattlerTarget)) // NEW
+    {
+        gBattlescriptCurrInstr = BattleScript_PassiveStatusClearProtected; // reusing the message script from the non-volatile blocking section above
+        gBattleStruct->moveResultFlags[gBattlerTarget] |= MOVE_RESULT_DOESNT_AFFECT_FOE;
+    }
     else
     {
         if (gBattleMons[gBattlerTarget].volatiles.infatuation
@@ -7870,7 +7876,8 @@ static void Cmd_disablelastusedattack(void)
             break;
     }
     if (gBattleMons[gBattlerTarget].volatiles.disabledMove == MOVE_NONE
-        && i != MAX_MON_MOVES && gBattleMons[gBattlerTarget].pp[i] != 0)
+        && i != MAX_MON_MOVES && gBattleMons[gBattlerTarget].pp[i] != 0
+        && !IsStatusClearActive(gBattlerTarget))
     {
         PREPARE_MOVE_BUFFER(gBattleTextBuff1, gBattleMons[gBattlerTarget].moves[i])
 
@@ -7918,7 +7925,8 @@ static void Cmd_trysetencore(void)
      || i == MAX_MON_MOVES
      || gBattleMons[gBattlerTarget].pp[i] == 0
      || gBattleMons[gBattlerTarget].volatiles.encoredMove != MOVE_NONE
-     || GetMoveEffect(gChosenMoveByBattler[gBattlerTarget]) == EFFECT_SHELL_TRAP)
+     || GetMoveEffect(gChosenMoveByBattler[gBattlerTarget]) == EFFECT_SHELL_TRAP
+     || IsStatusClearActive(gBattlerTarget))
     {
         gBattlescriptCurrInstr = cmd->failInstr;
     }
@@ -8760,7 +8768,8 @@ static void Cmd_settorment(void)
     CMD_ARGS(const u8 *failInstr);
 
     if (gBattleMons[gBattlerTarget].volatiles.torment == TRUE
-        || (GetActiveGimmick(gBattlerTarget) == GIMMICK_DYNAMAX))
+        || (GetActiveGimmick(gBattlerTarget) == GIMMICK_DYNAMAX)
+        || IsStatusClearActive(gBattlerTarget))
     {
         gBattlescriptCurrInstr = cmd->failInstr;
     }
@@ -8782,6 +8791,11 @@ static void Cmd_settaunt(void)
         gBattlerAbility = gBattlerTarget;
         gLastUsedAbility = ABILITY_OBLIVIOUS;
         RecordAbilityBattle(gBattlerTarget, ABILITY_OBLIVIOUS);
+    }
+    else if (IsStatusClearActive(gBattlerTarget)) // NEW
+    {
+        gBattlescriptCurrInstr = BattleScript_PassiveStatusClearProtected;
+        gBattleStruct->moveResultFlags[gBattlerTarget] |= MOVE_RESULT_DOESNT_AFFECT_FOE;
     }
     else if (gBattleMons[gBattlerTarget].volatiles.tauntTimer == 0)
     {

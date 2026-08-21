@@ -30,6 +30,8 @@
 #include "constants/abilities.h"
 #include "constants/items.h"
 #include "constants/battle_frontier.h"
+#include "constants/passive.h"
+#include "passive_pools.h" // NEW - IsPassiveBannedForSpecies' prototype
 
 static void CB2_ReturnFromChooseHalfParty(void);
 static void CB2_ReturnFromChooseBattleFrontierParty(void);
@@ -359,7 +361,7 @@ void SetTeraType(struct ScriptContext *ctx)
  * if side/slot are assigned, it will create the mon at the assigned party location
  * if slot == PARTY_SIZE, it will give the mon to first available party or storage slot
  */
-static u32 ScriptGiveMonParameterized(u8 side, u8 slot, enum Species species, u8 level, enum Item item, enum PokeBall ball, u8 nature, u8 abilityNum, u8 gender, u16 *evs, u16 *ivs, enum Move *moves, enum ShinyMode shinyMode, bool8 gmaxFactor, enum Type teraType, u8 dmaxLevel)
+static u32 ScriptGiveMonParameterized(u8 side, u8 slot, enum Species species, u8 level, enum Item item, enum PokeBall ball, u8 nature, u8 abilityNum, u8 gender, u16 *evs, u16 *ivs, enum Move *moves, enum ShinyMode shinyMode, bool8 gmaxFactor, enum Type teraType, u8 dmaxLevel, enum Passive passive)
 {
     struct Pokemon mon;
     u32 i;
@@ -390,6 +392,22 @@ static u32 ScriptGiveMonParameterized(u8 side, u8 slot, enum Species species, u8
     if (teraType == TYPE_NONE || teraType == TYPE_MYSTERY || teraType >= NUMBER_OF_MON_TYPES)
         teraType = GetTeraTypeFromPersonality(&mon);
     SetMonData(&mon, MON_DATA_TERA_TYPE, &teraType);
+    
+    // passive
+    if (passive != PASSIVE_NONE)
+    {
+        assertf(!IsPassiveBannedForSpecies(species, passive), "invalid passive %d for species %d", passive, species)
+        {
+            passive = PASSIVE_NONE;
+        }
+
+        if (passive != PASSIVE_NONE)
+        {
+            u8 obtainMethod = PASSIVE_OBTAIN_SCRIPTED;
+            SetMonData(&mon, MON_DATA_PASSIVE, &passive);
+            SetMonData(&mon, MON_DATA_PASSIVE_OBTAIN_METHOD, &obtainMethod);
+        }
+    }
 
     // EV and IV
     for (i = 0; i < NUM_STATS; i++)
@@ -566,6 +584,7 @@ void ScrCmd_createmon(struct ScriptContext *ctx)
     bool8 gmaxFactor         = PARSE_FLAG(22, FALSE);
     enum Type teraType       = PARSE_FLAG(23, NUMBER_OF_MON_TYPES);
     u8 dmaxLevel             = PARSE_FLAG(24, 0);
+    enum Passive passive     = PARSE_FLAG(25, PASSIVE_NONE); // NEW
 
     enum GeneratedMonOrigin origin;
     if (side == 0)
@@ -584,7 +603,7 @@ void ScrCmd_createmon(struct ScriptContext *ctx)
     if (nature == NATURE_MAY_SYNCHRONIZE)
         nature = GetSynchronizedNature(origin, species);
 
-    gSpecialVar_Result = ScriptGiveMonParameterized(side, slot, species, level, item, ball, nature, abilityNum, gender, evs, ivs, moves, shinyMode, gmaxFactor, teraType, dmaxLevel);
+    gSpecialVar_Result = ScriptGiveMonParameterized(side, slot, species, level, item, ball, nature, abilityNum, gender, evs, ivs, moves, shinyMode, gmaxFactor, teraType, dmaxLevel, passive);
 }
 
 #undef PARSE_FLAG

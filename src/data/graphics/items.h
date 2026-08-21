@@ -1838,6 +1838,9 @@ const u16 gItemIconPalette_ZRing[] = INCGFX_U16("graphics/items/icon_palettes/z_
 const u32 gItemIcon_DynamaxBand[] = INCGFX_U32("graphics/items/icons/dynamax_band.png", ".4bpp.smol");
 const u16 gItemIconPalette_DynamaxBand[] = INCGFX_U16("graphics/items/icon_palettes/dynamax_band.pal", ".gbapal");
 
+const u32 gItemIcon_PassiveRing[] = INCGFX_U32("graphics/items/icons/passive_ring.png", ".4bpp.smol");
+const u16 gItemIconPalette_PassiveRing[] = INCGFX_U16("graphics/items/icon_palettes/passive_ring.pal", ".gbapal");
+
 // Misc. Key Items
 
 const u32 gItemIcon_Bicycle[] = INCGFX_U32("graphics/items/icons/bicycle.png", ".4bpp.smol");

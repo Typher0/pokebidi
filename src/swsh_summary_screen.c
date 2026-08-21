@@ -34,6 +34,9 @@
 #include "naming_screen.h"
 #include "party_menu.h"
 #include "palette.h"
+#include "passive_indicators.h"
+#include "passives_info.h" // NEW - gPassivesInfo's declaration
+#include "data/passives_info.h" // NEW - the actual name/description table data
 #include "pokeball.h"
 #include "pokemon.h"
 #include "pokemon_sprite_visualizer.h"
@@ -57,6 +60,7 @@
 #include "constants/items.h"
 #include "constants/moves.h"
 #include "constants/party_menu.h"
+#include "constants/passive.h"
 #include "constants/region_map_sections.h"
 #include "constants/rgb.h"
 #include "constants/songs.h"
@@ -136,6 +140,7 @@ static const u8 sSummaryConditionToLineLength[MAX_CONDITION + 1] =
 // Dynamic fields for the Pokémon Skills page
 #define PSS_DATA_WINDOW_SKILLS_STATS 0
 #define PSS_DATA_WINDOW_SKILLS_ABILITY 1
+#define PSS_DATA_WINDOW_SKILLS_PASSIVE 2
 
 // Dynamic fields for the Battle Moves page
 #define PSS_DATA_WINDOW_MOVE_DESCRIPTION 0
@@ -177,6 +182,7 @@ enum SwShSummarySprites
     SPRITE_ARR_ID_LR_BUTTON,
     SPRITE_ARR_ID_INFO_PROMPT,
     SPRITE_ARR_ID_TERA_TYPE,
+    SPRITE_ARR_ID_PASSIVE, // NEW - Passive badge sprite
     SPRITE_ARR_ID_TYPE, // 2 for mon types, 5 for move types(4 moves and 1 to learn), used interchangeably, because mon types and move types aren't shown on the same screen
     SPRITE_ARR_ID_MOVE_SLOT = SPRITE_ARR_ID_TYPE + TYPE_ICON_SPRITE_COUNT,
     SPRITE_ARR_ID_MOVE_CURSOR = SPRITE_ARR_ID_MOVE_SLOT + (MOVE_SLOT_SPRITES_COUNT * MOVE_SLOT_COUNT),
@@ -236,6 +242,7 @@ static EWRAM_DATA struct PokemonSummaryScreenData
         u32 OTID; // 0x48
         enum Type teraType;
         u8 mintNature;
+        enum Passive passive; // NEW - swsh_summary_screen.c has its own separate PokeSummary struct, distinct from pokemon_summary_screen.c's
         u8 ivHp;
         u8 ivAtk;
         u8 ivDef;
@@ -351,6 +358,7 @@ static void PrintMonNature(void);
 static void PrintMonDexNumberSpecies(void);
 static void PrintMonAbilityName(void);
 static void PrintMonAbilityDescription(void);
+static void PrintMonPassiveName(void);
 static void BufferMonTrainerMemo(void);
 static void BufferNatureString(u8);
 static void GetMetLevelString(u8 *);
@@ -769,6 +777,15 @@ static const struct WindowTemplate sPageSkillsTemplate[] =
         .paletteNum = 2,
         .baseBlock = 277,
     },
+    [PSS_DATA_WINDOW_SKILLS_PASSIVE] = {
+        .bg = 0,
+        .tilemapLeft = 1,
+        .tilemapTop = 16, // right where Ability's own height-5 block ends
+        .width = 18,
+        .height = 2,
+        .paletteNum = 2,
+        .baseBlock = 277 + (18 * 5),
+    },
 };
 static const struct WindowTemplate sPageMovesTemplate[] = // This is used for both battle moves
 {
@@ -1107,6 +1124,10 @@ static const union AnimCmd sSpriteAnim_TypeFairy[] = {
     ANIMCMD_FRAME(TYPE_FAIRY * 8, 0, FALSE, FALSE),
     ANIMCMD_END
 };
+static const union AnimCmd sSpriteAnim_TypeSound[] = {
+    ANIMCMD_FRAME(TYPE_SOUND * 8, 0, FALSE, FALSE),
+    ANIMCMD_END
+};
 static const union AnimCmd sSpriteAnim_TypeStellar[] = {
     ANIMCMD_FRAME(TYPE_STELLAR * 8, 0, FALSE, FALSE),
     ANIMCMD_END
@@ -1153,6 +1174,7 @@ static const union AnimCmd *const sSpriteAnimTable_MoveTypes[NUMBER_OF_MON_TYPES
     [TYPE_DRAGON] = sSpriteAnim_TypeDragon,
     [TYPE_DARK] = sSpriteAnim_TypeDark,
     [TYPE_FAIRY] = sSpriteAnim_TypeFairy,
+    [TYPE_SOUND] = sSpriteAnim_TypeSound,
     [TYPE_STELLAR] = sSpriteAnim_TypeStellar,
     [NUMBER_OF_MON_TYPES + CONTEST_CATEGORY_COOL] = sSpriteAnim_CategoryCool,
     [NUMBER_OF_MON_TYPES + CONTEST_CATEGORY_BEAUTY] = sSpriteAnim_CategoryBeauty,
@@ -1260,6 +1282,10 @@ static const union AnimCmd sSpriteAnim_TeraTypeFairy[] = {
     ANIMCMD_FRAME(TYPE_FAIRY * 4, 0, FALSE, FALSE),
     ANIMCMD_END
 };
+static const union AnimCmd sSpriteAnim_TeraTypeSound[] = {
+    ANIMCMD_FRAME(TYPE_SOUND * 4, 0, FALSE, FALSE),
+    ANIMCMD_END
+};
 static const union AnimCmd sSpriteAnim_TeraTypeStellar[] = {
     ANIMCMD_FRAME(TYPE_STELLAR * 4, 0, FALSE, FALSE),
     ANIMCMD_END
@@ -1319,6 +1345,38 @@ static const struct SpriteTemplate sSpriteTemplate_TeraType =
     .paletteTag = TAG_TERA_TYPE,
     .oam = &sOamData_TeraType,
     .anims = sSpriteAnimTable_TeraType,
+};
+
+static void SetPassiveBadgeGraphic(u8 spriteArrayId, enum Passive passive)
+{
+    u32 *dst = (u32 *)(OBJ_VRAM0 + TILE_SIZE_4BPP * GetSpriteTileStartByTag(TAG_PASSIVE_BADGE));
+    const u32 *src = (const u32 *)gPassiveIndicatorGfx[passive];
+
+    for (u32 i = 0; i < (8 * 16 / 2) / 4; i++) // same INDICATOR_SIZE math as UpdateIndicatorVisibilityAndType
+        dst[i] = src[i];
+
+    SetSpriteInvisibility(spriteArrayId, passive == PASSIVE_NONE);
+}
+
+static const union AnimCmd sSpriteAnim_PassiveBadge[] = { ANIMCMD_FRAME(0, 0), ANIMCMD_END }; // single frame - content is overwritten via raw VRAM copy, not animation frames
+static const union AnimCmd *const sSpriteAnimTable_PassiveBadge[] = { sSpriteAnim_PassiveBadge };
+
+static const struct OamData sOamData_PassiveBadge =
+{
+    .shape = SPRITE_SHAPE(8x16),
+    .size = SPRITE_SIZE(8x16), // matches the 8x16 indicator graphics (INDICATOR_SIZE = 8*16/2 bytes) shared with the battle HUD
+    .priority = 2,
+};
+
+static void SpriteCb_PassiveBadge(struct Sprite *sprite) {} // no per-frame behavior needed - tile content is set directly by SetPassiveBadgeGraphic
+
+static const struct SpriteTemplate sSpriteTemplate_PassiveBadge =
+{
+    .tileTag = TAG_PASSIVE_BADGE,
+    .paletteTag = TAG_PASSIVE_INDICATOR_PAL, // was TAG_PASSIVE_BADGE, a tile tag never used for any palette - the real palette is TAG_PASSIVE_INDICATOR_PAL
+    .oam = &sOamData_PassiveBadge,
+    .anims = sSpriteAnimTable_PassiveBadge,
+    .callback = SpriteCb_PassiveBadge,
 };
 
 static const struct OamData sOamData_MoveSlot =
@@ -2479,6 +2537,7 @@ static bool8 ExtractMonDataToSummaryStruct(struct Pokemon *mon)
     default:
         sum->ribbonCount = GetMonData(mon, MON_DATA_RIBBON_COUNT);
         sum->teraType = GetMonData(mon, MON_DATA_TERA_TYPE);
+        sum->passive = GetMonData(mon, MON_DATA_PASSIVE); // NEW
         sum->isShiny = GetMonData(mon, MON_DATA_IS_SHINY);
         return TRUE;
     }
@@ -4248,15 +4307,26 @@ static void PrintMonAbilityName(void)
     enum Ability ability = GetAbilityBySpecies(sMonSummaryScreen->summary.species, sMonSummaryScreen->summary.abilityNum);
     u8 y = SWSH_SUMMARY_SHOW_DYNAMAX_LEVEL ? 3 : 1;
 
-    PrintTextOnWindow(AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_SKILLS_ABILITY), gAbilitiesInfo[ability].name, 48, y, 0, 0);
+    PrintTextOnWindow(AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_SKILLS_ABILITY), gAbilitiesInfo[ability].name, 34, y, 0, 0);
 }
 
 static void PrintMonAbilityDescription(void)
 {
     enum Ability ability = GetAbilityBySpecies(sMonSummaryScreen->summary.species, sMonSummaryScreen->summary.abilityNum);
-    u8 y = SWSH_SUMMARY_SHOW_DYNAMAX_LEVEL ? 22 : 20;
+    u8 y = SWSH_SUMMARY_SHOW_DYNAMAX_LEVEL ? 22 : 13;
 
     PrintTextOnWindow(AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_SKILLS_ABILITY), gAbilitiesInfo[ability].description, 0, y, 0, 0);
+}
+
+static void PrintMonPassiveName(void)
+{
+    enum Passive passive = GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_PASSIVE, NULL);
+    u8 y = SWSH_SUMMARY_SHOW_DYNAMAX_LEVEL ? 3 : 24;
+
+    if (passive == PASSIVE_NONE)
+        return; // nothing to print - not every mon rolled one
+
+    PrintTextOnWindow(AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_SKILLS_PASSIVE), gPassivesInfo[passive].name, 34, y, 0, 0);
 }
 
 static const u8 *GetCharacteristicString(void)
@@ -4508,6 +4578,7 @@ static void PrintSkillsPageText(void)
 {
     PrintMonAbilityName();
     PrintMonAbilityDescription();
+    PrintMonPassiveName();
     PrintStats(SKILL_STATE_STATS);
 }
 
@@ -4528,6 +4599,9 @@ static void Task_PrintSkillsPage(u8 taskId)
         PrintStats(SKILL_STATE_STATS);
         break;
     case 4:
+        PrintMonPassiveName();
+        break;
+    case 5:
         DestroyTask(taskId);
         return;
     }
@@ -5539,7 +5613,7 @@ static void PrintMoveNameAndPP(u8 slotIndex)
     if (move != MOVE_NONE)
     {
         u8 pp = CalculatePPWithBonus(move, summary->ppBonuses, slotIndex);
-        u8 ppState = GetCurrentPpToMaxPpState(summary->pp[slotIndex], pp);
+        u8 ppState = GetCurrentPPToMaxPPState(summary->pp[slotIndex], pp);
         ConvertIntToDecimalStringN(gStringVar1, summary->pp[slotIndex], STR_CONV_MODE_RIGHT_ALIGN, 2);
         ConvertIntToDecimalStringN(gStringVar2, pp, STR_CONV_MODE_RIGHT_ALIGN, 2);
         DynamicPlaceholderTextUtil_Reset();
@@ -5867,6 +5941,29 @@ static void CreateMoveTypeIcons(void)
                 if (SWSH_SUMMARY_SHOW_TERA_TYPE)
                     sMonSummaryScreen->spriteIds[i] = CreateSprite(&sSpriteTemplate_TeraType, 0, 0, 2);
             }
+            else if (i == SPRITE_ARR_ID_PASSIVE) // NEW
+            {
+                // CreateSprite doesn't allocate VRAM tile space on its own -
+                // that's normally LoadSpriteSheet's job. Since this sprite's
+                // actual pixel content gets overwritten immediately by
+                // SetPassiveBadgeGraphic's raw copy, the bootstrap content
+                // here doesn't matter - only its size does (2 tiles, for an
+                // 8x16 sprite). Reusing a real gPassiveIndicatorGfx entry as
+                // the bootstrap data guarantees the right size without
+                // needing a separate dummy asset.
+                if (GetSpriteTileStartByTag(TAG_PASSIVE_BADGE) == 0xFFFF)
+                {
+                    struct SpriteSheet passiveBadgeSheet = {
+                        .data = gPassiveIndicatorGfx[1], // any real entry - size only, content gets overwritten immediately below
+                        .size = 8 * 16 / 2, // 2 tiles, matches the 8x16 OAM shape
+                        .tag = TAG_PASSIVE_BADGE,
+                    };
+                    LoadSpriteSheet(&passiveBadgeSheet);
+                }
+                if (IndexOfSpritePaletteTag(TAG_PASSIVE_INDICATOR_PAL) == 0xFF) // NEW - this palette is only loaded elsewhere in battle context, never automatically here
+                    LoadSpritePalette(&gSpritePalette_PassiveIndicator);
+                sMonSummaryScreen->spriteIds[i] = CreateSprite(&sSpriteTemplate_PassiveBadge, 0, 0, 2);
+            }
             else
             {
                 sMonSummaryScreen->spriteIds[i] = CreateSprite(&sSpriteTemplate_MoveTypes, 0, 0, 2);
@@ -5913,6 +6010,12 @@ static void SetMonTypeIcons(void)
         if (SWSH_SUMMARY_SHOW_TERA_TYPE)
         {
             SetTypeSpritePosAndPal(summary->teraType, 124, 45, SPRITE_ARR_ID_TERA_TYPE);
+        }
+        if (SWSH_SUMMARY_SHOW_PASSIVE) // NEW - new config flag, mirrors SWSH_SUMMARY_SHOW_TERA_TYPE
+        {
+            SetPassiveBadgeGraphic(SPRITE_ARR_ID_PASSIVE, summary->passive);
+            gSprites[sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_PASSIVE]].x = 100; // placeholder position - pick a real spot once you see it rendered
+            gSprites[sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_PASSIVE]].y = 82;
         }
     }
 }

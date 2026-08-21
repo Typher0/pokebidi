@@ -13,6 +13,7 @@
 #include "battle_controllers.h"
 #include "move.h"
 #include "constants/battle_move_resolution.h"
+#include "constants/passive.h"
 
 static void ValidateBattlers(void);
 static enum Move GetOriginallyUsedMove(enum Move chosenMove);
@@ -26,6 +27,7 @@ static bool32 TryMagicCoat(struct BattleCalcValues *cv);
 static bool32 TryActivatePowderStatus(enum Move move);
 static void CalculateMagnitudeDamage(void);
 static void UpdateStallMons(void);
+bool32 IsImmuneToPassiveDamage(enum BattlerId battler, enum Ability ability);
 
 // Submoves
 static enum Move GetMirrorMoveMove(void);
@@ -448,7 +450,7 @@ static enum CancelerResult CancelerGhost(struct BattleCalcValues *cv) // GHOST i
 static enum CancelerResult CancelerParalyzed(struct BattleCalcValues *cv)
 {
     if (gBattleMons[cv->battlerAtk].status1 & STATUS1_PARALYSIS
-        && !(B_MAGIC_GUARD == GEN_4 && IsAbilityAndRecord(cv->battlerAtk, cv->abilities[cv->battlerAtk], ABILITY_MAGIC_GUARD))
+        && !IsImmuneToPassiveDamage(cv->battlerAtk, cv->abilities[cv->battlerAtk])
         && !RandomPercentage(RNG_PARALYSIS, 75))
     {
         CancelMultiTurnMoves(gBattlerAttacker);
@@ -1488,7 +1490,7 @@ static enum CancelerResult CancelerPowderStatus(struct BattleCalcValues *cv)
 {
     if (TryActivatePowderStatus(cv->move))
     {
-        if (!IsAbilityAndRecord(cv->battlerAtk, cv->abilities[cv->battlerAtk], ABILITY_MAGIC_GUARD))
+        if (!IsImmuneToPassiveDamage(cv->battlerAtk, cv->abilities[cv->battlerAtk]))
             SetPassiveDamageAmount(cv->battlerAtk, GetNonDynamaxMaxHP(cv->battlerAtk) / 4);
 
         // This might be incorrect
@@ -2496,20 +2498,60 @@ static enum MoveEndResult MoveEndSetValues(struct BattleCalcValues *cv)
     return MOVEEND_RESULT_CONTINUE;
 }
 
+static s32 CalcPassiveRepelDamage(struct BattleCalcValues *cv)
+{
+    struct DamageContext dmgCtx = {0};
+    dmgCtx.battlerAtk = cv->battlerAtk; // the original attacker's own stat does the hitting...
+    dmgCtx.battlerDef = cv->battlerAtk; // ...back at themself
+    dmgCtx.move = dmgCtx.chosenMove = cv->move; // same move => matching power, matching type/category
+    dmgCtx.isCrit = FALSE;
+    dmgCtx.randomFactor = FALSE;
+    dmgCtx.updateFlags = FALSE; // don't double-record abilities/items for a hit that isn't really "their" move
+    dmgCtx.isSelfInflicted = TRUE; // skips normal can-this-move-even-hit-them checks, same as confusion/disobedience self-hits
+    dmgCtx.abilities[cv->battlerAtk] = GetBattlerAbility(cv->battlerAtk);
+    dmgCtx.holdEffects[cv->battlerAtk] = GetBattlerHoldEffect(cv->battlerAtk);
+
+    return CalculateMoveDamage(&dmgCtx);
+}
+
 static enum MoveEndResult MoveEndProtectLikeEffect(struct BattleCalcValues *cv)
 {
     enum MoveEndResult result = MOVEEND_RESULT_CONTINUE;
     enum ProtectMethod method = gProtectStructs[cv->battlerDef].protected;
+    enum Type moveType = GetBattleMoveType(cv->move);
+    enum Passive passiveDef = GetActiveGimmick(cv->battlerDef) == GIMMICK_PASSIVE
+                             ? GetBattlerPassive(cv->battlerDef) : PASSIVE_NONE;
 
-    if (gProtectStructs[cv->battlerAtk].chargingTurn
-     || !IsBattlerAlive(cv->battlerAtk)
-     || CanBattlerAvoidContactEffects(cv->battlerAtk, cv->battlerDef, cv->abilities[cv->battlerAtk], cv->holdEffects[cv->battlerAtk], cv->move))
+    if (!IsBattlerAlive(cv->battlerAtk) || gSpecialStatuses[cv->battlerAtk].breaksThroughProtectFully)
     {
+        // Dead attacker, or Pierce/Unseen Fist broke straight through -
+        // nothing to trigger either way.
         gBattleScripting.moveendState++;
         return result;
     }
 
-    if (gSpecialStatuses[cv->battlerAtk].breaksThroughProtectFully)
+    // Drain / Repel: type-based, not contact-based, so these run even when
+    // CanBattlerAvoidContactEffects() would otherwise skip the whole function.
+    if (passiveDef == PASSIVE_DRAIN_NORMAL + moveType)
+    {
+        s32 healAmount = GetNonDynamaxMaxHP(cv->battlerDef) / 4; // 25% max HP
+        SetHealAmount(cv->battlerDef, healAmount);
+        PREPARE_MOVE_BUFFER(gBattleTextBuff1, cv->move);
+        BattleScriptCall(BattleScript_PassiveDrainEffect); // new script, modeled on BattleScript_EffectAbsorb
+        gBattleScripting.moveendState++;
+        return MOVEEND_RESULT_RUN_SCRIPT;
+    }
+    if (passiveDef == PASSIVE_REPEL_NORMAL + moveType)
+    {
+        s32 reflectedDamage = CalcPassiveRepelDamage(cv);
+        SetPassiveDamageAmount(cv->battlerAtk, reflectedDamage);
+        BattleScriptCall(BattleScript_PassiveRepelEffect); // new script, modeled on BattleScript_SpikyShieldEffect
+        gBattleScripting.moveendState++;
+        return MOVEEND_RESULT_RUN_SCRIPT;
+    }
+
+    if (gProtectStructs[cv->battlerAtk].chargingTurn
+     || CanBattlerAvoidContactEffects(cv->battlerAtk, cv->battlerDef, cv->abilities[cv->battlerAtk], cv->holdEffects[cv->battlerAtk], cv->move))
     {
         gBattleScripting.moveendState++;
         return result;
@@ -2518,7 +2560,7 @@ static enum MoveEndResult MoveEndProtectLikeEffect(struct BattleCalcValues *cv)
     switch (method)
     {
     case PROTECT_SPIKY_SHIELD:
-        if (!IsAbilityAndRecord(cv->battlerAtk, cv->abilities[cv->battlerAtk], ABILITY_MAGIC_GUARD))
+        if (!IsImmuneToPassiveDamage(cv->battlerAtk, cv->abilities[cv->battlerAtk]))
         {
             SetPassiveDamageAmount(cv->battlerAtk, GetNonDynamaxMaxHP(cv->battlerAtk) / 8);
             PREPARE_MOVE_BUFFER(gBattleTextBuff1, MOVE_SPIKY_SHIELD);
@@ -2648,7 +2690,7 @@ static enum MoveEndResult MoveEndAbsorb(struct BattleCalcValues *cv)
          && !gBattleStruct->unableToUseMove
          && (gBattleStruct->doneDoublesSpreadHit || !IsDoubleSpreadMove())
          && !gSpecialStatuses[cv->battlerAtk].mindBlownRecoil
-         && !IsAbilityAndRecord(cv->battlerAtk, cv->abilities[cv->battlerAtk], ABILITY_MAGIC_GUARD))
+         && !IsImmuneToPassiveDamage(cv->battlerAtk, cv->abilities[cv->battlerAtk]))
         {
             s32 recoil = (GetNonDynamaxMaxHP(cv->battlerAtk) + 1) / 2; // Half of Max HP Rounded UP
             SetPassiveDamageAmount(cv->battlerAtk, recoil);
@@ -3381,7 +3423,7 @@ static enum MoveEndResult MoveEndMoveBlockRecoil(struct BattleCalcValues *cv)
         if (IsBattlerTurnDamaged(cv->battlerDef, INCLUDING_SUBSTITUTES) && IsBattlerAlive(cv->battlerAtk))
         {
             if (IsAbilityAndRecord(cv->battlerAtk, cv->abilities[cv->battlerAtk], ABILITY_ROCK_HEAD)
-             || IsAbilityAndRecord(cv->battlerAtk, cv->abilities[cv->battlerAtk], ABILITY_MAGIC_GUARD))
+             || IsImmuneToPassiveDamage(cv->battlerAtk, cv->abilities[cv->battlerAtk]))
                 break;
 
             if (cv->moveEffect == EFFECT_CHLOROBLAST)

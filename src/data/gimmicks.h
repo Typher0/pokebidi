@@ -50,5 +50,15 @@ const struct GimmickInfo gGimmicksInfo[GIMMICKS_COUNT] =
         .indicatorPalTag = TAG_TERA_INDICATOR_PAL,
         .CanActivate = CanTerastallize,
         .ActivateGimmick = ActivateTera,
+    },
+    [GIMMICK_PASSIVE] =
+    {
+        .triggerSheet = &sSpriteSheet_PassiveTrigger,
+        .triggerPal = &sSpritePalette_PassiveTrigger,
+        .triggerTemplate = &sSpriteTemplate_GimmickTrigger,
+        .indicatorData = NULL, // handled separately - see section 14's GetIndicatorSpriteSrc special case, same as GIMMICK_TERA's own entry above
+        .indicatorPalTag = TAG_PASSIVE_INDICATOR_PAL,
+        .CanActivate = CanActivatePassive,
+        .ActivateGimmick = ActivatePassive,
     }
 };

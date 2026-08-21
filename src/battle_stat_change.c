@@ -9,6 +9,7 @@
 #include "battle_ai_util.h"
 #include "item.h"
 #include "move.h"
+#include "constants/passive.h"
 
 // Stat change
 static enum StatChangeResult CanDecreaseStat(struct BattleCalcValues *cv, struct StatChange *st);
@@ -706,12 +707,14 @@ static bool32 IsAbilityBlocked(struct BattleCalcValues *cv, struct StatChange *s
     if (st->certain)
         return FALSE;
 
-    if (CanAbilityPreventStatLoss(cv->abilities[cv->battlerDef]))
+    bool32 passiveChangeClear = GetActiveGimmick(cv->battlerDef) == GIMMICK_PASSIVE && GetBattlerPassive(cv->battlerDef) == PASSIVE_CHANGE_CLEAR; // NEW
+
+    if (CanAbilityPreventStatLoss(cv->abilities[cv->battlerDef]) || passiveChangeClear)
     {
         if (!st->onlyChecking)
         {
             MarkStatsAsDone(st, NUM_BATTLE_STATS);
-            st->script = BattleScript_AbilityNoStatLoss;
+            st->script = passiveChangeClear ? BattleScript_PassiveNoStatLoss : BattleScript_AbilityNoStatLoss; // NEW - dedicated message, not ability-flavored text
         }
     }
     else if (AbilityPreventsSpecificStatDrop(cv->abilities[cv->battlerDef], st->stat))
