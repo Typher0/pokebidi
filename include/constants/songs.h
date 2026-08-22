@@ -582,6 +582,7 @@
 #define MUS_VS_SINGULARITY_ADMIN    646
 #define MUS_ARKANE_CITY             647
 #define MUS_PAPILLYS_CITY           648
+#define MUS_VS_BANJIME_WILD         649
 
 #define MUS_ROUTE118                0x7FFF  // Map is split into 2 music sections. controlled by GetCurrLocationDefaultMusic().
 
