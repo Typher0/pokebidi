@@ -24,6 +24,7 @@ struct PassivePoolEntry
 // need to be non-static and declared here, since a function only defined in
 // one .c file with no declaration in a shared header can't be called from a
 // different .c file.
+enum Passive GetTypedPassive(enum Passive archetypeBase, enum Type type);
 enum Passive RollPassiveForMon(enum Species species, u32 obtainMethod);
 bool32 IsPassiveBannedForSpecies(enum Species species, enum Passive passive);
 bool32 CanSpeciesHavePassive(enum Species species, enum Passive passive);

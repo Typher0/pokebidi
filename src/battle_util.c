@@ -5939,7 +5939,7 @@ static bool32 IsCraftyShieldProtected(u32 battlerAtk, u32 battlerDef, u32 move)
 
 static inline bool32 IsPassiveTypeProtect(enum Passive passive, enum Type moveType, enum Passive base)
 {
-    return passive == base + moveType;
+    return passive == GetTypedPassive(base, moveType);
 }
 
 // Null SE/AE/NVE aren't type-keyed like Null <type> - they block based on
@@ -6036,7 +6036,7 @@ bool32 IsBattlerProtected(struct BattleCalcValues *cv)
     if (IsCraftyShieldProtected(cv->battlerAtk, cv->battlerDef, cv->move))
         isProtected = TRUE;
     else if (MoveIgnoresProtect(cv->move))
-        isProtected = FALSE;
+        isProtected = FALSE; // moves that ignore Protect ignore Null/Drain/Repel/Null-tier too
     else if (IsSideProtected(cv->battlerDef, PROTECT_WIDE_GUARD) && IsSpreadMove(GetBattlerMoveTargetType(cv->battlerAtk, cv->move)))
         isProtected = TRUE;
     else if (hasPassiveProtect)
@@ -6617,9 +6617,9 @@ static enum Passive ResolvePassivePoolEntry(const struct PassivePoolEntry *entry
     switch (entry->kind)
     {
     case POOL_ENTRY_TYPE1:
-        return entry->archetypeBase + GetSpeciesType(species, 0);
+        return GetTypedPassive(entry->archetypeBase, GetSpeciesType(species, 0));
     case POOL_ENTRY_TYPE2:
-        return entry->archetypeBase + GetSpeciesType(species, 1);
+        return GetTypedPassive(entry->archetypeBase, GetSpeciesType(species, 1));
     default:
         return entry->passive;
     }
@@ -6884,7 +6884,7 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageContext *ctx)
     if (GetActiveGimmick(battlerAtk) == GIMMICK_PASSIVE)
     {
         enum Passive passive = GetBattlerPassive(battlerAtk);
-        if (passive == PASSIVE_BOOST_NORMAL + moveType)
+        if (passive == GetTypedPassive(PASSIVE_BOOST_NORMAL, moveType))
             modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
         else if (passive == PASSIVE_BOOST_PHYS && IsBattleMovePhysical(move))
             modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
@@ -8655,7 +8655,7 @@ uq4_12_t CalcTypeEffectivenessMultiplier(struct DamageContext *ctx)
         if (GetActiveGimmick(ctx->battlerDef) == GIMMICK_PASSIVE && modifier != UQ_4_12(0.0))
         {
             enum Passive passiveDef = GetBattlerPassive(ctx->battlerDef);
-            if (passiveDef == PASSIVE_RESIST_NORMAL + ctx->moveType)
+            if (passiveDef == GetTypedPassive(PASSIVE_RESIST_NORMAL, ctx->moveType))
             {
                 if (modifier >= UQ_4_12(1.0))
                     modifier = UQ_4_12(0.5); // Super Effective and Average Effect both become regular Not Very Effective

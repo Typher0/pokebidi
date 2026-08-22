@@ -12,6 +12,7 @@
 #include "item.h"
 #include "battle_controllers.h"
 #include "move.h"
+#include "passive_pools.h"
 #include "constants/battle_move_resolution.h"
 #include "constants/passive.h"
 
@@ -2514,6 +2515,33 @@ static s32 CalcPassiveRepelDamage(struct BattleCalcValues *cv)
     return CalculateMoveDamage(&dmgCtx);
 }
 
+enum Passive GetTypedPassive(enum Passive archetypeBase, enum Type type)
+{
+    switch (type)
+    {
+    case TYPE_NORMAL:   return archetypeBase + 0;
+    case TYPE_FIGHTING: return archetypeBase + 1;
+    case TYPE_FLYING:   return archetypeBase + 2;
+    case TYPE_POISON:   return archetypeBase + 3;
+    case TYPE_GROUND:   return archetypeBase + 4;
+    case TYPE_ROCK:     return archetypeBase + 5;
+    case TYPE_BUG:      return archetypeBase + 6;
+    case TYPE_GHOST:    return archetypeBase + 7;
+    case TYPE_STEEL:    return archetypeBase + 8;
+    case TYPE_FIRE:     return archetypeBase + 9;
+    case TYPE_WATER:    return archetypeBase + 10;
+    case TYPE_GRASS:    return archetypeBase + 11;
+    case TYPE_ELECTRIC: return archetypeBase + 12;
+    case TYPE_PSYCHIC:  return archetypeBase + 13;
+    case TYPE_ICE:      return archetypeBase + 14;
+    case TYPE_DRAGON:   return archetypeBase + 15;
+    case TYPE_DARK:     return archetypeBase + 16;
+    case TYPE_FAIRY:    return archetypeBase + 17;
+    case TYPE_SOUND:    return archetypeBase + 18;
+    default:            return PASSIVE_NONE; // TYPE_NONE, TYPE_MYSTERY, TYPE_STELLAR, and your unfinished 20th type
+    }
+}
+
 static enum MoveEndResult MoveEndProtectLikeEffect(struct BattleCalcValues *cv)
 {
     enum MoveEndResult result = MOVEEND_RESULT_CONTINUE;
@@ -2532,7 +2560,7 @@ static enum MoveEndResult MoveEndProtectLikeEffect(struct BattleCalcValues *cv)
 
     // Drain / Repel: type-based, not contact-based, so these run even when
     // CanBattlerAvoidContactEffects() would otherwise skip the whole function.
-    if (passiveDef == PASSIVE_DRAIN_NORMAL + moveType)
+    if (passiveDef == GetTypedPassive(PASSIVE_DRAIN_NORMAL, moveType))
     {
         s32 healAmount = GetNonDynamaxMaxHP(cv->battlerDef) / 4; // 25% max HP
         SetHealAmount(cv->battlerDef, healAmount);
@@ -2541,7 +2569,7 @@ static enum MoveEndResult MoveEndProtectLikeEffect(struct BattleCalcValues *cv)
         gBattleScripting.moveendState++;
         return MOVEEND_RESULT_RUN_SCRIPT;
     }
-    if (passiveDef == PASSIVE_REPEL_NORMAL + moveType)
+    if (passiveDef == GetTypedPassive(PASSIVE_REPEL_NORMAL, moveType))
     {
         s32 reflectedDamage = CalcPassiveRepelDamage(cv);
         SetPassiveDamageAmount(cv->battlerAtk, reflectedDamage);

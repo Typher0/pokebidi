@@ -408,6 +408,14 @@ static u32 ScriptGiveMonParameterized(u8 side, u8 slot, enum Species species, u8
             SetMonData(&mon, MON_DATA_PASSIVE_OBTAIN_METHOD, &obtainMethod);
         }
     }
+    else
+    {
+        // NEW - not explicitly set: fall back to the wild pool
+        enum Passive rolledPassive = RollPassiveForMon(species, PASSIVE_OBTAIN_WILD);
+        u8 obtainMethod = PASSIVE_OBTAIN_WILD;
+        SetMonData(&mon, MON_DATA_PASSIVE, &rolledPassive);
+        SetMonData(&mon, MON_DATA_PASSIVE_OBTAIN_METHOD, &obtainMethod);
+    }
 
     // EV and IV
     for (i = 0; i < NUM_STATS; i++)
