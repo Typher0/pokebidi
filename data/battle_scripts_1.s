@@ -6375,7 +6375,7 @@ BattleScript_PassiveRepelEffectRet::
     
 BattleScript_PassiveRepelStatusReflect::
     pause B_WAIT_TIME_SHORT
-    printstring STRINGID_PKMNMOVEBOUNCEDABILITY
+    printstring STRINGID_PASSIVEREPELREFLECTED
     waitmessage B_WAIT_TIME_LONG
     return
     
