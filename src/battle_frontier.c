@@ -19,6 +19,8 @@
 #include "constants/abilities.h"
 #include "constants/battle_frontier.h"
 #include "constants/battle_frontier_mons.h"
+#include "constants/passive.h" // NEW
+#include "passive_pools.h" // NEW - RollPassiveForMon's prototype
 
 static void FillTrainerParty(u16 trainerId, enum BattleTrainer trainer, u8 monCount);
 
@@ -387,6 +389,22 @@ void CreateFacilityMon(const struct TrainerMon *fmon, u16 level, u8 fixedIV, u32
     {
         u32 data = fmon->teraType;
         SetMonData(dst, MON_DATA_TERA_TYPE, &data);
+    }
+
+    // NEW - scripted Passive if the trainer data specifies one, otherwise fall back to the wild pool
+    if (fmon->passive != PASSIVE_NONE)
+    {
+        enum Passive data = fmon->passive;
+        u8 obtainMethod = PASSIVE_OBTAIN_SCRIPTED;
+        SetMonData(dst, MON_DATA_PASSIVE, &data);
+        SetMonData(dst, MON_DATA_PASSIVE_OBTAIN_METHOD, &obtainMethod);
+    }
+    else
+    {
+        enum Passive rolledPassive = RollPassiveForMon(fmon->species, PASSIVE_OBTAIN_WILD);
+        u8 obtainMethod = PASSIVE_OBTAIN_WILD;
+        SetMonData(dst, MON_DATA_PASSIVE, &rolledPassive);
+        SetMonData(dst, MON_DATA_PASSIVE_OBTAIN_METHOD, &obtainMethod);
     }
 
 

@@ -74,6 +74,7 @@
 #include "constants/moves.h"
 #include "constants/party_menu.h"
 #include "constants/passive.h"
+#include "passive_pools.h" // NEW - RollPassiveForMon's prototype
 #include "constants/rgb.h"
 #include "constants/songs.h"
 #include "constants/trainer_slide.h"
@@ -2043,6 +2044,21 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
                 gBattleStruct->opponentMonCanTera |= 1 << i;
                 enum Type data = partyData[monIndex].teraType;
                 SetMonData(&party[i], MON_DATA_TERA_TYPE, &data);
+            }
+            // NEW - scripted Passive if the trainer data specifies one, otherwise fall back to the wild pool
+            if (partyData[monIndex].passive != PASSIVE_NONE)
+            {
+                enum Passive data = partyData[monIndex].passive;
+                u8 obtainMethod = PASSIVE_OBTAIN_SCRIPTED;
+                SetMonData(&party[i], MON_DATA_PASSIVE, &data);
+                SetMonData(&party[i], MON_DATA_PASSIVE_OBTAIN_METHOD, &obtainMethod);
+            }
+            else
+            {
+                enum Passive rolledPassive = RollPassiveForMon(partyData[monIndex].species, PASSIVE_OBTAIN_WILD);
+                u8 obtainMethod = PASSIVE_OBTAIN_WILD;
+                SetMonData(&party[i], MON_DATA_PASSIVE, &rolledPassive);
+                SetMonData(&party[i], MON_DATA_PASSIVE_OBTAIN_METHOD, &obtainMethod);
             }
             CalculateMonStats(&party[i]);
 

@@ -2571,6 +2571,18 @@ static enum MoveEndResult MoveEndProtectLikeEffect(struct BattleCalcValues *cv)
     }
     if (passiveDef == GetTypedPassive(PASSIVE_REPEL_NORMAL, moveType))
     {
+        if (GetMoveCategory(cv->move) == DAMAGE_CATEGORY_STATUS)
+        {
+            // NEW - status moves don't deal damage to reflect, so instead
+            // the move itself gets bounced back at its own user, the same
+            // way Magic Bounce/Magic Coat already redirect a status move -
+            // MoveEndBouncedMove (below) does the actual re-run once this
+            // flag is set here.
+            gBattleStruct->passiveRepelPending |= 1u << cv->battlerDef;
+            gBattleScripting.moveendState++;
+            return result;
+        }
+
         s32 reflectedDamage = CalcPassiveRepelDamage(cv);
         SetPassiveDamageAmount(cv->battlerAtk, reflectedDamage);
         BattleScriptCall(BattleScript_PassiveRepelEffect); // new script, modeled on BattleScript_SpikyShieldEffect
@@ -3222,7 +3234,7 @@ static enum MoveEndResult MoveEndBouncedMove(struct BattleCalcValues *cv)
         return MOVEEND_RESULT_CONTINUE;
     }
 
-    if (gBattleStruct->magicBouncePending || gBattleStruct->magicCoatPending)
+    if (gBattleStruct->magicBouncePending || gBattleStruct->magicCoatPending || gBattleStruct->passiveRepelPending)
     {
         enum MoveTarget moveTarget = GetBattlerMoveTargetType(cv->battlerAtk, cv->move);
 
@@ -3241,6 +3253,11 @@ static enum MoveEndResult MoveEndBouncedMove(struct BattleCalcValues *cv)
                 gBattlescriptCurrInstr = GetMoveBattleScript(gCurrentMove);
                 BattleScriptCall(BattleScript_MagicCoat);
             }
+            else if (gBattleStruct->passiveRepelPending & 1u << bounceBattler) // NEW
+            {
+                gBattlescriptCurrInstr = GetMoveBattleScript(gCurrentMove);
+                BattleScriptCall(BattleScript_PassiveRepelStatusReflect); // new script, modeled on BattleScript_MagicCoat
+            }
             else
             {
                 continue;
@@ -3250,11 +3267,13 @@ static enum MoveEndResult MoveEndBouncedMove(struct BattleCalcValues *cv)
             {
                 gBattleStruct->magicBouncePending = 0;
                 gBattleStruct->magicCoatPending = 0;
+                gBattleStruct->passiveRepelPending = 0; // NEW
             }
             else
             {
                 gBattleStruct->magicBouncePending &= ~(1u << bounceBattler);
                 gBattleStruct->magicCoatPending &= ~(1u << bounceBattler);
+                gBattleStruct->passiveRepelPending &= ~(1u << bounceBattler); // NEW
             }
 
             SaveBattlerAttacker(cv->battlerAtk);

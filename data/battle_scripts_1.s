@@ -6373,6 +6373,12 @@ BattleScript_PassiveRepelEffect::
 BattleScript_PassiveRepelEffectRet::
     return
     
+BattleScript_PassiveRepelStatusReflect::
+    pause B_WAIT_TIME_SHORT
+    printstring STRINGID_PKMNMOVEBOUNCEDABILITY
+    waitmessage B_WAIT_TIME_LONG
+    return
+    
 BattleScript_PassiveSteadyHeal::
     playanimation BS_ATTACKER, B_ANIM_INGRAIN_HEAL    @ placeholder anim reuse - swap for dedicated Passive art if you make any
     printstring STRINGID_PASSIVESTEADYHEAL    @ "It regained health from its Passive!"

@@ -551,6 +551,7 @@ extern const u8 BattleScript_MoveBlockedByDynamax[];
 // passives
 extern const u8 BattleScript_PassiveDrainEffect[];
 extern const u8 BattleScript_PassiveRepelEffect[];
+extern const u8 BattleScript_PassiveRepelStatusReflect[];
 extern const u8 BattleScript_PassiveSteadyHeal[];
 extern const u8 BattleScript_PassiveNoStatLoss[];
 extern const u8 BattleScript_PassiveStatusClearProtected[];

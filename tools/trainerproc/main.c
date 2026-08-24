@@ -93,6 +93,9 @@ struct Pokemon
     struct String tera_type;
     int tera_type_line;
 
+    struct String passive;
+    int passive_line;
+
     struct String moves[MAX_MON_MOVES];
     int moves_n;
     int move1_line;
@@ -1511,6 +1514,13 @@ static bool parse_trainer(struct Parser *p, const struct Parsed *parsed, struct 
                 pokemon->tera_type_line = value.location.line;
                 pokemon->tera_type = token_string(&value);
             }
+            else if (is_literal_token(&key, "Passive"))
+            {
+                if (pokemon->passive_line)
+                    any_error = !set_show_parse_error(p, key.location, "duplicate 'Passive'");
+                pokemon->passive_line = value.location.line;
+                pokemon->passive = token_string(&value);
+            }
             else if (is_literal_token(&key, "Tags"))
             {
                 if (pokemon->tags_line)
@@ -1521,7 +1531,7 @@ static bool parse_trainer(struct Parser *p, const struct Parsed *parsed, struct 
             }
             else
             {
-                any_error = !set_show_parse_error(p, key.location, "expected one of 'EVs', 'IVs', 'Ability', 'Level', 'Ball', 'Happiness', 'Nature', 'Shiny', 'Dynamax Level', 'Gigantamax', or 'Tera Type'");
+                any_error = !set_show_parse_error(p, key.location, "expected one of 'EVs', 'IVs', 'Ability', 'Level', 'Ball', 'Happiness', 'Nature', 'Shiny', 'Dynamax Level', 'Gigantamax', 'Tera Type', or 'Passive'");
             }
         }
 
@@ -2131,6 +2141,14 @@ static void fprint_trainers(const char *output_path, FILE *f, struct Parsed *par
                 fprintf(f, "#line %d\n", pokemon->tera_type_line);
                 fprintf(f, "            .teraType = ");
                 fprint_constant(f, "TYPE", pokemon->tera_type);
+                fprintf(f, ",\n");
+            }
+
+            if (pokemon->passive_line)
+            {
+                fprintf(f, "#line %d\n", pokemon->passive_line);
+                fprintf(f, "            .passive = ");
+                fprint_constant(f, "PASSIVE", pokemon->passive);
                 fprintf(f, ",\n");
             }
 
