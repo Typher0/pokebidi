@@ -651,6 +651,11 @@ gSongTable::
     song mus_redburro_city, MUSIC_PLAYER_BGM, 0
     song mus_cabrillo_city, MUSIC_PLAYER_BGM, 0
     song mus_route_648, MUSIC_PLAYER_BGM, 0
+    song mus_vs_banjime_rival, MUSIC_PLAYER_BGM, 0
+    song mus_vs_singularity_admin, MUSIC_PLAYER_BGM, 0
+    song mus_arkane_city, MUSIC_PLAYER_BGM, 0
+    song mus_papillys_city, MUSIC_PLAYER_BGM, 0
+    song mus_vs_banjime_wild, MUSIC_PLAYER_BGM, 0
  
     .align 2
 dummy_song_header:
