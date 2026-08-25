@@ -82,6 +82,8 @@ bool32 ShouldTrainerBattlerUseGimmick(enum BattlerId battler, enum Gimmick gimmi
             return TRUE;
         if (gimmick == GIMMICK_DYNAMAX && gBattleStruct->opponentMonCanDynamax & 1 << gBattlerPartyIndexes[battler])
             return TRUE;
+        if (gimmick == GIMMICK_PASSIVE && gBattleStruct->opponentMonCanPassive & 1 << gBattlerPartyIndexes[battler]) // NEW
+            return TRUE;
     }
     #endif
 

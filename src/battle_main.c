@@ -2050,6 +2050,7 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
             {
                 enum Passive data = partyData[monIndex].passive;
                 u8 obtainMethod = PASSIVE_OBTAIN_SCRIPTED;
+                gBattleStruct->opponentMonCanPassive |= 1 << i; // NEW - only scripted Passives are AI-eligible, same as Tera's own pattern
                 SetMonData(&party[i], MON_DATA_PASSIVE, &data);
                 SetMonData(&party[i], MON_DATA_PASSIVE_OBTAIN_METHOD, &obtainMethod);
             }
