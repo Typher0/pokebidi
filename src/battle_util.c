@@ -4611,12 +4611,10 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, enum BattlerId battler, enum
 
                 if (GetConfig(B_BATTLE_BOND) < GEN_9)
                 {
-                    // Can't use TryBattleFormChange as we can't test form change const data changes.
                     gLastUsedAbility = ability;
                     GetBattlerPartyState(battler)->battleBondBoost = TRUE;
                     PREPARE_SPECIES_BUFFER(gBattleTextBuff1, gBattleMons[battler].species);
-                    GetBattlerPartyState(battler)->changedSpecies = gBattleMons[battler].species;
-                    gBattleMons[battler].species = SPECIES_GRENINJA_ASH;
+                    TryBattleFormChange(battler, FORM_CHANGE_BATTLE_BOND, ability);
                     BattleScriptCall(BattleScript_BattleBondActivatesOnMoveEndAttacker);
                     effect = TRUE;
                 }
@@ -8190,7 +8188,7 @@ static const u32 sGen6CriticalHitOdds[] = {16,  8,  2,  1,   1}; // 1/X
 static const u32 sCriticalHitOdds[]     = {16,  8,  4,  3,   2}; // 1/X, Gens 3,4,5
 static const u32 sGen2CriticalHitOdds[] = {17, 32, 64, 85, 128}; // X/256
 
-static inline u32 GetCriticalHitOdds(u32 critChance)
+u32 GetCriticalHitOdds(u32 critChance)
 {
     if (GetConfig(B_CRIT_CHANCE) >= GEN_7)
         return sGen7CriticalHitOdds[critChance];
@@ -9410,7 +9408,7 @@ void SetIllusionMon(struct Pokemon *mon, enum BattlerId battler)
     party = GetBattlerParty(battler);
 
     if (IsBattlerAlive(GetPartnerBattler(battler)))
-        partnerMon = &party[gBattlerPartyIndexes[GetPartnerBattler(battler)]];
+        partnerMon = GetBattlerMon(GetPartnerBattler(battler));
     else
         partnerMon = mon;
 
@@ -10390,8 +10388,13 @@ bool32 AreMultiPartiesFullTeams(void)
 #else
     enum DifficultyLevel difficulty = GetCurrentDifficultyLevel();
 
-    if (B_MULTI_HALF_TEAMS
-     || TRAINER_BATTLE_PARAM.opponentA == TRAINER_LINK_OPPONENT
+    if (B_MULTI_HALF_TEAMS)
+		return FALSE;
+
+	if (!(gBattleTypeFlags & BATTLE_TYPE_TRAINER))
+		return TRUE;
+		
+    if (TRAINER_BATTLE_PARAM.opponentA == TRAINER_LINK_OPPONENT
      || gBattleTypeFlags & BATTLE_TYPE_TOWER_LINK_MULTI
      || (gTrainers[difficulty][TRAINER_BATTLE_PARAM.opponentA].multiTeamSize == MULTI_TEAM_SIZE_HALF)
      || (gTrainers[difficulty][TRAINER_BATTLE_PARAM.opponentB].multiTeamSize == MULTI_TEAM_SIZE_HALF))
@@ -11370,13 +11373,13 @@ void SetWrapTurns(enum BattlerId battler, enum HoldEffect holdEffect)
 }
 
 // Return True if the order was changed, and false if the order was not changed(for example because the target would move after the attacker anyway).
-bool32 ChangeOrderTargetAfterAttacker(void)
+bool32 ChangeOrderTargetAfterAttacker(enum BattlerId battlerDef)
 {
     u32 i;
     u8 data[MAX_BATTLERS_COUNT];
     u8 actionsData[MAX_BATTLERS_COUNT];
     u32 attackerTurnOrderNum = GetBattlerTurnOrderNum(gBattlerAttacker);
-    u32 targetTurnOrderNum = GetBattlerTurnOrderNum(gBattlerTarget);
+    u32 targetTurnOrderNum = GetBattlerTurnOrderNum(battlerDef);
 
     if (attackerTurnOrderNum > targetTurnOrderNum)
         return FALSE;
@@ -11390,14 +11393,14 @@ bool32 ChangeOrderTargetAfterAttacker(void)
     }
     if (attackerTurnOrderNum == 0 && targetTurnOrderNum == 2)
     {
-        gBattlerByTurnOrder[1] = gBattlerTarget;
+        gBattlerByTurnOrder[1] = battlerDef;
         gActionsByTurnOrder[1] = actionsData[2];
         gBattlerByTurnOrder[2] = data[1];
         gActionsByTurnOrder[2] = actionsData[1];
     }
     else if (attackerTurnOrderNum == 0 && targetTurnOrderNum == 3)
     {
-        gBattlerByTurnOrder[1] = gBattlerTarget;
+        gBattlerByTurnOrder[1] = battlerDef;
         gActionsByTurnOrder[1] = actionsData[3];
         gBattlerByTurnOrder[2] = data[1];
         gActionsByTurnOrder[2] = actionsData[1];
@@ -11406,7 +11409,7 @@ bool32 ChangeOrderTargetAfterAttacker(void)
     }
     else // attackerTurnOrderNum == 1, targetTurnOrderNum == 3
     {
-        gBattlerByTurnOrder[2] = gBattlerTarget;
+        gBattlerByTurnOrder[2] = battlerDef;
         gActionsByTurnOrder[2] = actionsData[3];
         gBattlerByTurnOrder[3] = data[2];
         gActionsByTurnOrder[3] = actionsData[2];
