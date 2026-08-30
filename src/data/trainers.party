@@ -865,29 +865,21 @@ Level: 27
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 === TRAINER_FOSTER ===
-Name: FOSTER
-Class: Ruin Maniac
-Pic: Ruin Maniac
+Name: Foster
+Class: Backpacker
+Pic: Backpacker M
 Gender: Male
 Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Silicobra
-Level: 25
+Whismur
+Level: 16
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Dig
-- Wrap
-- Sand Attack
-- Bite
 
-Sandile
-Level: 25
+Bergmite
+Level: 17
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Dig
-- Bite
-- Sand Attack
-- Headbutt
 
 === TRAINER_DUSTY_2 ===
 Name: DUSTY
@@ -2801,29 +2793,29 @@ Level: 35
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
 === TRAINER_LUIS ===
-Name: LUIS
-Class: Swimmer M
-Pic: Swimmer M
+Name: Luis
+Class: Cooltrainer
+Pic: Acetrainer Unova M
 Gender: Male
-Music: Swimmer
+Music: Cool
 Double Battle: No
 AI: Check Bad Move
 
-Carvanha
-Level: 26
+Blitzle
+Level: 17
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_DOMINIK ===
-Name: DOMINIK
-Class: Swimmer M
-Pic: Swimmer M
+Name: Dominik
+Class: Hiker
+Pic: Hiker
 Gender: Male
-Music: Swimmer
+Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Squibble
-Level: 26
+Swinub
+Level: 17
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_DOUGLAS ===
@@ -8541,33 +8533,33 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 - Sunny Day
 
 === TRAINER_BEVERLY ===
-Name: BEVERLY
-Class: Swimmer F
-Pic: Swimmer F
+Name: Beverly
+Class: Cooltrainer
+Pic: Acetrainer Unova F
 Gender: Female
-Music: Swimmer
+Music: Cool
 Double Battle: No
 AI: Check Bad Move
 
-Wingull
-Level: 25
+Purrloin
+Level: 16
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Wailmer
-Level: 25
+Pansage
+Level: 17
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_IMANI ===
-Name: IMANI
-Class: Swimmer F
-Pic: Swimmer F
+Name: Imani
+Class: Backpacker
+Pic: Backpacker F
 Gender: Female
-Music: Swimmer
+Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Marill
-Level: 26
+Minccino
+Level: 17
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_KYLA ===
@@ -14264,7 +14256,7 @@ Level: 15
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_ANDRES_1 ===
-Name: ANDRES
+Name: Andres
 Class: Ruin Maniac
 Pic: Ruin Maniac
 Gender: Male
@@ -14272,16 +14264,16 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Sandshrew
-Level: 25
+Tenrock
+Level: 16
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
-Sandshrew
-Level: 25
+Roggenrola
+Level: 16
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 === TRAINER_JOSUE ===
-Name: JOSUE
+Name: Josue
 Class: Bird Keeper
 Pic: Bird Keeper
 Gender: Male
@@ -14290,11 +14282,11 @@ Double Battle: No
 AI: Check Bad Move
 
 Taillow
-Level: 25
+Level: 16
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
-Wingull
-Level: 25
+Hoothoot
+Level: 16
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 === TRAINER_CAMRON ===

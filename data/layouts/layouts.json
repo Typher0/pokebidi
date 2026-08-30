@@ -37,10 +37,10 @@
     {
       "id": "LAYOUT_RUSTBORO_CITY",
       "name": "RustboroCity_Layout",
-      "width": 40,
+      "width": 60,
       "height": 60,
       "primary_tileset": "gTileset_Primary",
-      "secondary_tileset": "gTileset_Rustboro",
+      "secondary_tileset": "gTileset_Joridan",
       "border_filepath": "data/layouts/RustboroCity/border.bin",
       "blockdata_filepath": "data/layouts/RustboroCity/map.bin",
       "layout_version": "emerald"
@@ -224,10 +224,10 @@
     {
       "id": "LAYOUT_ROUTE105",
       "name": "Route105_Layout",
-      "width": 40,
+      "width": 56,
       "height": 80,
-      "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Dewford",
+      "primary_tileset": "gTileset_Primary",
+      "secondary_tileset": "gTileset_Route",
       "border_filepath": "data/layouts/Route105/border.bin",
       "blockdata_filepath": "data/layouts/Route105/map.bin",
       "layout_version": "emerald"
@@ -1370,8 +1370,8 @@
       "name": "MeteorFalls_1F_1R_Layout",
       "width": 30,
       "height": 42,
-      "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_MeteorFalls",
+      "primary_tileset": "gTileset_Primary",
+      "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/MeteorFalls_1F_1R/border.bin",
       "blockdata_filepath": "data/layouts/MeteorFalls_1F_1R/map.bin",
       "layout_version": "emerald"
@@ -1491,7 +1491,7 @@
       "name": "MtChimney_Layout",
       "width": 47,
       "height": 47,
-      "primary_tileset": "gTileset_Primary_North",
+      "primary_tileset": "gTileset_Primary",
       "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/MtChimney/border.bin",
       "blockdata_filepath": "data/layouts/MtChimney/map.bin",

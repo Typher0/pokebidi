@@ -155,15 +155,15 @@
       "x": 4,
       "y": 10,
       "elevation": 3,
-      "dest_map": "MAP_ROUTE116",
-      "dest_warp_id": "0"
+      "dest_map": "MAP_ROUTE105",
+      "dest_warp_id": "3"
     },
     {
       "x": 29,
       "y": 16,
       "elevation": 3,
-      "dest_map": "MAP_VERDANTURF_TOWN",
-      "dest_warp_id": "4"
+      "dest_map": "MAP_ROUTE105",
+      "dest_warp_id": "6"
     },
     {
       "x": 18,

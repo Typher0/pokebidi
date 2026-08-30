@@ -5202,7 +5202,7 @@ u16 GetBattleBGM(void)
         case TRAINER_CLASS_MAGMA_ADMIN:
             return MUS_DP_VS_GALACTIC;
         case TRAINER_CLASS_LEADER:
-            return MUS_DP_VS_GYM_LEADER;
+            return MUS_VS_BANJIME_GYM_LEADER;
         case TRAINER_CLASS_CHAMPION:
             return MUS_DP_VS_CHAMPION;
         case TRAINER_CLASS_RIVAL:
@@ -5238,7 +5238,7 @@ u16 GetBattleBGM(void)
         if (GetCurrentRegion() == REGION_KANTO)
             return MUS_HG_VS_WILD;
         else
-            return MUS_DP_VS_WILD;
+            return MUS_VS_BANJIME_WILD;
     }
 }
 

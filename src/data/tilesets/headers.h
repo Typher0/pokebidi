@@ -1607,3 +1607,14 @@ const struct Tileset gTileset_PapillysGym =
     .metatileAttributes = gMetatileAttributes_PapillysGym,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_Joridan =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Joridan,
+    .palettes = gTilesetPalettes_Joridan,
+    .metatiles = gMetatiles_Joridan,
+    .metatileAttributes = gMetatileAttributes_Joridan,
+    .callback = NULL,
+};

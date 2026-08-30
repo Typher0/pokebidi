@@ -55,8 +55,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 26,
-      "y": 32,
+      "x": 23,
+      "y": 25,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -152,11 +152,11 @@
   ],
   "warp_events": [
     {
-      "x": 27,
-      "y": 18,
+      "x": 24,
+      "y": 39,
       "elevation": 4,
-      "dest_map": "MAP_ROUTE114",
-      "dest_warp_id": "0"
+      "dest_map": "MAP_ROUTE105",
+      "dest_warp_id": "1"
     },
     {
       "x": 6,
@@ -180,8 +180,8 @@
       "dest_warp_id": "4"
     },
     {
-      "x": 26,
-      "y": 28,
+      "x": 24,
+      "y": 26,
       "elevation": 3,
       "dest_map": "MAP_METEOR_FALLS_B1F_1R",
       "dest_warp_id": "5"
