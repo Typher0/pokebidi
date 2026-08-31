@@ -278,6 +278,8 @@
 #define SE_SUDOWOODO_SHAKE          269 // SE_USSOKI
 
 // Music
+#define START_MUS                   350
+
 #define MUS_DP_AMITY_SQUARE         350
 #define MUS_DP_AZURE_FLUTE          351
 #define MUS_DP_B_TOWER              352
