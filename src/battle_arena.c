@@ -376,42 +376,37 @@ void BattleArena_AddMindPoints(enum BattlerId battler)
     }
 }
 
-void BattleArena_AddSkillPoints(enum BattlerId battlerAtk)
+void BattleArena_AddSkillPoints(enum BattlerId battler)
 {
     s8 *skillPoints = gBattleStruct->arenaSkillPoints;
 
-    if (gBattleStruct->unableToUseMove)
-        return;
-
-    if (gBattleStruct->battlerState[battlerAtk].alreadyStatusedMoveAttempt)
+    if (!gBattleStruct->unableToUseMove)
     {
-        gBattleStruct->battlerState[battlerAtk].alreadyStatusedMoveAttempt = FALSE;
-        skillPoints[battlerAtk] -= 2;
-        return;
-    }
-
-    for (enum BattlerId battlerDef = 0; battlerDef < gBattlersCount; battlerDef++)
-    {
-        if (IsBattlerUnaffectedByMove(battlerDef))
+        if (gBattleStruct->battlerState[battler].alreadyStatusedMoveAttempt)
         {
-            if (!(gBattleStruct->moveResultFlags[battlerDef] & MOVE_RESULT_MISSED))
-                skillPoints[battlerAtk] -= 2;
+            gBattleStruct->battlerState[battler].alreadyStatusedMoveAttempt = FALSE;
+            skillPoints[battler] -= 2;
         }
-        else if ((gBattleStruct->moveResultFlags[battlerDef] & MOVE_RESULT_HIGH_EFFECTIVENESS) && (gBattleStruct->moveResultFlags[battlerDef] & MOVE_RESULT_LOW_EFFECTIVENESS))
+        else if (IsBattlerUnaffectedByMove(gBattlerTarget))
         {
-            skillPoints[battlerAtk] += 1;
+            if (!(gBattleStruct->moveResultFlags[gBattlerTarget] & MOVE_RESULT_MISSED))
+                skillPoints[battler] -= 2;
         }
-        else if (gBattleStruct->moveResultFlags[battlerDef] & MOVE_RESULT_HIGH_EFFECTIVENESS)
+        else if ((gBattleStruct->moveResultFlags[gBattlerTarget] & MOVE_RESULT_SUPER_EFFECTIVE) && (gBattleStruct->moveResultFlags[gBattlerTarget] & MOVE_RESULT_NOT_VERY_EFFECTIVE))
         {
-            skillPoints[battlerAtk] += 2;
+            skillPoints[battler] += 1;
         }
-        else if (gBattleStruct->moveResultFlags[battlerDef] & MOVE_RESULT_LOW_EFFECTIVENESS)
+        else if (gBattleStruct->moveResultFlags[gBattlerTarget] & MOVE_RESULT_SUPER_EFFECTIVE)
         {
-            skillPoints[battlerAtk] -= 1;
+            skillPoints[battler] += 2;
         }
-        else if (!gProtectStructs[battlerDef].protected)
+        else if (gBattleStruct->moveResultFlags[gBattlerTarget] & MOVE_RESULT_NOT_VERY_EFFECTIVE)
         {
-            skillPoints[battlerAtk] += 1;
+            skillPoints[battler] -= 1;
+        }
+        else if (!gProtectStructs[battler].protected)
+        {
+            skillPoints[battler] += 1;
         }
     }
 }

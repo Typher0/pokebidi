@@ -17,7 +17,6 @@
 #include "malloc.h"
 #include "util.h"
 #include "item_icon.h"
-#include "pokemon_icon.h"
 #include "constants/field_specials.h"
 #include "constants/items.h"
 #include "constants/script_menu.h"
@@ -66,10 +65,9 @@ static void InitMultichoiceNoWrap(bool8 ignoreBPress, u8 unusedCount, u8 windowI
 static void MultichoiceDynamicEventDebug_OnInit(struct DynamicListMenuEventArgs *eventArgs);
 static void MultichoiceDynamicEventDebug_OnSelectionChanged(struct DynamicListMenuEventArgs *eventArgs);
 static void MultichoiceDynamicEventDebug_OnDestroy(struct DynamicListMenuEventArgs *eventArgs);
-static void MultichoiceDynamicEventShowSprite_OnInit(struct DynamicListMenuEventArgs *eventArgs);
+static void MultichoiceDynamicEventShowItem_OnInit(struct DynamicListMenuEventArgs *eventArgs);
 static void MultichoiceDynamicEventShowItem_OnSelectionChanged(struct DynamicListMenuEventArgs *eventArgs);
-static void MultichoiceDynamicEventShowPkmn_OnSelectionChanged(struct DynamicListMenuEventArgs *eventArgs);
-static void MultichoiceDynamicEventShowSprite_OnDestroy(struct DynamicListMenuEventArgs *eventArgs);
+static void MultichoiceDynamicEventShowItem_OnDestroy(struct DynamicListMenuEventArgs *eventArgs);
 
 static const struct DynamicListMenuEventCollection sDynamicListMenuEventCollections[] =
 {
@@ -81,15 +79,9 @@ static const struct DynamicListMenuEventCollection sDynamicListMenuEventCollecti
     },
     [DYN_MULTICHOICE_CB_SHOW_ITEM] =
     {
-        .OnInit = MultichoiceDynamicEventShowSprite_OnInit,
+        .OnInit = MultichoiceDynamicEventShowItem_OnInit,
         .OnSelectionChanged = MultichoiceDynamicEventShowItem_OnSelectionChanged,
-        .OnDestroy = MultichoiceDynamicEventShowSprite_OnDestroy
-    },
-    [DYN_MULTICHOICE_CB_SHOW_PKMN] =
-    {
-        .OnInit = MultichoiceDynamicEventShowSprite_OnInit,
-        .OnSelectionChanged = MultichoiceDynamicEventShowPkmn_OnSelectionChanged,
-        .OnDestroy = MultichoiceDynamicEventShowSprite_OnDestroy
+        .OnDestroy = MultichoiceDynamicEventShowItem_OnDestroy
     }
 };
 
@@ -164,10 +156,10 @@ static void MultichoiceDynamicEventDebug_OnDestroy(struct DynamicListMenuEventAr
 }
 
 #define sAuxWindowId sDynamicMenuEventScratchPad[0]
-#define sSpriteId sDynamicMenuEventScratchPad[1]
-#define TAG_CB_SPRITE_ICON 3000
+#define sItemSpriteId sDynamicMenuEventScratchPad[1]
+#define TAG_CB_ITEM_ICON 3000
 
-static void MultichoiceDynamicEventShowSprite_OnInit(struct DynamicListMenuEventArgs *eventArgs)
+static void MultichoiceDynamicEventShowItem_OnInit(struct DynamicListMenuEventArgs *eventArgs)
 {
     struct WindowTemplate *template = &gWindows[eventArgs->windowId].window;
     u32 baseBlock = template->baseBlock + template->width * template->height;
@@ -177,66 +169,47 @@ static void MultichoiceDynamicEventShowSprite_OnInit(struct DynamicListMenuEvent
     FillWindowPixelBuffer(auxWindowId, 0x11);
     CopyWindowToVram(auxWindowId, COPYWIN_FULL);
     sAuxWindowId = auxWindowId;
-    sSpriteId = MAX_SPRITES;
-}
-
-static void FreeSpriteIfUsed(void)
-{
-    if (sSpriteId != MAX_SPRITES)
-    {
-        FreeSpriteTilesByTag(TAG_CB_SPRITE_ICON);
-        FreeSpritePaletteByTag(TAG_CB_SPRITE_ICON);
-        DestroySprite(&gSprites[sSpriteId]);
-    }
-}
-
-static void ChangeSpriteOnSelection(struct DynamicListMenuEventArgs *eventArgs, u32 x, u32 y)
-{
-    struct WindowTemplate *template = &gWindows[eventArgs->windowId].window;
-    x += template->tilemapLeft * 8 + template->width * 8;
-    y += template->tilemapTop * 8;
-
-    gSprites[sSpriteId].oam.priority = 0;
-    gSprites[sSpriteId].x = x;
-    gSprites[sSpriteId].y = y;
+    sItemSpriteId = MAX_SPRITES;
 }
 
 static void MultichoiceDynamicEventShowItem_OnSelectionChanged(struct DynamicListMenuEventArgs *eventArgs)
 {
-    FreeSpriteIfUsed();
-    sSpriteId = AddItemIconSprite(TAG_CB_SPRITE_ICON, TAG_CB_SPRITE_ICON, eventArgs->selectedItem);
-    if (sSpriteId != MAX_SPRITES)
+    struct WindowTemplate *template = &gWindows[eventArgs->windowId].window;
+    u32 x = template->tilemapLeft * 8 + template->width * 8 + 36;
+    u32 y = template->tilemapTop * 8 + 20;
+
+    if (sItemSpriteId != MAX_SPRITES)
     {
-        ChangeSpriteOnSelection(eventArgs, 36, 20);
+        FreeSpriteTilesByTag(TAG_CB_ITEM_ICON);
+        FreeSpritePaletteByTag(TAG_CB_ITEM_ICON);
+        DestroySprite(&gSprites[sItemSpriteId]);
+    }
+
+    sItemSpriteId = AddItemIconSprite(TAG_CB_ITEM_ICON, TAG_CB_ITEM_ICON, eventArgs->selectedItem);
+    if (sItemSpriteId != MAX_SPRITES)
+    {
+        gSprites[sItemSpriteId].oam.priority = 0;
+        gSprites[sItemSpriteId].x = x;
+        gSprites[sItemSpriteId].y = y;
     }
 }
 
-static void MultichoiceDynamicEventShowPkmn_OnSelectionChanged(struct DynamicListMenuEventArgs *eventArgs)
-{
-    FreeSpriteIfUsed();
-    sSpriteId = CreateTaggedMonIcon(TAG_CB_SPRITE_ICON, TAG_CB_SPRITE_ICON, eventArgs->selectedItem);
-    if (sSpriteId != MAX_SPRITES)
-    {
-        ChangeSpriteOnSelection(eventArgs, 32, 14);
-    }
-}
-
-static void MultichoiceDynamicEventShowSprite_OnDestroy(struct DynamicListMenuEventArgs *eventArgs)
+static void MultichoiceDynamicEventShowItem_OnDestroy(struct DynamicListMenuEventArgs *eventArgs)
 {
     ClearStdWindowAndFrame(sAuxWindowId, TRUE);
     RemoveWindow(sAuxWindowId);
 
-    if (sSpriteId != MAX_SPRITES)
+    if (sItemSpriteId != MAX_SPRITES)
     {
-        FreeSpriteTilesByTag(TAG_CB_SPRITE_ICON);
-        FreeSpritePaletteByTag(TAG_CB_SPRITE_ICON);
-        DestroySprite(&gSprites[sSpriteId]);
+        FreeSpriteTilesByTag(TAG_CB_ITEM_ICON);
+        FreeSpritePaletteByTag(TAG_CB_ITEM_ICON);
+        DestroySprite(&gSprites[sItemSpriteId]);
     }
 }
 
 #undef sAuxWindowId
-#undef sSpriteId
-#undef TAG_CB_SPRITE_ICON
+#undef sItemSpriteId
+#undef TAG_CB_ITEM_ICON
 
 static void FreeListMenuItems(struct ListMenuItem *items, u32 count)
 {
@@ -624,6 +597,15 @@ bool8 ScriptMenu_YesNo(u8 left, u8 top)
         CreateTask(Task_HandleYesNoInput, 0x50);
         return TRUE;
     }
+}
+
+// Unused
+bool8 IsScriptActive(void)
+{
+    if (gSpecialVar_Result == 0xFF)
+        return FALSE;
+    else
+        return TRUE;
 }
 
 static void Task_HandleYesNoInput(u8 taskId)
@@ -1231,6 +1213,7 @@ void DrawSeagallopDestinationMenu(void)
     u8 top;
     u8 numItems;
     u8 cursorWidth;
+    u8 UNUSED fontHeight;
     u8 windowId;
     u8 i;
     gSpecialVar_Result = 0xFF;
@@ -1251,6 +1234,7 @@ void DrawSeagallopDestinationMenu(void)
         top = 0;
     }
     cursorWidth = GetMenuCursorDimensionByFont(FONT_NORMAL, 0);
+    fontHeight = GetFontAttribute(FONT_NORMAL, FONTATTR_MAX_LETTER_HEIGHT);
     windowId = CreateWindowFromRect(17, top, 11, numItems * 2);
     SetStandardWindowBorderStyle(windowId, FALSE);
 

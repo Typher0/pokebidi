@@ -11,7 +11,7 @@ ASSUMPTIONS
 
 SINGLE_BATTLE_TEST("Hyperspace Fury fails if used by a Pokémon other than Hoopa Unbound")
 {
-    enum Species species;
+    u32 species;
     PARAMETRIZE { species = SPECIES_WOBBUFFET; }
     PARAMETRIZE { species = SPECIES_HOOPA_CONFINED; }
     PARAMETRIZE { species = SPECIES_HOOPA_UNBOUND; }

@@ -9,7 +9,7 @@ ASSUMPTIONS
 
 SINGLE_BATTLE_TEST("Aura Wheel raises Speed; fails if the user is not Morpeko")
 {
-    enum Species species;
+    u16 species;
     PARAMETRIZE { species = SPECIES_WOBBUFFET; }
     PARAMETRIZE { species = SPECIES_MORPEKO; }
     GIVEN {

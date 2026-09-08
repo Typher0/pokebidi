@@ -89,7 +89,6 @@ static void ApplyAffineAnimFrame(u8 matrixNum, struct AffineAnimFrameCmd *frameC
 static void AllocSpriteTileRange(u16 tag, u16 start, u16 count);
 static void DoLoadSpritePalette(const u16 *src, u16 paletteOffset);
 static void UpdateSpriteMatrixAnchorPos(struct Sprite *, s32, s32);
-static bool32 AddToOamBuffer(u8 *oamIndex, const struct OamData *oam, bool32 copyToObjWin);
 
 typedef void (*AnimFunc)(struct Sprite *);
 typedef void (*AnimCmdFunc)(struct Sprite *);
@@ -263,7 +262,7 @@ EWRAM_DATA struct Sprite gSprites[MAX_SPRITES + 1] = {0};
 EWRAM_DATA static u8 sSpriteOrder[MAX_SPRITES] = {0};
 EWRAM_DATA static bool8 sShouldProcessSpriteCopyRequests = 0;
 EWRAM_DATA static u8 sSpriteCopyRequestCount = 0;
-EWRAM_DATA static struct SpriteCopyRequest sSpriteCopyRequests[MAX_SPRITE_COPY_REQUESTS] = {0};
+EWRAM_DATA static struct SpriteCopyRequest sSpriteCopyRequests[MAX_SPRITES] = {0};
 EWRAM_DATA u8 gOamLimit = 0;
 static EWRAM_DATA u8 sOamDummyIndex = 0;
 EWRAM_DATA u16 gReservedSpriteTileCount = 0;
@@ -1511,9 +1510,9 @@ static u16 LoadSpriteSheetWithOffset(const struct SpriteSheet *sheet, u32 offset
 
     if (tileStart < 0)
     {
-#if TESTING
+#if T_SHOULD_RUN_MOVE_ANIM
         gLoadFail = TRUE;
-#endif // TESTING
+#endif // T_SHOULD_RUN_MOVE_ANIM
         return 0;
     }
     else
@@ -1743,13 +1742,22 @@ void SetSubspriteTables(struct Sprite *sprite, const struct SubspriteTable *subs
 
 bool8 AddSpriteToOamBuffer(struct Sprite *sprite, u8 *oamIndex)
 {
+    if (*oamIndex >= gOamLimit)
+        return TRUE;
+
     if (!sprite->subspriteTables || sprite->subspriteMode == SUBSPRITES_OFF)
-        return AddToOamBuffer(oamIndex, &sprite->oam, sprite->copyToObjWin);
+    {
+        gMain.oamBuffer[*oamIndex] = sprite->oam;
+        (*oamIndex)++;
+        return FALSE;
+    }
     else
-        return AddSubspritesToOamBuffer(sprite, oamIndex);
+    {
+        return AddSubspritesToOamBuffer(sprite, &gMain.oamBuffer[*oamIndex], oamIndex);
+    }
 }
 
-bool8 AddSubspritesToOamBuffer(struct Sprite *sprite, u8 *oamIndex)
+bool8 AddSubspritesToOamBuffer(struct Sprite *sprite, struct OamData *destOam, u8 *oamIndex)
 {
     const struct SubspriteTable *subspriteTable;
     struct OamData *oam;
@@ -1762,7 +1770,9 @@ bool8 AddSubspritesToOamBuffer(struct Sprite *sprite, u8 *oamIndex)
 
     if (!subspriteTable || !subspriteTable->subsprites)
     {
-        return AddToOamBuffer(oamIndex, oam, sprite->copyToObjWin);
+        *destOam = *oam;
+        (*oamIndex)++;
+        return FALSE;
     }
     else
     {
@@ -1772,6 +1782,8 @@ bool8 AddSubspritesToOamBuffer(struct Sprite *sprite, u8 *oamIndex)
         u8 subspriteCount;
         u8 hFlip;
         u8 vFlip;
+        u32 i;
+
         tileNum = oam->tileNum;
         subspriteCount = subspriteTable->subspriteCount;
         hFlip = ((s32)oam->matrixNum >> 3) & 1;
@@ -1779,7 +1791,7 @@ bool8 AddSubspritesToOamBuffer(struct Sprite *sprite, u8 *oamIndex)
         baseX = oam->x - sprite->centerToCornerVecX;
         baseY = oam->y - sprite->centerToCornerVecY;
 
-        for (u32 i = 0; i < subspriteCount; i++)
+        for (i = 0; i < subspriteCount; i++, (*oamIndex)++)
         {
             u16 x;
             u16 y;
@@ -1808,40 +1820,16 @@ bool8 AddSubspritesToOamBuffer(struct Sprite *sprite, u8 *oamIndex)
                 y = ~y + 1;
             }
 
-            struct OamData subspriteOam = *oam;
-            subspriteOam.shape = subspriteTable->subsprites[i].shape;
-            subspriteOam.size = subspriteTable->subsprites[i].size;
-            subspriteOam.x = (s16)baseX + (s16)x;
-            subspriteOam.y = baseY + y;
-            subspriteOam.tileNum = tileNum + subspriteTable->subsprites[i].tileOffset;
+            destOam[i] = *oam;
+            destOam[i].shape = subspriteTable->subsprites[i].shape;
+            destOam[i].size = subspriteTable->subsprites[i].size;
+            destOam[i].x = (s16)baseX + (s16)x;
+            destOam[i].y = baseY + y;
+            destOam[i].tileNum = tileNum + subspriteTable->subsprites[i].tileOffset;
 
             if (sprite->subspriteMode < SUBSPRITES_IGNORE_PRIORITY)
-                subspriteOam.priority = subspriteTable->subsprites[i].priority;
-
-            if (AddToOamBuffer(oamIndex, &subspriteOam, sprite->copyToObjWin))
-                return TRUE;
+                destOam[i].priority = subspriteTable->subsprites[i].priority;
         }
-
-    }
-
-    return FALSE;
-}
-
-static bool32 AddToOamBuffer(u8 *oamIndex, const struct OamData *oam, bool32 copyToObjWin)
-{
-    if (*oamIndex >= gOamLimit)
-        return TRUE;
-
-    gMain.oamBuffer[*oamIndex] = *oam;
-    (*oamIndex)++;
-
-    if (copyToObjWin)
-    {
-        if (*oamIndex >= gOamLimit)
-            return TRUE;
-        gMain.oamBuffer[*oamIndex] = *oam;
-        gMain.oamBuffer[*oamIndex].objMode = ST_OAM_OBJ_WINDOW;
-        (*oamIndex)++;
     }
 
     return FALSE;

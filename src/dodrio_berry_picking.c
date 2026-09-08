@@ -4482,6 +4482,11 @@ static void InitGameGfx(struct DodrioGame_Gfx *ptr)
     SetGfxFunc(LoadGfx);
 }
 
+static void UNUSED FreeAllWindowBuffers_(void)
+{
+    FreeAllWindowBuffers();
+}
+
 // Data used by functions below.
 struct WinCoords
 {

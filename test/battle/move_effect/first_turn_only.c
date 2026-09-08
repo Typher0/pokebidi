@@ -5,7 +5,6 @@
 SINGLE_BATTLE_TEST("Fake Out can only be used on the user's first turn")
 {
     GIVEN {
-        WITH_CONFIG(B_FIRST_TURN_MOVE, GEN_9);
         PLAYER(SPECIES_WOBBUFFET) { Speed(1); }
         PLAYER(SPECIES_WOBBUFFET) { Speed(1); }
         OPPONENT(SPECIES_WOBBUFFET) { Speed(2); }
@@ -189,10 +188,9 @@ AI_DOUBLE_BATTLE_TEST("AI will not Fake Out a target that its ally has slow KO o
     }
 }
 
-SINGLE_BATTLE_TEST("First Impression can only be used on the user's first turn and will fail on subsequent turns (Gen9-)")
+SINGLE_BATTLE_TEST("First Impression can only be used on the user's first turn")
 {
     GIVEN {
-        WITH_CONFIG(B_FIRST_TURN_MOVE, GEN_9);
         PLAYER(SPECIES_WOBBUFFET) { Speed(1); }
         PLAYER(SPECIES_WOBBUFFET) { Speed(1); }
         OPPONENT(SPECIES_WOBBUFFET) { Speed(2); }
@@ -229,3 +227,4 @@ SINGLE_BATTLE_TEST("First Impression fails if it's called via Instruct")
         NONE_OF { ANIMATION(ANIM_TYPE_MOVE, MOVE_FIRST_IMPRESSION, player); }
     }
 }
+

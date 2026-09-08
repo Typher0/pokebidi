@@ -215,8 +215,7 @@ DOUBLE_BATTLE_TEST("Psychic Terrain protects grounded battlers from priority mov
 SINGLE_BATTLE_TEST("Psychic Terrain prevents priority status moves before Magic Bounce can bounce them")
 {
     GIVEN {
-        ASSUME(GetMoveEffect(MOVE_PSYCHIC_TERRAIN) == EFFECT_TERRAIN);
-        ASSUME(GetMoveTerrainType(MOVE_PSYCHIC_TERRAIN) == B_TERRAIN_PSYCHIC);
+        ASSUME(GetMoveEffect(MOVE_PSYCHIC_TERRAIN) == EFFECT_PSYCHIC_TERRAIN);
         ASSUME(IsBattleMoveStatus(MOVE_CONFUSE_RAY));
         ASSUME(MoveCanBeBouncedBack(MOVE_CONFUSE_RAY));
         PLAYER(SPECIES_VOLBEAT) { Ability(ABILITY_PRANKSTER); }

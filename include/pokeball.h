@@ -16,7 +16,7 @@ struct PokeBallSprite
     struct CompressedSpriteSheet pic;
     struct SpritePalette palette;
     struct SpriteTemplate spriteTemplate;
-    enum Item itemId;
+    u16 itemId;
 };
 
 extern const struct PokeBallSprite gPokeBalls[];
@@ -32,6 +32,6 @@ void StartHealthboxSlideIn(enum BattlerId battler);
 void DoHitAnimHealthboxEffect(enum BattlerId battler);
 void LoadBallGfx(enum PokeBall ballId);
 void FreeBallGfx(enum PokeBall ballId);
-enum PokeBall ItemIdToBallId(enum Item ballItem);
+enum PokeBall ItemIdToBallId(u32 ballItem);
 
 #endif // GUARD_POKEBALL_H

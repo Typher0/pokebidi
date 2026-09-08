@@ -58,13 +58,12 @@ SINGLE_BATTLE_TEST("Stockpile's def and spDef stat increases aren't incremented 
     }
 }
 
-SINGLE_BATTLE_TEST("Spit Up and Swallow don't work if used without Stockpile (Gen9-)")
+SINGLE_BATTLE_TEST("Spit Up and Swallow don't work if used without Stockpile")
 {
     enum Move move;
     PARAMETRIZE { move = MOVE_SWALLOW; }
     PARAMETRIZE { move = MOVE_SPIT_UP; }
     GIVEN {
-        WITH_CONFIG(B_SPIT_UP_SELECTABLE, GEN_9);
         PLAYER(SPECIES_WOBBUFFET) { HP(10), MaxHP(400); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {

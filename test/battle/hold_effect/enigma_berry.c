@@ -18,6 +18,7 @@ SINGLE_BATTLE_TEST("Enigma Berry recovers 25% of HP if hit by super effective mo
         ANIMATION(ANIM_TYPE_MOVE, MOVE_ENDURE, player);
         ANIMATION(ANIM_TYPE_MOVE, MOVE_BITE, opponent);
         ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_HELD_ITEM_BERRY, player);
+        MESSAGE("Wynaut restored its health using its Enigma Berry!");
         HP_BAR(player, damage: -maxHP / 4);
     }
 }

@@ -101,7 +101,7 @@ SINGLE_BATTLE_TEST("Poison Touch applies between multi-hit move hits")
 
 SINGLE_BATTLE_TEST("Poison Touch activates when user has Protective Pads, but not with Punching Glove")
 {
-    enum Item item;
+    u32 item;
 
     PARAMETRIZE { item = ITEM_PROTECTIVE_PADS; }
     PARAMETRIZE { item = ITEM_PUNCHING_GLOVE; }

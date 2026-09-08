@@ -63,7 +63,7 @@ SINGLE_BATTLE_TEST("(TERA) Terastallizing into the same type with Adaptability g
 
 SINGLE_BATTLE_TEST("(TERA) Adaptability does not increase non-Tera base STAB beyond 1.5x", s16 damage)
 {
-    enum Move move;
+    u32 move;
     PARAMETRIZE { move = MOVE_GUST; }
     PARAMETRIZE { move = MOVE_WATER_GUN; }
     GIVEN {

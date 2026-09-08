@@ -84,7 +84,7 @@ DOUBLE_BATTLE_TEST("Doodle fails if partner has a banned Ability")
 
 DOUBLE_BATTLE_TEST("Doodle fails if ally's ability can't be suppressed")
 {
-    enum Species species;
+    u32 species;
     enum Ability ability;
 
     PARAMETRIZE { species = SPECIES_ARCEUS; ability = ABILITY_MULTITYPE; }

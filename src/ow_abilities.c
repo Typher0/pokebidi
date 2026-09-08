@@ -6,7 +6,6 @@
 
 const static enum Ability sForceNatureAbilities[] = {ABILITY_SYNCHRONIZE, ABILITY_NONE};
 const static enum Ability sForceOppositeGenderAbilities[] = {ABILITY_CUTE_CHARM, ABILITY_NONE};
-const static enum Ability sIncreaseHatchingSpeedAbilities[] = {ABILITY_MAGMA_ARMOR, ABILITY_FLAME_BODY, ABILITY_STEAM_ENGINE, ABILITY_NONE};
 
 static UNUSED bool32 HasHalfChance(enum Species species);
 static UNUSED bool32 HasTwoThirdsChance(enum Species species);
@@ -95,7 +94,7 @@ bool32 DoesLeadingMonHaveAbilityEffect(const enum Ability *abilityArray)
     return FALSE;
 }
 
-bool32 DoesPartyMemberHaveAbilityEffect(const enum Ability *abilityArray)
+UNUSED bool32 DoesPartyMemberHaveAbilityEffect(const enum Ability *abilityArray)
 {
     for (u32 j = 0; j < gPartiesCount[B_TRAINER_PLAYER]; j++)
     {
@@ -132,9 +131,4 @@ u32 GetSynchronizedGender(enum GeneratedMonOrigin origin, enum Species species)
         return MON_MALE;
     else
         return MON_FEMALE;
-}
-
-bool32 DoesPartyHaveIncubatorMon(void)
-{
-    return DoesPartyMemberHaveAbilityEffect(sIncreaseHatchingSpeedAbilities);
 }

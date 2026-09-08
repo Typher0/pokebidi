@@ -1109,6 +1109,11 @@ static u8 GetSelectionIdFromPartyId(u8 partyId)
     return partyId - numEggs;
 }
 
+static u8 UNUSED GetPartyIdFromSelectionId_(u8 selectionId)
+{
+    return GetPartyIdFromSelectionId(selectionId);
+}
+
 static void LoadAndCreateUpDownSprites(void)
 {
     u16 i;

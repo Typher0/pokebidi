@@ -361,7 +361,7 @@ static u8 GetMapPreviewScreenIdx(mapsec_u8_t mapsec)
     return MPS_COUNT;
 }
 
-bool32 CurrentMapHasPreviewScreen(enum MapPreviewScreenType type)
+bool32 CurrentMapHasPreviewScreen(u8 type)
 {
     u8 idx;
 
@@ -491,13 +491,8 @@ void Task_MapPreviewScreen_NonFade(u8 taskId)
     case 1:
         if (!MapPreview_IsGfxLoadFinished())
         {
-            u8 idx = GetMapPreviewScreenIdx(tMapSecId);
-
-            if (!sMapPreviewScreenData[idx].nameDisabled)
-            {
-                tWindowId = MapPreview_CreateMapNameWindow(tMapSecId);
-                CopyWindowToVram(tWindowId, COPYWIN_FULL);
-            }
+            tWindowId = MapPreview_CreateMapNameWindow(tMapSecId);
+            CopyWindowToVram(tWindowId, COPYWIN_FULL);
             tState++;
         }
         break;
@@ -567,7 +562,6 @@ void Task_MapPreviewScreen_NonFade(u8 taskId)
 void RunMapPreviewScreenFadeIn(mapsec_u8_t mapsec)
 {
     u8 taskId;
-    u8 idx = GetMapPreviewScreenIdx(mapsec);
 
     taskId = CreateTask(Task_MapPreviewScreen_FadeIn, 0);
     gTasks[taskId].tBGPriority = GetBgAttribute(0, BG_ATTR_PRIORITY);
@@ -582,9 +576,7 @@ void RunMapPreviewScreenFadeIn(mapsec_u8_t mapsec)
     SetBgAttribute(0, BG_ATTR_PRIORITY, 0);
     SetGpuRegBits(REG_OFFSET_WININ, WININ_WIN0_CLR | WININ_WIN1_CLR);
     SetGpuRegBits(REG_OFFSET_WINOUT, WINOUT_WIN01_CLR);
-    if (!sMapPreviewScreenData[idx].nameDisabled)
-        gTasks[taskId].tWindowId = MapPreview_CreateMapNameWindow(mapsec);
-
+    gTasks[taskId].tWindowId = MapPreview_CreateMapNameWindow(mapsec);
     LockPlayerFieldControls();
 }
 
@@ -767,13 +759,8 @@ static void Task_MapPreviewScreen_Script(u8 taskId)
     case 1:
         if (!MapPreview_IsGfxLoadFinished() && !IsDma3ManagerBusyWithBgCopy())
         {
-            u8 idx = GetMapPreviewScreenIdx(gMapHeader.regionMapSectionId);
-
-            if (!sMapPreviewScreenData[idx].nameDisabled)
-            {
-                tWindowId = MapPreview_CreateMapNameWindow(gMapHeader.regionMapSectionId);
-                CopyWindowToVram(tWindowId, COPYWIN_FULL);
-            }
+            tWindowId = MapPreview_CreateMapNameWindow(gMapHeader.regionMapSectionId);
+            CopyWindowToVram(tWindowId, COPYWIN_FULL);
             tTaskStep++;
         }
         break;

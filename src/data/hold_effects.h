@@ -58,7 +58,31 @@ const struct HoldEffectInfo gHoldEffectsInfo[HOLD_EFFECT_COUNT] =
         .onStatusChange = TRUE,
     },
 
-    [HOLD_EFFECT_CONFUSE_FLAVOR] =
+    [HOLD_EFFECT_CONFUSE_SPICY] =
+    {
+        .onSwitchIn = TRUE,
+        .onHpThreshold = TRUE,
+    },
+
+    [HOLD_EFFECT_CONFUSE_DRY] =
+    {
+        .onSwitchIn = TRUE,
+        .onHpThreshold = TRUE,
+    },
+
+    [HOLD_EFFECT_CONFUSE_SWEET] =
+    {
+        .onSwitchIn = TRUE,
+        .onHpThreshold = TRUE,
+    },
+
+    [HOLD_EFFECT_CONFUSE_BITTER] =
+    {
+        .onSwitchIn = TRUE,
+        .onHpThreshold = TRUE,
+    },
+
+    [HOLD_EFFECT_CONFUSE_SOUR] =
     {
         .onSwitchIn = TRUE,
         .onHpThreshold = TRUE,

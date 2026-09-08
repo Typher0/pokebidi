@@ -385,7 +385,6 @@ SINGLE_BATTLE_TEST("(TERA) Double Shock does not remove the user's Electric type
 {
     s16 damage[4];
     GIVEN {
-        WITH_CONFIG(B_MOVES_THAT_REMOVE_TYPE, GEN_9);
         ASSUME(GetMoveEffect(MOVE_DOUBLE_SHOCK) == EFFECT_FAIL_IF_NOT_ARG_TYPE);
         PLAYER(SPECIES_PICHU) { TeraType(TYPE_ELECTRIC); }
         PLAYER(SPECIES_WOBBUFFET)
@@ -595,7 +594,7 @@ SINGLE_BATTLE_TEST("(TERA) Terastallizing into the Stellar type boosts all moves
 
 SINGLE_BATTLE_TEST("(TERA) Protean/Libero cannot change the type of a Terastallized Pokemon")
 {
-    enum Ability ability; enum Species species;
+    enum Ability ability; u32 species;
     PARAMETRIZE { ability = ABILITY_PROTEAN; species = SPECIES_GRENINJA; }
     PARAMETRIZE { ability = ABILITY_LIBERO;  species = SPECIES_RABOOT; }
     GIVEN {
@@ -715,7 +714,7 @@ SINGLE_BATTLE_TEST("(TERA) Terapagos retains its base defensive profile when Ter
 
 SINGLE_BATTLE_TEST("(TERA) Illusion breaks if the Pokémon Terastallizes when illusioned as a mon that changes forms by Terastallizing")
 {
-    enum Species species;
+    u32 species;
     PARAMETRIZE { species = SPECIES_TERAPAGOS; }
     PARAMETRIZE { species = SPECIES_OGERPON; }
     GIVEN {
@@ -733,7 +732,7 @@ SINGLE_BATTLE_TEST("(TERA) Illusion breaks if the Pokémon Terastallizes when il
 // Visual test to make sure Zoroark appears as Wobbuffet/Zigzagoon until illusion breaks
 SINGLE_BATTLE_TEST("(TERA) Illusion doesn't break upon Terastallizing when illusioned as a mon that doesn't change forms by Terastallizing")
 {
-    enum Species species;
+    u32 species;
     PARAMETRIZE { species = SPECIES_WOBBUFFET; }
     PARAMETRIZE { species = SPECIES_ZIGZAGOON; }
     GIVEN {
@@ -762,8 +761,7 @@ SINGLE_BATTLE_TEST("(TERA) Transformed Pokémon can't Terastalize")
 
 SINGLE_BATTLE_TEST("(TERA) Pokemon with Tera forms change upon Terastallizing")
 {
-    enum Species species, target;
-    enum Item item;
+    u32 species, target, item;
     PARAMETRIZE { species = SPECIES_OGERPON_TEAL;        target = SPECIES_OGERPON_TEAL_TERA;        item = ITEM_NONE; }
     PARAMETRIZE { species = SPECIES_OGERPON_WELLSPRING;  target = SPECIES_OGERPON_WELLSPRING_TERA;  item = ITEM_WELLSPRING_MASK; }
     PARAMETRIZE { species = SPECIES_OGERPON_HEARTHFLAME; target = SPECIES_OGERPON_HEARTHFLAME_TERA; item = ITEM_HEARTHFLAME_MASK; }

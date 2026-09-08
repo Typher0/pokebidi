@@ -24,7 +24,7 @@ SINGLE_BATTLE_TEST("Toxic inflicts bad poison")
 
 SINGLE_BATTLE_TEST("Toxic can't bad poison a poison or steel type")
 {
-    enum Species species;
+    u32 species;
 
     PARAMETRIZE { species = SPECIES_BELDUM; }
     PARAMETRIZE { species = SPECIES_BULBASAUR; }
@@ -45,8 +45,7 @@ SINGLE_BATTLE_TEST("Toxic can't bad poison a poison or steel type")
 
 SINGLE_BATTLE_TEST("Toxic cannot miss if used by a Poison-type (Gen6+)")
 {
-    enum Species species;
-    u32 gen;
+    u32 species, gen;
     bool32 hit;
     PARAMETRIZE { species = SPECIES_WOBBUFFET; hit = FALSE; gen = GEN_5; }
     PARAMETRIZE { species = SPECIES_NIDORAN_M; hit = FALSE; gen = GEN_5; }

@@ -65,6 +65,12 @@ const struct BattleMoveEffect gBattleMoveEffects[NUM_BATTLE_MOVE_EFFECTS] =
         .encourageEncore = TRUE,
     },
 
+    [EFFECT_ABSORB] =
+    {
+        .battleScript = BattleScript_EffectHit,
+        .battleTvScore = 4,
+    },
+
     [EFFECT_TERRAIN_BOOST] =
     {
         .battleScript = BattleScript_EffectHit,
@@ -73,7 +79,7 @@ const struct BattleMoveEffect gBattleMoveEffects[NUM_BATTLE_MOVE_EFFECTS] =
 
     [EFFECT_DREAM_EATER] =
     {
-        .battleScript = BattleScript_EffectHit,
+        .battleScript = BattleScript_EffectDreamEater,
         .battleTvScore = 5,
         .encourageEncore = TRUE,
     },
@@ -509,7 +515,7 @@ const struct BattleMoveEffect gBattleMoveEffects[NUM_BATTLE_MOVE_EFFECTS] =
 
     [EFFECT_PRESENT] =
     {
-        .battleScript = BattleScript_EffectHit,
+        .battleScript = BattleScript_EffectPresent,
         .battleTvScore = 1,
         .battleFactoryStyle = FACTORY_STYLE_UNPREDICTABLE,
     },
@@ -1245,9 +1251,27 @@ const struct BattleMoveEffect gBattleMoveEffects[NUM_BATTLE_MOVE_EFFECTS] =
         .battleTvScore = 0, // TODO: Assign points
     },
 
-    [EFFECT_TERRAIN] =
+    [EFFECT_MISTY_TERRAIN] =
     {
-        .battleScript = BattleScript_EffectTerrain,
+        .battleScript = BattleScript_EffectMistyTerrain,
+        .battleTvScore = 0, // TODO: Assign points
+    },
+
+    [EFFECT_GRASSY_TERRAIN] =
+    {
+        .battleScript = BattleScript_EffectGrassyTerrain,
+        .battleTvScore = 0, // TODO: Assign points
+    },
+
+    [EFFECT_ELECTRIC_TERRAIN] =
+    {
+        .battleScript = BattleScript_EffectElectricTerrain,
+        .battleTvScore = 0, // TODO: Assign points
+    },
+
+    [EFFECT_PSYCHIC_TERRAIN] =
+    {
+        .battleScript = BattleScript_EffectPsychicTerrain,
         .battleTvScore = 0, // TODO: Assign points
     },
 
@@ -1680,7 +1704,7 @@ const struct BattleMoveEffect gBattleMoveEffects[NUM_BATTLE_MOVE_EFFECTS] =
 
     [EFFECT_SHELL_TRAP] =
     {
-        .battleScript = BattleScript_EffectHit,
+        .battleScript = BattleScript_EffectShellTrap,
         .battleTvScore = 0, // TODO: Assign points
     },
 

@@ -250,7 +250,6 @@ s32 LearnMove(const struct MoveLearnUI *ui, u8 taskId)
             return LEARN_MOVE;
         case 1: // No
         case MENU_B_PRESSED:
-            gSpecialVar_Result = FALSE;
             return LEARN_MOVE_END;
         }
         return state;

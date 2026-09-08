@@ -91,8 +91,7 @@ SINGLE_BATTLE_TEST("Air Balloon can not be restored with Recycle after it has be
 SINGLE_BATTLE_TEST("Air Balloon prevents the user from being healed by Grassy Terrain")
 {
     GIVEN {
-        ASSUME(GetMoveEffect(MOVE_GRASSY_TERRAIN) == EFFECT_TERRAIN);
-        ASSUME(GetMoveTerrainType(MOVE_GRASSY_TERRAIN) == B_TERRAIN_GRASSY);
+        ASSUME(GetMoveEffect(MOVE_GRASSY_TERRAIN) == EFFECT_GRASSY_TERRAIN);
         PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_AIR_BALLOON); MaxHP(100); HP(1); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
@@ -155,10 +154,10 @@ SINGLE_BATTLE_TEST("Air Balloon pops if a damaging move hits the holder's Substi
 
 SINGLE_BATTLE_TEST("Air Balloon pops when Disguise is broken")
 {
-    enum Species species, newSpecies;
+    u32 species, newSpecies;
     PARAMETRIZE { species = SPECIES_MIMIKYU_DISGUISED;       newSpecies = SPECIES_MIMIKYU_BUSTED; }
     PARAMETRIZE { species = SPECIES_MIMIKYU_TOTEM_DISGUISED; newSpecies = SPECIES_MIMIKYU_BUSTED_TOTEM; }
-
+    
     GIVEN {
         PLAYER(species) { Ability(ABILITY_DISGUISE); Item(ITEM_AIR_BALLOON); }
         OPPONENT(SPECIES_WOBBUFFET);

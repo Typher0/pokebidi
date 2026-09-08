@@ -96,19 +96,7 @@ TEST("Move names fit on Move Relearner Screen")
 TEST("Move descriptions fit on Pokemon Summary Screen")
 {
     u32 i;
-    const u32 fontId = FONT_NARROWER, widthPx = 152;
-    enum Move move = MOVE_NONE;
-    for (i = 1; i < MOVES_COUNT_ALL; i++)
-    {
-        PARAMETRIZE_LABEL("%S", GetMoveDescription(i)) { move = i; }
-    }
-    EXPECT_LE(GetStringWidth(fontId, GetMoveDescription(move), 0), widthPx);
-}
-
-TEST("Move descriptions fit on battle move info window")
-{
-    u32 i;
-    const u32 fontId = FONT_NARROWER, widthPx = 144;
+    const u32 fontId = FONT_NORMAL, widthPx = 152;
     enum Move move = MOVE_NONE;
     for (i = 1; i < MOVES_COUNT_ALL; i++)
     {
@@ -251,12 +239,11 @@ TEST("Item descriptions fit on Bag and Shop Screen")
 
 TEST("Species names fit on Battle Screen HP box")
 {
-    enum Species i;
-    u32 genderWidthPx;
+    u32 i, genderWidthPx;
     const u32 fontId = FONT_SMALL_NARROWER, widthPx = 55;
-    enum Species species = SPECIES_NONE;
+    u32 species = SPECIES_NONE;
     genderWidthPx = GetStringWidth(fontId, COMPOUND_STRING("♂"), 0);
-    for (i = SPECIES_NONE + 1; i < NUM_SPECIES; i++)
+    for (i = 1; i < NUM_SPECIES; i++)
     {
         if (IsSpeciesEnabled(i))
         {
@@ -271,10 +258,10 @@ TEST("Species names fit on Battle Screen HP box")
 
 TEST("Species names fit on Party Screen")
 {
-    enum Species i;
+    u32 i;
     const u32 fontId = FONT_SMALL_NARROWER, widthPx = 50;
-    enum Species species = SPECIES_NONE;
-    for (i = SPECIES_NONE + 1; i < NUM_SPECIES; i++)
+    u32 species = SPECIES_NONE;
+    for (i = 1; i < NUM_SPECIES; i++)
     {
         if (IsSpeciesEnabled(i))
         {
@@ -286,10 +273,10 @@ TEST("Species names fit on Party Screen")
 
 TEST("Species names fit on Pokemon Summary Screen")
 {
-    enum Species i;
+    u32 i;
     const u32 fontId = FONT_NARROWER, widthPx = 63;
-    enum Species species = SPECIES_NONE;
-    for (i = SPECIES_NONE + 1; i < NUM_SPECIES; i++)
+    u32 species = SPECIES_NONE;
+    for (i = 1; i < NUM_SPECIES; i++)
     {
         if (IsSpeciesEnabled(i))
         {
@@ -301,10 +288,10 @@ TEST("Species names fit on Pokemon Summary Screen")
 
 TEST("Species names fit on Pokedex Screen")
 {
-    enum Species i;
+    u32 i;
     const u32 fontId = FONT_NARROWER, widthPx = 50;
-    enum Species species = SPECIES_NONE;
-    for (i = SPECIES_NONE + 1; i < NUM_SPECIES; i++)
+    u32 species = SPECIES_NONE;
+    for (i = 1; i < NUM_SPECIES; i++)
     {
         if (IsSpeciesEnabled(i))
         {
@@ -316,10 +303,10 @@ TEST("Species names fit on Pokedex Screen")
 
 TEST("Species names fit on Pokedex Screen - Cries")
 {
-    enum Species i;
+    u32 i;
     const u32 fontId = FONT_NARROWER, widthPx = 60;
-    enum Species species = SPECIES_NONE;
-    for (i = SPECIES_NONE + 1; i < NUM_SPECIES; i++)
+    u32 species = SPECIES_NONE;
+    for (i = 1; i < NUM_SPECIES; i++)
     {
         if (IsSpeciesEnabled(i))
         {
@@ -331,9 +318,9 @@ TEST("Species names fit on Pokedex Screen - Cries")
 
 TEST("Species names fit on Pokemon Storage System")
 {
-    enum Species i;
-    enum Species species = SPECIES_NONE;
-    for (i = SPECIES_NONE + 1; i < NUM_SPECIES; i++)
+    u32 i;
+    u32 species = SPECIES_NONE;
+    for (i = 1; i < NUM_SPECIES; i++)
     {
         if (IsSpeciesEnabled(i))
         {
@@ -346,10 +333,10 @@ TEST("Species names fit on Pokemon Storage System")
 
 TEST("Species names fit on Contest Screen")
 {
-    enum Species i;
+    u32 i;
     const u32 fontId = FONT_NARROWER, widthPx = 50;
-    enum Species species = SPECIES_NONE;
-    for (i = SPECIES_NONE + 1; i < NUM_SPECIES; i++)
+    u32 species = SPECIES_NONE;
+    for (i = 1; i < NUM_SPECIES; i++)
     {
         if (IsSpeciesEnabled(i))
         {
@@ -361,10 +348,10 @@ TEST("Species names fit on Contest Screen")
 
 TEST("Species names fit on Contest Screen - Rankings")
 {
-    enum Species i;
+    u32 i;
     const u32 fontId = FONT_NARROWER, widthPx = 49;
-    enum Species species = SPECIES_NONE;
-    for (i = SPECIES_NONE + 1; i < NUM_SPECIES; i++)
+    u32 species = SPECIES_NONE;
+    for (i = 1; i < NUM_SPECIES; i++)
     {
         if (IsSpeciesEnabled(i))
         {
@@ -376,10 +363,10 @@ TEST("Species names fit on Contest Screen - Rankings")
 
 TEST("Species names fit on Battle Dome Screen")
 {
-    enum Species i;
+    u32 i;
     const u32 fontId = FONT_SHORT_NARROWER, widthPx = 60;
-    enum Species species = SPECIES_NONE;
-    for (i = SPECIES_NONE + 1; i < NUM_SPECIES; i++)
+    u32 species = SPECIES_NONE;
+    for (i = 1; i < NUM_SPECIES; i++)
     {
         if (IsSpeciesEnabled(i))
         {
@@ -391,10 +378,10 @@ TEST("Species names fit on Battle Dome Screen")
 
 TEST("Species names fit on Hall of Fame")
 {
-    enum Species i;
+    u32 i;
     const u32 fontId = FONT_NARROWER, widthPx = 66;
-    enum Species species = SPECIES_NONE;
-    for (i = SPECIES_NONE + 1; i < NUM_SPECIES; i++)
+    u32 species = SPECIES_NONE;
+    for (i = 1; i < NUM_SPECIES; i++)
     {
         if (IsSpeciesEnabled(i))
         {
@@ -406,10 +393,10 @@ TEST("Species names fit on Hall of Fame")
 
 TEST("Species names fit on Naming Screen")
 {
-    enum Species i;
+    u32 i;
     const u32 fontId = FONT_NARROWER, widthPx = 64;
-    enum Species species = SPECIES_NONE;
-    for (i = SPECIES_NONE + 1; i < NUM_SPECIES; i++)
+    u32 species = SPECIES_NONE;
+    for (i = 1; i < NUM_SPECIES; i++)
     {
         if (IsSpeciesEnabled(i))
         {
@@ -421,10 +408,10 @@ TEST("Species names fit on Naming Screen")
 
 TEST("Species names fit on PokeNav Condition Screen")
 {
-    enum Species i;
+    u32 i;
     const u32 fontId = FONT_NARROWER, widthPx = 57;
-    enum Species species = SPECIES_NONE;
-    for (i = SPECIES_NONE + 1; i < NUM_SPECIES; i++)
+    u32 species = SPECIES_NONE;
+    for (i = 1; i < NUM_SPECIES; i++)
     {
         if (IsSpeciesEnabled(i))
         {
@@ -436,10 +423,10 @@ TEST("Species names fit on PokeNav Condition Screen")
 
 TEST("Species names fit on PokeNav Condition Search Screen")
 {
-    enum Species i;
+    u32 i;
     const u32 fontId = FONT_NARROWER, widthPx = 60;
-    enum Species species = SPECIES_NONE;
-    for (i = SPECIES_NONE + 1; i < NUM_SPECIES; i++)
+    u32 species = SPECIES_NONE;
+    for (i = 1; i < NUM_SPECIES; i++)
     {
         if (IsSpeciesEnabled(i))
         {
@@ -451,10 +438,10 @@ TEST("Species names fit on PokeNav Condition Search Screen")
 
 TEST("Species names fit on PokeNav Ribbon Screen")
 {
-    enum Species i;
+    u32 i;
     const u32 fontId = FONT_NARROWER, widthPx = 60;
-    enum Species species = SPECIES_NONE;
-    for (i = SPECIES_NONE + 1; i < NUM_SPECIES; i++)
+    u32 species = SPECIES_NONE;
+    for (i = 1; i < NUM_SPECIES; i++)
     {
         if (IsSpeciesEnabled(i))
         {
@@ -466,10 +453,10 @@ TEST("Species names fit on PokeNav Ribbon Screen")
 
 TEST("Species names fit on PokeNav Ribbon List Screen")
 {
-    enum Species i;
+    u32 i;
     const u32 fontId = FONT_NARROWER, widthPx = 60;
-    enum Species species = SPECIES_NONE;
-    for (i = SPECIES_NONE + 1; i < NUM_SPECIES; i++)
+    u32 species = SPECIES_NONE;
+    for (i = 1; i < NUM_SPECIES; i++)
     {
         if (IsSpeciesEnabled(i))
         {
@@ -481,12 +468,11 @@ TEST("Species names fit on PokeNav Ribbon List Screen")
 
 TEST("Species names fit on Battle Screen HP box for vanilla mons with the default font")
 {
-    enum Species i;
-    u32 genderWidthPx;
+    u32 i, genderWidthPx;
     const u32 fontId = FONT_SMALL, widthPx = 55;
-    enum Species species = SPECIES_NONE;
+    u32 species = SPECIES_NONE;
     genderWidthPx = GetStringWidth(fontId, COMPOUND_STRING("♂"), 0);
-    for (i = SPECIES_NONE + 1; i < SPECIES_TURTWIG; i++)
+    for (i = 1; i < SPECIES_TURTWIG; i++)
     {
         if (IsSpeciesEnabled(i))
         {
@@ -501,10 +487,10 @@ TEST("Species names fit on Battle Screen HP box for vanilla mons with the defaul
 
 TEST("Species dex entries fit on Pokedex Screen")
 {
-    enum Species i;
+    u32 i;
     const u32 fontId = FONT_NORMAL, widthPx = 224;
-    enum Species species = SPECIES_NONE;
-    for (i = SPECIES_NONE + 1; i < NUM_SPECIES; i++)
+    u32 species = SPECIES_NONE;
+    for (i = 1; i < NUM_SPECIES; i++)
     {
         if (IsSpeciesEnabled(i))
         {
@@ -541,7 +527,7 @@ TEST("Ability names fit on Ability Pop-Up")
 TEST("Ability descriptions fit on Pokemon Summary Screen")
 {
     u32 i;
-    const u32 fontId = FONT_NARROWER, widthPx = 146;
+    const u32 fontId = FONT_NORMAL, widthPx = 146;
     enum Ability ability = ABILITY_NONE;
     for (i = 1; i < ABILITIES_COUNT; i++)
     {
@@ -613,7 +599,7 @@ TEST("Battle strings fit on the battle message window")
     enum Ability longAbilityID = ABILITY_SUPERSWEET_SYRUP;      // 91 pixels.
     enum Stat longStatName = STAT_EVASION;                      // 40 pixels.
     enum Type longTypeName = TYPE_ELECTRIC;                     // 43 pixels.
-    enum Species longSpeciesName = SPECIES_SANDY_SHOCKS;        // 47 pixels.
+    u32 longSpeciesName = SPECIES_SANDY_SHOCKS;                 // 47 pixels.
     enum Item longItemName = ITEM_UNREMARKABLE_TEACUP;          // 73 pixels.
     u8 boxName[9] = _("MMMMMMMM");                              // 54 pixels.
 

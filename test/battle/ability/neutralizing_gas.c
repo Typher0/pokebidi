@@ -275,8 +275,7 @@ SINGLE_BATTLE_TEST("Neutralizing Gas prevents Contrary inverting stat boosts")
 
 SINGLE_BATTLE_TEST("Neutralizing Gas exiting the field does not activate abilities that were not suppressed by it again")
 {
-    enum Species species;
-    enum Ability ability;
+    u32 species, ability;
     // These are the only abilities that could immediately activate again
     PARAMETRIZE { species = SPECIES_KOMALA; ability = ABILITY_COMATOSE; }
     PARAMETRIZE { species = SPECIES_CALYREX_SHADOW; ability = ABILITY_AS_ONE_SHADOW_RIDER; }
@@ -314,8 +313,7 @@ SINGLE_BATTLE_TEST("Neutralizing Gas exiting the field does not activate Imposte
 
 SINGLE_BATTLE_TEST("Neutralizing Gas exiting the field does not activate Air Lock/Cloud Nine but their effects are kept")
 {
-    enum Species species;
-    enum Ability ability;
+    u32 species, ability;
 
     PARAMETRIZE { species = SPECIES_GOLDUCK; ability = ABILITY_CLOUD_NINE; }
     PARAMETRIZE { species = SPECIES_RAYQUAZA; ability = ABILITY_AIR_LOCK; }

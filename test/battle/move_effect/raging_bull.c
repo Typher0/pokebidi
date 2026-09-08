@@ -10,8 +10,8 @@ ASSUMPTIONS
 
 SINGLE_BATTLE_TEST("Move Raging Bull changes it's type depending on the Tauros Form")
 {
-    enum Species speciesPlayer;
-    enum Species speciesOpponent;
+    u16 speciesPlayer;
+    u16 speciesOpponent;
 
     PARAMETRIZE { speciesPlayer = SPECIES_TAUROS_PALDEA_COMBAT; speciesOpponent = SPECIES_CHARIZARD; }
     PARAMETRIZE { speciesPlayer = SPECIES_TAUROS_PALDEA_BLAZE; speciesOpponent = SPECIES_BLASTOISE; }

@@ -378,15 +378,6 @@ static const struct WindowTemplate sStandardBattleWindowTemplates[] =
         .paletteNum = 5,
         .baseBlock = 0x0350,
     },
-    [B_CATCH_OR_NOT] = {
-        .bg = 0,
-        .tilemapLeft = 21,
-        .tilemapTop = 9,
-        .width = 8,
-        .height = 4,
-        .paletteNum = 5,
-        .baseBlock = 0x03BC,
-    },
     DUMMY_WIN_TEMPLATE
 };
 
@@ -1349,9 +1340,23 @@ bool8 LoadChosenBattleElement(u8 caseId)
 
 void DrawTerrainTypeBattleBackground(void)
 {
-    if (gFieldTimers.terrain != B_TERRAIN_NONE)
-        LoadMoveBg(gBattleTerrainInfo[gFieldTimers.terrain].battleBackground);
-    else
+    switch (gFieldStatuses & STATUS_FIELD_TERRAIN_ANY)
+    {
+    case STATUS_FIELD_GRASSY_TERRAIN:
+        LoadMoveBg(BG_GRASSY_TERRAIN);
+        break;
+    case STATUS_FIELD_MISTY_TERRAIN:
+        LoadMoveBg(BG_MISTY_TERRAIN);
+        break;
+    case STATUS_FIELD_ELECTRIC_TERRAIN:
+        LoadMoveBg(BG_ELECTRIC_TERRAIN);
+        break;
+    case STATUS_FIELD_PSYCHIC_TERRAIN:
+        LoadMoveBg(BG_PSYCHIC_TERRAIN);
+        break;
+    default:
         DrawMainBattleBackground();
+        break;
+    }
 }
 

@@ -8,13 +8,12 @@ ASSUMPTIONS
     ASSUME(gItemsInfo[ITEM_LIECHI_BERRY].holdEffect == HOLD_EFFECT_ATTACK_UP);
 }
 
-SINGLE_BATTLE_TEST("Stuff Cheeks cannot be used if the user doesn't hold a berry (Gen8-9)")
+SINGLE_BATTLE_TEST("Stuff Cheeks cannot be used if the user doesn't hold a berry")
 {
     enum Item item = ITEM_NONE;
     PARAMETRIZE { item = ITEM_NONE; }
     PARAMETRIZE { item = ITEM_LIECHI_BERRY; }
     GIVEN {
-        WITH_CONFIG(B_STUFF_CHEEKS_SELECTABLE, GEN_9);
         PLAYER(SPECIES_SKWOVET) { Item(item); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
@@ -33,7 +32,6 @@ SINGLE_BATTLE_TEST("Stuff Cheeks cannot be used if the user doesn't hold a berry
 SINGLE_BATTLE_TEST("Stuff Cheeks forces Struggle if it's the only move is blocked")
 {
     GIVEN {
-        WITH_CONFIG(B_STUFF_CHEEKS_SELECTABLE, GEN_9);
         PLAYER(SPECIES_SKWOVET) { Moves(MOVE_STUFF_CHEEKS); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {

@@ -190,7 +190,7 @@ SINGLE_BATTLE_TEST("Minior Meteor reverts to Core form upon battle end after cha
 
 SINGLE_BATTLE_TEST("Mimikyu Busted reverts to Disguised form upon battle end after busting its Disguise in battle")
 {
-    enum Species species;
+    u32 species;
     PARAMETRIZE { species = SPECIES_MIMIKYU_DISGUISED; }
     PARAMETRIZE { species = SPECIES_MIMIKYU_TOTEM_DISGUISED; }
     GIVEN {
@@ -259,8 +259,7 @@ SINGLE_BATTLE_TEST("Morpeko Hangry reverts to Full Belly Form upon battle end af
 
 SINGLE_BATTLE_TEST("Ogerpon reverts to the correct form upon battle end after terastallizing")
 {
-    enum Species species;
-    enum Item item;
+    u32 species, item;
     PARAMETRIZE { species = SPECIES_OGERPON_TEAL;        item = ITEM_NONE; }
     PARAMETRIZE { species = SPECIES_OGERPON_WELLSPRING;  item = ITEM_WELLSPRING_MASK; }
     PARAMETRIZE { species = SPECIES_OGERPON_HEARTHFLAME; item = ITEM_HEARTHFLAME_MASK; }
@@ -289,7 +288,7 @@ SINGLE_BATTLE_TEST("Terapagos reverts to the correct form upon battle end after 
 
 SINGLE_BATTLE_TEST("Power Construct Zygarde reverts to its original form upon battle end")
 {
-    enum Species baseSpecies;
+    u16 baseSpecies;
     PARAMETRIZE { baseSpecies = SPECIES_ZYGARDE_10_POWER_CONSTRUCT; }
     PARAMETRIZE { baseSpecies = SPECIES_ZYGARDE_50_POWER_CONSTRUCT; }
 

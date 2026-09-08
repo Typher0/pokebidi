@@ -75,7 +75,7 @@ void FreeBattleResources(void)
     else if (gBattleTypeFlags & BATTLE_TYPE_TRAINER_HILL)
         FreeTrainerHillBattleStruct();
 
-    gFieldTimers.terrain = 0;
+    gFieldStatuses = 0;
     if (gBattleResources != NULL)
     {
         FREE_AND_SET_NULL(gBattleStruct);
@@ -221,17 +221,14 @@ u32 BattlePalace_TryEscapeStatus(enum BattlerId battler)
         case 1:
             if (gBattleMons[battler].status1 & STATUS1_FREEZE)
             {
-                if (Random() % (GetConfig(B_FREEZE_TURNS) >= GEN_CHAMPIONS ? 4 : 5) != 0 && GetBattlerPartyState(battler)->freezeTurns < 2)
+                if (Random() % 5 != 0)
                 {
                     // Still frozen
-                    if (GetConfig(B_FREEZE_TURNS) >= GEN_CHAMPIONS)
-                        GetBattlerPartyState(battler)->freezeTurns++;
                     gBattlescriptCurrInstr = BattleScript_MoveUsedIsFrozen;
                 }
                 else
                 {
                     // Unfreeze
-                    GetBattlerPartyState(battler)->freezeTurns = 0;
                     gBattleMons[battler].status1 &= ~(STATUS1_FREEZE);
                     gBattleScripting.battler = battler;
                     BattleScriptCall(BattleScript_BattlerDefrosted);
