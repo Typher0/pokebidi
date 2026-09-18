@@ -23,7 +23,7 @@ voice_group mus_zephyr_town
 	voice_directsound 60, 0, DirectSoundWaveData_hg_004accorc5, 254, 197, 217, 192
 	voice_directsound 60, 0, DirectSoundWaveData_dp_harmonica_c3_16, 67, 247, 191, 171
 	voice_directsound 60, 0, DirectSoundWaveData_dp_violin_c3_16, 100, 247, 255, 208
-	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
+	voice_directsound 60, 0, DirectSoundWaveData_dp_violin_c4_16, 67, 247, 118, 208
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
@@ -55,7 +55,7 @@ voice_group mus_zephyr_town
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
-	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
+	voice_keysplit voicegroup_trumpet_keysplit, keysplit_trumpet
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 1
 	voice_directsound 60, 0, DirectSoundWaveData_dp_trombone_c2_16, 255, 243, 159, 208
 	voice_directsound 60, 0, DirectSoundWaveData_dp_trombone_c3_16, 255, 243, 159, 208
