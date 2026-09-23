@@ -4362,7 +4362,8 @@ static void DebugAction_DestroyFollowerNPC(u8 taskId)
     X(MUS_VS_BANJIME_WILD) \
     X(MUS_VS_BANJIME_GYM_LEADER) \
     X(MUS_MT_ELENY) \
-    X(MUS_ROUTE_631)
+    X(MUS_ROUTE_631) \
+    X(MUS_BLOOMNGROVE_FOREST)
 
 #define SOUND_LIST_SE               \
     X(SE_USE_ITEM)                  \

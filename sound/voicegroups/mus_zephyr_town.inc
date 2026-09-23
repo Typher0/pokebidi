@@ -125,5 +125,5 @@ voice_group mus_zephyr_town
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
-	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
+	voice_directsound 60, 0, DirectSoundWaveData_dp_cabassa_16, 255, 243, 127, 176
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0

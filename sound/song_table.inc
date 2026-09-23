@@ -659,6 +659,7 @@ gSongTable::
     song mus_vs_banjime_gym_leader, MUSIC_PLAYER_BGM, 0
     song mus_mt_eleny, MUSIC_PLAYER_BGM, 0
     song mus_route_631, MUSIC_PLAYER_BGM, 0
+    song mus_bloomngrove_forest, MUSIC_PLAYER_BGM, 0
  
     .align 2
 dummy_song_header:
