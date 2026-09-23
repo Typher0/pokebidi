@@ -7044,6 +7044,7 @@ static inline u32 CalcAttackStat(struct DamageContext *ctx)
     // target's abilities
     switch (ctx->abilities[ctx->battlerDef])
     {
+    case ABILITY_COZY:
     case ABILITY_THICK_FAT:
         if (moveType == TYPE_FIRE || moveType == TYPE_ICE)
         {
