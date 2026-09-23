@@ -248,7 +248,16 @@ PetalburgWoods_EventScript_Boy2::
 PetalburgWoods_EventScript_Girl::
 	lock
 	faceplayer
+	switch VAR_STARTER_MON
+	case 0, PetalburgWoods_EventScript_GirlRowlet
+	case 1, PetalburgWoods_EventScript_GirlCyndaquil
+	case 2, PetalburgWoods_EventScript_GirlSquirtle
+	end
+
+PetalburgWoods_EventScript_GirlRowlet::
 	goto_if_set FLAG_RECEIVED_MIRACLE_SEED, PetalburgWoods_EventScript_ExplainMiracleSeed
+	msgbox PetalburgWoods_Text_WhichStarterDidYouChoose, MSGBOX_DEFAULT
+	delay 8
 	msgbox PetalburgWoods_Text_TryUsingThisItem, MSGBOX_DEFAULT
 	giveitem ITEM_MIRACLE_SEED
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
@@ -258,6 +267,38 @@ PetalburgWoods_EventScript_Girl::
 
 PetalburgWoods_EventScript_ExplainMiracleSeed::
 	msgbox PetalburgWoods_Text_MiracleSeedExplanation, MSGBOX_DEFAULT
+	release
+	end
+
+PetalburgWoods_EventScript_GirlCyndaquil::
+	goto_if_set FLAG_RECEIVED_MIRACLE_SEED, PetalburgWoods_EventScript_ExplainCharcoal
+	msgbox PetalburgWoods_Text_WhichStarterDidYouChoose, MSGBOX_DEFAULT
+	delay 8
+	msgbox PetalburgWoods_Text_TryUsingThisItem1, MSGBOX_DEFAULT
+	giveitem ITEM_CHARCOAL
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	setflag FLAG_RECEIVED_MIRACLE_SEED
+	release
+	end
+
+PetalburgWoods_EventScript_ExplainCharcoal::
+	msgbox PetalburgWoods_Text_CharcoalExplanation, MSGBOX_DEFAULT
+	release
+	end
+
+PetalburgWoods_EventScript_GirlSquirtle::
+	goto_if_set FLAG_RECEIVED_MIRACLE_SEED, PetalburgWoods_EventScript_ExplainMysticWater
+	msgbox PetalburgWoods_Text_WhichStarterDidYouChoose, MSGBOX_DEFAULT
+	delay 8
+	msgbox PetalburgWoods_Text_TryUsingThisItem2, MSGBOX_DEFAULT
+	giveitem ITEM_MYSTIC_WATER
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	setflag FLAG_RECEIVED_MIRACLE_SEED
+	release
+	end
+
+PetalburgWoods_EventScript_ExplainMysticWater::
+	msgbox PetalburgWoods_Text_MysticWaterExplanation, MSGBOX_DEFAULT
 	release
 	end
 
@@ -784,16 +825,41 @@ PetalburgWoods_Text_HiddenItemsExplanation:
 	.string "walking.$"
 
 PetalburgWoods_Text_TryUsingThisItem:
-	.string "Oh, neat!\n"
-	.string "That's the Badge from Papillys Gym!\p"
-	.string "You must be a trainer.\n"
-	.string "You should try using this item.$"
+	.string "Oh, it was Grass-type?\p"
+	.string "In that case, you should try using\n"
+	.string "this item.$"
 
 PetalburgWoods_Text_MiracleSeedExplanation:
 	.string "It's a Miracle Seed.\n"
 	.string "If a Pokémon holds that item, its\l"
 	.string "Grass-type moves become stronger.\p"
 	.string "Besides Miracle Seed, I think there are\n"
+	.string "other convenient items for Pokémon\l"
+	.string "to hold.$"
+
+PetalburgWoods_Text_TryUsingThisItem1:
+	.string "Oh, it was Fire-type?\p"
+	.string "In that case, you should try using\n"
+	.string "this item.$"
+
+PetalburgWoods_Text_CharcoalExplanation:
+	.string "It's a Charcoal.\n"
+	.string "If a Pokémon holds that item, its\l"
+	.string "Fire-type moves become stronger.\p"
+	.string "Besides Charcoal, I think there are\n"
+	.string "other convenient items for Pokémon\l"
+	.string "to hold.$"
+
+PetalburgWoods_Text_TryUsingThisItem2:
+	.string "Oh, it was Water-type?\p"
+	.string "In that case, you should try using\n"
+	.string "this item.$"
+
+PetalburgWoods_Text_MysticWaterExplanation:
+	.string "It's a Mystic Water.\n"
+	.string "If a Pokémon holds that item, its\l"
+	.string "Water-type moves become stronger.\p"
+	.string "Besides Mystic Water, I think there are\n"
 	.string "other convenient items for Pokémon\l"
 	.string "to hold.$"
 
@@ -846,4 +912,6 @@ PetalburgWoods_Text_AmeliaLeave:
 	.string "to have a look around elsewhere.\p"
 	.string "I'll see you around, {PLAYER}!$"
 
+PetalburgWoods_Text_WhichStarterDidYouChoose:
+	.string "What type was your first Pokémon?$"
 

@@ -6340,8 +6340,8 @@ IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
 
 === TRAINER_CALVIN_1 ===
 Name: Calvin
-Class: Youngster
-Pic: Youngster
+Class: Skier
+Pic: Skier M
 Gender: Male
 Music: Male
 Double Battle: No
@@ -6618,15 +6618,15 @@ Level: 16
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_ALLEN ===
-Name: Allen
-Class: Youngster
-Pic: Youngster
-Gender: Male
-Music: Male
+Name: Ellen
+Class: Skier
+Pic: Skier F
+Gender: Female
+Music: Female
 Double Battle: No
 AI: Check Bad Move
 
-Hoothoot
+Hamsnug
 Level: 4
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -6738,8 +6738,8 @@ Nature: Adamant
 
 === TRAINER_ANDREW ===
 Name: Andrew
-Class: Roughneck
-Pic: Roughneck
+Class: Hiker
+Pic: Hiker
 Gender: Male
 Music: Hiker
 Double Battle: No
@@ -11669,8 +11669,8 @@ Ball: Luxury
 
 === TRAINER_TIANA ===
 Name: Tiana
-Class: Lass
-Pic: Lass
+Class: Skier
+Pic: Skier F
 Gender: Female
 Music: Female
 Double Battle: No
@@ -13740,10 +13740,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_MARCOS ===
 Name: Link
-Class: Bird Keeper
-Pic: Bird Keeper
+Class: Backpacker
+Pic: Backpacker M
 Gender: Male
-Music: Intense
+Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
@@ -13753,8 +13753,8 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_RHETT ===
 Name: Rhett
-Class: Black Belt
-Pic: Black Belt
+Class: Boarder
+Pic: Boarder
 Gender: Male
 Music: Intense
 Double Battle: No

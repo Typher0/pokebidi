@@ -5209,7 +5209,7 @@ u16 GetBattleBGM(void)
             if (gBattleTypeFlags & BATTLE_TYPE_FRONTIER)
                 return MUS_VS_BANJIME_RIVAL;
             if (!StringCompare(GetTrainerNameFromId(TRAINER_BATTLE_PARAM.opponentA), gText_BattleWallyName))
-                return MUS_DP_VS_TRAINER;
+                return MUS_VS_BANJIME_TAINER;
             return MUS_VS_BANJIME_RIVAL;
         case TRAINER_CLASS_ELITE_FOUR:
             return MUS_DP_VS_ELITE_FOUR;
@@ -5226,11 +5226,13 @@ u16 GetBattleBGM(void)
         case TRAINER_CLASS_PIKE_QUEEN:
         case TRAINER_CLASS_PYRAMID_KING:
             return MUS_PL_VS_FRONTIER_BRAIN;
+        case TRAINER_CLASS_SINGULARITY_ADMIN:
+            return MUS_VS_SINGULARITY_ADMIN;
         default:
             if (GetCurrentRegion() == REGION_KANTO)
                 return MUS_HG_VS_TRAINER;
             else
-                return MUS_DP_VS_TRAINER;
+                return MUS_VS_BANJIME_TAINER;
         }
     }
     else
