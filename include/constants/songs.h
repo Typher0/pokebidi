@@ -587,6 +587,7 @@
 #define MUS_MT_ELENY                651
 #define MUS_ROUTE_631               652
 #define MUS_BLOOMNGROVE_FOREST      653
+#define MUS_VS_BANJIME_TAINER       654
 
 #define MUS_ROUTE118                0x7FFF  // Map is split into 2 music sections. controlled by GetCurrLocationDefaultMusic().
 

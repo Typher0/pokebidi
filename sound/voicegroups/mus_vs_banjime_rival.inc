@@ -45,7 +45,7 @@ voice_group mus_vs_banjime_rival
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
-	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
+	voice_directsound 60, 0, DirectSoundWaveData_dp_violin_c3_16, 100, 247, 255, 208
 	voice_directsound 60, 0, DirectSoundWaveData_hg_132timpc4, 255, 251, 25, 192
 	voice_directsound 60, 0, DirectSoundWaveData_dp_violin_c4_16, 67, 247, 118, 208
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_flute, 255, 127, 231, 127
