@@ -4116,7 +4116,6 @@ static void DebugAction_DestroyFollowerNPC(u8 taskId)
     X(MUS_DP_CONTEST) \
     X(MUS_DP_CONTEST_WINNER) \
     X(MUS_DP_TV_BROADCAST) \
-    X(MUS_DP_B_TOWER) \
     X(MUS_DP_VS_CHAMPION) \
     X(MUS_DP_VS_ELITE_FOUR) \
     X(MUS_DP_VS_GALACTIC) \

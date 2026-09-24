@@ -292,7 +292,6 @@
 #define MUS_DP_TV_BROADCAST         361
 #define MUS_DP_CREDITS              362
 #define MUS_DP_CYCLING              363
-#define MUS_DP_B_TOWER              364
 #define MUS_DP_LEVEL_UP             367
 #define MUS_DP_HEAL                 368
 #define MUS_DP_OBTAIN_BADGE         369

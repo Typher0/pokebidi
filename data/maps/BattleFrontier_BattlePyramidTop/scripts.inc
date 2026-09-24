@@ -125,7 +125,7 @@ BattleFrontier_BattlePyramidTop_EventScript_BrandonHeardSilverSpeech::
 BattleFrontier_BattlePyramidTop_EventScript_BattleBrandonSilver::
 	msgbox BattleFrontier_BattlePyramidTop_Text_BringCourageToOurBattle, MSGBOX_DEFAULT
 	call BattleFrontier_BattlePyramidTop_EventScript_DoBrandonBattle
-	playbgm MUS_DP_B_TOWER, FALSE
+	playbgm MUS_DUMMY, FALSE
 	goto_if_eq VAR_RESULT, 1, BattleFrontier_BattlePyramidTop_EventScript_DefeatedBrandonSilver
 	goto BattleFrontier_BattlePyramid_EventScript_WarpToLobbyLost
 
@@ -162,7 +162,7 @@ BattleFrontier_BattlePyramidTop_EventScript_BrandonHeardGoldSpeech::
 BattleFrontier_BattlePyramidTop_EventScript_BattleBrandonGold::
 	msgbox BattleFrontier_BattlePyramidTop_Text_EverythingYouHave, MSGBOX_DEFAULT
 	call BattleFrontier_BattlePyramidTop_EventScript_DoBrandonBattle
-	playbgm MUS_DP_B_TOWER, FALSE
+	playbgm MUS_DUMMY, FALSE
 	goto_if_eq VAR_RESULT, 1, BattleFrontier_BattlePyramidTop_EventScript_DefeatedBrandonGold
 	goto BattleFrontier_BattlePyramid_EventScript_WarpToLobbyLost
 
