@@ -676,7 +676,7 @@ static void Task_CreditsTheEnd6(u8 taskId)
             FadeOutBGM(8);
 
         if (gTasks[taskId].tDelay == 6840)
-            m4aSongNumStart(MUS_HG_END);
+            m4aSongNumStart(MUS_DP_CREDITS);
 
         gTasks[taskId].tDelay--;
     }

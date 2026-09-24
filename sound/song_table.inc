@@ -356,23 +356,23 @@ gSongTable::
     song dummy_song_header, MUSIC_PLAYER_BGM, 0
     song dummy_song_header, MUSIC_PLAYER_BGM, 0
     song dummy_song_header, MUSIC_PLAYER_BGM, 0
-    song mus_dp_amity_square, MUSIC_PLAYER_BGM, 0
-    song mus_dp_azure_flute, MUSIC_PLAYER_BGM, 0
-    song mus_dp_b_tower, MUSIC_PLAYER_BGM, 0
+    song mus_hg_vs_ho_oh, MUSIC_PLAYER_BGM, 0
+    song mus_dp_dex_rating, MUSIC_PLAYER_BGM, 0
+    song mus_hg_follow_me_1, MUSIC_PLAYER_BGM, 0
     song mus_dp_victory_wild, MUSIC_PLAYER_BGM, 0
     song mus_dp_victory_gym_leader, MUSIC_PLAYER_BGM, 0
     song mus_dp_victory_champion, MUSIC_PLAYER_BGM, 0
     song mus_dp_caught_intro, MUSIC_PLAYER_BGM, 0
-    song mus_dp_contest_dress_up, MUSIC_PLAYER_BGM, 0
-    song mus_dp_contest_lobby, MUSIC_PLAYER_BGM, 0
+    song mus_dp_dawn, MUSIC_PLAYER_BGM, 0
+    song mus_dp_contest, MUSIC_PLAYER_BGM, 0
     song mus_dp_contest_results, MUSIC_PLAYER_BGM, 0
     song mus_dp_contest_winner, MUSIC_PLAYER_BGM, 0
-    song mus_dp_contest, MUSIC_PLAYER_BGM, 0
+    song mus_dp_tv_broadcast, MUSIC_PLAYER_BGM, 0
     song mus_dp_credits, MUSIC_PLAYER_BGM, 0
     song mus_dp_cycling, MUSIC_PLAYER_BGM, 0
-    song mus_dp_dance_difficult, MUSIC_PLAYER_BGM, 0
-    song mus_dp_dance_easy, MUSIC_PLAYER_BGM, 0
-    song mus_dp_dawn, MUSIC_PLAYER_BGM, 0
+    song mus_dp_b_tower, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
     song mus_dp_level_up, MUSIC_PLAYER_SE2, 2
     song mus_dp_heal, MUSIC_PLAYER_SE2, 2
     song mus_dp_obtain_badge, MUSIC_PLAYER_SE2, 2
@@ -389,164 +389,164 @@ gSongTable::
     song mus_dp_encounter_sailor, MUSIC_PLAYER_BGM, 0
     song mus_dp_encounter_suspicious, MUSIC_PLAYER_BGM, 0
     song mus_dp_encounter_twins, MUSIC_PLAYER_BGM, 0
-    song mus_dp_eterna_day, MUSIC_PLAYER_BGM, 0
-    song mus_dp_eterna_forest, MUSIC_PLAYER_BGM, 0
-    song mus_dp_eterna_night, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
     song mus_dp_evolution, MUSIC_PLAYER_BGM, 0
     song mus_dp_obtain_berry, MUSIC_PLAYER_SE2, 2
     song mus_dp_legend_appears, MUSIC_PLAYER_SE2, 2
     song mus_dp_slots_jackpot, MUSIC_PLAYER_SE2, 2
     song mus_dp_slots_win, MUSIC_PLAYER_SE2, 2
     song mus_dp_tv_end, MUSIC_PLAYER_SE2, 2
-    song mus_dp_floaroma_night, MUSIC_PLAYER_BGM, 0
-    song mus_dp_follow_me, MUSIC_PLAYER_BGM, 0
-    song mus_dp_galactic_eterna_building, MUSIC_PLAYER_BGM, 0
-    song mus_dp_galactic_hq_basement, MUSIC_PLAYER_BGM, 0
-    song mus_dp_galactic_hq, MUSIC_PLAYER_BGM, 0
-    song mus_dp_game_corner, MUSIC_PLAYER_BGM, 0
-    song mus_dp_great_marsh, MUSIC_PLAYER_BGM, 0
-    song mus_dp_gts, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
     song mus_dp_gym, MUSIC_PLAYER_BGM, 0
-    song mus_dp_hall_of_fame_room, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
     song mus_dp_hall_of_fame, MUSIC_PLAYER_BGM, 0
-    song mus_dp_hall_of_origin, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
     song mus_dp_encounter_ace_trainer, MUSIC_PLAYER_BGM, 0
-    song mus_dp_hearthome_day, MUSIC_PLAYER_BGM, 0
-    song mus_dp_hearthome_night, MUSIC_PLAYER_BGM, 0
-    song mus_dp_inside_pokemon_league, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
     song mus_dp_intro, MUSIC_PLAYER_BGM, 0
-    song mus_dp_jubilife_day, MUSIC_PLAYER_BGM, 0
-    song mus_dp_jubilife_night, MUSIC_PLAYER_BGM, 0
-    song mus_dp_lake_caverns, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
     song mus_dp_victory_trainer, MUSIC_PLAYER_BGM, 0
     song mus_dp_lake, MUSIC_PLAYER_BGM, 0
-    song mus_dp_fight_area_day, MUSIC_PLAYER_BGM, 0
-    song mus_dp_lets_go_together, MUSIC_PLAYER_BGM, 0
-    song mus_hg_clair, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
     song mus_dp_lucas, MUSIC_PLAYER_BGM, 0
     song mus_dp_encounter_lady, MUSIC_PLAYER_BGM, 0
-    song mus_dp_mt_coronet, MUSIC_PLAYER_BGM, 0
-    song mus_dp_mystery_gift, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
     song mus_dp_obtain_accessory, MUSIC_PLAYER_BGM, 0
     song mus_dp_encounter_artist, MUSIC_PLAYER_BGM, 0
     song mus_dp_encounter_champion, MUSIC_PLAYER_BGM, 0
     song mus_dp_victory_galactic, MUSIC_PLAYER_BGM, 0
     song mus_dp_obtain_key_item, MUSIC_PLAYER_SE2, 2
-    song mus_dp_encounter_cyclist, MUSIC_PLAYER_BGM, 0
-    song mus_dp_old_chateau, MUSIC_PLAYER_BGM, 0
-    song mus_dp_oreburgh_day, MUSIC_PLAYER_BGM, 0
-    song mus_dp_victory_road, MUSIC_PLAYER_BGM, 0
-    song mus_dp_oreburgh_mine, MUSIC_PLAYER_BGM, 0
-    song mus_dp_oreburgh_night, MUSIC_PLAYER_BGM, 0
-    song mus_dp_poffins, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
     song mus_dp_poke_center_day, MUSIC_PLAYER_BGM, 0
-    song mus_dp_poke_center_night, MUSIC_PLAYER_BGM, 0
-    song mus_dp_poke_mart, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
     song mus_dp_poke_radar, MUSIC_PLAYER_BGM, 0
-    song mus_dp_pokemon_league_day, MUSIC_PLAYER_BGM, 0
-    song mus_dp_pokemon_league_night, MUSIC_PLAYER_BGM, 0
-    song mus_dp_poketch, MUSIC_PLAYER_BGM, 0
-    song mus_dp_rival, MUSIC_PLAYER_BGM, 0
-    song mus_dp_route201_day, MUSIC_PLAYER_BGM, 0
-    song mus_dp_route201_night, MUSIC_PLAYER_BGM, 0
-    song mus_dp_route203_day, MUSIC_PLAYER_BGM, 0
-    song mus_dp_route203_night, MUSIC_PLAYER_BGM, 0
-    song mus_dp_route205_day, MUSIC_PLAYER_BGM, 0
-    song mus_dp_route205_night, MUSIC_PLAYER_BGM, 0
-    song mus_dp_route206_day, MUSIC_PLAYER_BGM, 0
-    song mus_dp_route206_night, MUSIC_PLAYER_BGM, 0
-    song mus_dp_route209_day, MUSIC_PLAYER_BGM, 0
-    song mus_dp_route209_night, MUSIC_PLAYER_BGM, 0
-    song mus_dp_route210_day, MUSIC_PLAYER_BGM, 0
-    song mus_dp_route210_night, MUSIC_PLAYER_BGM, 0
-    song mus_dp_route216_day, MUSIC_PLAYER_BGM, 0
-    song mus_dp_route216_night, MUSIC_PLAYER_BGM, 0
-    song mus_dp_route225_day, MUSIC_PLAYER_BGM, 0
-    song mus_dp_route225_night, MUSIC_PLAYER_BGM, 0
-    song mus_dp_route228_day, MUSIC_PLAYER_BGM, 0
-    song mus_dp_route228_night, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
     song mus_pl_obtain_b_points, MUSIC_PLAYER_SE2, 2
     song mus_hg_pokegear_registered, MUSIC_PLAYER_SE2, 2
-    song mus_dp_sandgem_day, MUSIC_PLAYER_BGM, 0
-    song mus_dp_sandgem_night, MUSIC_PLAYER_BGM, 0
-    song mus_dp_fight_area_night, MUSIC_PLAYER_BGM, 0
-    song mus_dp_slots_unused, MUSIC_PLAYER_BGM, 0
-    song mus_dp_flag_captured, MUSIC_PLAYER_BGM, 0
-    song mus_hg_obtain_arcade_points, MUSIC_PLAYER_BGM, 0
-    song mus_dp_snowpoint_night, MUSIC_PLAYER_BGM, 0
-    song mus_dp_solaceon_day, MUSIC_PLAYER_BGM, 0
-    song mus_dp_solaceon_night, MUSIC_PLAYER_BGM, 0
-    song mus_dp_spear_pillar, MUSIC_PLAYER_BGM, 0
-    song mus_dp_stark_mountain, MUSIC_PLAYER_BGM, 0
-    song mus_dp_sunyshore_day, MUSIC_PLAYER_BGM, 0
-    song mus_dp_sunyshore_night, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
     song mus_dp_surf, MUSIC_PLAYER_BGM, 0
-    song mus_dp_title, MUSIC_PLAYER_BGM, 0
-    song mus_dp_tv_broadcast, MUSIC_PLAYER_BGM, 0
-    song mus_dp_floaroma_day, MUSIC_PLAYER_BGM, 0
-    song mus_dp_tv_station, MUSIC_PLAYER_BGM, 0
-    song mus_dp_twinleaf_day, MUSIC_PLAYER_BGM, 0
-    song mus_dp_twinleaf_night, MUSIC_PLAYER_BGM, 0
-    song mus_dp_underground, MUSIC_PLAYER_BGM, 0
-    song mus_dp_valor_lakefront_day, MUSIC_PLAYER_BGM, 0
-    song mus_dp_valor_lakefront_night, MUSIC_PLAYER_BGM, 0
-    song mus_dp_veilstone_day, MUSIC_PLAYER_BGM, 0
-    song mus_dp_veilstone_night, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
     song mus_dp_catastrophe, MUSIC_PLAYER_BGM, 0
     song mus_dp_victory_elite_four, MUSIC_PLAYER_BGM, 0
     song mus_dp_encounter_boy, MUSIC_PLAYER_BGM, 0
-    song mus_dp_canalave_night, MUSIC_PLAYER_BGM, 0
-    song mus_dp_oreburgh_gate, MUSIC_PLAYER_BGM, 0
-    song mus_dp_lake_event, MUSIC_PLAYER_BGM, 0
-    song mus_dp_canalave_day, MUSIC_PLAYER_BGM, 0
-    song mus_dp_vs_arceus, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
     song mus_dp_vs_champion, MUSIC_PLAYER_BGM, 0
-    song mus_dp_vs_dialga_palkia, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
     song mus_dp_vs_elite_four, MUSIC_PLAYER_BGM, 0
-    song mus_dp_vs_galactic_boss, MUSIC_PLAYER_BGM, 0
-    song mus_dp_vs_galactic_commander, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
     song mus_dp_vs_galactic, MUSIC_PLAYER_BGM, 0
     song mus_dp_vs_gym_leader, MUSIC_PLAYER_BGM, 0
     song mus_dp_vs_legend, MUSIC_PLAYER_BGM, 0
-    song mus_dp_vs_rival, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
     song mus_dp_vs_trainer, MUSIC_PLAYER_BGM, 0
-    song mus_dp_vs_uxie_mesprit_azelf, MUSIC_PLAYER_BGM, 0
-    song mus_dp_vs_wild, MUSIC_PLAYER_BGM, 0
-    song mus_dp_wfc, MUSIC_PLAYER_BGM, 0
-    song mus_hg_azalea, MUSIC_PLAYER_BGM, 0
-    song mus_hg_b_arcade, MUSIC_PLAYER_BGM, 0
-    song mus_hg_b_castle, MUSIC_PLAYER_BGM, 0
-    song mus_hg_b_factory, MUSIC_PLAYER_BGM, 0
-    song mus_hg_b_hall, MUSIC_PLAYER_BGM, 0
-    song mus_hg_b_tower_reception, MUSIC_PLAYER_BGM, 0
-    song mus_hg_b_tower, MUSIC_PLAYER_BGM, 0
-    song mus_hg_bell_tower, MUSIC_PLAYER_BGM, 0
-    song mus_hg_bug_catching_contest, MUSIC_PLAYER_BGM, 0
-    song mus_hg_bug_contest_1st_place, MUSIC_PLAYER_BGM, 0
-    song mus_hg_bug_contest_2nd_place, MUSIC_PLAYER_BGM, 0
-    song mus_hg_bug_contest_3rd_place, MUSIC_PLAYER_BGM, 0
-    song mus_hg_bug_contest_prep, MUSIC_PLAYER_BGM, 0
-    song mus_hg_burned_tower, MUSIC_PLAYER_BGM, 0
-    song mus_hg_card_flip_game_over, MUSIC_PLAYER_BGM, 0
-    song mus_hg_card_flip, MUSIC_PLAYER_BGM, 0
-    song mus_hg_caught, MUSIC_PLAYER_BGM, 0
-    song mus_hg_celadon, MUSIC_PLAYER_BGM, 0
-    song mus_hg_cerulean, MUSIC_PLAYER_BGM, 0
-    song mus_hg_cherrygrove, MUSIC_PLAYER_BGM, 0
-    song mus_hg_cianwood, MUSIC_PLAYER_BGM, 0
-    song mus_hg_cinnabar, MUSIC_PLAYER_BGM, 0
-    song mus_dp_dex_rating, MUSIC_PLAYER_SE2, 2
-    song mus_hg_obtain_key_item, MUSIC_PLAYER_SE2, 2
-    song mus_hg_cycling, MUSIC_PLAYER_BGM, 0
-    song mus_hg_dance_theater, MUSIC_PLAYER_BGM, 0
-    song mus_hg_dex_rating_1, MUSIC_PLAYER_BGM, 0
-    song mus_hg_dex_rating_2, MUSIC_PLAYER_BGM, 0
-    song mus_hg_dex_rating_3, MUSIC_PLAYER_BGM, 0
-    song mus_hg_dex_rating_4, MUSIC_PLAYER_BGM, 0
-    song mus_hg_dex_rating_5, MUSIC_PLAYER_BGM, 0
-    song mus_hg_dex_rating_6, MUSIC_PLAYER_BGM, 0
-    song mus_hg_dragons_den, MUSIC_PLAYER_BGM, 0
-    song mus_hg_ecruteak, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
     song ph_trap_blend, MUSIC_PLAYER_SE2, 2
     song ph_trap_held, MUSIC_PLAYER_SE2, 2
     song ph_trap_solo, MUSIC_PLAYER_SE2, 2
@@ -598,54 +598,54 @@ gSongTable::
     song ph_nurse_blend, MUSIC_PLAYER_SE2, 2
     song ph_nurse_held, MUSIC_PLAYER_SE2, 2
     song ph_nurse_solo, MUSIC_PLAYER_SE2, 2
-    song mus_hg_elm_lab, MUSIC_PLAYER_BGM, 0
-    song mus_hg_encounter_boy_1, MUSIC_PLAYER_BGM, 0
-    song mus_hg_encounter_boy_2, MUSIC_PLAYER_BGM, 0
-    song mus_hg_encounter_girl_1, MUSIC_PLAYER_BGM, 0
-    song mus_hg_encounter_girl_2, MUSIC_PLAYER_BGM, 0
-    song mus_hg_encounter_kimono_girl, MUSIC_PLAYER_BGM, 0
-    song mus_hg_encounter_rival, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
     song mus_hg_encounter_rocket, MUSIC_PLAYER_BGM, 0
-    song mus_hg_encounter_sage, MUSIC_PLAYER_BGM, 0
-    song mus_hg_encounter_suspicious_1, MUSIC_PLAYER_BGM, 0
-    song mus_hg_encounter_suspicious_2, MUSIC_PLAYER_BGM, 0
-    song mus_hg_end, MUSIC_PLAYER_BGM, 0
-    song mus_hg_ethan, MUSIC_PLAYER_BGM, 0
-    song mus_hg_eusine, MUSIC_PLAYER_BGM, 0
-    song mus_hg_evolution_no_intro, MUSIC_PLAYER_BGM, 0
-    song mus_hg_evolution, MUSIC_PLAYER_BGM, 0
-    song mus_hg_evolved, MUSIC_PLAYER_SE2, 2
-    song mus_hg_follow_me_1, MUSIC_PLAYER_BGM, 0
-    song mus_hg_follow_me_2, MUSIC_PLAYER_BGM, 0
-    song mus_hg_game_corner_win, MUSIC_PLAYER_BGM, 0
-    song mus_hg_game_corner, MUSIC_PLAYER_BGM, 0
-    song mus_hg_global_terminal, MUSIC_PLAYER_BGM, 0
-    song mus_hg_goldenrod, MUSIC_PLAYER_BGM, 0
-    song mus_hg_gts, MUSIC_PLAYER_BGM, 0
-    song mus_hg_gym, MUSIC_PLAYER_BGM, 0
-    song mus_hg_hall_of_fame, MUSIC_PLAYER_BGM, 0
-    song mus_hg_heal, MUSIC_PLAYER_SE2, 2
-    song mus_hg_vs_ho_oh, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
     song mus_hg_vs_kyogre_groudon, MUSIC_PLAYER_BGM, 0
     song mus_hg_vs_lugia, MUSIC_PLAYER_BGM, 0
     song mus_pl_vs_regi, MUSIC_PLAYER_BGM, 0
     song mus_pl_mystery_gift, MUSIC_PLAYER_BGM, 0
-    song mus_hg_mt_moon_square, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
     song mus_pl_b_castle, MUSIC_PLAYER_BGM, 0
-    song mus_pl_intro, MUSIC_PLAYER_BGM, 0
-    song mus_hg_route30, MUSIC_PLAYER_BGM, 0
-    song mus_hg_surf, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
     song mus_hg_vs_frontier_brain, MUSIC_PLAYER_BGM, 0
     song mus_hg_vs_gym_leader, MUSIC_PLAYER_BGM, 0
     song mus_hg_vs_trainer, MUSIC_PLAYER_BGM, 0
     song mus_hg_vs_champion, MUSIC_PLAYER_BGM, 0
     song mus_hg_vs_wild, MUSIC_PLAYER_BGM, 0
     song mus_hg_radio_poke_flute, MUSIC_PLAYER_BGM, 0
-    song mus_hg_credits, MUSIC_PLAYER_BGM, 0
-    song mus_dp_snowpoint_day, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
     song mus_dp_rowan, MUSIC_PLAYER_BGM, 0
-    song mus_dp_rowan_lab, MUSIC_PLAYER_BGM, 0
-    song mus_hg_spin_trade, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dummy, MUSIC_PLAYER_BGM, 0
     song mus_pl_vs_frontier_brain, MUSIC_PLAYER_BGM, 0
     song mus_zephyr_town, MUSIC_PLAYER_BGM, 0
     song mus_redburro_city, MUSIC_PLAYER_BGM, 0

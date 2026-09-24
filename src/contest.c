@@ -2299,7 +2299,7 @@ static void Task_DoAppeals(u8 taskId)
         {
         case 0:
             BlendAudienceBackground(-1, 1);
-            PlayFanfare(MUS_HG_DEX_RATING_1);
+            PlayFanfare(MUS_DP_CONTEST_RESULTS);
             gTasks[taskId].tCounter++;
             break;
         case 1:

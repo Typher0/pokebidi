@@ -1228,7 +1228,7 @@ u16 GetLocationMusic(struct WarpData *warp)
     else if (IsInfiltratedSpaceCenter(warp) == TRUE)
         return MUS_DP_ENCOUNTER_GALACTIC;
     else if (IsInfiltratedWeatherInstitute(warp) == TRUE)
-        return MUS_HG_MT_MOON_SQUARE;
+        return MUS_DP_ENCOUNTER_GALACTIC;
     else
         return Overworld_GetMapHeaderByGroupAndId(warp->mapGroup, warp->mapNum)->music;
 }
@@ -1241,26 +1241,26 @@ u16 GetCurrLocationDefaultMusic(void)
     if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ROUTE111)
      && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ROUTE111)
      && GetSavedWeather() == WEATHER_SANDSTORM)
-        return MUS_HG_ROUTE30;
+        return MUS_DUMMY;
 
     music = GetLocationMusic(&gSaveBlock1Ptr->location);
-    if (music != MUS_DP_ROUTE201_DAY)
+    if (music != MUS_DUMMY)
     {
         return music;
     }
     else
     {
         if (gSaveBlock1Ptr->pos.x < 24)
-            return MUS_DP_ROUTE201_DAY;
+            return MUS_DUMMY;
         else
-            return MUS_DP_ROUTE201_DAY;
+            return MUS_DUMMY;
     }
 }
 
 u16 GetWarpDestinationMusic(void)
 {
     u16 music = GetLocationMusic(&sWarpDestination);
-    if (music != MUS_DP_ROUTE228_DAY)
+    if (music != MUS_DUMMY)
     {
         return music;
     }
@@ -1268,9 +1268,9 @@ u16 GetWarpDestinationMusic(void)
     {
         if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_MAUVILLE_CITY)
          && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_MAUVILLE_CITY))
-            return MUS_DP_ROUTE201_DAY;
+            return MUS_DUMMY;
         else
-            return MUS_DP_ROUTE201_DAY;
+            return MUS_DUMMY;
     }
 }
 
@@ -1296,9 +1296,9 @@ void Overworld_PlaySpecialMapMusic(void)
         if (gSaveBlock1Ptr->savedMusic)
             music = gSaveBlock1Ptr->savedMusic;
         else if (GetCurrentMapType() == MAP_TYPE_UNDERWATER)
-            music = MUS_DP_ROUTE210_DAY;
+            music = MUS_DUMMY;
         else if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING))
-            music = (IS_FRLG ? MUS_HG_SURF : MUS_DP_SURF);
+            music = (IS_FRLG ? MUS_DP_SURF : MUS_DP_SURF);
     }
 
     if (music != GetCurrentMapMusic())
@@ -1331,10 +1331,10 @@ static void TransitionMapMusic(void)
         u16 currentMusic = GetCurrentMapMusic();
         if (newMusic != MUS_DP_CATASTROPHE && newMusic != MUS_NONE)
         {
-            if (currentMusic == MUS_DP_ROUTE210_DAY || currentMusic == (IS_FRLG ? MUS_HG_SURF : MUS_DP_SURF))
+            if (currentMusic == MUS_DUMMY || currentMusic == (IS_FRLG ? MUS_DP_SURF : MUS_DP_SURF))
                 return;
             if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING))
-                newMusic = (IS_FRLG ? MUS_HG_SURF : MUS_DP_SURF);
+                newMusic = (IS_FRLG ? MUS_DP_SURF : MUS_DP_SURF);
         }
         if (newMusic != currentMusic)
         {

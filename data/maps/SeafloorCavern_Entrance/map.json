@@ -2,7 +2,7 @@
   "id": "MAP_SEAFLOOR_CAVERN_ENTRANCE",
   "name": "SeafloorCavern_Entrance",
   "layout": "LAYOUT_SEAFLOOR_CAVERN_ENTRANCE",
-  "music": "MUS_DP_MT_CORONET",
+  "music": "MUS_DUMMY",
   "region_map_section": "MAPSEC_SEAFLOOR_CAVERN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

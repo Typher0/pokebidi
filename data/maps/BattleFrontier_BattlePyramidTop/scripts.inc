@@ -45,7 +45,7 @@ BattleFrontier_BattlePyramidTop_OnFrame:
 	.2byte 0
 
 BattleFrontier_BattlePyramidTop_EventScript_PlayPyramidMusic::
-	playbgm MUS_DP_B_TOWER, FALSE
+	playbgm MUS_DUMMY, FALSE
 	setvar VAR_TEMP_PLAYING_PYRAMID_MUSIC, 1
 	end
 

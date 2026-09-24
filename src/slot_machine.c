@@ -3579,7 +3579,7 @@ static void ReelTime_Init(struct Task *task)
     CreateReelTimeNumberGapSprite();
     GetReelTimeDraw();
     StopMapMusic();
-    PlayNewMapMusic(MUS_DP_SLOTS_UNUSED);
+    PlayNewMapMusic(MUS_DP_SLOTS_WIN);
 }
 
 static void ReelTime_WindowEnter(struct Task *task)
@@ -3732,7 +3732,7 @@ static void ReelTime_PikachuReact(struct Task *task)
         {
             task->tTimer2 = 0xa0;
             StartSpriteAnimIfDifferent(&gSprites[sSlotMachine->reelTimePikachuSpriteId], 5);
-            PlayFanfare(MUS_HG_DEX_RATING_1);
+            PlayFanfare(MUS_DP_SLOTS_WIN);
         }
         else
         {
@@ -3825,7 +3825,7 @@ static void ReelTime_ExplodeMachine(struct Task *task)
     task->data[4] = 4;
     task->tTimer1 = 0;
     StopMapMusic();
-    PlayFanfare(MUS_HG_DEX_RATING_1);
+    PlayFanfare(MUS_DP_SLOTS_WIN);
     PlaySE(SE_M_EXPLOSION);
 }
 
