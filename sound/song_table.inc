@@ -370,7 +370,7 @@ gSongTable::
     song mus_dp_tv_broadcast, MUSIC_PLAYER_BGM, 0
     song mus_dp_credits, MUSIC_PLAYER_BGM, 0
     song mus_dp_cycling, MUSIC_PLAYER_BGM, 0
-    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_dp_route203_day, MUSIC_PLAYER_BGM, 0
     song mus_dummy, MUSIC_PLAYER_BGM, 0
     song mus_dummy, MUSIC_PLAYER_BGM, 0
     song mus_dp_level_up, MUSIC_PLAYER_SE2, 2
