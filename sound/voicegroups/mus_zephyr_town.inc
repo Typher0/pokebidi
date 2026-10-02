@@ -1,10 +1,10 @@
 voice_group mus_zephyr_town
-	voice_directsound 60, 0, DirectSoundWaveData_dp_sty_piano_c4_16, 255, 248, 0, 208
+	voice_keysplit voicegroup_piano_keysplit, keysplit_piano
 	voice_keysplit_all voicegroup192
 	voice_directsound 60, 0, DirectSoundWaveData_dp_sty_piano_c3_16, 255, 249, 0, 208
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_fingered_bass, 255, 0, 227, 171
 	voice_directsound 60, 0, DirectSoundWaveData_hg_072musboxc5, 255, 246, 0, 205
-	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
+	voice_square_1 60, 0, 0, 2, 0, 0, 15, 1
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
@@ -31,6 +31,7 @@ voice_group mus_zephyr_town
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_directsound 60, 0, DirectSoundWaveData_dp_power_gt_e2_16, 255, 251, 127, 16
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
+	voice_square_1 60, 0, 0, 2, 0, 0, 15, 1
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
@@ -39,8 +40,7 @@ voice_group mus_zephyr_town
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
-	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
-	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
+	voice_directsound 60, 0, DirectSoundWaveData_dp_violin_c3_16, 100, 247, 255, 208
 	voice_directsound 60, 0, DirectSoundWaveData_dp_violin_c4_16, 67, 247, 118, 208
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0

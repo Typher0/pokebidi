@@ -27,7 +27,7 @@ voice_group mus_vs_banjime_rival
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
-	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
+	voice_directsound 60, 0, DirectSoundWaveData_dp_slapbass_c1_16, 255, 0, 255, 192
 	voice_directsound 60, 0, DirectSoundWaveData_dp_harp_c4_16, 255, 247, 0, 208
 	voice_directsound 60, 0, DirectSoundWaveData_dp_dis_gt_c2_16, 255, 247, 255, 176
 	voice_directsound 60, 0, DirectSoundWaveData_dp_dis_gt_c3_16, 255, 247, 255, 176
@@ -36,7 +36,7 @@ voice_group mus_vs_banjime_rival
 	voice_directsound 60, 0, DirectSoundWaveData_dp_synbass2_c1_16, 255, 0, 255, 220
 	voice_directsound 60, 0, DirectSoundWaveData_hg_066kotoc4, 255, 246, 0, 192
 	voice_directsound 60, 0, DirectSoundWaveData_dp_disgt_c2_16, 255, 253, 0, 16
-	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
+	voice_directsound 60, 0, DirectSoundWaveData_dp_power_gt_e2_16, 255, 251, 127, 16
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
@@ -79,7 +79,7 @@ voice_group mus_vs_banjime_rival
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
-	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
+	voice_directsound 60, 0, DirectSoundWaveData_hg_080oboec5, 255, 242, 191, 214
 	voice_directsound 60, 0, DirectSoundWaveData_dp_sawtoothlead60, 255, 197, 255, 171
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0

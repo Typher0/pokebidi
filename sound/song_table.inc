@@ -371,8 +371,8 @@ gSongTable::
     song mus_dp_credits, MUSIC_PLAYER_BGM, 0
     song mus_dp_cycling, MUSIC_PLAYER_BGM, 0
     song mus_dp_route203_day, MUSIC_PLAYER_BGM, 0
-    song mus_dummy, MUSIC_PLAYER_BGM, 0
-    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_vs_singularity_grunt, MUSIC_PLAYER_BGM, 0
+    song mus_encounter_rival, MUSIC_PLAYER_BGM, 0
     song mus_dp_level_up, MUSIC_PLAYER_SE2, 2
     song mus_dp_heal, MUSIC_PLAYER_SE2, 2
     song mus_dp_obtain_badge, MUSIC_PLAYER_SE2, 2
@@ -389,7 +389,7 @@ gSongTable::
     song mus_dp_encounter_sailor, MUSIC_PLAYER_BGM, 0
     song mus_dp_encounter_suspicious, MUSIC_PLAYER_BGM, 0
     song mus_dp_encounter_twins, MUSIC_PLAYER_BGM, 0
-    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_unicorn_lab, MUSIC_PLAYER_BGM, 0
     song mus_dummy, MUSIC_PLAYER_BGM, 0
     song mus_dummy, MUSIC_PLAYER_BGM, 0
     song mus_dp_evolution, MUSIC_PLAYER_BGM, 0

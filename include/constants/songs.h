@@ -293,6 +293,8 @@
 #define MUS_DP_CREDITS              362
 #define MUS_DP_CYCLING              363
 #define MUS_DP_ROUTE203_DAY         364
+#define MUS_VS_SINGULARITY_GRUNT    365
+#define MUS_ENCOUNTER_RIVAL         366
 #define MUS_DP_LEVEL_UP             367
 #define MUS_DP_HEAL                 368
 #define MUS_DP_OBTAIN_BADGE         369
@@ -309,6 +311,7 @@
 #define MUS_DP_ENCOUNTER_SAILOR     380
 #define MUS_DP_ENCOUNTER_SUSPICIOUS 381
 #define MUS_DP_ENCOUNTER_TWINS      382
+#define MUS_UNICORN_LAB             383
 #define MUS_DP_EVOLUTION            386
 #define MUS_DP_OBTAIN_BERRY         387
 #define MUS_DP_LEGEND_APPEARS       388
