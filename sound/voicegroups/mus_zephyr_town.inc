@@ -28,7 +28,7 @@ voice_group mus_zephyr_town
 	voice_directsound 60, 0, DirectSoundWaveData_dp_banjo60, 255, 243, 0, 208
 	voice_directsound 60, 0, DirectSoundWaveData_dp_clean_gt_c3_16, 255, 246, 0, 171
 	voice_directsound 60, 0, DirectSoundWaveData_dp_acgt_e3_16, 255, 253, 127, 208
-	voice_directsound 60, 0, DirectSoundWaveData_dp_disgt_b4_16, 255, 253, 0, 16
+	voice_directsound 60, 0, DirectSoundWaveData_dp_disgt_b4_16, 255, 253, 0, 160
 	voice_directsound 60, 0, DirectSoundWaveData_dp_power_gt_e2_16, 255, 251, 127, 16
 	voice_directsound 60, 0, DirectSoundWaveData_dp_f_horn_c4_16, 255, 219, 255, 208
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 1
