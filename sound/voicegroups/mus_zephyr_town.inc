@@ -4,9 +4,9 @@ voice_group mus_zephyr_town
 	voice_directsound 60, 0, DirectSoundWaveData_dp_sty_piano_c3_16, 255, 249, 0, 208
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_fingered_bass, 255, 0, 227, 171
 	voice_directsound 60, 0, DirectSoundWaveData_hg_072musboxc5, 255, 246, 0, 205
-	voice_directsound 60, 0, DirectSoundWaveData_dp_el_pia2_c3_22, 255, 249, 0, 208
-	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
-	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
+	voice_directsound 60, 0, DirectSoundWaveData_dp_el_pia2_c3_22, 255, 249, 80, 208
+	voice_square_1 60, 0, 0, 2, 0, 0, 15, 1
+	voice_directsound 60, 0, DirectSoundWaveData_dp_clavi_c3_16, 255, 249, 90, 16
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_directsound 60, 0, DirectSoundWaveData_hg_050glocknc5, 255, 248, 2, 205
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
@@ -25,10 +25,10 @@ voice_group mus_zephyr_town
 	voice_directsound 60, 0, DirectSoundWaveData_dp_violin_c3_16, 100, 247, 255, 208
 	voice_directsound 60, 0, DirectSoundWaveData_dp_violin_c4_16, 67, 247, 118, 208
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
-	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
+	voice_directsound 60, 0, DirectSoundWaveData_dp_banjo60, 255, 243, 0, 208
 	voice_directsound 60, 0, DirectSoundWaveData_dp_clean_gt_c3_16, 255, 246, 0, 171
 	voice_directsound 60, 0, DirectSoundWaveData_dp_acgt_e3_16, 255, 253, 127, 208
-	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
+	voice_directsound 60, 0, DirectSoundWaveData_dp_disgt_b4_16, 255, 253, 0, 16
 	voice_directsound 60, 0, DirectSoundWaveData_dp_power_gt_e2_16, 255, 251, 127, 16
 	voice_directsound 60, 0, DirectSoundWaveData_dp_f_horn_c4_16, 255, 219, 255, 208
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 1

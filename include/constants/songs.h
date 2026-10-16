@@ -313,6 +313,7 @@
 #define MUS_DP_ENCOUNTER_TWINS      382
 #define MUS_UNICORN_LAB             383
 #define MUS_ALBATROSS_TOWN          384
+#define MUS_CORBANEW_CITY           385
 #define MUS_DP_EVOLUTION            386
 #define MUS_DP_OBTAIN_BERRY         387
 #define MUS_DP_LEGEND_APPEARS       388

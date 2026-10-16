@@ -391,7 +391,7 @@ gSongTable::
     song mus_dp_encounter_twins, MUSIC_PLAYER_BGM, 0
     song mus_unicorn_lab, MUSIC_PLAYER_BGM, 0
     song mus_albatross_town, MUSIC_PLAYER_BGM, 0
-    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_corbanew_city, MUSIC_PLAYER_BGM, 0
     song mus_dp_evolution, MUSIC_PLAYER_BGM, 0
     song mus_dp_obtain_berry, MUSIC_PLAYER_SE2, 2
     song mus_dp_legend_appears, MUSIC_PLAYER_SE2, 2
