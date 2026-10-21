@@ -398,7 +398,7 @@ gSongTable::
     song mus_dp_slots_jackpot, MUSIC_PLAYER_SE2, 2
     song mus_dp_slots_win, MUSIC_PLAYER_SE2, 2
     song mus_dp_tv_end, MUSIC_PLAYER_SE2, 2
-    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_joridan_city, MUSIC_PLAYER_BGM, 0
     song mus_dummy, MUSIC_PLAYER_BGM, 0
     song mus_dummy, MUSIC_PLAYER_BGM, 0
     song mus_dummy, MUSIC_PLAYER_BGM, 0
