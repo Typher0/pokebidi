@@ -3162,3 +3162,22 @@ const u16 gTilesetPalettes_PapillysGym[][16] =
 };
 
 const u32 gTilesetTiles_PapillysGym[] = INCBIN_U32("data/tilesets/secondary/papillys_gym/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_Joridan[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/joridan/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/joridan/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/joridan/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/joridan/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/joridan/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/joridan/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/joridan/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/joridan/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/joridan/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/joridan/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/joridan/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/joridan/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/joridan/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_Joridan[] = INCBIN_U32("data/tilesets/secondary/joridan/tiles.4bpp.lz");

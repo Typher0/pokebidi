@@ -5195,21 +5195,21 @@ u16 GetBattleBGM(void)
         {
         case TRAINER_CLASS_AQUA_LEADER:
         case TRAINER_CLASS_MAGMA_LEADER:
-            return MUS_DP_VS_GALACTIC_BOSS;
+            return MUS_VS_SINGULARITY_ADMIN;
         case TRAINER_CLASS_TEAM_AQUA:
         case TRAINER_CLASS_TEAM_MAGMA:
         case TRAINER_CLASS_AQUA_ADMIN:
         case TRAINER_CLASS_MAGMA_ADMIN:
             return MUS_DP_VS_GALACTIC;
         case TRAINER_CLASS_LEADER:
-            return MUS_DP_VS_GYM_LEADER;
+            return MUS_VS_BANJIME_GYM_LEADER;
         case TRAINER_CLASS_CHAMPION:
             return MUS_DP_VS_CHAMPION;
         case TRAINER_CLASS_RIVAL:
             if (gBattleTypeFlags & BATTLE_TYPE_FRONTIER)
                 return MUS_VS_BANJIME_RIVAL;
             if (!StringCompare(GetTrainerNameFromId(TRAINER_BATTLE_PARAM.opponentA), gText_BattleWallyName))
-                return MUS_DP_VS_TRAINER;
+                return MUS_VS_BANJIME_TAINER;
             return MUS_VS_BANJIME_RIVAL;
         case TRAINER_CLASS_ELITE_FOUR:
             return MUS_DP_VS_ELITE_FOUR;
@@ -5226,11 +5226,13 @@ u16 GetBattleBGM(void)
         case TRAINER_CLASS_PIKE_QUEEN:
         case TRAINER_CLASS_PYRAMID_KING:
             return MUS_PL_VS_FRONTIER_BRAIN;
+        case TRAINER_CLASS_SINGULARITY_ADMIN:
+            return MUS_VS_SINGULARITY_ADMIN;
         default:
             if (GetCurrentRegion() == REGION_KANTO)
                 return MUS_HG_VS_TRAINER;
             else
-                return MUS_DP_VS_TRAINER;
+                return MUS_VS_BANJIME_TAINER;
         }
     }
     else
@@ -5238,7 +5240,7 @@ u16 GetBattleBGM(void)
         if (GetCurrentRegion() == REGION_KANTO)
             return MUS_HG_VS_WILD;
         else
-            return MUS_DP_VS_WILD;
+            return MUS_VS_BANJIME_WILD;
     }
 }
 

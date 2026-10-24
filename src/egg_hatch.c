@@ -625,7 +625,7 @@ static void Task_EggHatchPlayBGM(u8 taskId)
     }
 
     if (gTasks[taskId].tTimer == 1)
-        PlayBGM(MUS_HG_EVOLUTION);
+        PlayBGM(MUS_DP_EVOLUTION);
 
     if (gTasks[taskId].tTimer > 60)
     {

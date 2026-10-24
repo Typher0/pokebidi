@@ -2,7 +2,7 @@
   "id": "MAP_UNDERWATER_ROUTE128",
   "name": "Underwater_Route128",
   "layout": "LAYOUT_UNDERWATER_ROUTE128",
-  "music": "MUS_DP_LAKE",
+  "music": "MUS_DUMMY",
   "region_map_section": "MAPSEC_UNDERWATER_128",
   "requires_flash": false,
   "weather": "WEATHER_UNDERWATER_BUBBLES",

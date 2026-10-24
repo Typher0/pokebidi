@@ -1852,7 +1852,7 @@ void PlayTrainerEncounterMusic(void)
             music = MUS_HG_ENCOUNTER_ROCKET;
             break;
         case TRAINER_ENCOUNTER_MUSIC_SWIMMER:
-            music = MUS_HG_ENCOUNTER_BOY_2;
+            music = MUS_DP_ENCOUNTER_BOY;
             break;
         case TRAINER_ENCOUNTER_MUSIC_TWINS:
             music = MUS_DP_ENCOUNTER_TWINS;

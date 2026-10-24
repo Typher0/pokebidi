@@ -2,7 +2,7 @@
   "id": "MAP_EVER_GRANDE_CITY_SIDNEYS_ROOM",
   "name": "EverGrandeCity_SidneysRoom",
   "layout": "LAYOUT_EVER_GRANDE_CITY_SIDNEYS_ROOM",
-  "music": "MUS_DP_INSIDE_POKEMON_LEAGUE",
+  "music": "MUS_DUMMY",
   "region_map_section": "MAPSEC_EVER_GRANDE_CITY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

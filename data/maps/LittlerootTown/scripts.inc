@@ -135,7 +135,6 @@ LittlerootTown_EventScript_Lady::
 	end
 
 LittlerootTown_EventScript_Gentleman::
-	goto_if_set FLAG_BADGE01_GET, LittlerootTown_EventScript_GentlemanMissedWife
 	goto_if_set FLAG_RECEIVED_LETTER, LittlerootTown_EventScript_GentlemanGoDeliver
 	lock
 	faceplayer
@@ -150,6 +149,7 @@ LittlerootTown_EventScript_Gentleman::
 	end
 
 LittlerootTown_EventScript_GentlemanGoDeliver::
+	goto_if_set FLAG_BADGE01_GET, LittlerootTown_EventScript_GentlemanMissedWife
 	msgbox LittlerootTown_Text_DeliverPlease, MSGBOX_NPC
 	end
 

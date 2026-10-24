@@ -11676,3 +11676,15 @@ DirectSoundWaveData_puresquare_37::
 	.align 2
 DirectSoundWaveData_puresquare_50::
 	.incbin "sound/direct_sound_samples/puresquare_50.bin"
+
+	.align 2
+DirectSoundWaveData_dp_steel_drum_c4::
+	.incbin "sound/direct_sound_samples/dp_steel_drum_c4.bin"
+
+	.align 2
+DirectSoundWaveData_kawai_k11_low_cuica::
+	.incbin "sound/direct_sound_samples/kawai_k11_low_cuica.bin"
+
+	.align 2
+DirectSoundWaveData_roland_r_8_long_guiro::
+	.incbin "sound/direct_sound_samples/roland_r_8_long_guiro.bin"
