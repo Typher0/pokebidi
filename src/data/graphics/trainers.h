@@ -478,6 +478,12 @@ const u16 gTrainerPalette_SisAndBro[] = INCGFX_U16("graphics/trainers/front_pics
 const u32 gTrainerFrontPic_SkytrainerF[] = INCGFX_U32("graphics/trainers/front_pics/skytrainer_f.png", ".4bpp.smol");
 const u16 gTrainerPalette_SkytrainerF[] = INCGFX_U16("graphics/trainers/front_pics/skytrainer_f.png", ".gbapal");
 
+const u32 gTrainerFrontPic_SkierF[] = INCGFX_U32("graphics/trainers/front_pics/skier_f.png", ".4bpp.smol");
+const u16 gTrainerPalette_SkierF[] = INCGFX_U16("graphics/trainers/front_pics/skier_f.png", ".gbapal");
+
+const u32 gTrainerFrontPic_SkierM[] = INCGFX_U32("graphics/trainers/front_pics/skier_m.png", ".4bpp.smol");
+const u16 gTrainerPalette_SkierM[] = INCGFX_U16("graphics/trainers/front_pics/skier_m.png", ".gbapal");
+
 const u32 gTrainerFrontPic_SrAndJr[] = INCGFX_U32("graphics/trainers/front_pics/sr_and_jr.png", ".4bpp.smol");
 const u16 gTrainerPalette_SrAndJr[] = INCGFX_U16("graphics/trainers/front_pics/sr_and_jr.png", ".gbapal");
 
@@ -2137,6 +2143,14 @@ const struct TrainerPicInfo gTrainerPicInfo[TRAINER_PIC_COUNT] =
     [TRAINER_PIC_SKYTRAINER_F] =
     {
         .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_SkytrainerF, gTrainerPalette_SkytrainerF),
+    },
+    [TRAINER_PIC_SKIER_F] =
+    {
+        .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_SkierF, gTrainerPalette_SkierF),
+    },
+    [TRAINER_PIC_SKIER_M] =
+    {
+        .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_SkierM, gTrainerPalette_SkierM),
     },
     // TODO: [TRAINER_PIC_SR_AND_JR_FRLG] - no front/back pic declaration found in source data; needs gTrainerFrontPic_* and gTrainerPalette_* added
     [TRAINER_PIC_SR_AND_JR] =

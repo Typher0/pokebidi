@@ -76,6 +76,10 @@ Route105_EventScript_AndresRematch::
 	msgbox Route105_Text_AndresRematchPostBattle, MSGBOX_AUTOCLOSE
 	end
 
+Route105_EventScript_RouteSign::
+	msgbox Route105_Text_RouteSign, MSGBOX_SIGN
+	end
+
 Route104_Text_DadPokenavCall:
 	.string "… … … … … …\n"
 	.string "… … … … … Beep!\p"
@@ -95,3 +99,9 @@ Route104_Text_DadPokenavCall:
 Route104_Text_RegisteredDadInPokenav:
 	.string "Registered DAD NORMAN\n"
 	.string "in the POKéNAV.$"
+
+Route105_Text_RouteSign:
+	.string "Route 635\n"
+	.string "{RIGHT_ARROW}Joridan City\l" 
+	.string "{DOWN_ARROW}South Banjime Border$"
+

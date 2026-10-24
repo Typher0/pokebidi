@@ -241,14 +241,14 @@ Route111_Movement_PushRightFromRoute:
 
 Route111_EventScript_SunTrigger::
 	setweather WEATHER_SUNNY
-	fadenewbgm MUS_DP_ROUTE210_DAY
+	fadenewbgm MUS_DUMMY
 	doweather
 	setvar VAR_TEMP_3, 0
 	end
 
 Route111_EventScript_SandstormTrigger::
 	setweather WEATHER_SANDSTORM
-	fadenewbgm MUS_DP_ROUTE210_DAY
+	fadenewbgm MUS_DUMMY
 	doweather
 	end
 
