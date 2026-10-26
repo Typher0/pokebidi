@@ -524,8 +524,8 @@ static const u8 sText_CannotSendMonToBoxPartner[] = _("Cannot send a mon that do
 
 // static const data
 static const u8 sText_FieldMoves[] = _("Field Moves");
-static const u8 sText_FieldMovesNext[] = _("Next");
-static const u8 sText_FieldMovesLast[] = _("Last");
+static const u8 sText_FieldMovesNext[] = _("       Next >>>");
+static const u8 sText_FieldMovesLast[] = _("<<< Last");
 
 #include "data/party_menu.h"
 
