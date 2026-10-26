@@ -115,6 +115,14 @@ enum {
     MENU_FIELD_MOVES
 };
 
+enum {
+    MENU_FIELD_MOVE_LIST = MENU_FIELD_MOVES + FIELD_MOVES_COUNT,
+    MENU_FIELD_MOVE_NEXT,
+    MENU_FIELD_MOVE_LAST,
+};
+
+#define FIELD_MOVE_LIST_PAGE_SIZE   5
+
 // IDs for the action lists that appear when a party mon is selected
 enum {
     ACTIONS_NONE,
@@ -476,6 +484,7 @@ static void CursorCb_Trade1(u8);
 static void CursorCb_Trade2(u8);
 static void CursorCb_Toss(u8);
 static void CursorCb_FieldMove(u8);
+static void CursorCb_FieldMoveList(u8);
 static void CursorCb_CatalogBulb(u8);
 static void CursorCb_CatalogOven(u8);
 static void CursorCb_CatalogWashing(u8);
@@ -514,6 +523,10 @@ static const u8 sText_CannotSendMonToBoxHM[] = _("Cannot send that mon to the bo
 static const u8 sText_CannotSendMonToBoxPartner[] = _("Cannot send a mon that doesn't\nbelong to you to the box.{PAUSE_UNTIL_PRESS}");
 
 // static const data
+static const u8 sText_FieldMoves[] = _("Field Moves");
+static const u8 sText_FieldMovesNext[] = _("Next");
+static const u8 sText_FieldMovesLast[] = _("Last");
+
 #include "data/party_menu.h"
 
 // code
@@ -2894,7 +2907,13 @@ static u8 DisplaySelectionWindow(u8 windowType)
         if (sPartyMenuInternal->actions[i] >= MENU_FIELD_MOVES)
             fontColorsId = 4;
 
-        if (sPartyMenuInternal->actions[i] >= MENU_FIELD_MOVES)
+        if (sPartyMenuInternal->actions[i] == MENU_FIELD_MOVE_LIST)
+            text = sText_FieldMoves;
+        else if (sPartyMenuInternal->actions[i] == MENU_FIELD_MOVE_NEXT)
+            text = sText_FieldMovesNext;
+        else if (sPartyMenuInternal->actions[i] == MENU_FIELD_MOVE_LAST)
+            text = sText_FieldMovesLast;
+        else if (sPartyMenuInternal->actions[i] >= MENU_FIELD_MOVES)
             text = GetMoveName(FieldMove_GetMoveId(sPartyMenuInternal->actions[i] - MENU_FIELD_MOVES));
         else
             text = sCursorOptions[sPartyMenuInternal->actions[i]].text;
@@ -2951,19 +2970,21 @@ static void SetPartyMonSelectionActions(struct Pokemon *mons, u8 slotId, u8 acti
 
 static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
 {
-    u8 i, j;
+    u8 j;
 
     sPartyMenuInternal->numActions = 0;
     AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_SUMMARY);
 
-    // Add field moves to action list
-    for (i = 0; i < MAX_MON_MOVES; i++)
     {
-        for (j = 0; j != FIELD_MOVES_COUNT; j++)
+        enum Species species = GetMonData(&mons[slotId], MON_DATA_SPECIES);
+
+        for (j = 0; j < FIELD_MOVES_COUNT; j++)
         {
-            if (GetMonData(&mons[slotId], i + MON_DATA_MOVE1) == FieldMove_GetMoveId(j))
+            enum Move move = FieldMove_GetMoveId(j);
+
+            if (MonKnowsMove(&mons[slotId], move) || CanLearnTeachableMove(species, move))
             {
-                AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, j + MENU_FIELD_MOVES);
+                AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_FIELD_MOVE_LIST);
                 break;
             }
         }
@@ -4086,6 +4107,12 @@ static void CursorCb_FieldMove(u8 taskId)
     u8 fieldMove = sPartyMenuInternal->actions[Menu_GetCursorPos()] - MENU_FIELD_MOVES;
     const struct MapHeader *mapHeader;
 
+    if (fieldMove >= FIELD_MOVES_COUNT)
+    {
+        CursorCb_FieldMoveList(taskId);
+        return;
+    }
+
     PlaySE(SE_SELECT);
     if (gFieldMoveInfo[fieldMove].fieldMoveFunc == NULL)
         return;
@@ -4159,6 +4186,65 @@ static void CursorCb_FieldMove(u8 taskId)
             gTasks[taskId].func = Task_CancelAfterAorBPress;
         }
     }
+}
+
+static void CursorCb_FieldMoveList(u8 taskId)
+{
+    struct Pokemon *mon = &gParties[B_TRAINER_PLAYER][gPartyMenu.slotId];
+    enum Species species = GetMonData(mon, MON_DATA_SPECIES);
+    u8 action = sPartyMenuInternal->actions[Menu_GetCursorPos()];
+    u8 fieldMove;
+    u8 numUsable = 0;
+    u8 numPages;
+    u8 index = 0;
+    s16 page = 0;
+
+    if (action == MENU_FIELD_MOVE_NEXT)
+        page = sPartyMenuInternal->data[1] + 1;
+    else if (action == MENU_FIELD_MOVE_LAST)
+        page = sPartyMenuInternal->data[1] - 1;
+
+    PlaySE(SE_SELECT);
+    PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[0]);
+    PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[1]);
+
+    for (fieldMove = 0; fieldMove < FIELD_MOVES_COUNT; fieldMove++)
+    {
+        enum Move move = FieldMove_GetMoveId(fieldMove);
+
+        if (MonKnowsMove(mon, move) || CanLearnTeachableMove(species, move))
+            numUsable++;
+    }
+
+    numPages = (numUsable + FIELD_MOVE_LIST_PAGE_SIZE - 1) / FIELD_MOVE_LIST_PAGE_SIZE;
+    if (page >= numPages)
+        page = numPages - 1;
+    if (page < 0)
+        page = 0;
+    sPartyMenuInternal->data[1] = page;
+
+    sPartyMenuInternal->numActions = 0;
+    for (fieldMove = 0; fieldMove < FIELD_MOVES_COUNT; fieldMove++)
+    {
+        enum Move move = FieldMove_GetMoveId(fieldMove);
+
+        if (MonKnowsMove(mon, move) || CanLearnTeachableMove(species, move))
+        {
+            if (index / FIELD_MOVE_LIST_PAGE_SIZE == page)
+                AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, fieldMove + MENU_FIELD_MOVES);
+            index++;
+        }
+    }
+    if (page + 1 < numPages)
+        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_FIELD_MOVE_NEXT);
+    if (page > 0)
+        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_FIELD_MOVE_LAST);
+    AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_CANCEL2);
+
+    DisplaySelectionWindow(SELECTWINDOW_ACTIONS);
+    DisplayPartyMenuStdMessage(PARTY_MSG_DO_WHAT_WITH_MON);
+    gTasks[taskId].data[0] = 0xFF;
+    gTasks[taskId].func = Task_HandleSelectionMenuInput;
 }
 
 static void DisplayFieldMoveExitAreaMessage(u8 taskId)
