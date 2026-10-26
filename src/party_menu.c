@@ -2904,7 +2904,9 @@ static u8 DisplaySelectionWindow(u8 windowType)
         const u8 *text;
         u8 fontColorsId = 3;
 
-        if (sPartyMenuInternal->actions[i] >= MENU_FIELD_MOVES)
+        if (sPartyMenuInternal->actions[i] >= MENU_FIELD_MOVES
+         && sPartyMenuInternal->actions[i] != MENU_FIELD_MOVE_NEXT
+         && sPartyMenuInternal->actions[i] != MENU_FIELD_MOVE_LAST)
             fontColorsId = 4;
 
         if (sPartyMenuInternal->actions[i] == MENU_FIELD_MOVE_LIST)
