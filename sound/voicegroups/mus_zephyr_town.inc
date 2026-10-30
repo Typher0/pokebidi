@@ -17,13 +17,13 @@ voice_group mus_zephyr_town
 	voice_directsound 60, 0, DirectSoundWaveData_dp_tub_bell_c5_16, 255, 249, 0, 226
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
-	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
-	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
+	voice_directsound 60, 0, DirectSoundWaveData_dp_org1_c3_16, 255, 200, 227, 208
+	voice_directsound 60, 0, DirectSoundWaveData_dp_org1_c4_16, 255, 0, 255, 208
 	voice_directsound 60, 0, DirectSoundWaveData_dp_accordion_c2_16, 255, 0, 255, 196
 	voice_directsound 60, 0, DirectSoundWaveData_hg_004accorc5, 254, 197, 217, 192
 	voice_directsound 60, 0, DirectSoundWaveData_dp_harmonica_c3_16, 67, 247, 191, 171
 	voice_directsound 60, 0, DirectSoundWaveData_dp_violin_c3_16, 100, 247, 255, 208
-	voice_directsound 60, 0, DirectSoundWaveData_dp_violin_c4_16, 67, 247, 118, 208
+	voice_directsound 60, 0, DirectSoundWaveData_hg_066kotoc4, 255, 246, 0, 192
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_directsound 60, 0, DirectSoundWaveData_dp_banjo60, 255, 243, 0, 208
 	voice_directsound 60, 0, DirectSoundWaveData_dp_clean_gt_c3_16, 255, 246, 0, 171
