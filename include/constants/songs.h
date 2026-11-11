@@ -321,6 +321,8 @@
 #define MUS_DP_SLOTS_WIN            390
 #define MUS_DP_TV_END               391
 #define MUS_JORIDAN_CITY            392
+#define MUS_VS_BANJIME_LEGEND       393
+#define MUS_QUITE_GRAVEYARD         394
 #define MUS_DP_GYM                  400
 #define MUS_DP_HALL_OF_FAME         402
 #define MUS_DP_ENCOUNTER_ACE_TRAINER 404

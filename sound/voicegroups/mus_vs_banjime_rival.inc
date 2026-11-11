@@ -125,5 +125,5 @@ voice_group mus_vs_banjime_rival
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
-	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
+	voice_directsound 60, 0, DirectSoundWaveData_dp_kaaroop_16, 255, 255, 191, 238
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0

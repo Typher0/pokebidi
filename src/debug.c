@@ -4123,6 +4123,8 @@ static void DebugAction_DestroyFollowerNPC(u8 taskId)
     X(MUS_ALBATROSS_TOWN) \
     X(MUS_CORBANEW_CITY) \
     X(MUS_JORIDAN_CITY) \
+    X(MUS_VS_BANJIME_LEGEND) \
+    X(MUS_QUITE_GRAVEYARD) \
     X(MUS_DP_VS_CHAMPION) \
     X(MUS_DP_VS_ELITE_FOUR) \
     X(MUS_DP_VS_GALACTIC) \
