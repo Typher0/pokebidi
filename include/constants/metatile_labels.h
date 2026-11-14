@@ -460,6 +460,24 @@
 #define METATILE_PalletTown_Door         0x2A3
 #define METATILE_PalletTown_OaksLabDoor  0x2AC
 
+// gTileset_PapillysGym
+#define METATILE_PapillysGym_button_pressed_dark            0x246
+#define METATILE_PapillysGym_button_pressed_light           0x23E
+#define METATILE_PapillysGym_button_unpressed_dark          0x252
+#define METATILE_PapillysGym_button_unpressed_light         0x24A
+#define METATILE_PapillysGym_gym_door_closed_bottom_left    0x26D
+#define METATILE_PapillysGym_gym_door_closed_bottom_middle  0x26E
+#define METATILE_PapillysGym_gym_door_closed_bottom_right   0x26F
+#define METATILE_PapillysGym_gym_door_closed_top_left       0x265
+#define METATILE_PapillysGym_gym_door_closed_top_middle     0x266
+#define METATILE_PapillysGym_gym_door_closed_top_right      0x267
+#define METATILE_PapillysGym_gym_door_open_bottom_left      0x25D
+#define METATILE_PapillysGym_gym_door_open_bottom_middle    0x25E
+#define METATILE_PapillysGym_gym_door_open_bottom_right     0x25F
+#define METATILE_PapillysGym_gym_door_open_top_left         0x255
+#define METATILE_PapillysGym_gym_door_open_top_middle       0x256
+#define METATILE_PapillysGym_gym_door_open_top_right        0x257
+
 // gTileset_Petalburg
 #define METATILE_Petalburg_Door_BirchsLab   0x249
 #define METATILE_Petalburg_Door_Littleroot  0x248

@@ -211,7 +211,7 @@ RustboroCity_Gym_Text_RoxanneDefeat:
 	.string "Well then,\p"
 	.string "By the power vested in me by the\n"
 	.string "State of Banjime and it's Pokémon\l"
-	.string "Leage, I pronounce you a Trainer.\p"
+	.string "League, I pronounce you a Trainer.\p"
 	.string "Now, accept the official Pokémon\n"
 	.string "League Snowflake Badge!$"
 

@@ -347,19 +347,19 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .name = COMPOUND_STRING("Razor Wind"),
         #if B_UPDATED_MOVE_DATA == GEN_3 || B_UPDATED_MOVE_DATA == GEN_1
             .description = COMPOUND_STRING(
-                "A 2-turn move that strikes\n"
-                "the foe on the 2nd turn."),
+                "A move that strikes both\n"
+                "foes with a high crit ratio."),
         #else
             .description = COMPOUND_STRING(
-                "A 2-turn move with a high\n"
+                "A move with a high\n"
                 "critical-hit ratio."),
         #endif
-        .effect = EFFECT_TWO_TURNS_ATTACK,
-        .power = 80,
+        .effect = EFFECT_HIT,
+        .power = 110,
         .type = TYPE_FLYING,
-        .accuracy = B_UPDATED_MOVE_DATA >= GEN_3 ? 100 : 75,
+        .accuracy = B_UPDATED_MOVE_DATA >= GEN_3 ? 95 : 75,
         #if B_UPDATED_MOVE_DATA >= GEN_4
-            .criticalHitStage = 1,
+            .criticalHitStage = 2,
         #elif B_UPDATED_MOVE_DATA == GEN_2
             .criticalHitStage = 2,
         #else
@@ -368,7 +368,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .pp = 10,
         .target = TARGET_BOTH,
         .priority = 0,
-        .category = DAMAGE_CATEGORY_SPECIAL,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
         .sleepTalkBanned = TRUE,
         .instructBanned = TRUE,
         .slicingMove = TRUE,
@@ -421,7 +421,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .effect = EFFECT_HIT,
         .power = 60,
         .type = TYPE_NORMAL,
-        .accuracy = 95,
+        .accuracy = 100,
         .pp = 25,
         .target = TARGET_SELECTED,
         .priority = 0,
@@ -466,7 +466,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "Strikes the foe with wings\n"
             "spread wide."),
         .effect = EFFECT_HIT,
-        .power = B_UPDATED_MOVE_DATA >= GEN_2 ? 60 : 35,
+        .power = B_UPDATED_MOVE_DATA >= GEN_2 ? 65 : 35,
         .type = TYPE_FLYING,
         .accuracy = 100,
         .pp = 35,
@@ -1519,7 +1519,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .effect = EFFECT_HIT,
         .power = 120,
         .type = TYPE_WATER,
-        .accuracy = 80,
+        .accuracy = 85,
         .pp = 5,
         .target = TARGET_SELECTED,
         .priority = 0,
@@ -1603,9 +1603,9 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "storm that may freeze it."),
         #endif
         .effect = EFFECT_HIT,
-        .power = B_UPDATED_MOVE_DATA >= GEN_6 ? 110 : 120,
+        .power = 120,
         .type = TYPE_ICE,
-        .accuracy = B_UPDATED_MOVE_DATA >= GEN_2 ? 70 : 90,
+        .accuracy = 85,
         .pp = 5,
         .target = TARGET_BOTH,
         .priority = 0,
@@ -1707,11 +1707,11 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .name = COMPOUND_STRING("Hyper Beam"),
         .description = COMPOUND_STRING(
         #if B_SKIP_RECHARGE != GEN_1
-            "Powerful, but leaves the\n"
-            "user immobile the next turn."),
+            "Powerful, but can't\n"
+            "use twice."),
         #else
-            "Leaves the user immobile\n"
-            "if target is not KO'd."),
+            "Cannot be used two\n"
+            "turns in a row."),
         #endif
         .effect = EFFECT_HIT,
         .power = 150,
@@ -1896,17 +1896,24 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Strength"),
         .description = COMPOUND_STRING(
-            "Builds enormous power,\n"
-            "then slams the foe."),
+            "Slams with enormous power,\n"
+            "then raises Attack."),
         .effect = EFFECT_HIT,
-        .power = 100,
+        .power = 80,
         .type = TYPE_NORMAL,
         .accuracy = 100,
-        .pp = 15,
+        .pp = 10,
         .target = TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
         .makesContact = TRUE,
+        .punchingMove = TRUE,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_STAT_PLUS,
+            .attack = 1,
+            .self = TRUE,
+            .chance = 100,
+        }),
         .contestEffect = C_UPDATED_MOVE_EFFECTS >= GEN_6 ? CONTEST_EFFECT_HIGHLY_APPEALING : CONTEST_EFFECT_STARTLE_MONS_SAME_TYPE_APPEAL,
         .contestCategory = CONTEST_CATEGORY_TOUGH,
         .contestComboStarterId = 0,
@@ -2347,9 +2354,9 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "A lightning attack that may\n"
             "cause paralysis."),
         .effect = EFFECT_HIT,
-        .power = B_UPDATED_MOVE_DATA >= GEN_6 ? 110 : 120,
+        .power = 120,
         .type = TYPE_ELECTRIC,
-        .accuracy = 70,
+        .accuracy = 85,
         .pp = 10,
         .target = TARGET_SELECTED,
         .priority = 0,
@@ -7229,16 +7236,17 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Focus Punch"),
         .description = COMPOUND_STRING(
-            "Powerful attack, moves last.\n"
-            "The user flinches if hit."),
-        .effect = EFFECT_FOCUS_PUNCH,
+            "Exerts all focus into 1 punch.\n"
+            "Can't be used 2x in a row."),
+        .effect = EFFECT_HIT,
         .power = 150,
         .type = TYPE_FIGHTING,
-        .accuracy = 100,
-        .pp = 20,
+        .accuracy = 0,
+        .pp = 5,
         .target = TARGET_SELECTED,
-        .priority = -3,
+        .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
+        .cantUseTwice = TRUE,
         .makesContact = TRUE,
         .mirrorMoveBanned = TRUE,
         .punchingMove = TRUE,
@@ -11207,8 +11215,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "Powerful, but leaves the\n"
             "user immobile the next turn."),
         #else
-            "Leaves the user immobile\n"
-            "if target is not KO'd."),
+            "Powerful, but can't be\n"
+            "used in quick succession."),
         #endif
         .effect = EFFECT_HIT,
         .power = 150,
@@ -14426,9 +14434,9 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "Traps the foe in a fierce\n"
             "wind. May cause confusion."),
         .effect = EFFECT_HIT,
-        .power = B_UPDATED_MOVE_DATA >= GEN_6 ? 110 : 120,
+        .power = 120,
         .type = TYPE_FLYING,
-        .accuracy = 70,
+        .accuracy = 85,
         .pp = 10,
         .target = TARGET_SELECTED,
         .priority = 0,

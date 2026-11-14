@@ -626,7 +626,7 @@ MtChimney_Text_Grunt1Intro:
 	.string "hour!$"
 
 MtChimney_Text_Grunt1Defeat:
-	.string "Win? Lose? I still get paid"
+	.string "Win? Lose? I still get paid!$"
 
 MtChimney_Text_Grunt1PostBattle:
 	.string "The company better compensate me\n"

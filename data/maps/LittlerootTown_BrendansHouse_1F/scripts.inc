@@ -443,7 +443,7 @@ LittlerootTown_BrendansHouse_1F_EventScript_HeresPokeNav::
 	closemessage
 	msgbox PlayersHouse_1F_Text_GoIntroduceYourselfNextDoor, MSGBOX_DEFAULT
 	closemessage
-	playfanfare MUS_DP_OBTAIN_ITEM
+	playfanfare MUS_DP_OBTAIN_KEY_ITEM
 	message RustboroCity_DevonCorp_3F_Text_ReceivedPokenav
 	waitfanfare
 	setflag FLAG_SYS_POKENAV_GET

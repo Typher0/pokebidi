@@ -56,7 +56,7 @@ LittlerootTown_BrendansHouse_2F_EventScript_EveryoneEnters::
 	applymovement LOCALID_PLAYERS_BEDROOM_SEAN, Common_Movement_Delay48
 	waitmovement 0
 	delay 10
-	playbgm MUS_DP_LUCAS, TRUE
+	playbgm MUS_ENCOUNTER_RIVAL, TRUE
     setrespawn HEAL_LOCATION_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F
 	applymovement LOCALID_PLAYER, LittlerootTown_BrendansHouse_2F_Movement_PlayerApproachFriends
 	applymovement LOCALID_PLAYERS_BEDROOM_SEAN, Common_Movement_WalkInPlaceFasterUp
@@ -153,16 +153,16 @@ LittlerootTown_BrendansHouse_2F_Movement_AmeliaLeaves:
 	step_end
 
 LittlerootTown_BrendansHouse_2F_Movement_SeanWalksToClock:
-	walk_left
-	walk_up
-	walk_up
-	walk_up
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
+	walk_faster_left
+	walk_faster_up
+	walk_faster_up
+	walk_faster_up
+	walk_faster_left
+	walk_faster_left
+	walk_faster_left
+	walk_faster_left
+	walk_faster_left
+	walk_faster_left
 	walk_in_place_faster_up
 	step_end
 
@@ -185,17 +185,17 @@ LittlerootTown_BrendansHouse_2F_Movement_NoLeave:
 	step_end
 
 PlayersHouse_2F_SeanLeaves:
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_down
-	walk_down
-	walk_down
-	walk_down
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
 	step_end
 
 PlayersHouse_2F_Text_ClockIsStopped:

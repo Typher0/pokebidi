@@ -5228,6 +5228,8 @@ u16 GetBattleBGM(void)
             return MUS_PL_VS_FRONTIER_BRAIN;
         case TRAINER_CLASS_SINGULARITY_ADMIN:
             return MUS_VS_SINGULARITY_ADMIN;
+        case TRAINER_CLASS_TEAM_SINGULARITY:
+            return MUS_VS_SINGULARITY_GRUNT;
         default:
             if (GetCurrentRegion() == REGION_KANTO)
                 return MUS_HG_VS_TRAINER;

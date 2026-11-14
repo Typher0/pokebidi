@@ -140,6 +140,7 @@ LittlerootTown_EventScript_Gentleman::
 	faceplayer
 	msgbox LittlerootTown_Text_Gentleman, MSGBOX_DEFAULT
 	closemessage
+	playfanfare MUS_DP_OBTAIN_KEY_ITEM
 	giveitem ITEM_LETTER
 	waitfanfare
 	setflag FLAG_RECEIVED_LETTER
