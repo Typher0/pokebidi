@@ -21,7 +21,7 @@ static bool32 IsFieldMoveUnlocked_Flash(void)
     if (IS_FRLG)
         return FlagGet(FLAG_BADGE01_GET);
 
-    return FlagGet(FLAG_BADGE01_GET);
+    return TRUE;
 }
 
 static bool32 IsFieldMoveUnlocked_RockSmash(void)

@@ -641,3 +641,4 @@ gSpecials::
 	def_special CheckAddCoins
     def_special HeadbuttWildEncounter
     def_special HoneyWildEncounter
+    def_special StartMirrorButtonWatcher

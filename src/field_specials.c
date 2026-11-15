@@ -73,6 +73,7 @@
 #include "constants/party_menu.h"
 #include "constants/battle_frontier.h"
 #include "constants/weather.h"
+#include "constants/metatile_behaviors.h"
 #include "constants/metatile_labels.h"
 #include "constants/rgb.h"
 #include "palette.h"
@@ -5778,4 +5779,59 @@ bool8 CheckAddCoins(void)
         return FALSE;
     else
         return TRUE;
+}
+
+#define MIRROR_NPC_LOCALID  9   // local id from map.json
+
+static void Task_MirrorButtonWatcher(u8 taskId)
+{
+    s16 *data = gTasks[taskId].data;   // data[0], data[1] = last reported tile
+    struct ObjectEvent *npc;
+    u8 npcId;
+    s16 x, y;
+
+    // Left the map: stop
+    if (gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(MAP_DEWFORD_TOWN_GYM)
+     || gSaveBlock1Ptr->location.mapNum != MAP_NUM(MAP_DEWFORD_TOWN_GYM))
+    {
+        DestroyTask(taskId);
+        return;
+    }
+
+    if (TryGetObjectEventIdByLocalIdAndMap(MIRROR_NPC_LOCALID,
+            gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup, &npcId))
+        return;
+
+    npc = &gObjectEvents[npcId];
+    if (npc->heldMovementActive || npc->singleMovementActive)
+        return;   // wait for the step to finish
+
+    x = npc->currentCoords.x;
+    y = npc->currentCoords.y;
+
+    if (MapGridGetMetatileBehaviorAt(x, y) != MB_MIRROR_BUTTON)
+    {
+        data[0] = data[1] = -1;   // off a button: re-arm
+        return;
+    }
+
+    if (x == data[0] && y == data[1])
+        return;                   // already reported this arrival
+
+    data[0] = x;
+    data[1] = y;
+    // Porymap coords, encoded as x*100 + y so a script switch can read it
+    VarSet(VAR_TEMP_2, (x - MAP_OFFSET) * 100 + (y - MAP_OFFSET));
+    VarSet(VAR_TEMP_1, 1);        // raise the trigger
+}
+
+void StartMirrorButtonWatcher(void)
+{
+    u8 taskId;
+
+    if (FuncIsActiveTask(Task_MirrorButtonWatcher))
+        return;
+    taskId = CreateTask(Task_MirrorButtonWatcher, 80);
+    gTasks[taskId].data[0] = -1;
+    gTasks[taskId].data[1] = -1;
 }
