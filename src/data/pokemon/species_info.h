@@ -1203,7 +1203,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .levelUpLearnset = sTenrockLevelUpLearnset,
         .teachableLearnset = sTenrockTeachableLearnset,
         .eggMoveLearnset = sTenrockEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 24, SPECIES_SHREWEL}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 22, SPECIES_SHREWEL}),
 },
 
     [SPECIES_SHREWEL] =

@@ -19,19 +19,14 @@ DewfordTown_Gym_OnLoad:
 DewfordTown_Gym_EventScript_MirrorGatesOnLoad::
     goto_if_unset FLAG_DEFEATED_DEWFORD_GYM, DewfordTown_Gym_EventScript_MirrorGatesReset
     goto_if_unset FLAG_DEWFORD_GYM_MIRROR_DONE, DewfordTown_Gym_EventScript_MirrorGatesReset
-    @ Badge obtained AND all doors opened: keep them open permanently
-    setflag FLAG_TEMP_1
-    setflag FLAG_TEMP_2
-    setflag FLAG_TEMP_3
-    call DewfordTown_Gym_EventScript_OpenMirrorGate1
-    call DewfordTown_Gym_EventScript_OpenMirrorGate2
-    call DewfordTown_Gym_EventScript_OpenMirrorGate3
+    call DewfordTown_Gym_EventScript_OpenMirrorGate5
     return
 
 DewfordTown_Gym_EventScript_MirrorGatesReset::
     clearflag FLAG_TEMP_1
     clearflag FLAG_TEMP_2
     clearflag FLAG_TEMP_3
+    clearflag FLAG_TEMP_4
     clearflag FLAG_DEWFORD_GYM_MIRROR_DONE
     return          @ the ROM layout already has the gates closed
     
@@ -39,9 +34,9 @@ DewfordTown_Gym_EventScript_MirrorButtonPressed::
     lockall
     setvar VAR_TEMP_1, 0
     switch VAR_TEMP_2
-    case 1542, DewfordTown_Gym_EventScript_MirrorButton1   @ button at (15, 42)
-    case 410,  DewfordTown_Gym_EventScript_MirrorButton2   @ button at (4, 10)
-    case 1514, DewfordTown_Gym_EventScript_MirrorButton3   @ button at (15, 14)
+    case 2342, DewfordTown_Gym_EventScript_MirrorButton1   @ button at (23, 42)
+    case 1826,  DewfordTown_Gym_EventScript_MirrorButton2  @ button at (18, 26)
+    case 1018, DewfordTown_Gym_EventScript_MirrorButton4   @ button at (10, 18)
     goto DewfordTown_Gym_EventScript_MirrorButtonDone
 
 DewfordTown_Gym_EventScript_MirrorButton1::
@@ -61,6 +56,12 @@ DewfordTown_Gym_EventScript_MirrorButton3::
     setflag FLAG_TEMP_3
     call DewfordTown_Gym_EventScript_OpenMirrorGate3
     goto DewfordTown_Gym_EventScript_MirrorGateOpened
+
+DewfordTown_Gym_EventScript_MirrorButton4::
+    goto_if_set FLAG_TEMP_4, DewfordTown_Gym_EventScript_MirrorButtonDone
+    setflag FLAG_TEMP_4
+    call DewfordTown_Gym_EventScript_OpenMirrorGate4
+    goto DewfordTown_Gym_EventScript_MirrorGateOpened
     
 DewfordTown_Gym_EventScript_MirrorGateOpened::
     special DrawWholeMapView
@@ -68,6 +69,7 @@ DewfordTown_Gym_EventScript_MirrorGateOpened::
     goto_if_unset FLAG_TEMP_1, DewfordTown_Gym_EventScript_MirrorButtonDone
     goto_if_unset FLAG_TEMP_2, DewfordTown_Gym_EventScript_MirrorButtonDone
     goto_if_unset FLAG_TEMP_3, DewfordTown_Gym_EventScript_MirrorButtonDone
+    goto_if_unset FLAG_TEMP_4, DewfordTown_Gym_EventScript_MirrorButtonDone
     setflag FLAG_DEWFORD_GYM_MIRROR_DONE
     goto DewfordTown_Gym_EventScript_MirrorButtonDone
 
@@ -76,48 +78,70 @@ DewfordTown_Gym_EventScript_MirrorButtonDone::
     end
 
 DewfordTown_Gym_EventScript_OpenMirrorGate1::
-    setmetatile 13, 36, METATILE_PapillysGym_gym_door_open_top_middle, FALSE
-    setmetatile 13, 37, METATILE_PapillysGym_gym_door_open_bottom_middle, FALSE
-    setmetatile 12, 36, METATILE_PapillysGym_gym_door_open_top_left, TRUE
-    setmetatile 12, 37, METATILE_PapillysGym_gym_door_open_bottom_left, TRUE
-    setmetatile 14, 36, METATILE_PapillysGym_gym_door_open_top_right, TRUE
-    setmetatile 14, 37, METATILE_PapillysGym_gym_door_open_bottom_right, TRUE
-    setmetatile 6,  33, METATILE_PapillysGym_gym_door_open_top_middle, FALSE
-    setmetatile 6,  34, METATILE_PapillysGym_gym_door_open_bottom_middle, FALSE
-    setmetatile 5,  33, METATILE_PapillysGym_gym_door_open_top_left, TRUE
-    setmetatile 5,  34, METATILE_PapillysGym_gym_door_open_bottom_left, TRUE
-    setmetatile 7,  33, METATILE_PapillysGym_gym_door_open_top_right, TRUE
-    setmetatile 7,  34, METATILE_PapillysGym_gym_door_open_bottom_right, TRUE
+    setmetatile 21, 36, METATILE_PapillysGym_gym_door_open_top_middle, FALSE
+    setmetatile 21, 37, METATILE_PapillysGym_gym_door_open_bottom_middle, FALSE
+    setmetatile 20, 36, METATILE_PapillysGym_gym_door_open_top_left, TRUE
+    setmetatile 20, 37, METATILE_PapillysGym_gym_door_open_bottom_left, TRUE
+    setmetatile 22, 36, METATILE_PapillysGym_gym_door_open_top_right, TRUE
+    setmetatile 22, 37, METATILE_PapillysGym_gym_door_open_bottom_right, TRUE
+    setmetatile 14,  33, METATILE_PapillysGym_gym_door_open_top_middle, FALSE
+    setmetatile 14,  34, METATILE_PapillysGym_gym_door_open_bottom_middle, FALSE
+    setmetatile 13,  33, METATILE_PapillysGym_gym_door_open_top_left, TRUE
+    setmetatile 13,  34, METATILE_PapillysGym_gym_door_open_bottom_left, TRUE
+    setmetatile 15,  33, METATILE_PapillysGym_gym_door_open_top_right, TRUE
+    setmetatile 15,  34, METATILE_PapillysGym_gym_door_open_bottom_right, TRUE
+    setmetatile 23,  42, METATILE_PapillysGym_button_pressed_dark, FALSE
     return
     
 DewfordTown_Gym_EventScript_OpenMirrorGate2::
-    setmetatile 13, 36, METATILE_PapillysGym_gym_door_open_top_middle, FALSE
-    setmetatile 13, 37, METATILE_PapillysGym_gym_door_open_bottom_middle, FALSE
-    setmetatile 12, 36, METATILE_PapillysGym_gym_door_open_top_left, TRUE
-    setmetatile 12, 37, METATILE_PapillysGym_gym_door_open_bottom_left, TRUE
-    setmetatile 14, 36, METATILE_PapillysGym_gym_door_open_top_right, TRUE
-    setmetatile 14, 37, METATILE_PapillysGym_gym_door_open_bottom_right, TRUE
-    setmetatile 6,  33, METATILE_PapillysGym_gym_door_open_top_middle, FALSE
-    setmetatile 6,  34, METATILE_PapillysGym_gym_door_open_bottom_middle, FALSE
-    setmetatile 5,  33, METATILE_PapillysGym_gym_door_open_top_left, TRUE
-    setmetatile 5,  34, METATILE_PapillysGym_gym_door_open_bottom_left, TRUE
-    setmetatile 7,  33, METATILE_PapillysGym_gym_door_open_top_right, TRUE
-    setmetatile 7,  34, METATILE_PapillysGym_gym_door_open_bottom_right, TRUE
+    setmetatile 10, 27, METATILE_PapillysGym_gym_door_open_top_middle, FALSE
+    setmetatile 10, 28, METATILE_PapillysGym_gym_door_open_bottom_middle, FALSE
+    setmetatile 9,  27, METATILE_PapillysGym_gym_door_open_top_left, TRUE
+    setmetatile 9,  28, METATILE_PapillysGym_gym_door_open_bottom_left, TRUE
+    setmetatile 11, 27, METATILE_PapillysGym_gym_door_open_top_right, TRUE
+    setmetatile 11, 28, METATILE_PapillysGym_gym_door_open_bottom_right, TRUE
+    setmetatile 18, 26, METATILE_PapillysGym_button_pressed_dark, FALSE
     return
     
 DewfordTown_Gym_EventScript_OpenMirrorGate3::
-    setmetatile 13, 36, METATILE_PapillysGym_gym_door_open_top_middle, FALSE
-    setmetatile 13, 37, METATILE_PapillysGym_gym_door_open_bottom_middle, FALSE
-    setmetatile 12, 36, METATILE_PapillysGym_gym_door_open_top_left, TRUE
-    setmetatile 12, 37, METATILE_PapillysGym_gym_door_open_bottom_left, TRUE
-    setmetatile 14, 36, METATILE_PapillysGym_gym_door_open_top_right, TRUE
-    setmetatile 14, 37, METATILE_PapillysGym_gym_door_open_bottom_right, TRUE
-    setmetatile 6,  33, METATILE_PapillysGym_gym_door_open_top_middle, FALSE
-    setmetatile 6,  34, METATILE_PapillysGym_gym_door_open_bottom_middle, FALSE
-    setmetatile 5,  33, METATILE_PapillysGym_gym_door_open_top_left, TRUE
-    setmetatile 5,  34, METATILE_PapillysGym_gym_door_open_bottom_left, TRUE
-    setmetatile 7,  33, METATILE_PapillysGym_gym_door_open_top_right, TRUE
-    setmetatile 7,  34, METATILE_PapillysGym_gym_door_open_bottom_right, TRUE
+    setmetatile 20, 15, METATILE_PapillysGym_gym_door_open_top_middle, FALSE
+    setmetatile 20, 16, METATILE_PapillysGym_gym_door_open_bottom_middle, FALSE
+    setmetatile 19, 15, METATILE_PapillysGym_gym_door_open_top_left, TRUE
+    setmetatile 19, 16, METATILE_PapillysGym_gym_door_open_bottom_left, TRUE
+    setmetatile 21, 15, METATILE_PapillysGym_gym_door_open_top_right, TRUE
+    setmetatile 21, 16, METATILE_PapillysGym_gym_door_open_bottom_right, TRUE
+    setmetatile 16, 17, METATILE_PapillysGym_button_pressed_dark, FALSE
+    return
+
+DewfordTown_Gym_EventScript_OpenMirrorGate4::
+    setmetatile 14, 13, METATILE_PapillysGym_gym_door_open_top_middle, FALSE
+    setmetatile 14, 14, METATILE_PapillysGym_gym_door_open_bottom_middle, FALSE
+    setmetatile 13, 13, METATILE_PapillysGym_gym_door_open_top_left, TRUE
+    setmetatile 13, 14, METATILE_PapillysGym_gym_door_open_bottom_left, TRUE
+    setmetatile 15, 13, METATILE_PapillysGym_gym_door_open_top_right, TRUE
+    setmetatile 15, 14, METATILE_PapillysGym_gym_door_open_bottom_right, TRUE
+    setmetatile 10, 18, METATILE_PapillysGym_button_pressed_dark, FALSE
+    return
+
+DewfordTown_Gym_EventScript_OpenMirrorGate5::
+    setmetatile 3, 15, METATILE_PapillysGym_gym_door_open_top_middle, FALSE
+    setmetatile 3, 16, METATILE_PapillysGym_gym_door_open_bottom_middle, FALSE
+    setmetatile 2, 15, METATILE_PapillysGym_gym_door_open_top_left, TRUE
+    setmetatile 2, 16, METATILE_PapillysGym_gym_door_open_bottom_left, TRUE
+    setmetatile 4, 15, METATILE_PapillysGym_gym_door_open_top_right, TRUE
+    setmetatile 4, 16, METATILE_PapillysGym_gym_door_open_bottom_right, TRUE
+    setmetatile 3, 25, METATILE_PapillysGym_gym_door_open_top_middle, FALSE
+    setmetatile 3, 26, METATILE_PapillysGym_gym_door_open_bottom_middle, FALSE
+    setmetatile 2, 25, METATILE_PapillysGym_gym_door_open_top_left, TRUE
+    setmetatile 2, 26, METATILE_PapillysGym_gym_door_open_bottom_left, TRUE
+    setmetatile 4, 25, METATILE_PapillysGym_gym_door_open_top_right, TRUE
+    setmetatile 4, 26, METATILE_PapillysGym_gym_door_open_bottom_right, TRUE
+    setmetatile 3, 35, METATILE_PapillysGym_gym_door_open_top_middle, FALSE
+    setmetatile 3, 36, METATILE_PapillysGym_gym_door_open_bottom_middle, FALSE
+    setmetatile 2, 35, METATILE_PapillysGym_gym_door_open_top_left, TRUE
+    setmetatile 2, 36, METATILE_PapillysGym_gym_door_open_bottom_left, TRUE
+    setmetatile 4, 35, METATILE_PapillysGym_gym_door_open_top_right, TRUE
+    setmetatile 4, 36, METATILE_PapillysGym_gym_door_open_bottom_right, TRUE
     return
     
 DewfordTown_Gym_EventScript_MirrorRespawn1Trigger::
@@ -267,10 +291,10 @@ DewfordTown_Gym_EventScript_Brawly::
 	end
 
 DewfordTown_Gym_EventScript_BrawlyDefeated::
-	call DewfordTown_Gym_EventScript_AnimateFlashFullBrightness
 	message DewfordTown_Gym_Text_ReceivedKnuckleBadge
 	waitmessage
 	call Common_EventScript_PlayGymBadgeFanfare
+    	call DewfordTown_Gym_EventScript_OpenMirrorGate5
 	msgbox DewfordTown_Gym_Text_KnuckleBadgeInfoTakeThis, MSGBOX_DEFAULT
 	setflag FLAG_DEFEATED_DEWFORD_GYM
 	setflag FLAG_BADGE02_GET
