@@ -317,14 +317,14 @@ DewfordTown_Gym_EventScript_BrawlyDefeated::
 	end
 
 DewfordTown_Gym_EventScript_GiveBulkUp::
-	giveitem ITEM_TM_BULK_UP
+	giveitem ITEM_TM_SECRET_POWER
 	goto_if_eq VAR_RESULT, 0, Common_EventScript_BagIsFull
 	msgbox DewfordTown_Gym_Text_ExplainBulkUp, MSGBOX_DEFAULT
 	setflag FLAG_RECEIVED_TM_BULK_UP
 	return
 
 DewfordTown_Gym_EventScript_GiveBulkUp2:
-	giveitem ITEM_TM_BULK_UP
+	giveitem ITEM_TM_SECRET_POWER
 	goto_if_eq VAR_RESULT, 0, Common_EventScript_ShowBagIsFull
 	msgbox DewfordTown_Gym_Text_ExplainBulkUp, MSGBOX_DEFAULT
 	setflag FLAG_RECEIVED_TM_BULK_UP
@@ -400,7 +400,16 @@ DewfordTown_Gym_EventScript_GymGuide::
 	lock
 	faceplayer
 	goto_if_set FLAG_DEFEATED_DEWFORD_GYM, DewfordTown_Gym_EventScript_GymGuidePostVictory
+	goto_if_set FLAG_TEMP_1, DewfordTown_Gym_EventScript_GymGuideGotWater
 	msgbox DewfordTown_Gym_Text_GymGuideAdvice, MSGBOX_DEFAULT
+	giveitem ITEM_FRESH_WATER
+	setflag FLAG_TEMP_1
+	release
+	end
+
+DewfordTown_Gym_EventScript_GymGuideGotWater::
+	msgbox DewfordTown_Gym_Text_GymGuideAdviceNoWater, MSGBOX_DEFAULT
+	setflag FLAG_TEMP_1
 	release
 	end
 
@@ -432,39 +441,78 @@ DewfordTown_Gym_EventScript_GymStatue::
 	end
 
 DewfordTown_Gym_Text_GymGuideAdvice:
-	.string "Hey, how's it going, CHAMPION-\n"
-	.string "bound {PLAYER}?\p"
-	.string "DEWFORD's GYM LEADER BRAWLY commands\n"
-	.string "FIGHTING-type POKéMON.\p"
-	.string "Going against him with NORMAL-type\n"
-	.string "POKéMON is asking for trouble.\p"
-	.string "FIGHTING POKéMON will lay a serious\n"
-	.string "smack down on NORMAL POKéMON,\l"
-	.string "so be careful!\p"
-	.string "What's worse, the GYM is as dark as\n"
-	.string "the ocean floor.\p"
-	.string "But it will get brighter after defeating\n"
-	.string "the TRAINERS in your way.\p"
-	.string "Hey, okay, go for it!$"
+	.string "Hey, how's it going,\n"
+	.string "Champ-to-be?\p"
+	.string "Before I tell you about the Gym\n"
+	.string "Leader, you need to know about the\l"
+	.string "Gym's puzzle.\p"
+	.string "You see that Slowking to your right?\p"
+	.string "It's reading your mind to follow your\n"
+	.string "movements.\p"
+	.string "The goal of this puzzle is to partner\n"
+	.string "up with the Slowking to press buttons\l"
+	.string "to open up the doors blocking your path.\p"
+	.string "Now, what kind of foes are you\n"
+	.string "going to find here?\p"
+	.string "Joridan City's Gym Leader, Josh, teaches\n"
+	.string "Double Battles at the University.\p"
+	.string "Thus, all of the trainers in this Gym\n"
+	.string "partner up in double battles.\p"
+	.string "Furthermore, Josh is also a specialist\n"
+	.string "in the Normal-type.\p"
+	.string "You might not think much of the Normal-\n"
+	.string "type, but they're more difficult to\l"
+	.string "handle than you might expect!\p"
+	.string "They're bulky and well-balanced, and\n"
+	.string "they have many moves to support their\l"
+	.string "partners in a double battle.\p"
+	.string "Fighting-type moves are going to help\n"
+	.string "a lot, but even more than that…\p"
+	.string "I recommend stocking up on healing\n"
+	.string "items and prepare for your Pokémon to\l"
+	.string "partner up!\p"
+	.string "Speaking of healing items, take this!$"
+
+DewfordTown_Gym_Text_GymGuideAdviceNoWater:
+	.string "So about the Gym's puzzle…\p"
+	.string "That Slowking to your right is reading\n"
+	.string "your mind to follow your movements.\p"
+	.string "The goal of this puzzle is to partner\n"
+	.string "up with the Slowking to press buttons\l"
+	.string "to open up the doors blocking your path.\p"
+	.string "Now, what kind of foes are you\n"
+	.string "going to find here?\p"
+	.string "All of the trainers in this Gym\n"
+	.string "partner up in double battles.\p"
+	.string "Josh is also a specialist in the\n"
+	.string "Normal-type.\p"
+	.string "So, Fighting-type moves are going to\n"
+	.string "help a lot, but even more than that…\p"
+	.string "I recommend stocking up on healing\n"
+	.string "items and prepare for your Pokémon to\l"
+	.string "partner up!\p"
+	.string "Good luck, Champ-to-be!$"
 
 DewfordTown_Gym_Text_GymGuidePostVictory:
-	.string "Whoah! It's turned too bright in here!\p"
-	.string "Your future is bright, too!$"
+	.string "Whoah! What a dynamic duo!\p"
+	.string "You've got enough brain power to\n"
+	.string "think for two!$"
 
 DewfordTown_Gym_Text_TakaoIntro:
-	.string "Might is right!\n"
+	.string "I must read my ally's moves!\n"
 	.string "Come on!$"
 
 DewfordTown_Gym_Text_TakaoDefeat:
-	.string "Not enough power…$"
+	.string "Not on the same page…$"
 
 DewfordTown_Gym_Text_TakaoPostBattle:
-	.string "Your skill overcame my strength!\n"
-	.string "Your technique is commendable!$"
+	.string "Perhaps it would be easier to\n"
+	.string "fight without a partner,\l"
+	.string "but I only have one Pokémon…$"
 
 DewfordTown_Gym_Text_JocelynIntro:
-	.string "There's no need for BRAWLY to be\n"
-	.string "involved!\p"
+	.string "I'm the finest fighter in this\n"
+	.string "Gym!\p"
 	.string "I'll crush you!$"
 
 DewfordTown_Gym_Text_JocelynDefeat:
@@ -474,9 +522,7 @@ DewfordTown_Gym_Text_JocelynDefeat:
 DewfordTown_Gym_Text_JocelynPostBattle:
 	.string "I'm not going to waste this loss.\n"
 	.string "I'll use it to motivate me to train!\p"
-	.string "One day I'll become a GYM LEADER…\p"
-	.string "No, I'll become the POKéMON LEAGUE\n"
-	.string "CHAMPION!$"
+	.string "One day I'll become a Gym Leader!$"
 
 DewfordTown_Gym_Text_LauraIntro:
 	.string "Don't you dare brush me off!\n"
@@ -487,14 +533,16 @@ DewfordTown_Gym_Text_LauraDefeat:
 	.string "I lost!$"
 
 DewfordTown_Gym_Text_LauraPostBattle:
-	.string "I battle in the dark to make my heart\n"
-	.string "stronger.\p"
-	.string "But because it's so dark, I can never\n"
-	.string "see BRAWLY's face…$"
+	.string "Double battles have an extra element\n"
+	.string "to their strategy that makes them\l"
+	.string "much harder.\p"
+	.string "I've been taking Josh's class for\n"
+	.string "so long, but I don't see any progress…$"
 
 DewfordTown_Gym_Text_LilithIntro:
-	.string "Ufufu…\n"
-	.string "Are you stumbling around in the dark?$"
+	.string "Ufufu…\p"
+	.string "Is it hard to think on the same page\n"
+	.string "as the Slowking?$"
 
 DewfordTown_Gym_Text_LilithDefeat:
 	.string "Oh, you…\n"
@@ -502,11 +550,11 @@ DewfordTown_Gym_Text_LilithDefeat:
 
 DewfordTown_Gym_Text_LilithPostBattle:
 	.string "You deserve to stay lost and end up\n"
-	.string "back at the entrance again!$"
+	.string "going home crying!$"
 
 DewfordTown_Gym_Text_BrendenIntro:
 	.string "I'll show you the gumption of\n"
-	.string "a sailing man!$"
+	.string "a seasoned scholar!$"
 
 DewfordTown_Gym_Text_BrendenDefeat:
 	.string "How'd this happen?\n"
@@ -514,7 +562,7 @@ DewfordTown_Gym_Text_BrendenDefeat:
 
 DewfordTown_Gym_Text_BrendenPostBattle:
 	.string "Oh, aye! You're worthy of seeing\n"
-	.string "our GYM LEADER.$"
+	.string "our Gym Leader.$"
 
 DewfordTown_Gym_Text_CristianIntro:
 	.string "If you mean to pass, it has to be\n"
@@ -526,58 +574,84 @@ DewfordTown_Gym_Text_CristianDefeat:
 
 DewfordTown_Gym_Text_CristianPostBattle:
 	.string "You win!\n"
-	.string "Go after that BADGE!$"
+	.string "Go after that Badge!$"
 
 DewfordTown_Gym_Text_BrawlyIntro:
-	.string "I'm BRAWLY!\n"
-	.string "DEWFORD's GYM LEADER!\p"
-	.string "I've been churned in the rough waves\n"
-	.string "of these parts, and I've grown tough\l"
-	.string "in the pitch-black cave!\p"
-	.string "So you wanted to challenge me?\n"
-	.string "Let me see what you're made of!$"
+	.string "Hello, young traveler!\n"
+	.string "I'm Josh, the Joridan City Gym Leader!\p"
+	.string "I've got to say, I don't really stand\n"
+	.string "out all that much, but I've honed my\l"
+	.string "skills enough to become Champion!\p"
+	.string "If you want my Gym Badge, you'll\n"
+	.string "need to demonstrate proficiency in\l"
+	.string "the art of a double battle!\p"
+	.string "Still want to take me on?\n"
+	.string "Very well, let's see…\l"
+	.string "how many badges do you have?\p"
+	.string "One?\n"
+	.string "Okay, I'll use this team then…\p"
+	.string "Now, show me what you've got!$"
 
 DewfordTown_Gym_Text_BrawlyDefeat:
-	.string "Whoah, wow! You made a much bigger\n"
-	.string "splash than I expected!\p"
-	.string "You swamped me!\p"
-	.string "Okay, you've got me.\n"
-	.string "Take this GYM BADGE!$"
+	.string "Impressive!\p"
+	.string "You broke through my impenetrable\n"
+	.string "defenses!\p"
+	.string "I concede.\p"
+	.string "By the power vested in me by the\n"
+	.string "State of Banjime and it's Pokémon\l"
+	.string "League, I bestow upon you this…\p"
+	.string "Please accept the official Pokémon\n"
+	.string "League Gemini Badge!$"
 
 DewfordTown_Gym_Text_ReceivedKnuckleBadge:
-	.string "{PLAYER} received the KNUCKLE BADGE\n"
-	.string "from BRAWLY.$"
+	.string "{PLAYER} received the Gemini Badge\n"
+	.string "from Josh.$"
 
 DewfordTown_Gym_Text_KnuckleBadgeInfoTakeThis:
-	.string "The KNUCKLE BADGE makes all POKéMON\n"
+	.string "The Gemini Badge makes all Pokémon\n"
 	.string "up to Level 30, even those you get in\l"
 	.string "trades, obey without question.\p"
 	.string "And, you'll be able to use the HM move\n"
-	.string "FLASH outside of battle.\p"
-	.string "If you'd like, use this TECHNICAL\n"
-	.string "MACHINE, too.$"
+	.string "Rock Smash outside of battle.\p"
+	.string "Please accept this Technical\n"
+	.string "Machine, too.$"
 
 DewfordTown_Gym_Text_ExplainBulkUp:
-	.string "That TM08 contains BULK UP.\p"
-	.string "It's a move that raises both ATTACK\n"
-	.string "and DEFENSE stats.\p"
+	.string "TM94 contains Secret Power.\p"
+	.string "It's a move that changes depending\n"
+	.string "on the environment.\p"
 	.string "… … … … … …$"
 
 DewfordTown_Gym_Text_RegisteredBrawly:
-	.string "Registered GYM LEADER BRAWLY\n"
-	.string "in the POKéNAV.$"
+	.string "Registered Gym Leader Josh\n"
+	.string "in the PokéNav.$"
 
 DewfordTown_Gym_Text_BrawlyPostBattle:
-	.string "I can see your talent becoming a giant\n"
-	.string "wave to cause a storm of astonishment\l"
-	.string "among TRAINERS one day!$"
+	.string "Your journey is still long.\p"
+	.string "My father is a Gym Leader in\n"
+	.string "Redburro City.\p"
+	.string "If you see him, please say hello\n"
+	.string "for me!$"
 
 DewfordTown_Gym_Text_GymStatue:
-	.string "DEWFORD TOWN POKéMON GYM$"
+	.string "Joridan City Pokémon Gym\p"
+	.string "Leader:\n"
+	.string "Josh\p"
+	.string "Certified Trainers in order of completion:\n"
+	.string "Peter, Otnar, Ahab, Jelissa,\p"
+	.string "Toxiana, Tinker, Moose, Gwen,\n"
+	.string "Tobias, Ishmael, Adhira,\l"
+	.string "Tiffany, Amelia, Sean$"
 
 DewfordTown_Gym_Text_GymStatueCertified:
-	.string "DEWFORD TOWN POKéMON GYM\p"
-	.string "BRAWLY'S CERTIFIED TRAINERS:\n"
+	.string "Joridan City Pokémon Gym\p"
+	.string "Leader:\n"
+	.string "Josh\p"
+	.string "Certified Trainers in order of completion:\n"
+	.string "Peter, Otnar, Ahab, Jelissa,\p"
+	.string "Toxiana, Tinker, Moose, Gwen,\n"
+	.string "Tobias, Ishmael, Adhira,\l"
+	.string "Tiffany, Amelia, Sean\l"
 	.string "{PLAYER}$"
 
 DewfordTown_Gym_Text_BrawlyPreRematch:
