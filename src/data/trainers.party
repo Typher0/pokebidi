@@ -3213,16 +3213,16 @@ Level: 39
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
 === TRAINER_TAKAO ===
-Name: TAKAO
-Class: Black Belt
-Pic: Black Belt
+Name: Takao
+Class: Cooltrainer
+Pic: Acetrainer Unova M
 Gender: Male
-Music: Intense
+Music: Cool
 Double Battle: No
 AI: Check Bad Move
 
-Scraggy
-Level: 13
+Hamsnug
+Level: 16
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
 === TRAINER_HITOSHI ===
@@ -5034,53 +5034,56 @@ Nature: Sassy
 - Quick Attack
 
 === TRAINER_BRAWLY_1 ===
-Name: Brawly
+Name: Josh
 Class: Leader
-Pic: Leader Brawly
+Pic: gym b josh
 Gender: Male
 Music: Male
 Items: Super Potion / Super Potion
-Double Battle: No
+Double Battle: Yes
 AI: Smart Trainer / AI_FLAG_ACE_POKEMON
 Mugshot: Yellow
 
-Scraggy
-Level: 14
-Ability: Shed Skin
-IVs: 12 HP / 10 Atk / 8 Def / 4 SpA / 2 SpD / 2 Spe
-- Thief
-- Low Kick
-- Sand Attack
-- Bulk Up
+Herdier (M) @ Black Glasses
+Level: 20
+Ability: Intimidate
+IVs: 2 HP / 1 Atk / 8 Def / 4 SpA / 10 SpD / 8 Spe
+Ball: Premier
+- Baby Doll Eyes
+- Retaliate
+- Bite
+- Yawn
 
-Meditite
-Level: 14 
-IVs: 2 HP / 10 Atk / 2 Def / 10 SpA / 8 SpD / 3 Spe
-- Force Palm
-- Work Up
+Noctowl (M) @ Light Clay
+Level: 20
+Ability: Insomnia
+IVs: 4 HP / 2 Atk / 4 Def / 10 SpA / 8 SpD / 13 Spe
+Ball: Premier
+- Hypnosis
+- Peck
+- Reflect
 - Confusion
-- Bulk Up
 
-Timburr (M) @ Oran Berry
-Level: 15
-Ability: Sheer Force
-IVs: 2 HP / 6 Atk / 2 Def / 4 SpA / 8 SpD / 3 Spe
-- Low Kick
-- Rock Slide
-- Slam
-- Bulk Up
+Munchlax (M) @ Oran Berry
+Level: 21
+Ability: Thick Fat
+IVs: 2 HP / 6 Atk / 2 Def / 4 SpA / 8 SpD / 13 Spe
+- Retaliate
+- Recycle
+- Stockpile
+- Bite
 
-Penglacier (M) @ Sitrus Berry
-Level: 16
-Ability: Slush Rush
+Shrewel (M) @ Sitrus Berry
+Level: 22
+Ability: Sand Rush
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Ball: Cherish
 Happiness: 255
-Nature: Mild
-- Ice Shard
-- Vacuum Wave
-- Water Pulse
-- Bulk Up
+Nature: Impish
+- Accelerock
+- Retaliate
+- Rollout
+- Defense Curl
 
 === TRAINER_WATTSON_1 ===
 Name: Wattson
@@ -8261,29 +8264,29 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 - Sludge
 
 === TRAINER_JOCELYN ===
-Name: JOCELYN
-Class: Battle Girl
-Pic: Battle Girl
+Name: Jocelyn
+Class: Cooltrainer
+Pic: Acetrainer Unova F
 Gender: Female
-Music: Intense
+Music: Cool
 Double Battle: No
 AI: Check Bad Move
 
-Meditite
-Level: 13
+Hoothoot
+Level: 17
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
 === TRAINER_LAURA ===
-Name: LAURA
-Class: Battle Girl
-Pic: Battle Girl
+Name: Laura
+Class: Clerk
+Pic: Clerk F
 Gender: Female
-Music: Intense
+Music: Rich
 Double Battle: No
 AI: Check Bad Move
 
-Meditite
-Level: 13
+Skwovet
+Level: 17
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 === TRAINER_CYNDY_1 ===
@@ -11159,43 +11162,43 @@ Level: 8
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
 === TRAINER_BRENDEN ===
-Name: BRENDEN
-Class: Sailor
-Pic: Sailor
+Name: Brenden
+Class: Clerk
+Pic: Clerk M
 Gender: Male
-Music: Male
+Music: Rich
 Double Battle: No
 AI: Check Bad Move
 
-Timburr
-Level: 13
+Zigzagoon
+Level: 17
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_LILITH ===
-Name: LILITH
-Class: Battle Girl
-Pic: Battle Girl
+Name: Lilith
+Class: Lady
+Pic: Lady
 Gender: Female
-Music: Intense
+Music: Rich
 Double Battle: No
 AI: Check Bad Move
 
-Meditite
-Level: 13
+Deerling
+Level: 16
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 === TRAINER_CRISTIAN ===
-Name: CRISTIAN
-Class: Black Belt
-Pic: Black Belt
+Name: Cristian
+Class: Gentleman
+Pic: Gentleman
 Gender: Male
-Music: Intense
+Music: Rich
 Double Battle: No
 AI: Check Bad Move
 
-Makuhita
-Level: 13
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+Herdier
+Level: 17
+IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 
 === TRAINER_SYLVIA ===
 Name: SYLVIA

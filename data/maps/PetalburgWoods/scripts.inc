@@ -415,7 +415,7 @@ PetalburgWoods_EventScript_AmeliaLeft::
 	waitmovement 0
 	applymovement LOCALID_BLOOMNGROVE_WOODS_AMELIA, Common_Movement_Delay48
 	waitmovement 0
-	playbgm MUS_DP_DAWN, TRUE
+	playbgm MUS_ENCOUNTER_RIVAL, TRUE
 	delay 10
 	msgbox PetalburgWoods_Text_OhHiMark, MSGBOX_DEFAULT
 	closemessage
@@ -447,7 +447,7 @@ PetalburgWoods_EventScript_AmeliaMid::
 	waitmovement 0
 	applymovement LOCALID_BLOOMNGROVE_WOODS_AMELIA, Common_Movement_Delay48
 	waitmovement 0
-	playbgm MUS_DP_DAWN, TRUE
+	playbgm MUS_ENCOUNTER_RIVAL, TRUE
 	delay 10
 	msgbox PetalburgWoods_Text_OhHiMark, MSGBOX_DEFAULT
 	closemessage
@@ -479,7 +479,7 @@ PetalburgWoods_EventScript_AmeliaRight::
 	waitmovement 0
 	applymovement LOCALID_BLOOMNGROVE_WOODS_AMELIA, Common_Movement_Delay48
 	waitmovement 0
-	playbgm MUS_DP_DAWN, TRUE
+	playbgm MUS_ENCOUNTER_RIVAL, TRUE
 	delay 10
 	msgbox PetalburgWoods_Text_OhHiMark, MSGBOX_DEFAULT
 	closemessage
@@ -511,7 +511,7 @@ PetalburgWoods_EventScript_AmeliaFarRight::
 	waitmovement 0
 	applymovement LOCALID_BLOOMNGROVE_WOODS_AMELIA, Common_Movement_Delay48
 	waitmovement 0
-	playbgm MUS_DP_DAWN, TRUE
+	playbgm MUS_ENCOUNTER_RIVAL, TRUE
 	delay 10
 	msgbox PetalburgWoods_Text_OhHiMark, MSGBOX_DEFAULT
 	closemessage

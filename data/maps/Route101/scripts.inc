@@ -47,7 +47,7 @@ Route101_EventScript_SeanLeft::
 	applymovement LOCALID_ROUTE101_SEAN, Common_Movement_Delay48
 	waitmovement 0
 	delay 10
-	playbgm MUS_DP_LUCAS, TRUE
+	playbgm MUS_ENCOUNTER_RIVAL, TRUE
 	applymovement LOCALID_ROUTE101_SEAN, Route101_Movement_SeanLeft
 	waitmovement 0
 	msgbox Route101_Text_GoToLab, MSGBOX_DEFAULT
@@ -74,7 +74,7 @@ Route101_EventScript_SeanRight::
 	applymovement LOCALID_ROUTE101_SEAN, Common_Movement_Delay48
 	waitmovement 0
 	delay 10
-	playbgm MUS_DP_LUCAS, TRUE
+	playbgm MUS_ENCOUNTER_RIVAL, TRUE
 	applymovement LOCALID_ROUTE101_SEAN, Route101_Movement_SeanRight
 	waitmovement 0
 	msgbox Route101_Text_GoToLab, MSGBOX_DEFAULT
@@ -93,12 +93,12 @@ Route101_EventScript_SeanRight::
 	end
 
 Route101_Movement_SeanLeft:
-	walk_up
+	walk_faster_up
 	step_end
 
 Route101_Movement_SeanRight:
-	walk_right
-	walk_up
+	walk_faster_right
+	walk_faster_up
 	step_end
 
 Route101_Movement_SeanLab:
