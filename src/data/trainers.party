@@ -5050,9 +5050,9 @@ Ability: Intimidate
 IVs: 2 HP / 1 Atk / 8 Def / 4 SpA / 10 SpD / 8 Spe
 Ball: Premier
 - Baby Doll Eyes
-- Retaliate
+- Secret Power
 - Bite
-- Yawn
+- Work Up
 
 Noctowl (M) @ Light Clay
 Level: 20
@@ -5068,10 +5068,11 @@ Munchlax (M) @ Oran Berry
 Level: 21
 Ability: Thick Fat
 IVs: 2 HP / 6 Atk / 2 Def / 4 SpA / 8 SpD / 13 Spe
-- Retaliate
+Nature: Mild
+- Secret Power
 - Recycle
 - Stockpile
-- Bite
+- Swallow
 
 Shrewel (M) @ Sitrus Berry
 Level: 22
@@ -5080,8 +5081,8 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Ball: Cherish
 Happiness: 255
 Nature: Impish
-- Accelerock
-- Retaliate
+- Tickle
+- Secret Power
 - Rollout
 - Defense Curl
 
