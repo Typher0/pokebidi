@@ -402,7 +402,7 @@ gSongTable::
     song mus_vs_banjime_legend, MUSIC_PLAYER_BGM, 0
     song mus_quite_graveyard, MUSIC_PLAYER_BGM, 0
     song mus_quite_town, MUSIC_PLAYER_BGM, 0
-    song mus_dummy, MUSIC_PLAYER_BGM, 0
+    song mus_corban_isles, MUSIC_PLAYER_BGM, 0
     song mus_dummy, MUSIC_PLAYER_BGM, 0
     song mus_dummy, MUSIC_PLAYER_BGM, 0
     song mus_dummy, MUSIC_PLAYER_BGM, 0
